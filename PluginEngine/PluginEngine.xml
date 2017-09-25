@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PluginEngine</name>
+    </assembly>
+    <members>
+        <member name="T:WorldWind.PluginEngine.NativeMethods">
+            <summary>
+            Interop functionality for Plugin namespace.
+            </summary>
+        </member>
+        <member name="T:WorldWind.PluginEngine.Plugin">
+            <summary>
+            Base class to be derived by all plugins (loaded by PluginCompiler)
+            Keep as light-weight as possible to keep plugin simple to write.
+            </summary>
+        </member>
+        <member name="F:WorldWind.PluginEngine.Plugin.m_Application">
+            <summary>
+            Handle to the World Wind Application object
+            </summary>
+        </member>
+        <member name="F:WorldWind.PluginEngine.Plugin.m_PluginDirectory">
+            <summary>
+            The directory from which this plugin was loaded.
+            </summary>
+        </member>
+        <member name="F:WorldWind.PluginEngine.Plugin.m_isLoaded">
+            <summary>
+            Plugin running flag (true while running, reset when exiting plugin)
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.Plugin.Application">
+            <summary>
+            Reference to the World Wind main application object.  
+            Deprecated: Use ParentApplication property instead!  
+            TODO: Remove this to avoid name collision
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.Plugin.ParentApplication">
+            <summary>
+            Reference to the World Wind main application object.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.Plugin.PluginDirectory">
+            <summary>
+            The location this plugin was loaded from.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.Plugin.IsLoaded">
+            <summary>
+            Whether the plugin is currently running.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.Plugin.Load">
+            <summary>
+            Load the plugin.  This is the plugin entry point.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.Plugin.Unload">
+            <summary>
+            Unload the plugin. Plugins that modify World Wind or 
+            runs in background should override this method.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.Plugin.PluginLoad(WorldWind.MainApplication,System.String)">
+            <summary>
+            Base class load, calls Load. 
+            </summary>
+            <param name="parent"></param>
+            <param name="pluginDirectory"></param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.Plugin.PluginUnload">
+            <summary>
+            Base class unload, calls Unload. 
+            </summary>
+        </member>
+        <member name="T:WorldWind.PluginEngine.PluginCompiler">
+            <summary>
+            Loads plug-in scripts, compiles and executes them
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginCompiler.Plugins">
+            <summary>
+            The list of discovered plugins.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.#ctor(WorldWind.MainApplication,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginCompiler"/> class.
+            </summary>
+            <param name="worldWind"></param>
+            <param name="pluginDirectory"></param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.AddCodeProvider(System.CodeDom.Compiler.CodeDomProvider)">
+            <summary>
+            Adds a compiler to the list of available codeDomProviders
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.FindPlugins(System.Reflection.Assembly)">
+            <summary>
+            Scan for plugins inside an assembly.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.FindPlugins">
+            <summary>
+            Build/update the list of available plugins.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.AddPlugin(System.String)">
+            <summary>
+            Adds plugin from one of the plugins
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.LoadStartupPlugins">
+            <summary>
+            Loads the plugins that are set for load on world wind startup.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.HasCompiler(System.String)">
+            <summary>
+            Determine if a file extension is that of a compilable plugin.
+            </summary>
+            <param name="fileExtension">File extension to check.</param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.IsPreCompiled(System.String)">
+            <summary>
+            Determine if a file extension is that of a pre-compiled plugin.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.Load(WorldWind.PluginEngine.PluginInfo)">
+            <summary>
+            Load a plugin
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.Unload(WorldWind.PluginEngine.PluginInfo)">
+            <summary>
+            Unload a plugin if it's loaded.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.Uninstall(WorldWind.PluginEngine.PluginInfo)">
+            <summary>
+            Uninstall/delete a plugin.
+            </summary>
+            <param name="pi"></param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.Dispose">
+            <summary>
+            Shut down plugins
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.Compile(WorldWind.PluginEngine.PluginInfo,System.CodeDom.Compiler.CodeDomProvider)">
+            <summary>
+            Compiles a file to an assembly using specified compiler.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.AddCompilerReference(System.String,System.String)">
+            <summary>
+            Adds reference to a local assembly or an assembly in the global cache.
+            </summary>
+            <param name="pluginDirectory">Local directory to search.</param>
+            <param name="assemblyName">Partial name of the assembly.</param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.GetPluginInterface(System.Reflection.Assembly)">
+            <summary>
+            Looks for class derived from Plugin and returns an instance of this class.
+            </summary>
+        </member>
+        <member name="T:WorldWind.PluginEngine.PluginDialog">
+            <summary>
+            Plugin manager dialog.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginDialog.ImageList">
+            <summary>
+            On/Off images for items.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.#ctor(WorldWind.PluginEngine.PluginCompiler)">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginDialog"/> class.
+            </summary>
+            <param name="compiler"></param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.AddPluginList">
+            <summary>
+            Fill the list view with currently installed plugins.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.buttonUnload_Click(System.Object,System.EventArgs)">
+            <summary>
+            Unload selected plugins.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.buttonLoad_Click(System.Object,System.EventArgs)">
+            <summary>
+            Load selected plugins.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.PluginLoad(WorldWind.PluginEngine.PluginListItem)">
+            <summary>
+            Load plugin and display message on failure.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.PluginUnload(WorldWind.PluginEngine.PluginListItem)">
+            <summary>
+            Unload plugin and display message on failure.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.UpdateUIStates">
+            <summary>
+            Updates enabled states of controls to reflect selection.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.buttonUninstall_Click(System.Object,System.EventArgs)">
+            <summary>
+            Uninstall/remove plugins
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginDialog.listView_DoubleClick(System.Object,System.EventArgs)">
+            <summary>
+            Invert state of double clicked item (load/unload)
+            </summary>
+        </member>
+        <member name="T:WorldWind.PluginEngine.PluginInfo">
+            <summary>
+            Stores information on a plugin.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.Plugin">
+            <summary>
+            The plugin instance.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.FullPath">
+            <summary>
+            Directory and filename of the plugin.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.ID">
+            <summary>
+            The plugin ID
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.Name">
+            <summary>
+            The plugin name (from plugin comment header "NAME" tag)
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.Description">
+            <summary>
+            The plugin description (from plugin comment header "DESCRIPTION" tag)
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.Developer">
+            <summary>
+            The plugin developer's name (from plugin comment header "DEVELOPER" tag)
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.WebSite">
+            <summary>
+            The plugin web site url (from plugin comment header "WEBSITE" tag)
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.References">
+            <summary>
+            Comma separated list of additional libraries this plugin requires a reference to.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.IsCurrentlyLoaded">
+            <summary>
+            Check whether a plugin is currently loaded.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInfo.IsLoadedAtStartup">
+            <summary>
+            Set always load on application startup flag for the plugin.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInfo.ReadMetaData">
+            <summary>
+            Reads strings from the source file header tags
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInfo.FindTagInLine(System.String,System.String,System.String@)">
+            <summary>
+            Extract tag value from input source line.
+            </summary>
+        </member>
+        <member name="T:WorldWind.PluginEngine.PluginInstallDialog">
+            <summary>
+            Ask user for plugin file path/url, then download and install.
+            </summary>
+        </member>
+        <member name="F:WorldWind.PluginEngine.PluginInstallDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInstallDialog.#ctor(WorldWind.PluginEngine.PluginCompiler)">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginInstallDialog"/> class.
+            </summary>
+            <param name="compiler"></param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInstallDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInstallDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInstallDialog.buttonInstall_Click(System.Object,System.EventArgs)">
+            <summary>
+            Install plugin
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInstallDialog.IsFile">
+            <summary>
+            Determine if user points to a file.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginInstallDialog.IsWeb">
+            <summary>
+            Determine if user points to a web URL.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInstallDialog.InstallFromFile(System.String)">
+            <summary>
+            Install plugin from local file.
+            </summary>
+            <param name="pluginPath">Plugin path/filename.</param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInstallDialog.InstallFromUrl(System.Uri)">
+            <summary>
+            Install plugin from web (url).
+            </summary>
+            <param name="uri">http:// URL
+            </param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInstallDialog.GetDestinationPath(System.String)">
+            <summary>
+            Calculates plugin destination directory based on name, and prepares it.
+            </summary>
+            <param name="fileName">Plugin filename only (no path).</param>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInstallDialog.ShowSuccessMessage(System.String)">
+            <summary>
+            Display a message box with successful installation message.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginInstallDialog.buttonBrowse_Click(System.Object,System.EventArgs)">
+            <summary>
+            Browse for local file
+            </summary>
+        </member>
+        <member name="T:WorldWind.PluginEngine.PluginListItem">
+            <summary>
+            Listview item in the plugin dialog.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginListItem.PluginInfo">
+            <summary>
+            Plugin information container.
+            </summary>
+        </member>
+        <member name="P:WorldWind.PluginEngine.PluginListItem.Name">
+            <summary>
+            Plugin name.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginListItem.#ctor(WorldWind.PluginEngine.PluginInfo)">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginListItem"/> class.
+            </summary>
+        </member>
+        <member name="T:WorldWind.PluginEngine.PluginListView">
+            <summary>
+            The list view in the plugin dialog.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginListView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginListView"/> class.
+            </summary>
+        </member>
+        <member name="M:WorldWind.PluginEngine.PluginListView.OnDrawItem(System.Windows.Forms.DrawItemEventArgs,WorldWind.PluginEngine.PluginListItem)">
+            <summary>
+            Owner drawing listview item.
+            </summary>
+        </member>
+    </members>
+</doc>

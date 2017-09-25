@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConfigurationWizard</name>
+    </assembly>
+    <members>
+        <member name="T:ConfigurationWizard.Wizard">
+            <summary>
+            The Configuration Wizard
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Wizard.Text">
+            <summary>
+            The window title on the wizard
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Wizard.HeadingBitmap">
+            <summary>
+            The bitmap to be displayed on the upper part of the wizard form.
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Wizard.WizardPages">
+            <summary>
+            The list of WizardPage derived pages.
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Wizard.AbortMessage">
+            <summary>
+            Message displayed to user when he closes the wizard before it is finished.
+            </summary>
+        </member>
+        <member name="F:ConfigurationWizard.Wizard.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.#ctor(WorldWind.WorldWindSettings)">
+            <summary>
+            Initializes a new instance of the <see cref= "T:ConfigurationWizard.WizardPage"/> class.
+            Initializes settings, message and pages.
+            </summary>
+            <param name="settings">The WorldWindSettings to use</param>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.AddPage(ConfigurationWizard.WizardPage)">
+            <summary>
+            Adds a page to the wizard
+            </summary>
+            <param name="page">The page to add</param>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.GotoPage(System.Int32)">
+            <summary>
+            Moves to a specific page
+            </summary>
+            <param name="pageindex">The index of the page to move to</param>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Wizard.isOnLastPage">
+            <summary>
+            Indicates whether the wizard is displaying the last page
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Wizard.isOnFirstPage">
+            <summary>
+            Indicates whether the wizard is displaying the first page
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.UpdateControlStates">
+            <summary>
+            Updates the button and window text
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.buttonCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            Called when the user clicks the 'Cancel' button, closes the wizard
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.WizardBase_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Called when the wizard is closing, asks for confirmation from the user
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.buttonBack_Click(System.Object,System.EventArgs)">
+            <summary>
+            Called when the user clicks the 'Back' button, goes to the previous page
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.buttonNext_Click(System.Object,System.EventArgs)">
+            <summary>
+            Called when the user clicks the 'Next' button, goes to the next page
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.Wizard.OnLoad(System.EventArgs)">
+            <summary>
+            Called when the wizard initializes, loads the first page
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:ConfigurationWizard.WizardPage">
+            <summary>
+            Summary description for TabPage.
+            </summary>
+        </member>
+        <member name="F:ConfigurationWizard.WizardPage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.WizardPage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref= "T:ConfigurationWizard.WizardPage"/> class.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.WizardPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.WizardPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ConfigurationWizard.AtmospherePage.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.AtmospherePage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ConfigurationWizard.AtmospherePage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ConfigurationWizard.CachePage">
+            <summary>
+            Summary description for CachePage.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.CachePage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref= "T:ConfigurationWizard.CachePage"/> class.
+            </summary>
+        </member>
+        <member name="T:ConfigurationWizard.FinalPage">
+            <summary>
+            Summary description for FinalPage .
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.FinalPage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref= "T:ConfigurationWizard.FinalPage"/> class.
+            </summary>
+        </member>
+        <member name="T:ConfigurationWizard.ProxyPage">
+            <summary>
+            Summary description for ProxyPage.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.ProxyPage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref= "T:ConfigurationWizard.ProxyPage"/> class.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.ProxyPage.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.ProxyPage.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ConfigurationWizard.WelcomePage">
+            <summary>
+            Summary description for WelcomePage.
+            </summary>
+        </member>
+        <member name="M:ConfigurationWizard.WelcomePage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref= "T:ConfigurationWizard.WelcomePage"/> class.
+            </summary>
+        </member>
+        <member name="T:ConfigurationWizard.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Properties.Resources.shading">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Properties.Resources.sunfromspace">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ConfigurationWizard.Properties.Resources.sunset">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,776 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebDownload</name>
+    </assembly>
+    <members>
+        <member name="T:WorldWind.Net.DownloadQueue">
+            <summary>
+            Download queue with priorities
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.DownloadQueue.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.Net.DownloadRequest"/> class 
+            with default data.
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.DownloadQueue.Requests">
+            <summary>
+            Request for download queue
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.DownloadQueue.ActiveDownloads">
+            <summary>
+            Currently active downloads
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.DownloadQueue.Clear(System.Object)">
+            <summary>
+            Remove all requests with a certain owner.
+            </summary>
+            <param name="owner"></param>
+        </member>
+        <member name="M:WorldWind.Net.DownloadQueue.GetNextDownloadRequest">
+            <summary>
+            Finds the next file to download	
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.DownloadQueue.Add(WorldWind.Net.DownloadRequest)">
+            <summary>
+            Add a download request to the queue.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.DownloadQueue.Remove(WorldWind.Net.DownloadRequest)">
+            <summary>
+            Removes a request from the download queue.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.DownloadQueue.ServiceDownloadQueue">
+            <summary>
+            Starts downloads when there are threads available
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.DownloadQueue.OnComplete(WorldWind.Net.DownloadRequest)">
+            <summary>
+            Callback when download is complete.
+            </summary>
+        </member>
+        <member name="T:WorldWind.Net.DownloadRequest">
+            <summary>
+            Base class for various types of download requests (protocol independent)
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.DownloadRequest.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.Net.DownloadRequest"/> class.
+            </summary>
+            <param name="owner"></param>
+        </member>
+        <member name="P:WorldWind.Net.DownloadRequest.Key">
+            <summary>
+            A unique key identifying this request
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.DownloadRequest.Owner">
+            <summary>
+            The object that created this request
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.DownloadRequest.Progress">
+            <summary>
+            Value (0-1) indicating how far the download has progressed.
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.DownloadRequest.IsDownloading">
+            <summary>
+            Whether the request is currently being downloaded
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.DownloadRequest.Start">
+            <summary>
+            Starts processing this request
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.DownloadRequest.CalculateScore">
+            <summary>
+            Calculates the score of this request.  Used to prioritize downloads.  
+            Override in derived class to allow prioritization.
+            </summary>
+            <returns>Relative score or float.MinValue if request is no longer of interest.</returns>
+        </member>
+        <member name="M:WorldWind.Net.DownloadRequest.OnComplete">
+            <summary>
+            Derived classes should call this method to signal processing complete.
+            </summary>
+        </member>
+        <member name="T:WorldWind.Net.Monitor.ProgressDetailForm">
+            <summary>
+            Displays details for one download.
+            </summary>
+        </member>
+        <member name="F:WorldWind.Net.Monitor.ProgressDetailForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressDetailForm.#ctor(WorldWind.Net.Monitor.DebugItem)">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.Net.Monitor.ProgressDetailForm"/> class.
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressDetailForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressDetailForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:WorldWind.Net.Monitor.ProgressMonitor">
+            <summary>
+            Simple window showing all http downloads and progress.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WorldWind.Net.Monitor.ProgressMonitor"/> class.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.InitializeComponentText">
+            <summary>
+            We use this to override any strings set in InitializeComponent()
+            that need to be able to be translated, because the Visual Studio
+            Designer will overwrite things like menu names if the Designer is
+            used after changes are made in InitializeComponent().
+            
+            Any time this class is changed via the Designer, make sure that
+            any translatable strings in InitializeComponent() are also
+            represented in InitializeComponentText().
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.Update(WorldWind.Net.WebDownload)">
+            <summary>
+            Updates the specified download.
+            </summary>
+            <param name="wd">The wd.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.RemoveOldestItem">
+            <summary>
+            Removes the oldest item.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.KeyUp"/> event.
+            </summary>
+            <param name="e">A <see cref="T:System.Windows.Forms.KeyEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.Dispose(System.Boolean)">
+            <summary>
+            Disposes of the resources (other than memory) used by
+            the <see cref="T:System.Windows.Forms.Form"/>
+            .
+            </summary>
+            <param name="disposing"><see langword="true"/> to release both managed and unmanaged resources; <see langword="false"/> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.listView_ColumnClick(System.Object,System.Windows.Forms.ColumnClickEventArgs)">
+            <summary>
+            Sorts ascending/descending on clicked column
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Forms.ColumnClickEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemClear_Click(System.Object,System.EventArgs)">
+            <summary>
+            Clears the download list
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemViewDir_Click(System.Object,System.EventArgs)">
+            <summary>
+            Opens a directory window containing selected item(s).
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemOpenUrl_Click(System.Object,System.EventArgs)">
+            <summary>
+            Opens the selected items in web browser
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemCopy_Click(System.Object,System.EventArgs)">
+            <summary>
+            Copy download info to clipboard
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemHeaders_Click(System.Object,System.EventArgs)">
+            <summary>
+            Displays HTTP headers in a new window
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemSelectAll_Click(System.Object,System.EventArgs)">
+            <summary>
+            Selects all items
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemRun_Click(System.Object,System.EventArgs)">
+            <summary>
+            Enables debug monitor
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemEditDelete_Click(System.Object,System.EventArgs)">
+            <summary>
+            Delete selected items from list
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemWriteLog_Click(System.Object,System.EventArgs)">
+            <summary>
+            Enables writing to log file.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.contextMenu_Popup(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Popup event of the contextMenu control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemFile_Popup(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Popup event of the menuItemFile control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemEdit_Popup(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Popup event of the menuItemEdit control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemTools_Popup(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Popup event of the menuItemTools control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemFileRetry_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the menuItemFileRetry control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.OnDownloadComplete(WorldWind.Net.WebDownload)">
+            <summary>
+            Called when download is complete.
+            </summary>
+            <param name="dl">The download.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.ProgressMonitor.menuItemFileClose_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Click event of the menuItemFileClose control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:WorldWind.Net.Monitor.DebugItem">
+            <summary>
+            List view item
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.DebugItem.#ctor(WorldWind.Net.WebDownload)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WorldWind.Net.Monitor.DebugItem"/> class.
+            </summary>
+            <param name="dl">The download.</param>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.WebDownload">
+            <summary>
+            Gets the actual web download.
+            </summary>
+            <value>The web download.</value>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.StartTime">
+            <summary>
+            Gets the download start time.
+            </summary>
+            <value>The start time.</value>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.BytesProcessed">
+            <summary>
+            Gets or sets the number of bytes processed.
+            </summary>
+            <value>The bytes processed.</value>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.ContentLength">
+            <summary>
+            Gets or sets the byte length of the downloaded content.
+            </summary>
+            <value>The length of the content.</value>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.Status">
+            <summary>
+            Gets or sets the download status.
+            </summary>
+            <value>The status.</value>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.Url">
+            <summary>
+            Gets the downloaded URL.
+            </summary>
+            <value>The URL.</value>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.SavedFilePath">
+            <summary>
+            Gets the file path where the file will be saved.
+            </summary>
+            <value>The saved file path.</value>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.Headers">
+            <summary>
+            Gets or sets the HTTP headers.
+            </summary>
+            <value>The headers.</value>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.ElapsedTime">
+            <summary>
+            Gets or sets the elapsed time.
+            </summary>
+            <value>The elapsed time.</value>
+        </member>
+        <member name="P:WorldWind.Net.Monitor.DebugItem.HasFailed">
+            <summary>
+            Gets a value indicating whether this instance has failed.
+            </summary>
+            <value>
+            	<c>true</c> if this instance has failed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.DebugItem.Update(WorldWind.Net.WebDownload)">
+            <summary>
+            Updates the display for the specified download.
+            </summary>
+            <param name="wd">The download to update.</param>
+        </member>
+        <member name="T:WorldWind.Net.Monitor.DebugItemComparer">
+            <summary>
+            Sorts the debug window list.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.DebugItemComparer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WorldWind.Net.Monitor.DebugItemComparer"/> class.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.DebugItemComparer.#ctor(System.Int32,System.Windows.Forms.SortOrder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WorldWind.Net.Monitor.DebugItemComparer"/> class.
+            </summary>
+            <param name="column">The column to sort on.</param>
+            <param name="sortOrder">The sort order.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.DebugItemComparer.SortColumn(System.Int32)">
+            <summary>
+            Sorts by a specific column.
+            </summary>
+            <param name="column">The column to sort by.</param>
+        </member>
+        <member name="M:WorldWind.Net.Monitor.DebugItemComparer.Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects and returns a value indicating whether one
+            is less than, equal to or greater than the other.
+            </summary>
+            <param name="x">First object to compare.</param>
+            <param name="y">Second object to compare.</param>
+            <returns>
+            	<list type="table">
+            		<listheader>
+            			<term>Value</term>
+            			<description>Condition</description>
+            		</listheader>
+            		<item>
+            			<term> Less than zero</term>
+            			<description>
+            				<paramref name="x"/> is less than <paramref name="y"/>.</description>
+            		</item>
+            		<item>
+            			<term> Zero</term>
+            			<description>
+            				<paramref name="x"/> equals <paramref name="y"/>.</description>
+            		</item>
+            		<item>
+            			<term> Greater than zero</term>
+            			<description>
+            				<paramref name="x"/> is greater than <paramref name="y"/>.</description>
+            		</item>
+            	</list>
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            	<para>Neither <paramref name="x"/> nor <paramref name="y"/> implements the <see cref="T:System.IComparable"/> interface.</para>
+            	<para>-or-</para>
+            	<para>
+            		<paramref name="x"/> and <paramref name="y"/> are of different types and neither one can handle comparisons with the other.</para>
+            </exception>
+        </member>
+        <member name="T:WorldWind.Net.ProxyHelper">
+            <summary>
+            Utility class - determines required proxy (if any) for download.
+            Currently able to handle:
+            - Explicit use of no proxy
+            - retrieval of current Windows settings (default)
+            - Proxy authentication
+            - Proxy scripting (autoproxy)
+            - Proxy autodiscovery.
+            </summary>
+        </member>
+        <member name="T:WorldWind.Net.ProxyHelper.WINHTTP_PROXY_INFO">
+            <summary>
+            Proxy information structure returned by WinHTTP interop
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.ProxyHelper.#ctor">
+            <summary>
+            Constructor (static class)
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.ProxyHelper.DetermineProxyForUrl(System.String,System.Boolean,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            main working horse - determines proxy Url and sets up IWebProxy class complete with credentials 
+            </summary>
+            <param name="targetUrl">the file to download</param>
+            <param name="useDefaultProxy">whether to use Internet Explorer settings</param>
+            <param name="useDynamicProxy">If set, will download a script that provides the real proxy URL</param>
+            <param name="proxyUrl">Script URL (if useDynamicProxy is true) or proxy URL</param>
+            <param name="userName">User name (credentials)</param>
+            <param name="password">Password (credentials)</param>
+            <returns>An IWebProxy configured correspondingly</returns>
+        </member>
+        <member name="F:WorldWind.Net.WebDownload.ContentStream">
+            <summary>
+            Memory downloads fills this stream
+            </summary>
+        </member>
+        <member name="F:WorldWind.Net.WebDownload.ProgressCallback">
+            <summary>
+            Called when data is being received.  
+            Note that totalBytes will be zero if the server does not respond with content-length.
+            </summary>
+        </member>
+        <member name="F:WorldWind.Net.WebDownload.DebugCallback">
+            <summary>
+            Called to update debug window.
+            </summary>
+        </member>
+        <member name="F:WorldWind.Net.WebDownload.DownloadEnded">
+            <summary>
+            Called when a download has ended with success or failure
+            </summary>
+        </member>
+        <member name="F:WorldWind.Net.WebDownload.CompleteCallback">
+            <summary>
+            Called when download is completed.  Call Verify from event handler to throw any exception.
+            </summary>
+        </member>
+        <member name="F:WorldWind.Net.WebDownload.DownloadStartTime">
+            <summary>
+            The download start time (or MinValue if not yet started)
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WorldWind.Net.WebDownload"/> class.
+            </summary>
+            <param name="url">The URL to download from.</param>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WorldWind.Net.WebDownload"/> class.
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.WebDownload.Num_Downloads_In_Queue">
+            <summary>
+            Whether the download is currently being processed (active).
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.WebDownload.IsDownloadInProgress">
+            <summary>
+            Whether the download is currently being processed (active).
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.WebDownload.Exception">
+            <summary>
+            Contains the exception that occurred during download, or null if successful.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.BackgroundDownloadFile">
+            <summary>
+            Asynchronous download of HTTP data to file. 
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.BackgroundDownloadFile(WorldWind.Net.DownloadCompleteHandler)">
+            <summary>
+            Asynchronous download of HTTP data to file.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.BackgroundDownloadFile(System.String,WorldWind.Net.DownloadCompleteHandler)">
+            <summary>
+            Asynchronous download of HTTP data to file.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.BackgroundDownloadFile(WorldWind.Net.DownloadType)">
+            <summary>
+            Download image of specified type. (handles server errors for wms type)
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.BackgroundDownloadMemory">
+            <summary>
+            Asynchronous download of HTTP data to in-memory buffer. 
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.BackgroundDownloadMemory(WorldWind.Net.DownloadCompleteHandler)">
+            <summary>
+            Asynchronous download of HTTP data to in-memory buffer. 
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.BackgroundDownloadMemory(WorldWind.Net.DownloadType)">
+            <summary>
+            Download image of specified type. (handles server errors for WMS type)
+            </summary>
+            <param name="dlType">Type of download.</param>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.DownloadMemory">
+            <summary>
+            Synchronous download of HTTP data to in-memory buffer. 
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.DownloadMemory(WorldWind.Net.DownloadType)">
+            <summary>
+            Download image of specified type. (handles server errors for WMS type)
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.DownloadMemory(WorldWind.Net.DownloadProgressHandler)">
+            <summary>
+            HTTP downloads to memory.
+            </summary>
+            <param name="progressCallback">The progress callback.</param>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.DownloadFile(System.String)">
+            <summary>
+            Synchronous download of HTTP data to in-memory buffer. 
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.DownloadFile(System.String,WorldWind.Net.DownloadType)">
+            <summary>
+            Download image of specified type to a file. (handles server errors for WMS type)
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.SaveMemoryDownloadToFile(System.String)">
+            <summary>
+            Saves a http in-memory download to file.
+            </summary>
+            <param name="destinationFilePath">File to save the downloaded data to.</param>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.Cancel">
+            <summary>
+            Aborts the current download. 
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.OnProgressCallback(System.Int32,System.Int32)">
+            <summary>
+            Notify event subscribers of download progress.
+            </summary>
+            <param name="bytesRead">Number of bytes read.</param>
+            <param name="totalBytes">Total number of bytes for request or 0 if unknown.</param>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.OnDebugCallback(WorldWind.Net.WebDownload)">
+            <summary>
+            Called with detailed information about the download.
+            </summary>
+            <param name="wd">The WebDownload.</param>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.OnDownloadEnded(WorldWind.Net.WebDownload)">
+            <summary>
+            Called when downloading has ended.
+            </summary>
+            <param name="wd">The download.</param>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.BuildRequest">
+            <summary>
+            Called to Build the instance HttpWebRequest request with the proxy parameters
+            and SSL/X509 with the WW user certificate
+            </summary>
+            
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.VerifyServerCertificate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+            <summary>
+            Callback with the SSL/X509 security response
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.BuildContentStream">
+            <summary>
+            Called to Build the instance Stream ContentStream used as the buffer respository to the downloads
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.Download">
+            <summary>
+            Synchronous HTTP download
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.AsyncResponseCallback(System.IAsyncResult)">
+            <summary>
+            Async HTTP response Callback
+            IAsyncResult asyncResult (input) -> data necesary to access the webdonwload instance, because 
+            This is a static method and has not the Webdownload instance
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.AsyncReadCallback(System.IAsyncResult)">
+            <summary>
+            Async HTTP Read Callback
+            IAsyncResult asyncResult (input) -> data necesary to access the webdonwload instance, because 
+            This is a static method and has not the Webdownload instance
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.AsyncFinishPrepareRetry">
+            <summary>
+            Async HTTP Finish function used to prepare an automatic retry of the request.
+            This function is called because:
+            1) the server response was an error but server is online.
+            2) WW ask to Webdownload the same request several times and Webdownload get
+            an error because the contentstream is in use by other previous request.
+            
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.AsyncFinishDownload">
+            <summary>
+            Async HTTP Finish function 
+            The conection is finished because all is OK or any kind error is reported
+            the error is reported in SaveException();
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.TimeoutCallback(System.Object,System.Boolean)">
+            <summary>
+            Async Timeout  Callback
+            In the case of asynchronous requests, 
+            it is the responsibility of the client application to implement
+            its own time-out mechanism.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.DownloadAsync">
+            <summary>
+            Async Download base function
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.HandleErrors">
+            <summary>
+            Handle server errors that don't get trapped by the web request itself.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.Verify">
+            <summary>
+            If exceptions occurred they will be thrown by calling this function.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.SaveException(System.Exception)">
+            <summary>
+            Log download error to log file
+            </summary>
+            <param name="exception"></param>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.SetMapServerError">
+            <summary>
+            Reads the xml response from the server and throws an error with the message.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownload.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or
+            resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:WorldWind.Net.WebDownloadRequest">
+            <summary>
+            Base class for various types of download requests (protocol independent)
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownloadRequest.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.Net.WebDownloadRequest"/> class.
+            </summary>
+            <param name="owner">The object owning this request.</param>
+        </member>
+        <member name="M:WorldWind.Net.WebDownloadRequest.#ctor(System.Object,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="owner">The object owning this request.</param>
+            <param name="url">The URL to download from.</param>
+        </member>
+        <member name="P:WorldWind.Net.WebDownloadRequest.SaveFilePath">
+            <summary>
+            Destination output file from download.
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.WebDownloadRequest.Progress">
+            <summary>
+            Value (0-1) indicating how far the download has progressed.
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.WebDownloadRequest.Key">
+            <summary>
+            A unique key identifying this request
+            </summary>
+        </member>
+        <member name="P:WorldWind.Net.WebDownloadRequest.IsDownloading">
+            <summary>
+            Whether the request is currently being downloaded
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WebDownloadRequest.CalculateScore">
+            <summary>
+            Calculates the score of this request.  Used to prioritize downloads.  
+            Override in derived class to allow prioritization.
+            </summary>
+            <returns>Relative score or float.MinValue if request is no longer of interest.</returns>
+        </member>
+        <member name="M:WorldWind.Net.WebDownloadRequest.InternalDownloadComplete(WorldWind.Net.WebDownload)">
+            <summary>
+            Override to be notified when download has completed.
+            </summary>
+        </member>
+        <member name="M:WorldWind.Net.WMSDownload.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref= "T:WorldWind.Net.WMSDownload"/> class.
+            </summary>
+            <param name="url"></param>
+        </member>
+    </members>
+</doc>

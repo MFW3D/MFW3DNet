@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OgrVectorImporter</name>
+    </assembly>
+    <members>
+        <member name="F:OgrVectorImporter.NoDataForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.NoDataForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OgrVectorImporter.NoDataForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:OgrVectorImporter.TextFilterDialog.FilterString">
+            <summary>
+            Gets string for filter
+            </summary>
+        </member>
+        <member name="P:OgrVectorImporter.TextFilterDialog.FilterType">
+            <summary>
+            Gets type of filtering to perform
+            </summary>
+        </member>
+        <member name="F:OgrVectorImporter.TextFilterDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.TextFilterDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OgrVectorImporter.TextFilterDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OgrVectorImporter.OgrImporter">
+            <summary>
+            Plugin to load data from an OGR source as vectors
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.Load">
+            <summary>
+            Plugin entry point - All plugins must implement this function
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.Unload">
+            <summary>
+            Unloads our plugin
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.OgrVectorImporter_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Checks if the object being dropped is a kml or kmz file
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.OgrVectorImporter_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Handles dropping of a kml/kmz file (by loading that file)
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.DragDropIsValid(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Determines if this plugin can handle the dropped item
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.menuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Gets filename and loads it
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.GetFieldNames(OGR.Layer)">
+            <summary>
+            Fetch the field names from a layer
+            </summary>
+            <param name="ogrLayer">the layer</param>
+            <returns>Arraylist of strings</returns>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.LoadVectors">
+            <summary>
+            Loads the shp and adds it to the LM
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.getFWLoc">
+            <summary>
+            Gets fwtools dir location from user
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.LoadSaveXmlConfig(System.Boolean)">
+            <summary>
+            Restore/Save XML Configuration
+            </summary>
+            <param name="load">Specifies whether the settings are being loaded (true) or saved (false)</param>
+        </member>
+        <member name="T:OgrVectorImporter.VectorInfoSelector">
+            <summary>
+            Form to display a list of key fields from the dbf
+            </summary>
+        </member>
+        <member name="F:OgrVectorImporter.VectorInfoSelector.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.VectorInfoSelector.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OgrVectorImporter.VectorInfoSelector.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OgrVectorImporter.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:OgrVectorImporter.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:OgrVectorImporter.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:OgrVectorImporter.WaitMessage">
+            <summary>
+            Renders a message to the lower right corner (stolen from kmlimporter)
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.WaitMessage.#ctor">
+            <summary>
+            Creates a new WaitMessage
+            </summary>
+        </member>
+        <member name="P:OgrVectorImporter.WaitMessage.Text">
+            <summary>
+            Gets/sets the message to be displayed
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.WaitMessage.Render(WorldWind.DrawArgs)">
+            <summary>
+            This is where we do our rendering 
+            Called from UI thread = UI code safe in this function
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.WaitMessage.Initialize(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed) 
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.WaitMessage.Update(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.WaitMessage.Dispose">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.WaitMessage.PerformSelectionAction(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed)
+            Called from UI thread = UI code safe in this function
+            </summary>
+        </member>
+    </members>
+</doc>

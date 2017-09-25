@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CollabObj" targetNamespace="http://jhuapl.edu/Collab/CollabObj.xsd" xmlns:mstns="http://jhuapl.edu/Collab/CollabObj.xsd" xmlns="http://jhuapl.edu/Collab/CollabObj.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CollabObj" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="CollabObj" msprop:Generator_DataSetName="CollabObj">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Info" msprop:Generator_UserTableName="Info" msprop:Generator_RowDeletedName="InfoRowDeleted" msprop:Generator_RowChangedName="InfoRowChanged" msprop:Generator_RowClassName="InfoRow" msprop:Generator_RowChangingName="InfoRowChanging" msprop:Generator_RowEvArgName="InfoRowChangeEvent" msprop:Generator_RowEvHandlerName="InfoRowChangeEventHandler" msprop:Generator_TableClassName="InfoDataTable" msprop:Generator_TableVarName="tableInfo" msprop:Generator_RowDeletingName="InfoRowDeleting" msprop:Generator_TablePropName="Info">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnPropNameInRow="Type" type="xs:string" minOccurs="0" />
+              <xs:element name="Icon" msprop:Generator_UserColumnName="Icon" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnIcon" msprop:Generator_ColumnPropNameInTable="IconColumn" msprop:Generator_ColumnPropNameInRow="Icon" type="xs:string" minOccurs="0" />
+              <xs:element name="Desc" msprop:Generator_UserColumnName="Desc" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnDesc" msprop:Generator_ColumnPropNameInTable="DescColumn" msprop:Generator_ColumnPropNameInRow="Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="Affiliation" msprop:Generator_UserColumnName="Affiliation" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnAffiliation" msprop:Generator_ColumnPropNameInTable="AffiliationColumn" msprop:Generator_ColumnPropNameInRow="Affiliation" type="xs:string" minOccurs="0" />
+              <xs:element name="Dimension" msprop:Generator_UserColumnName="Dimension" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnDimension" msprop:Generator_ColumnPropNameInTable="DimensionColumn" msprop:Generator_ColumnPropNameInRow="Dimension" type="xs:string" minOccurs="0" />
+              <xs:element name="Color" msprop:Generator_UserColumnName="Color" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnColor" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_ColumnPropNameInRow="Color" type="xs:string" minOccurs="0" />
+              <xs:element name="LineWidth" msprop:Generator_UserColumnName="LineWidth" msprop:Generator_ColumnVarNameInTable="columnLineWidth" msprop:Generator_ColumnPropNameInRow="LineWidth" msprop:Generator_ColumnPropNameInTable="LineWidthColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MinAlt" msprop:Generator_UserColumnName="MinAlt" msprop:Generator_ColumnVarNameInTable="columnMinAlt" msprop:Generator_ColumnPropNameInRow="MinAlt" msprop:Generator_ColumnPropNameInTable="MinAltColumn" type="xs:double" />
+              <xs:element name="MaxAlt" msprop:Generator_UserColumnName="MaxAlt" msprop:Generator_ColumnVarNameInTable="columnMaxAlt" msprop:Generator_ColumnPropNameInRow="MaxAlt" msprop:Generator_ColumnPropNameInTable="MaxAltColumn" type="xs:double" />
+              <xs:element name="NumPoints" msprop:Generator_UserColumnName="NumPoints" msprop:Generator_ColumnVarNameInTable="columnNumPoints" msprop:Generator_ColumnPropNameInRow="NumPoints" msprop:Generator_ColumnPropNameInTable="NumPointsColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="URL" msprop:Generator_UserColumnName="URL" msprop:Generator_ColumnPropNameInRow="URL" msprop:Generator_ColumnVarNameInTable="columnURL" msprop:Generator_ColumnPropNameInTable="URLColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Points" msprop:Generator_UserTableName="Points" msprop:Generator_RowDeletedName="PointsRowDeleted" msprop:Generator_RowChangedName="PointsRowChanged" msprop:Generator_RowClassName="PointsRow" msprop:Generator_RowChangingName="PointsRowChanging" msprop:Generator_RowEvArgName="PointsRowChangeEvent" msprop:Generator_RowEvHandlerName="PointsRowChangeEventHandler" msprop:Generator_TableClassName="PointsDataTable" msprop:Generator_TableVarName="tablePoints" msprop:Generator_RowDeletingName="PointsRowDeleting" msprop:Generator_TablePropName="Points">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Lat" msprop:Generator_UserColumnName="Lat" msprop:Generator_ColumnVarNameInTable="columnLat" msprop:Generator_ColumnPropNameInRow="Lat" msprop:Generator_ColumnPropNameInTable="LatColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Lon" msprop:Generator_UserColumnName="Lon" msprop:Generator_ColumnVarNameInTable="columnLon" msprop:Generator_ColumnPropNameInRow="Lon" msprop:Generator_ColumnPropNameInTable="LonColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Alt" msprop:Generator_UserColumnName="Alt" msprop:Generator_ColumnVarNameInTable="columnAlt" msprop:Generator_ColumnPropNameInRow="Alt" msprop:Generator_ColumnPropNameInTable="AltColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Camera" msprop:Generator_UserTableName="Camera" msprop:Generator_RowDeletedName="CameraRowDeleted" msprop:Generator_TableClassName="CameraDataTable" msprop:Generator_RowChangedName="CameraRowChanged" msprop:Generator_RowClassName="CameraRow" msprop:Generator_RowChangingName="CameraRowChanging" msprop:Generator_RowEvArgName="CameraRowChangeEvent" msprop:Generator_RowEvHandlerName="CameraRowChangeEventHandler" msprop:Generator_TablePropName="Camera" msprop:Generator_TableVarName="tableCamera" msprop:Generator_RowDeletingName="CameraRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Altitude" msprop:Generator_UserColumnName="Altitude" msprop:Generator_ColumnPropNameInRow="Altitude" msprop:Generator_ColumnVarNameInTable="columnAltitude" msprop:Generator_ColumnPropNameInTable="AltitudeColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Heading" msprop:Generator_UserColumnName="Heading" msprop:Generator_ColumnPropNameInRow="Heading" msprop:Generator_ColumnVarNameInTable="columnHeading" msprop:Generator_ColumnPropNameInTable="HeadingColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Tilt" msprop:Generator_UserColumnName="Tilt" msprop:Generator_ColumnPropNameInRow="Tilt" msprop:Generator_ColumnVarNameInTable="columnTilt" msprop:Generator_ColumnPropNameInTable="TiltColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
