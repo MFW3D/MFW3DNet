@@ -4,21 +4,90 @@
         <name>WorldWind</name>
     </assembly>
     <members>
-        <member name="T:WorldWind.AboutDialog">
+        <member name="T:Mashi.Stereo.AnaglyphStereo">
             <summary>
-            World Wind Help->About
+            The plugin (main class)
             </summary>
         </member>
-        <member name="M:WorldWind.AboutDialog.#ctor(WorldWind.WorldWindow)">
+        <member name="F:Mashi.Stereo.AnaglyphStereo.LayerName">
             <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.AboutDialog"/> class.
+            Name displayed in layer manager
             </summary>
-            <param name="ww"></param>
         </member>
-        <member name="M:WorldWind.AboutDialog.InitializeComponent">
+        <member name="M:Mashi.Stereo.AnaglyphStereo.Load">
             <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
+            Plugin entry point - All plugins must implement this function
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.AnaglyphStereo.Unload">
+            <summary>
+            Unloads our plugin
+            </summary>
+        </member>
+        <member name="T:Mashi.Stereo.StereoLayer">
+            <summary>
+            Anaglyph Stereo layer
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.#ctor(System.String,WorldWind.WorldWindow)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Mashi.Stereo.StereoLayer.Opacity">
+            <summary>
+            Opacity not available
+            </summary>
+        </member>
+        <member name="P:Mashi.Stereo.StereoLayer.InterocularDistance">
+            <summary>
+            The distance separating the two eyes - percent of distance to target.
+            </summary>
+        </member>
+        <member name="P:Mashi.Stereo.StereoLayer.FocusAngle">
+            <summary>
+            The convergence angle between left and right view in degree.
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.Render(WorldWind.DrawArgs)">
+            <summary>
+            This is where we do our rendering
+            Called from UI thread = UI code safe in this function
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.RenderRightEye(WorldWind.DrawArgs,Microsoft.DirectX.Direct3D.Texture,WorldWind.Camera.CameraBase)">
+            <summary>
+            Render view from right eye
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.Initialize(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.Update(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.Dispose">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.PerformSelectionAction(WorldWind.DrawArgs)">
+            <summary>
+            Gets called when user left clicks.
+            RenderableObject abstract member (needed)
+            Called from UI thread = UI code safe in this function
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.OnDeviceLost(System.Object,System.EventArgs)">
+            <summary>
+            Direct3D device was lost or is resizing
             </summary>
         </member>
         <member name="T:WorldWind.AnimatedEarthManager">
@@ -1035,6 +1104,11 @@
             Owner drawing listview item.
             </summary>
         </member>
+        <member name="M:WorldWind.Program.Main(System.String[])">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
         <member name="T:WorldWind.Properties.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1288,211 +1362,16 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="T:WorldWind.MainApplication">
-            <summary>
-            World Wind main class
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.Main(System.String[])">
-            <summary>
-            The main entry point. Parses arguments, runs the MainApplication and saves settings
-            </summary>
-            <param name="args">The arguments to parse</param>
-        </member>
-        <member name="M:WorldWind.MainApplication.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.MainApplication"/> class.
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.#cctor">
-            <summary>
-            Static constructor (gets called before instances are created)
-            </summary>
-        </member>
-        <member name="P:WorldWind.MainApplication.WorldWindow">
-            <summary>
-            The globe window
-            </summary>
-        </member>
-        <member name="P:WorldWind.MainApplication.VerticalExaggeration">
-            <summary>
-            Sets the vertical exaggeration of the topography
-            </summary>
-        </member>
-        <member name="P:WorldWind.MainApplication.SplashScreen">
-            <summary>
-            The splash screen dialog.
-            </summary>
-        </member>
-        <member name="P:WorldWind.MainApplication.MainMenu">
-            <summary>
-            WorldWind's main menu (drop-down)
-            </summary>
-        </member>
-        <member name="P:WorldWind.MainApplication.ToolsMenu">
-            <summary>
-            WorldWind's Tools menu (drop-down)
-            </summary>
-        </member>
-        <member name="P:WorldWind.MainApplication.ViewMenu">
-            <summary>
-            WorldWind's View menu (drop-down)
-            </summary>
-        </member>
-        <member name="P:WorldWind.MainApplication.PluginsMenu">
-            <summary>
-            WorldWind's Plugins menu (drop-down)
-            </summary>
-        </member>
-        <member name="P:WorldWind.MainApplication.CmdArgs">
-            <summary>
-            Gets command-line arguments for plugins
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.Abort(System.String)">
-            <summary>
-            Display an error message to the user, then shut down world wind.
-            </summary>
-            <param name="errorMessages">The message (reason for shutdown) to display to the user.</param>
-        </member>
-        <member name="M:WorldWind.MainApplication.BrowseTo(System.String)">
-            <summary>
-            Try to open url in web browser
-            Changed the function from static to non-static.
-            </summary>
-            <param name="url">The url to open in browser</param>
-        </member>
-        <member name="M:WorldWind.MainApplication.LoadAddon(System.String)">
-            <summary>
-            Loads a layer from an xml file and turns the layer on
-            </summary>
-            <param name="fileName"></param>
-        </member>
         <member name="M:WorldWind.MainApplication.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:WorldWind.MainApplication.InitializePluginCompiler">
+        <member name="P:WorldWind.MainApplication.VerticalExaggeration">
             <summary>
-            Compile and run plug-in "scripts"
+            设置地形
             </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.menuItemWalkthrough_Click(System.Object,System.EventArgs)">
-            <summary>
-            Called when the user clicks Help -> Walkthrough, shows the WW Walkthrough to the user
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.menuItemLoadFile_Click(System.Object,System.EventArgs)">
-            <summary>
-            Shows file loading dialog
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.menuItemOptions_Click(System.Object,System.EventArgs)">
-            <summary>
-            Display Options dialog
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.menuItemConfigWizard_Click(System.Object,System.EventArgs)">
-            <summary>
-            Display Configuration Wizard
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.menuItemEditPaste_Click(System.Object,System.EventArgs)">
-            <summary>
-            Pastes the contents of the clipboard into the app
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.menuItemPluginManager_Click(System.Object,System.EventArgs)">
-            <summary>
-            Display the plugin manager.
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.menuItemBrowserOrientation_Click(System.Object,System.EventArgs)">
-            <summary>
-            Browser visibility and orientation methods
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:WorldWind.MainApplication.webBrowserVisible_Click(System.Object,System.EventArgs)">
-            <summary>
-            Sets visibility status of internal browser.
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.GetWWHandle">
-            <summary>
-            Returns the handle to currently running World Wind's window.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:WorldWind.MainApplication.WndProc(System.Windows.Forms.Message@)">
-            <summary>
-            All messages are sent to the WndProc method after getting filtered through 
-            the PreProcessMessage method.  The WndProc method corresponds exactly to 
-            the Windows WindowProc function.
-            </summary>
-            <param name="m">The Windows Message to process.</param>
-        </member>
-        <member name="M:WorldWind.MainApplication.QuickInstall(System.String)">
-            <summary>
-            Installs a file, copying to WW directory and loading
-            </summary>
-            <param name="path"></param>
-        </member>
-        <member name="M:WorldWind.MainApplication.LoadSettings">
-            <summary>
-            Deserializes and optionally decrypts settings
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.LoadSettings(System.String)">
-            <summary>
-            Deserializes and optionally decrypts settings, using specified location
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.ParseArgs(System.String[])">
-            <summary>
-            Parses command line arguments (starting with a '/' or a WorldWindUri)
-            </summary>
-            <param name="args">The command line arguments to parse</param>
-        </member>
-        <member name="M:WorldWind.MainApplication.UpdateToolBarStates">
-            <summary>
-            Updates function toolbar button pushed states
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.updateMenuItems">
-            <summary>
-            Updates MenuItem checkbox states
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.OpenStartupWorld">
-            <summary>
-            Loads world specified otherwise default 
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.OpenWorld(System.String)">
-            <summary>
-            Loads a new planet
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.GetLayerFontDescription(LayerSet.Type_DisplayFont2)">
-            <summary>
-            Builds a DirectX FontDescription object from a layer set font description.
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.Application_ThreadException(System.Object,System.Threading.ThreadExceptionEventArgs)">
-            <summary>
-            Occurs when an un-trapped thread exception is thrown, typically in UI event handlers.
-            </summary>
-        </member>
-        <member name="M:WorldWind.MainApplication.HandleKeyUp(System.Windows.Forms.KeyEventArgs)">
-            <summary>
-            Handles key up events.
-            </summary>
-            <param name="e"></param>
-            <returns>Returns true if the key is handled.</returns>
         </member>
         <member name="T:WorldWind.WplIndexEntry">
             <summary>
@@ -1852,92 +1731,6 @@
             Fills the list with all the places in a PlaceListSettings class (used to serialize places)
             </summary>
             <param name="pls">The PlaceListSettings class that contains all the places</param>
-        </member>
-        <member name="T:Mashi.Stereo.AnaglyphStereo">
-            <summary>
-            The plugin (main class)
-            </summary>
-        </member>
-        <member name="F:Mashi.Stereo.AnaglyphStereo.LayerName">
-            <summary>
-            Name displayed in layer manager
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.AnaglyphStereo.Load">
-            <summary>
-            Plugin entry point - All plugins must implement this function
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.AnaglyphStereo.Unload">
-            <summary>
-            Unloads our plugin
-            </summary>
-        </member>
-        <member name="T:Mashi.Stereo.StereoLayer">
-            <summary>
-            Anaglyph Stereo layer
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.StereoLayer.#ctor(System.String,WorldWind.WorldWindow)">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="P:Mashi.Stereo.StereoLayer.Opacity">
-            <summary>
-            Opacity not available
-            </summary>
-        </member>
-        <member name="P:Mashi.Stereo.StereoLayer.InterocularDistance">
-            <summary>
-            The distance separating the two eyes - percent of distance to target.
-            </summary>
-        </member>
-        <member name="P:Mashi.Stereo.StereoLayer.FocusAngle">
-            <summary>
-            The convergence angle between left and right view in degree.
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.StereoLayer.Render(WorldWind.DrawArgs)">
-            <summary>
-            This is where we do our rendering
-            Called from UI thread = UI code safe in this function
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.StereoLayer.RenderRightEye(WorldWind.DrawArgs,Microsoft.DirectX.Direct3D.Texture,WorldWind.Camera.CameraBase)">
-            <summary>
-            Render view from right eye
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.StereoLayer.Initialize(WorldWind.DrawArgs)">
-            <summary>
-            RenderableObject abstract member (needed)
-            OBS: Worker thread (don't update UI directly from this thread)
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.StereoLayer.Update(WorldWind.DrawArgs)">
-            <summary>
-            RenderableObject abstract member (needed)
-            OBS: Worker thread (don't update UI directly from this thread)
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.StereoLayer.Dispose">
-            <summary>
-            RenderableObject abstract member (needed)
-            OBS: Worker thread (don't update UI directly from this thread)
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.StereoLayer.PerformSelectionAction(WorldWind.DrawArgs)">
-            <summary>
-            Gets called when user left clicks.
-            RenderableObject abstract member (needed)
-            Called from UI thread = UI code safe in this function
-            </summary>
-        </member>
-        <member name="M:Mashi.Stereo.StereoLayer.OnDeviceLost(System.Object,System.EventArgs)">
-            <summary>
-            Direct3D device was lost or is resizing
-            </summary>
         </member>
         <member name="T:Atmosphere.Plugin.Atmosphere">
             <summary>

@@ -248,9 +248,9 @@ namespace WorldWind
             this.richTextBoxStyleDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.richTextBoxStyleDescription.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.richTextBoxStyleDescription.ForeColor = System.Drawing.Color.White;
-            this.richTextBoxStyleDescription.Location = new System.Drawing.Point(0, 146);
+            this.richTextBoxStyleDescription.Location = new System.Drawing.Point(0, 148);
             this.richTextBoxStyleDescription.Name = "richTextBoxStyleDescription";
-            this.richTextBoxStyleDescription.Size = new System.Drawing.Size(496, 56);
+            this.richTextBoxStyleDescription.Size = new System.Drawing.Size(589, 61);
             this.richTextBoxStyleDescription.TabIndex = 1;
             this.richTextBoxStyleDescription.Text = "";
             // 
@@ -263,18 +263,18 @@ namespace WorldWind
             this.treeViewTableOfContents.HideSelection = false;
             this.treeViewTableOfContents.Location = new System.Drawing.Point(0, 0);
             this.treeViewTableOfContents.Name = "treeViewTableOfContents";
-            this.treeViewTableOfContents.Size = new System.Drawing.Size(496, 146);
+            this.treeViewTableOfContents.Size = new System.Drawing.Size(589, 148);
             this.treeViewTableOfContents.TabIndex = 0;
-            this.treeViewTableOfContents.DoubleClick += new System.EventHandler(this.treeViewTableOfContents_DoubleClick);
             this.treeViewTableOfContents.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewTableOfContents_AfterSelect);
+            this.treeViewTableOfContents.DoubleClick += new System.EventHandler(this.treeViewTableOfContents_DoubleClick);
             // 
             // progressBarStatus
             // 
             this.progressBarStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.progressBarStatus.Dock = System.Windows.Forms.DockStyle.Right;
-            this.progressBarStatus.Location = new System.Drawing.Point(360, 0);
+            this.progressBarStatus.Location = new System.Drawing.Point(426, 0);
             this.progressBarStatus.Name = "progressBarStatus";
-            this.progressBarStatus.Size = new System.Drawing.Size(136, 30);
+            this.progressBarStatus.Size = new System.Drawing.Size(163, 32);
             this.progressBarStatus.Step = 1;
             this.progressBarStatus.TabIndex = 1;
             // 
@@ -284,9 +284,9 @@ namespace WorldWind
             this.buttonLegend.Enabled = false;
             this.buttonLegend.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLegend.Image = ((System.Drawing.Image)(resources.GetObject("buttonLegend.Image")));
-            this.buttonLegend.Location = new System.Drawing.Point(78, 65);
+            this.buttonLegend.Location = new System.Drawing.Point(94, 70);
             this.buttonLegend.Name = "buttonLegend";
-            this.buttonLegend.Size = new System.Drawing.Size(48, 23);
+            this.buttonLegend.Size = new System.Drawing.Size(57, 25);
             this.buttonLegend.TabIndex = 7;
             this.buttonLegend.UseVisualStyleBackColor = false;
             this.buttonLegend.Click += new System.EventHandler(this.buttonLegend_Click);
@@ -294,9 +294,9 @@ namespace WorldWind
             // comboBoxTime
             // 
             this.comboBoxTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTime.Location = new System.Drawing.Point(27, 35);
+            this.comboBoxTime.Location = new System.Drawing.Point(32, 38);
             this.comboBoxTime.Name = "comboBoxTime";
-            this.comboBoxTime.Size = new System.Drawing.Size(149, 21);
+            this.comboBoxTime.Size = new System.Drawing.Size(179, 20);
             this.comboBoxTime.TabIndex = 1;
             this.comboBoxTime.SelectedIndexChanged += new System.EventHandler(this.comboBoxTime_SelectedIndexChanged);
             // 
@@ -308,15 +308,15 @@ namespace WorldWind
             this.panelContents.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContents.Location = new System.Drawing.Point(0, 0);
             this.panelContents.Name = "panelContents";
-            this.panelContents.Size = new System.Drawing.Size(496, 202);
+            this.panelContents.Size = new System.Drawing.Size(589, 209);
             this.panelContents.TabIndex = 4;
             // 
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitter1.Location = new System.Drawing.Point(0, 143);
+            this.splitter1.Location = new System.Drawing.Point(0, 145);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(496, 3);
+            this.splitter1.Size = new System.Drawing.Size(589, 3);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
@@ -330,34 +330,34 @@ namespace WorldWind
             this.groupBoxLayerOptions.Controls.Add(this.labelHeight);
             this.groupBoxLayerOptions.Controls.Add(this.labelTransparency);
             this.groupBoxLayerOptions.Controls.Add(this.buttonLegend);
-            this.groupBoxLayerOptions.Location = new System.Drawing.Point(272, 120);
+            this.groupBoxLayerOptions.Location = new System.Drawing.Point(326, 129);
             this.groupBoxLayerOptions.Name = "groupBoxLayerOptions";
-            this.groupBoxLayerOptions.Size = new System.Drawing.Size(216, 96);
+            this.groupBoxLayerOptions.Size = new System.Drawing.Size(260, 104);
             this.groupBoxLayerOptions.TabIndex = 2;
             this.groupBoxLayerOptions.TabStop = false;
             this.groupBoxLayerOptions.Text = "Options";
             // 
             // labelPercent
             // 
-            this.labelPercent.Location = new System.Drawing.Point(126, 21);
+            this.labelPercent.Location = new System.Drawing.Point(151, 23);
             this.labelPercent.Name = "labelPercent";
-            this.labelPercent.Size = new System.Drawing.Size(24, 16);
+            this.labelPercent.Size = new System.Drawing.Size(29, 17);
             this.labelPercent.TabIndex = 2;
             this.labelPercent.Text = "%";
             // 
             // labelKM
             // 
-            this.labelKM.Location = new System.Drawing.Point(150, 43);
+            this.labelKM.Location = new System.Drawing.Point(180, 46);
             this.labelKM.Name = "labelKM";
-            this.labelKM.Size = new System.Drawing.Size(24, 16);
+            this.labelKM.Size = new System.Drawing.Size(29, 18);
             this.labelKM.TabIndex = 5;
             this.labelKM.Text = "m";
             // 
             // labelLegend
             // 
-            this.labelLegend.Location = new System.Drawing.Point(30, 70);
+            this.labelLegend.Location = new System.Drawing.Point(36, 75);
             this.labelLegend.Name = "labelLegend";
-            this.labelLegend.Size = new System.Drawing.Size(48, 16);
+            this.labelLegend.Size = new System.Drawing.Size(58, 18);
             this.labelLegend.TabIndex = 6;
             this.labelLegend.Text = "&Legend:";
             // 
@@ -369,14 +369,14 @@ namespace WorldWind
             0,
             0,
             0});
-            this.numericUpDownHeight.Location = new System.Drawing.Point(78, 41);
+            this.numericUpDownHeight.Location = new System.Drawing.Point(94, 44);
             this.numericUpDownHeight.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numericUpDownHeight.Name = "numericUpDownHeight";
-            this.numericUpDownHeight.Size = new System.Drawing.Size(72, 20);
+            this.numericUpDownHeight.Size = new System.Drawing.Size(86, 21);
             this.numericUpDownHeight.TabIndex = 4;
             this.numericUpDownHeight.Value = new decimal(new int[] {
             10,
@@ -393,9 +393,9 @@ namespace WorldWind
             0,
             0,
             0});
-            this.numericUpDownTransparency.Location = new System.Drawing.Point(78, 17);
+            this.numericUpDownTransparency.Location = new System.Drawing.Point(94, 18);
             this.numericUpDownTransparency.Name = "numericUpDownTransparency";
-            this.numericUpDownTransparency.Size = new System.Drawing.Size(48, 20);
+            this.numericUpDownTransparency.Size = new System.Drawing.Size(57, 21);
             this.numericUpDownTransparency.TabIndex = 1;
             this.numericUpDownTransparency.Value = new decimal(new int[] {
             100,
@@ -406,34 +406,34 @@ namespace WorldWind
             // 
             // labelHeight
             // 
-            this.labelHeight.Location = new System.Drawing.Point(30, 43);
+            this.labelHeight.Location = new System.Drawing.Point(36, 46);
             this.labelHeight.Name = "labelHeight";
-            this.labelHeight.Size = new System.Drawing.Size(44, 16);
+            this.labelHeight.Size = new System.Drawing.Size(53, 18);
             this.labelHeight.TabIndex = 3;
             this.labelHeight.Text = "&Height:";
             // 
             // labelTransparency
             // 
-            this.labelTransparency.Location = new System.Drawing.Point(30, 18);
+            this.labelTransparency.Location = new System.Drawing.Point(36, 19);
             this.labelTransparency.Name = "labelTransparency";
-            this.labelTransparency.Size = new System.Drawing.Size(48, 16);
+            this.labelTransparency.Size = new System.Drawing.Size(58, 18);
             this.labelTransparency.TabIndex = 0;
             this.labelTransparency.Text = "&Opacity:";
             // 
             // buttonStillImage
             // 
-            this.buttonStillImage.Location = new System.Drawing.Point(30, 105);
+            this.buttonStillImage.Location = new System.Drawing.Point(36, 113);
             this.buttonStillImage.Name = "buttonStillImage";
-            this.buttonStillImage.Size = new System.Drawing.Size(88, 40);
+            this.buttonStillImage.Size = new System.Drawing.Size(106, 43);
             this.buttonStillImage.TabIndex = 3;
             this.buttonStillImage.Text = "&Still Image";
             this.buttonStillImage.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // buttonResetExtents
             // 
-            this.buttonResetExtents.Location = new System.Drawing.Point(117, 72);
+            this.buttonResetExtents.Location = new System.Drawing.Point(140, 78);
             this.buttonResetExtents.Name = "buttonResetExtents";
-            this.buttonResetExtents.Size = new System.Drawing.Size(60, 23);
+            this.buttonResetExtents.Size = new System.Drawing.Size(72, 24);
             this.buttonResetExtents.TabIndex = 9;
             this.buttonResetExtents.Text = "&Reset";
             this.buttonResetExtents.Click += new System.EventHandler(this.buttonResetExtents_Click);
@@ -443,9 +443,9 @@ namespace WorldWind
             this.progressBarAnimation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.progressBarAnimation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.progressBarAnimation.Enabled = false;
-            this.progressBarAnimation.Location = new System.Drawing.Point(8, 160);
+            this.progressBarAnimation.Location = new System.Drawing.Point(10, 172);
             this.progressBarAnimation.Name = "progressBarAnimation";
-            this.progressBarAnimation.Size = new System.Drawing.Size(232, 16);
+            this.progressBarAnimation.Size = new System.Drawing.Size(278, 18);
             this.progressBarAnimation.TabIndex = 6;
             this.progressBarAnimation.Click += new System.EventHandler(this.progressBarAnimation_Click);
             this.progressBarAnimation.MouseMove += new System.Windows.Forms.MouseEventHandler(this.progressBarAnimation_MouseMove);
@@ -455,11 +455,11 @@ namespace WorldWind
             this.trackBarSpeed.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trackBarSpeed.Enabled = false;
             this.trackBarSpeed.LargeChange = 10;
-            this.trackBarSpeed.Location = new System.Drawing.Point(200, 24);
+            this.trackBarSpeed.Location = new System.Drawing.Point(240, 26);
             this.trackBarSpeed.Maximum = 100;
             this.trackBarSpeed.Name = "trackBarSpeed";
             this.trackBarSpeed.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarSpeed.Size = new System.Drawing.Size(42, 96);
+            this.trackBarSpeed.Size = new System.Drawing.Size(45, 103);
             this.trackBarSpeed.TabIndex = 1;
             this.trackBarSpeed.TickFrequency = 10;
             this.trackBarSpeed.TickStyle = System.Windows.Forms.TickStyle.Both;
@@ -473,9 +473,9 @@ namespace WorldWind
             this.buttonPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonPlay.ImageIndex = 4;
             this.buttonPlay.ImageList = this.imageList1;
-            this.buttonPlay.Location = new System.Drawing.Point(48, 120);
+            this.buttonPlay.Location = new System.Drawing.Point(58, 129);
             this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(35, 35);
+            this.buttonPlay.Size = new System.Drawing.Size(42, 38);
             this.buttonPlay.TabIndex = 3;
             this.buttonPlay.UseVisualStyleBackColor = false;
             this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
@@ -499,7 +499,7 @@ namespace WorldWind
             this.statusBarLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.statusBarLabel.Location = new System.Drawing.Point(0, 0);
             this.statusBarLabel.Name = "statusBarLabel";
-            this.statusBarLabel.Size = new System.Drawing.Size(496, 30);
+            this.statusBarLabel.Size = new System.Drawing.Size(589, 32);
             this.statusBarLabel.TabIndex = 0;
             this.statusBarLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
@@ -508,15 +508,15 @@ namespace WorldWind
             this.panelStatus.Controls.Add(this.progressBarStatus);
             this.panelStatus.Controls.Add(this.statusBarLabel);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelStatus.Location = new System.Drawing.Point(0, 426);
+            this.panelStatus.Location = new System.Drawing.Point(0, 450);
             this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Size = new System.Drawing.Size(496, 30);
+            this.panelStatus.Size = new System.Drawing.Size(589, 32);
             this.panelStatus.TabIndex = 8;
             // 
             // numericUpDownNorth
             // 
             this.numericUpDownNorth.DecimalPlaces = 2;
-            this.numericUpDownNorth.Location = new System.Drawing.Point(48, 20);
+            this.numericUpDownNorth.Location = new System.Drawing.Point(58, 22);
             this.numericUpDownNorth.Maximum = new decimal(new int[] {
             90,
             0,
@@ -528,7 +528,7 @@ namespace WorldWind
             0,
             -2147483648});
             this.numericUpDownNorth.Name = "numericUpDownNorth";
-            this.numericUpDownNorth.Size = new System.Drawing.Size(56, 20);
+            this.numericUpDownNorth.Size = new System.Drawing.Size(67, 21);
             this.numericUpDownNorth.TabIndex = 1;
             this.numericUpDownNorth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDownNorth.Value = new decimal(new int[] {
@@ -540,7 +540,7 @@ namespace WorldWind
             // numericUpDownEast
             // 
             this.numericUpDownEast.DecimalPlaces = 2;
-            this.numericUpDownEast.Location = new System.Drawing.Point(146, 44);
+            this.numericUpDownEast.Location = new System.Drawing.Point(175, 47);
             this.numericUpDownEast.Maximum = new decimal(new int[] {
             180,
             0,
@@ -552,7 +552,7 @@ namespace WorldWind
             0,
             -2147483648});
             this.numericUpDownEast.Name = "numericUpDownEast";
-            this.numericUpDownEast.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownEast.Size = new System.Drawing.Size(77, 21);
             this.numericUpDownEast.TabIndex = 7;
             this.numericUpDownEast.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDownEast.Value = new decimal(new int[] {
@@ -564,7 +564,7 @@ namespace WorldWind
             // numericUpDownWest
             // 
             this.numericUpDownWest.DecimalPlaces = 2;
-            this.numericUpDownWest.Location = new System.Drawing.Point(146, 20);
+            this.numericUpDownWest.Location = new System.Drawing.Point(175, 22);
             this.numericUpDownWest.Maximum = new decimal(new int[] {
             180,
             0,
@@ -576,7 +576,7 @@ namespace WorldWind
             0,
             -2147483648});
             this.numericUpDownWest.Name = "numericUpDownWest";
-            this.numericUpDownWest.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownWest.Size = new System.Drawing.Size(77, 21);
             this.numericUpDownWest.TabIndex = 3;
             this.numericUpDownWest.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDownWest.Value = new decimal(new int[] {
@@ -588,7 +588,7 @@ namespace WorldWind
             // numericUpDownSouth
             // 
             this.numericUpDownSouth.DecimalPlaces = 2;
-            this.numericUpDownSouth.Location = new System.Drawing.Point(48, 44);
+            this.numericUpDownSouth.Location = new System.Drawing.Point(58, 47);
             this.numericUpDownSouth.Maximum = new decimal(new int[] {
             90,
             0,
@@ -600,7 +600,7 @@ namespace WorldWind
             0,
             -2147483648});
             this.numericUpDownSouth.Name = "numericUpDownSouth";
-            this.numericUpDownSouth.Size = new System.Drawing.Size(56, 20);
+            this.numericUpDownSouth.Size = new System.Drawing.Size(67, 21);
             this.numericUpDownSouth.TabIndex = 5;
             this.numericUpDownSouth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDownSouth.Value = new decimal(new int[] {
@@ -622,54 +622,54 @@ namespace WorldWind
             this.groupBoxExtents.Controls.Add(this.buttonCurrentExtents);
             this.groupBoxExtents.Controls.Add(this.buttonResetExtents);
             this.groupBoxExtents.Enabled = false;
-            this.groupBoxExtents.Location = new System.Drawing.Point(272, 8);
+            this.groupBoxExtents.Location = new System.Drawing.Point(326, 9);
             this.groupBoxExtents.Name = "groupBoxExtents";
-            this.groupBoxExtents.Size = new System.Drawing.Size(216, 104);
+            this.groupBoxExtents.Size = new System.Drawing.Size(260, 112);
             this.groupBoxExtents.TabIndex = 1;
             this.groupBoxExtents.TabStop = false;
             this.groupBoxExtents.Text = "Lat/Lon Bounds";
             // 
             // labelEast
             // 
-            this.labelEast.Location = new System.Drawing.Point(106, 41);
+            this.labelEast.Location = new System.Drawing.Point(127, 44);
             this.labelEast.Name = "labelEast";
-            this.labelEast.Size = new System.Drawing.Size(40, 23);
+            this.labelEast.Size = new System.Drawing.Size(48, 25);
             this.labelEast.TabIndex = 6;
             this.labelEast.Text = "&East:";
             this.labelEast.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelWest
             // 
-            this.labelWest.Location = new System.Drawing.Point(106, 17);
+            this.labelWest.Location = new System.Drawing.Point(127, 18);
             this.labelWest.Name = "labelWest";
-            this.labelWest.Size = new System.Drawing.Size(40, 23);
+            this.labelWest.Size = new System.Drawing.Size(48, 25);
             this.labelWest.TabIndex = 2;
             this.labelWest.Text = "&West:";
             this.labelWest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelSouth
             // 
-            this.labelSouth.Location = new System.Drawing.Point(8, 41);
+            this.labelSouth.Location = new System.Drawing.Point(10, 44);
             this.labelSouth.Name = "labelSouth";
-            this.labelSouth.Size = new System.Drawing.Size(40, 23);
+            this.labelSouth.Size = new System.Drawing.Size(48, 25);
             this.labelSouth.TabIndex = 4;
             this.labelSouth.Text = "So&uth:";
             this.labelSouth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelNorth
             // 
-            this.labelNorth.Location = new System.Drawing.Point(8, 17);
+            this.labelNorth.Location = new System.Drawing.Point(10, 18);
             this.labelNorth.Name = "labelNorth";
-            this.labelNorth.Size = new System.Drawing.Size(40, 23);
+            this.labelNorth.Size = new System.Drawing.Size(48, 25);
             this.labelNorth.TabIndex = 0;
             this.labelNorth.Text = "&North:";
             this.labelNorth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonCurrentExtents
             // 
-            this.buttonCurrentExtents.Location = new System.Drawing.Point(48, 72);
+            this.buttonCurrentExtents.Location = new System.Drawing.Point(58, 78);
             this.buttonCurrentExtents.Name = "buttonCurrentExtents";
-            this.buttonCurrentExtents.Size = new System.Drawing.Size(60, 23);
+            this.buttonCurrentExtents.Size = new System.Drawing.Size(72, 24);
             this.buttonCurrentExtents.TabIndex = 8;
             this.buttonCurrentExtents.Text = "&Auto";
             this.buttonCurrentExtents.Click += new System.EventHandler(this.buttonCurrentExtents_Click);
@@ -677,27 +677,27 @@ namespace WorldWind
             // comboBoxAnimationStartTime
             // 
             this.comboBoxAnimationStartTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAnimationStartTime.Location = new System.Drawing.Point(16, 16);
+            this.comboBoxAnimationStartTime.Location = new System.Drawing.Point(19, 17);
             this.comboBoxAnimationStartTime.Name = "comboBoxAnimationStartTime";
-            this.comboBoxAnimationStartTime.Size = new System.Drawing.Size(160, 21);
+            this.comboBoxAnimationStartTime.Size = new System.Drawing.Size(192, 20);
             this.comboBoxAnimationStartTime.TabIndex = 0;
             // 
             // comboBoxAnimationEndTime
             // 
             this.comboBoxAnimationEndTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAnimationEndTime.Location = new System.Drawing.Point(16, 40);
+            this.comboBoxAnimationEndTime.Location = new System.Drawing.Point(19, 43);
             this.comboBoxAnimationEndTime.Name = "comboBoxAnimationEndTime";
-            this.comboBoxAnimationEndTime.Size = new System.Drawing.Size(160, 21);
+            this.comboBoxAnimationEndTime.Size = new System.Drawing.Size(192, 20);
             this.comboBoxAnimationEndTime.TabIndex = 1;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPageSingleImage);
             this.tabControl1.Controls.Add(this.tabPageAnimation);
-            this.tabControl1.Location = new System.Drawing.Point(8, 8);
+            this.tabControl1.Location = new System.Drawing.Point(10, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(256, 208);
+            this.tabControl1.Size = new System.Drawing.Size(307, 224);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -711,23 +711,23 @@ namespace WorldWind
             this.tabPageSingleImage.Controls.Add(this.buttonStillImage);
             this.tabPageSingleImage.Location = new System.Drawing.Point(4, 22);
             this.tabPageSingleImage.Name = "tabPageSingleImage";
-            this.tabPageSingleImage.Size = new System.Drawing.Size(248, 182);
+            this.tabPageSingleImage.Size = new System.Drawing.Size(299, 198);
             this.tabPageSingleImage.TabIndex = 0;
             this.tabPageSingleImage.Text = "Single Image";
             // 
             // labelTime
             // 
-            this.labelTime.Location = new System.Drawing.Point(25, 18);
+            this.labelTime.Location = new System.Drawing.Point(30, 19);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(48, 16);
+            this.labelTime.Size = new System.Drawing.Size(58, 18);
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "&Time:";
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(134, 105);
+            this.buttonClear.Location = new System.Drawing.Point(161, 113);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(88, 40);
+            this.buttonClear.Size = new System.Drawing.Size(105, 43);
             this.buttonClear.TabIndex = 4;
             this.buttonClear.Text = "&Clear";
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
@@ -735,9 +735,9 @@ namespace WorldWind
             // checkBoxLoadCache
             // 
             this.checkBoxLoadCache.Enabled = false;
-            this.checkBoxLoadCache.Location = new System.Drawing.Point(34, 59);
+            this.checkBoxLoadCache.Location = new System.Drawing.Point(41, 64);
             this.checkBoxLoadCache.Name = "checkBoxLoadCache";
-            this.checkBoxLoadCache.Size = new System.Drawing.Size(128, 24);
+            this.checkBoxLoadCache.Size = new System.Drawing.Size(153, 25);
             this.checkBoxLoadCache.TabIndex = 2;
             this.checkBoxLoadCache.Text = "Load Cached Image";
             this.checkBoxLoadCache.CheckedChanged += new System.EventHandler(this.checkBoxLoadCache_CheckedChanged);
@@ -756,15 +756,15 @@ namespace WorldWind
             this.tabPageAnimation.Controls.Add(this.trackBarSpeed);
             this.tabPageAnimation.Location = new System.Drawing.Point(4, 22);
             this.tabPageAnimation.Name = "tabPageAnimation";
-            this.tabPageAnimation.Size = new System.Drawing.Size(248, 182);
+            this.tabPageAnimation.Size = new System.Drawing.Size(299, 198);
             this.tabPageAnimation.TabIndex = 1;
             this.tabPageAnimation.Text = "Animation";
             // 
             // labelSpeed
             // 
-            this.labelSpeed.Location = new System.Drawing.Point(200, 8);
+            this.labelSpeed.Location = new System.Drawing.Point(240, 9);
             this.labelSpeed.Name = "labelSpeed";
-            this.labelSpeed.Size = new System.Drawing.Size(40, 16);
+            this.labelSpeed.Size = new System.Drawing.Size(48, 17);
             this.labelSpeed.TabIndex = 7;
             this.labelSpeed.Text = "Speed";
             // 
@@ -773,9 +773,9 @@ namespace WorldWind
             this.groupBoxAnimationTimeFrame.Controls.Add(this.comboBoxAnimationStartTime);
             this.groupBoxAnimationTimeFrame.Controls.Add(this.comboBoxAnimationEndTime);
             this.groupBoxAnimationTimeFrame.Controls.Add(this.checkBoxAnimationCache);
-            this.groupBoxAnimationTimeFrame.Location = new System.Drawing.Point(8, 8);
+            this.groupBoxAnimationTimeFrame.Location = new System.Drawing.Point(10, 9);
             this.groupBoxAnimationTimeFrame.Name = "groupBoxAnimationTimeFrame";
-            this.groupBoxAnimationTimeFrame.Size = new System.Drawing.Size(184, 96);
+            this.groupBoxAnimationTimeFrame.Size = new System.Drawing.Size(220, 103);
             this.groupBoxAnimationTimeFrame.TabIndex = 0;
             this.groupBoxAnimationTimeFrame.TabStop = false;
             this.groupBoxAnimationTimeFrame.Text = "Time Frame";
@@ -785,9 +785,9 @@ namespace WorldWind
             this.checkBoxAnimationCache.Checked = true;
             this.checkBoxAnimationCache.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxAnimationCache.Enabled = false;
-            this.checkBoxAnimationCache.Location = new System.Drawing.Point(16, 64);
+            this.checkBoxAnimationCache.Location = new System.Drawing.Point(19, 69);
             this.checkBoxAnimationCache.Name = "checkBoxAnimationCache";
-            this.checkBoxAnimationCache.Size = new System.Drawing.Size(96, 24);
+            this.checkBoxAnimationCache.Size = new System.Drawing.Size(115, 26);
             this.checkBoxAnimationCache.TabIndex = 2;
             this.checkBoxAnimationCache.Text = "Use Cache";
             // 
@@ -798,9 +798,9 @@ namespace WorldWind
             this.buttonStop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonStop.ImageIndex = 7;
             this.buttonStop.ImageList = this.imageList1;
-            this.buttonStop.Location = new System.Drawing.Point(8, 120);
+            this.buttonStop.Location = new System.Drawing.Point(10, 129);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(35, 35);
+            this.buttonStop.Size = new System.Drawing.Size(42, 38);
             this.buttonStop.TabIndex = 2;
             this.buttonStop.UseVisualStyleBackColor = false;
             this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
@@ -812,9 +812,9 @@ namespace WorldWind
             this.buttonStepBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonStepBack.ImageIndex = 0;
             this.buttonStepBack.ImageList = this.imageList2;
-            this.buttonStepBack.Location = new System.Drawing.Point(88, 129);
+            this.buttonStepBack.Location = new System.Drawing.Point(106, 139);
             this.buttonStepBack.Name = "buttonStepBack";
-            this.buttonStepBack.Size = new System.Drawing.Size(26, 26);
+            this.buttonStepBack.Size = new System.Drawing.Size(31, 28);
             this.buttonStepBack.TabIndex = 4;
             this.buttonStepBack.UseVisualStyleBackColor = false;
             this.buttonStepBack.Click += new System.EventHandler(this.buttonStepBack_Click);
@@ -833,9 +833,9 @@ namespace WorldWind
             this.buttonStepForward.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonStepForward.ImageIndex = 1;
             this.buttonStepForward.ImageList = this.imageList2;
-            this.buttonStepForward.Location = new System.Drawing.Point(116, 129);
+            this.buttonStepForward.Location = new System.Drawing.Point(139, 139);
             this.buttonStepForward.Name = "buttonStepForward";
-            this.buttonStepForward.Size = new System.Drawing.Size(26, 26);
+            this.buttonStepForward.Size = new System.Drawing.Size(31, 28);
             this.buttonStepForward.TabIndex = 5;
             this.buttonStepForward.UseVisualStyleBackColor = false;
             this.buttonStepForward.Click += new System.EventHandler(this.buttonStepForward_Click);
@@ -843,9 +843,9 @@ namespace WorldWind
             // labelFps
             // 
             this.labelFps.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelFps.Location = new System.Drawing.Point(192, 120);
+            this.labelFps.Location = new System.Drawing.Point(230, 129);
             this.labelFps.Name = "labelFps";
-            this.labelFps.Size = new System.Drawing.Size(54, 32);
+            this.labelFps.Size = new System.Drawing.Size(65, 35);
             this.labelFps.TabIndex = 1;
             this.labelFps.Text = "-";
             this.labelFps.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -856,22 +856,22 @@ namespace WorldWind
             this.panelLower.Controls.Add(this.groupBoxLayerOptions);
             this.panelLower.Controls.Add(this.groupBoxExtents);
             this.panelLower.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelLower.Location = new System.Drawing.Point(0, 202);
+            this.panelLower.Location = new System.Drawing.Point(0, 209);
             this.panelLower.Name = "panelLower";
-            this.panelLower.Size = new System.Drawing.Size(496, 224);
+            this.panelLower.Size = new System.Drawing.Size(589, 241);
             this.panelLower.TabIndex = 0;
             // 
             // WMSBrowser
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.ClientSize = new System.Drawing.Size(496, 456);
+            this.ClientSize = new System.Drawing.Size(589, 482);
             this.Controls.Add(this.panelContents);
             this.Controls.Add(this.panelLower);
             this.Controls.Add(this.panelStatus);
             this.ForeColor = System.Drawing.Color.White;
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(504, 483);
+            this.MinimumSize = new System.Drawing.Size(605, 520);
             this.Name = "WMSBrowser";
             this.Text = "Web Mapping Server Browser";
             this.VisibleChanged += new System.EventHandler(this.WMSBrowser_VisibleChanged);
