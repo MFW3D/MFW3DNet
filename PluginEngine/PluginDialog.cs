@@ -77,176 +77,181 @@ namespace WorldWind.PluginEngine
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(PluginDialog));
-			this.listView = new WorldWind.PluginEngine.PluginListView();
-			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-			this.buttonLoad = new System.Windows.Forms.Button();
-			this.buttonUnload = new System.Windows.Forms.Button();
-			this.imageList = new System.Windows.Forms.ImageList(this.components);
-			this.description = new System.Windows.Forms.TextBox();
-			this.webSite = new System.Windows.Forms.LinkLabel();
-			this.labelDescription = new System.Windows.Forms.Label();
-			this.labelWebSite = new System.Windows.Forms.Label();
-			this.labelDeveloper = new System.Windows.Forms.Label();
-			this.developer = new System.Windows.Forms.Label();
-			this.buttonInstall = new System.Windows.Forms.Button();
-			this.buttonUninstall = new System.Windows.Forms.Button();
-			this.SuspendLayout();
-			// 
-			// listView
-			// 
-			this.listView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-				| System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-																																							 this.columnHeader1,
-																																							 this.columnHeader2});
-			this.listView.FullRowSelect = true;
-			this.listView.GridLines = true;
-			this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-			this.listView.Location = new System.Drawing.Point(8, 8);
-			this.listView.Name = "listView";
-			this.listView.Size = new System.Drawing.Size(231, 160);
-			this.listView.TabIndex = 0;
-			this.listView.View = System.Windows.Forms.View.Details;
-			this.listView.DoubleClick += new System.EventHandler(this.listView_DoubleClick);
-			this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
-			// 
-			// columnHeader1
-			// 
-			this.columnHeader1.Text = "Available plugins";
-			this.columnHeader1.Width = 163;
-			// 
-			// columnHeader2
-			// 
-			this.columnHeader2.Text = "Startup";
-			this.columnHeader2.Width = 47;
-			// 
-			// buttonLoad
-			// 
-			this.buttonLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonLoad.Location = new System.Drawing.Point(248, 8);
-			this.buttonLoad.Name = "buttonLoad";
-			this.buttonLoad.TabIndex = 1;
-			this.buttonLoad.Text = "&Load";
-			this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
-			// 
-			// buttonUnload
-			// 
-			this.buttonUnload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonUnload.Location = new System.Drawing.Point(248, 40);
-			this.buttonUnload.Name = "buttonUnload";
-			this.buttonUnload.TabIndex = 2;
-			this.buttonUnload.Text = "&Unload";
-			this.buttonUnload.Click += new System.EventHandler(this.buttonUnload_Click);
-			// 
-			// imageList
-			// 
-			this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-			this.imageList.ImageSize = new System.Drawing.Size(16, 11);
-			this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-			this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-			// 
-			// description
-			// 
-			this.description.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.description.Location = new System.Drawing.Point(24, 195);
-			this.description.Multiline = true;
-			this.description.Name = "description";
-			this.description.ReadOnly = true;
-			this.description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.description.Size = new System.Drawing.Size(288, 48);
-			this.description.TabIndex = 6;
-			this.description.Text = "";
-			// 
-			// webSite
-			// 
-			this.webSite.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.webSite.Location = new System.Drawing.Point(24, 312);
-			this.webSite.Name = "webSite";
-			this.webSite.Size = new System.Drawing.Size(288, 16);
-			this.webSite.TabIndex = 10;
-			this.webSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.webSite_LinkClicked);
-			// 
-			// labelDescription
-			// 
-			this.labelDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.labelDescription.Location = new System.Drawing.Point(10, 179);
-			this.labelDescription.Name = "labelDescription";
-			this.labelDescription.Size = new System.Drawing.Size(100, 16);
-			this.labelDescription.TabIndex = 5;
-			this.labelDescription.Text = "Description:";
-			// 
-			// labelWebSite
-			// 
-			this.labelWebSite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.labelWebSite.Location = new System.Drawing.Point(10, 296);
-			this.labelWebSite.Name = "labelWebSite";
-			this.labelWebSite.Size = new System.Drawing.Size(56, 16);
-			this.labelWebSite.TabIndex = 9;
-			this.labelWebSite.Text = "Web Site:";
-			// 
-			// labelDeveloper
-			// 
-			this.labelDeveloper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.labelDeveloper.Location = new System.Drawing.Point(10, 253);
-			this.labelDeveloper.Name = "labelDeveloper";
-			this.labelDeveloper.Size = new System.Drawing.Size(62, 16);
-			this.labelDeveloper.TabIndex = 7;
-			this.labelDeveloper.Text = "Developer:";
-			// 
-			// developer
-			// 
-			this.developer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.developer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.developer.Location = new System.Drawing.Point(24, 271);
-			this.developer.Name = "developer";
-			this.developer.Size = new System.Drawing.Size(296, 16);
-			this.developer.TabIndex = 8;
-			// 
-			// buttonInstall
-			// 
-			this.buttonInstall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonInstall.Location = new System.Drawing.Point(248, 88);
-			this.buttonInstall.Name = "buttonInstall";
-			this.buttonInstall.TabIndex = 3;
-			this.buttonInstall.Text = "&Install";
-			this.buttonInstall.Click += new System.EventHandler(this.buttonInstall_Click);
-			// 
-			// buttonUninstall
-			// 
-			this.buttonUninstall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonUninstall.Location = new System.Drawing.Point(248, 120);
-			this.buttonUninstall.Name = "buttonUninstall";
-			this.buttonUninstall.TabIndex = 4;
-			this.buttonUninstall.Text = "&Uninstall";
-			this.buttonUninstall.Click += new System.EventHandler(this.buttonUninstall_Click);
-			// 
-			// PluginDialog
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(328, 342);
-			this.Controls.Add(this.buttonUninstall);
-			this.Controls.Add(this.buttonInstall);
-			this.Controls.Add(this.developer);
-			this.Controls.Add(this.labelDeveloper);
-			this.Controls.Add(this.labelWebSite);
-			this.Controls.Add(this.labelDescription);
-			this.Controls.Add(this.webSite);
-			this.Controls.Add(this.description);
-			this.Controls.Add(this.buttonUnload);
-			this.Controls.Add(this.buttonLoad);
-			this.Controls.Add(this.listView);
-			this.MinimumSize = new System.Drawing.Size(336, 272);
-			this.Name = "PluginDialog";
-			this.Text = "Plugin Load/Unload";
-			this.Load += new System.EventHandler(this.PluginDialog_Load);
-			this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PluginDialog));
+            this.listView = new WorldWind.PluginEngine.PluginListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonLoad = new System.Windows.Forms.Button();
+            this.buttonUnload = new System.Windows.Forms.Button();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.description = new System.Windows.Forms.TextBox();
+            this.webSite = new System.Windows.Forms.LinkLabel();
+            this.labelDescription = new System.Windows.Forms.Label();
+            this.labelWebSite = new System.Windows.Forms.Label();
+            this.labelDeveloper = new System.Windows.Forms.Label();
+            this.developer = new System.Windows.Forms.Label();
+            this.buttonInstall = new System.Windows.Forms.Button();
+            this.buttonUninstall = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // listView
+            // 
+            this.listView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listView.FullRowSelect = true;
+            this.listView.GridLines = true;
+            this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView.Location = new System.Drawing.Point(10, 9);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(270, 146);
+            this.listView.TabIndex = 0;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
+            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView_SelectedIndexChanged);
+            this.listView.DoubleClick += new System.EventHandler(this.listView_DoubleClick);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Available plugins";
+            this.columnHeader1.Width = 163;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Startup";
+            this.columnHeader2.Width = 47;
+            // 
+            // buttonLoad
+            // 
+            this.buttonLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLoad.Location = new System.Drawing.Point(291, 9);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(90, 24);
+            this.buttonLoad.TabIndex = 1;
+            this.buttonLoad.Text = "&Load";
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
+            // 
+            // buttonUnload
+            // 
+            this.buttonUnload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonUnload.Location = new System.Drawing.Point(291, 43);
+            this.buttonUnload.Name = "buttonUnload";
+            this.buttonUnload.Size = new System.Drawing.Size(90, 25);
+            this.buttonUnload.TabIndex = 2;
+            this.buttonUnload.Text = "&Unload";
+            this.buttonUnload.Click += new System.EventHandler(this.buttonUnload_Click);
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "");
+            this.imageList.Images.SetKeyName(1, "");
+            // 
+            // description
+            // 
+            this.description.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.description.Location = new System.Drawing.Point(29, 184);
+            this.description.Multiline = true;
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.description.Size = new System.Drawing.Size(338, 52);
+            this.description.TabIndex = 6;
+            // 
+            // webSite
+            // 
+            this.webSite.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webSite.Location = new System.Drawing.Point(29, 310);
+            this.webSite.Name = "webSite";
+            this.webSite.Size = new System.Drawing.Size(338, 17);
+            this.webSite.TabIndex = 10;
+            this.webSite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.webSite_LinkClicked);
+            // 
+            // labelDescription
+            // 
+            this.labelDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelDescription.Location = new System.Drawing.Point(12, 167);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(120, 17);
+            this.labelDescription.TabIndex = 5;
+            this.labelDescription.Text = "Description:";
+            // 
+            // labelWebSite
+            // 
+            this.labelWebSite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelWebSite.Location = new System.Drawing.Point(12, 293);
+            this.labelWebSite.Name = "labelWebSite";
+            this.labelWebSite.Size = new System.Drawing.Size(67, 17);
+            this.labelWebSite.TabIndex = 9;
+            this.labelWebSite.Text = "Web Site:";
+            // 
+            // labelDeveloper
+            // 
+            this.labelDeveloper.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelDeveloper.Location = new System.Drawing.Point(12, 246);
+            this.labelDeveloper.Name = "labelDeveloper";
+            this.labelDeveloper.Size = new System.Drawing.Size(74, 18);
+            this.labelDeveloper.TabIndex = 7;
+            this.labelDeveloper.Text = "Developer:";
+            // 
+            // developer
+            // 
+            this.developer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.developer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.developer.Location = new System.Drawing.Point(29, 266);
+            this.developer.Name = "developer";
+            this.developer.Size = new System.Drawing.Size(348, 17);
+            this.developer.TabIndex = 8;
+            // 
+            // buttonInstall
+            // 
+            this.buttonInstall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonInstall.Location = new System.Drawing.Point(291, 95);
+            this.buttonInstall.Name = "buttonInstall";
+            this.buttonInstall.Size = new System.Drawing.Size(90, 25);
+            this.buttonInstall.TabIndex = 3;
+            this.buttonInstall.Text = "&Install";
+            this.buttonInstall.Click += new System.EventHandler(this.buttonInstall_Click);
+            // 
+            // buttonUninstall
+            // 
+            this.buttonUninstall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonUninstall.Location = new System.Drawing.Point(291, 129);
+            this.buttonUninstall.Name = "buttonUninstall";
+            this.buttonUninstall.Size = new System.Drawing.Size(90, 25);
+            this.buttonUninstall.TabIndex = 4;
+            this.buttonUninstall.Text = "&Uninstall";
+            this.buttonUninstall.Click += new System.EventHandler(this.buttonUninstall_Click);
+            // 
+            // PluginDialog
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
+            this.ClientSize = new System.Drawing.Size(387, 342);
+            this.Controls.Add(this.buttonUninstall);
+            this.Controls.Add(this.buttonInstall);
+            this.Controls.Add(this.developer);
+            this.Controls.Add(this.labelDeveloper);
+            this.Controls.Add(this.labelWebSite);
+            this.Controls.Add(this.labelDescription);
+            this.Controls.Add(this.webSite);
+            this.Controls.Add(this.description);
+            this.Controls.Add(this.buttonUnload);
+            this.Controls.Add(this.buttonLoad);
+            this.Controls.Add(this.listView);
+            this.MinimumSize = new System.Drawing.Size(403, 293);
+            this.Name = "PluginDialog";
+            this.Text = "Plugin Load/Unload";
+            this.Load += new System.EventHandler(this.PluginDialog_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		#endregion

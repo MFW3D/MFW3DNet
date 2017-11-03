@@ -199,7 +199,6 @@ namespace WorldWind
                 this.worldWindow.MenuBar.AddToolsMenuButton(new WindowsControlMenuButton("Scientific Visualization Studio", Global.DirectoryPath + "\\Data\\Icons\\Interface\\svs2.png", this.animatedEarthMananger));
             }
         }
-
         #endregion
 
         #region IGlobe 成员

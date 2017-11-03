@@ -125,12 +125,12 @@
 	contractor pursuant to Government Agency contract and rights obtained
 	from creator by assignment.  Government Agency will insert the year
 	and its Agency designation and remove the bracketed language.]
-	Copyright ã {YEAR} United States Government as represented by ______
+	Copyright ?{YEAR} United States Government as represented by ______
 	_________________________.  All Rights Reserved.
 
 	[The following copyright notice will be used if created by civil
 	servants only. Government Agency will insert the year and its Agency
-	designation and remove the bracketed language.]  Copyright Ó {YEAR}
+	designation and remove the bracketed language.]  Copyright ?{YEAR}
 	United States Government as represented by _____________
 	_____________________________.  No copyright is claimed in the United
 	States under Title 17, U.S.Code. All Other Rights Reserved.

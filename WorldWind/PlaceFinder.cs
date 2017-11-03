@@ -250,6 +250,10 @@ namespace WorldWind
             this.pictureBoxVE = new System.Windows.Forms.PictureBox();
             this.vesearch = new System.Windows.Forms.Button();
             this.VEenterTextBox = new WorldWind.EnterTextBox();
+            this.tabPageGM = new System.Windows.Forms.TabPage();
+            this.pictureBoxGM = new System.Windows.Forms.PictureBox();
+            this.gmSearch = new System.Windows.Forms.Button();
+            this.GMenterTextBox = new WorldWind.EnterTextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -308,7 +312,6 @@ namespace WorldWind
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
-            this.tabPageGM = new System.Windows.Forms.TabPage();
             this.button9 = new System.Windows.Forms.Button();
             this.enterTextBox3 = new WorldWind.EnterTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -318,9 +321,6 @@ namespace WorldWind
             this.button11 = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.enterTextBox5 = new WorldWind.EnterTextBox();
-            this.GMenterTextBox = new WorldWind.EnterTextBox();
-            this.gmSearch = new System.Windows.Forms.Button();
-            this.pictureBoxGM = new System.Windows.Forms.PictureBox();
             this.groupBoxResults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAltitude)).BeginInit();
             this.groupBoxYahooSimple.SuspendLayout();
@@ -333,6 +333,8 @@ namespace WorldWind
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxYahoo)).BeginInit();
             this.tabPageVE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVE)).BeginInit();
+            this.tabPageGM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGM)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -353,25 +355,23 @@ namespace WorldWind
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.groupBox9.SuspendLayout();
-            this.tabPageGM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGM)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewResults
             // 
-            this.listViewResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewResults.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(151)))), ((int)(((byte)(151)))));
             this.listViewResults.ForeColor = System.Drawing.Color.White;
             this.listViewResults.FullRowSelect = true;
             this.listViewResults.HideSelection = false;
-            this.listViewResults.Location = new System.Drawing.Point(8, 16);
+            this.listViewResults.Location = new System.Drawing.Point(10, 17);
             this.listViewResults.MultiSelect = false;
             this.listViewResults.Name = "listViewResults";
-            this.listViewResults.Size = new System.Drawing.Size(536, 120);
+            this.listViewResults.Size = new System.Drawing.Size(643, 129);
             this.listViewResults.TabIndex = 1;
             this.listViewResults.UseCompatibleStateImageBehavior = false;
             this.listViewResults.View = System.Windows.Forms.View.Details;
@@ -388,23 +388,23 @@ namespace WorldWind
             this.groupBoxResults.Controls.Add(this.textBoxLatitude);
             this.groupBoxResults.Controls.Add(this.listViewResults);
             this.groupBoxResults.Controls.Add(this.comboBox1);
-            this.groupBoxResults.Location = new System.Drawing.Point(16, 216);
+            this.groupBoxResults.Location = new System.Drawing.Point(19, 233);
             this.groupBoxResults.Name = "groupBoxResults";
-            this.groupBoxResults.Size = new System.Drawing.Size(552, 240);
+            this.groupBoxResults.Size = new System.Drawing.Size(663, 258);
             this.groupBoxResults.TabIndex = 2;
             this.groupBoxResults.TabStop = false;
             this.groupBoxResults.Text = "Results";
             // 
             // numericUpDownAltitude
             // 
-            this.numericUpDownAltitude.Location = new System.Drawing.Point(208, 208);
+            this.numericUpDownAltitude.Location = new System.Drawing.Point(250, 224);
             this.numericUpDownAltitude.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
             this.numericUpDownAltitude.Name = "numericUpDownAltitude";
-            this.numericUpDownAltitude.Size = new System.Drawing.Size(192, 20);
+            this.numericUpDownAltitude.Size = new System.Drawing.Size(230, 21);
             this.numericUpDownAltitude.TabIndex = 10;
             this.numericUpDownAltitude.Value = new decimal(new int[] {
             50000,
@@ -414,54 +414,54 @@ namespace WorldWind
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(136, 208);
+            this.label4.Location = new System.Drawing.Point(163, 224);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 23);
+            this.label4.Size = new System.Drawing.Size(77, 25);
             this.label4.TabIndex = 9;
             this.label4.Text = "Altitude (m)";
             // 
             // buttonGo
             // 
             this.buttonGo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonGo.Location = new System.Drawing.Point(456, 152);
+            this.buttonGo.Location = new System.Drawing.Point(547, 164);
             this.buttonGo.Name = "buttonGo";
-            this.buttonGo.Size = new System.Drawing.Size(88, 72);
+            this.buttonGo.Size = new System.Drawing.Size(106, 77);
             this.buttonGo.TabIndex = 6;
             this.buttonGo.Text = "Go";
             this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(136, 176);
+            this.label3.Location = new System.Drawing.Point(163, 190);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 23);
+            this.label3.Size = new System.Drawing.Size(77, 24);
             this.label3.TabIndex = 5;
             this.label3.Text = "Longitude";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(144, 144);
+            this.label2.Location = new System.Drawing.Point(173, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 23);
+            this.label2.Size = new System.Drawing.Size(67, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Latitude";
             // 
             // textBoxLongitude
             // 
-            this.textBoxLongitude.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLongitude.Location = new System.Drawing.Point(208, 176);
+            this.textBoxLongitude.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLongitude.Location = new System.Drawing.Point(250, 190);
             this.textBoxLongitude.Name = "textBoxLongitude";
-            this.textBoxLongitude.Size = new System.Drawing.Size(240, 20);
+            this.textBoxLongitude.Size = new System.Drawing.Size(288, 21);
             this.textBoxLongitude.TabIndex = 3;
             // 
             // textBoxLatitude
             // 
-            this.textBoxLatitude.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLatitude.Location = new System.Drawing.Point(208, 144);
+            this.textBoxLatitude.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLatitude.Location = new System.Drawing.Point(250, 155);
             this.textBoxLatitude.Name = "textBoxLatitude";
-            this.textBoxLatitude.Size = new System.Drawing.Size(240, 20);
+            this.textBoxLatitude.Size = new System.Drawing.Size(288, 21);
             this.textBoxLatitude.TabIndex = 2;
             // 
             // comboBox1
@@ -469,9 +469,9 @@ namespace WorldWind
             this.comboBox1.Items.AddRange(new object[] {
             "Decimal Degrees",
             "Degrees / Seconds"});
-            this.comboBox1.Location = new System.Drawing.Point(8, 144);
+            this.comboBox1.Location = new System.Drawing.Point(10, 155);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(145, 20);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.Text = "Decimal Degrees";
             // 
@@ -479,27 +479,27 @@ namespace WorldWind
             // 
             this.groupBoxYahooSimple.Controls.Add(this.buttonYahooSimpleSearch);
             this.groupBoxYahooSimple.Controls.Add(this.textBoxYahooSimple);
-            this.groupBoxYahooSimple.Location = new System.Drawing.Point(8, 16);
+            this.groupBoxYahooSimple.Location = new System.Drawing.Point(10, 17);
             this.groupBoxYahooSimple.Name = "groupBoxYahooSimple";
-            this.groupBoxYahooSimple.Size = new System.Drawing.Size(224, 88);
+            this.groupBoxYahooSimple.Size = new System.Drawing.Size(268, 95);
             this.groupBoxYahooSimple.TabIndex = 3;
             this.groupBoxYahooSimple.TabStop = false;
             this.groupBoxYahooSimple.Text = "Yahoo! Simple Search";
             // 
             // buttonYahooSimpleSearch
             // 
-            this.buttonYahooSimpleSearch.Location = new System.Drawing.Point(136, 56);
+            this.buttonYahooSimpleSearch.Location = new System.Drawing.Point(163, 60);
             this.buttonYahooSimpleSearch.Name = "buttonYahooSimpleSearch";
-            this.buttonYahooSimpleSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonYahooSimpleSearch.Size = new System.Drawing.Size(90, 25);
             this.buttonYahooSimpleSearch.TabIndex = 1;
             this.buttonYahooSimpleSearch.Text = "Search";
             this.buttonYahooSimpleSearch.Click += new System.EventHandler(this.buttonYahooSimpleSearch_Click);
             // 
             // textBoxYahooSimple
             // 
-            this.textBoxYahooSimple.Location = new System.Drawing.Point(16, 24);
+            this.textBoxYahooSimple.Location = new System.Drawing.Point(19, 26);
             this.textBoxYahooSimple.Name = "textBoxYahooSimple";
-            this.textBoxYahooSimple.Size = new System.Drawing.Size(200, 20);
+            this.textBoxYahooSimple.Size = new System.Drawing.Size(240, 21);
             this.textBoxYahooSimple.TabIndex = 0;
             this.textBoxYahooSimple.Text = "Address or Keyword(s)";
             this.textBoxYahooSimple.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBoxYahooSimple_MouseUp);
@@ -511,51 +511,51 @@ namespace WorldWind
             this.groupBoxYahooDetailed.Controls.Add(this.textBoxYahooState);
             this.groupBoxYahooDetailed.Controls.Add(this.textBoxYahooCity);
             this.groupBoxYahooDetailed.Controls.Add(this.textBoxYahooStreet);
-            this.groupBoxYahooDetailed.Location = new System.Drawing.Point(240, 16);
+            this.groupBoxYahooDetailed.Location = new System.Drawing.Point(288, 17);
             this.groupBoxYahooDetailed.Name = "groupBoxYahooDetailed";
-            this.groupBoxYahooDetailed.Size = new System.Drawing.Size(296, 120);
+            this.groupBoxYahooDetailed.Size = new System.Drawing.Size(355, 129);
             this.groupBoxYahooDetailed.TabIndex = 4;
             this.groupBoxYahooDetailed.TabStop = false;
             this.groupBoxYahooDetailed.Text = "Yahoo! Detailed Search (USA)";
             // 
             // buttonYahooDetailedSearch
             // 
-            this.buttonYahooDetailedSearch.Location = new System.Drawing.Point(208, 88);
+            this.buttonYahooDetailedSearch.Location = new System.Drawing.Point(250, 95);
             this.buttonYahooDetailedSearch.Name = "buttonYahooDetailedSearch";
-            this.buttonYahooDetailedSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonYahooDetailedSearch.Size = new System.Drawing.Size(90, 25);
             this.buttonYahooDetailedSearch.TabIndex = 5;
             this.buttonYahooDetailedSearch.Text = "Search";
             this.buttonYahooDetailedSearch.Click += new System.EventHandler(this.buttonYahooDetailedSearch_Click);
             // 
             // textBoxYahooZip
             // 
-            this.textBoxYahooZip.Location = new System.Drawing.Point(216, 56);
+            this.textBoxYahooZip.Location = new System.Drawing.Point(259, 60);
             this.textBoxYahooZip.Name = "textBoxYahooZip";
-            this.textBoxYahooZip.Size = new System.Drawing.Size(64, 20);
+            this.textBoxYahooZip.Size = new System.Drawing.Size(77, 21);
             this.textBoxYahooZip.TabIndex = 4;
             this.textBoxYahooZip.Text = "Zip Code";
             // 
             // textBoxYahooState
             // 
-            this.textBoxYahooState.Location = new System.Drawing.Point(168, 56);
+            this.textBoxYahooState.Location = new System.Drawing.Point(202, 60);
             this.textBoxYahooState.Name = "textBoxYahooState";
-            this.textBoxYahooState.Size = new System.Drawing.Size(40, 20);
+            this.textBoxYahooState.Size = new System.Drawing.Size(48, 21);
             this.textBoxYahooState.TabIndex = 3;
             this.textBoxYahooState.Text = "State";
             // 
             // textBoxYahooCity
             // 
-            this.textBoxYahooCity.Location = new System.Drawing.Point(16, 56);
+            this.textBoxYahooCity.Location = new System.Drawing.Point(19, 60);
             this.textBoxYahooCity.Name = "textBoxYahooCity";
-            this.textBoxYahooCity.Size = new System.Drawing.Size(144, 20);
+            this.textBoxYahooCity.Size = new System.Drawing.Size(173, 21);
             this.textBoxYahooCity.TabIndex = 2;
             this.textBoxYahooCity.Text = "City";
             // 
             // textBoxYahooStreet
             // 
-            this.textBoxYahooStreet.Location = new System.Drawing.Point(16, 24);
+            this.textBoxYahooStreet.Location = new System.Drawing.Point(19, 26);
             this.textBoxYahooStreet.Name = "textBoxYahooStreet";
-            this.textBoxYahooStreet.Size = new System.Drawing.Size(264, 20);
+            this.textBoxYahooStreet.Size = new System.Drawing.Size(317, 21);
             this.textBoxYahooStreet.TabIndex = 1;
             this.textBoxYahooStreet.Text = "Street";
             // 
@@ -565,9 +565,9 @@ namespace WorldWind
             this.groupBoxWWSearch.Controls.Add(this.buttonWWSearch);
             this.groupBoxWWSearch.Controls.Add(this.label1);
             this.groupBoxWWSearch.Controls.Add(this.textBoxWWFeature);
-            this.groupBoxWWSearch.Location = new System.Drawing.Point(157, 7);
+            this.groupBoxWWSearch.Location = new System.Drawing.Point(188, 8);
             this.groupBoxWWSearch.Name = "groupBoxWWSearch";
-            this.groupBoxWWSearch.Size = new System.Drawing.Size(296, 92);
+            this.groupBoxWWSearch.Size = new System.Drawing.Size(356, 99);
             this.groupBoxWWSearch.TabIndex = 4;
             this.groupBoxWWSearch.TabStop = false;
             this.groupBoxWWSearch.Text = "World Wind Feature Search (Global)";
@@ -575,9 +575,9 @@ namespace WorldWind
             // cbSearchInView
             // 
             this.cbSearchInView.AutoSize = true;
-            this.cbSearchInView.Location = new System.Drawing.Point(19, 67);
+            this.cbSearchInView.Location = new System.Drawing.Point(23, 72);
             this.cbSearchInView.Name = "cbSearchInView";
-            this.cbSearchInView.Size = new System.Drawing.Size(154, 17);
+            this.cbSearchInView.Size = new System.Drawing.Size(186, 16);
             this.cbSearchInView.TabIndex = 4;
             this.cbSearchInView.Text = "Search in current view only";
             this.cbSearchInView.UseVisualStyleBackColor = true;
@@ -585,35 +585,35 @@ namespace WorldWind
             // 
             // buttonWWSearch
             // 
-            this.buttonWWSearch.Location = new System.Drawing.Point(205, 63);
+            this.buttonWWSearch.Location = new System.Drawing.Point(246, 68);
             this.buttonWWSearch.Name = "buttonWWSearch";
-            this.buttonWWSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonWWSearch.Size = new System.Drawing.Size(90, 25);
             this.buttonWWSearch.TabIndex = 3;
             this.buttonWWSearch.Text = "Search";
             this.buttonWWSearch.Click += new System.EventHandler(this.buttonWWSearch_Click);
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(16, 44);
+            this.label1.Location = new System.Drawing.Point(19, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 23);
+            this.label1.Size = new System.Drawing.Size(231, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "(Cities, geographical features, etc.)";
             // 
             // textBoxWWFeature
             // 
-            this.textBoxWWFeature.Location = new System.Drawing.Point(16, 20);
+            this.textBoxWWFeature.Location = new System.Drawing.Point(19, 22);
             this.textBoxWWFeature.Name = "textBoxWWFeature";
-            this.textBoxWWFeature.Size = new System.Drawing.Size(264, 20);
+            this.textBoxWWFeature.Size = new System.Drawing.Size(317, 21);
             this.textBoxWWFeature.TabIndex = 1;
             this.textBoxWWFeature.Text = "Keyword(s)";
             this.textBoxWWFeature.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxWWFeature_KeyUp);
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 472);
+            this.statusBar.Location = new System.Drawing.Point(0, 470);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(584, 22);
+            this.statusBar.Size = new System.Drawing.Size(584, 24);
             this.statusBar.TabIndex = 5;
             // 
             // tabControl1
@@ -623,11 +623,11 @@ namespace WorldWind
             this.tabControl1.Controls.Add(this.tabPageYahoo);
             this.tabControl1.Controls.Add(this.tabPageVE);
             this.tabControl1.Controls.Add(this.tabPageGM);
-            this.tabControl1.Location = new System.Drawing.Point(16, 16);
+            this.tabControl1.Location = new System.Drawing.Point(19, 17);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(552, 192);
+            this.tabControl1.Size = new System.Drawing.Size(663, 207);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPageWWFeature
@@ -641,7 +641,7 @@ namespace WorldWind
             this.tabPageWWFeature.Controls.Add(this.groupBoxWWSearch);
             this.tabPageWWFeature.Location = new System.Drawing.Point(4, 4);
             this.tabPageWWFeature.Name = "tabPageWWFeature";
-            this.tabPageWWFeature.Size = new System.Drawing.Size(544, 166);
+            this.tabPageWWFeature.Size = new System.Drawing.Size(655, 181);
             this.tabPageWWFeature.TabIndex = 2;
             this.tabPageWWFeature.Text = "Global Placename Search";
             this.tabPageWWFeature.UseVisualStyleBackColor = true;
@@ -649,18 +649,18 @@ namespace WorldWind
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(136, 145);
+            this.label16.Location = new System.Drawing.Point(163, 156);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(402, 13);
+            this.label16.Size = new System.Drawing.Size(509, 12);
             this.label16.TabIndex = 9;
-            this.label16.Text = "?This tab can\'t search addresses; use the Yahoo! or Virtual Earth tabs for addre" +
-                "sses";
+            this.label16.Text = "?This tab can\'t search addresses; use the Yahoo! or Virtual Earth tabs for addres" +
+    "ses";
             // 
             // pictureBoxWW
             // 
-            this.pictureBoxWW.Location = new System.Drawing.Point(22, 43);
+            this.pictureBoxWW.Location = new System.Drawing.Point(26, 46);
             this.pictureBoxWW.Name = "pictureBoxWW";
-            this.pictureBoxWW.Size = new System.Drawing.Size(96, 80);
+            this.pictureBoxWW.Size = new System.Drawing.Size(116, 86);
             this.pictureBoxWW.TabIndex = 8;
             this.pictureBoxWW.TabStop = false;
             this.pictureBoxWW.Click += new System.EventHandler(this.pictureBoxWW_Click);
@@ -669,7 +669,7 @@ namespace WorldWind
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(136, 102);
+            this.label7.Location = new System.Drawing.Point(163, 110);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 7;
@@ -678,18 +678,18 @@ namespace WorldWind
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(136, 132);
+            this.label6.Location = new System.Drawing.Point(163, 142);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(362, 13);
+            this.label6.Size = new System.Drawing.Size(461, 12);
             this.label6.TabIndex = 6;
             this.label6.Text = "?Enclosing multiple words in quotes will search for the exact phrase entered";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(136, 119);
+            this.label5.Location = new System.Drawing.Point(163, 128);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(368, 13);
+            this.label5.Size = new System.Drawing.Size(479, 12);
             this.label5.TabIndex = 5;
             this.label5.Text = "?Searching for multiple words will find result thats contain every word entered";
             // 
@@ -701,16 +701,16 @@ namespace WorldWind
             this.tabPageYahoo.Controls.Add(this.groupBoxYahooDetailed);
             this.tabPageYahoo.Location = new System.Drawing.Point(4, 4);
             this.tabPageYahoo.Name = "tabPageYahoo";
-            this.tabPageYahoo.Size = new System.Drawing.Size(544, 166);
+            this.tabPageYahoo.Size = new System.Drawing.Size(655, 163);
             this.tabPageYahoo.TabIndex = 0;
             this.tabPageYahoo.Text = "Yahoo! Search";
             this.tabPageYahoo.UseVisualStyleBackColor = true;
             // 
             // pictureBoxYahoo
             // 
-            this.pictureBoxYahoo.Location = new System.Drawing.Point(72, 112);
+            this.pictureBoxYahoo.Location = new System.Drawing.Point(86, 121);
             this.pictureBoxYahoo.Name = "pictureBoxYahoo";
-            this.pictureBoxYahoo.Size = new System.Drawing.Size(88, 31);
+            this.pictureBoxYahoo.Size = new System.Drawing.Size(106, 33);
             this.pictureBoxYahoo.TabIndex = 5;
             this.pictureBoxYahoo.TabStop = false;
             this.pictureBoxYahoo.Click += new System.EventHandler(this.pictureBoxYahoo_Click);
@@ -724,36 +724,75 @@ namespace WorldWind
             this.tabPageVE.Location = new System.Drawing.Point(4, 4);
             this.tabPageVE.Name = "tabPageVE";
             this.tabPageVE.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageVE.Size = new System.Drawing.Size(544, 166);
+            this.tabPageVE.Size = new System.Drawing.Size(655, 163);
             this.tabPageVE.TabIndex = 4;
             this.tabPageVE.Text = "Virtual Earth Search (Global)";
             this.tabPageVE.UseVisualStyleBackColor = true;
             // 
             // pictureBoxVE
             // 
-            this.pictureBoxVE.Location = new System.Drawing.Point(390, 48);
+            this.pictureBoxVE.Location = new System.Drawing.Point(468, 52);
             this.pictureBoxVE.Name = "pictureBoxVE";
-            this.pictureBoxVE.Size = new System.Drawing.Size(72, 56);
+            this.pictureBoxVE.Size = new System.Drawing.Size(86, 60);
             this.pictureBoxVE.TabIndex = 6;
             this.pictureBoxVE.TabStop = false;
             this.pictureBoxVE.Click += new System.EventHandler(this.pictureBoxVE_Click);
             // 
             // vesearch
             // 
-            this.vesearch.Location = new System.Drawing.Point(227, 58);
+            this.vesearch.Location = new System.Drawing.Point(272, 62);
             this.vesearch.Name = "vesearch";
-            this.vesearch.Size = new System.Drawing.Size(75, 23);
+            this.vesearch.Size = new System.Drawing.Size(90, 25);
             this.vesearch.TabIndex = 5;
             this.vesearch.Text = "Search";
             this.vesearch.Click += new System.EventHandler(this.VEbutton_Click);
             // 
             // VEenterTextBox
             // 
-            this.VEenterTextBox.Location = new System.Drawing.Point(38, 32);
+            this.VEenterTextBox.Location = new System.Drawing.Point(46, 34);
             this.VEenterTextBox.Name = "VEenterTextBox";
-            this.VEenterTextBox.Size = new System.Drawing.Size(264, 20);
+            this.VEenterTextBox.Size = new System.Drawing.Size(316, 21);
             this.VEenterTextBox.TabIndex = 4;
             this.VEenterTextBox.Text = "Keyword(s) or address";
+            // 
+            // tabPageGM
+            // 
+            this.tabPageGM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
+            this.tabPageGM.Controls.Add(this.pictureBoxGM);
+            this.tabPageGM.Controls.Add(this.gmSearch);
+            this.tabPageGM.Controls.Add(this.GMenterTextBox);
+            this.tabPageGM.Location = new System.Drawing.Point(4, 4);
+            this.tabPageGM.Name = "tabPageGM";
+            this.tabPageGM.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageGM.Size = new System.Drawing.Size(655, 163);
+            this.tabPageGM.TabIndex = 5;
+            this.tabPageGM.Text = "Google Search (Global)";
+            // 
+            // pictureBoxGM
+            // 
+            this.pictureBoxGM.Location = new System.Drawing.Point(469, 62);
+            this.pictureBoxGM.Name = "pictureBoxGM";
+            this.pictureBoxGM.Size = new System.Drawing.Size(87, 61);
+            this.pictureBoxGM.TabIndex = 7;
+            this.pictureBoxGM.TabStop = false;
+            // 
+            // gmSearch
+            // 
+            this.gmSearch.Location = new System.Drawing.Point(272, 62);
+            this.gmSearch.Name = "gmSearch";
+            this.gmSearch.Size = new System.Drawing.Size(90, 25);
+            this.gmSearch.TabIndex = 1;
+            this.gmSearch.Text = "Search";
+            this.gmSearch.UseVisualStyleBackColor = true;
+            this.gmSearch.Click += new System.EventHandler(this.gmSearch_Click);
+            // 
+            // GMenterTextBox
+            // 
+            this.GMenterTextBox.Location = new System.Drawing.Point(46, 34);
+            this.GMenterTextBox.Name = "GMenterTextBox";
+            this.GMenterTextBox.Size = new System.Drawing.Size(316, 21);
+            this.GMenterTextBox.TabIndex = 0;
+            this.GMenterTextBox.Text = "Keyword(s) or address";
             // 
             // tabPage1
             // 
@@ -792,7 +831,7 @@ namespace WorldWind
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(154, 136);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(362, 13);
+            this.label9.Size = new System.Drawing.Size(461, 12);
             this.label9.TabIndex = 6;
             this.label9.Text = "?Enclosing multiple words in quotes will search for the exact phrase entered";
             // 
@@ -801,7 +840,7 @@ namespace WorldWind
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(154, 123);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(368, 13);
+            this.label10.Size = new System.Drawing.Size(479, 12);
             this.label10.TabIndex = 5;
             this.label10.Text = "?Searching for multiple words will find result thats contain every word entered";
             // 
@@ -837,7 +876,7 @@ namespace WorldWind
             // 
             this.enterTextBox1.Location = new System.Drawing.Point(16, 24);
             this.enterTextBox1.Name = "enterTextBox1";
-            this.enterTextBox1.Size = new System.Drawing.Size(264, 20);
+            this.enterTextBox1.Size = new System.Drawing.Size(264, 21);
             this.enterTextBox1.TabIndex = 1;
             this.enterTextBox1.Text = "Keyword(s)";
             // 
@@ -884,7 +923,7 @@ namespace WorldWind
             // 
             this.textBox1.Location = new System.Drawing.Point(16, 24);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.Size = new System.Drawing.Size(200, 21);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Address or Keyword(s)";
             // 
@@ -914,7 +953,7 @@ namespace WorldWind
             // 
             this.textBox2.Location = new System.Drawing.Point(216, 56);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(64, 20);
+            this.textBox2.Size = new System.Drawing.Size(64, 21);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "Zip Code";
             // 
@@ -922,7 +961,7 @@ namespace WorldWind
             // 
             this.textBox3.Location = new System.Drawing.Point(168, 56);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(40, 20);
+            this.textBox3.Size = new System.Drawing.Size(40, 21);
             this.textBox3.TabIndex = 3;
             this.textBox3.Text = "State";
             // 
@@ -930,7 +969,7 @@ namespace WorldWind
             // 
             this.textBox4.Location = new System.Drawing.Point(16, 56);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(144, 20);
+            this.textBox4.Size = new System.Drawing.Size(144, 21);
             this.textBox4.TabIndex = 2;
             this.textBox4.Text = "City";
             // 
@@ -938,7 +977,7 @@ namespace WorldWind
             // 
             this.textBox5.Location = new System.Drawing.Point(16, 24);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(264, 20);
+            this.textBox5.Size = new System.Drawing.Size(264, 21);
             this.textBox5.TabIndex = 1;
             this.textBox5.Text = "Street";
             // 
@@ -981,7 +1020,7 @@ namespace WorldWind
             // 
             this.textBox6.Location = new System.Drawing.Point(16, 24);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(44, 20);
+            this.textBox6.Size = new System.Drawing.Size(44, 21);
             this.textBox6.TabIndex = 6;
             this.textBox6.Text = "No";
             // 
@@ -997,7 +1036,7 @@ namespace WorldWind
             // 
             this.textBox7.Location = new System.Drawing.Point(216, 56);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(64, 20);
+            this.textBox7.Size = new System.Drawing.Size(64, 21);
             this.textBox7.TabIndex = 4;
             this.textBox7.Text = "Post Code";
             // 
@@ -1005,7 +1044,7 @@ namespace WorldWind
             // 
             this.textBox8.Location = new System.Drawing.Point(168, 56);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(40, 20);
+            this.textBox8.Size = new System.Drawing.Size(40, 21);
             this.textBox8.TabIndex = 3;
             this.textBox8.Text = "State";
             // 
@@ -1013,7 +1052,7 @@ namespace WorldWind
             // 
             this.textBox9.Location = new System.Drawing.Point(16, 56);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(144, 20);
+            this.textBox9.Size = new System.Drawing.Size(144, 21);
             this.textBox9.TabIndex = 2;
             this.textBox9.Text = "Suburb";
             // 
@@ -1021,7 +1060,7 @@ namespace WorldWind
             // 
             this.textBox10.Location = new System.Drawing.Point(72, 24);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(208, 20);
+            this.textBox10.Size = new System.Drawing.Size(208, 21);
             this.textBox10.TabIndex = 1;
             this.textBox10.Text = "Street";
             // 
@@ -1062,7 +1101,7 @@ namespace WorldWind
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(154, 136);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(362, 13);
+            this.label13.Size = new System.Drawing.Size(461, 12);
             this.label13.TabIndex = 6;
             this.label13.Text = "?Enclosing multiple words in quotes will search for the exact phrase entered";
             // 
@@ -1071,7 +1110,7 @@ namespace WorldWind
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(154, 123);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(368, 13);
+            this.label14.Size = new System.Drawing.Size(479, 12);
             this.label14.TabIndex = 5;
             this.label14.Text = "?Searching for multiple words will find result thats contain every word entered";
             // 
@@ -1107,7 +1146,7 @@ namespace WorldWind
             // 
             this.enterTextBox2.Location = new System.Drawing.Point(16, 24);
             this.enterTextBox2.Name = "enterTextBox2";
-            this.enterTextBox2.Size = new System.Drawing.Size(264, 20);
+            this.enterTextBox2.Size = new System.Drawing.Size(264, 21);
             this.enterTextBox2.TabIndex = 1;
             this.enterTextBox2.Text = "Keyword(s)";
             // 
@@ -1154,7 +1193,7 @@ namespace WorldWind
             // 
             this.textBox11.Location = new System.Drawing.Point(16, 24);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(200, 20);
+            this.textBox11.Size = new System.Drawing.Size(200, 21);
             this.textBox11.TabIndex = 0;
             this.textBox11.Text = "Address or Keyword(s)";
             // 
@@ -1184,7 +1223,7 @@ namespace WorldWind
             // 
             this.textBox12.Location = new System.Drawing.Point(216, 56);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(64, 20);
+            this.textBox12.Size = new System.Drawing.Size(64, 21);
             this.textBox12.TabIndex = 4;
             this.textBox12.Text = "Zip Code";
             // 
@@ -1192,7 +1231,7 @@ namespace WorldWind
             // 
             this.textBox13.Location = new System.Drawing.Point(168, 56);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(40, 20);
+            this.textBox13.Size = new System.Drawing.Size(40, 21);
             this.textBox13.TabIndex = 3;
             this.textBox13.Text = "State";
             // 
@@ -1200,7 +1239,7 @@ namespace WorldWind
             // 
             this.textBox14.Location = new System.Drawing.Point(16, 56);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(144, 20);
+            this.textBox14.Size = new System.Drawing.Size(144, 21);
             this.textBox14.TabIndex = 2;
             this.textBox14.Text = "City";
             // 
@@ -1208,7 +1247,7 @@ namespace WorldWind
             // 
             this.textBox15.Location = new System.Drawing.Point(16, 24);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(264, 20);
+            this.textBox15.Size = new System.Drawing.Size(264, 21);
             this.textBox15.TabIndex = 1;
             this.textBox15.Text = "Street";
             // 
@@ -1251,7 +1290,7 @@ namespace WorldWind
             // 
             this.textBox16.Location = new System.Drawing.Point(16, 24);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(44, 20);
+            this.textBox16.Size = new System.Drawing.Size(44, 21);
             this.textBox16.TabIndex = 6;
             this.textBox16.Text = "No";
             // 
@@ -1267,7 +1306,7 @@ namespace WorldWind
             // 
             this.textBox17.Location = new System.Drawing.Point(216, 56);
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(64, 20);
+            this.textBox17.Size = new System.Drawing.Size(64, 21);
             this.textBox17.TabIndex = 4;
             this.textBox17.Text = "Post Code";
             // 
@@ -1275,7 +1314,7 @@ namespace WorldWind
             // 
             this.textBox18.Location = new System.Drawing.Point(168, 56);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(40, 20);
+            this.textBox18.Size = new System.Drawing.Size(40, 21);
             this.textBox18.TabIndex = 3;
             this.textBox18.Text = "State";
             // 
@@ -1283,7 +1322,7 @@ namespace WorldWind
             // 
             this.textBox19.Location = new System.Drawing.Point(16, 56);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(144, 20);
+            this.textBox19.Size = new System.Drawing.Size(144, 21);
             this.textBox19.TabIndex = 2;
             this.textBox19.Text = "Suburb";
             // 
@@ -1291,22 +1330,9 @@ namespace WorldWind
             // 
             this.textBox20.Location = new System.Drawing.Point(72, 24);
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(208, 20);
+            this.textBox20.Size = new System.Drawing.Size(208, 21);
             this.textBox20.TabIndex = 1;
             this.textBox20.Text = "Street";
-            // 
-            // tabPageGM
-            // 
-            this.tabPageGM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
-            this.tabPageGM.Controls.Add(this.pictureBoxGM);
-            this.tabPageGM.Controls.Add(this.gmSearch);
-            this.tabPageGM.Controls.Add(this.GMenterTextBox);
-            this.tabPageGM.Location = new System.Drawing.Point(4, 4);
-            this.tabPageGM.Name = "tabPageGM";
-            this.tabPageGM.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGM.Size = new System.Drawing.Size(544, 166);
-            this.tabPageGM.TabIndex = 5;
-            this.tabPageGM.Text = "Google Search (Global)";
             // 
             // button9
             // 
@@ -1320,7 +1346,7 @@ namespace WorldWind
             // 
             this.enterTextBox3.Location = new System.Drawing.Point(38, 32);
             this.enterTextBox3.Name = "enterTextBox3";
-            this.enterTextBox3.Size = new System.Drawing.Size(264, 20);
+            this.enterTextBox3.Size = new System.Drawing.Size(264, 21);
             this.enterTextBox3.TabIndex = 4;
             this.enterTextBox3.Text = "Keyword(s) or address";
             // 
@@ -1352,7 +1378,7 @@ namespace WorldWind
             // 
             this.enterTextBox4.Location = new System.Drawing.Point(38, 32);
             this.enterTextBox4.Name = "enterTextBox4";
-            this.enterTextBox4.Size = new System.Drawing.Size(264, 20);
+            this.enterTextBox4.Size = new System.Drawing.Size(264, 21);
             this.enterTextBox4.TabIndex = 4;
             this.enterTextBox4.Text = "Keyword(s) or address";
             // 
@@ -1376,39 +1402,13 @@ namespace WorldWind
             // 
             this.enterTextBox5.Location = new System.Drawing.Point(38, 32);
             this.enterTextBox5.Name = "enterTextBox5";
-            this.enterTextBox5.Size = new System.Drawing.Size(264, 20);
+            this.enterTextBox5.Size = new System.Drawing.Size(264, 21);
             this.enterTextBox5.TabIndex = 4;
             this.enterTextBox5.Text = "Keyword(s) or address";
             // 
-            // GMenterTextBox
-            // 
-            this.GMenterTextBox.Location = new System.Drawing.Point(38, 32);
-            this.GMenterTextBox.Name = "GMenterTextBox";
-            this.GMenterTextBox.Size = new System.Drawing.Size(264, 20);
-            this.GMenterTextBox.TabIndex = 0;
-            this.GMenterTextBox.Text = "Keyword(s) or address";
-            // 
-            // gmSearch
-            // 
-            this.gmSearch.Location = new System.Drawing.Point(227, 58);
-            this.gmSearch.Name = "gmSearch";
-            this.gmSearch.Size = new System.Drawing.Size(75, 23);
-            this.gmSearch.TabIndex = 1;
-            this.gmSearch.Text = "Search";
-            this.gmSearch.UseVisualStyleBackColor = true;
-            this.gmSearch.Click += new System.EventHandler(this.gmSearch_Click);
-            // 
-            // pictureBoxGM
-            // 
-            this.pictureBoxGM.Location = new System.Drawing.Point(391, 58);
-            this.pictureBoxGM.Name = "pictureBoxGM";
-            this.pictureBoxGM.Size = new System.Drawing.Size(72, 56);
-            this.pictureBoxGM.TabIndex = 7;
-            this.pictureBoxGM.TabStop = false;
-            // 
             // PlaceFinder
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(111)))), ((int)(((byte)(111)))));
             this.ClientSize = new System.Drawing.Size(584, 494);
             this.Controls.Add(this.tabControl1);
@@ -1438,6 +1438,9 @@ namespace WorldWind
             this.tabPageVE.ResumeLayout(false);
             this.tabPageVE.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVE)).EndInit();
+            this.tabPageGM.ResumeLayout(false);
+            this.tabPageGM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGM)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1468,12 +1471,9 @@ namespace WorldWind
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.tabPageGM.ResumeLayout(false);
-            this.tabPageGM.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGM)).EndInit();
             this.ResumeLayout(false);
 
 		}
