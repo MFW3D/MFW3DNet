@@ -97,7 +97,7 @@ namespace WorldWind
             // 
             // PropertyBrowserForm
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
             this.ClientSize = new System.Drawing.Size(344, 326);
             this.Controls.Add(this.propertyGrid);
             this.KeyPreview = true;

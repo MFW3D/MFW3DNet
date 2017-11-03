@@ -668,10 +668,10 @@ namespace GpsTracker
             this.comboBoxWaypointsFile = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.listViewWaypoints = new System.Windows.Forms.ListView();
-            this.columnHeaderNumber = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderLatitude = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderLonguitude = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderDescription = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLatitude = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLonguitude = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.buttonApplyWaypoints = new System.Windows.Forms.Button();
             this.label45 = new System.Windows.Forms.Label();
@@ -681,9 +681,9 @@ namespace GpsTracker
             this.buttonTrackColorTrackLine = new System.Windows.Forms.Button();
             this.editBoxGeoFenceList = new System.Windows.Forms.TextBox();
             this.listViewGeoFence = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonApplyGeoFence = new System.Windows.Forms.Button();
             this.label50 = new System.Windows.Forms.Label();
             this.tabPageInformationText = new System.Windows.Forms.TabPage();
@@ -742,9 +742,9 @@ namespace GpsTracker
             // StartStop
             // 
             this.StartStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartStop.Location = new System.Drawing.Point(569, 405);
+            this.StartStop.Location = new System.Drawing.Point(683, 436);
             this.StartStop.Name = "StartStop";
-            this.StartStop.Size = new System.Drawing.Size(56, 49);
+            this.StartStop.Size = new System.Drawing.Size(67, 53);
             this.StartStop.TabIndex = 0;
             this.StartStop.Text = "Track";
             this.StartStop.Click += new System.EventHandler(this.StartStop_Click);
@@ -759,42 +759,42 @@ namespace GpsTracker
             // 
             this.labelTrackCode.BackColor = System.Drawing.SystemColors.Control;
             this.labelTrackCode.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelTrackCode.Location = new System.Drawing.Point(72, 402);
+            this.labelTrackCode.Location = new System.Drawing.Point(86, 433);
             this.labelTrackCode.Name = "labelTrackCode";
-            this.labelTrackCode.Size = new System.Drawing.Size(482, 27);
+            this.labelTrackCode.Size = new System.Drawing.Size(579, 29);
             this.labelTrackCode.TabIndex = 3;
             // 
             // progressBarSetup
             // 
-            this.progressBarSetup.Location = new System.Drawing.Point(196, 433);
+            this.progressBarSetup.Location = new System.Drawing.Point(235, 466);
             this.progressBarSetup.Name = "progressBarSetup";
-            this.progressBarSetup.Size = new System.Drawing.Size(358, 16);
+            this.progressBarSetup.Size = new System.Drawing.Size(430, 18);
             this.progressBarSetup.Step = 1;
             this.progressBarSetup.TabIndex = 5;
             // 
             // labelSettingup
             // 
             this.labelSettingup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSettingup.Location = new System.Drawing.Point(94, 430);
+            this.labelSettingup.Location = new System.Drawing.Point(113, 463);
             this.labelSettingup.Name = "labelSettingup";
-            this.labelSettingup.Size = new System.Drawing.Size(96, 24);
+            this.labelSettingup.Size = new System.Drawing.Size(115, 26);
             this.labelSettingup.TabIndex = 31;
             this.labelSettingup.Text = "Setting up...";
             this.labelSettingup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(-24, 384);
+            this.groupBox2.Location = new System.Drawing.Point(-29, 414);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(848, 8);
+            this.groupBox2.Size = new System.Drawing.Size(1018, 8);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
             // 
             // pictureBoxLogo
             // 
-            this.pictureBoxLogo.Location = new System.Drawing.Point(10, 398);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(12, 429);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(56, 56);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(67, 60);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 36;
             this.pictureBoxLogo.TabStop = false;
@@ -810,11 +810,11 @@ namespace GpsTracker
             this.treeViewSources.Location = new System.Drawing.Point(0, 0);
             this.treeViewSources.Name = "treeViewSources";
             this.treeViewSources.SelectedImageIndex = 0;
-            this.treeViewSources.Size = new System.Drawing.Size(184, 382);
+            this.treeViewSources.Size = new System.Drawing.Size(221, 411);
             this.treeViewSources.TabIndex = 39;
             this.treeViewSources.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.treeViewSources_AfterLabelEdit);
-            this.treeViewSources.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeViewSources_MouseUp);
             this.treeViewSources.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeViewSources_MouseDown);
+            this.treeViewSources.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeViewSources_MouseUp);
             // 
             // contextMenuSourceTree
             // 
@@ -876,10 +876,10 @@ namespace GpsTracker
             this.tabControlGPS.Controls.Add(this.tabPageGeoFence);
             this.tabControlGPS.Controls.Add(this.tabPageInformationText);
             this.tabControlGPS.Controls.Add(this.tabPageTrackLineHelp);
-            this.tabControlGPS.Location = new System.Drawing.Point(186, 0);
+            this.tabControlGPS.Location = new System.Drawing.Point(223, 0);
             this.tabControlGPS.Name = "tabControlGPS";
             this.tabControlGPS.SelectedIndex = 0;
-            this.tabControlGPS.Size = new System.Drawing.Size(439, 382);
+            this.tabControlGPS.Size = new System.Drawing.Size(527, 411);
             this.tabControlGPS.TabIndex = 40;
             // 
             // tabPageCOM
@@ -904,17 +904,17 @@ namespace GpsTracker
             this.tabPageCOM.Controls.Add(this.comboBoxCOMPort);
             this.tabPageCOM.Location = new System.Drawing.Point(4, 22);
             this.tabPageCOM.Name = "tabPageCOM";
-            this.tabPageCOM.Size = new System.Drawing.Size(431, 356);
+            this.tabPageCOM.Size = new System.Drawing.Size(519, 385);
             this.tabPageCOM.TabIndex = 0;
             this.tabPageCOM.Text = "COM";
             this.tabPageCOM.UseVisualStyleBackColor = true;
             // 
             // checkBoxCOMExport
             // 
-            this.checkBoxCOMExport.Location = new System.Drawing.Point(137, 197);
+            this.checkBoxCOMExport.Location = new System.Drawing.Point(164, 212);
             this.checkBoxCOMExport.Name = "checkBoxCOMExport";
             this.checkBoxCOMExport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxCOMExport.Size = new System.Drawing.Size(174, 17);
+            this.checkBoxCOMExport.Size = new System.Drawing.Size(209, 18);
             this.checkBoxCOMExport.TabIndex = 47;
             this.checkBoxCOMExport.Text = "Export as NMEA to File";
             this.checkBoxCOMExport.UseVisualStyleBackColor = true;
@@ -922,36 +922,36 @@ namespace GpsTracker
             // 
             // buttonApply
             // 
-            this.buttonApply.Location = new System.Drawing.Point(372, 329);
+            this.buttonApply.Location = new System.Drawing.Point(446, 354);
             this.buttonApply.Name = "buttonApply";
-            this.buttonApply.Size = new System.Drawing.Size(56, 24);
+            this.buttonApply.Size = new System.Drawing.Size(68, 26);
             this.buttonApply.TabIndex = 46;
             this.buttonApply.Text = "Apply";
             this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
             // 
             // label23
             // 
-            this.label23.Location = new System.Drawing.Point(79, 169);
+            this.label23.Location = new System.Drawing.Point(95, 182);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(96, 16);
+            this.label23.Size = new System.Drawing.Size(115, 17);
             this.label23.TabIndex = 45;
             this.label23.Text = "Track Color:";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonTrackColorCOM
             // 
-            this.buttonTrackColorCOM.Location = new System.Drawing.Point(183, 169);
+            this.buttonTrackColorCOM.Location = new System.Drawing.Point(220, 182);
             this.buttonTrackColorCOM.Name = "buttonTrackColorCOM";
-            this.buttonTrackColorCOM.Size = new System.Drawing.Size(128, 13);
+            this.buttonTrackColorCOM.Size = new System.Drawing.Size(153, 14);
             this.buttonTrackColorCOM.TabIndex = 44;
-            this.buttonTrackColorCOM.Click += new System.EventHandler(this.button3_Click);
             this.buttonTrackColorCOM.BackColorChanged += new System.EventHandler(this.ControlValueChanged);
+            this.buttonTrackColorCOM.Click += new System.EventHandler(this.button3_Click);
             // 
             // label20
             // 
-            this.label20.Location = new System.Drawing.Point(71, 135);
+            this.label20.Location = new System.Drawing.Point(85, 145);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(104, 24);
+            this.label20.Size = new System.Drawing.Size(125, 26);
             this.label20.TabIndex = 25;
             this.label20.Text = "Flow Control:";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -959,22 +959,22 @@ namespace GpsTracker
             // comboBoxFlowControl
             // 
             this.comboBoxFlowControl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFlowControl.ItemHeight = 13;
+            this.comboBoxFlowControl.ItemHeight = 12;
             this.comboBoxFlowControl.Items.AddRange(new object[] {
             "None",
             "Hardware",
             "Software (XOn|XOff)"});
-            this.comboBoxFlowControl.Location = new System.Drawing.Point(183, 135);
+            this.comboBoxFlowControl.Location = new System.Drawing.Point(220, 145);
             this.comboBoxFlowControl.Name = "comboBoxFlowControl";
-            this.comboBoxFlowControl.Size = new System.Drawing.Size(128, 21);
+            this.comboBoxFlowControl.Size = new System.Drawing.Size(153, 20);
             this.comboBoxFlowControl.TabIndex = 24;
             this.comboBoxFlowControl.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // buttonAutoDetect
             // 
-            this.buttonAutoDetect.Location = new System.Drawing.Point(18, 279);
+            this.buttonAutoDetect.Location = new System.Drawing.Point(22, 300);
             this.buttonAutoDetect.Name = "buttonAutoDetect";
-            this.buttonAutoDetect.Size = new System.Drawing.Size(48, 24);
+            this.buttonAutoDetect.Size = new System.Drawing.Size(57, 26);
             this.buttonAutoDetect.TabIndex = 22;
             this.buttonAutoDetect.Text = "Auto Detect";
             this.buttonAutoDetect.Visible = false;
@@ -982,54 +982,54 @@ namespace GpsTracker
             // progressBarAutoDetect
             // 
             this.progressBarAutoDetect.Cursor = System.Windows.Forms.Cursors.Default;
-            this.progressBarAutoDetect.Location = new System.Drawing.Point(18, 249);
+            this.progressBarAutoDetect.Location = new System.Drawing.Point(22, 268);
             this.progressBarAutoDetect.Maximum = 32;
             this.progressBarAutoDetect.Name = "progressBarAutoDetect";
-            this.progressBarAutoDetect.Size = new System.Drawing.Size(112, 24);
+            this.progressBarAutoDetect.Size = new System.Drawing.Size(134, 26);
             this.progressBarAutoDetect.Step = 1;
             this.progressBarAutoDetect.TabIndex = 23;
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(103, 111);
+            this.label5.Location = new System.Drawing.Point(124, 120);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 24);
+            this.label5.Size = new System.Drawing.Size(86, 25);
             this.label5.TabIndex = 21;
             this.label5.Text = "Stop Bits:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(103, 87);
+            this.label4.Location = new System.Drawing.Point(124, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 24);
+            this.label4.Size = new System.Drawing.Size(86, 26);
             this.label4.TabIndex = 20;
             this.label4.Text = "Parity:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(103, 63);
+            this.label3.Location = new System.Drawing.Point(124, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 24);
+            this.label3.Size = new System.Drawing.Size(86, 26);
             this.label3.TabIndex = 19;
             this.label3.Text = "Data Bits:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(103, 39);
+            this.label2.Location = new System.Drawing.Point(124, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 24);
+            this.label2.Size = new System.Drawing.Size(86, 26);
             this.label2.TabIndex = 18;
             this.label2.Text = "Baud Rate:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(103, 15);
+            this.label1.Location = new System.Drawing.Point(124, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 24);
+            this.label1.Size = new System.Drawing.Size(86, 26);
             this.label1.TabIndex = 17;
             this.label1.Text = "Port Number:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1037,52 +1037,52 @@ namespace GpsTracker
             // comboBoxStopBits
             // 
             this.comboBoxStopBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxStopBits.ItemHeight = 13;
+            this.comboBoxStopBits.ItemHeight = 12;
             this.comboBoxStopBits.Items.AddRange(new object[] {
             "1",
             "1.5",
             "2"});
-            this.comboBoxStopBits.Location = new System.Drawing.Point(183, 111);
+            this.comboBoxStopBits.Location = new System.Drawing.Point(220, 120);
             this.comboBoxStopBits.Name = "comboBoxStopBits";
-            this.comboBoxStopBits.Size = new System.Drawing.Size(128, 21);
+            this.comboBoxStopBits.Size = new System.Drawing.Size(153, 20);
             this.comboBoxStopBits.TabIndex = 16;
             this.comboBoxStopBits.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // comboParity
             // 
             this.comboParity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboParity.ItemHeight = 13;
+            this.comboParity.ItemHeight = 12;
             this.comboParity.Items.AddRange(new object[] {
             "None",
             "Odd",
             "Even",
             "Mark",
             "Space"});
-            this.comboParity.Location = new System.Drawing.Point(183, 87);
+            this.comboParity.Location = new System.Drawing.Point(220, 94);
             this.comboParity.Name = "comboParity";
-            this.comboParity.Size = new System.Drawing.Size(128, 21);
+            this.comboParity.Size = new System.Drawing.Size(153, 20);
             this.comboParity.TabIndex = 15;
             this.comboParity.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // comboBoxByteSize
             // 
             this.comboBoxByteSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxByteSize.ItemHeight = 13;
+            this.comboBoxByteSize.ItemHeight = 12;
             this.comboBoxByteSize.Items.AddRange(new object[] {
             "5",
             "6",
             "7",
             "8"});
-            this.comboBoxByteSize.Location = new System.Drawing.Point(183, 63);
+            this.comboBoxByteSize.Location = new System.Drawing.Point(220, 68);
             this.comboBoxByteSize.Name = "comboBoxByteSize";
-            this.comboBoxByteSize.Size = new System.Drawing.Size(128, 21);
+            this.comboBoxByteSize.Size = new System.Drawing.Size(153, 20);
             this.comboBoxByteSize.TabIndex = 14;
             this.comboBoxByteSize.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // comboBoxBaudRate
             // 
             this.comboBoxBaudRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBaudRate.ItemHeight = 13;
+            this.comboBoxBaudRate.ItemHeight = 12;
             this.comboBoxBaudRate.Items.AddRange(new object[] {
             "110",
             "300",
@@ -1099,16 +1099,16 @@ namespace GpsTracker
             "115200",
             "128000",
             "256000"});
-            this.comboBoxBaudRate.Location = new System.Drawing.Point(183, 39);
+            this.comboBoxBaudRate.Location = new System.Drawing.Point(220, 42);
             this.comboBoxBaudRate.Name = "comboBoxBaudRate";
-            this.comboBoxBaudRate.Size = new System.Drawing.Size(128, 21);
+            this.comboBoxBaudRate.Size = new System.Drawing.Size(153, 20);
             this.comboBoxBaudRate.TabIndex = 13;
             this.comboBoxBaudRate.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // comboBoxCOMPort
             // 
             this.comboBoxCOMPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCOMPort.ItemHeight = 13;
+            this.comboBoxCOMPort.ItemHeight = 12;
             this.comboBoxCOMPort.Items.AddRange(new object[] {
             "1",
             "2",
@@ -1142,9 +1142,9 @@ namespace GpsTracker
             "30",
             "31",
             "32"});
-            this.comboBoxCOMPort.Location = new System.Drawing.Point(183, 15);
+            this.comboBoxCOMPort.Location = new System.Drawing.Point(220, 16);
             this.comboBoxCOMPort.Name = "comboBoxCOMPort";
-            this.comboBoxCOMPort.Size = new System.Drawing.Size(128, 21);
+            this.comboBoxCOMPort.Size = new System.Drawing.Size(153, 20);
             this.comboBoxCOMPort.TabIndex = 12;
             this.comboBoxCOMPort.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
@@ -1153,7 +1153,7 @@ namespace GpsTracker
             this.tabPageGeneral.Controls.Add(this.tabControl1);
             this.tabPageGeneral.Location = new System.Drawing.Point(4, 22);
             this.tabPageGeneral.Name = "tabPageGeneral";
-            this.tabPageGeneral.Size = new System.Drawing.Size(431, 356);
+            this.tabPageGeneral.Size = new System.Drawing.Size(519, 385);
             this.tabPageGeneral.TabIndex = 6;
             this.tabPageGeneral.Text = "Settings";
             this.tabPageGeneral.UseVisualStyleBackColor = true;
@@ -1166,10 +1166,10 @@ namespace GpsTracker
             this.tabControl1.Controls.Add(this.tabPageNMEAExport);
             this.tabControl1.Controls.Add(this.tabPageConfiguration);
             this.tabControl1.Controls.Add(this.tabPageKeyboardShortcuts);
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
+            this.tabControl1.Location = new System.Drawing.Point(4, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(418, 350);
+            this.tabControl1.Size = new System.Drawing.Size(501, 377);
             this.tabControl1.TabIndex = 65;
             // 
             // tabPageGeneralSettings
@@ -1196,7 +1196,7 @@ namespace GpsTracker
             this.tabPageGeneralSettings.Location = new System.Drawing.Point(4, 22);
             this.tabPageGeneralSettings.Name = "tabPageGeneralSettings";
             this.tabPageGeneralSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGeneralSettings.Size = new System.Drawing.Size(410, 324);
+            this.tabPageGeneralSettings.Size = new System.Drawing.Size(493, 351);
             this.tabPageGeneralSettings.TabIndex = 0;
             this.tabPageGeneralSettings.Text = "General";
             this.tabPageGeneralSettings.UseVisualStyleBackColor = true;
@@ -1204,9 +1204,9 @@ namespace GpsTracker
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(119, 184);
+            this.label35.Location = new System.Drawing.Point(143, 198);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(170, 13);
+            this.label35.Size = new System.Drawing.Size(185, 12);
             this.label35.TabIndex = 84;
             this.label35.Text = "- Open Messages Monitor Window";
             // 
@@ -1214,9 +1214,9 @@ namespace GpsTracker
             // 
             this.checkBoxMessagesMonitor.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxMessagesMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMessagesMonitor.Location = new System.Drawing.Point(-15, 182);
+            this.checkBoxMessagesMonitor.Location = new System.Drawing.Point(-18, 196);
             this.checkBoxMessagesMonitor.Name = "checkBoxMessagesMonitor";
-            this.checkBoxMessagesMonitor.Size = new System.Drawing.Size(128, 18);
+            this.checkBoxMessagesMonitor.Size = new System.Drawing.Size(154, 19);
             this.checkBoxMessagesMonitor.TabIndex = 83;
             this.checkBoxMessagesMonitor.Text = "Messages Monitor";
             this.checkBoxMessagesMonitor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1225,9 +1225,9 @@ namespace GpsTracker
             // 
             this.checkBoxRecordSession.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxRecordSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxRecordSession.Location = new System.Drawing.Point(-15, 147);
+            this.checkBoxRecordSession.Location = new System.Drawing.Point(-18, 158);
             this.checkBoxRecordSession.Name = "checkBoxRecordSession";
-            this.checkBoxRecordSession.Size = new System.Drawing.Size(128, 16);
+            this.checkBoxRecordSession.Size = new System.Drawing.Size(154, 18);
             this.checkBoxRecordSession.TabIndex = 80;
             this.checkBoxRecordSession.Text = "Record Session";
             this.checkBoxRecordSession.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1237,27 +1237,27 @@ namespace GpsTracker
             // 
             this.checkBoxSetAltitud.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxSetAltitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxSetAltitud.Location = new System.Drawing.Point(258, 110);
+            this.checkBoxSetAltitud.Location = new System.Drawing.Point(310, 118);
             this.checkBoxSetAltitud.Name = "checkBoxSetAltitud";
-            this.checkBoxSetAltitud.Size = new System.Drawing.Size(49, 16);
+            this.checkBoxSetAltitud.Size = new System.Drawing.Size(58, 18);
             this.checkBoxSetAltitud.TabIndex = 79;
             this.checkBoxSetAltitud.Text = "Set";
             this.checkBoxSetAltitud.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label39
             // 
-            this.label39.Location = new System.Drawing.Point(227, 110);
+            this.label39.Location = new System.Drawing.Point(272, 118);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(34, 16);
+            this.label39.Size = new System.Drawing.Size(41, 18);
             this.label39.TabIndex = 78;
             this.label39.Text = "Km.";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label38
             // 
-            this.label38.Location = new System.Drawing.Point(-20, 110);
+            this.label38.Location = new System.Drawing.Point(-24, 118);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(176, 16);
+            this.label38.Size = new System.Drawing.Size(211, 18);
             this.label38.TabIndex = 77;
             this.label38.Text = "Start altitude on tracked source:";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1269,7 +1269,7 @@ namespace GpsTracker
             0,
             0,
             0});
-            this.numericUpDownAltitud.Location = new System.Drawing.Point(157, 108);
+            this.numericUpDownAltitud.Location = new System.Drawing.Point(188, 116);
             this.numericUpDownAltitud.Maximum = new decimal(new int[] {
             13000,
             0,
@@ -1281,7 +1281,7 @@ namespace GpsTracker
             0,
             0});
             this.numericUpDownAltitud.Name = "numericUpDownAltitud";
-            this.numericUpDownAltitud.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownAltitud.Size = new System.Drawing.Size(77, 21);
             this.numericUpDownAltitud.TabIndex = 76;
             this.numericUpDownAltitud.Value = new decimal(new int[] {
             20,
@@ -1291,25 +1291,25 @@ namespace GpsTracker
             // 
             // groupBox3
             // 
-            this.groupBox3.Location = new System.Drawing.Point(-29, 166);
+            this.groupBox3.Location = new System.Drawing.Point(-35, 179);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(457, 8);
+            this.groupBox3.Size = new System.Drawing.Size(549, 8);
             this.groupBox3.TabIndex = 82;
             this.groupBox3.TabStop = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(-29, 131);
+            this.groupBox1.Location = new System.Drawing.Point(-35, 141);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(457, 8);
+            this.groupBox1.Size = new System.Drawing.Size(549, 9);
             this.groupBox1.TabIndex = 81;
             this.groupBox1.TabStop = false;
             // 
             // label59
             // 
-            this.label59.Location = new System.Drawing.Point(121, 77);
+            this.label59.Location = new System.Drawing.Point(145, 83);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(195, 16);
+            this.label59.Size = new System.Drawing.Size(234, 17);
             this.label59.TabIndex = 74;
             this.label59.Text = "Track always on top of Terrain";
             // 
@@ -1320,34 +1320,34 @@ namespace GpsTracker
             this.checkBoxTrackOnTop.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxTrackOnTop.Enabled = false;
             this.checkBoxTrackOnTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTrackOnTop.Location = new System.Drawing.Point(-15, 76);
+            this.checkBoxTrackOnTop.Location = new System.Drawing.Point(-18, 82);
             this.checkBoxTrackOnTop.Name = "checkBoxTrackOnTop";
-            this.checkBoxTrackOnTop.Size = new System.Drawing.Size(128, 17);
+            this.checkBoxTrackOnTop.Size = new System.Drawing.Size(154, 18);
             this.checkBoxTrackOnTop.TabIndex = 73;
             this.checkBoxTrackOnTop.Text = "Track On Top";
             this.checkBoxTrackOnTop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(121, 59);
+            this.label16.Location = new System.Drawing.Point(145, 64);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(176, 16);
+            this.label16.Size = new System.Drawing.Size(211, 17);
             this.label16.TabIndex = 71;
             this.label16.Text = "[Left Alt+Click on GPS Icon]";
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(121, 42);
+            this.label15.Location = new System.Drawing.Point(145, 45);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(176, 16);
+            this.label15.Size = new System.Drawing.Size(211, 17);
             this.label15.TabIndex = 70;
             this.label15.Text = "[Right Control+Click on GPS Icon]";
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(121, 25);
+            this.label10.Location = new System.Drawing.Point(145, 27);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(184, 16);
+            this.label10.Size = new System.Drawing.Size(221, 17);
             this.label10.TabIndex = 69;
             this.label10.Text = "[Left Control+Click on GPS Icon]";
             // 
@@ -1355,9 +1355,9 @@ namespace GpsTracker
             // 
             this.checkBoxTrackLine.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxTrackLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTrackLine.Location = new System.Drawing.Point(-15, 59);
+            this.checkBoxTrackLine.Location = new System.Drawing.Point(-18, 64);
             this.checkBoxTrackLine.Name = "checkBoxTrackLine";
-            this.checkBoxTrackLine.Size = new System.Drawing.Size(128, 16);
+            this.checkBoxTrackLine.Size = new System.Drawing.Size(154, 17);
             this.checkBoxTrackLine.TabIndex = 68;
             this.checkBoxTrackLine.Text = "Track line";
             this.checkBoxTrackLine.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1366,9 +1366,9 @@ namespace GpsTracker
             // 
             this.checkBoxTrackHeading.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxTrackHeading.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTrackHeading.Location = new System.Drawing.Point(9, 42);
+            this.checkBoxTrackHeading.Location = new System.Drawing.Point(11, 45);
             this.checkBoxTrackHeading.Name = "checkBoxTrackHeading";
-            this.checkBoxTrackHeading.Size = new System.Drawing.Size(104, 16);
+            this.checkBoxTrackHeading.Size = new System.Drawing.Size(125, 17);
             this.checkBoxTrackHeading.TabIndex = 65;
             this.checkBoxTrackHeading.Text = "Track Heading";
             this.checkBoxTrackHeading.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1377,9 +1377,9 @@ namespace GpsTracker
             // 
             this.checkBoxVExaggeration.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBoxVExaggeration.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxVExaggeration.Location = new System.Drawing.Point(-15, 8);
+            this.checkBoxVExaggeration.Location = new System.Drawing.Point(-18, 9);
             this.checkBoxVExaggeration.Name = "checkBoxVExaggeration";
-            this.checkBoxVExaggeration.Size = new System.Drawing.Size(128, 17);
+            this.checkBoxVExaggeration.Size = new System.Drawing.Size(154, 18);
             this.checkBoxVExaggeration.TabIndex = 66;
             this.checkBoxVExaggeration.Text = "2D Map";
             this.checkBoxVExaggeration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1387,17 +1387,17 @@ namespace GpsTracker
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.groupBox8);
-            this.groupBox6.Location = new System.Drawing.Point(-27, 92);
+            this.groupBox6.Location = new System.Drawing.Point(-32, 99);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(489, 8);
+            this.groupBox6.Size = new System.Drawing.Size(586, 9);
             this.groupBox6.TabIndex = 72;
             this.groupBox6.TabStop = false;
             // 
             // groupBox8
             // 
-            this.groupBox8.Location = new System.Drawing.Point(0, -10);
+            this.groupBox8.Location = new System.Drawing.Point(0, -11);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(368, 8);
+            this.groupBox8.Size = new System.Drawing.Size(442, 9);
             this.groupBox8.TabIndex = 30;
             this.groupBox8.TabStop = false;
             // 
@@ -1407,9 +1407,9 @@ namespace GpsTracker
             this.checkBoxInformationText.Checked = true;
             this.checkBoxInformationText.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxInformationText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxInformationText.Location = new System.Drawing.Point(-15, 25);
+            this.checkBoxInformationText.Location = new System.Drawing.Point(-18, 27);
             this.checkBoxInformationText.Name = "checkBoxInformationText";
-            this.checkBoxInformationText.Size = new System.Drawing.Size(128, 16);
+            this.checkBoxInformationText.Size = new System.Drawing.Size(154, 17);
             this.checkBoxInformationText.TabIndex = 67;
             this.checkBoxInformationText.Text = "Information Text";
             this.checkBoxInformationText.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1422,7 +1422,7 @@ namespace GpsTracker
             this.tabPageUnits.Controls.Add(this.comboBoxPositionUnits);
             this.tabPageUnits.Location = new System.Drawing.Point(4, 22);
             this.tabPageUnits.Name = "tabPageUnits";
-            this.tabPageUnits.Size = new System.Drawing.Size(410, 324);
+            this.tabPageUnits.Size = new System.Drawing.Size(493, 351);
             this.tabPageUnits.TabIndex = 5;
             this.tabPageUnits.Text = "Units";
             this.tabPageUnits.UseVisualStyleBackColor = true;
@@ -1430,9 +1430,9 @@ namespace GpsTracker
             // label83
             // 
             this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(64, 73);
+            this.label83.Location = new System.Drawing.Point(77, 79);
             this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(171, 13);
+            this.label83.Size = new System.Drawing.Size(205, 14);
             this.label83.TabIndex = 3;
             this.label83.Text = "Distance, Speed, Altitude:";
             // 
@@ -1444,17 +1444,17 @@ namespace GpsTracker
             "Metric (Meters, Kilometers,  Kms/Hour)",
             "Imperial/US (Miles,Miles/Hour, Feet)",
             "Maritime (Nautical Miles, Knots, Feet)"});
-            this.comboBoxDistanceUnits.Location = new System.Drawing.Point(64, 89);
+            this.comboBoxDistanceUnits.Location = new System.Drawing.Point(77, 96);
             this.comboBoxDistanceUnits.Name = "comboBoxDistanceUnits";
-            this.comboBoxDistanceUnits.Size = new System.Drawing.Size(286, 21);
+            this.comboBoxDistanceUnits.Size = new System.Drawing.Size(343, 20);
             this.comboBoxDistanceUnits.TabIndex = 2;
             // 
             // label82
             // 
             this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(64, 21);
+            this.label82.Location = new System.Drawing.Point(77, 23);
             this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(158, 13);
+            this.label82.Size = new System.Drawing.Size(189, 14);
             this.label82.TabIndex = 1;
             this.label82.Text = "Position:";
             // 
@@ -1465,9 +1465,9 @@ namespace GpsTracker
             this.comboBoxPositionUnits.Items.AddRange(new object[] {
             "Degrees Decimal",
             "Degrees Minutes"});
-            this.comboBoxPositionUnits.Location = new System.Drawing.Point(64, 37);
+            this.comboBoxPositionUnits.Location = new System.Drawing.Point(77, 40);
             this.comboBoxPositionUnits.Name = "comboBoxPositionUnits";
-            this.comboBoxPositionUnits.Size = new System.Drawing.Size(286, 21);
+            this.comboBoxPositionUnits.Size = new System.Drawing.Size(343, 20);
             this.comboBoxPositionUnits.TabIndex = 0;
             // 
             // tabPageNMEAExport
@@ -1478,16 +1478,16 @@ namespace GpsTracker
             this.tabPageNMEAExport.Location = new System.Drawing.Point(4, 22);
             this.tabPageNMEAExport.Name = "tabPageNMEAExport";
             this.tabPageNMEAExport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNMEAExport.Size = new System.Drawing.Size(410, 324);
+            this.tabPageNMEAExport.Size = new System.Drawing.Size(493, 351);
             this.tabPageNMEAExport.TabIndex = 1;
             this.tabPageNMEAExport.Text = "NMEA Export";
             this.tabPageNMEAExport.UseVisualStyleBackColor = true;
             // 
             // buttonExportPathBrowse
             // 
-            this.buttonExportPathBrowse.Location = new System.Drawing.Point(372, 38);
+            this.buttonExportPathBrowse.Location = new System.Drawing.Point(446, 41);
             this.buttonExportPathBrowse.Name = "buttonExportPathBrowse";
-            this.buttonExportPathBrowse.Size = new System.Drawing.Size(23, 21);
+            this.buttonExportPathBrowse.Size = new System.Drawing.Size(28, 23);
             this.buttonExportPathBrowse.TabIndex = 64;
             this.buttonExportPathBrowse.Text = "...";
             this.buttonExportPathBrowse.UseVisualStyleBackColor = true;
@@ -1495,16 +1495,16 @@ namespace GpsTracker
             // 
             // textBoxNMEAExportPath
             // 
-            this.textBoxNMEAExportPath.Location = new System.Drawing.Point(9, 38);
+            this.textBoxNMEAExportPath.Location = new System.Drawing.Point(11, 41);
             this.textBoxNMEAExportPath.Name = "textBoxNMEAExportPath";
-            this.textBoxNMEAExportPath.Size = new System.Drawing.Size(357, 20);
+            this.textBoxNMEAExportPath.Size = new System.Drawing.Size(428, 21);
             this.textBoxNMEAExportPath.TabIndex = 63;
             // 
             // label46
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(6, 22);
+            this.label46.Location = new System.Drawing.Point(7, 24);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(140, 13);
             this.label46.TabIndex = 67;
@@ -1524,16 +1524,16 @@ namespace GpsTracker
             this.tabPageConfiguration.Controls.Add(this.label67);
             this.tabPageConfiguration.Location = new System.Drawing.Point(4, 22);
             this.tabPageConfiguration.Name = "tabPageConfiguration";
-            this.tabPageConfiguration.Size = new System.Drawing.Size(410, 324);
+            this.tabPageConfiguration.Size = new System.Drawing.Size(493, 351);
             this.tabPageConfiguration.TabIndex = 4;
             this.tabPageConfiguration.Text = "Configuration";
             this.tabPageConfiguration.UseVisualStyleBackColor = true;
             // 
             // buttonSaveConfig
             // 
-            this.buttonSaveConfig.Location = new System.Drawing.Point(296, 161);
+            this.buttonSaveConfig.Location = new System.Drawing.Point(355, 173);
             this.buttonSaveConfig.Name = "buttonSaveConfig";
-            this.buttonSaveConfig.Size = new System.Drawing.Size(70, 21);
+            this.buttonSaveConfig.Size = new System.Drawing.Size(84, 23);
             this.buttonSaveConfig.TabIndex = 44;
             this.buttonSaveConfig.Text = "Save";
             this.buttonSaveConfig.UseVisualStyleBackColor = true;
@@ -1541,9 +1541,9 @@ namespace GpsTracker
             // 
             // buttonLoadConfigurationFile
             // 
-            this.buttonLoadConfigurationFile.Location = new System.Drawing.Point(296, 60);
+            this.buttonLoadConfigurationFile.Location = new System.Drawing.Point(355, 65);
             this.buttonLoadConfigurationFile.Name = "buttonLoadConfigurationFile";
-            this.buttonLoadConfigurationFile.Size = new System.Drawing.Size(70, 21);
+            this.buttonLoadConfigurationFile.Size = new System.Drawing.Size(84, 22);
             this.buttonLoadConfigurationFile.TabIndex = 43;
             this.buttonLoadConfigurationFile.Text = "Load";
             this.buttonLoadConfigurationFile.UseVisualStyleBackColor = true;
@@ -1552,25 +1552,25 @@ namespace GpsTracker
             // groupBox17
             // 
             this.groupBox17.Enabled = false;
-            this.groupBox17.Location = new System.Drawing.Point(-27, 188);
+            this.groupBox17.Location = new System.Drawing.Point(-32, 202);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(461, 8);
+            this.groupBox17.Size = new System.Drawing.Size(553, 9);
             this.groupBox17.TabIndex = 42;
             this.groupBox17.TabStop = false;
             // 
             // textBoxSaveConfiguration
             // 
-            this.textBoxSaveConfiguration.Location = new System.Drawing.Point(6, 135);
+            this.textBoxSaveConfiguration.Location = new System.Drawing.Point(7, 145);
             this.textBoxSaveConfiguration.Name = "textBoxSaveConfiguration";
-            this.textBoxSaveConfiguration.Size = new System.Drawing.Size(360, 20);
+            this.textBoxSaveConfiguration.Size = new System.Drawing.Size(432, 21);
             this.textBoxSaveConfiguration.TabIndex = 41;
             this.textBoxSaveConfiguration.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSaveConfiguration_KeyUp);
             // 
             // buttonSaveConfiguration
             // 
-            this.buttonSaveConfiguration.Location = new System.Drawing.Point(372, 135);
+            this.buttonSaveConfiguration.Location = new System.Drawing.Point(446, 145);
             this.buttonSaveConfiguration.Name = "buttonSaveConfiguration";
-            this.buttonSaveConfiguration.Size = new System.Drawing.Size(29, 20);
+            this.buttonSaveConfiguration.Size = new System.Drawing.Size(35, 22);
             this.buttonSaveConfiguration.TabIndex = 40;
             this.buttonSaveConfiguration.Text = "...";
             this.buttonSaveConfiguration.Click += new System.EventHandler(this.buttonSaveConfiguration_Click);
@@ -1579,9 +1579,9 @@ namespace GpsTracker
             // 
             this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label68.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label68.Location = new System.Drawing.Point(3, 116);
+            this.label68.Location = new System.Drawing.Point(4, 125);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(311, 16);
+            this.label68.Size = new System.Drawing.Size(373, 17);
             this.label68.TabIndex = 39;
             this.label68.Text = "Save current Configuration as...";
             this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1589,25 +1589,25 @@ namespace GpsTracker
             // groupBox16
             // 
             this.groupBox16.Enabled = false;
-            this.groupBox16.Location = new System.Drawing.Point(-27, 92);
+            this.groupBox16.Location = new System.Drawing.Point(-32, 99);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(448, 8);
+            this.groupBox16.Size = new System.Drawing.Size(537, 9);
             this.groupBox16.TabIndex = 38;
             this.groupBox16.TabStop = false;
             // 
             // comboBoxConfigurationFile
             // 
-            this.comboBoxConfigurationFile.Location = new System.Drawing.Point(6, 33);
+            this.comboBoxConfigurationFile.Location = new System.Drawing.Point(7, 36);
             this.comboBoxConfigurationFile.Name = "comboBoxConfigurationFile";
-            this.comboBoxConfigurationFile.Size = new System.Drawing.Size(360, 21);
+            this.comboBoxConfigurationFile.Size = new System.Drawing.Size(432, 20);
             this.comboBoxConfigurationFile.TabIndex = 35;
             this.comboBoxConfigurationFile.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboBoxConfigurationFile_KeyUp);
             // 
             // buttonLoadConfiguration
             // 
-            this.buttonLoadConfiguration.Location = new System.Drawing.Point(372, 33);
+            this.buttonLoadConfiguration.Location = new System.Drawing.Point(446, 36);
             this.buttonLoadConfiguration.Name = "buttonLoadConfiguration";
-            this.buttonLoadConfiguration.Size = new System.Drawing.Size(29, 21);
+            this.buttonLoadConfiguration.Size = new System.Drawing.Size(35, 22);
             this.buttonLoadConfiguration.TabIndex = 34;
             this.buttonLoadConfiguration.Text = "...";
             this.buttonLoadConfiguration.Click += new System.EventHandler(this.buttonLoadConfiguration_Click);
@@ -1616,9 +1616,9 @@ namespace GpsTracker
             // 
             this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label67.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label67.Location = new System.Drawing.Point(3, 14);
+            this.label67.Location = new System.Drawing.Point(4, 15);
             this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(311, 16);
+            this.label67.Size = new System.Drawing.Size(373, 17);
             this.label67.TabIndex = 33;
             this.label67.Text = "Load a Configuration File:";
             this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1635,7 +1635,7 @@ namespace GpsTracker
             this.tabPageKeyboardShortcuts.Controls.Add(this.label58);
             this.tabPageKeyboardShortcuts.Location = new System.Drawing.Point(4, 22);
             this.tabPageKeyboardShortcuts.Name = "tabPageKeyboardShortcuts";
-            this.tabPageKeyboardShortcuts.Size = new System.Drawing.Size(410, 324);
+            this.tabPageKeyboardShortcuts.Size = new System.Drawing.Size(493, 351);
             this.tabPageKeyboardShortcuts.TabIndex = 3;
             this.tabPageKeyboardShortcuts.Text = "Keyboard Shortcuts";
             this.tabPageKeyboardShortcuts.UseVisualStyleBackColor = true;
@@ -1643,9 +1643,9 @@ namespace GpsTracker
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(199, 70);
+            this.label18.Location = new System.Drawing.Point(239, 75);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(161, 13);
+            this.label18.Size = new System.Drawing.Size(203, 12);
             this.label18.TabIndex = 75;
             this.label18.Text = "Right Ctrl + Click on Source Icon";
             // 
@@ -1653,7 +1653,7 @@ namespace GpsTracker
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(24, 70);
+            this.label24.Location = new System.Drawing.Point(29, 75);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(131, 13);
             this.label24.TabIndex = 74;
@@ -1662,9 +1662,9 @@ namespace GpsTracker
             // label78
             // 
             this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(199, 50);
+            this.label78.Location = new System.Drawing.Point(239, 54);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(128, 13);
+            this.label78.Size = new System.Drawing.Size(161, 12);
             this.label78.TabIndex = 73;
             this.label78.Text = "Right Alt + Click on World";
             // 
@@ -1672,7 +1672,7 @@ namespace GpsTracker
             // 
             this.label79.AutoSize = true;
             this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(24, 50);
+            this.label79.Location = new System.Drawing.Point(29, 54);
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(124, 13);
             this.label79.TabIndex = 72;
@@ -1681,18 +1681,18 @@ namespace GpsTracker
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(199, 31);
+            this.label33.Location = new System.Drawing.Point(239, 33);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(130, 13);
+            this.label33.Size = new System.Drawing.Size(167, 12);
             this.label33.TabIndex = 71;
             this.label33.Text = "Left Shift + Click on World";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(199, 12);
+            this.label17.Location = new System.Drawing.Point(239, 13);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(154, 13);
+            this.label17.Size = new System.Drawing.Size(197, 12);
             this.label17.TabIndex = 69;
             this.label17.Text = "Left Ctrl + Click on Source Icon";
             // 
@@ -1700,7 +1700,7 @@ namespace GpsTracker
             // 
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(24, 31);
+            this.label61.Location = new System.Drawing.Point(29, 33);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(169, 13);
             this.label61.TabIndex = 68;
@@ -1710,7 +1710,7 @@ namespace GpsTracker
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(24, 12);
+            this.label58.Location = new System.Drawing.Point(29, 13);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(92, 13);
             this.label58.TabIndex = 66;
@@ -1721,7 +1721,7 @@ namespace GpsTracker
             this.tabPageFileHelp.Controls.Add(this.textBox5);
             this.tabPageFileHelp.Location = new System.Drawing.Point(4, 22);
             this.tabPageFileHelp.Name = "tabPageFileHelp";
-            this.tabPageFileHelp.Size = new System.Drawing.Size(431, 356);
+            this.tabPageFileHelp.Size = new System.Drawing.Size(519, 385);
             this.tabPageFileHelp.TabIndex = 13;
             this.tabPageFileHelp.Text = "Help";
             this.tabPageFileHelp.UseVisualStyleBackColor = true;
@@ -1730,12 +1730,12 @@ namespace GpsTracker
             // 
             this.textBox5.BackColor = System.Drawing.Color.White;
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Location = new System.Drawing.Point(8, 5);
+            this.textBox5.Location = new System.Drawing.Point(10, 5);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox5.Size = new System.Drawing.Size(416, 348);
+            this.textBox5.Size = new System.Drawing.Size(499, 375);
             this.textBox5.TabIndex = 6;
             this.textBox5.Text = resources.GetString("textBox5.Text");
             // 
@@ -1745,7 +1745,7 @@ namespace GpsTracker
             this.tabPageUsage.Controls.Add(this.pictureBoxHelpLogo);
             this.tabPageUsage.Location = new System.Drawing.Point(4, 22);
             this.tabPageUsage.Name = "tabPageUsage";
-            this.tabPageUsage.Size = new System.Drawing.Size(431, 356);
+            this.tabPageUsage.Size = new System.Drawing.Size(519, 385);
             this.tabPageUsage.TabIndex = 5;
             this.tabPageUsage.Text = "Help";
             this.tabPageUsage.UseVisualStyleBackColor = true;
@@ -1755,20 +1755,20 @@ namespace GpsTracker
             // 
             this.textBoxUsage.BackColor = System.Drawing.Color.White;
             this.textBoxUsage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxUsage.Location = new System.Drawing.Point(8, 5);
+            this.textBoxUsage.Location = new System.Drawing.Point(10, 5);
             this.textBoxUsage.Multiline = true;
             this.textBoxUsage.Name = "textBoxUsage";
             this.textBoxUsage.ReadOnly = true;
             this.textBoxUsage.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxUsage.Size = new System.Drawing.Size(416, 348);
+            this.textBoxUsage.Size = new System.Drawing.Size(499, 375);
             this.textBoxUsage.TabIndex = 5;
             this.textBoxUsage.Text = resources.GetString("textBoxUsage.Text");
             // 
             // pictureBoxHelpLogo
             // 
-            this.pictureBoxHelpLogo.Location = new System.Drawing.Point(8, 8);
+            this.pictureBoxHelpLogo.Location = new System.Drawing.Point(10, 9);
             this.pictureBoxHelpLogo.Name = "pictureBoxHelpLogo";
-            this.pictureBoxHelpLogo.Size = new System.Drawing.Size(48, 45);
+            this.pictureBoxHelpLogo.Size = new System.Drawing.Size(57, 48);
             this.pictureBoxHelpLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxHelpLogo.TabIndex = 37;
             this.pictureBoxHelpLogo.TabStop = false;
@@ -1787,7 +1787,7 @@ namespace GpsTracker
             this.tabPageTCP.Controls.Add(this.numericUpDownTCPPort);
             this.tabPageTCP.Location = new System.Drawing.Point(4, 22);
             this.tabPageTCP.Name = "tabPageTCP";
-            this.tabPageTCP.Size = new System.Drawing.Size(431, 356);
+            this.tabPageTCP.Size = new System.Drawing.Size(519, 385);
             this.tabPageTCP.TabIndex = 2;
             this.tabPageTCP.Text = "TCP";
             this.tabPageTCP.UseVisualStyleBackColor = true;
@@ -1795,10 +1795,10 @@ namespace GpsTracker
             // 
             // checkBoxTCPExport
             // 
-            this.checkBoxTCPExport.Location = new System.Drawing.Point(132, 142);
+            this.checkBoxTCPExport.Location = new System.Drawing.Point(158, 153);
             this.checkBoxTCPExport.Name = "checkBoxTCPExport";
             this.checkBoxTCPExport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxTCPExport.Size = new System.Drawing.Size(167, 17);
+            this.checkBoxTCPExport.Size = new System.Drawing.Size(201, 18);
             this.checkBoxTCPExport.TabIndex = 51;
             this.checkBoxTCPExport.Text = "Export as NMEA to File";
             this.checkBoxTCPExport.UseVisualStyleBackColor = true;
@@ -1806,71 +1806,71 @@ namespace GpsTracker
             // 
             // comboBoxTcpIP
             // 
-            this.comboBoxTcpIP.Location = new System.Drawing.Point(171, 16);
+            this.comboBoxTcpIP.Location = new System.Drawing.Point(205, 17);
             this.comboBoxTcpIP.Name = "comboBoxTcpIP";
-            this.comboBoxTcpIP.Size = new System.Drawing.Size(208, 21);
+            this.comboBoxTcpIP.Size = new System.Drawing.Size(250, 20);
             this.comboBoxTcpIP.TabIndex = 50;
             this.comboBoxTcpIP.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             this.comboBoxTcpIP.TextChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // checkBoxSecureSocket
             // 
-            this.checkBoxSecureSocket.Location = new System.Drawing.Point(43, 120);
+            this.checkBoxSecureSocket.Location = new System.Drawing.Point(52, 129);
             this.checkBoxSecureSocket.Name = "checkBoxSecureSocket";
             this.checkBoxSecureSocket.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxSecureSocket.Size = new System.Drawing.Size(256, 16);
+            this.checkBoxSecureSocket.Size = new System.Drawing.Size(307, 17);
             this.checkBoxSecureSocket.TabIndex = 49;
             this.checkBoxSecureSocket.Text = "Use SSL3 or TLS1 Secure TCP Connection";
             this.checkBoxSecureSocket.CheckedChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // buttonApplyTCP
             // 
-            this.buttonApplyTCP.Location = new System.Drawing.Point(372, 329);
+            this.buttonApplyTCP.Location = new System.Drawing.Point(446, 354);
             this.buttonApplyTCP.Name = "buttonApplyTCP";
-            this.buttonApplyTCP.Size = new System.Drawing.Size(56, 24);
+            this.buttonApplyTCP.Size = new System.Drawing.Size(68, 26);
             this.buttonApplyTCP.TabIndex = 48;
             this.buttonApplyTCP.Text = "Apply";
             this.buttonApplyTCP.Click += new System.EventHandler(this.buttonApply_Click);
             // 
             // label22
             // 
-            this.label22.Location = new System.Drawing.Point(67, 80);
+            this.label22.Location = new System.Drawing.Point(80, 86);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(96, 16);
+            this.label22.Size = new System.Drawing.Size(116, 17);
             this.label22.TabIndex = 43;
             this.label22.Text = "Track Color:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonTrackColorTCP
             // 
-            this.buttonTrackColorTCP.Location = new System.Drawing.Point(171, 80);
+            this.buttonTrackColorTCP.Location = new System.Drawing.Point(205, 86);
             this.buttonTrackColorTCP.Name = "buttonTrackColorTCP";
-            this.buttonTrackColorTCP.Size = new System.Drawing.Size(128, 13);
+            this.buttonTrackColorTCP.Size = new System.Drawing.Size(154, 14);
             this.buttonTrackColorTCP.TabIndex = 42;
-            this.buttonTrackColorTCP.Click += new System.EventHandler(this.buttonTrackColorTCP_Click);
             this.buttonTrackColorTCP.BackColorChanged += new System.EventHandler(this.ControlValueChanged);
+            this.buttonTrackColorTCP.Click += new System.EventHandler(this.buttonTrackColorTCP_Click);
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(19, 16);
+            this.label8.Location = new System.Drawing.Point(23, 17);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 24);
+            this.label8.Size = new System.Drawing.Size(182, 26);
             this.label8.TabIndex = 22;
             this.label8.Text = "Gps Server IP/Name:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(91, 48);
+            this.label7.Location = new System.Drawing.Point(109, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 24);
+            this.label7.Size = new System.Drawing.Size(87, 26);
             this.label7.TabIndex = 20;
             this.label7.Text = "Port Number:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // numericUpDownTCPPort
             // 
-            this.numericUpDownTCPPort.Location = new System.Drawing.Point(171, 48);
+            this.numericUpDownTCPPort.Location = new System.Drawing.Point(205, 52);
             this.numericUpDownTCPPort.Maximum = new decimal(new int[] {
             65519,
             0,
@@ -1882,7 +1882,7 @@ namespace GpsTracker
             0,
             0});
             this.numericUpDownTCPPort.Name = "numericUpDownTCPPort";
-            this.numericUpDownTCPPort.Size = new System.Drawing.Size(128, 20);
+            this.numericUpDownTCPPort.Size = new System.Drawing.Size(154, 21);
             this.numericUpDownTCPPort.TabIndex = 0;
             this.numericUpDownTCPPort.Value = new decimal(new int[] {
             1000,
@@ -1918,7 +1918,7 @@ namespace GpsTracker
             this.tabPageFile.Controls.Add(this.groupBox5);
             this.tabPageFile.Location = new System.Drawing.Point(4, 22);
             this.tabPageFile.Name = "tabPageFile";
-            this.tabPageFile.Size = new System.Drawing.Size(431, 356);
+            this.tabPageFile.Size = new System.Drawing.Size(519, 385);
             this.tabPageFile.TabIndex = 3;
             this.tabPageFile.Text = "Tracks | Routes | Sessions";
             this.tabPageFile.UseVisualStyleBackColor = true;
@@ -1926,10 +1926,10 @@ namespace GpsTracker
             // 
             // checkBoxTrackExport
             // 
-            this.checkBoxTrackExport.Location = new System.Drawing.Point(162, 262);
+            this.checkBoxTrackExport.Location = new System.Drawing.Point(194, 282);
             this.checkBoxTrackExport.Name = "checkBoxTrackExport";
             this.checkBoxTrackExport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxTrackExport.Size = new System.Drawing.Size(176, 17);
+            this.checkBoxTrackExport.Size = new System.Drawing.Size(212, 18);
             this.checkBoxTrackExport.TabIndex = 55;
             this.checkBoxTrackExport.Text = "Export as NMEA to File";
             this.checkBoxTrackExport.UseVisualStyleBackColor = true;
@@ -1938,9 +1938,9 @@ namespace GpsTracker
             // comboBoxTrackFileType
             // 
             this.comboBoxTrackFileType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTrackFileType.Location = new System.Drawing.Point(10, 25);
+            this.comboBoxTrackFileType.Location = new System.Drawing.Point(12, 27);
             this.comboBoxTrackFileType.Name = "comboBoxTrackFileType";
-            this.comboBoxTrackFileType.Size = new System.Drawing.Size(418, 21);
+            this.comboBoxTrackFileType.Size = new System.Drawing.Size(502, 20);
             this.comboBoxTrackFileType.TabIndex = 54;
             this.comboBoxTrackFileType.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
@@ -1948,123 +1948,123 @@ namespace GpsTracker
             // 
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label41.Location = new System.Drawing.Point(7, 9);
+            this.label41.Location = new System.Drawing.Point(8, 10);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(272, 16);
+            this.label41.Size = new System.Drawing.Size(327, 17);
             this.label41.TabIndex = 53;
             this.label41.Text = "File Type:";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label37
             // 
-            this.label37.Location = new System.Drawing.Point(134, 93);
+            this.label37.Location = new System.Drawing.Point(161, 100);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(184, 16);
+            this.label37.Size = new System.Drawing.Size(221, 17);
             this.label37.TabIndex = 52;
             this.label37.Text = "seconds after playback is done.";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label36
             // 
-            this.label36.Location = new System.Drawing.Point(-1, 93);
+            this.label36.Location = new System.Drawing.Point(-1, 100);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(72, 16);
+            this.label36.Size = new System.Drawing.Size(86, 17);
             this.label36.TabIndex = 51;
             this.label36.Text = "Reload after";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // numericUpDownReload
             // 
-            this.numericUpDownReload.Location = new System.Drawing.Point(76, 93);
+            this.numericUpDownReload.Location = new System.Drawing.Point(91, 100);
             this.numericUpDownReload.Maximum = new decimal(new int[] {
             1800,
             0,
             0,
             0});
             this.numericUpDownReload.Name = "numericUpDownReload";
-            this.numericUpDownReload.Size = new System.Drawing.Size(56, 20);
+            this.numericUpDownReload.Size = new System.Drawing.Size(67, 21);
             this.numericUpDownReload.TabIndex = 50;
             this.numericUpDownReload.ValueChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // buttonApplyFile
             // 
-            this.buttonApplyFile.Location = new System.Drawing.Point(372, 329);
+            this.buttonApplyFile.Location = new System.Drawing.Point(446, 354);
             this.buttonApplyFile.Name = "buttonApplyFile";
-            this.buttonApplyFile.Size = new System.Drawing.Size(56, 24);
+            this.buttonApplyFile.Size = new System.Drawing.Size(68, 26);
             this.buttonApplyFile.TabIndex = 48;
             this.buttonApplyFile.Text = "Apply";
             this.buttonApplyFile.Click += new System.EventHandler(this.buttonApply_Click);
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(226, 210);
+            this.label19.Location = new System.Drawing.Point(271, 226);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(96, 16);
+            this.label19.Size = new System.Drawing.Size(115, 17);
             this.label19.TabIndex = 39;
             this.label19.Text = "Track Color";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonTrackColor
             // 
-            this.buttonTrackColor.Location = new System.Drawing.Point(324, 211);
+            this.buttonTrackColor.Location = new System.Drawing.Point(389, 227);
             this.buttonTrackColor.Name = "buttonTrackColor";
-            this.buttonTrackColor.Size = new System.Drawing.Size(13, 13);
+            this.buttonTrackColor.Size = new System.Drawing.Size(15, 14);
             this.buttonTrackColor.TabIndex = 38;
-            this.buttonTrackColor.Click += new System.EventHandler(this.buttonTrackColor_Click);
             this.buttonTrackColor.BackColorChanged += new System.EventHandler(this.ControlValueChanged);
+            this.buttonTrackColor.Click += new System.EventHandler(this.buttonTrackColor_Click);
             // 
             // checkBoxForcePreprocessing
             // 
-            this.checkBoxForcePreprocessing.Location = new System.Drawing.Point(130, 242);
+            this.checkBoxForcePreprocessing.Location = new System.Drawing.Point(156, 261);
             this.checkBoxForcePreprocessing.Name = "checkBoxForcePreprocessing";
             this.checkBoxForcePreprocessing.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxForcePreprocessing.Size = new System.Drawing.Size(208, 22);
+            this.checkBoxForcePreprocessing.Size = new System.Drawing.Size(250, 23);
             this.checkBoxForcePreprocessing.TabIndex = 37;
             this.checkBoxForcePreprocessing.Text = "Force Track at Once Preprocessing";
             this.checkBoxForcePreprocessing.CheckedChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // labelPreprocessing
             // 
-            this.labelPreprocessing.Location = new System.Drawing.Point(3, 329);
+            this.labelPreprocessing.Location = new System.Drawing.Point(4, 354);
             this.labelPreprocessing.Name = "labelPreprocessing";
-            this.labelPreprocessing.Size = new System.Drawing.Size(80, 16);
+            this.labelPreprocessing.Size = new System.Drawing.Size(96, 18);
             this.labelPreprocessing.TabIndex = 36;
             this.labelPreprocessing.Text = "Preprocessing:";
             this.labelPreprocessing.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // progressBarPreprocessing
             // 
-            this.progressBarPreprocessing.Location = new System.Drawing.Point(90, 329);
+            this.progressBarPreprocessing.Location = new System.Drawing.Point(108, 354);
             this.progressBarPreprocessing.Name = "progressBarPreprocessing";
-            this.progressBarPreprocessing.Size = new System.Drawing.Size(274, 16);
+            this.progressBarPreprocessing.Size = new System.Drawing.Size(329, 18);
             this.progressBarPreprocessing.Step = 1;
             this.progressBarPreprocessing.TabIndex = 35;
             // 
             // checkBoxTrackAtOnce
             // 
-            this.checkBoxTrackAtOnce.Location = new System.Drawing.Point(162, 228);
+            this.checkBoxTrackAtOnce.Location = new System.Drawing.Point(194, 246);
             this.checkBoxTrackAtOnce.Name = "checkBoxTrackAtOnce";
             this.checkBoxTrackAtOnce.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxTrackAtOnce.Size = new System.Drawing.Size(176, 16);
+            this.checkBoxTrackAtOnce.Size = new System.Drawing.Size(212, 17);
             this.checkBoxTrackAtOnce.TabIndex = 34;
             this.checkBoxTrackAtOnce.Text = "Track at Once";
             this.checkBoxTrackAtOnce.CheckedChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // checkBoxNoDelay
             // 
-            this.checkBoxNoDelay.Location = new System.Drawing.Point(162, 183);
+            this.checkBoxNoDelay.Location = new System.Drawing.Point(194, 197);
             this.checkBoxNoDelay.Name = "checkBoxNoDelay";
             this.checkBoxNoDelay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxNoDelay.Size = new System.Drawing.Size(176, 16);
+            this.checkBoxNoDelay.Size = new System.Drawing.Size(212, 17);
             this.checkBoxNoDelay.TabIndex = 33;
             this.checkBoxNoDelay.Text = "Maximum Speed";
             this.checkBoxNoDelay.CheckedChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // comboBoxFile
             // 
-            this.comboBoxFile.Location = new System.Drawing.Point(10, 68);
+            this.comboBoxFile.Location = new System.Drawing.Point(12, 73);
             this.comboBoxFile.Name = "comboBoxFile";
-            this.comboBoxFile.Size = new System.Drawing.Size(391, 21);
+            this.comboBoxFile.Size = new System.Drawing.Size(469, 20);
             this.comboBoxFile.TabIndex = 32;
             this.comboBoxFile.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             this.comboBoxFile.TextChanged += new System.EventHandler(this.ControlValueChanged);
@@ -2072,9 +2072,9 @@ namespace GpsTracker
             // label13
             // 
             this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label13.Location = new System.Drawing.Point(23, 144);
+            this.label13.Location = new System.Drawing.Point(28, 155);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 24);
+            this.label13.Size = new System.Drawing.Size(67, 26);
             this.label13.TabIndex = 30;
             this.label13.Text = "Real Time";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2083,9 +2083,9 @@ namespace GpsTracker
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label12.Location = new System.Drawing.Point(23, 129);
+            this.label12.Location = new System.Drawing.Point(28, 139);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 16);
+            this.label12.Size = new System.Drawing.Size(144, 17);
             this.label12.TabIndex = 29;
             this.label12.Text = "Playback Speed:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2093,19 +2093,19 @@ namespace GpsTracker
             // trackBarFileSpeed
             // 
             this.trackBarFileSpeed.LargeChange = 2;
-            this.trackBarFileSpeed.Location = new System.Drawing.Point(71, 146);
+            this.trackBarFileSpeed.Location = new System.Drawing.Point(85, 157);
             this.trackBarFileSpeed.Minimum = 1;
             this.trackBarFileSpeed.Name = "trackBarFileSpeed";
-            this.trackBarFileSpeed.Size = new System.Drawing.Size(276, 42);
+            this.trackBarFileSpeed.Size = new System.Drawing.Size(331, 45);
             this.trackBarFileSpeed.TabIndex = 28;
             this.trackBarFileSpeed.Value = 1;
             this.trackBarFileSpeed.ValueChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // buttonBrowseGpsFile
             // 
-            this.buttonBrowseGpsFile.Location = new System.Drawing.Point(407, 67);
+            this.buttonBrowseGpsFile.Location = new System.Drawing.Point(488, 72);
             this.buttonBrowseGpsFile.Name = "buttonBrowseGpsFile";
-            this.buttonBrowseGpsFile.Size = new System.Drawing.Size(21, 21);
+            this.buttonBrowseGpsFile.Size = new System.Drawing.Size(26, 23);
             this.buttonBrowseGpsFile.TabIndex = 25;
             this.buttonBrowseGpsFile.Text = "...";
             this.buttonBrowseGpsFile.Click += new System.EventHandler(this.buttonBrowseGpsFile_Click);
@@ -2114,9 +2114,9 @@ namespace GpsTracker
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label9.Location = new System.Drawing.Point(7, 49);
+            this.label9.Location = new System.Drawing.Point(8, 53);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(328, 16);
+            this.label9.Size = new System.Drawing.Size(394, 17);
             this.label9.TabIndex = 24;
             this.label9.Text = "File Name (use http:// for internet downloaded files):";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2124,18 +2124,18 @@ namespace GpsTracker
             // label14
             // 
             this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label14.Location = new System.Drawing.Point(353, 144);
+            this.label14.Location = new System.Drawing.Point(424, 155);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(48, 24);
+            this.label14.Size = new System.Drawing.Size(57, 26);
             this.label14.TabIndex = 31;
             this.label14.Text = "Faster";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox5
             // 
-            this.groupBox5.Location = new System.Drawing.Point(-254, 116);
+            this.groupBox5.Location = new System.Drawing.Point(-305, 125);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(848, 8);
+            this.groupBox5.Size = new System.Drawing.Size(1018, 9);
             this.groupBox5.TabIndex = 49;
             this.groupBox5.TabStop = false;
             // 
@@ -2144,7 +2144,7 @@ namespace GpsTracker
             this.tabPageUDPHelp.Controls.Add(this.textBox7);
             this.tabPageUDPHelp.Location = new System.Drawing.Point(4, 22);
             this.tabPageUDPHelp.Name = "tabPageUDPHelp";
-            this.tabPageUDPHelp.Size = new System.Drawing.Size(431, 356);
+            this.tabPageUDPHelp.Size = new System.Drawing.Size(519, 385);
             this.tabPageUDPHelp.TabIndex = 15;
             this.tabPageUDPHelp.Text = "Help";
             this.tabPageUDPHelp.UseVisualStyleBackColor = true;
@@ -2153,12 +2153,12 @@ namespace GpsTracker
             // 
             this.textBox7.BackColor = System.Drawing.Color.White;
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(8, 5);
+            this.textBox7.Location = new System.Drawing.Point(10, 5);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
             this.textBox7.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox7.Size = new System.Drawing.Size(416, 348);
+            this.textBox7.Size = new System.Drawing.Size(499, 375);
             this.textBox7.TabIndex = 6;
             this.textBox7.Text = resources.GetString("textBox7.Text");
             // 
@@ -2167,7 +2167,7 @@ namespace GpsTracker
             this.tabPageCOMHelp.Controls.Add(this.textBox2);
             this.tabPageCOMHelp.Location = new System.Drawing.Point(4, 22);
             this.tabPageCOMHelp.Name = "tabPageCOMHelp";
-            this.tabPageCOMHelp.Size = new System.Drawing.Size(431, 356);
+            this.tabPageCOMHelp.Size = new System.Drawing.Size(519, 385);
             this.tabPageCOMHelp.TabIndex = 10;
             this.tabPageCOMHelp.Text = "Help";
             this.tabPageCOMHelp.UseVisualStyleBackColor = true;
@@ -2176,12 +2176,12 @@ namespace GpsTracker
             // 
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(8, 5);
+            this.textBox2.Location = new System.Drawing.Point(10, 5);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(416, 348);
+            this.textBox2.Size = new System.Drawing.Size(499, 375);
             this.textBox2.TabIndex = 6;
             this.textBox2.Text = resources.GetString("textBox2.Text");
             // 
@@ -2190,7 +2190,7 @@ namespace GpsTracker
             this.tabPagePOIHelp.Controls.Add(this.textBox3);
             this.tabPagePOIHelp.Location = new System.Drawing.Point(4, 22);
             this.tabPagePOIHelp.Name = "tabPagePOIHelp";
-            this.tabPagePOIHelp.Size = new System.Drawing.Size(431, 356);
+            this.tabPagePOIHelp.Size = new System.Drawing.Size(519, 385);
             this.tabPagePOIHelp.TabIndex = 11;
             this.tabPagePOIHelp.Text = "Help";
             this.tabPagePOIHelp.UseVisualStyleBackColor = true;
@@ -2199,12 +2199,12 @@ namespace GpsTracker
             // 
             this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(8, 5);
+            this.textBox3.Location = new System.Drawing.Point(10, 5);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox3.Size = new System.Drawing.Size(416, 348);
+            this.textBox3.Size = new System.Drawing.Size(499, 375);
             this.textBox3.TabIndex = 6;
             this.textBox3.Text = resources.GetString("textBox3.Text");
             // 
@@ -2213,7 +2213,7 @@ namespace GpsTracker
             this.tabPageTCPHelp.Controls.Add(this.textBox6);
             this.tabPageTCPHelp.Location = new System.Drawing.Point(4, 22);
             this.tabPageTCPHelp.Name = "tabPageTCPHelp";
-            this.tabPageTCPHelp.Size = new System.Drawing.Size(431, 356);
+            this.tabPageTCPHelp.Size = new System.Drawing.Size(519, 385);
             this.tabPageTCPHelp.TabIndex = 14;
             this.tabPageTCPHelp.Text = "Help";
             this.tabPageTCPHelp.UseVisualStyleBackColor = true;
@@ -2222,12 +2222,12 @@ namespace GpsTracker
             // 
             this.textBox6.BackColor = System.Drawing.Color.White;
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Location = new System.Drawing.Point(8, 5);
+            this.textBox6.Location = new System.Drawing.Point(10, 5);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox6.Size = new System.Drawing.Size(416, 348);
+            this.textBox6.Size = new System.Drawing.Size(499, 375);
             this.textBox6.TabIndex = 6;
             this.textBox6.Text = resources.GetString("textBox6.Text");
             // 
@@ -2241,7 +2241,7 @@ namespace GpsTracker
             this.tabPageUDP.Controls.Add(this.numericUpDownUDPPort);
             this.tabPageUDP.Location = new System.Drawing.Point(4, 22);
             this.tabPageUDP.Name = "tabPageUDP";
-            this.tabPageUDP.Size = new System.Drawing.Size(431, 356);
+            this.tabPageUDP.Size = new System.Drawing.Size(519, 385);
             this.tabPageUDP.TabIndex = 1;
             this.tabPageUDP.Text = "UDP";
             this.tabPageUDP.UseVisualStyleBackColor = true;
@@ -2249,10 +2249,10 @@ namespace GpsTracker
             // 
             // checkBoxUDPExport
             // 
-            this.checkBoxUDPExport.Location = new System.Drawing.Point(134, 81);
+            this.checkBoxUDPExport.Location = new System.Drawing.Point(161, 87);
             this.checkBoxUDPExport.Name = "checkBoxUDPExport";
             this.checkBoxUDPExport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxUDPExport.Size = new System.Drawing.Size(183, 17);
+            this.checkBoxUDPExport.Size = new System.Drawing.Size(219, 19);
             this.checkBoxUDPExport.TabIndex = 60;
             this.checkBoxUDPExport.Text = "Export as NMEA to File";
             this.checkBoxUDPExport.UseVisualStyleBackColor = true;
@@ -2260,43 +2260,43 @@ namespace GpsTracker
             // 
             // buttonApplyUDP
             // 
-            this.buttonApplyUDP.Location = new System.Drawing.Point(372, 329);
+            this.buttonApplyUDP.Location = new System.Drawing.Point(446, 354);
             this.buttonApplyUDP.Name = "buttonApplyUDP";
-            this.buttonApplyUDP.Size = new System.Drawing.Size(56, 24);
+            this.buttonApplyUDP.Size = new System.Drawing.Size(68, 26);
             this.buttonApplyUDP.TabIndex = 47;
             this.buttonApplyUDP.Text = "Apply";
             this.buttonApplyUDP.Click += new System.EventHandler(this.buttonApply_Click);
             // 
             // label21
             // 
-            this.label21.Location = new System.Drawing.Point(84, 50);
+            this.label21.Location = new System.Drawing.Point(101, 54);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(96, 16);
+            this.label21.Size = new System.Drawing.Size(115, 17);
             this.label21.TabIndex = 41;
             this.label21.Text = "Track Color:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonTrackColorUDP
             // 
-            this.buttonTrackColorUDP.Location = new System.Drawing.Point(188, 50);
+            this.buttonTrackColorUDP.Location = new System.Drawing.Point(226, 54);
             this.buttonTrackColorUDP.Name = "buttonTrackColorUDP";
-            this.buttonTrackColorUDP.Size = new System.Drawing.Size(128, 13);
+            this.buttonTrackColorUDP.Size = new System.Drawing.Size(153, 14);
             this.buttonTrackColorUDP.TabIndex = 40;
-            this.buttonTrackColorUDP.Click += new System.EventHandler(this.buttonTrackColorUDP_Click);
             this.buttonTrackColorUDP.BackColorChanged += new System.EventHandler(this.ControlValueChanged);
+            this.buttonTrackColorUDP.Click += new System.EventHandler(this.buttonTrackColorUDP_Click);
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(108, 18);
+            this.label6.Location = new System.Drawing.Point(130, 19);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 24);
+            this.label6.Size = new System.Drawing.Size(86, 26);
             this.label6.TabIndex = 18;
             this.label6.Text = "Port Number:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // numericUpDownUDPPort
             // 
-            this.numericUpDownUDPPort.Location = new System.Drawing.Point(188, 18);
+            this.numericUpDownUDPPort.Location = new System.Drawing.Point(226, 19);
             this.numericUpDownUDPPort.Maximum = new decimal(new int[] {
             65519,
             0,
@@ -2308,7 +2308,7 @@ namespace GpsTracker
             0,
             0});
             this.numericUpDownUDPPort.Name = "numericUpDownUDPPort";
-            this.numericUpDownUDPPort.Size = new System.Drawing.Size(128, 20);
+            this.numericUpDownUDPPort.Size = new System.Drawing.Size(153, 21);
             this.numericUpDownUDPPort.TabIndex = 0;
             this.numericUpDownUDPPort.Value = new decimal(new int[] {
             1000,
@@ -2325,7 +2325,7 @@ namespace GpsTracker
             this.tabPageUpdate.Controls.Add(this.buttonCheckForUpdates);
             this.tabPageUpdate.Location = new System.Drawing.Point(4, 22);
             this.tabPageUpdate.Name = "tabPageUpdate";
-            this.tabPageUpdate.Size = new System.Drawing.Size(431, 356);
+            this.tabPageUpdate.Size = new System.Drawing.Size(519, 385);
             this.tabPageUpdate.TabIndex = 4;
             this.tabPageUpdate.Text = "Update";
             this.tabPageUpdate.UseVisualStyleBackColor = true;
@@ -2333,9 +2333,9 @@ namespace GpsTracker
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(16, 8);
+            this.label11.Location = new System.Drawing.Point(19, 9);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(168, 16);
+            this.label11.Size = new System.Drawing.Size(202, 17);
             this.label11.TabIndex = 5;
             this.label11.Text = "Version Information:";
             // 
@@ -2343,20 +2343,20 @@ namespace GpsTracker
             // 
             this.textBoxVersionInfo.BackColor = System.Drawing.Color.White;
             this.textBoxVersionInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxVersionInfo.Location = new System.Drawing.Point(16, 24);
+            this.textBoxVersionInfo.Location = new System.Drawing.Point(19, 26);
             this.textBoxVersionInfo.Multiline = true;
             this.textBoxVersionInfo.Name = "textBoxVersionInfo";
             this.textBoxVersionInfo.ReadOnly = true;
             this.textBoxVersionInfo.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxVersionInfo.Size = new System.Drawing.Size(400, 299);
+            this.textBoxVersionInfo.Size = new System.Drawing.Size(480, 322);
             this.textBoxVersionInfo.TabIndex = 4;
             this.textBoxVersionInfo.WordWrap = false;
             // 
             // buttonCheckForUpdates
             // 
-            this.buttonCheckForUpdates.Location = new System.Drawing.Point(16, 329);
+            this.buttonCheckForUpdates.Location = new System.Drawing.Point(19, 354);
             this.buttonCheckForUpdates.Name = "buttonCheckForUpdates";
-            this.buttonCheckForUpdates.Size = new System.Drawing.Size(400, 24);
+            this.buttonCheckForUpdates.Size = new System.Drawing.Size(480, 26);
             this.buttonCheckForUpdates.TabIndex = 2;
             this.buttonCheckForUpdates.Text = "Check for Updates";
             this.buttonCheckForUpdates.Click += new System.EventHandler(this.buttonCheckForUpdates_Click);
@@ -2372,17 +2372,17 @@ namespace GpsTracker
             this.tabPagePOI.Controls.Add(this.textBoxLatitud);
             this.tabPagePOI.Location = new System.Drawing.Point(4, 22);
             this.tabPagePOI.Name = "tabPagePOI";
-            this.tabPagePOI.Size = new System.Drawing.Size(431, 356);
+            this.tabPagePOI.Size = new System.Drawing.Size(519, 385);
             this.tabPagePOI.TabIndex = 9;
             this.tabPagePOI.Text = "POI";
             this.tabPagePOI.UseVisualStyleBackColor = true;
             // 
             // checkBoxPOIExport
             // 
-            this.checkBoxPOIExport.Location = new System.Drawing.Point(128, 133);
+            this.checkBoxPOIExport.Location = new System.Drawing.Point(154, 143);
             this.checkBoxPOIExport.Name = "checkBoxPOIExport";
             this.checkBoxPOIExport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxPOIExport.Size = new System.Drawing.Size(183, 17);
+            this.checkBoxPOIExport.Size = new System.Drawing.Size(219, 19);
             this.checkBoxPOIExport.TabIndex = 60;
             this.checkBoxPOIExport.Text = "Export as NMEA to File";
             this.checkBoxPOIExport.UseVisualStyleBackColor = true;
@@ -2391,9 +2391,9 @@ namespace GpsTracker
             // 
             // buttonApplyPOI
             // 
-            this.buttonApplyPOI.Location = new System.Drawing.Point(372, 329);
+            this.buttonApplyPOI.Location = new System.Drawing.Point(446, 354);
             this.buttonApplyPOI.Name = "buttonApplyPOI";
-            this.buttonApplyPOI.Size = new System.Drawing.Size(56, 24);
+            this.buttonApplyPOI.Size = new System.Drawing.Size(68, 26);
             this.buttonApplyPOI.TabIndex = 57;
             this.buttonApplyPOI.Text = "Apply";
             this.buttonApplyPOI.Click += new System.EventHandler(this.buttonApply_Click);
@@ -2401,44 +2401,44 @@ namespace GpsTracker
             // label34
             // 
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(17, 21);
+            this.label34.Location = new System.Drawing.Point(20, 23);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(395, 16);
+            this.label34.Size = new System.Drawing.Size(474, 17);
             this.label34.TabIndex = 4;
             this.label34.Text = "Enter Latitude and Longitude of the POI in degrees decimal.";
             this.label34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label29
             // 
-            this.label29.Location = new System.Drawing.Point(102, 88);
+            this.label29.Location = new System.Drawing.Point(122, 95);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(64, 24);
+            this.label29.Size = new System.Drawing.Size(77, 26);
             this.label29.TabIndex = 3;
             this.label29.Text = "Longitude:";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label25
             // 
-            this.label25.Location = new System.Drawing.Point(102, 56);
+            this.label25.Location = new System.Drawing.Point(122, 60);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(64, 24);
+            this.label25.Size = new System.Drawing.Size(77, 26);
             this.label25.TabIndex = 2;
             this.label25.Text = "Latitude:";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxLongitud
             // 
-            this.textBoxLongitud.Location = new System.Drawing.Point(166, 88);
+            this.textBoxLongitud.Location = new System.Drawing.Point(199, 95);
             this.textBoxLongitud.Name = "textBoxLongitud";
-            this.textBoxLongitud.Size = new System.Drawing.Size(144, 20);
+            this.textBoxLongitud.Size = new System.Drawing.Size(173, 21);
             this.textBoxLongitud.TabIndex = 1;
             this.textBoxLongitud.TextChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // textBoxLatitud
             // 
-            this.textBoxLatitud.Location = new System.Drawing.Point(166, 56);
+            this.textBoxLatitud.Location = new System.Drawing.Point(199, 60);
             this.textBoxLatitud.Name = "textBoxLatitud";
-            this.textBoxLatitud.Size = new System.Drawing.Size(144, 20);
+            this.textBoxLatitud.Size = new System.Drawing.Size(173, 21);
             this.textBoxLatitud.TabIndex = 0;
             this.textBoxLatitud.TextChanged += new System.EventHandler(this.ControlValueChanged);
             // 
@@ -2453,44 +2453,44 @@ namespace GpsTracker
             this.tabPageUSB.Controls.Add(this.comboBoxUSBDevice);
             this.tabPageUSB.Location = new System.Drawing.Point(4, 22);
             this.tabPageUSB.Name = "tabPageUSB";
-            this.tabPageUSB.Size = new System.Drawing.Size(431, 356);
+            this.tabPageUSB.Size = new System.Drawing.Size(519, 385);
             this.tabPageUSB.TabIndex = 16;
             this.tabPageUSB.Text = "USB";
             this.tabPageUSB.UseVisualStyleBackColor = true;
             // 
             // checkBoxUSBExport
             // 
-            this.checkBoxUSBExport.Location = new System.Drawing.Point(112, 103);
+            this.checkBoxUSBExport.Location = new System.Drawing.Point(134, 111);
             this.checkBoxUSBExport.Name = "checkBoxUSBExport";
             this.checkBoxUSBExport.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxUSBExport.Size = new System.Drawing.Size(200, 17);
+            this.checkBoxUSBExport.Size = new System.Drawing.Size(240, 18);
             this.checkBoxUSBExport.TabIndex = 60;
             this.checkBoxUSBExport.Text = "Export as NMEA to File";
             this.checkBoxUSBExport.UseVisualStyleBackColor = true;
             // 
             // buttonTestUSB
             // 
-            this.buttonTestUSB.Location = new System.Drawing.Point(6, 329);
+            this.buttonTestUSB.Location = new System.Drawing.Point(7, 354);
             this.buttonTestUSB.Name = "buttonTestUSB";
-            this.buttonTestUSB.Size = new System.Drawing.Size(136, 24);
+            this.buttonTestUSB.Size = new System.Drawing.Size(163, 26);
             this.buttonTestUSB.TabIndex = 52;
             this.buttonTestUSB.Text = "Test USB Connection";
             this.buttonTestUSB.Click += new System.EventHandler(this.buttonTestUSB_Click);
             // 
             // buttonApplyUSB
             // 
-            this.buttonApplyUSB.Location = new System.Drawing.Point(372, 329);
+            this.buttonApplyUSB.Location = new System.Drawing.Point(446, 354);
             this.buttonApplyUSB.Name = "buttonApplyUSB";
-            this.buttonApplyUSB.Size = new System.Drawing.Size(56, 24);
+            this.buttonApplyUSB.Size = new System.Drawing.Size(68, 26);
             this.buttonApplyUSB.TabIndex = 51;
             this.buttonApplyUSB.Text = "Apply";
             this.buttonApplyUSB.Click += new System.EventHandler(this.buttonApply_Click);
             // 
             // label42
             // 
-            this.label42.Location = new System.Drawing.Point(80, 65);
+            this.label42.Location = new System.Drawing.Point(96, 70);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(96, 16);
+            this.label42.Size = new System.Drawing.Size(115, 17);
             this.label42.TabIndex = 50;
             this.label42.Text = "Track Color:";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2498,19 +2498,19 @@ namespace GpsTracker
             // buttonTrackColorUSB
             // 
             this.buttonTrackColorUSB.BackColor = System.Drawing.Color.DarkOrange;
-            this.buttonTrackColorUSB.Location = new System.Drawing.Point(184, 65);
+            this.buttonTrackColorUSB.Location = new System.Drawing.Point(221, 70);
             this.buttonTrackColorUSB.Name = "buttonTrackColorUSB";
-            this.buttonTrackColorUSB.Size = new System.Drawing.Size(128, 13);
+            this.buttonTrackColorUSB.Size = new System.Drawing.Size(153, 14);
             this.buttonTrackColorUSB.TabIndex = 49;
             this.buttonTrackColorUSB.UseVisualStyleBackColor = false;
-            this.buttonTrackColorUSB.Click += new System.EventHandler(this.buttonTrackColorUSB_Click);
             this.buttonTrackColorUSB.BackColorChanged += new System.EventHandler(this.ControlValueChanged);
+            this.buttonTrackColorUSB.Click += new System.EventHandler(this.buttonTrackColorUSB_Click);
             // 
             // label43
             // 
-            this.label43.Location = new System.Drawing.Point(72, 23);
+            this.label43.Location = new System.Drawing.Point(86, 25);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(104, 24);
+            this.label43.Size = new System.Drawing.Size(125, 26);
             this.label43.TabIndex = 48;
             this.label43.Text = "Gps Device:";
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2518,12 +2518,12 @@ namespace GpsTracker
             // comboBoxUSBDevice
             // 
             this.comboBoxUSBDevice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUSBDevice.ItemHeight = 13;
+            this.comboBoxUSBDevice.ItemHeight = 12;
             this.comboBoxUSBDevice.Items.AddRange(new object[] {
             "garmin"});
-            this.comboBoxUSBDevice.Location = new System.Drawing.Point(184, 23);
+            this.comboBoxUSBDevice.Location = new System.Drawing.Point(221, 25);
             this.comboBoxUSBDevice.Name = "comboBoxUSBDevice";
-            this.comboBoxUSBDevice.Size = new System.Drawing.Size(128, 21);
+            this.comboBoxUSBDevice.Size = new System.Drawing.Size(153, 20);
             this.comboBoxUSBDevice.TabIndex = 47;
             this.comboBoxUSBDevice.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
@@ -2532,7 +2532,7 @@ namespace GpsTracker
             this.tabPageUSBHelp.Controls.Add(this.textBox8);
             this.tabPageUSBHelp.Location = new System.Drawing.Point(4, 22);
             this.tabPageUSBHelp.Name = "tabPageUSBHelp";
-            this.tabPageUSBHelp.Size = new System.Drawing.Size(431, 356);
+            this.tabPageUSBHelp.Size = new System.Drawing.Size(519, 385);
             this.tabPageUSBHelp.TabIndex = 17;
             this.tabPageUSBHelp.Text = "Help";
             this.tabPageUSBHelp.UseVisualStyleBackColor = true;
@@ -2541,12 +2541,12 @@ namespace GpsTracker
             // 
             this.textBox8.BackColor = System.Drawing.Color.White;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Location = new System.Drawing.Point(8, 5);
+            this.textBox8.Location = new System.Drawing.Point(10, 5);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox8.Size = new System.Drawing.Size(416, 348);
+            this.textBox8.Size = new System.Drawing.Size(499, 375);
             this.textBox8.TabIndex = 7;
             this.textBox8.Text = resources.GetString("textBox8.Text");
             // 
@@ -2564,16 +2564,16 @@ namespace GpsTracker
             this.tabPageWaypoints.Controls.Add(this.groupBox7);
             this.tabPageWaypoints.Location = new System.Drawing.Point(4, 22);
             this.tabPageWaypoints.Name = "tabPageWaypoints";
-            this.tabPageWaypoints.Size = new System.Drawing.Size(431, 356);
+            this.tabPageWaypoints.Size = new System.Drawing.Size(519, 385);
             this.tabPageWaypoints.TabIndex = 18;
             this.tabPageWaypoints.Text = "Waypoints";
             this.tabPageWaypoints.UseVisualStyleBackColor = true;
             // 
             // checkBoxWaypointsExport
             // 
-            this.checkBoxWaypointsExport.Location = new System.Drawing.Point(8, 85);
+            this.checkBoxWaypointsExport.Location = new System.Drawing.Point(10, 92);
             this.checkBoxWaypointsExport.Name = "checkBoxWaypointsExport";
-            this.checkBoxWaypointsExport.Size = new System.Drawing.Size(170, 17);
+            this.checkBoxWaypointsExport.Size = new System.Drawing.Size(204, 18);
             this.checkBoxWaypointsExport.TabIndex = 62;
             this.checkBoxWaypointsExport.Text = "Export as NMEA to File";
             this.checkBoxWaypointsExport.UseVisualStyleBackColor = true;
@@ -2582,9 +2582,9 @@ namespace GpsTracker
             // comboBoxWaypointsFileType
             // 
             this.comboBoxWaypointsFileType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxWaypointsFileType.Location = new System.Drawing.Point(8, 19);
+            this.comboBoxWaypointsFileType.Location = new System.Drawing.Point(10, 20);
             this.comboBoxWaypointsFileType.Name = "comboBoxWaypointsFileType";
-            this.comboBoxWaypointsFileType.Size = new System.Drawing.Size(415, 21);
+            this.comboBoxWaypointsFileType.Size = new System.Drawing.Size(498, 20);
             this.comboBoxWaypointsFileType.TabIndex = 60;
             this.comboBoxWaypointsFileType.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
@@ -2592,26 +2592,26 @@ namespace GpsTracker
             // 
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label44.Location = new System.Drawing.Point(5, 3);
+            this.label44.Location = new System.Drawing.Point(6, 3);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(272, 16);
+            this.label44.Size = new System.Drawing.Size(326, 17);
             this.label44.TabIndex = 59;
             this.label44.Text = "File Type:";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // comboBoxWaypointsFile
             // 
-            this.comboBoxWaypointsFile.Location = new System.Drawing.Point(8, 59);
+            this.comboBoxWaypointsFile.Location = new System.Drawing.Point(10, 64);
             this.comboBoxWaypointsFile.Name = "comboBoxWaypointsFile";
-            this.comboBoxWaypointsFile.Size = new System.Drawing.Size(388, 21);
+            this.comboBoxWaypointsFile.Size = new System.Drawing.Size(465, 20);
             this.comboBoxWaypointsFile.TabIndex = 58;
             this.comboBoxWaypointsFile.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(402, 59);
+            this.button3.Location = new System.Drawing.Point(482, 64);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(21, 21);
+            this.button3.Size = new System.Drawing.Size(26, 22);
             this.button3.TabIndex = 57;
             this.button3.Text = "...";
             this.button3.Click += new System.EventHandler(this.buttonBrowseGpsFile_Click);
@@ -2627,10 +2627,10 @@ namespace GpsTracker
             this.listViewWaypoints.GridLines = true;
             this.listViewWaypoints.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewWaypoints.LabelWrap = false;
-            this.listViewWaypoints.Location = new System.Drawing.Point(8, 124);
+            this.listViewWaypoints.Location = new System.Drawing.Point(10, 134);
             this.listViewWaypoints.MultiSelect = false;
             this.listViewWaypoints.Name = "listViewWaypoints";
-            this.listViewWaypoints.Size = new System.Drawing.Size(415, 199);
+            this.listViewWaypoints.Size = new System.Drawing.Size(498, 214);
             this.listViewWaypoints.TabIndex = 56;
             this.listViewWaypoints.UseCompatibleStateImageBehavior = false;
             this.listViewWaypoints.View = System.Windows.Forms.View.Details;
@@ -2656,18 +2656,18 @@ namespace GpsTracker
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(8, 329);
+            this.button1.Location = new System.Drawing.Point(10, 354);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 24);
+            this.button1.Size = new System.Drawing.Size(147, 26);
             this.button1.TabIndex = 54;
             this.button1.Text = "Preview Waypoints";
             this.button1.Click += new System.EventHandler(this.buttonWaypointsList_Click);
             // 
             // buttonApplyWaypoints
             // 
-            this.buttonApplyWaypoints.Location = new System.Drawing.Point(372, 329);
+            this.buttonApplyWaypoints.Location = new System.Drawing.Point(446, 354);
             this.buttonApplyWaypoints.Name = "buttonApplyWaypoints";
-            this.buttonApplyWaypoints.Size = new System.Drawing.Size(56, 24);
+            this.buttonApplyWaypoints.Size = new System.Drawing.Size(68, 26);
             this.buttonApplyWaypoints.TabIndex = 53;
             this.buttonApplyWaypoints.Text = "Apply";
             this.buttonApplyWaypoints.Click += new System.EventHandler(this.buttonApply_Click);
@@ -2676,18 +2676,18 @@ namespace GpsTracker
             // 
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label45.Location = new System.Drawing.Point(5, 43);
+            this.label45.Location = new System.Drawing.Point(6, 46);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(328, 16);
+            this.label45.Size = new System.Drawing.Size(394, 18);
             this.label45.TabIndex = 61;
             this.label45.Text = "File Name (use http:// for internet downloaded files):";
             this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox7
             // 
-            this.groupBox7.Location = new System.Drawing.Point(-252, 105);
+            this.groupBox7.Location = new System.Drawing.Point(-302, 113);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(848, 8);
+            this.groupBox7.Size = new System.Drawing.Size(1017, 9);
             this.groupBox7.TabIndex = 55;
             this.groupBox7.TabStop = false;
             // 
@@ -2701,16 +2701,16 @@ namespace GpsTracker
             this.tabPageGeoFence.Controls.Add(this.label50);
             this.tabPageGeoFence.Location = new System.Drawing.Point(4, 22);
             this.tabPageGeoFence.Name = "tabPageGeoFence";
-            this.tabPageGeoFence.Size = new System.Drawing.Size(431, 356);
+            this.tabPageGeoFence.Size = new System.Drawing.Size(519, 385);
             this.tabPageGeoFence.TabIndex = 19;
             this.tabPageGeoFence.Text = "Geo Fence Vertices";
             this.tabPageGeoFence.UseVisualStyleBackColor = true;
             // 
             // label76
             // 
-            this.label76.Location = new System.Drawing.Point(-58, 330);
+            this.label76.Location = new System.Drawing.Point(-70, 355);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(96, 16);
+            this.label76.Size = new System.Drawing.Size(116, 18);
             this.label76.TabIndex = 72;
             this.label76.Text = "Color:";
             this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2718,25 +2718,25 @@ namespace GpsTracker
             // buttonTrackColorTrackLine
             // 
             this.buttonTrackColorTrackLine.BackColor = System.Drawing.Color.DarkOrange;
-            this.buttonTrackColorTrackLine.Location = new System.Drawing.Point(46, 332);
+            this.buttonTrackColorTrackLine.Location = new System.Drawing.Point(55, 358);
             this.buttonTrackColorTrackLine.Name = "buttonTrackColorTrackLine";
-            this.buttonTrackColorTrackLine.Size = new System.Drawing.Size(128, 13);
+            this.buttonTrackColorTrackLine.Size = new System.Drawing.Size(154, 14);
             this.buttonTrackColorTrackLine.TabIndex = 71;
             this.buttonTrackColorTrackLine.UseVisualStyleBackColor = false;
-            this.buttonTrackColorTrackLine.Click += new System.EventHandler(this.buttonTrackColorTrackLine_Click);
             this.buttonTrackColorTrackLine.BackColorChanged += new System.EventHandler(this.ControlValueChanged);
+            this.buttonTrackColorTrackLine.Click += new System.EventHandler(this.buttonTrackColorTrackLine_Click);
             // 
             // editBoxGeoFenceList
             // 
             this.editBoxGeoFenceList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.editBoxGeoFenceList.Location = new System.Drawing.Point(200, 49);
+            this.editBoxGeoFenceList.Location = new System.Drawing.Point(240, 53);
             this.editBoxGeoFenceList.Name = "editBoxGeoFenceList";
-            this.editBoxGeoFenceList.Size = new System.Drawing.Size(88, 20);
+            this.editBoxGeoFenceList.Size = new System.Drawing.Size(106, 21);
             this.editBoxGeoFenceList.TabIndex = 70;
             this.editBoxGeoFenceList.WordWrap = false;
-            this.editBoxGeoFenceList.Leave += new System.EventHandler(this.editBoxGeoFenceList_Leave);
-            this.editBoxGeoFenceList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editBoxGeoFenceList_KeyPress);
             this.editBoxGeoFenceList.TextChanged += new System.EventHandler(this.ControlValueChanged);
+            this.editBoxGeoFenceList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.editBoxGeoFenceList_KeyPress);
+            this.editBoxGeoFenceList.Leave += new System.EventHandler(this.editBoxGeoFenceList_Leave);
             // 
             // listViewGeoFence
             // 
@@ -2749,10 +2749,10 @@ namespace GpsTracker
             this.listViewGeoFence.GridLines = true;
             this.listViewGeoFence.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewGeoFence.LabelWrap = false;
-            this.listViewGeoFence.Location = new System.Drawing.Point(8, 28);
+            this.listViewGeoFence.Location = new System.Drawing.Point(10, 30);
             this.listViewGeoFence.MultiSelect = false;
             this.listViewGeoFence.Name = "listViewGeoFence";
-            this.listViewGeoFence.Size = new System.Drawing.Size(420, 295);
+            this.listViewGeoFence.Size = new System.Drawing.Size(504, 318);
             this.listViewGeoFence.TabIndex = 57;
             this.listViewGeoFence.UseCompatibleStateImageBehavior = false;
             this.listViewGeoFence.View = System.Windows.Forms.View.Details;
@@ -2776,9 +2776,9 @@ namespace GpsTracker
             // 
             // buttonApplyGeoFence
             // 
-            this.buttonApplyGeoFence.Location = new System.Drawing.Point(372, 329);
+            this.buttonApplyGeoFence.Location = new System.Drawing.Point(446, 354);
             this.buttonApplyGeoFence.Name = "buttonApplyGeoFence";
-            this.buttonApplyGeoFence.Size = new System.Drawing.Size(56, 24);
+            this.buttonApplyGeoFence.Size = new System.Drawing.Size(68, 26);
             this.buttonApplyGeoFence.TabIndex = 58;
             this.buttonApplyGeoFence.Text = "Apply";
             this.buttonApplyGeoFence.Click += new System.EventHandler(this.buttonApply_Click);
@@ -2787,7 +2787,7 @@ namespace GpsTracker
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(5, 12);
+            this.label50.Location = new System.Drawing.Point(6, 13);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(57, 13);
             this.label50.TabIndex = 69;
@@ -2810,16 +2810,16 @@ namespace GpsTracker
             this.tabPageInformationText.Controls.Add(this.checkBoxShowName);
             this.tabPageInformationText.Location = new System.Drawing.Point(4, 22);
             this.tabPageInformationText.Name = "tabPageInformationText";
-            this.tabPageInformationText.Size = new System.Drawing.Size(431, 356);
+            this.tabPageInformationText.Size = new System.Drawing.Size(519, 385);
             this.tabPageInformationText.TabIndex = 23;
             this.tabPageInformationText.Text = "Information Text";
             this.tabPageInformationText.UseVisualStyleBackColor = true;
             // 
             // groupBox19
             // 
-            this.groupBox19.Location = new System.Drawing.Point(-24, 242);
+            this.groupBox19.Location = new System.Drawing.Point(-29, 261);
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(479, 8);
+            this.groupBox19.Size = new System.Drawing.Size(575, 8);
             this.groupBox19.TabIndex = 102;
             this.groupBox19.TabStop = false;
             // 
@@ -2828,9 +2828,9 @@ namespace GpsTracker
             this.checkBoxShowComment.AutoSize = true;
             this.checkBoxShowComment.Checked = true;
             this.checkBoxShowComment.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxShowComment.Location = new System.Drawing.Point(40, 171);
+            this.checkBoxShowComment.Location = new System.Drawing.Point(48, 184);
             this.checkBoxShowComment.Name = "checkBoxShowComment";
-            this.checkBoxShowComment.Size = new System.Drawing.Size(70, 17);
+            this.checkBoxShowComment.Size = new System.Drawing.Size(66, 16);
             this.checkBoxShowComment.TabIndex = 101;
             this.checkBoxShowComment.Text = "Comment";
             this.checkBoxShowComment.UseVisualStyleBackColor = true;
@@ -2839,19 +2839,19 @@ namespace GpsTracker
             // buttonColorInformationText
             // 
             this.buttonColorInformationText.BackColor = System.Drawing.Color.Yellow;
-            this.buttonColorInformationText.Location = new System.Drawing.Point(40, 326);
+            this.buttonColorInformationText.Location = new System.Drawing.Point(48, 351);
             this.buttonColorInformationText.Name = "buttonColorInformationText";
-            this.buttonColorInformationText.Size = new System.Drawing.Size(109, 13);
+            this.buttonColorInformationText.Size = new System.Drawing.Size(131, 14);
             this.buttonColorInformationText.TabIndex = 98;
             this.buttonColorInformationText.UseVisualStyleBackColor = false;
-            this.buttonColorInformationText.Click += new System.EventHandler(this.buttonColorInformationText_Click);
             this.buttonColorInformationText.BackColorChanged += new System.EventHandler(this.ControlValueChanged);
+            this.buttonColorInformationText.Click += new System.EventHandler(this.buttonColorInformationText_Click);
             // 
             // buttonApplyInformationText
             // 
-            this.buttonApplyInformationText.Location = new System.Drawing.Point(372, 329);
+            this.buttonApplyInformationText.Location = new System.Drawing.Point(446, 354);
             this.buttonApplyInformationText.Name = "buttonApplyInformationText";
-            this.buttonApplyInformationText.Size = new System.Drawing.Size(56, 24);
+            this.buttonApplyInformationText.Size = new System.Drawing.Size(68, 26);
             this.buttonApplyInformationText.TabIndex = 97;
             this.buttonApplyInformationText.Text = "Apply";
             this.buttonApplyInformationText.Click += new System.EventHandler(this.buttonApply_Click);
@@ -2863,9 +2863,9 @@ namespace GpsTracker
             this.comboBoxFontSize.Items.AddRange(new object[] {
             "Normal",
             "Small"});
-            this.comboBoxFontSize.Location = new System.Drawing.Point(40, 292);
+            this.comboBoxFontSize.Location = new System.Drawing.Point(48, 314);
             this.comboBoxFontSize.Name = "comboBoxFontSize";
-            this.comboBoxFontSize.Size = new System.Drawing.Size(109, 21);
+            this.comboBoxFontSize.Size = new System.Drawing.Size(131, 20);
             this.comboBoxFontSize.TabIndex = 96;
             this.comboBoxFontSize.SelectedIndexChanged += new System.EventHandler(this.ControlValueChanged);
             // 
@@ -2873,7 +2873,7 @@ namespace GpsTracker
             // 
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.Location = new System.Drawing.Point(37, 264);
+            this.label75.Location = new System.Drawing.Point(44, 284);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(275, 13);
             this.label75.TabIndex = 95;
@@ -2883,7 +2883,7 @@ namespace GpsTracker
             // 
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.Location = new System.Drawing.Point(37, 12);
+            this.label71.Location = new System.Drawing.Point(44, 13);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(311, 13);
             this.label71.TabIndex = 6;
@@ -2894,9 +2894,9 @@ namespace GpsTracker
             this.checkBoxTrackDistance.AutoSize = true;
             this.checkBoxTrackDistance.Checked = true;
             this.checkBoxTrackDistance.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTrackDistance.Location = new System.Drawing.Point(40, 148);
+            this.checkBoxTrackDistance.Location = new System.Drawing.Point(48, 159);
             this.checkBoxTrackDistance.Name = "checkBoxTrackDistance";
-            this.checkBoxTrackDistance.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxTrackDistance.Size = new System.Drawing.Size(108, 16);
             this.checkBoxTrackDistance.TabIndex = 5;
             this.checkBoxTrackDistance.Text = "Track Distance";
             this.checkBoxTrackDistance.UseVisualStyleBackColor = true;
@@ -2907,9 +2907,9 @@ namespace GpsTracker
             this.checkBoxTimeDate.AutoSize = true;
             this.checkBoxTimeDate.Checked = true;
             this.checkBoxTimeDate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxTimeDate.Location = new System.Drawing.Point(40, 125);
+            this.checkBoxTimeDate.Location = new System.Drawing.Point(48, 135);
             this.checkBoxTimeDate.Name = "checkBoxTimeDate";
-            this.checkBoxTimeDate.Size = new System.Drawing.Size(96, 17);
+            this.checkBoxTimeDate.Size = new System.Drawing.Size(102, 16);
             this.checkBoxTimeDate.TabIndex = 4;
             this.checkBoxTimeDate.Text = "Time and Date";
             this.checkBoxTimeDate.UseVisualStyleBackColor = true;
@@ -2920,9 +2920,9 @@ namespace GpsTracker
             this.checkBoxHeading.AutoSize = true;
             this.checkBoxHeading.Checked = true;
             this.checkBoxHeading.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxHeading.Location = new System.Drawing.Point(40, 102);
+            this.checkBoxHeading.Location = new System.Drawing.Point(48, 110);
             this.checkBoxHeading.Name = "checkBoxHeading";
-            this.checkBoxHeading.Size = new System.Drawing.Size(66, 17);
+            this.checkBoxHeading.Size = new System.Drawing.Size(66, 16);
             this.checkBoxHeading.TabIndex = 3;
             this.checkBoxHeading.Text = "Heading";
             this.checkBoxHeading.UseVisualStyleBackColor = true;
@@ -2933,9 +2933,9 @@ namespace GpsTracker
             this.checkBoxSpeed.AutoSize = true;
             this.checkBoxSpeed.Checked = true;
             this.checkBoxSpeed.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSpeed.Location = new System.Drawing.Point(40, 79);
+            this.checkBoxSpeed.Location = new System.Drawing.Point(48, 85);
             this.checkBoxSpeed.Name = "checkBoxSpeed";
-            this.checkBoxSpeed.Size = new System.Drawing.Size(57, 17);
+            this.checkBoxSpeed.Size = new System.Drawing.Size(54, 16);
             this.checkBoxSpeed.TabIndex = 2;
             this.checkBoxSpeed.Text = "Speed";
             this.checkBoxSpeed.UseVisualStyleBackColor = true;
@@ -2946,9 +2946,9 @@ namespace GpsTracker
             this.checkBoxPosition.AutoSize = true;
             this.checkBoxPosition.Checked = true;
             this.checkBoxPosition.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxPosition.Location = new System.Drawing.Point(40, 56);
+            this.checkBoxPosition.Location = new System.Drawing.Point(48, 60);
             this.checkBoxPosition.Name = "checkBoxPosition";
-            this.checkBoxPosition.Size = new System.Drawing.Size(204, 17);
+            this.checkBoxPosition.Size = new System.Drawing.Size(264, 16);
             this.checkBoxPosition.TabIndex = 1;
             this.checkBoxPosition.Text = "Position (Latitude, Longitude, Altitude)";
             this.checkBoxPosition.UseVisualStyleBackColor = true;
@@ -2959,9 +2959,9 @@ namespace GpsTracker
             this.checkBoxShowName.AutoSize = true;
             this.checkBoxShowName.Checked = true;
             this.checkBoxShowName.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxShowName.Location = new System.Drawing.Point(40, 33);
+            this.checkBoxShowName.Location = new System.Drawing.Point(48, 36);
             this.checkBoxShowName.Name = "checkBoxShowName";
-            this.checkBoxShowName.Size = new System.Drawing.Size(54, 17);
+            this.checkBoxShowName.Size = new System.Drawing.Size(48, 16);
             this.checkBoxShowName.TabIndex = 0;
             this.checkBoxShowName.Text = "Name";
             this.checkBoxShowName.UseVisualStyleBackColor = true;
@@ -2972,7 +2972,7 @@ namespace GpsTracker
             this.tabPageTrackLineHelp.Controls.Add(this.textBox10);
             this.tabPageTrackLineHelp.Location = new System.Drawing.Point(4, 22);
             this.tabPageTrackLineHelp.Name = "tabPageTrackLineHelp";
-            this.tabPageTrackLineHelp.Size = new System.Drawing.Size(431, 356);
+            this.tabPageTrackLineHelp.Size = new System.Drawing.Size(519, 385);
             this.tabPageTrackLineHelp.TabIndex = 25;
             this.tabPageTrackLineHelp.Text = "Help";
             this.tabPageTrackLineHelp.UseVisualStyleBackColor = true;
@@ -2981,19 +2981,19 @@ namespace GpsTracker
             // 
             this.textBox10.BackColor = System.Drawing.Color.White;
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Location = new System.Drawing.Point(7, 4);
+            this.textBox10.Location = new System.Drawing.Point(8, 4);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox10.Size = new System.Drawing.Size(416, 348);
+            this.textBox10.Size = new System.Drawing.Size(500, 375);
             this.textBox10.TabIndex = 7;
             this.textBox10.Text = resources.GetString("textBox10.Text");
             // 
             // GpsTracker
             // 
             this.AccessibleName = "";
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
             this.ClientSize = new System.Drawing.Size(630, 460);
             this.Controls.Add(this.treeViewSources);
             this.Controls.Add(this.pictureBoxLogo);

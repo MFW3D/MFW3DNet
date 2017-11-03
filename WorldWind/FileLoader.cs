@@ -206,7 +206,7 @@ namespace WorldWind
 
 			if (tbFileName.Text.Trim().StartsWith(@"http://"))
 			{
-                mainapp.QuickInstall(tbFileName.Text);
+                Global.QuickInstall(tbFileName.Text);
 			}
 			else
 			{
@@ -227,7 +227,7 @@ namespace WorldWind
                 }
                 else
                 {
-                    mainapp.QuickInstall(tbFileName.Text);
+                    Global.QuickInstall(tbFileName.Text);
                 }
 			}
 

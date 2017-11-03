@@ -72,146 +72,149 @@ namespace WorldWind
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-			this.textBoxSaveFilePath = new System.Windows.Forms.TextBox();
-			this.labelSavePath = new System.Windows.Forms.Label();
-			this.listView1 = new System.Windows.Forms.ListView();
-			this.label1 = new System.Windows.Forms.Label();
-			this.labelLatitude = new System.Windows.Forms.Label();
-			this.labelLongitude = new System.Windows.Forms.Label();
-			this.buttonAdd = new System.Windows.Forms.Button();
-			this.buttonBuild = new System.Windows.Forms.Button();
-			this.textBoxColumn = new System.Windows.Forms.TextBox();
-			this.statusBar = new System.Windows.Forms.StatusBar();
-			this.textBoxSourceFile = new System.Windows.Forms.TextBox();
-			this.labelSource = new System.Windows.Forms.Label();
-			this.SuspendLayout();
-			// 
-			// textBoxSaveFilePath
-			// 
-			this.textBoxSaveFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxSaveFilePath.Location = new System.Drawing.Point(7, 72);
-			this.textBoxSaveFilePath.Name = "textBoxSaveFilePath";
-			this.textBoxSaveFilePath.Size = new System.Drawing.Size(280, 20);
-			this.textBoxSaveFilePath.TabIndex = 3;
-			this.textBoxSaveFilePath.Text = "";
-			// 
-			// labelSavePath
-			// 
-			this.labelSavePath.Location = new System.Drawing.Point(7, 56);
-			this.labelSavePath.Name = "labelSavePath";
-			this.labelSavePath.Size = new System.Drawing.Size(100, 16);
-			this.labelSavePath.TabIndex = 2;
-			this.labelSavePath.Text = "&Save File Path:";
-			// 
-			// listView1
-			// 
-			this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-				| System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.listView1.Location = new System.Drawing.Point(7, 184);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(280, 104);
-			this.listView1.TabIndex = 8;
-			// 
-			// label1
-			// 
-			this.label1.Location = new System.Drawing.Point(15, 112);
-			this.label1.Name = "label1";
-			this.label1.TabIndex = 4;
-			this.label1.Text = "Feature Name";
-			// 
-			// labelLatitude
-			// 
-			this.labelLatitude.Location = new System.Drawing.Point(15, 136);
-			this.labelLatitude.Name = "labelLatitude";
-			this.labelLatitude.TabIndex = 5;
-			this.labelLatitude.Text = "Latitude";
-			// 
-			// labelLongitude
-			// 
-			this.labelLongitude.Location = new System.Drawing.Point(15, 160);
-			this.labelLongitude.Name = "labelLongitude";
-			this.labelLongitude.TabIndex = 6;
-			this.labelLongitude.Text = "Longitude";
-			// 
-			// buttonAdd
-			// 
-			this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonAdd.Location = new System.Drawing.Point(215, 296);
-			this.buttonAdd.Name = "buttonAdd";
-			this.buttonAdd.TabIndex = 10;
-			this.buttonAdd.Text = "&Add";
-			this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-			// 
-			// buttonBuild
-			// 
-			this.buttonBuild.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.buttonBuild.Location = new System.Drawing.Point(127, 112);
-			this.buttonBuild.Name = "buttonBuild";
-			this.buttonBuild.Size = new System.Drawing.Size(160, 64);
-			this.buttonBuild.TabIndex = 7;
-			this.buttonBuild.Text = "&Build";
-			this.buttonBuild.Click += new System.EventHandler(this.buttonBuild_Click);
-			// 
-			// textBoxColumn
-			// 
-			this.textBoxColumn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxColumn.Location = new System.Drawing.Point(7, 296);
-			this.textBoxColumn.Name = "textBoxColumn";
-			this.textBoxColumn.Size = new System.Drawing.Size(200, 20);
-			this.textBoxColumn.TabIndex = 9;
-			this.textBoxColumn.Text = "";
-			// 
-			// statusBar
-			// 
-			this.statusBar.Location = new System.Drawing.Point(0, 325);
-			this.statusBar.Name = "statusBar";
-			this.statusBar.Size = new System.Drawing.Size(296, 22);
-			this.statusBar.TabIndex = 11;
-			// 
-			// textBoxSourceFile
-			// 
-			this.textBoxSourceFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxSourceFile.Location = new System.Drawing.Point(7, 24);
-			this.textBoxSourceFile.Name = "textBoxSourceFile";
-			this.textBoxSourceFile.Size = new System.Drawing.Size(280, 20);
-			this.textBoxSourceFile.TabIndex = 1;
-			this.textBoxSourceFile.Text = "";
-			// 
-			// labelSource
-			// 
-			this.labelSource.Location = new System.Drawing.Point(7, 8);
-			this.labelSource.Name = "labelSource";
-			this.labelSource.Size = new System.Drawing.Size(100, 16);
-			this.labelSource.TabIndex = 0;
-			this.labelSource.Text = "S&ource File:";
-			// 
-			// PlaceBuilder
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(296, 347);
-			this.Controls.Add(this.labelSource);
-			this.Controls.Add(this.textBoxSourceFile);
-			this.Controls.Add(this.textBoxColumn);
-			this.Controls.Add(this.textBoxSaveFilePath);
-			this.Controls.Add(this.statusBar);
-			this.Controls.Add(this.buttonBuild);
-			this.Controls.Add(this.buttonAdd);
-			this.Controls.Add(this.labelLongitude);
-			this.Controls.Add(this.labelLatitude);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.listView1);
-			this.Controls.Add(this.labelSavePath);
-			this.KeyPreview = true;
-			this.MinimumSize = new System.Drawing.Size(208, 312);
-			this.Name = "PlaceBuilder";
-			this.Text = "Place Builder";
-			this.ResumeLayout(false);
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.textBoxSaveFilePath = new System.Windows.Forms.TextBox();
+            this.labelSavePath = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelLatitude = new System.Windows.Forms.Label();
+            this.labelLongitude = new System.Windows.Forms.Label();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonBuild = new System.Windows.Forms.Button();
+            this.textBoxColumn = new System.Windows.Forms.TextBox();
+            this.statusBar = new System.Windows.Forms.StatusBar();
+            this.textBoxSourceFile = new System.Windows.Forms.TextBox();
+            this.labelSource = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // textBoxSaveFilePath
+            // 
+            this.textBoxSaveFilePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSaveFilePath.Location = new System.Drawing.Point(8, 78);
+            this.textBoxSaveFilePath.Name = "textBoxSaveFilePath";
+            this.textBoxSaveFilePath.Size = new System.Drawing.Size(277, 21);
+            this.textBoxSaveFilePath.TabIndex = 3;
+            // 
+            // labelSavePath
+            // 
+            this.labelSavePath.Location = new System.Drawing.Point(8, 60);
+            this.labelSavePath.Name = "labelSavePath";
+            this.labelSavePath.Size = new System.Drawing.Size(120, 18);
+            this.labelSavePath.TabIndex = 2;
+            this.labelSavePath.Text = "&Save File Path:";
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Location = new System.Drawing.Point(8, 198);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(277, 85);
+            this.listView1.TabIndex = 8;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(18, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 24);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Feature Name";
+            // 
+            // labelLatitude
+            // 
+            this.labelLatitude.Location = new System.Drawing.Point(18, 146);
+            this.labelLatitude.Name = "labelLatitude";
+            this.labelLatitude.Size = new System.Drawing.Size(120, 25);
+            this.labelLatitude.TabIndex = 5;
+            this.labelLatitude.Text = "Latitude";
+            // 
+            // labelLongitude
+            // 
+            this.labelLongitude.Location = new System.Drawing.Point(18, 172);
+            this.labelLongitude.Name = "labelLongitude";
+            this.labelLongitude.Size = new System.Drawing.Size(120, 25);
+            this.labelLongitude.TabIndex = 6;
+            this.labelLongitude.Text = "Longitude";
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAdd.Location = new System.Drawing.Point(199, 292);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(90, 25);
+            this.buttonAdd.TabIndex = 10;
+            this.buttonAdd.Text = "&Add";
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonBuild
+            // 
+            this.buttonBuild.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBuild.Location = new System.Drawing.Point(152, 121);
+            this.buttonBuild.Name = "buttonBuild";
+            this.buttonBuild.Size = new System.Drawing.Size(133, 69);
+            this.buttonBuild.TabIndex = 7;
+            this.buttonBuild.Text = "&Build";
+            this.buttonBuild.Click += new System.EventHandler(this.buttonBuild_Click);
+            // 
+            // textBoxColumn
+            // 
+            this.textBoxColumn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxColumn.Location = new System.Drawing.Point(8, 292);
+            this.textBoxColumn.Name = "textBoxColumn";
+            this.textBoxColumn.Size = new System.Drawing.Size(181, 21);
+            this.textBoxColumn.TabIndex = 9;
+            // 
+            // statusBar
+            // 
+            this.statusBar.Location = new System.Drawing.Point(0, 323);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(296, 24);
+            this.statusBar.TabIndex = 11;
+            // 
+            // textBoxSourceFile
+            // 
+            this.textBoxSourceFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSourceFile.Location = new System.Drawing.Point(8, 26);
+            this.textBoxSourceFile.Name = "textBoxSourceFile";
+            this.textBoxSourceFile.Size = new System.Drawing.Size(277, 21);
+            this.textBoxSourceFile.TabIndex = 1;
+            // 
+            // labelSource
+            // 
+            this.labelSource.Location = new System.Drawing.Point(8, 9);
+            this.labelSource.Name = "labelSource";
+            this.labelSource.Size = new System.Drawing.Size(120, 17);
+            this.labelSource.TabIndex = 0;
+            this.labelSource.Text = "S&ource File:";
+            // 
+            // PlaceBuilder
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
+            this.ClientSize = new System.Drawing.Size(296, 347);
+            this.Controls.Add(this.labelSource);
+            this.Controls.Add(this.textBoxSourceFile);
+            this.Controls.Add(this.textBoxColumn);
+            this.Controls.Add(this.textBoxSaveFilePath);
+            this.Controls.Add(this.statusBar);
+            this.Controls.Add(this.buttonBuild);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.labelLongitude);
+            this.Controls.Add(this.labelLatitude);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.labelSavePath);
+            this.KeyPreview = true;
+            this.MinimumSize = new System.Drawing.Size(250, 336);
+            this.Name = "PlaceBuilder";
+            this.Text = "Place Builder";
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		#endregion
