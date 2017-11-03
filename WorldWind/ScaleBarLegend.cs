@@ -46,7 +46,6 @@ namespace NASA.Plugins
             m_menuItem.Checked = visibility;
             m_form.Visible = visibility;
 
-            ParentApplication.ToolsMenu.MenuItems.Add(m_menuItem);
             DrawArgs.NewRootWidget.ChildWidgets.Add(m_form);
 
             base.Load();
@@ -76,7 +75,6 @@ namespace NASA.Plugins
                 m_form.Dispose();
                 m_form = null;
             }
-            ParentApplication.ToolsMenu.MenuItems.Remove(m_menuItem);
 
             base.Unload();
         }

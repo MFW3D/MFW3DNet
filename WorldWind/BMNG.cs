@@ -689,10 +689,6 @@ namespace NASA.Plugins
         {
             if (ParentApplication.WorldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
             {
-                m_MenuItem = new MenuItem("Blue Marble");
-                m_MenuItem.Click += new EventHandler(menuItemClicked);
-                ParentApplication.PluginsMenu.MenuItems.Add(m_MenuItem);
-
                 m_BmngForm = new BMNG(ParentApplication.WorldWindow, m_MenuItem);
                 m_BmngForm.Owner = ParentApplication;
 
@@ -713,7 +709,6 @@ namespace NASA.Plugins
             {
                 m_BmngForm.Dispose();
                 m_BmngForm = null;
-                ParentApplication.PluginsMenu.MenuItems.Remove(m_MenuItem);
             }
 
             base.Unload();

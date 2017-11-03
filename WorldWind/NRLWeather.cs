@@ -773,7 +773,6 @@ namespace NASA.Plugins
 			{
 				m_MenuItem = new MenuItem("NRL Weather");
 				m_MenuItem.Click += new EventHandler(menuItemClicked);
-				ParentApplication.PluginsMenu.MenuItems.Add( m_MenuItem );
 			
 				m_Form = new NRLMontereyGlobal(ParentApplication.WorldWindow,
 					Path.Combine(ParentApplication.WorldWindow.Cache.CacheDirectory, "NrlWeather"),
@@ -796,7 +795,6 @@ namespace NASA.Plugins
 		{
 			if(m_MenuItem!=null)
 			{
-				ParentApplication.ToolsMenu.MenuItems.Remove( m_MenuItem );
 				m_MenuItem.Dispose();
 				m_MenuItem = null;
 			}

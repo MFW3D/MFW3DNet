@@ -26,7 +26,7 @@ namespace WorldWind
     public class WMSBrowserNG : System.Windows.Forms.Form
     {
         string wms_skeleton_path = Path.Combine(
-            Path.Combine(MainApplication.Settings.ConfigPath, "Earth"),
+            Path.Combine(Global.Settings.ConfigPath, "Earth"),
             Path.Combine("Tools", "wmsskeleton.xml"));
 
         private WorldWindow worldWindow;
@@ -403,7 +403,7 @@ namespace WorldWind
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(394, 13);
             this.label9.TabIndex = 19;
-            this.label9.Text = "• Fill in options and click \"Save as XML\" to add the all of the layers to World W" +
+            this.label9.Text = "?Fill in options and click \"Save as XML\" to add the all of the layers to World W" +
                 "ind";
             // 
             // label8
@@ -413,7 +413,7 @@ namespace WorldWind
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(473, 13);
             this.label8.TabIndex = 18;
-            this.label8.Text = "• Enter a WMS url in the url bar below and click \"Get WMS Tree\" to see the conten" +
+            this.label8.Text = "?Enter a WMS url in the url bar below and click \"Get WMS Tree\" to see the conten" +
                 "ts of the server";
             // 
             // ConfLabel
@@ -520,7 +520,7 @@ namespace WorldWind
             string xmlFileName = textBox1.Text + ".xml";
                         	
             string wmsSave = Path.Combine(
-            Path.Combine(MainApplication.Settings.ConfigPath, worldWindow.CurrentWorld.ToString()),
+            Path.Combine(Global.Settings.ConfigPath, worldWindow.CurrentWorld.ToString()),
             xmlFileName);
 			try
 			{

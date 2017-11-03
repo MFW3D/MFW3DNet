@@ -159,14 +159,14 @@ namespace WorldWind.PluginEngine
 		{
 			get
 			{
-				foreach(string startupId in MainApplication.Settings.PluginsLoadedOnStartup)
+				foreach(string startupId in Global.Settings.PluginsLoadedOnStartup)
 					if(ID==startupId)
 						return true;
 				return false;
 			}
 			set
 			{
-				ArrayList startupPlugins = MainApplication.Settings.PluginsLoadedOnStartup;
+				ArrayList startupPlugins = Global.Settings.PluginsLoadedOnStartup;
 				for(int index=0; index < startupPlugins.Count; index++)
 				{
 					string startupId = (string)startupPlugins[index];

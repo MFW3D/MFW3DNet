@@ -520,10 +520,6 @@ namespace WorldWind.CMPlugins.ExternalLayerManager
 		/// </summary>
 		public override void Load() 
 		{
-			m_MenuItem = new MenuItem("External Layer Manager");
-			m_MenuItem.Click += new EventHandler(menuItemClicked);
-			ParentApplication.PluginsMenu.MenuItems.Add( m_MenuItem );
-
             ParentApplication.WorldWindow.MouseUp += new MouseEventHandler(WorldWindow_MouseUp);
             drawArgs = ParentApplication.WorldWindow.DrawArgs;
 			
@@ -650,7 +646,6 @@ namespace WorldWind.CMPlugins.ExternalLayerManager
 		{
 			if(m_MenuItem!=null)
 			{
-				ParentApplication.ToolsMenu.MenuItems.Remove( m_MenuItem );
 				m_MenuItem.Dispose();
 				m_MenuItem = null;
 			}

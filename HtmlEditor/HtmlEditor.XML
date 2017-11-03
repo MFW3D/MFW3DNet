@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HtmlEditor</name>
+    </assembly>
+    <members>
+        <member name="T:onlyconnect.ComposeSettings">
+            <summary>
+            Summary description for ComposeSettings.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.ComposeSettings.DefaultFont">
+            <summary>
+            Gets/Sets the default font that the editor will use.
+            </summary>
+        </member>
+        <member name="T:onlyconnect.ComStream">
+            <summary>
+            This class implements IStream for an easier way
+            to read back the output from IPersistStreamInit
+            Thanks to microsoft.public.dotnet.general
+            </summary>
+        </member>
+        <member name="T:onlyconnect.ComSupport">
+            <summary>
+            Constants and interface definitions used by HtmlEditor
+            </summary>
+                
+        </member>
+        <member name="T:onlyconnect.CSnap">
+            <summary>
+            enables you to customize the way elements are resized and moved
+            </summary>
+        </member>
+        <member name="T:onlyconnect.DownloadOnlySite">
+            <summary>
+            This implements IOleClientSite for the purpose of suppressing  scripts etc
+            </summary>
+        </member>
+        <member name="T:onlyconnect.HtmlNavigateEventHandler">
+            <summary>
+            Event Handler classes for the HtmlEditor
+            </summary>
+        </member>
+        <member name="T:onlyconnect.BeforeNavigateEventArgs">
+            <summary>
+            Used for the BeforeNavigate Event
+            </summary>
+        </member>
+        <member name="P:onlyconnect.BeforeNavigateEventArgs.Target">
+            <summary>
+            Gets the URL that will be navigated to.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.BeforeNavigateEventArgs.NewTarget">
+            <summary>
+            Gets/Sets the revised URL that will be used to navigate.
+            </summary>
+        </member>
+        <member name="F:onlyconnect.HtmlDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:onlyconnect.HtmlDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:onlyconnect.HtmlDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:onlyconnect.HtmlEditor">
+            <summary>
+            Modified for Google Summer of Code by Ashish Datta
+            The DLL now impliments a HTML browser for NASA World Wind
+            
+            Implements MSHTML as active document in a control
+            With thanks to Lutz Roeder
+            
+            also thanks to Steven Wood for the HTML Event handling idea
+            and code.
+            
+            and thanks to Christopher Slee for the region marking
+            
+            and thanks to James Hancock for ideas/code re. making this a better-behaved winform 
+            control.
+            
+            This version does not require the Microsoft.mshtml Primary Interop Assembly.
+            
+            Comments, improvements, suggestions - 
+            email tim@itwriting.com
+            or visit the messageboard at http://www.itwriting.com/htmleditor.php
+            </summary>
+            
+            Basic Reference:
+            Activating the MSHTML Editor  Internet Development Index 
+            --------------------------------------------------------------------------------
+            This topic describes how to activate the MSHTML Editor from 
+            Microsoft Visual C++? Microsoft Visual Basic? Microsoft JScript? and Visual Basic Scripting Edition (VBScript). 
+            The Editor provides a rich set of capabilities and serves as a fine 
+            "what you see is what you get" (WYSIWYG) HTML editing environment. 
+            In addition, the Editor includes the ability to customize its behavior. 
+            For more information, see Related Topics at the end of this topic.
+        </member>
+        <member name="M:onlyconnect.HtmlEditor.doShortCut(System.Windows.Forms.Keys)">
+            <summary>
+            Executes The short cut keys that should be available and handles all of the cases of design mode versus not.
+            </summary>
+            <param name="Key">The key to process.</param>
+            
+        </member>
+        <member name="M:onlyconnect.HtmlEditor.CleanupControl">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:onlyconnect.HtmlEditor.OnBeforeShortcut(onlyconnect.BeforeShortcutEventArgs)">
+            <summary>
+            Fires the BeforeShortcut event. Handle this event to pre-process or cancel the
+            HtmlEditor's shortcut events.
+            </summary>
+            <param name="e">Cancellable event args</param>
+        </member>
+        <member name="M:onlyconnect.HtmlEditor.OnBeforeNavigate(onlyconnect.BeforeNavigateEventArgs)">
+            <summary>
+            Fires the BeforeNavigateEvent
+            </summary>
+            <param name="e">Cancellable event args</param>
+        </member>
+        <member name="M:onlyconnect.HtmlEditor.OnBeforePaste(onlyconnect.BeforePasteArgs)">
+            <summary>
+            Fires the BeforePaste event
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:onlyconnect.HtmlEditor.DocumentHTML">
+            <summary>
+            The thinking behind this is to wrap selected key properties and methods
+            in a developer-friendly class - called DocHTML / DocumentHTML to distinguish
+            from the other official items
+            </summary>
+        </member>
+        <member name="P:onlyconnect.HtmlEditor.HtmlDocument2">
+            <summary>
+            Quick access to the key IHTMLDocument2 interface
+            </summary>
+        </member>
+        <member name="P:onlyconnect.HtmlEditor.OpenLinksInNewWindow">
+            <summary>
+            Gets/Sets if links that are clicked on in the editor will be opened in the editor or launch your default browser.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.HtmlEditor.SelectionForeColor">
+            <summary>
+            Gets/Sets the color for the selected text.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.HtmlEditor.SelectionAlignment">
+            <summary>
+            Gets/Sets the alignment of the selected text.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.HtmlEditor.SelectionNumbering">
+            <summary>
+            Get/Sets if numbering is on for the selected text.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.HtmlEditor.SelectionBullets">
+            <summary>
+            Gets/Sets if bullets are on or off for the selected text.
+            </summary>
+        </member>
+        <member name="M:onlyconnect.HtmlEditor.GetCommandInfo(System.Int32)">
+            <summary>
+            Queries the status of the specified command
+            </summary>
+        </member>
+        <member name="M:onlyconnect.HtmlEditor.setFocusToMshtml">
+            <summary>
+            set focus to the hosted document, not just to the winform control
+            </summary>
+        </member>
+        <member name="T:onlyconnect.HtmlSite">
+            <summary>
+            Implements the site on which mshtml is hosted
+            </summary>
+            
+        </member>
+        <member name="T:onlyconnect.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.Properties.Resources.close">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:onlyconnect.Properties.Resources.outline1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:onlyconnect.utils">
+            <summary>
+            Utility routines for working with mshtml
+            </summary>
+        </member>
+    </members>
+</doc>

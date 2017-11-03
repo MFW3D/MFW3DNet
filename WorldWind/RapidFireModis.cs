@@ -174,7 +174,7 @@ namespace WorldWind
 					string desc = String.Format(CultureInfo.CurrentCulture,"{0} ({1} @ {2})\n{3}", titleParts[0],dt.ToShortDateString(), dt.ToShortTimeString(), rfmr.Description); 
 					
 					string iconDirectory = Path.Combine(
-						Path.Combine( MainApplication.Settings.DataPath, "Icons" ),
+						Path.Combine(Global.Settings.DataPath, "Icons" ),
 						"Modis" );
 					string iconFullPath = Path.Combine( iconDirectory, iconFilePath );
 					

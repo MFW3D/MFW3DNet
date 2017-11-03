@@ -87,11 +87,6 @@ namespace OgrVectorImporter
             world.RenderableObjects.Add(layer);
             waitMessage = new WaitMessage();
             layer.Add(waitMessage);
-
-            menuItem = new MenuItem("Import vectors from OGR data source...");
-            menuItem.Click += new EventHandler(menuItem_Click);
-            ParentApplication.PluginsMenu.MenuItems.Add(menuItem);
-
             LoadSaveXmlConfig(true);
 
         }
@@ -102,7 +97,6 @@ namespace OgrVectorImporter
         public override void Unload()
         {
             world.RenderableObjects.Remove(layer);
-            ParentApplication.PluginsMenu.MenuItems.Remove(menuItem);
             menuItem.Dispose();
             menuItem = null;
         }

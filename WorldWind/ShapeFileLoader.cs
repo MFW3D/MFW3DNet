@@ -257,7 +257,6 @@ namespace NLT.Plugins
 				{
 					m_MenuItem = new MenuItem("Shapefile loader");
 					m_MenuItem.Click += new EventHandler(menuItemClicked);
-					ParentApplication.ToolsMenu.MenuItems.Add(3, m_MenuItem );
 
 					m_Gui = new ShapeFileLoaderGUI(this);
 					m_Gui.Owner = ParentApplication;

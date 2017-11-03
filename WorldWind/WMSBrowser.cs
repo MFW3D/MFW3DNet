@@ -26,10 +26,10 @@ namespace WorldWind
 		private AnimationState animationState = AnimationState.Stop;
 
 		string wms_config_filepath = Path.Combine( 
-			Path.Combine(MainApplication.Settings.ConfigPath, "Earth"),
+			Path.Combine(Global.Settings.ConfigPath, "Earth"),
 			Path.Combine("Tools", "wms_server_list.xml"));
-		string saved_dirpath = Path.Combine( MainApplication.DirectoryPath, 
-			Path.Combine( MainApplication.Settings.CachePath, "WMS Browser"));
+		string saved_dirpath = Path.Combine(Global.DirectoryPath, 
+			Path.Combine(Global.Settings.CachePath, "WMS Browser"));
 		
 		private WorldWindow worldWindow;
 		private ImageLayer imageLayer;

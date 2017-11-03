@@ -878,11 +878,6 @@ namespace Apogee.MovieCreator
         /// </summary>
         public override void Load()
         {
-            // Add the Movie Recorder Tools menu item
-            menuItemRecorder = new System.Windows.Forms.MenuItem();
-            menuItemRecorder.Text = "Movie &Recorder";
-            menuItemRecorder.Click += new System.EventHandler(menuItemRecorder_Click);
-            Application.PluginsMenu.MenuItems.Add(menuItemRecorder);
         }
 
         /// <summary>
@@ -890,9 +885,6 @@ namespace Apogee.MovieCreator
         /// </summary>
         public override void Unload()
         {
-            // Remove menu item
-            Application.PluginsMenu.MenuItems.Remove(menuItemRecorder);
-
             // Reinstall default camera
             CameraBase camera = Application.WorldWindow.DrawArgs.WorldCamera;
             if (camera is PathCamera)

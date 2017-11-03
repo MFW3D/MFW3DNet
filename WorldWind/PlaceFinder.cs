@@ -653,7 +653,7 @@ namespace WorldWind
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(402, 13);
             this.label16.TabIndex = 9;
-            this.label16.Text = "· This tab can\'t search addresses; use the Yahoo! or Virtual Earth tabs for addre" +
+            this.label16.Text = "?This tab can\'t search addresses; use the Yahoo! or Virtual Earth tabs for addre" +
                 "sses";
             // 
             // pictureBoxWW
@@ -682,7 +682,7 @@ namespace WorldWind
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(362, 13);
             this.label6.TabIndex = 6;
-            this.label6.Text = "· Enclosing multiple words in quotes will search for the exact phrase entered";
+            this.label6.Text = "?Enclosing multiple words in quotes will search for the exact phrase entered";
             // 
             // label5
             // 
@@ -691,7 +691,7 @@ namespace WorldWind
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(368, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "· Searching for multiple words will find result thats contain every word entered";
+            this.label5.Text = "?Searching for multiple words will find result thats contain every word entered";
             // 
             // tabPageYahoo
             // 
@@ -794,7 +794,7 @@ namespace WorldWind
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(362, 13);
             this.label9.TabIndex = 6;
-            this.label9.Text = "· Enclosing multiple words in quotes will search for the exact phrase entered";
+            this.label9.Text = "?Enclosing multiple words in quotes will search for the exact phrase entered";
             // 
             // label10
             // 
@@ -803,7 +803,7 @@ namespace WorldWind
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(368, 13);
             this.label10.TabIndex = 5;
-            this.label10.Text = "· Searching for multiple words will find result thats contain every word entered";
+            this.label10.Text = "?Searching for multiple words will find result thats contain every word entered";
             // 
             // groupBox2
             // 
@@ -1064,7 +1064,7 @@ namespace WorldWind
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(362, 13);
             this.label13.TabIndex = 6;
-            this.label13.Text = "· Enclosing multiple words in quotes will search for the exact phrase entered";
+            this.label13.Text = "?Enclosing multiple words in quotes will search for the exact phrase entered";
             // 
             // label14
             // 
@@ -1073,7 +1073,7 @@ namespace WorldWind
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(368, 13);
             this.label14.TabIndex = 5;
-            this.label14.Text = "· Searching for multiple words will find result thats contain every word entered";
+            this.label14.Text = "?Searching for multiple words will find result thats contain every word entered";
             // 
             // groupBox6
             // 
@@ -2307,15 +2307,6 @@ namespace WorldWind
 			{
 				m_MenuItem = new MenuItem("Place Finder");
 				m_MenuItem.Click += new EventHandler(menuItemClicked);
-				foreach (MenuItem menuItem in m_Application.MainMenu.MenuItems)
-				{
-					if (menuItem.Text.Replace("&", "") == "Edit")
-					{
-						menuItem.MenuItems.Add( m_MenuItem );
-						break;
-					}
-				}
-			
 				m_Form = new PlaceFinder(ParentApplication.WorldWindow);
 				m_Form.Closing += new CancelEventHandler(m_Form_Closing);
 				m_Form.Owner = ParentApplication;
@@ -2336,14 +2327,6 @@ namespace WorldWind
 		{
 			if(m_MenuItem!=null)
 			{
-				foreach (MenuItem menuItem in m_Application.MainMenu.MenuItems)
-				{
-					if (menuItem.Text.Replace("&", "") == "Edit")
-					{
-						menuItem.MenuItems.Remove( m_MenuItem );
-						break;
-					}
-				}
 				m_MenuItem.Dispose();
 				m_MenuItem = null;
 			}

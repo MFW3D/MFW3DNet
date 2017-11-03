@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DstileGUI</name>
+    </assembly>
+    <members>
+        <member name="T:DstileGUI.DstileFrontEnd">
+            <summary>
+            Summary description for Form1.
+            </summary>
+        </member>
+        <member name="M:DstileGUI.DstileFrontEnd.LoadSaveXmlConfig(System.Boolean)">
+            <summary>
+            Restore/Save XML Configuration
+            </summary>
+            <param name="load">Specifies whether the settings are being loaded (true) or saved (false)</param>
+        </member>
+        <member name="M:DstileGUI.DstileFrontEnd.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:DstileGUI.DstileFrontEnd.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DstileGUI.DstileFrontEnd.loadButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Opens a file selector dialog
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DstileGUI.DstileFrontEnd.processButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            Starts the processing of the selected file
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DstileGUI.DstileFrontEnd.getCoordinates(System.String)">
+            <summary>
+            Method to split up a line from the gdalinfo output
+            </summary>
+            <param name="input">gdalinfo output</param>
+            <returns>double array of Coordinates</returns>
+        </member>
+        <member name="M:DstileGUI.DstileFrontEnd.loadGDALVrt">
+            <summary>
+            This method can ultimately be used for
+            loading a file for on the fly tiling
+            </summary>
+        </member>
+        <member name="M:DstileGUI.DstileFrontEnd.loadGDALVrtDem">
+            <summary>
+            This method can ultimately be used for
+            loading a file for on the fly tiling
+            </summary>
+        </member>
+        <member name="M:DstileGUI.DstilePlugin.WorldWindow_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Checks if the object being dropped is a kml or kmz file
+            </summary>
+        </member>
+        <member name="M:DstileGUI.DstilePlugin.WorldWindow_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Handles dropping of a kml/kmz file (by loading that file)
+            </summary>
+        </member>
+        <member name="M:DstileGUI.DstilePlugin.DragDropIsValid(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Determines if this plugin can handle the dropped item
+            </summary>
+        </member>
+        <member name="F:DstileGUI.UserSrsInputForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DstileGUI.UserSrsInputForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DstileGUI.UserSrsInputForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:WorldWind.GDALImageStore">
+            <summary>
+            Loads Image Tiles from a gdal accessible dataset
+            </summary>
+        </member>
+        <member name="M:WorldWind.GDALImageStore.#ctor(System.String,System.String,GDAL.Dataset,System.String)">
+            <summary>
+            Initialise ImageStore with a GDAL dataset
+            </summary>
+            <param name="dataset">Dataset in EPSG:4326</param>
+        </member>
+        <member name="M:WorldWind.GDALImageStore.#ctor">
+            <summary>
+            Blank constructor
+            </summary>
+        </member>
+        <member name="M:WorldWind.GDALImageStore.GetLocalPath(WorldWind.Renderable.QuadTile)">
+            <summary>
+            Overriden ImageAccessor method to extract and put tiles in place
+            using GDAL
+            </summary>
+            <param name="qt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WorldWind.GDALImageStore.ToXml(System.Xml.XmlDocument)">
+            <summary>
+            Save Dynamic GDALImageStores on Exit
+            </summary>
+            <param name="worldDoc">Create Relevant ImageAccessor Node</param>
+            <returns></returns>
+        </member>
+        <member name="M:WorldWind.GDALImageStore.FromXml(System.Xml.XmlNode)">
+            <summary>
+            Restore object parameters from XML
+            </summary>
+            <param name="istoreNode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WorldWind.Terrain.GDALTerrainAccessor">
+            <summary>
+            Reads GDAL based terrain data and writes out
+            .bil cache files
+            </summary>
+        </member>
+        <member name="M:WorldWind.Terrain.GDALTerrainAccessor.GetElevationAt(System.Double,System.Double,System.Double)">
+            <summary>
+            Get terrain elevation at specified location.  
+            </summary>
+            <param name="latitude">Latitude in decimal degrees.</param>
+            <param name="longitude">Longitude in decimal degrees.</param>
+            <param name="targetSamplesPerDegree"></param>
+            <returns>Returns 0 if the tile is not available on disk.</returns>
+        </member>
+        <member name="T:WorldWind.Terrain.GDALTerrainTileService">
+            <summary>
+            This class backs up the GDALTerrain accessor to
+            tile DEM files into .bil tiles
+            </summary>
+        </member>
+    </members>
+</doc>

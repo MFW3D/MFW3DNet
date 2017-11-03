@@ -247,16 +247,6 @@ namespace WorldWind.CMPlugins.OverviewForm
 		{
 				m_MenuItem = new MenuItem("Overview Form");
 				m_MenuItem.Click += new EventHandler(menuItemClicked);
-				ParentApplication.PluginsMenu.MenuItems.Add( m_MenuItem );
-			
-				
-			/*	m_ToolbarItem = new WorldWind.WindowsControlMenuButton(
-					"Naval Research Labs, Monterey -- \"Real-Time\" Weather",
-					Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Data\\Icons\\Interface\\nrl.png",
-					m_Form);
-			
-				ParentApplication.WorldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
-			*/
 		}
 
 		/// <summary>
@@ -266,7 +256,6 @@ namespace WorldWind.CMPlugins.OverviewForm
 		{
 			if(m_MenuItem!=null)
 			{
-				ParentApplication.ToolsMenu.MenuItems.Remove( m_MenuItem );
 				m_MenuItem.Dispose();
 				m_MenuItem = null;
 			}

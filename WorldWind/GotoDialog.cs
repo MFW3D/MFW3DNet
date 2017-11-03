@@ -446,7 +446,7 @@ namespace WorldWind
                LayerSet.Type_TiledPlacenameSet2 tpns = curLayerSet.GetTiledPlacenameSetAt(i);
 
                // compute full path to wpl file - WplIndex constructor needs this
-               string wplFullPath = Path.Combine(MainApplication.DirectoryPath, tpns.PlacenameListFilePath.Value);
+               string wplFullPath = Path.Combine(Global.DirectoryPath, tpns.PlacenameListFilePath.Value);
 
                // build an index descriptor (does not create or load the index yet)
                WplIndex idx = new WplIndex(tpns, wplFullPath);

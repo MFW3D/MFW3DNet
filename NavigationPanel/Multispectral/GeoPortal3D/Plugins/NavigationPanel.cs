@@ -35,7 +35,6 @@ namespace Multispectral.GeoPortal3D.Plugins
             this.m_menuItem = new MenuItem("NavigationPanel");
             this.m_menuItem.Click += new EventHandler(this.m_menuItem_Click);
             this.m_menuItem.Checked = World.Settings.ShowCompass;
-            this.ParentApplication.ToolsMenu.MenuItems.Add(this.m_menuItem);
             this.m_window = new FormWidget("NavigationPanel");
             this.m_window.Name = "NavigationPanel";
             this.m_window.ClientSize = new Size(0xac, 240);
@@ -175,7 +174,6 @@ namespace Multispectral.GeoPortal3D.Plugins
                 this.m_window.Dispose();
                 this.m_window = null;
             }
-            this.ParentApplication.ToolsMenu.MenuItems.Remove(this.m_menuItem);
             base.Unload();
         }
 

@@ -51,12 +51,6 @@ namespace Mashi.Stereo
         /// </summary>
         public override void Load()
         {
-            menuItem = new System.Windows.Forms.MenuItem();
-            menuItem.Text = "Anaglyph 3D View Mode";
-            menuItem.Click += new System.EventHandler(menuItem_Click);
-            ParentApplication.ViewMenu.MenuItems.Add(menuItem);
-
-
             Caps caps = Application.WorldWindow.DrawArgs.device.DeviceCaps;
             if (!caps.DestinationBlendCaps.SupportsBlendFactor ||
                     !caps.SourceBlendCaps.SupportsBlendFactor)
@@ -77,13 +71,6 @@ namespace Mashi.Stereo
         /// </summary>
         public override void Unload()
         {
-            if (menuItem != null)
-            {
-                ParentApplication.ViewMenu.MenuItems.Remove(menuItem);
-                menuItem.Dispose();
-                menuItem = null;
-            }
-
             if (layer != null)
             {
                 Application.WorldWindow.CurrentWorld.RenderableObjects.Remove(layer);

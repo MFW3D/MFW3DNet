@@ -46,25 +46,6 @@ namespace DstileGUI
             loadMenuItem.Text = "Load Image File...";
             loadMenuItem.Click += new EventHandler(loadMenu_Click);
             int mergeOrder = 0;
-            foreach (MenuItem menuItem in m_Application.MainMenu.MenuItems)
-            {
-                if (menuItem.Text.Replace("&", "") == "File")
-                {
-                    foreach (MenuItem subMenuItem in menuItem.MenuItems)
-                    {
-                        subMenuItem.MergeOrder = mergeOrder;
-
-                        if (subMenuItem.Text == "-")
-                            mergeOrder = 2;		// Everything after this should come after our new items
-                    }
-
-                    tempMenu.Text = menuItem.Text;
-                    tempMenu.MergeOrder = 1;	// MergeOrder 1 will have 0 before it and 2 after it
-                    tempMenu.MenuItems.Add(loadMenuItem);
-                    tempMenu.MenuItems.Add(new MenuItem("-"));
-                    menuItem.MergeMenu(tempMenu);
-                }
-            }
             //TODO: Add Place Holder Dstile Layer
             dstileLayers = new RenderableObjectList("Dstile Layers");
 
@@ -103,22 +84,6 @@ namespace DstileGUI
                 frontend.Dispose();
             frontend = null;
 
-            // Remove the menu items
-            foreach (MenuItem menuItem in m_Application.MainMenu.MenuItems)
-            {
-                if (menuItem.Text.Replace("&", "") == "File")
-                {
-                    foreach (MenuItem subMenuItem in menuItem.MenuItems)
-                    {
-                        if (subMenuItem.Text == tempMenu.MenuItems[0].Text)
-                        {
-                            menuItem.MenuItems.RemoveAt(subMenuItem.Index + 1);
-                            menuItem.MenuItems.RemoveAt(subMenuItem.Index);
-                            break;
-                        }
-                    }
-                }
-            }
             // Disable Drag&Drop functionality
             this.Application.WorldWindow.DragEnter -= new DragEventHandler(WorldWindow_DragEnter);
             this.Application.WorldWindow.DragDrop -= new DragEventHandler(WorldWindow_DragDrop);

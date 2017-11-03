@@ -60,7 +60,6 @@ namespace MeasureTool.Plugins
 
 			menuItem = new MenuItem("Measure\tM");
 			menuItem.Click += new EventHandler(menuItemClicked);
-			ParentApplication.ToolsMenu.MenuItems.Add( menuItem );
 
 			// Subscribe events
 			ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(layer.MouseMove);
@@ -76,7 +75,6 @@ namespace MeasureTool.Plugins
 		{
 			if(menuItem!=null)
 			{
-				ParentApplication.ToolsMenu.MenuItems.Remove( menuItem );
 				menuItem.Dispose();
 				menuItem = null;
 			}

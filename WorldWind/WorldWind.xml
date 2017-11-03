@@ -1362,17 +1362,6 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:WorldWind.MainApplication.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="P:WorldWind.MainApplication.VerticalExaggeration">
-            <summary>
-            设置地形
-            </summary>
-        </member>
         <member name="T:WorldWind.WplIndexEntry">
             <summary>
             Utility structure representing an index entry

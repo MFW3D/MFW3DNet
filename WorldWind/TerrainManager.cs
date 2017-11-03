@@ -365,13 +365,11 @@ namespace WorldWind
         {
             menuItem = new MenuItem("Terrain Manager");
             menuItem.Click += new EventHandler(menuItem_Click);
-            Application.PluginsMenu.MenuItems.Add(menuItem);
             base.Load();
         }
 
         public override void Unload()
         {
-            Application.PluginsMenu.MenuItems.Remove(menuItem);
             base.Unload();
         }
 

@@ -24,7 +24,6 @@ namespace NLT.Plugins
 			//The menu Entry
 			m_MenuItem = new MenuItem("Shapefile info\tCtrl+Q");
 			m_MenuItem.Click += new EventHandler(menuItemClicked);
-			ParentApplication.ToolsMenu.MenuItems.Add(m_MenuItem);
 
 			// Subscribe events
 			ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(onMouseMove);
@@ -38,7 +37,6 @@ namespace NLT.Plugins
 		{
 			if(m_MenuItem!=null)
 			{
-				ParentApplication.ToolsMenu.MenuItems.Remove(m_MenuItem);
 				m_MenuItem.Dispose();
 				m_MenuItem = null;
 			}			

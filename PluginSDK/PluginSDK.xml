@@ -3631,12 +3631,12 @@
         </member>
         <member name="T:WorldWind.ConfigurationLoader">
             <summary>
-            Summary description for ConfigurationLoader.
+            配置加载
             </summary>
         </member>
         <member name="M:WorldWind.ConfigurationLoader.ParseDouble(System.String)">
             <summary>
-            Parses double values from a string.
+            string 转 double
             </summary>
             <param name="s">Input string (can not be null)</param>
             <returns></returns>

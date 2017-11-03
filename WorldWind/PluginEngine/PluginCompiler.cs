@@ -264,7 +264,7 @@ namespace WorldWind.PluginEngine
 				pi.Plugin = GetPluginInterface(asm);
 			}
 
-			string pluginPath = MainApplication.DirectoryPath;
+			string pluginPath = Global.DirectoryPath;
 			if( pi.FullPath != null && pi.FullPath.Length > 0)
 				pluginPath = Path.GetDirectoryName(pi.FullPath);
 

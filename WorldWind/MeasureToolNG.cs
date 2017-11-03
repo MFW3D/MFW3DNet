@@ -334,8 +334,6 @@ namespace MeasureToolNewgen.Plugins
 
             menuItem = new MenuItem("Measure\tM");
             menuItem.Click += new EventHandler(menuItemClicked);
-            ParentApplication.ToolsMenu.MenuItems.Add(menuItem);
-
             // Subscribe events for line measurement
             ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(layer.MouseMove);
             ParentApplication.WorldWindow.MouseDown += new MouseEventHandler(layer.MouseDown);
@@ -361,7 +359,6 @@ namespace MeasureToolNewgen.Plugins
         {
             if (menuItem != null)
             {
-                ParentApplication.ToolsMenu.MenuItems.Remove(menuItem);
                 menuItem.Dispose();
                 menuItem = null;
             }

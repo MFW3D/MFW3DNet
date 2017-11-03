@@ -14,12 +14,12 @@ using Utility;
 namespace WorldWind
 {
 	/// <summary>
-	/// Summary description for ConfigurationLoader.
+	/// 配置加载
 	/// </summary>
 	public class ConfigurationLoader
 	{
         /// <summary>
-        /// Parses double values from a string.
+        /// string 转 double
         /// </summary>
         /// <param name="s">Input string (can not be null)</param>
         /// <returns></returns>
@@ -304,7 +304,8 @@ namespace WorldWind
                             if (World.Settings.WorkOffline)
                                 throw new Exception();
 
-                            WorldWind.Net.WebDownload download = new WorldWind.Net.WebDownload(redirect);
+                            //maomao，不下载
+                            //WorldWind.Net.WebDownload download = new WorldWind.Net.WebDownload(redirect);
 
                             string username = iter.Current.GetAttribute("username", "");
                             string password = iter.Current.GetAttribute("password", "");
@@ -317,19 +318,19 @@ namespace WorldWind
 
                             FileInfo tempDownloadFile = new FileInfo(layerFile.Replace(layerFileInfo.Extension, "_.tmp"));
 
-                            download.DownloadFile(tempDownloadFile.FullName, WorldWind.Net.DownloadType.Unspecified);
+                            //download.DownloadFile(tempDownloadFile.FullName, WorldWind.Net.DownloadType.Unspecified);
 
-                            tempDownloadFile.Refresh();
-                            if (tempDownloadFile.Exists && tempDownloadFile.Length > 0)
-                            {
-                                FileInfo tempStoreFile = new FileInfo(tempDownloadFile.FullName.Replace("_.tmp", ".tmp"));
-                                if (tempStoreFile.Exists)
-                                    tempStoreFile.Delete();
+                            //tempDownloadFile.Refresh();
+                            //if (tempDownloadFile.Exists && tempDownloadFile.Length > 0)
+                            //{
+                            //    FileInfo tempStoreFile = new FileInfo(tempDownloadFile.FullName.Replace("_.tmp", ".tmp"));
+                            //    if (tempStoreFile.Exists)
+                            //        tempStoreFile.Delete();
 
-                                tempDownloadFile.MoveTo(tempStoreFile.FullName);
-                            }
+                            //    tempDownloadFile.MoveTo(tempStoreFile.FullName);
+                            //}
 
-                            download.Dispose();
+                            //download.Dispose();
 
                             using (StreamWriter writer = new StreamWriter(layerFile.Replace(layerFileInfo.Extension, ".uri"), false))
                             {

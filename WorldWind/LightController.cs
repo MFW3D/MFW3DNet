@@ -36,7 +36,6 @@ namespace Murris.Plugins
         {
             m_MenuItem = new MenuItem("Sunlight control...");
             m_MenuItem.Click += new EventHandler(menuItemClicked);
-            ParentApplication.ToolsMenu.MenuItems.Add(m_MenuItem);
         }
 
         /// <summary>
@@ -44,7 +43,6 @@ namespace Murris.Plugins
         /// </summary>
         public override void Unload()
         {
-            ParentApplication.PluginsMenu.MenuItems.Remove(m_MenuItem);
             if (m_Form != null)
             {
                 if (!m_Form.IsDisposed)

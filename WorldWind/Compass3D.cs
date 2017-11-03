@@ -23,7 +23,6 @@ namespace NASA.Plugins
             m_menuItem = new System.Windows.Forms.MenuItem("Compass");
             m_menuItem.Click += new EventHandler(m_menuItem_Click);
             m_menuItem.Checked = World.Settings.ShowCompass;
-            ParentApplication.ToolsMenu.MenuItems.Add(m_menuItem);
             
             m_form = new FormWidget("Compass");
             m_form.ClientSize = new System.Drawing.Size(200, 200);
@@ -67,8 +66,6 @@ namespace NASA.Plugins
                 m_form.Dispose();
                 m_form = null;
             }
-
-            ParentApplication.ToolsMenu.MenuItems.Remove(m_menuItem);
 
             if (m_toolbarItem != null)
             {
