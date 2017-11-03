@@ -1045,12 +1045,12 @@ namespace DstileGUI
             {
                 Console.WriteLine("Finished successfully");
                 Console.WriteLine("Loading Layer");
-                //WorldWind.ConfigurationLoader.getRenderableFromLayerFile(this.targetXMLTextBox.Text,srcplugin.ParentApplication.WorldWindow.CurrentWorld);
+                //WorldWind.ConfigurationLoader.getRenderableFromLayerFile(this.targetXMLTextBox.Text,srcplugin.Global.worldWindow.CurrentWorld);
                 RenderableObjectList layers = ConfigurationLoader.
                     getRenderableFromLayerFile(this.targetXMLTextBox.Text,
-                    srcplugin.ParentApplication.WorldWindow.CurrentWorld,
-                    srcplugin.ParentApplication.WorldWindow.Cache);
-                srcplugin.ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(layers);
+                    Global.worldWindow.CurrentWorld,
+                    Global.worldWindow.Cache);
+                Global.worldWindow.CurrentWorld.RenderableObjects.Add(layers);
                 //this.processButton.Text = "Process";
             }
             //currentStatusLabel.Text = "Finished successfully";
@@ -1122,7 +1122,7 @@ namespace DstileGUI
             double lztsd = Convert.ToDouble(tileListBox.SelectedItem);
             string format = Convert.ToString(formatListBox.SelectedItem);
             int tilelevels = (int)Math.Ceiling(Math.Log(lztsd / baseres) / Math.Log(2.0));
-            World curworld = srcplugin.ParentApplication.WorldWindow.CurrentWorld;
+            World curworld = Global.worldWindow.CurrentWorld;
             GDALImageStore gdalstore = 
                 new GDALImageStore(layerNameTextBox.Text,inputFileTextBox.Text,
                 dst_ds,format);
@@ -1215,7 +1215,7 @@ namespace DstileGUI
             double lztsd = Convert.ToDouble(tileListBox.SelectedItem);
             int tilelevels = (int)Math.Ceiling(Math.Log(lztsd / baseres) / Math.Log(2.0));
             
-            World curworld = srcplugin.ParentApplication.WorldWindow.CurrentWorld;
+            World curworld = Global.worldWindow.CurrentWorld;
             string datadir = Path.Combine(srcplugin.PluginDirectory,
                 String.Format("Data\\{0}\\DEM\\{1}\\",
                 curworld.Name, layerNameTextBox.Text));

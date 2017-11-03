@@ -55,9 +55,9 @@ namespace NASA.Plugins
         {
             List<WorldWind.Renderable.RenderableObject> activeList = new List<WorldWind.Renderable.RenderableObject>();
             
-            for(int i = 0; i < ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.ChildObjects.Count; i++)
+            for(int i = 0; i < Global.worldWindow.CurrentWorld.RenderableObjects.ChildObjects.Count; i++)
             {
-                WorldWind.Renderable.RenderableObject renderable = (WorldWind.Renderable.RenderableObject)ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.ChildObjects[i];
+                WorldWind.Renderable.RenderableObject renderable = (WorldWind.Renderable.RenderableObject)Global.worldWindow.CurrentWorld.RenderableObjects.ChildObjects[i];
 
                 List<WorldWind.Renderable.RenderableObject> childActiveList = getActiveLayers(renderable);
                 for (int j = 0; j < childActiveList.Count; j++)
@@ -101,9 +101,9 @@ namespace NASA.Plugins
                 }
             }
 
-            for (int i = 0; i < ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.ChildObjects.Count; i++)
+            for (int i = 0; i < Global.worldWindow.CurrentWorld.RenderableObjects.ChildObjects.Count; i++)
             {
-                WorldWind.Renderable.RenderableObject renderable = (WorldWind.Renderable.RenderableObject)ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.ChildObjects[i];
+                WorldWind.Renderable.RenderableObject renderable = (WorldWind.Renderable.RenderableObject)Global.worldWindow.CurrentWorld.RenderableObjects.ChildObjects[i];
                 if (m_allLayersNode.ChildWidgets.Count == i)
                 {
                     SimpleTreeNodeWidget childNode = new SimpleTreeNodeWidget(renderable.Name);
@@ -116,9 +116,9 @@ namespace NASA.Plugins
                 UpdateAllLayers((SimpleTreeNodeWidget)m_allLayersNode.ChildWidgets[i], renderable);
             }
 
-            while (m_allLayersNode.ChildWidgets.Count > ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.ChildObjects.Count)
+            while (m_allLayersNode.ChildWidgets.Count > Global.worldWindow.CurrentWorld.RenderableObjects.ChildObjects.Count)
             {
-                m_allLayersNode.ChildWidgets.RemoveAt(ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.ChildObjects.Count - 1);
+                m_allLayersNode.ChildWidgets.RemoveAt(Global.worldWindow.CurrentWorld.RenderableObjects.ChildObjects.Count - 1);
             }
         }
 

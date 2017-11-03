@@ -119,13 +119,13 @@ namespace jhuapl.sample
         {
             // Create our whiteboard layer
             m_feedLayer = new RenderableObjectList("GeoRSS Feeds");
-            ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(m_feedLayer);
+            Global.worldWindow.CurrentWorld.RenderableObjects.Add(m_feedLayer);
 
             m_feeds = new GeoRssFeeds(m_feedLayer);
 
             // Add our menu button
             m_menuButton = new GeoRSSMenuButton(this.PluginDirectory + @"\Plugins\GeoRSS\georss-large.png", this);
-            ParentApplication.WorldWindow.MenuBar.AddToolsMenuButton(m_menuButton);
+            Global.worldWindow.MenuBar.AddToolsMenuButton(m_menuButton);
 
             // Add our navigation menu item
             m_geoRSSMenuItem = new System.Windows.Forms.MenuItem();

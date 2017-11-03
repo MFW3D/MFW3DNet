@@ -78,11 +78,11 @@ namespace OgrVectorImporter
         public override void Load()
         {
             // Setup Drag&Drop functionality
-            m_Application.WorldWindow.DragEnter += new DragEventHandler(OgrVectorImporter_DragEnter);
-            m_Application.WorldWindow.DragDrop += new DragEventHandler(OgrVectorImporter_DragDrop);
+            Global.worldWindow.DragEnter += new DragEventHandler(OgrVectorImporter_DragEnter);
+            Global.worldWindow.DragDrop += new DragEventHandler(OgrVectorImporter_DragDrop);
 
 
-            world = m_Application.WorldWindow.CurrentWorld;
+            world = Global.worldWindow.CurrentWorld;
             layer = new RenderableObjectList(Name);
             world.RenderableObjects.Add(layer);
             waitMessage = new WaitMessage();

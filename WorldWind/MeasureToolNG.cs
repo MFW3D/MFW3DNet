@@ -312,15 +312,15 @@ namespace MeasureToolNewgen.Plugins
         /// </summary>
         public override void Load()
         {
-            World curworld = ParentApplication.WorldWindow.CurrentWorld;
+            World curworld = Global.worldWindow.CurrentWorld;
             layer = new MeasureToolLayer(curworld,
-                ParentApplication.WorldWindow.DrawArgs);
+                Global.worldWindow.DrawArgs);
 
             LinearRing ring = new LinearRing();
             ring.Points = new Point3d[0];
 
             arealayer = new MeasureAreaLayer(curworld,
-                ParentApplication.WorldWindow.DrawArgs,
+                Global.worldWindow.DrawArgs,
                 ring);
 
             resultwindow = new MeasureWinResult(this);
@@ -335,15 +335,15 @@ namespace MeasureToolNewgen.Plugins
             menuItem = new MenuItem("Measure\tM");
             menuItem.Click += new EventHandler(menuItemClicked);
             // Subscribe events for line measurement
-            ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(layer.MouseMove);
-            ParentApplication.WorldWindow.MouseDown += new MouseEventHandler(layer.MouseDown);
-            ParentApplication.WorldWindow.MouseUp += new MouseEventHandler(layer.MouseUp);
-            ParentApplication.WorldWindow.KeyUp += new KeyEventHandler(this.KeyUp);
+            Global.worldWindow.MouseMove += new MouseEventHandler(layer.MouseMove);
+            Global.worldWindow.MouseDown += new MouseEventHandler(layer.MouseDown);
+            Global.worldWindow.MouseUp += new MouseEventHandler(layer.MouseUp);
+            Global.worldWindow.KeyUp += new KeyEventHandler(this.KeyUp);
 
             //Subscribe events for area measurement
-            ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(arealayer.MouseMove);
-            ParentApplication.WorldWindow.MouseDown += new MouseEventHandler(arealayer.MouseDown);
-            ParentApplication.WorldWindow.MouseUp += new MouseEventHandler(arealayer.MouseUp);
+            Global.worldWindow.MouseMove += new MouseEventHandler(arealayer.MouseMove);
+            Global.worldWindow.MouseDown += new MouseEventHandler(arealayer.MouseDown);
+            Global.worldWindow.MouseUp += new MouseEventHandler(arealayer.MouseUp);
 
             //Set tool inactive by default
             layer.IsOn = false;
@@ -363,17 +363,17 @@ namespace MeasureToolNewgen.Plugins
                 menuItem = null;
             }
 
-            ParentApplication.WorldWindow.MouseMove -= new MouseEventHandler(layer.MouseMove);
-            ParentApplication.WorldWindow.MouseDown -= new MouseEventHandler(layer.MouseDown);
-            ParentApplication.WorldWindow.MouseUp -= new MouseEventHandler(layer.MouseUp);
-            ParentApplication.WorldWindow.KeyUp -= new KeyEventHandler(this.KeyUp);
+            Global.worldWindow.MouseMove -= new MouseEventHandler(layer.MouseMove);
+            Global.worldWindow.MouseDown -= new MouseEventHandler(layer.MouseDown);
+            Global.worldWindow.MouseUp -= new MouseEventHandler(layer.MouseUp);
+            Global.worldWindow.KeyUp -= new KeyEventHandler(this.KeyUp);
 
-            ParentApplication.WorldWindow.MouseMove -= new MouseEventHandler(arealayer.MouseMove);
-            ParentApplication.WorldWindow.MouseDown -= new MouseEventHandler(arealayer.MouseDown);
-            ParentApplication.WorldWindow.MouseUp -= new MouseEventHandler(arealayer.MouseUp);
+            Global.worldWindow.MouseMove -= new MouseEventHandler(arealayer.MouseMove);
+            Global.worldWindow.MouseDown -= new MouseEventHandler(arealayer.MouseDown);
+            Global.worldWindow.MouseUp -= new MouseEventHandler(arealayer.MouseUp);
 
-            ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(layer);
-            ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(arealayer);
+            Global.worldWindow.CurrentWorld.RenderableObjects.Remove(layer);
+            Global.worldWindow.CurrentWorld.RenderableObjects.Remove(arealayer);
             //DrawArgs.NewRootWidget.Remove(resultwindow);
         }
 

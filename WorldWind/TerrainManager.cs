@@ -384,7 +384,7 @@ namespace WorldWind
             else
             {
                 menuItem.Checked = true;
-                terrainManagerForm = new TerrainManagerForm(Application.WorldWindow, menuItem);
+                terrainManagerForm = new TerrainManagerForm(Global.worldWindow, menuItem);
                 terrainManagerForm.Show();
             }
         }

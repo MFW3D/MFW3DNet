@@ -16,6 +16,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using WorldWind;
 
 //WorldWind support classes
 using WorldWind.Renderable;
@@ -38,8 +39,8 @@ namespace DstileGUI
         public override void Load()
         {
             // Setup Drag&Drop functionality
-            m_Application.WorldWindow.DragEnter += new DragEventHandler(WorldWindow_DragEnter);
-            m_Application.WorldWindow.DragDrop += new DragEventHandler(WorldWindow_DragDrop);
+            Global.worldWindow.DragEnter += new DragEventHandler(WorldWindow_DragEnter);
+            Global.worldWindow.DragDrop += new DragEventHandler(WorldWindow_DragDrop);
             
             // Add a menu item to the File menu and the Help menu
             MenuItem loadMenuItem = new MenuItem();
@@ -54,7 +55,7 @@ namespace DstileGUI
             frontend.Visible = false;
             
             //TODO: Add any existing Dstile based layers
-            ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(dstileLayers);
+            Global.worldWindow.CurrentWorld.RenderableObjects.Add(dstileLayers);
             //from the Master XML
         }
 
@@ -85,8 +86,8 @@ namespace DstileGUI
             frontend = null;
 
             // Disable Drag&Drop functionality
-            this.Application.WorldWindow.DragEnter -= new DragEventHandler(WorldWindow_DragEnter);
-            this.Application.WorldWindow.DragDrop -= new DragEventHandler(WorldWindow_DragDrop);
+            Global.worldWindow.DragEnter -= new DragEventHandler(WorldWindow_DragEnter);
+            Global.worldWindow.DragDrop -= new DragEventHandler(WorldWindow_DragDrop);
 
             
             tempMenu.MenuItems.Clear();
@@ -94,7 +95,7 @@ namespace DstileGUI
             //TODO: Save if needed any present DSTile layers to
             //master xml
             //TODO: Remove Dstile added layers from Layer Manager
-            ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(dstileLayers);
+            Global.worldWindow.CurrentWorld.RenderableObjects.Remove(dstileLayers);
             dstileLayers.Dispose();
             dstileLayers = null;
 

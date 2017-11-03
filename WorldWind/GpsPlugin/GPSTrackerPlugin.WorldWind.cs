@@ -74,7 +74,7 @@ namespace GpsTracker
 			gpsTracker = new GpsTracker(this);
 			// Add the GPSTracker plugin to the World Wind tool bar 
             m_MenuButton = new WindowsControlMenuButton("Gps Tracker " + m_sOverlayVersion, m_sPluginDirectory + "\\gpstracker.png", this.gpsTracker);
-			Application.WorldWindow.MenuBar.AddToolsMenuButton( m_MenuButton );
+			Global.worldWindow.MenuBar.AddToolsMenuButton( m_MenuButton );
 			
 			base.Load();
 		}
@@ -85,7 +85,7 @@ namespace GpsTracker
 			gpsTracker.Close();
 			
 			//remove button...
-			Application.WorldWindow.MenuBar.RemoveToolsMenuButton(m_MenuButton);
+			Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_MenuButton);
 
 			pluginRemoveOverlay();
 
@@ -98,16 +98,16 @@ namespace GpsTracker
 		public void pluginAddOverlay()
 		{
 			gpsOverlay = new GPSTrackerOverlay(this);
-			gpsOverlay.Initialize(Application.WorldWindow.DrawArgs);
-			Application.WorldWindow.CurrentWorld.RenderableObjects.Add(gpsOverlay);
-			gpsOverlay.Update(Application.WorldWindow.DrawArgs);
+			gpsOverlay.Initialize(Global.worldWindow.DrawArgs);
+			Global.worldWindow.CurrentWorld.RenderableObjects.Add(gpsOverlay);
+			gpsOverlay.Update(Global.worldWindow.DrawArgs);
 		}
 
 		public void pluginRemoveOverlay()
 		{
 			if (gpsOverlay!=null)
 			{
-				Application.WorldWindow.CurrentWorld.RenderableObjects.Remove(gpsOverlay.Name);
+				Global.worldWindow.CurrentWorld.RenderableObjects.Remove(gpsOverlay.Name);
 				gpsOverlay=null;
 			}
 		}
@@ -120,18 +120,18 @@ namespace GpsTracker
 			if (fHeading==-1F || gpsTracker.m_bTrackHeading==false || gpsOverlay==null)
 			{
 				if (iAltitud==0)
-					ParentApplication.WorldWindow.GotoLatLon(fLat,fLon);
+					Global.worldWindow.GotoLatLon(fLat,fLon);
 				else
-					ParentApplication.WorldWindow.GotoLatLonAltitude(fLat,fLon,(double)iAltitud*(double)1000);
+					Global.worldWindow.GotoLatLonAltitude(fLat,fLon,(double)iAltitud*(double)1000);
 			}
 			else
 			{
 				if (gpsOverlay!=null && gpsTracker.m_bTrackHeading)
 				{
 					if (iAltitud==0)
-						ParentApplication.WorldWindow.GotoLatLonHeadingAltitude(fLat, fLon, fHeading, gpsOverlay.drawArgs.WorldCamera.Altitude);
+						Global.worldWindow.GotoLatLonHeadingAltitude(fLat, fLon, fHeading, gpsOverlay.drawArgs.WorldCamera.Altitude);
 					else
-						ParentApplication.WorldWindow.GotoLatLonHeadingAltitude(fLat,fLon,fHeading,(double)iAltitud*(double)1000);
+						Global.worldWindow.GotoLatLonHeadingAltitude(fLat,fLon,fHeading,(double)iAltitud*(double)1000);
 				}
 			}
 		}
@@ -139,13 +139,13 @@ namespace GpsTracker
 		//WorldWindow focus
 		public void pluginWorldWindowFocus()
 		{
-			ParentApplication.WorldWindow.Focus();
+			Global.worldWindow.Focus();
 		}
 
 		//WorldWindow invalidate
 		public void pluginWorldWindowInvalidate()
 		{
-			ParentApplication.WorldWindow.Invalidate();
+			Global.worldWindow.Invalidate();
 		}
 
 		//Call by the gpstracker class to check (locked) |  uncheck (not locked)
@@ -281,8 +281,6 @@ namespace GpsTracker
             : base("GPSTracker " + GpsTrackerPlugin.m_sOverlayVersion)
 		{
 			this.Plugin = plugin;
-            ParentApplication = plugin.ParentApplication;
-
             //
             //Set an original size for the arrays
             m_uIconResize=1;
@@ -310,7 +308,7 @@ namespace GpsTracker
 		public override void Initialize(DrawArgs drawArgs)
 		{
 			Dispose();
-			this.drawArgs = ParentApplication.WorldWindow.DrawArgs;
+			this.drawArgs = Global.worldWindow.DrawArgs;
 			isInitialized = true;
 		}
 
@@ -393,7 +391,7 @@ namespace GpsTracker
                             sName = "Geo Fence #" + Convert.ToString(m_iGpsGeoFenceIndex);
                         else
                             sName = "Track Line #" + Convert.ToString(m_iGpsGeoFenceIndex);
-                        m_gpsGeoFence[m_iGpsGeoFenceIndex] = new GPSGeoFence(ParentApplication.WorldWindow.CurrentWorld, sName, Plugin, renderInfo, bGeoFence, Color.Red);
+                        m_gpsGeoFence[m_iGpsGeoFenceIndex] = new GPSGeoFence(Global.worldWindow.CurrentWorld, sName, Plugin, renderInfo, bGeoFence, Color.Red);
                         m_gpsGeoFence[m_iGpsGeoFenceIndex].Initialize(this.drawArgs);
                         m_gpsGeoFence[m_iGpsGeoFenceIndex].m_bDone = false;
                         m_gpsGeoFence[m_iGpsGeoFenceIndex].m_bShowInfo = true;
@@ -455,7 +453,7 @@ namespace GpsTracker
 
                 if (m_gpsGeoFence[m_iGpsGeoFenceIndex] == null)
                 {
-                    m_gpsGeoFence[m_iGpsGeoFenceIndex] = new GPSGeoFence(ParentApplication.WorldWindow.CurrentWorld, "New Geo Fence", Plugin, renderInformation, geoFence.bGeoFence, geoFence.colorLine);
+                    m_gpsGeoFence[m_iGpsGeoFenceIndex] = new GPSGeoFence(Global.worldWindow.CurrentWorld, "New Geo Fence", Plugin, renderInformation, geoFence.bGeoFence, geoFence.colorLine);
                     m_gpsGeoFence[m_iGpsGeoFenceIndex].m_bDone = false;
                     
                     m_gpsGeoFence[m_iGpsGeoFenceIndex].m_sDescription = geoFence.sName;
@@ -532,7 +530,7 @@ namespace GpsTracker
                     }
                     
 					if (m_gpsTrack[renderInformation.iIndex]==null)
-                        m_gpsTrack[renderInformation.iIndex] = new GPSTrackLine(ParentApplication.WorldWindow.CurrentWorld, renderInformation.sDescription, renderInformation);
+                        m_gpsTrack[renderInformation.iIndex] = new GPSTrackLine(Global.worldWindow.CurrentWorld, renderInformation.sDescription, renderInformation);
                     m_gpsTrack[renderInformation.iIndex].Initialize(this.drawArgs);
                     m_gpsTrack[renderInformation.iIndex].SetTrack(this, renderInformation.gpsTrack, renderInformation.sDescription, renderInformation.colorTrack, renderInformation.sIcon, renderInformation.bShowInfo, renderInformation.fTrackOnTop);
 					Add(m_gpsTrack[renderInformation.iIndex]);
@@ -557,7 +555,7 @@ namespace GpsTracker
                                 Array.Resize(ref m_gpsIcons, (int)m_uIconResize);
                             }
 
-							m_gpsIcons[iIndex] = new GPSIcon(this, renderInformation, ParentApplication.WorldWindow.CurrentWorld);
+							m_gpsIcons[iIndex] = new GPSIcon(this, renderInformation, Global.worldWindow.CurrentWorld);
 							m_gpsIcons[iIndex].Initialize(this.drawArgs);
 							Add(m_gpsIcons[iIndex]);
 							m_iGpsIconIndex++;
@@ -579,7 +577,7 @@ namespace GpsTracker
 
 						if (m_gpsPOI[m_iGpsPOIIndex]==null)
 						{
-							m_gpsPOI[m_iGpsPOIIndex] = new GPSIcon(this, renderInformation.iIndex,renderInformation, ParentApplication.WorldWindow.CurrentWorld);
+							m_gpsPOI[m_iGpsPOIIndex] = new GPSIcon(this, renderInformation.iIndex,renderInformation, Global.worldWindow.CurrentWorld);
 							m_gpsPOI[m_iGpsPOIIndex].Initialize(this.drawArgs);
 							Add(m_gpsPOI[m_iGpsPOIIndex]);
 						}

@@ -37,7 +37,6 @@ namespace Apogee.MovieCreator
         
         private AviManager aviManager;
         private DirectoryInfo pngDirInfo;
-        private MainApplication worldWind;
         private Plugin plugin;
         private VideoStream aviStream;
         private WorldWindow worldWindow;
@@ -101,8 +100,7 @@ namespace Apogee.MovieCreator
         {
             InitializeComponent();
             this.plugin = plugin;
-            this.worldWind = plugin.Application;
-            this.worldWindow = worldWind.WorldWindow;
+            this.worldWindow = Global.worldWindow;
         }
 
         /// <summary>
@@ -689,10 +687,8 @@ namespace Apogee.MovieCreator
             worldWindow.DrawArgs.WorldCamera = camera;
 
             // Resize window to our movie size
-            if (worldWind.WindowState != FormWindowState.Normal)
-                worldWind.WindowState = FormWindowState.Normal;
-            worldWind.ClientSize = new Size((int)frameWidth.Value, 
-                (int)frameHeight.Value);
+            //worldWind.ClientSize = new Size((int)frameWidth.Value, 
+            //    (int)frameHeight.Value);
         }
 
         #region GUI event handlers
@@ -831,12 +827,12 @@ namespace Apogee.MovieCreator
 
         private void buttonPreview_Click(object sender, EventArgs e)
         {
-            previousSize = worldWind.ClientSize;
+            //previousSize = worldWind.ClientSize;
             // Resize window to our movie size for preview
-            if (worldWind.WindowState != FormWindowState.Normal)
-                worldWind.WindowState = FormWindowState.Normal;
-            worldWind.ClientSize = new Size((int)frameWidth.Value,
-                (int)frameHeight.Value);
+            //if (worldWind.WindowState != FormWindowState.Normal)
+            //    worldWind.WindowState = FormWindowState.Normal;
+            //worldWind.ClientSize = new Size((int)frameWidth.Value,
+            //   (int)frameHeight.Value);
             lastSizing = PREVIEW;
         }
 
@@ -844,20 +840,20 @@ namespace Apogee.MovieCreator
         {
             previousSize = new Size((int)frameWidth.Value,
                 (int)frameHeight.Value);
-            frameHeight.Value = worldWind.ClientSize.Height;
-            frameWidth.Value = worldWind.ClientSize.Width;
+            //frameHeight.Value = worldWind.ClientSize.Height;
+            //frameWidth.Value = worldWind.ClientSize.Width;
             lastSizing = WINDOW;
         }
 
         private void buttonUndo_Click(object sender, EventArgs e)
         {
-            if (lastSizing.Equals(PREVIEW))
-                worldWind.ClientSize = previousSize;
-            else if (lastSizing.Equals(WINDOW))
-            {
+            //if (lastSizing.Equals(PREVIEW))
+            //    worldWind.ClientSize = previousSize;
+            //else if (lastSizing.Equals(WINDOW))
+            //{
                 frameHeight.Value = previousSize.Height;
                 frameWidth.Value = previousSize.Width;
-            }
+            //}
         }
         #endregion
     }
@@ -886,7 +882,7 @@ namespace Apogee.MovieCreator
         public override void Unload()
         {
             // Reinstall default camera
-            CameraBase camera = Application.WorldWindow.DrawArgs.WorldCamera;
+            CameraBase camera = Global.worldWindow.DrawArgs.WorldCamera;
             if (camera is PathCamera)
                 ((PathCamera)camera).InstallDefaultCamera();
         }

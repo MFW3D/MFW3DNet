@@ -53,11 +53,11 @@ namespace Murris.Plugins
 			control.VisibleChanged += evhand;
 			// Add toolbar item
 			m_ToolbarItem = new WorldWind.WindowsControlMenuButton("Compass", Path.Combine(this.PluginDirectory, @"Plugins\Compass\toolbar\tbcompass.png"), control);
-			m_Application.WorldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
+            Global.worldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
 
-			layer = new CompassLayer(LayerName, PluginDirectory, ParentApplication.WorldWindow);
+			layer = new CompassLayer(LayerName, PluginDirectory, Global.worldWindow);
 			layer.IsOn = World.Settings.ShowCompass;
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(layer);
+            Global.worldWindow.CurrentWorld.RenderableObjects.Add(layer);
 			m_ToolbarItem.SetPushed(World.Settings.ShowCompass);
 			
 		}
@@ -73,9 +73,9 @@ namespace Murris.Plugins
 
 			// Remove toolbar item
 			if (m_ToolbarItem != null)
-				m_Application.WorldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
+                Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
 
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(LayerName);
+            Global.worldWindow.CurrentWorld.RenderableObjects.Remove(LayerName);
 		}
 
 		/// <summary>

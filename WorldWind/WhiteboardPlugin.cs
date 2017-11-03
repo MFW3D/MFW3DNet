@@ -115,18 +115,18 @@ namespace jhuapl.sample
 		{
 			// Create our whiteboard layer
 			m_whiteboardLayer = new DrawLayer("Whiteboard");
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(m_whiteboardLayer);
+			Global.worldWindow.CurrentWorld.RenderableObjects.Add(m_whiteboardLayer);
 
 			// Add our menu button
 			m_menuButton = new WhiteboardMenuButton(this.PluginDirectory + @"\Plugins\Whiteboard\images\icons\APL4C.png", this);
-			ParentApplication.WorldWindow.MenuBar.AddToolsMenuButton(m_menuButton);
+			Global.worldWindow.MenuBar.AddToolsMenuButton(m_menuButton);
 
 			// Add our navigation menu item
 			m_wbMenuItem = new System.Windows.Forms.MenuItem();
 			m_wbMenuItem.Text = "Hide Whiteboard\tN";
 			m_wbMenuItem.Click += new System.EventHandler(WbMenuItem_Click);
 
-			ParentApplication.WorldWindow.KeyUp += new KeyEventHandler(keyUp);
+			Global.worldWindow.KeyUp += new KeyEventHandler(keyUp);
 
 			if (m_whiteboardForm == null)
 			{
@@ -152,7 +152,7 @@ namespace jhuapl.sample
 			m_menuButton.SetPushed(false);
 
 			// Clean up and remove menu item
-			//ParentApplication.WorldWindow.MenuBar.RemoveToolsMenuButton(m_menuButton);
+			//Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_menuButton);
 
 			base.Unload ();
 		}

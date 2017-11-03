@@ -51,15 +51,15 @@ namespace Mashi.Stereo
         /// </summary>
         public override void Load()
         {
-            Caps caps = Application.WorldWindow.DrawArgs.device.DeviceCaps;
+            Caps caps = Global.worldWindow.DrawArgs.device.DeviceCaps;
             if (!caps.DestinationBlendCaps.SupportsBlendFactor ||
                     !caps.SourceBlendCaps.SupportsBlendFactor)
             {
                 throw new ApplicationException("The graphics adapter is not compatible, no blend factor support.");
             }
 
-            layer = new StereoLayer(LayerName, Application.WorldWindow);
-            Application.WorldWindow.CurrentWorld.RenderableObjects.Add(layer);
+            layer = new StereoLayer(LayerName, Global.worldWindow);
+            Global.worldWindow.CurrentWorld.RenderableObjects.Add(layer);
             layer.IsOn = false; //turn off
 
             //            menuItem_Click(null, null);   //And on to trigger check and warning
@@ -73,7 +73,7 @@ namespace Mashi.Stereo
         {
             if (layer != null)
             {
-                Application.WorldWindow.CurrentWorld.RenderableObjects.Remove(layer);
+                Global.worldWindow.CurrentWorld.RenderableObjects.Remove(layer);
                 layer.Dispose();
                 layer = null;
             }

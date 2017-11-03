@@ -705,11 +705,6 @@
             Keep as light-weight as possible to keep plugin simple to write.
             </summary>
         </member>
-        <member name="F:WorldWind.PluginEngine.Plugin.m_Application">
-            <summary>
-            Handle to the World Wind Application object
-            </summary>
-        </member>
         <member name="F:WorldWind.PluginEngine.Plugin.m_PluginDirectory">
             <summary>
             The directory from which this plugin was loaded.
@@ -718,18 +713,6 @@
         <member name="F:WorldWind.PluginEngine.Plugin.m_isLoaded">
             <summary>
             Plugin running flag (true while running, reset when exiting plugin)
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.Plugin.Application">
-            <summary>
-            Reference to the World Wind main application object.  
-            Deprecated: Use ParentApplication property instead!  
-            TODO: Remove this to avoid name collision
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.Plugin.ParentApplication">
-            <summary>
-            Reference to the World Wind main application object.
             </summary>
         </member>
         <member name="P:WorldWind.PluginEngine.Plugin.PluginDirectory">
@@ -753,7 +736,7 @@
             runs in background should override this method.
             </summary>
         </member>
-        <member name="M:WorldWind.PluginEngine.Plugin.PluginLoad(WorldWind.MainApplication,System.String)">
+        <member name="M:WorldWind.PluginEngine.Plugin.PluginLoad(System.String)">
             <summary>
             Base class load, calls Load. 
             </summary>
@@ -774,7 +757,7 @@
             The list of discovered plugins.
             </summary>
         </member>
-        <member name="M:WorldWind.PluginEngine.PluginCompiler.#ctor(WorldWind.MainApplication,System.String)">
+        <member name="M:WorldWind.PluginEngine.PluginCompiler.#ctor(System.String)">
             <summary>
             Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginCompiler"/> class.
             </summary>

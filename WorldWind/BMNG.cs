@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
+using WorldWind;
 
 namespace NASA.Plugins
 {
@@ -687,17 +688,16 @@ namespace NASA.Plugins
 
         public override void Load()
         {
-            if (ParentApplication.WorldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
+            if (Global.worldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
             {
-                m_BmngForm = new BMNG(ParentApplication.WorldWindow, m_MenuItem);
-                m_BmngForm.Owner = ParentApplication;
+                m_BmngForm = new BMNG(Global.worldWindow, m_MenuItem);
 
                 m_ToolbarItem = new WorldWind.WindowsControlMenuButton(
                     "NASA Blue Marble",
                     Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Data\\Icons\\Interface\\bmng.png",
                     m_BmngForm);
 
-                ParentApplication.WorldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
+                Global.worldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
 
                 base.Load();
             }

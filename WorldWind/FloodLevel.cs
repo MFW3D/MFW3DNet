@@ -39,10 +39,10 @@ namespace Withak.Plugin
 		/// </summary>
 		public override void Load() 
 		{
-			if(ParentApplication.WorldWindow.CurrentWorld != null && ParentApplication.WorldWindow.CurrentWorld.Name.IndexOf("SDSS") == -1)
+			if(Global.worldWindow.CurrentWorld != null && Global.worldWindow.CurrentWorld.Name.IndexOf("SDSS") == -1)
 			{
-				FloodLevel layer = new FloodLevel(LayerName, ParentApplication.WorldWindow);
-				ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(layer);
+				FloodLevel layer = new FloodLevel(LayerName, Global.worldWindow);
+				Global.worldWindow.CurrentWorld.RenderableObjects.Add(layer);
 			}
 		}
 		/// <summary>
@@ -50,7 +50,7 @@ namespace Withak.Plugin
 		/// </summary>
 		public override void Unload() 
 		{
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(LayerName);
+			Global.worldWindow.CurrentWorld.RenderableObjects.Remove(LayerName);
 		}
 	}
 

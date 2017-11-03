@@ -520,8 +520,8 @@ namespace WorldWind.CMPlugins.ExternalLayerManager
 		/// </summary>
 		public override void Load() 
 		{
-            ParentApplication.WorldWindow.MouseUp += new MouseEventHandler(WorldWindow_MouseUp);
-            drawArgs = ParentApplication.WorldWindow.DrawArgs;
+            Global.worldWindow.MouseUp += new MouseEventHandler(WorldWindow_MouseUp);
+            drawArgs = Global.worldWindow.DrawArgs;
 			
 				
 			/*	m_ToolbarItem = new WorldWind.WindowsControlMenuButton(
@@ -529,7 +529,7 @@ namespace WorldWind.CMPlugins.ExternalLayerManager
 					Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Data\\Icons\\Interface\\nrl.png",
 					m_Form);
 			
-				ParentApplication.WorldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
+				Global.worldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
 			*/
 		}
 
@@ -652,7 +652,7 @@ namespace WorldWind.CMPlugins.ExternalLayerManager
 
 			if(m_ToolbarItem != null)
 			{
-				ParentApplication.WorldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
+				Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
 				m_ToolbarItem.Dispose();
 				m_ToolbarItem = null;
 			}
@@ -676,9 +676,7 @@ namespace WorldWind.CMPlugins.ExternalLayerManager
 			}
 			else
 			{
-				m_Form = new ExternalLayerManager(ParentApplication.WorldWindow, m_MenuItem);
-				m_Form.Owner = ParentApplication;
-			
+				m_Form = new ExternalLayerManager(Global.worldWindow, m_MenuItem);
 				m_Form.Visible = true;
 				m_MenuItem.Checked = true;
 			}

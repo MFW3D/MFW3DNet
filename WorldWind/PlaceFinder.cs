@@ -2303,20 +2303,19 @@ namespace WorldWind
 		/// </summary>
 		public override void Load() 
 		{
-			if(ParentApplication.WorldWindow.CurrentWorld != null && ParentApplication.WorldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
+			if(Global.worldWindow.CurrentWorld != null && Global.worldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
 			{
 				m_MenuItem = new MenuItem("Place Finder");
 				m_MenuItem.Click += new EventHandler(menuItemClicked);
-				m_Form = new PlaceFinder(ParentApplication.WorldWindow);
+				m_Form = new PlaceFinder(Global.worldWindow);
 				m_Form.Closing += new CancelEventHandler(m_Form_Closing);
-				m_Form.Owner = ParentApplication;
 			
 				m_ToolbarItem = new WorldWind.WindowsControlMenuButton(
 					"PlaceFinder",
 					Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Data\\Icons\\Interface\\search.png",
 					m_Form);
 			
-				ParentApplication.WorldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
+				Global.worldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
 			}
 		}
 
@@ -2333,7 +2332,7 @@ namespace WorldWind
 
 			if(m_ToolbarItem != null)
 			{
-				ParentApplication.WorldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
+				Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
 				m_ToolbarItem.Dispose();
 				m_ToolbarItem = null;
 			}

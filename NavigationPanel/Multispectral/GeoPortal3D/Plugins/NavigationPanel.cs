@@ -146,13 +146,13 @@ namespace Multispectral.GeoPortal3D.Plugins
         {
             if (this.slider != null)
             {
-                CameraBase worldCamera = base.m_Application.WorldWindow.DrawArgs.WorldCamera;
+                CameraBase worldCamera = Global.worldWindow.DrawArgs.WorldCamera;
                 worldCamera.Tilt += Angle.FromDegrees((double) this.slider.Value);
             }
             if ((this.sliderZoom != null) && (((double) Math.Abs(this.sliderZoom.Value)) > 0.1))
             {
-                CameraBase base2 = base.m_Application.WorldWindow.DrawArgs.WorldCamera;
-                base2.Altitude += base.m_Application.WorldWindow.DrawArgs.WorldCamera.Altitude * ((double) this.sliderZoom.Value);
+                CameraBase base2 = Global.worldWindow.DrawArgs.WorldCamera;
+                base2.Altitude += Global.worldWindow.DrawArgs.WorldCamera.Altitude * ((double) this.sliderZoom.Value);
             }
         }
 

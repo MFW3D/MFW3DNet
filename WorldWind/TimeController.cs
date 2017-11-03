@@ -185,7 +185,7 @@ namespace NASA.Plugins
                     basePath + "\\Data\\Icons\\Time\\time off.png",
                     m_window);
 
-                ParentApplication.WorldWindow.MenuBar.AddToolsMenuButton(m_toolbarItem);
+                Global.worldWindow.MenuBar.AddToolsMenuButton(m_toolbarItem);
             }
             catch (Exception ex)
             {
@@ -386,7 +386,7 @@ namespace NASA.Plugins
 
             if (m_toolbarItem != null)
             {
-                ParentApplication.WorldWindow.MenuBar.RemoveToolsMenuButton(m_toolbarItem);
+                Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_toolbarItem);
                 m_toolbarItem.Dispose();
                 m_toolbarItem = null;
             }

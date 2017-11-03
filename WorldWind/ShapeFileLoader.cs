@@ -253,13 +253,12 @@ namespace NLT.Plugins
 		{
 			try
 			{
-				if(ParentApplication.WorldWindow.CurrentWorld != null && ParentApplication.WorldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
+				if(Global.worldWindow.CurrentWorld != null && Global.worldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
 				{
 					m_MenuItem = new MenuItem("Shapefile loader");
 					m_MenuItem.Click += new EventHandler(menuItemClicked);
 
 					m_Gui = new ShapeFileLoaderGUI(this);
-					m_Gui.Owner = ParentApplication;
 				}
 
 				m_ShapeFileRootDirectory = 
@@ -753,7 +752,7 @@ namespace NLT.Plugins
 					
 					newLayerSetList.ShowOnlyOneLayer = showOnlyOneLayer;
 					
-					newLayerSetList.ParentList = ParentApplication.WorldWindow.CurrentWorld.RenderableObjects;					
+					newLayerSetList.ParentList = Global.worldWindow.CurrentWorld.RenderableObjects;					
 					
 					if(World.Settings.UseDefaultLayerStates)
 					{
@@ -974,7 +973,7 @@ namespace NLT.Plugins
 
 							WorldWind.ShapeFileLayer shapeFileLayer = new ShapeFileLayer(
 								name,
-								ParentApplication.WorldWindow.CurrentWorld,
+								Global.worldWindow.CurrentWorld,
 								shapeFilePath,
 								minAlt,
 								maxAlt,
@@ -1030,7 +1029,7 @@ namespace NLT.Plugins
 						}
 					}
 
-					ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(newLayerSetList);
+					Global.worldWindow.CurrentWorld.RenderableObjects.Add(newLayerSetList);
 
 					
 				}

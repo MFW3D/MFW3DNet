@@ -41,10 +41,10 @@ namespace Stars3D.Plugin
 		/// </summary>
 		public override void Load() 
 		{
-			if(ParentApplication.WorldWindow.CurrentWorld != null && ParentApplication.WorldWindow.CurrentWorld.Name.IndexOf("SDSS") == -1)
+			if(Global.worldWindow.CurrentWorld != null && Global.worldWindow.CurrentWorld.Name.IndexOf("SDSS") == -1)
 			{
-				Stars3DLayer layer = new Stars3DLayer(LayerName, PluginDirectory, ParentApplication.WorldWindow);
-				ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.ChildObjects.Insert(0,layer);
+				Stars3DLayer layer = new Stars3DLayer(LayerName, PluginDirectory, Global.worldWindow);
+				Global.worldWindow.CurrentWorld.RenderableObjects.ChildObjects.Insert(0,layer);
 			}
 		}
 		/// <summary>
@@ -52,7 +52,7 @@ namespace Stars3D.Plugin
 		/// </summary>
 		public override void Unload() 
 		{
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(LayerName);
+			Global.worldWindow.CurrentWorld.RenderableObjects.Remove(LayerName);
 		}
 	}
 

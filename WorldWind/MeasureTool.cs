@@ -53,19 +53,19 @@ namespace MeasureTool.Plugins
 		{
 			layer = new MeasureToolLayer(
 				this,
-				ParentApplication.WorldWindow.DrawArgs );
+				Global.worldWindow.DrawArgs );
 
 			layer.TexturePath = Path.Combine(PluginDirectory,"Plugins\\Measure");
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(layer);
+			Global.worldWindow.CurrentWorld.RenderableObjects.Add(layer);
 
 			menuItem = new MenuItem("Measure\tM");
 			menuItem.Click += new EventHandler(menuItemClicked);
 
 			// Subscribe events
-			ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(layer.MouseMove);
-			ParentApplication.WorldWindow.MouseDown += new MouseEventHandler(layer.MouseDown);
-			ParentApplication.WorldWindow.MouseUp += new MouseEventHandler(layer.MouseUp);
-			ParentApplication.WorldWindow.KeyUp +=new KeyEventHandler(layer.KeyUp);
+			Global.worldWindow.MouseMove += new MouseEventHandler(layer.MouseMove);
+			Global.worldWindow.MouseDown += new MouseEventHandler(layer.MouseDown);
+			Global.worldWindow.MouseUp += new MouseEventHandler(layer.MouseUp);
+			Global.worldWindow.KeyUp +=new KeyEventHandler(layer.KeyUp);
 		}
 
 		/// <summary>
@@ -79,12 +79,12 @@ namespace MeasureTool.Plugins
 				menuItem = null;
 			}
 
-			ParentApplication.WorldWindow.MouseMove -= new MouseEventHandler(layer.MouseMove);
-			ParentApplication.WorldWindow.MouseDown -= new MouseEventHandler(layer.MouseDown);
-			ParentApplication.WorldWindow.MouseUp -= new MouseEventHandler(layer.MouseUp);
-			ParentApplication.WorldWindow.KeyUp -= new KeyEventHandler(layer.KeyUp);
+			Global.worldWindow.MouseMove -= new MouseEventHandler(layer.MouseMove);
+			Global.worldWindow.MouseDown -= new MouseEventHandler(layer.MouseDown);
+			Global.worldWindow.MouseUp -= new MouseEventHandler(layer.MouseUp);
+			Global.worldWindow.KeyUp -= new KeyEventHandler(layer.KeyUp);
 			
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(layer);
+			Global.worldWindow.CurrentWorld.RenderableObjects.Remove(layer);
 		}
 	
 		void menuItemClicked(object sender, EventArgs e)
@@ -191,7 +191,7 @@ namespace MeasureTool.Plugins
 
             m_srcplugin = srcPlugin;
 			m_drawArgs = drawArgs;
-            m_world = srcPlugin.ParentApplication.WorldWindow.CurrentWorld;
+            m_world = Global.worldWindow.CurrentWorld;
 		    
 			// Initialize colors
 			for(int i=0;i<measureLine.Length;i++)

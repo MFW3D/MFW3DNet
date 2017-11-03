@@ -122,7 +122,7 @@ namespace jhuapl.util
                 m_enableMenuItem.Click += new System.EventHandler(enableMenuItem_Click);
 
                 m_keyHandler = new KeyEventHandler(keyUp);
-                ParentApplication.WorldWindow.KeyUp += m_keyHandler;
+                Global.worldWindow.KeyUp += m_keyHandler;
 
                 World.Settings.AllowNegativeTilt = false;
                 World.Settings.CameraHeadTracking = false;
@@ -141,7 +141,7 @@ namespace jhuapl.util
 		{
             if (remote != null)
                 remote.Disconnect();
-            ParentApplication.WorldWindow.KeyUp -= m_keyHandler;
+            Global.worldWindow.KeyUp -= m_keyHandler;
 		}
 
 

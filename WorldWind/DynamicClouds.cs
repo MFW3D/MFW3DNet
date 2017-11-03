@@ -22,15 +22,15 @@ namespace WorldWind
 		public override void Load() 
 		{
 
-            if (ParentApplication.WorldWindow.CurrentWorld.IsEarth)
+            if (Global.worldWindow.CurrentWorld.IsEarth)
             {
                 m_dynamicCloudLayer = new DynamicCloudLayer(
                     "Dynamic Clouds",
-                    ParentApplication.WorldWindow.CurrentWorld,
+                    Global.worldWindow.CurrentWorld,
                     remoteImageUrl,
                     Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\" + archiveImageDirectoryPath);
 
-                ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(m_dynamicCloudLayer);
+                Global.worldWindow.CurrentWorld.RenderableObjects.Add(m_dynamicCloudLayer);
             }
 				
 		}

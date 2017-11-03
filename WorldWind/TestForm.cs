@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections;
 using System.Drawing;
 using System.Globalization;
@@ -15,118 +15,15 @@ using Utility;
 
 namespace WorldWind
 {
-    public class MainApplication : System.Windows.Forms.Form, IGlobe
+    public partial class TestForm : Form, IGlobe
     {
-        #region WindowsForms variables
-        private System.ComponentModel.IContainer components;
-        #endregion
 
-        #region Overrides
-        protected override void Dispose(bool disposing)
-        {
-            if (animatedEarthMananger != null)
-            {
-                animatedEarthMananger.Dispose();
-                animatedEarthMananger = null;
-            }
-            if (disposing)
-            {
-                if (components != null)
-                {
-                    components.Dispose();
-                }
-            }
-            base.Dispose(disposing);
-        }
-        protected override void OnMouseWheel(MouseEventArgs e)
-        {
-            base.OnMouseWheel(e);
-        }
-        protected override void OnKeyDown(KeyEventArgs e)
-        {
-            base.OnKeyDown(e);
-        }
-        protected override void OnKeyUp(KeyEventArgs e)
-        {
-            base.OnKeyUp(e);
-        }
-        protected override void OnActivated(EventArgs e)
-        {
-            base.OnActivated(e);
-        }
-        protected override void OnLoad(EventArgs e)
-        {
-            if (Global.worldWindUri != null)
-            {
-                Global.ProcessWorldWindUri();
-            }
-
-            base.OnLoad(e);
-        }
-        protected override void OnGotFocus(EventArgs e)
-        {
-            if (worldWindow != null)
-                worldWindow.Focus();
-            base.OnGotFocus(e);
-        }
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
-        {
-            // To close queueMonitor to avoid threads lock problems
-            if (queueMonitor != null) this.queueMonitor.Close();
-            if (compiler != null)
-                compiler.Dispose();
-        }
-
-        #endregion
-
-        #region Windows Form Designer generated code
-
-        private void InitializeComponent()
-        {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApplication));
-            this.worldWindow = new WorldWind.WorldWindow();
-            this.SuspendLayout();
-            //
-            this.Controls.Add(this.worldWindow);
-            // 
-            // worldWindow
-            // 
-            this.worldWindow.AllowDrop = true;
-            this.worldWindow.Cache = null;
-            this.worldWindow.Caption = "";
-            this.worldWindow.CurrentWorld = null;
-            this.worldWindow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.worldWindow.IsRenderDisabled = false;
-            this.worldWindow.Location = new System.Drawing.Point(0, 0);
-            this.worldWindow.Name = "worldWindow";
-            this.worldWindow.ShowLayerManager = false;
-            this.worldWindow.Size = new System.Drawing.Size(990, 524);
-            this.worldWindow.TabIndex = 0;
-            // 
-            // MainApplication
-            // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
-            this.ClientSize = new System.Drawing.Size(992, 526);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
-            this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(240, 215);
-            this.Name = "MFW3DGeo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MFW3Dµÿ¿Ì“˝«Ê";
-            this.ResumeLayout(false);
-
-        }
-        #endregion
-
-        #region ±‰¡ø
-        private WorldWindow worldWindow;
+        #region ÂèòÈáè
         private System.Collections.Hashtable availableWorldList = new Hashtable();
         private PluginCompiler compiler;
         #endregion
 
-        #region ¥∞ÃÂµƒ∂‘ª∞øÚ∫Õπ‹¿Ì∆˜
+        #region Á™ó‰ΩìÁöÑÂØπËØùÊ°ÜÂíåÁÆ°ÁêÜÂô®
         private Splash splashScreen;
         private RapidFireModisManager rapidFireModisManager;
         private AnimatedEarthManager animatedEarthMananger;
@@ -135,9 +32,9 @@ namespace WorldWind
         private ProgressMonitor queueMonitor;
         #endregion
 
-        public MainApplication()
+        public TestForm()
         {
-            //≈‰÷√
+            //ÈÖçÁΩÆ
             if (Global.Settings.ConfigurationWizardAtStartup)
             {
                 if (!File.Exists(Global.Settings.FileName))
@@ -158,65 +55,72 @@ namespace WorldWind
 
                 Application.DoEvents();
                 InitializeComponent();
-                //…Ë÷√global
-                Global.worldWindow = worldWindow;
-                long CacheUpperLimit = (long)Global.Settings.CacheSizeMegaBytes * 1024L * 1024L;
-                long CacheLowerLimit = (long)Global.Settings.CacheSizeMegaBytes * 768L * 1024L;    //75% of upper limit
-                                                                                            //Set up the cache
-                worldWindow.Cache = new Cache(
-                     Global.Settings.CachePath,
-                    CacheLowerLimit,
-                    CacheUpperLimit,
-                     Global.Settings.CacheCleanupInterval,
-                     Global.Settings.TotalRunTime);
-
-                WorldWind.Net.WebDownload.Log404Errors = World.Settings.Log404Errors;
-
-                DirectoryInfo worldsXmlDir = new DirectoryInfo(Global.Settings.ConfigPath);
-                if (!worldsXmlDir.Exists)
-                    throw new ApplicationException(
-                        string.Format(CultureInfo.CurrentCulture,
-                        "World Wind configuration directory '{0}' could not be found.", worldsXmlDir.FullName));
-
-                FileInfo[] worldXmlDescriptorFiles = worldsXmlDir.GetFiles("*.xml");
-                int worldIndex = 0;
-                foreach (FileInfo worldXmlDescriptorFile in worldXmlDescriptorFiles)
+                try
                 {
-                    try
+                    //ËÆæÁΩÆglobal
+                    Global.worldWindow = worldWindow;
+                    long CacheUpperLimit = (long)Global.Settings.CacheSizeMegaBytes * 1024L * 1024L;
+                    long CacheLowerLimit = (long)Global.Settings.CacheSizeMegaBytes * 768L * 1024L;    //75% of upper limit
+                                                                                                       //Set up the cache
+                    worldWindow.Cache = new Cache(
+                         Global.Settings.CachePath,
+                        CacheLowerLimit,
+                        CacheUpperLimit,
+                         Global.Settings.CacheCleanupInterval,
+                         Global.Settings.TotalRunTime);
+
+                    WorldWind.Net.WebDownload.Log404Errors = World.Settings.Log404Errors;
+
+                    DirectoryInfo worldsXmlDir = new DirectoryInfo(Global.Settings.ConfigPath);
+                    if (!worldsXmlDir.Exists)
+                        throw new ApplicationException(
+                            string.Format(CultureInfo.CurrentCulture,
+                            "World Wind configuration directory '{0}' could not be found.", worldsXmlDir.FullName));
+
+                    FileInfo[] worldXmlDescriptorFiles = worldsXmlDir.GetFiles("*.xml");
+                    int worldIndex = 0;
+                    foreach (FileInfo worldXmlDescriptorFile in worldXmlDescriptorFiles)
                     {
-                        Log.Write(Log.Levels.Debug + 1, "CONF", "checking world " + worldXmlDescriptorFile.FullName + " ...");
-                        string worldXmlSchema = null;
-                        string layerSetSchema = null;
-                        if (Global.Settings.ValidateXML)
+                        try
                         {
-                            worldXmlSchema = Global.Settings.ConfigPath + "\\WorldXmlDescriptor.xsd";
-                            layerSetSchema = Global.Settings.ConfigPath + "\\Earth\\LayerSet.xsd";
+                            Log.Write(Log.Levels.Debug + 1, "CONF", "checking world " + worldXmlDescriptorFile.FullName + " ...");
+                            string worldXmlSchema = null;
+                            string layerSetSchema = null;
+                            if (Global.Settings.ValidateXML)
+                            {
+                                worldXmlSchema = Global.Settings.ConfigPath + "\\WorldXmlDescriptor.xsd";
+                                layerSetSchema = Global.Settings.ConfigPath + "\\Earth\\LayerSet.xsd";
+                            }
+                            World w = WorldWind.ConfigurationLoader.Load(
+                                worldXmlDescriptorFile.FullName, worldWindow.Cache, worldXmlSchema, layerSetSchema);
+                            if (!availableWorldList.Contains(w.Name))
+                                this.availableWorldList.Add(w.Name, worldXmlDescriptorFile.FullName);
+
+                            w.Dispose();
+                            System.Windows.Forms.MenuItem mi = new System.Windows.Forms.MenuItem(w.Name, new System.EventHandler(OnWorldChange));
+                            worldIndex++;
                         }
-                        World w = WorldWind.ConfigurationLoader.Load(
-                            worldXmlDescriptorFile.FullName, worldWindow.Cache, worldXmlSchema, layerSetSchema);
-                        if (!availableWorldList.Contains(w.Name))
-                            this.availableWorldList.Add(w.Name, worldXmlDescriptorFile.FullName);
+                        catch (Exception caught)
+                        {
+                            splashScreen.SetError(worldXmlDescriptorFile + ": " + caught.Message);
+                            Log.Write(caught);
+                        }
+                    }
 
-                        w.Dispose();
-                        System.Windows.Forms.MenuItem mi = new System.Windows.Forms.MenuItem(w.Name, new System.EventHandler(OnWorldChange));
-                        worldIndex++;
-                    }
-                    catch (Exception caught)
-                    {
-                        splashScreen.SetError(worldXmlDescriptorFile + ": " + caught.Message);
-                        Log.Write(caught);
-                    }
+                    Log.Write(Log.Levels.Debug, "CONF", "loading startup world...");
+                    OpenStartupWorld();
+
+                    this.worldWindow.ShowLayerManager = World.Settings.ShowLayerManager;
+                    while (!this.splashScreen.IsDone)
+                        System.Threading.Thread.Sleep(50);
+                    // Force initial render to avoid showing random contents of frame buffer to user.
+                    worldWindow.Render();
+                    WorldWindow.Focus();
                 }
+                catch
+                {
 
-                Log.Write(Log.Levels.Debug, "CONF", "loading startup world...");
-                OpenStartupWorld();
-
-                this.worldWindow.ShowLayerManager = World.Settings.ShowLayerManager;
-                while (!this.splashScreen.IsDone)
-                    System.Threading.Thread.Sleep(50);
-                // Force initial render to avoid showing random contents of frame buffer to user.
-                worldWindow.Render();
-                WorldWindow.Focus();
+                }
             }
 
             // Center the main window
@@ -225,7 +129,7 @@ namespace WorldWind
 
         }
 
-        #region π´π≤≤Œ ˝
+        #region ÂÖ¨ÂÖ±ÂèÇÊï∞
         public WorldWindow WorldWindow
         {
             get
@@ -248,13 +152,13 @@ namespace WorldWind
         public Splash SplashScreen { get { return splashScreen; } }
         #endregion
 
-        #region ≤Âº˛π‹¿Ì∆˜
+        #region Êèí‰ª∂ÁÆ°ÁêÜÂô®
         private void InitializePluginCompiler()
         {
             Log.Write(Log.Levels.Debug, "CONF", "initializing plugin compiler...");
             this.splashScreen.SetText("Initializing plugins...");
             string pluginRoot = Path.Combine(Global.DirectoryPath, "Plugins");
-            compiler = new PluginCompiler( pluginRoot);
+            compiler = new PluginCompiler(pluginRoot);
 
             //#if DEBUG
             // Search for plugins in worldwind.exe (plugin development/debugging aid)
@@ -298,7 +202,7 @@ namespace WorldWind
 
         #endregion
 
-        #region IGlobe ≥…‘±
+        #region IGlobe ÊàêÂëò
         public void SetVerticalExaggeration(double exageration)
         {
             World.Settings.VerticalExaggeration = (float)exageration;
@@ -336,7 +240,7 @@ namespace WorldWind
         }
         #endregion
 
-        #region  ¿ΩÁæ‰±˙∑Ω∑®
+        #region ‰∏ñÁïåÂè•ÊüÑÊñπÊ≥ï
         private void OpenStartupWorld()
         {
             string startupWorldName = null;
@@ -452,7 +356,7 @@ namespace WorldWind
         }
         #endregion
 
-        #region ∆‰À˚∑Ω∑®
+        #region ÂÖ∂‰ªñÊñπÊ≥ï
         private void AddLayerMenuButtons(WorldWindow ww, RenderableObject ro)
         {
             if (ro.MetaData.Contains("ToolBarImagePath"))

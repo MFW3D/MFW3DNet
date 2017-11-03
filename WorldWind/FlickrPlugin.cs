@@ -122,18 +122,18 @@ namespace YahooFlickr.Plugins
 
         public override void Load()
         {
-            if (ParentApplication.WorldWindow.CurrentWorld.IsEarth)
+            if (Global.worldWindow.CurrentWorld.IsEarth)
             {
                 layer = new FlickrIconsLayer();
-                ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(layer);
+                Global.worldWindow.CurrentWorld.RenderableObjects.Add(layer);
             }
             base.Load();
         }
 
         public override void Unload()
         {
-            if (ParentApplication.WorldWindow.CurrentWorld.IsEarth && layer != null)
-                ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(layer);
+            if (Global.worldWindow.CurrentWorld.IsEarth && layer != null)
+                Global.worldWindow.CurrentWorld.RenderableObjects.Remove(layer);
             if (layer != null)
             {
                 layer.Dispose();

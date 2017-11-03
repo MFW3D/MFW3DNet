@@ -64,7 +64,7 @@ namespace WorldWind.PluginEngine
 		/// </summary>
 		/// <param name="worldWind"></param>
 		/// <param name="pluginDirectory"></param>
-		public PluginCompiler( MainApplication worldWind, string pluginDirectory )
+		public PluginCompiler( string pluginDirectory )
 		{
 			this.worldWind = worldWind;
 
@@ -199,9 +199,7 @@ namespace WorldWind.PluginEngine
 				{
 					try
 					{
-						// Compile
                         Log.Write(Log.Levels.Debug, LogCategory, "loading "+pi.Name+" ...");
-                        worldWind.SplashScreen.SetText("Initializing plugin " + pi.Name);
 						Load(pi);
 					}
 					catch(Exception caught)
@@ -268,7 +266,7 @@ namespace WorldWind.PluginEngine
 			if( pi.FullPath != null && pi.FullPath.Length > 0)
 				pluginPath = Path.GetDirectoryName(pi.FullPath);
 
-			pi.Plugin.PluginLoad(worldWind, pluginPath);
+			pi.Plugin.PluginLoad(pluginPath);
 		}
 
 		/// <summary>

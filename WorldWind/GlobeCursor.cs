@@ -38,9 +38,9 @@ namespace Withak.Plugins
 			
 			ics.Add(ic);
 			
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(ics);
+			Global.worldWindow.CurrentWorld.RenderableObjects.Add(ics);
 
-			ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(MouseMove);
+			Global.worldWindow.MouseMove += new MouseEventHandler(MouseMove);
 
 			base.Load();
 
@@ -48,8 +48,8 @@ namespace Withak.Plugins
 
 		public override void Unload()
 		{
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(ics);
-			ParentApplication.WorldWindow.MouseMove -= new MouseEventHandler(MouseMove);
+			Global.worldWindow.CurrentWorld.RenderableObjects.Remove(ics);
+			Global.worldWindow.MouseMove -= new MouseEventHandler(MouseMove);
 
 
 			base.Unload();
@@ -58,7 +58,7 @@ namespace Withak.Plugins
 		public void MouseMove(object sender, MouseEventArgs e)
 		{
 			Angle lat,lon = Angle.NaN;
-			ParentApplication.WorldWindow.DrawArgs.WorldCamera.PickingRayIntersection(
+			Global.worldWindow.DrawArgs.WorldCamera.PickingRayIntersection(
 				e.X,e.Y,out lat, out lon);
 			ic.SetPosition((float)lat.Degrees, (float)lon.Degrees, 0f);
 		}

@@ -34,10 +34,10 @@ namespace Atmosphere.Plugin
 		/// </summary>
 		public override void Load() 
 		{
-			if(ParentApplication.WorldWindow.CurrentWorld != null && ParentApplication.WorldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
+			if(Global.worldWindow.CurrentWorld != null && Global.worldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
 			{
-				AtmosphereLayer layer = new AtmosphereLayer(LayerName, PluginDirectory, ParentApplication.WorldWindow);
-				ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(layer);
+				AtmosphereLayer layer = new AtmosphereLayer(LayerName, PluginDirectory, Global.worldWindow);
+                Global.worldWindow.CurrentWorld.RenderableObjects.Add(layer);
 			}
 		}
 
@@ -46,7 +46,7 @@ namespace Atmosphere.Plugin
 		/// </summary>
 		public override void Unload() 
 		{
-			ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(LayerName);
+			Global.worldWindow.CurrentWorld.RenderableObjects.Remove(LayerName);
 		}
 	}
 

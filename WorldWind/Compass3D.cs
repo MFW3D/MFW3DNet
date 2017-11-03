@@ -52,7 +52,7 @@ namespace NASA.Plugins
                     basePath + "\\Data\\Icons\\Interface\\compass2.png",
                     m_form);
 
-            ParentApplication.WorldWindow.MenuBar.AddToolsMenuButton(m_toolbarItem);
+            Global.worldWindow.MenuBar.AddToolsMenuButton(m_toolbarItem);
 
 
             base.Load();
@@ -69,7 +69,7 @@ namespace NASA.Plugins
 
             if (m_toolbarItem != null)
             {
-                ParentApplication.WorldWindow.MenuBar.RemoveToolsMenuButton(m_toolbarItem);
+                Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_toolbarItem);
                 m_toolbarItem.Dispose();
                 m_toolbarItem = null;
             }

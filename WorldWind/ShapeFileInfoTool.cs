@@ -26,8 +26,8 @@ namespace NLT.Plugins
 			m_MenuItem.Click += new EventHandler(menuItemClicked);
 
 			// Subscribe events
-			ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(onMouseMove);
-			ParentApplication.WorldWindow.KeyUp += new KeyEventHandler(onKeyUp);
+			Global.worldWindow.MouseMove += new MouseEventHandler(onMouseMove);
+			Global.worldWindow.KeyUp += new KeyEventHandler(onKeyUp);
 		}
 
 		/// <summary>
@@ -42,8 +42,8 @@ namespace NLT.Plugins
 			}			
 
 			// Unsubscribe events
-			ParentApplication.WorldWindow.MouseMove -= new MouseEventHandler(onMouseMove);
-			ParentApplication.WorldWindow.KeyUp -= new KeyEventHandler(onKeyUp);
+			Global.worldWindow.MouseMove -= new MouseEventHandler(onMouseMove);
+			Global.worldWindow.KeyUp -= new KeyEventHandler(onKeyUp);
 			
 		}
 		
@@ -52,12 +52,12 @@ namespace NLT.Plugins
 		{	
 			if(m_MenuItem.Checked)
 			{
-				ParentApplication.WorldWindow.MouseMove -= new MouseEventHandler(onMouseMove);				
+				Global.worldWindow.MouseMove -= new MouseEventHandler(onMouseMove);				
 				m_MenuItem.Checked=false;
 			}
 			else
 			{
-				ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(onMouseMove);				
+				Global.worldWindow.MouseMove += new MouseEventHandler(onMouseMove);				
 				m_MenuItem.Checked=true;
 			}			
 		}		
@@ -77,12 +77,12 @@ namespace NLT.Plugins
 			{
 				if(m_MenuItem.Checked)
 				{
-					ParentApplication.WorldWindow.MouseMove -= new MouseEventHandler(onMouseMove);					
+					Global.worldWindow.MouseMove -= new MouseEventHandler(onMouseMove);					
 					m_MenuItem.Checked=false;
 				}
 				else
 				{
-					ParentApplication.WorldWindow.MouseMove += new MouseEventHandler(onMouseMove);					
+					Global.worldWindow.MouseMove += new MouseEventHandler(onMouseMove);					
 					m_MenuItem.Checked=true;
 				}		
 			}

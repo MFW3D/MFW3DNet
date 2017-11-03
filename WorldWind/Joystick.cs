@@ -39,7 +39,7 @@ namespace Mashiharu.Sample
 		/// </summary>
 		public override void Load() 
 		{
-			drawArgs = ParentApplication.WorldWindow.DrawArgs;
+			drawArgs = Global.worldWindow.DrawArgs;
 			DeviceList dl = Manager.GetDevices(DeviceClass.GameControl, EnumDevicesFlags.AttachedOnly);
 			dl.MoveNext();
 			if(dl.Current==null)
@@ -49,8 +49,8 @@ namespace Mashiharu.Sample
 			DeviceInstance di = (DeviceInstance) dl.Current;
 			joystick = new Device( di.InstanceGuid );
 			joystick.SetDataFormat(DeviceDataFormat.Joystick);
-			joystick.SetCooperativeLevel(ParentApplication,  
-				CooperativeLevelFlags.NonExclusive | CooperativeLevelFlags.Background);
+			//joystick.SetCooperativeLevel(ParentApplication,  
+			//	CooperativeLevelFlags.NonExclusive | CooperativeLevelFlags.Background);
 			foreach(DeviceObjectInstance d in joystick.Objects) 
 			{
 				// For axes that are returned, set the DIPROP_RANGE property for the

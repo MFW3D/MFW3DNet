@@ -769,22 +769,21 @@ namespace NASA.Plugins
 		/// </summary>
 		public override void Load() 
 		{
-			if(ParentApplication.WorldWindow.CurrentWorld != null && ParentApplication.WorldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
+			if(Global.worldWindow.CurrentWorld != null && Global.worldWindow.CurrentWorld.Name.IndexOf("Earth") >= 0)
 			{
 				m_MenuItem = new MenuItem("NRL Weather");
 				m_MenuItem.Click += new EventHandler(menuItemClicked);
 			
-				m_Form = new NRLMontereyGlobal(ParentApplication.WorldWindow,
-					Path.Combine(ParentApplication.WorldWindow.Cache.CacheDirectory, "NrlWeather"),
+				m_Form = new NRLMontereyGlobal(Global.worldWindow,
+					Path.Combine(Global.worldWindow.Cache.CacheDirectory, "NrlWeather"),
 					Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Plugins\\NRLMonterey\\NRL_Monterey.xml");
-				m_Form.Owner = ParentApplication;
 			
 				m_ToolbarItem = new WorldWind.WindowsControlMenuButton(
 					"Naval Research Labs, Monterey -- \"Real-Time\" Weather",
 					Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Data\\Icons\\Interface\\nrl.png",
 					m_Form);
 			
-				ParentApplication.WorldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
+				Global.worldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
 			}
 		}
 
@@ -801,7 +800,7 @@ namespace NASA.Plugins
 
 			if(m_ToolbarItem != null)
 			{
-				ParentApplication.WorldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
+				Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
 				m_ToolbarItem.Dispose();
 				m_ToolbarItem = null;
 			}

@@ -71,9 +71,9 @@ namespace KMLPlugin
 			m_KMLIcons = new Icons("KML Icons");
 			m_KMLIcons.IsOn = false;
 
-			// Setup Drag&Drop functionality
-			m_Application.WorldWindow.DragEnter += new DragEventHandler(WorldWindow_DragEnter);
-			m_Application.WorldWindow.DragDrop += new DragEventHandler(WorldWindow_DragDrop);
+            // Setup Drag&Drop functionality
+            Global.worldWindow.DragEnter += new DragEventHandler(WorldWindow_DragEnter);
+            Global.worldWindow.DragDrop += new DragEventHandler(WorldWindow_DragDrop);
 
 			// Add a menu item to the File menu and the Help menu
 			MenuItem loadMenuItem = new MenuItem();
@@ -124,11 +124,11 @@ namespace KMLPlugin
 				}
 			}
 
-			// Add the main Icons layer to the globe
-			m_Application.WorldWindow.CurrentWorld.RenderableObjects.Add(m_KMLIcons);
+            // Add the main Icons layer to the globe
+            Global.worldWindow.CurrentWorld.RenderableObjects.Add(m_KMLIcons);
 
 			//Set the currentworld
-			// m_world = m_Application.WorldWindow.CurrentWorld;
+			// m_world = m_Global.worldWindow.CurrentWorld;
 
 			base.Load();
 		}
@@ -146,12 +146,12 @@ namespace KMLPlugin
 			// Save settings
 			Settings.SaveSettings(Path.Combine(KmlDirectory, "KMLImporter.xml"));
 
-			// Remove the icon layer
-			m_Application.WorldWindow.CurrentWorld.RenderableObjects.Remove(m_KMLIcons);
+            // Remove the icon layer
+            Global.worldWindow.CurrentWorld.RenderableObjects.Remove(m_KMLIcons);
 
-			// Disable Drag&Drop functionality
-			this.Application.WorldWindow.DragEnter -= new DragEventHandler(WorldWindow_DragEnter);
-			this.Application.WorldWindow.DragDrop -= new DragEventHandler(WorldWindow_DragDrop);
+            // Disable Drag&Drop functionality
+            Global.worldWindow.DragEnter -= new DragEventHandler(WorldWindow_DragEnter);
+            Global.worldWindow.DragDrop -= new DragEventHandler(WorldWindow_DragDrop);
 
 			tempMenu.MenuItems.Clear();
 			
@@ -251,7 +251,7 @@ namespace KMLPlugin
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error,
                             MessageBoxDefaultButton.Button1,
-                            base.Application.RightToLeft == RightToLeft.Yes ? MessageBoxOptions.RtlReading : MessageBoxOptions.ServiceNotification);
+                            true ? MessageBoxOptions.RtlReading : MessageBoxOptions.ServiceNotification);
                     }
                 }
 			}
@@ -264,7 +264,7 @@ namespace KMLPlugin
 					MessageBoxButtons.OK,
 					MessageBoxIcon.Error,
 					MessageBoxDefaultButton.Button1,
-					base.Application.RightToLeft == RightToLeft.Yes ? MessageBoxOptions.RtlReading : MessageBoxOptions.ServiceNotification);
+					true ? MessageBoxOptions.RtlReading : MessageBoxOptions.ServiceNotification);
 			}
 
 			// Cleanup

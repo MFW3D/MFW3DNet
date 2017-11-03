@@ -65,9 +65,14 @@ namespace WorldWind
                     World.LoadSettings(Global.CurrentSettingsDirectory);
                 }
                 Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
-                MainApplication app = new MainApplication();
+                //MainApplication app = new MainApplication();
+                //Application.Idle += new EventHandler(app.WorldWindow.OnApplicationIdle);
+                //Application.Run(app);
+
+                TestForm app = new TestForm();
                 Application.Idle += new EventHandler(app.WorldWindow.OnApplicationIdle);
                 Application.Run(app);
+
                 World.Settings.Save();
                 DataProtector dp = new DataProtector(DataProtector.Store.USE_USER_STORE);
                 Global.Settings.ProxyUsername = dp.TransparentEncrypt(Global.Settings.ProxyUsername);

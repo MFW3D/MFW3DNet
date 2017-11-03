@@ -30,7 +30,7 @@ namespace WorldWind.CMPlugins.OverviewForm
 
 		string m_SettingsFilePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Plugins\\OverviewForm\\settings.txt");
 
-		public OverviewForm(WorldWindow ww, MenuItem menuItem, MainApplication parentApplication)
+		public OverviewForm(WorldWindow ww, MenuItem menuItem)
 		{
 			
 			//
@@ -39,11 +39,8 @@ namespace WorldWind.CMPlugins.OverviewForm
 			InitializeComponent();
 
 			this.Size = m_StartupSize;
-			this.Owner = parentApplication;
 
 			parentMenuItem = menuItem;
-
-			m_ParentApplication = parentApplication;
 			ovFormComponent = new OverviewFormComponent(ww, this);
 			ovFormComponent.Dock = DockStyle.Fill;
 			ovFormComponent.Parent = this;
@@ -262,7 +259,7 @@ namespace WorldWind.CMPlugins.OverviewForm
 
 			if(m_ToolbarItem != null)
 			{
-				ParentApplication.WorldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
+				Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
 				m_ToolbarItem.Dispose();
 				m_ToolbarItem = null;
 			}
@@ -286,8 +283,7 @@ namespace WorldWind.CMPlugins.OverviewForm
 			}
 			else
 			{
-				m_Form = new OverviewForm(ParentApplication.WorldWindow, m_MenuItem, ParentApplication);
-				m_Form.Owner = ParentApplication;
+				m_Form = new OverviewForm(Global.worldWindow, m_MenuItem);
 			
 				m_Form.Visible = true;
 				m_MenuItem.Checked = true;

@@ -88,7 +88,7 @@ namespace WorldWind
 
                                 WavingFlagLayer flag = new WavingFlagLayer(
                                     lineParts[0],
-                                    ParentApplication.WorldWindow.CurrentWorld,
+                                    Global.worldWindow.CurrentWorld,
                                     latitude,
                                     longitude,
                                     flagFileUri);
@@ -145,7 +145,7 @@ namespace WorldWind
             
             InitializeCiaForm();
 
-            ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Add(m_wavingFlagsList);
+            Global.worldWindow.CurrentWorld.RenderableObjects.Add(m_wavingFlagsList);
         }
 
         void flag_OnMouseUpEvent(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -353,7 +353,7 @@ namespace WorldWind
         {
             if (m_wavingFlagsList != null)
             {
-                ParentApplication.WorldWindow.CurrentWorld.RenderableObjects.Remove(m_wavingFlagsList.Name);
+                Global.worldWindow.CurrentWorld.RenderableObjects.Remove(m_wavingFlagsList.Name);
                 m_wavingFlagsList.Dispose();
                 m_wavingFlagsList = null;
             }
