@@ -14,9 +14,7 @@ using Utility;
 
 namespace WorldWind.PluginEngine
 {
-	/// <summary>
-	/// Loads plug-in scripts, compiles and executes them
-	/// </summary>
+	//º”‘ÿ≤Âº˛£¨±‡“Î
 	public class PluginCompiler
 	{
 		MainApplication worldWind;

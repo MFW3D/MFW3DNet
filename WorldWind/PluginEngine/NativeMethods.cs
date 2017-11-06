@@ -4,10 +4,8 @@ using System.Runtime.InteropServices;
 
 namespace WorldWind.PluginEngine
 {
-	/// <summary>
-	/// Interop functionality for Plugin namespace.
-	/// </summary>
-	internal sealed class NativeMethods
+    //内部方法
+   	internal sealed class NativeMethods
 	{
 		private NativeMethods() 
 		{

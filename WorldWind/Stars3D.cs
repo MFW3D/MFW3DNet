@@ -1,18 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: Stars3D
-// VERSION: 1.2
-// DESCRIPTION: Renders a 3D star background to the world. Data comes from the Hipparcos catalog (ESA, 1997). Adds itself as a layer in Layer Manager (key: L). Right click on layer for settings.
-// DEVELOPER: Patrick Murris
-// WEBSITE: http://www.alpix.com/3d/worldwin
-//----------------------------------------------------------------------------
-// Based on the Sky plugin, itself based on Bjorn Reppen 'Atmosphere' plugin
-// Star data extracted using VizieR at http://cdsweb.u-strasbg.fr
-//----------------------------------------------------------------------------
-// 1.2 Aug  1,  2009    Fixed issue where unchecking the Starfield box in LayerManager would not hide the background stars. Made this setting persistant to .ini file.
-// 1.1 Dec  27, 2005	Added bright stars halo/flare
-// 1.0 Nov  19, 2005	First light with up to 31k stars from the Hipparcos catalog
-//----------------------------------------------------------------------------
-
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
 using System.Windows.Forms;

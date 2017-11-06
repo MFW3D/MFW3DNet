@@ -1,14 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: Joystick control
-// VERSION: 1.0
-// DESCRIPTION: Allow World Wind to be controlled by joystick/game controller
-// DEVELOPER: Bjorn Reppen aka "Mashi"
-// WEBSITE: http://www.mashiharu.com
-// REFERENCES: Microsoft.DirectX.DirectInput
-//----------------------------------------------------------------------------
-//
-// This file is in the Public Domain, and comes with no warranty. 
-//
 using Microsoft.DirectX;
 using Microsoft.DirectX.DirectInput;
 using System.Windows.Forms;

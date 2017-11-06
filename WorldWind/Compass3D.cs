@@ -15,15 +15,10 @@ namespace NASA.Plugins
         string basePath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
         FormWidget m_form = null;
         Compass3DWidget m_compass = null;
-        System.Windows.Forms.MenuItem m_menuItem = null;
         WorldWind.NewWidgets.WidgetMenuButton m_toolbarItem = null;
         
         public override void Load()
         {
-            m_menuItem = new System.Windows.Forms.MenuItem("Compass");
-            m_menuItem.Click += new EventHandler(m_menuItem_Click);
-            m_menuItem.Checked = World.Settings.ShowCompass;
-            
             m_form = new FormWidget("Compass");
             m_form.ClientSize = new System.Drawing.Size(200, 200);
             m_form.Location = new System.Drawing.Point(0, 400);
@@ -77,16 +72,8 @@ namespace NASA.Plugins
             base.Unload();
         }
 
-        void m_menuItem_Click(object sender, EventArgs e)
-        {
-            m_menuItem.Checked = !m_menuItem.Checked;
-            if (m_form != null)
-                m_form.Visible = m_menuItem.Checked;
-        }
-
         void m_form_OnVisibleChanged(object o, bool state)
         {
-            m_menuItem.Checked = state;
             World.Settings.ShowCompass = state;
         }
 

@@ -5,10 +5,8 @@ using WorldWind;
 
 namespace WorldWind.PluginEngine
 {
-	/// <summary>
-	/// Stores information on a plugin.
-	/// </summary>
-	public class PluginInfo
+    //插件信息
+    public class PluginInfo
 	{
 		Plugin m_plugin;
 		string m_fullPath;
@@ -18,9 +16,7 @@ namespace WorldWind.PluginEngine
 		string m_webSite;
 		string m_references;
 
-		/// <summary>
-		/// The plugin instance.
-		/// </summary>
+		//plugin实例
 		public Plugin Plugin
 		{
 			get
@@ -33,9 +29,7 @@ namespace WorldWind.PluginEngine
 			}
 		}
 
-		/// <summary>
-		/// Directory and filename of the plugin.
-		/// </summary>
+		//完整路径
 		public string FullPath
 		{
 			get
@@ -48,9 +42,7 @@ namespace WorldWind.PluginEngine
 			}
 		}
 
-		/// <summary>
-		/// The plugin ID
-		/// </summary>
+		//pugin ID 
 		public string ID
 		{
 			get
@@ -61,9 +53,7 @@ namespace WorldWind.PluginEngine
 			}
 		}
 
-		/// <summary>
-		/// The plugin name (from plugin comment header "NAME" tag)
-		/// </summary>
+		//插件名
 		public string Name
 		{
 			get
@@ -79,9 +69,7 @@ namespace WorldWind.PluginEngine
 			}
 		}
 
-		/// <summary>
-		/// The plugin description (from plugin comment header "DESCRIPTION" tag)
-		/// </summary>
+		//插件描述
 		public string Description
 		{
 			get
@@ -97,9 +85,7 @@ namespace WorldWind.PluginEngine
 			}
 		}
 
-		/// <summary>
-		/// The plugin developer's name (from plugin comment header "DEVELOPER" tag)
-		/// </summary>
+		//开发者名字
 		public string Developer
 		{
 			get
@@ -111,9 +97,7 @@ namespace WorldWind.PluginEngine
 			}
 		}
 
-		/// <summary>
-		/// The plugin web site url (from plugin comment header "WEBSITE" tag)
-		/// </summary>
+		//weburl
 		public string WebSite
 		{
 			get
@@ -125,9 +109,7 @@ namespace WorldWind.PluginEngine
 			}
 		}
 
-		/// <summary>
-		/// Comma separated list of additional libraries this plugin requires a reference to.
-		/// </summary>
+		//引用
 		public string References
 		{
 			get
@@ -139,9 +121,7 @@ namespace WorldWind.PluginEngine
 			}
 		}
 
-		/// <summary>
-		/// Check whether a plugin is currently loaded.
-		/// </summary>
+		//检查当前是否加载
 		public bool IsCurrentlyLoaded
 		{
 			get
@@ -152,9 +132,7 @@ namespace WorldWind.PluginEngine
 			}
 		}
 
-		/// <summary>
-		/// Set always load on application startup flag for the plugin.
-		/// </summary>
+		//设置是否加载
 		public bool IsLoadedAtStartup
 		{
 			get

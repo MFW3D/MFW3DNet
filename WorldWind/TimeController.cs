@@ -1,15 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: Time Controller
-// VERSION: 1.0
-// DESCRIPTION: Time Controller 
-// DEVELOPER: Chris Maxwell - NASA World Wind Project
-// WEBSITE: http://worldwind.arc.nasa.gov
-// REFERENCES: 
-//----------------------------------------------------------------------------
-//
-// 
-//
-
 using System;
 using System.Collections.Generic;
 using System.Text;

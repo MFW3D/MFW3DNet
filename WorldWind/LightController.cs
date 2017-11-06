@@ -26,7 +26,6 @@ namespace Murris.Plugins
     {
 
         static string Name = "Sunlight options";
-        MenuItem m_MenuItem;
         LightDialog m_Form;
 
         /// <summary>
@@ -34,8 +33,6 @@ namespace Murris.Plugins
         /// </summary>
         public override void Load()
         {
-            m_MenuItem = new MenuItem("Sunlight control...");
-            m_MenuItem.Click += new EventHandler(menuItemClicked);
         }
 
         /// <summary>
@@ -52,24 +49,6 @@ namespace Murris.Plugins
                 m_Form = null;
             }
         }
-
-        /// <summary>
-        /// Show the form
-        /// </summary>
-        private void menuItemClicked(object sender, System.EventArgs e)
-        {
-            if (m_Form == null)
-            {
-                m_Form = new LightDialog(Name);
-            }
-            else
-            {
-                if (m_Form.IsDisposed) m_Form = new LightDialog(Name);
-            }
-            m_Form.Visible = true;
-        }
-
-
 
         /// <summary>
         /// Properties Dialog

@@ -694,63 +694,10 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:WorldWind.PluginEngine.NativeMethods">
-            <summary>
-            Interop functionality for Plugin namespace.
-            </summary>
-        </member>
         <member name="T:WorldWind.PluginEngine.Plugin">
-            <summary>
-            Base class to be derived by all plugins (loaded by PluginCompiler)
-            Keep as light-weight as possible to keep plugin simple to write.
-            </summary>
-        </member>
-        <member name="F:WorldWind.PluginEngine.Plugin.m_PluginDirectory">
-            <summary>
-            The directory from which this plugin was loaded.
-            </summary>
-        </member>
-        <member name="F:WorldWind.PluginEngine.Plugin.m_isLoaded">
-            <summary>
-            Plugin running flag (true while running, reset when exiting plugin)
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.Plugin.PluginDirectory">
-            <summary>
-            The location this plugin was loaded from.
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.Plugin.IsLoaded">
-            <summary>
-            Whether the plugin is currently running.
-            </summary>
-        </member>
-        <member name="M:WorldWind.PluginEngine.Plugin.Load">
-            <summary>
-            Load the plugin.  This is the plugin entry point.
-            </summary>
-        </member>
-        <member name="M:WorldWind.PluginEngine.Plugin.Unload">
-            <summary>
-            Unload the plugin. Plugins that modify World Wind or 
-            runs in background should override this method.
-            </summary>
-        </member>
-        <member name="M:WorldWind.PluginEngine.Plugin.PluginLoad(System.String)">
-            <summary>
-            Base class load, calls Load. 
-            </summary>
-            <param name="parent"></param>
-        </member>
-        <member name="M:WorldWind.PluginEngine.Plugin.PluginUnload">
-            <summary>
-            Base class unload, calls Unload. 
-            </summary>
-        </member>
-        <member name="T:WorldWind.PluginEngine.PluginCompiler">
-            <summary>
-            Loads plug-in scripts, compiles and executes them
-            </summary>
+             <summary>
+            插件基础类
+             </summary>
         </member>
         <member name="P:WorldWind.PluginEngine.PluginCompiler.Plugins">
             <summary>
@@ -903,61 +850,6 @@
         <member name="M:WorldWind.PluginEngine.PluginDialog.listView_DoubleClick(System.Object,System.EventArgs)">
             <summary>
             Invert state of double clicked item (load/unload)
-            </summary>
-        </member>
-        <member name="T:WorldWind.PluginEngine.PluginInfo">
-            <summary>
-            Stores information on a plugin.
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.Plugin">
-            <summary>
-            The plugin instance.
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.FullPath">
-            <summary>
-            Directory and filename of the plugin.
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.ID">
-            <summary>
-            The plugin ID
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.Name">
-            <summary>
-            The plugin name (from plugin comment header "NAME" tag)
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.Description">
-            <summary>
-            The plugin description (from plugin comment header "DESCRIPTION" tag)
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.Developer">
-            <summary>
-            The plugin developer's name (from plugin comment header "DEVELOPER" tag)
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.WebSite">
-            <summary>
-            The plugin web site url (from plugin comment header "WEBSITE" tag)
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.References">
-            <summary>
-            Comma separated list of additional libraries this plugin requires a reference to.
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.IsCurrentlyLoaded">
-            <summary>
-            Check whether a plugin is currently loaded.
-            </summary>
-        </member>
-        <member name="P:WorldWind.PluginEngine.PluginInfo.IsLoadedAtStartup">
-            <summary>
-            Set always load on application startup flag for the plugin.
             </summary>
         </member>
         <member name="M:WorldWind.PluginEngine.PluginInfo.ReadMetaData">
@@ -2073,11 +1965,6 @@
             Unloads our plugin
             </summary>
         </member>
-        <member name="M:Murris.Plugins.LightController.menuItemClicked(System.Object,System.EventArgs)">
-            <summary>
-            Show the form
-            </summary>
-        </member>
         <member name="T:Murris.Plugins.LightController.LightDialog">
             <summary>
             Properties Dialog
@@ -3174,21 +3061,6 @@
         <member name="M:KMLPlugin.KMLImporter.Cleanup">
             <summary>
             Cleans up used resources
-            </summary>
-        </member>
-        <member name="M:KMLPlugin.KMLImporter.aboutMenu_Click(System.Object,System.EventArgs)">
-            <summary>
-            Shows information about KMLImporter on a Form
-            </summary>
-        </member>
-        <member name="M:KMLPlugin.KMLImporter.napalmMenu_Click(System.Object,System.EventArgs)">
-            <summary>
-            Toggles the Napalm enabled state
-            </summary>
-        </member>
-        <member name="M:KMLPlugin.KMLImporter.labelMenuItem_Click(System.Object,System.EventArgs)">
-            <summary>
-            Toggles the 'drawAllLabels' state
             </summary>
         </member>
         <member name="T:KMLPlugin.Napalm">

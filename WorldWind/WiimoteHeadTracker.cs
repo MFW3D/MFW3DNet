@@ -1,67 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: WiimoteHeadtracker
-// VERSION: 0.1
-// DESCRIPTION: Head Tracking via the Wiimote. Based on Johnny Lee's WiiDesktopVR
-// DEVELOPER: Nigel Tzeng
-// WEBSITE: http://www.jhuapl.edu
-// REFERENCES: 
-//----------------------------------------------------------------------------
-//========================= (UNCLASSIFIED) ==============================
-// Copyright ?2008 The Johns Hopkins University /
-// Applied Physics Laboratory.  All rights reserved.
-//
-// WorldWind Source Code - Copyright 2005 NASA World Wind 
-// Modified under the NOSA License
-//
-// WiiDesktopVR Code - Copyright 2007 Johnny Lee
-//
-// From WiiDesktopVR Readme:
-//
-// "This program is distributed in the hope that it will be useful, but 
-// WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or 
-// FITNESS FOR A PARTICULAR PURPOSE. Use of this software is entirely at your 
-// own risk. It is provided without any support beyond this document."  
-//
-// WiimoteLib Code - Copyright 2007 Brian Peek
-// Modified under the MS-PL License
-//
-//========================= (UNCLASSIFIED) ==============================
-//
-// LICENSE AND DISCLAIMER 
-//
-// Copyright (c) 2005 The Johns Hopkins University. 
-//
-// This software was developed at The Johns Hopkins University/Applied 
-// Physics Laboratory (“JHU/APL? that is the author thereof under the 
-// “work made for hire?provisions of the copyright law.  Permission is 
-// hereby granted, free of charge, to any person obtaining a copy of this 
-// software and associated documentation (the “Software?, to use the 
-// Software without restriction, including without limitation the rights 
-// to copy, modify, merge, publish, distribute, sublicense, and/or sell 
-// copies of the Software, and to permit others to do so, subject to the 
-// following conditions: 
-//
-// 1.  This LICENSE AND DISCLAIMER, including the copyright notice, shall 
-//     be included in all copies of the Software, including copies of 
-//     substantial portions of the Software; 
-//
-// 2.  JHU/APL assumes no obligation to provide support of any kind with 
-//     regard to the Software.  This includes no obligation to provide 
-//     assistance in using the Software nor to provide updated versions of 
-//     the Software; and 
-//
-// 3.  THE SOFTWARE AND ITS DOCUMENTATION ARE PROVIDED AS IS AND WITHOUT 
-//     ANY EXPRESS OR IMPLIED WARRANTIES WHATSOEVER.  ALL WARRANTIES 
-//     INCLUDING, BUT NOT LIMITED TO, PERFORMANCE, MERCHANTABILITY, FITNESS
-//     FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT ARE HEREBY DISCLAIMED.  
-//     USERS ASSUME THE ENTIRE RISK AND LIABILITY OF USING THE SOFTWARE.  
-//     USERS ARE ADVISED TO TEST THE SOFTWARE THOROUGHLY BEFORE RELYING ON 
-//     IT.  IN NO EVENT SHALL THE JOHNS HOPKINS UNIVERSITY BE LIABLE FOR 
-//     ANY DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, ANY LOST 
-//     PROFITS, LOST SAVINGS OR OTHER INCIDENTAL OR CONSEQUENTIAL DAMAGES, 
-//     ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE. 
-//
-
 using System;
 using System.Windows.Forms;
 
@@ -94,8 +30,6 @@ namespace jhuapl.util
         float headDist = 2;
 
         KeyEventHandler m_keyHandler;
-        public System.Windows.Forms.MenuItem m_enableMenuItem;
-
         bool m_calibrate = false;
 
 		/// <summary>
@@ -116,10 +50,6 @@ namespace jhuapl.util
                 {
                     wiimotePointsNormalized[i] = new Point2D();
                 }
-
-                m_enableMenuItem = new MenuItem();
-                m_enableMenuItem.Text = "Enable Headtracking\t*";
-                m_enableMenuItem.Click += new System.EventHandler(enableMenuItem_Click);
 
                 m_keyHandler = new KeyEventHandler(keyUp);
                 Global.worldWindow.KeyUp += m_keyHandler;
@@ -280,14 +210,11 @@ namespace jhuapl.util
             {
                 World.Settings.CameraHeadTracking = false;
                 World.Settings.AllowNegativeTilt = false;
-                m_enableMenuItem.Text = "Enable Headtracking\t*";
             }
             else
             {
                 World.Settings.CameraHeadTracking = true;
                 World.Settings.AllowNegativeTilt = true;
-                m_enableMenuItem.Text = "Disable Headtracking\t*";
-
                 m_calibrate = true;
             }
         }

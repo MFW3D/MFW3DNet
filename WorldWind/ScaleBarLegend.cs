@@ -13,7 +13,6 @@ namespace NASA.Plugins
     {
         FormWidget m_form = null;
         ScaleBarWidget m_scaleBar = null;
-        System.Windows.Forms.MenuItem m_menuItem = null;
         bool m_firstVisibility = false;
         
         public override void Load()
@@ -40,10 +39,6 @@ namespace NASA.Plugins
 
             bool visibility = false;
 
-            m_menuItem = new System.Windows.Forms.MenuItem("Scale Bar Legend");
-            m_menuItem.Click += new EventHandler(m_menuItem_Click);
-
-            m_menuItem.Checked = visibility;
             m_form.Visible = visibility;
 
             DrawArgs.NewRootWidget.ChildWidgets.Add(m_form);
@@ -53,18 +48,15 @@ namespace NASA.Plugins
 
         void m_form_OnVisibleChanged(object o, bool state)
         {
-            m_menuItem.Checked = state;
         }
 
         void m_menuItem_Click(object sender, EventArgs e)
         {
-            m_menuItem.Checked = true;
             if (!m_firstVisibility)
             {
                 m_form.Location = new System.Drawing.Point(DrawArgs.ParentControl.Width - 300, DrawArgs.ParentControl.Height - 70);
                 m_firstVisibility = true;
             }
-            m_form.Visible = m_menuItem.Checked;
         }
 
         public override void Unload()

@@ -1,12 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: Globe cursor
-// VERSION: 1.0
-// DESCRIPTION: Displays a floating cursor on the globe showing where a mouse click will land (and illustrating any raytracing error that may be present)
-// DEVELOPER: Erik Newman
-//----------------------------------------------------------------------------
-//
-// This file is in the Public Domain, and comes with no warranty. 
-//
 using System;
 using System.Collections.Generic;
 using System.Text;

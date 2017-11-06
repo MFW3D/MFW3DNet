@@ -1,11 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: KMLImporter
-// DESCRIPTION: KMLImporter allows you to import Placemarks from KML and KMZ files
-// DEVELOPER: ShockFire
-// WEBSITE: http://shockfire.blogger.com
-// VERSION: 1.08
-//----------------------------------------------------------------------------
-
 using System;
 using System.IO;
 using System.Net;
@@ -42,12 +34,6 @@ namespace KMLPlugin
 
 		private Icons m_KMLIcons;							// Main Icon container
 
-		private MenuItem tempMenu = new MenuItem();			// Temp menu item for storing file MenuItems
-		private MenuItem aboutMenuItem = new MenuItem();	// About menu item
-		private MenuItem pluginMenuItem = new MenuItem();	// Plugin menu item (for children)
-		private MenuItem napalmMenuItem = new MenuItem();	// Napalm enable/disable menu item
-		private MenuItem labelMenuItem = new MenuItem();	// drawAllLabels enable/disable menu item
-
 		internal string KMLPath;							// Temp internal argument passing variable
 
         private KMLLoader m_loader = new KMLLoader();
@@ -79,23 +65,9 @@ namespace KMLPlugin
 			MenuItem loadMenuItem = new MenuItem();
 			loadMenuItem.Text = "Import KML/KMZ file...";
 			loadMenuItem.Click += new EventHandler(loadMenu_Click);
-			aboutMenuItem.Text = "About KMLImporter";
-			aboutMenuItem.Click += new EventHandler(aboutMenu_Click);
 			int mergeOrder = 0;
 			// Napalm enable/disable menu item
 			bool bEnabled = Napalm.NapalmIsEnabled(KmlDirectory);
-			if (bEnabled)
-				napalmMenuItem.Text = "Disable KMLImporter autoupdate";
-			else
-				napalmMenuItem.Text = "Enable KMLImporter autoupdate";
-			napalmMenuItem.Click += new EventHandler(napalmMenu_Click);
-			pluginMenuItem.MenuItems.Add(napalmMenuItem);
-
-			// Allways show labels enable/disable menu item
-			labelMenuItem.Text = "Show all labels";
-			labelMenuItem.Checked = Settings.ShowAllLabels;
-			labelMenuItem.Click += new EventHandler(labelMenuItem_Click);
-			pluginMenuItem.MenuItems.Add(labelMenuItem);
 
 			// Some magic to provide backward compability
 			Type typecontroller = typeof(MainApplication);
@@ -153,8 +125,6 @@ namespace KMLPlugin
             Global.worldWindow.DragEnter -= new DragEventHandler(WorldWindow_DragEnter);
             Global.worldWindow.DragDrop -= new DragEventHandler(WorldWindow_DragDrop);
 
-			tempMenu.MenuItems.Clear();
-			
 			try
 			{
 				// Delete the temp kmz extract directory
@@ -343,35 +313,6 @@ namespace KMLPlugin
         private void Cleanup()
         {
             m_KMLIcons.RemoveAll();
-        }
-
-        /// <summary>
-        /// Shows information about KMLImporter on a Form
-        /// </summary>
-        private void aboutMenu_Click(object sender, EventArgs e)
-        {
-            AboutForm aboutForm = new AboutForm();
-            aboutForm.ShowDialog();
-        }
-
-        /// <summary>
-        /// Toggles the Napalm enabled state
-        /// </summary>
-        private void napalmMenu_Click(object sender, EventArgs e)
-        {
-            bool bEnabled = Napalm.NapalmChangeStatus(KmlDirectory, napalmMenuItem.Text.StartsWith("Enable"));
-            if (bEnabled)
-                napalmMenuItem.Text = "Disable KMLImporter autoupdate";
-            else
-                napalmMenuItem.Text = "Enable KMLImporter autoupdate";
-        }
-
-        /// <summary>
-        /// Toggles the 'drawAllLabels' state
-        /// </summary>
-        private void labelMenuItem_Click(object sender, EventArgs e)
-        {
-            labelMenuItem.Checked = Settings.ShowAllLabels = !labelMenuItem.Checked;
         }
 
         #endregion

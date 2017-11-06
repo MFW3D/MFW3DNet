@@ -1,14 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: Planimetric Measure Tool
-// VERSION: 1.0
-// DESCRIPTION: Planimetric Measure Tool
-// DEVELOPER: Bjorn Reppen aka "Mashi" - Refinements by Tisham Dhar aka "What_nick"
-// WEBSITE: 
-// REFERENCES: 
-//----------------------------------------------------------------------------
-//
-// 
-//
 using System;
 using System.Collections;
 using System.IO;
@@ -33,18 +22,7 @@ namespace MeasureTool.Plugins
 	/// </summary>
 	public class MeasureTool : WorldWind.PluginEngine.Plugin
 	{
-		protected MenuItem menuItem;
 		MeasureToolLayer layer;
-
-        #region Accessor Methods
-        public MenuItem MenuEntry
-        {
-            get
-            {
-                return menuItem;
-            }
-        }
-        #endregion
 
         /// <summary>
 		/// Plugin entry point 
@@ -58,9 +36,6 @@ namespace MeasureTool.Plugins
 			layer.TexturePath = Path.Combine(PluginDirectory,"Plugins\\Measure");
 			Global.worldWindow.CurrentWorld.RenderableObjects.Add(layer);
 
-			menuItem = new MenuItem("Measure\tM");
-			menuItem.Click += new EventHandler(menuItemClicked);
-
 			// Subscribe events
 			Global.worldWindow.MouseMove += new MouseEventHandler(layer.MouseMove);
 			Global.worldWindow.MouseDown += new MouseEventHandler(layer.MouseDown);
@@ -73,12 +48,6 @@ namespace MeasureTool.Plugins
 		/// </summary>
 		public override void Unload() 
 		{
-			if(menuItem!=null)
-			{
-				menuItem.Dispose();
-				menuItem = null;
-			}
-
 			Global.worldWindow.MouseMove -= new MouseEventHandler(layer.MouseMove);
 			Global.worldWindow.MouseDown -= new MouseEventHandler(layer.MouseDown);
 			Global.worldWindow.MouseUp -= new MouseEventHandler(layer.MouseUp);
@@ -90,7 +59,6 @@ namespace MeasureTool.Plugins
 		void menuItemClicked(object sender, EventArgs e)
 		{
 			layer.IsOn = !layer.IsOn;
-			menuItem.Checked = layer.IsOn;
 		}
 	}
 
@@ -400,9 +368,6 @@ namespace MeasureTool.Plugins
 			{
 				IsOn = !IsOn;
 				e.Handled = true;
-			    //TODO: Turn menu item off
-                if (this.m_srcplugin.MenuEntry!=null)
-                    this.m_srcplugin.MenuEntry.Checked = !this.m_srcplugin.MenuEntry.Checked;
 			}
 			if (e.KeyData == Keys.X)
 			{
