@@ -7224,22 +7224,12 @@
         </member>
         <member name="T:WorldWind.WorldWindow">
             <summary>
-            The D3D drawing window with the world
+            D3D 渲染的地球
             </summary>
         </member>
         <member name="F:WorldWind.WorldWindow.m_Device3d">
             <summary>
-            Direct3D rendering m_Device3d
-            </summary>
-        </member>
-        <member name="P:WorldWind.WorldWindow.IsRenderDisabled">
-            <summary>
-            Disables rendering (CPU tick saver)
-            </summary>
-        </member>
-        <member name="M:WorldWind.WorldWindow.#ctor">
-            <summary>
-            Constructor
+            Direct3D 渲染引擎
             </summary>
         </member>
         <member name="P:WorldWind.WorldWindow.IsAppStillIdle">
@@ -7254,7 +7244,7 @@
         </member>
         <member name="M:WorldWind.WorldWindow.GotoLatLon(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
-            Moves to specified location.
+            定位
             </summary>
             <param name="latitude">Latitude in degrees of target position. (-90 - 90).</param>
             <param name="longitude">Longitude in degrees of target position. (-180 - 180).</param>
@@ -7265,20 +7255,20 @@
         </member>
         <member name="M:WorldWind.WorldWindow.SaveScreenshot(System.String)">
             <summary>
-            Saves the current view to file.
+            截屏
             </summary>
             <param name="filePath">Path and filename of output file.  
             Extension is used to determine the image format.</param>
         </member>
         <member name="M:WorldWind.WorldWindow.OnApplicationIdle(System.Object,System.EventArgs)">
             <summary>
-            The world render loop.  
+            地球渲染.  
             Borrowed from FlightGear and Tom Miller's blog
             </summary>
         </member>
         <member name="M:WorldWind.WorldWindow.ResetToolbar">
             <summary>
-            Resets the toolbar
+            重置菜单栏
             </summary>
         </member>
         <member name="M:WorldWind.WorldWindow.OnPaint(System.Windows.Forms.PaintEventArgs)">

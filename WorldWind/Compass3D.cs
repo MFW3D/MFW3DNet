@@ -15,7 +15,6 @@ namespace NASA.Plugins
         string basePath = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
         FormWidget m_form = null;
         Compass3DWidget m_compass = null;
-        WorldWind.NewWidgets.WidgetMenuButton m_toolbarItem = null;
         
         public override void Load()
         {
@@ -42,14 +41,6 @@ namespace NASA.Plugins
 
             DrawArgs.NewRootWidget.ChildWidgets.Add(m_form);
 
-            m_toolbarItem = new WorldWind.NewWidgets.WidgetMenuButton(
-                    "Compass 3D",
-                    basePath + "\\Data\\Icons\\Interface\\compass2.png",
-                    m_form);
-
-            Global.worldWindow.MenuBar.AddToolsMenuButton(m_toolbarItem);
-
-
             base.Load();
         }
 
@@ -60,13 +51,6 @@ namespace NASA.Plugins
                 DrawArgs.NewRootWidget.ChildWidgets.Remove(m_form);
                 m_form.Dispose();
                 m_form = null;
-            }
-
-            if (m_toolbarItem != null)
-            {
-                Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_toolbarItem);
-                m_toolbarItem.Dispose();
-                m_toolbarItem = null;
             }
 
             base.Unload();
