@@ -202,6 +202,7 @@
     <Compile Include="GeoRSS\GeoRssForm.Designer.cs">
       <DependentUpon>GeoRssForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Renderable\DynamicCloudLayer.cs" />
     <Compile Include="Renderable\Icons.cs" />
     <Compile Include="Renderable\IconTexture.cs" />
     <Compile Include="InternalWebBrowser.cs">

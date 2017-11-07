@@ -228,9 +228,6 @@
     <Compile Include="Plugins\CompassRose.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Renderable\DynamicCloudLayer.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Plugins\DynamicClouds.cs">
       <SubType>Code</SubType>
     </Compile>

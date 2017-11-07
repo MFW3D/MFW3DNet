@@ -54,17 +54,17 @@
   <AllowNegativeAltitude>false</AllowNegativeAltitude>
   <CameraResetsAtStartup>true</CameraResetsAtStartup>
   <CameraLatitude>
-    <Radians>0.05759561528902548</Radians>
-    <Degrees>3.2999856745203173</Degrees>
+    <Radians>-0</Radians>
+    <Degrees>-0</Degrees>
   </CameraLatitude>
   <CameraLongitude>
-    <Radians>1.0835285922352349</Radians>
-    <Degrees>62.0816153168305</Degrees>
+    <Radians>0</Radians>
+    <Degrees>0</Degrees>
   </CameraLongitude>
   <CameraAltitude>12756274</CameraAltitude>
   <CameraHeading>
-    <Radians>-2.496725581466267E-07</Radians>
-    <Degrees>-1.4305183842036349E-05</Degrees>
+    <Radians>0</Radians>
+    <Degrees>0</Degrees>
   </CameraHeading>
   <CameraTilt>
     <Radians>0</Radians>
