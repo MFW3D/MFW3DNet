@@ -1,17 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: Compass rose
-// VERSION: 0.51
-// DESCRIPTION: Display a compass rose pointing north. Right click on layer for settings.
-// DEVELOPER: Patrick Murris
-// WEBSITE: http://www.alpix.com/3d/worldwin/
-//----------------------------------------------------------------------------
-// Based on Bjorn Reppen Atmosphere plugin.
-// 0.5	Dec,5 2005	Added Top-Center placement and testing SVG shapes
-// 0.4	Dec,4 2005	Added more placement settings and some big graphics
-// 0.3	Dec,4 2005	Added compass placement in settings
-// 0.2	Dec,3 2005	Allow compass tilt in settings. Moved to upper right (for now)
-// 0.1	Dec,2 2005	Compass simple bottom left
-//----------------------------------------------------------------------------
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
 using System.Windows.Forms;
@@ -52,7 +38,7 @@ namespace Murris.Plugins
 			control.VisibleChanged += evhand;
 			// Add toolbar item
 			layer = new CompassLayer(LayerName, PluginDirectory, Global.worldWindow);
-			layer.IsOn = World.Settings.ShowCompass;
+            layer.IsOn = World.Settings.ShowCompass;
             Global.worldWindow.CurrentWorld.RenderableObjects.Add(layer);
 			
 		}

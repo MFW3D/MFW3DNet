@@ -7,13 +7,10 @@ namespace WorldWind.PluginEngine
 	/// </summary>
 	public abstract class Plugin
 	{
-
 		//插件加载目录
 		protected string m_PluginDirectory;
-
 		//插件是否加载
 		protected bool m_isLoaded;
-
         //插件目录
         public virtual string PluginDirectory
 		{
@@ -22,7 +19,6 @@ namespace WorldWind.PluginEngine
 				return m_PluginDirectory;
 			}
 		}
-
 		//标记当前插件是否加载
 		public virtual bool IsLoaded
 		{
@@ -43,7 +39,6 @@ namespace WorldWind.PluginEngine
 		{
 			// Override with plugin dispose code.
 		}
-
         //插件加载
         public virtual void PluginLoad( string pluginDirectory )
 		{
@@ -54,7 +49,6 @@ namespace WorldWind.PluginEngine
 			Load();
 			m_isLoaded = true;
 		}
-
 		//插件卸载
 		public virtual void PluginUnload()
 		{

@@ -54,17 +54,17 @@
   <AllowNegativeAltitude>false</AllowNegativeAltitude>
   <CameraResetsAtStartup>true</CameraResetsAtStartup>
   <CameraLatitude>
-    <Radians>0.48872294238296915</Radians>
-    <Degrees>28.001761949759434</Degrees>
+    <Radians>-0</Radians>
+    <Degrees>-0</Degrees>
   </CameraLatitude>
   <CameraLongitude>
-    <Radians>0.8900743421540247</Radians>
-    <Degrees>50.9975032583088</Degrees>
+    <Radians>0</Radians>
+    <Degrees>0</Degrees>
   </CameraLongitude>
-  <CameraAltitude>9158956.8909688722</CameraAltitude>
+  <CameraAltitude>12756274</CameraAltitude>
   <CameraHeading>
-    <Radians>-0.0010372259960898691</Radians>
-    <Degrees>-0.059428671977202335</Degrees>
+    <Radians>0</Radians>
+    <Degrees>0</Degrees>
   </CameraHeading>
   <CameraTilt>
     <Radians>0</Radians>
@@ -104,8 +104,8 @@
   <TextureFormat>Dxt3</TextureFormat>
   <EnableSunShading>true</EnableSunShading>
   <SunSynchedWithTime>true</SunSynchedWithTime>
-  <SunElevation>1.5707963267948966</SunElevation>
-  <SunHeading>-0.91138911894646268</SunHeading>
+  <SunElevation>1.4692619650011782</SunElevation>
+  <SunHeading>-0.531357757960582</SunHeading>
   <SunDistance>150000000000</SunDistance>
   <UseBelowNormalPriorityUpdateThread>false</UseBelowNormalPriorityUpdateThread>
   <MinSamplesPerDegree>3</MinSamplesPerDegree>
@@ -556,10 +556,10 @@
     <anyType xsi:type="xsd:string">Earth\Images\The Blue Marble\BMNG (Bathymetry)\11.2004\Tiled - 11.2004</anyType>
     <anyType xsi:type="xsd:string">Earth\Images\The Blue Marble\BMNG (Bathymetry)\12.2004\Base Image - 12.2004</anyType>
     <anyType xsi:type="xsd:string">Earth\Images\The Blue Marble\BMNG (Bathymetry)\12.2004\Tiled - 12.2004</anyType>
-    <anyType xsi:type="xsd:string">Earth\Compass rose</anyType>
     <anyType xsi:type="xsd:string">Earth\KML Icons</anyType>
     <anyType xsi:type="xsd:string">Earth\Globe cursor</anyType>
     <anyType xsi:type="xsd:string">Earth\Globe cursor\</anyType>
+    <anyType xsi:type="xsd:string">Earth\Compass rose</anyType>
     <anyType xsi:type="xsd:string">Earth\Placenames</anyType>
   </LoadedLayers>
   <Log404Errors>false</Log404Errors>

@@ -180,12 +180,6 @@
       <Project>{F94A08EC-194C-4C1C-9D84-5C98809CF5C1}</Project>
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
-    <ProjectReference Include="..\LayerSet\LayerSet.csproj">
-      <Name>LayerSet</Name>
-      <Project>{66D4A736-2FE2-C64F-BA20-16B934D3B744}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-      <Private>True</Private>
-    </ProjectReference>
     <ProjectReference Include="..\PluginSDK\PluginSDK.csproj">
       <Name>PluginSDK</Name>
       <Project>{30178337-6BBE-45A0-B7DF-73B2A46F06EE}</Project>

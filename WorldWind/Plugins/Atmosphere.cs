@@ -1,13 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: Atmosphere
-// VERSION: 1.0
-// DESCRIPTION: Render a halo around the planet
-// DEVELOPER: 
-// WEBSITE: 
-//----------------------------------------------------------------------------
-// 1.0	Nov 2005	Added settings and two 'better' bitmaps - Patrick Murris
-// 0.1	May 2005	Plugin as an example of the WW 1.3.2 plugin architecture
-//----------------------------------------------------------------------------
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
 using System.Windows.Forms;

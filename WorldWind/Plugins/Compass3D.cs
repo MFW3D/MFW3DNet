@@ -20,7 +20,7 @@ namespace NASA.Plugins
         {
             m_form = new FormWidget("Compass");
             m_form.ClientSize = new System.Drawing.Size(200, 200);
-            m_form.Location = new System.Drawing.Point(0, 400);
+            m_form.Location = new System.Drawing.Point(0,100);
             m_form.BackgroundColor = World.Settings.WidgetBackgroundColor;
             m_form.AutoHideHeader = true;
             m_form.VerticalScrollbarEnabled = false;

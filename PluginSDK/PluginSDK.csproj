@@ -166,6 +166,78 @@
     <Compile Include="Geometry\Angle.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LayerSet\BlueType.cs" />
+    <Compile Include="LayerSet\BlueType2.cs" />
+    <Compile Include="LayerSet\BoundingBoxOverlapType.cs" />
+    <Compile Include="LayerSet\BoundingBoxOverlapType2.cs" />
+    <Compile Include="LayerSet\DistanceAboveSurfaceType.cs" />
+    <Compile Include="LayerSet\DistanceAboveSurfaceType2.cs" />
+    <Compile Include="LayerSet\GreenType.cs" />
+    <Compile Include="LayerSet\GreenType2.cs" />
+    <Compile Include="LayerSet\LayerSetDoc.cs" />
+    <Compile Include="LayerSet\LevelZeroTileSizeDegreesType.cs" />
+    <Compile Include="LayerSet\MaxDisplayAltitudeType.cs" />
+    <Compile Include="LayerSet\MaxDisplayAltitudeType2.cs" />
+    <Compile Include="LayerSet\MaximumDisplayAltitudeType.cs" />
+    <Compile Include="LayerSet\MaximumDisplayAltitudeType2.cs" />
+    <Compile Include="LayerSet\MaxViewRangeType.cs" />
+    <Compile Include="LayerSet\MaxViewRangeType2.cs" />
+    <Compile Include="LayerSet\MeshFilePathType.cs" />
+    <Compile Include="LayerSet\MeshFilePathType2.cs" />
+    <Compile Include="LayerSet\MinDisplayAltitudeType.cs" />
+    <Compile Include="LayerSet\MinDisplayAltitudeType2.cs" />
+    <Compile Include="LayerSet\MinimumDisplayAltitudeType.cs" />
+    <Compile Include="LayerSet\MinimumDisplayAltitudeType2.cs" />
+    <Compile Include="LayerSet\MinViewRangeType.cs" />
+    <Compile Include="LayerSet\MinViewRangeType2.cs" />
+    <Compile Include="LayerSet\NameType.cs" />
+    <Compile Include="LayerSet\NameType2.cs" />
+    <Compile Include="LayerSet\OpacityType.cs" />
+    <Compile Include="LayerSet\RedType.cs" />
+    <Compile Include="LayerSet\RedType2.cs" />
+    <Compile Include="LayerSet\ScaleFactorType.cs" />
+    <Compile Include="LayerSet\ScaleFactorType2.cs" />
+    <Compile Include="LayerSet\StyleType.cs" />
+    <Compile Include="LayerSet\StyleType2.cs" />
+    <Compile Include="LayerSet\Type_Caption.cs" />
+    <Compile Include="LayerSet\Type_DisplayFont.cs" />
+    <Compile Include="LayerSet\Type_DisplayFont2.cs" />
+    <Compile Include="LayerSet\Type_ExtendedInformation.cs" />
+    <Compile Include="LayerSet\Type_Icon.cs" />
+    <Compile Include="LayerSet\Type_ImageAccessor.cs" />
+    <Compile Include="LayerSet\Type_ImageLayer.cs" />
+    <Compile Include="LayerSet\Type_ImageTileService.cs" />
+    <Compile Include="LayerSet\Type_ImageTileService2.cs" />
+    <Compile Include="LayerSet\Type_LatitudeCoordinate.cs" />
+    <Compile Include="LayerSet\Type_LatitudeCoordinate2.cs" />
+    <Compile Include="LayerSet\Type_LatLonBoundingBox.cs" />
+    <Compile Include="LayerSet\Type_LatLonBoundingBox2.cs" />
+    <Compile Include="LayerSet\Type_LayerSet.cs" />
+    <Compile Include="LayerSet\Type_LongitudeCoordinate.cs" />
+    <Compile Include="LayerSet\Type_LongitudeCoordinate2.cs" />
+    <Compile Include="LayerSet\Type_MeshLayer.cs" />
+    <Compile Include="LayerSet\Type_MeshLayer2.cs" />
+    <Compile Include="LayerSet\Type_Orientation.cs" />
+    <Compile Include="LayerSet\Type_Orientation2.cs" />
+    <Compile Include="LayerSet\Type_PathList.cs" />
+    <Compile Include="LayerSet\Type_PathList2.cs" />
+    <Compile Include="LayerSet\Type_QuadTileSet.cs" />
+    <Compile Include="LayerSet\Type_QuadTileSet2.cs" />
+    <Compile Include="LayerSet\Type_RGBColor.cs" />
+    <Compile Include="LayerSet\Type_RGBColor2.cs" />
+    <Compile Include="LayerSet\Type_ShapeFileLayer.cs" />
+    <Compile Include="LayerSet\Type_ShapeFileLayer2.cs" />
+    <Compile Include="LayerSet\Type_SimpleTimeSpan.cs" />
+    <Compile Include="LayerSet\Type_SimpleTimeSpan2.cs" />
+    <Compile Include="LayerSet\Type_TiledPlacenameSet.cs" />
+    <Compile Include="LayerSet\Type_TiledPlacenameSet2.cs" />
+    <Compile Include="LayerSet\Type_Vector3.cs" />
+    <Compile Include="LayerSet\Type_WMSAccessor.cs" />
+    <Compile Include="LayerSet\Type_WMSAccessor2.cs" />
+    <Compile Include="LayerSet\ValueType.cs" />
+    <Compile Include="LayerSet\ValueType2.cs" />
+    <Compile Include="LayerSet\ValueType3.cs" />
+    <Compile Include="LayerSet\ValueType4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -599,9 +671,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Plugins\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
