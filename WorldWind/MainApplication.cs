@@ -83,12 +83,9 @@ namespace WorldWind
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainApplication));
             this.worldWindow = new WorldWind.WorldWindow();
             this.SuspendLayout();
-            //
-            this.Controls.Add(this.worldWindow);
             // 
             // worldWindow
             // 
@@ -100,18 +97,19 @@ namespace WorldWind
             this.worldWindow.IsRenderDisabled = false;
             this.worldWindow.Location = new System.Drawing.Point(0, 0);
             this.worldWindow.Name = "worldWindow";
-            this.worldWindow.Size = new System.Drawing.Size(990, 524);
+            this.worldWindow.Size = new System.Drawing.Size(992, 526);
             this.worldWindow.TabIndex = 0;
             // 
             // MainApplication
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
             this.ClientSize = new System.Drawing.Size(992, 526);
+            this.Controls.Add(this.worldWindow);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(240, 215);
-            this.Name = "MFW3DGeo";
+            this.Name = "MainApplication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MFW3Dµÿ¿Ì“˝«Ê";
             this.ResumeLayout(false);

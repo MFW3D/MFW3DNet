@@ -37,14 +37,6 @@ namespace WorldWind
         {
             try
             {
-                //IntPtr handle = MainApplication.GetWWHandle();
-                //if (!System.IntPtr.Zero.Equals(handle))
-                //{
-                //    if (args.Length > 0)
-                //        NativeMethods.SendArgs(handle, string.Join("\n", args));
-                //    return;
-                //}
-
                 if (BindingsCheck.FiftyBindingsWarning()) return;
                 System.Threading.Thread.CurrentThread.Name = "Main Thread";
                 Global.ParseArgs(args);
@@ -65,11 +57,7 @@ namespace WorldWind
                     World.LoadSettings(Global.CurrentSettingsDirectory);
                 }
                 Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
-                //MainApplication app = new MainApplication();
-                //Application.Idle += new EventHandler(app.WorldWindow.OnApplicationIdle);
-                //Application.Run(app);
-
-                TestForm app = new TestForm();
+                MainApplication app = new MainApplication();
                 Application.Idle += new EventHandler(app.WorldWindow.OnApplicationIdle);
                 Application.Run(app);
 
