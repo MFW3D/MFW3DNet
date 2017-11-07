@@ -55,6 +55,11 @@
     <Compile Include="ProxyHelper.cs" />
     <Compile Include="WebDownload.cs" />
     <Compile Include="WebDownloadRequest.cs" />
+    <Compile Include="WiimoteLib\AffineTransformSolver.cs" />
+    <Compile Include="WiimoteLib\DataTypes.cs" />
+    <Compile Include="WiimoteLib\Events.cs" />
+    <Compile Include="WiimoteLib\HIDImports.cs" />
+    <Compile Include="WiimoteLib\Wiimote.cs" />
     <Compile Include="Win32Message.cs" />
     <Compile Include="WmsDownload.cs" />
   </ItemGroup>

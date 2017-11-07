@@ -197,10 +197,6 @@
       <Project>{467BCD43-F3D9-46A5-B7A8-3A8B11708E0E}</Project>
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
-    <ProjectReference Include="..\WiimoteLib\WiimoteLib.csproj">
-      <Project>{37A555DF-7012-4B99-8A47-1C922A361E52}</Project>
-      <Name>WiimoteLib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WorldXmlDescriptor\WorldXmlDescriptor.csproj">
       <Name>WorldXmlDescriptor</Name>
       <Project>{9EA1E65D-4558-E940-B594-E71BF740FA04}</Project>
@@ -357,11 +353,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\PropertyBrowserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -408,6 +399,11 @@
     </Compile>
     <Compile Include="Common\WWListView.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AnimatedEarthManager.resx">
       <DependentUpon>AnimatedEarthManager.cs</DependentUpon>
@@ -530,10 +526,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="buttons\outline.gif" />
+    <None Include="images\back.psd" />
+    <None Include="images\forward.psd" />
+    <None Include="images\go.psd" />
+    <None Include="images\outline.gif" />
+    <None Include="images\stop.psd" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="buttons\stop.gif" />
+    <None Include="images\outline.psd" />
+    <None Include="images\stop.gif" />
     <EmbeddedResource Include="Forms\FileLoader.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FileLoader.cs</DependentUpon>
@@ -564,6 +565,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\back.gif" />
+    <Content Include="images\forward.gif" />
+    <Content Include="images\go.gif" />
     <Content Include="images\logo.ico" />
   </ItemGroup>
   <ItemGroup />
