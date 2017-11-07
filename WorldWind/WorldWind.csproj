@@ -245,7 +245,7 @@
     </Compile>
     <Compile Include="Plugins\FloodLevel.cs" />
     <Compile Include="Plugins\GeoRSS.cs" />
-    <Compile Include="Global.cs" />
+    <Compile Include="Common\Global.cs" />
     <Compile Include="Plugins\GlobeCursor.cs" />
     <Compile Include="Forms\GoogleForm.cs">
       <SubType>Form</SubType>
@@ -286,7 +286,7 @@
     <Compile Include="Forms\GotoDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gpx.cs">
+    <Compile Include="Common\gpx.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Plugins\Joystick.cs" />
@@ -299,7 +299,7 @@
     <Compile Include="Forms\MovieRecorder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NativeMethods.cs">
+    <Compile Include="Common\NativeMethods.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Forms\NrlMryAboutDialog.cs">
@@ -332,7 +332,7 @@
     <Compile Include="Forms\PlaceFinder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlaceListSettings.cs">
+    <Compile Include="Common\PlaceListSettings.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PluginEngine\NativeMethods.cs">
@@ -378,7 +378,7 @@
     <Compile Include="Forms\ShapeFileLoader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="shapelib.cs">
+    <Compile Include="Common\shapelib.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Forms\Splash.cs">
@@ -406,10 +406,10 @@
     <Compile Include="MainApplication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WplIndex.cs">
+    <Compile Include="Common\WplIndex.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WWListView.cs">
+    <Compile Include="Common\WWListView.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Forms\AnimatedEarthManager.resx">
@@ -527,7 +527,7 @@
       <DependentUpon>MainApplication.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="WWListView.resx">
+    <EmbeddedResource Include="Common\WWListView.resx">
       <DependentUpon>WWListView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
