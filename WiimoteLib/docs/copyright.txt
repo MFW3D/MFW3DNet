@@ -1,8 +1,0 @@
-Modifications to this library taken from Johnny Lee's 1.1 library.
-
-Copyright 2007 Brian Peek
-http://www.brianpeek.com/
-http://blogs.msdn.com/coding4fun/archive/2007/03/14/1879033.aspx
-
-Licensed under the terms of the Microsoft Permissive License (Ms-Pl).
-See license.txt for details.
