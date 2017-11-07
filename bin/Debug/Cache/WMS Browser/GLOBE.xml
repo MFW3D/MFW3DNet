@@ -1,0 +1,3299 @@
+<?xml version='1.0' encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://viz.globe.gov/wmt/xml/capabilities_1_1_1.dtd"
+ [
+  <!ELEMENT VendorSpecificCapabilities EMPTY >
+ ]>
+<WMT_MS_Capabilities version="1.1.1" updateSequence="2007020202">
+<!-- Service Metadata -->
+<Service>
+  <!-- The OGC-defined name for this type of service -->
+  <Name>OGC:WMS</Name>
+  <!-- Human-readable title for pick lists -->
+  <Title>The GLOBE Program Visualization Server</Title>
+  <!-- Narrative description providing additional information -->
+  <Abstract>Web Map Server maintained for The GLOBE Program by Digital Earth and GLOBE Visualizations at NASA Goddard Space Flight Center.  Contents include GLOBE student data and environmental data from NOAA, NASA and other sources.  Contact: webmaster@www.digitalearth.gov.</Abstract>
+  <KeywordList>
+    <Keyword>environment</Keyword>
+    <Keyword>weather</Keyword>
+    <Keyword>education</Keyword>
+    <Keyword>science</Keyword>
+  </KeywordList>
+  <!-- Top-level address of service or service provider.  See also onlineResource attributes of <dcpType> children. -->
+  <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+   xlink:href="http://www.globe.gov/" />
+  <ContactInformation>
+    <ContactPersonPrimary>
+      <ContactPerson>Jeff de La Beaujardiere</ContactPerson>
+      <ContactOrganization>NASA</ContactOrganization>
+    </ContactPersonPrimary>
+    <ContactPosition>Computer Scientist</ContactPosition>
+    <ContactAddress>
+      <AddressType>postal</AddressType>
+      <Address>NASA Goddard Space Flight Center, Code 933</Address>
+      <City>Greenbelt</City>
+      <StateOrProvince>MD</StateOrProvince>
+      <PostCode>20771</PostCode>
+      <Country>USA</Country>
+    </ContactAddress>
+    <ContactVoiceTelephone>+1 301 286-1569</ContactVoiceTelephone>
+    <ContactElectronicMailAddress>jeff2002@sunrise.gsfc.nasa.gov</ContactElectronicMailAddress>
+  </ContactInformation>
+  <!-- Fees or access constraints imposed. -->
+  <Fees>none</Fees>
+  <AccessConstraints>none</AccessConstraints>
+</Service>
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <Format>application/vnd.ogc.wms_xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/viz-bin/wmt.cgi" />
+          </Get>
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <GetMap>
+      <Format>image/gif</Format>
+      <Format>image/png</Format>
+      <Format>image/png; VISUAL=PSEUDO</Format>
+      <Format>image/png; VISUAL=TRUE</Format>
+      <Format>image/tiff</Format>
+      <Format>image/tiff; VISUAL=PSEUDO</Format>
+      <Format>image/tiff; VISUAL=TRUE</Format>
+      <DCPType>
+        <HTTP>
+          <Get>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/viz-bin/wmt.cgi" />
+          </Get>
+        </HTTP>
+      </DCPType>
+    </GetMap>
+    <GetFeatureInfo>
+      <Format>text/plain</Format>
+      <Format>text/xml</Format>
+      <DCPType>
+        <HTTP>
+          <Get>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/viz-bin/wmt.cgi" />
+          </Get>
+        </HTTP>
+      </DCPType>
+    </GetFeatureInfo>
+  </Request>
+  <Exception>
+    <Format>application/vnd.ogc.se_xml</Format>
+    <Format>application/vnd.ogc.se_inimage</Format>
+  </Exception>
+  <Layer>
+    <Title>The GLOBE Program Visualization Server</Title>
+    <SRS>EPSG:4326</SRS>
+    <SRS>AUTO:42003</SRS>
+    <SRS>AUTO:42005</SRS>
+    <LatLonBoundingBox minx="-180" miny="-90" maxx="180" maxy="90" />
+    <Dimension name="time" units="ISO8601" />
+	<Dimension name="depth" units="centimeters" unitSymbol="cm" />
+	<Dimension name="hour" units="hour" unitSymbol="h" />
+    <Layer queryable="0">
+      <Title>Context Layers</Title>
+	<Layer>
+	  <Name>COASTLINES</Name> 
+	  <Title>Coastlines</Title>
+	  <Abstract>Context layer: Coastlines</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/COASTLINES.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>NATIONAL</Name> 
+	  <Title>National Boundaries</Title>
+	  <Abstract>Context layer: National Boundaries</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/NATIONAL.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>STATE</Name> 
+	  <Title>State/Provincial Boundaries</Title>
+	  <Abstract>Context layer: State/Provincial Boundaries</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/STATE.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>RIVERS</Name> 
+	  <Title>Rivers</Title>
+	  <Abstract>Context layer: Rivers</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/RIVERS.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>RAILS</Name> 
+	  <Title>Railroads (for maps 16deg or smaller)</Title>
+	  <Abstract>Context layer: Railroads (for maps 16deg or smaller)</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/RAILS.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>CITY_NAMES</Name> 
+	  <Title>City Names (for maps 16deg or smaller)</Title>
+	  <Abstract>Context layer: City Names (for maps 16deg or smaller)</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/CITY_NAMES.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>WMT_GRATICULE</Name> 
+	  <Title>Alignment Test Grid</Title>
+	  <Abstract>Context layer: The WMT Graticule is a 10x10 degree grid for testing alignment.  At smaller scales, grid spacing is 1x1 degree.</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/WMT_GRATICULE.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>COUNTY</Name> 
+	  <Title>County/Other Boundaries (for maps 1deg or smaller)</Title>
+	  <Abstract>Context layer: County/Other Boundaries (for maps 1deg or smaller)</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/COUNTY.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>ROADS</Name> 
+	  <Title>Roads (for maps 1deg or smaller)</Title>
+	  <Abstract>Context layer: Roads (for maps 1deg or smaller)</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/ROADS.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>WATERSHEDS</Name> 
+	  <Title>Watershed Boundaries</Title>
+	  <Abstract>Context layer: Watershed Boundaries</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/WATERSHEDS.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+	<Layer>
+	  <Name>URBAN_EXTENTS</Name> 
+	  <Title>Urban areas (for maps 1deg or smaller)</Title>
+	  <Abstract>Context layer: Urban areas (for maps 1deg or smaller)</Abstract>
+	  <Style>
+	    <Name>default</Name>
+	    <Title>Default</Title>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/globe/en/icons/colorbars/URBAN_EXTENTS.gif" />
+          </LegendURL>
+	  </Style>
+	</Layer>
+    </Layer>
+    <Layer>
+      <Title>Physiography</Title>
+      <Layer opaque="1" queryable="1">
+	<Name>RTOPO</Name>
+	<Title>Topography and Bathymetry</Title>
+	<Abstract>Topography and Bathymetry. Units: m.</Abstract>
+        <Extent name="time" default="1994-12-31">1994-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/topo.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>REGM96</Name>
+	<Title>Earth Geopotential Model (EGM96)</Title>
+	<Abstract>Earth Geopotential Model (EGM96). Units: m.
+Legend: Difference between reference ellipsoid and reference geoid</Abstract>
+        <Extent name="time" default="1996-12-31">1996-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/egm96.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RLAS27</Name>
+	<Title>Latitude shifts (NAD83 minus NAD27)</Title>
+	<Abstract>Latitude shifts (NAD83 minus NAD27). Units: m.
+Legend: NAD83 minus NAD27</Abstract>
+        <Extent name="time" default="1990-01-31">1990-01-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/las27.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RLOS27</Name>
+	<Title>Longitude shifts (NAD83 minus NAD27)</Title>
+	<Abstract>Longitude shifts (NAD83 minus NAD27). Units: m.
+Legend: NAD83 minus NAD27</Abstract>
+        <Extent name="time" default="1990-01-31">1990-01-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/los27.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Air Temperature</Title>
+      <Layer opaque="1" queryable="1">
+	<Name>RATMAX</Name>
+	<Title>Maximum Temperature</Title>
+	<Abstract>Maximum Temperature. Units: deg C.</Abstract>
+        <Extent name="time" default="2006-04-08">1996-05-02/2006-04-08/P1D</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmax.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>ATMAX</Name>
+	<Title>GLOBE Maximum Temperature</Title>
+	<Abstract>Maximum Temperature collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmax.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmax.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmax.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RATMIN</Name>
+	<Title>Minimum Temperature</Title>
+	<Abstract>Minimum Temperature. Units: deg C.</Abstract>
+        <Extent name="time" default="2006-04-08">1996-05-02/2006-04-08/P1D</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmin.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>ATMIN</Name>
+	<Title>GLOBE Minimum Temperature</Title>
+	<Abstract>Minimum Temperature collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmin.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmin.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmin.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>ATCUR</Name>
+	<Title>GLOBE Current Temperature</Title>
+	<Abstract>Current Temperature collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atcur.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>ATMEA</Name>
+	<Title>GLOBE Mean Temperature</Title>
+	<Abstract>Mean Temperature collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmea.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmea.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atmea.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>ATDIF</Name>
+	<Title>GLOBE Temperature Range</Title>
+	<Abstract>Temperature Range collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atdif.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atdif.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/atdif.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>RHDEW</Name>
+	<Title>GLOBE Dew Point</Title>
+	<Abstract>Dew Point collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rhdew.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rhdew.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rhdew.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>RHHUM</Name>
+	<Title>GLOBE Relative Humidity</Title>
+	<Abstract>Relative Humidity collected by The GLOBE Program. Units: %.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rhhum.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>TXTMP</Name>
+	<Title>GLOBE Surface Temperature</Title>
+	<Abstract>Surface Temperature collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/txtmp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Pressure and Wind</Title>
+      <Layer>
+	<Name>BPSTA</Name>
+	<Title>GLOBE Barometric Pressure (station)</Title>
+	<Abstract>Barometric Pressure (station) collected by The GLOBE Program. Units: mbar.
+Legend: Pressure as recorded at the station</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/bpsta.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BPSLP</Name>
+	<Title>GLOBE Barometric Pressure (sea level)</Title>
+	<Abstract>Barometric Pressure (sea level) collected by The GLOBE Program. Units: mbar.
+Legend: Station pressure adjusted for elevation</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/bpslp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RBPXXL</Name>
+	<Title>Barometric Pressure (sea level)</Title>
+	<Abstract>Barometric Pressure (sea level). Units: mbar.
+Legend: Station pressure adjusted for elevation</Abstract>
+        <Extent name="time" default="2005-01-27">1996-05-02/2005-01-27/P1D</Extent>
+        <Extent name="hour" default="12">00,06,12,18</Extent>
+
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/bpxxl.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>WISPD</Name>
+	<Title>GLOBE Wind Speed</Title>
+	<Abstract>Wind Speed collected by The GLOBE Program. Units: m/s.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/wispd.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Rainfall (Liquid Precipitation)</Title>
+      <Layer opaque="1" queryable="1">
+	<Name>RPRAIN</Name>
+	<Title>Rainfall</Title>
+	<Abstract>Rainfall. Units: mm.
+Legend: M,Mult = report covered multiple days. T = Trace precipitation</Abstract>
+        <Extent name="time" default="2006-04-08">1996-05-02/2006-04-08/P1D</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prain.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PRAIN</Name>
+	<Title>GLOBE Rainfall</Title>
+	<Abstract>Rainfall collected by The GLOBE Program. Units: mm.
+Legend: M,Mult = report covered multiple days. T = Trace precipitation</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prain.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prain.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prain.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer queryable="1">
+	<Name>RPRWMS</Name>
+	<Title>Rainfall (transparent)</Title>
+	<Abstract>Rainfall (transparent). Units: mm.
+Legend: M,Mult = report covered multiple days. T = Trace precipitation</Abstract>
+        <Extent name="time" default="2006-04-08">1996-05-02/2006-04-08/P1D</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prwms.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RPRXXR</Name>
+	<Title>Multi-Satellite Precipitation Estimate</Title>
+	<Abstract>Multi-Satellite Precipitation Estimate. Units: mm.
+Legend: M,Mult = report covered multiple days. T = Trace precipitation</Abstract>
+        <Extent name="time" default="2005-05-22">2002-02-01/2005-05-22/P1D</Extent>
+        <Extent name="hour" default="SOLARNOON">00,12,SOLARNOON</Extent>
+
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prxxr.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer queryable="1">
+	<Name>RPRXXW</Name>
+	<Title>Satellite/Radar Daily Rainfall Estimate</Title>
+	<Abstract>Satellite/Radar Daily Rainfall Estimate. Units: mm.
+Legend: M,Mult = report covered multiple days. T = Trace precipitation</Abstract>
+        <Extent name="time" default="2005-05-22">2002-02-01/2005-05-22/P1D</Extent>
+        <Extent name="hour" default="SOLARNOON">00,12,SOLARNOON</Extent>
+
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prxxw.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PRPH</Name>
+	<Title>GLOBE Rainfall pH</Title>
+	<Abstract>Rainfall pH collected by The GLOBE Program. Units: pH.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prph.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prph.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/prph.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Snowfall (Solid Precipitation)</Title>
+      <Layer>
+	<Name>PSNOW</Name>
+	<Title>GLOBE New Snow</Title>
+	<Abstract>New Snow collected by The GLOBE Program. Units: mm.
+Legend: M,Mult = report covered multiple days. T = Trace precipitation</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psnow.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psnow.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psnow.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PSEQV</Name>
+	<Title>GLOBE New Snow Rain Equivalent</Title>
+	<Abstract>New Snow Rain Equivalent collected by The GLOBE Program. Units: mm.
+Legend: M,Mult = report covered multiple days. T = Trace precipitation</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/pseqv.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/pseqv.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/pseqv.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PSPH</Name>
+	<Title>GLOBE New Snow pH</Title>
+	<Abstract>New Snow pH collected by The GLOBE Program. Units: pH.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psph.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psph.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psph.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PSDEP</Name>
+	<Title>GLOBE Snowpack Depth</Title>
+	<Abstract>Snowpack Depth collected by The GLOBE Program. Units: mm.
+Legend: T = Trace</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psdep.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psdep.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psdep.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PSDQV</Name>
+	<Title>GLOBE Snowpack Rain Equivalent</Title>
+	<Abstract>Snowpack Rain Equivalent collected by The GLOBE Program. Units: mm.
+Legend: M,Mult = report covered multiple days. T = Trace precipitation</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psdqv.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psdqv.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psdqv.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PSDPH</Name>
+	<Title>GLOBE Snowpack pH</Title>
+	<Abstract>Snowpack pH collected by The GLOBE Program. Units: pH.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psdph.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psdph.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/psdph.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Cloud Observation</Title>
+      <Layer>
+	<Name>COCOV</Name>
+	<Title>GLOBE Cloud Cover</Title>
+	<Abstract>Cloud Cover collected by The GLOBE Program. Units: Code.
+Legend: Cloud Cover Codes: (GLOBE 1 and 2): CLR=Clear (0-9%), SCT=Scattered (10-50%), BKN=Broken (51-90%), OVC=Overcast (91-100%).  (GLOBE 2000): NON=No clouds (0% coverage), QLR=Clear (1-9%), ISO=Isolated (10-24%), SQT=Scattered (25-49%), BQN=Broken (50-89%), OVQ=Overcast (90-100%), OBS=Obscured Sky.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/cocov.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>CONTOURS</Name>
+	  <Title>Contours</Title>
+	  <Abstract>Contours of interpolated station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/cocov.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>BOTH</Name>
+	  <Title>Points and Contours</Title>
+	  <Abstract>Both points and contours of station data.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/cocov.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RCOXXR</Name>
+	<Title>Cloud Cover</Title>
+	<Abstract>Cloud Cover. Units: Code.
+Legend: Cloud Cover Codes: (GLOBE 1 and 2): CLR=Clear (0-9%), SCT=Scattered (10-50%), BKN=Broken (51-90%), OVC=Overcast (91-100%).  (GLOBE 2000): NON=No clouds (0% coverage), QLR=Clear (1-9%), ISO=Isolated (10-24%), SQT=Scattered (25-49%), BQN=Broken (50-89%), OVQ=Overcast (90-100%), OBS=Obscured Sky.</Abstract>
+        <Extent name="time" default="2005-01-27">1996-05-02/2005-01-27/P1D</Extent>
+        <Extent name="hour" default="12">00,06,12,18</Extent>
+
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/coxxr.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RCOSAT</Name>
+	<Title>Satellite Infrared Image</Title>
+	<Abstract>Satellite Infrared Image. Units: Code.</Abstract>
+        <Extent name="time" default="2005-02-17">1999-07-30/2005-02-17/P1D</Extent>
+        <Extent name="hour" default="12">00,06,12,18</Extent>
+
+	<Style>
+	  <Name>REFPIXEL</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/cosat.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>COTYP</Name>
+	<Title>GLOBE Cloud type</Title>
+	<Abstract>Cloud type collected by The GLOBE Program. Units: HHH|MM|LLLLL.
+Legend: Cloud Type Codes: 0=cirrus, 1=cirrocumulus, 2=cirrostratus, 3=altostratus, 4=altocumulus, 5=cumulus, 6=nimbostratus, 7=stratus, 8=stratocumulus, 9=cumulonimbus. (H=high, M=middle, L=low),  -- => No report</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/cotyp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>CONIM</Name>
+	<Title>GLOBE Nimbus Clouds</Title>
+	<Abstract>Nimbus Clouds collected by The GLOBE Program. Units: .
+Legend: N = Nimbus clouds, O = Non-nimbus clouds, B = Both, X = No clouds</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/conim.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>COTCO</Name>
+	<Title>GLOBE Contrail Cover</Title>
+	<Abstract>Contrail Cover collected by The GLOBE Program. Units: %.
+Legend: Percentage of sky in which contrails are observed</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/cotco.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>COTTY</Name>
+	<Title>GLOBE Contrail Type</Title>
+	<Abstract>Contrail Type collected by The GLOBE Program. Units: LNS.
+Legend: L=Short-lived contrail, N=Non-spreading contrail, S=Spreading contrail</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/cotty.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Land Cover</Title>
+      <Layer opaque="1" queryable="1">
+	<Name>RALBED</Name>
+	<Title>Albedo</Title>
+	<Abstract>Albedo. Units: %.</Abstract>
+        <Extent name="time" default="2005-01-27">1996-05-01/2005-01-27/P1D</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/albed.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RALBD4</Name>
+	<Title>Composite Albedo</Title>
+	<Abstract>Composite Albedo. Units: %.</Abstract>
+        <Extent name="time" default="2006-04-08">1996-05-02/2006-04-08/P1D</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/albd4.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RVGIDX</Name>
+	<Title>Vegetation Index</Title>
+	<Abstract>Vegetation Index. Units: Index.</Abstract>
+        <Extent name="time" default="2001-09-30">1991-01-31,1991-02-28,1991-03-31,1991-04-30,1991-05-31,1991-06-30,1991-07-31,1991-08-31,1991-09-30,1991-10-31,1991-11-30,1991-12-31,1995-01-31,1995-02-28,1995-03-31,1995-04-30,1995-05-31,1995-06-30,1995-07-31,1995-08-31,1995-09-30,1995-10-31,1995-11-30,1995-12-31,1996-01-31,1996-02-29,1996-03-31,1996-04-30,1996-05-31,1996-06-30,1996-07-31,1996-08-31,1996-09-30,1996-10-31,1996-11-30,1996-12-31,1997-01-31,1997-02-28,1997-03-31,1997-04-30,1997-05-31,1997-06-30,1997-07-31,1997-08-31,1997-09-30,1997-10-31,1997-11-30,1997-12-31,1998-01-31,1998-02-28,1998-03-31,1998-04-30,1998-05-31,1998-06-30,1998-07-31,1998-08-31,1998-09-30,1998-10-31,1998-11-30,1998-12-31,1999-01-31,1999-02-28,1999-03-31,1999-04-30,1999-05-31,1999-06-30,1999-07-31,1999-08-31,1999-09-30,1999-10-31,1999-11-30,1999-12-31,2000-01-31,2000-02-29,2000-03-31,2000-04-30,2000-05-31,2000-06-30,2000-07-31,2000-08-31,2000-09-30,2000-10-31,2000-11-30,2000-12-31,2001-01-31,2001-02-28,2001-03-31,2001-04-30,2001-05-31,2001-06-30,2001-07-31,2001-08-31,2001-09-30</Extent>
+	<Style>
+	  <Name>REFPIXEL</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/vgidx.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Hydrology (Surface Water)</Title>
+      <Layer>
+	<Name>SWTMP</Name>
+	<Title>GLOBE Water Temperature</Title>
+	<Abstract>Water Temperature collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swtmp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWPH</Name>
+	<Title>GLOBE Water pH</Title>
+	<Abstract>Water pH collected by The GLOBE Program. Units: .</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swph.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWALK</Name>
+	<Title>GLOBE Water Alkalinity</Title>
+	<Abstract>Water Alkalinity collected by The GLOBE Program. Units: mg/L.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swalk.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWCON</Name>
+	<Title>GLOBE Water Conductivity</Title>
+	<Abstract>Water Conductivity collected by The GLOBE Program. Units: microS/cm.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swcon.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWDO2</Name>
+	<Title>GLOBE Water Dissolved O2</Title>
+	<Abstract>Water Dissolved O2 collected by The GLOBE Program. Units: mg/L.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swdo2.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWNOX</Name>
+	<Title>GLOBE Total Nitrogen (NOx-N)</Title>
+	<Abstract>Total Nitrogen (NOx-N) collected by The GLOBE Program. Units: mg/L.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swnox.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWNO3</Name>
+	<Title>GLOBE Nitrate Nitrogen (NO3-N)</Title>
+	<Abstract>Nitrate Nitrogen (NO3-N) collected by The GLOBE Program. Units: mg/L.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swno3.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWNO2</Name>
+	<Title>GLOBE Nitrite Nitrogen (NO2-N)</Title>
+	<Abstract>Nitrite Nitrogen (NO2-N) collected by The GLOBE Program. Units: mg/L.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swno2.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWHSA</Name>
+	<Title>GLOBE Water Salinity (Hydrometer)</Title>
+	<Abstract>Water Salinity (Hydrometer) collected by The GLOBE Program. Units: ppt.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swhsa.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWTSA</Name>
+	<Title>GLOBE Water Salinity (Titration)</Title>
+	<Abstract>Water Salinity (Titration) collected by The GLOBE Program. Units: ppt.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swtsa.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWSEC</Name>
+	<Title>GLOBE Transparency - Secchi Disk</Title>
+	<Abstract>Transparency - Secchi Disk collected by The GLOBE Program. Units: m.
+Legend: > = Greater than tube depth</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swsec.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SWTUB</Name>
+	<Title>GLOBE Transparency - Transparency Tube</Title>
+	<Abstract>Transparency - Transparency Tube collected by The GLOBE Program. Units: cm.
+Legend: > = Greater than tube depth</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/swtub.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>REVXXP</Name>
+	<Title>Evaporation</Title>
+	<Abstract>Evaporation. Units: W/sq m.</Abstract>
+        <Extent name="time" default="2005-01-27">1996-05-02/2005-01-27/P1D</Extent>
+        <Extent name="hour" default="12">00,06,12,18</Extent>
+
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/evxxp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Soil Moisture</Title>
+      <Layer queryable="1">
+	<Name>RSM00C</Name>
+	<Title>Soil Moisture</Title>
+	<Abstract>Soil Moisture. Units: cm^3/cm^3.</Abstract>
+        <Extent name="time" default="2005-01-27">1996-05-01/2005-01-27/P1D</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/sm00c.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SMXXD</Name>
+	<Title>GLOBE Soil Moisture</Title>
+	<Abstract>Soil Moisture collected by The GLOBE Program. Units: g/g.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/smxxd.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SMTWC</Name>
+	<Title>GLOBE Depth-Weighted Soil Moisture</Title>
+	<Abstract>Depth-Weighted Soil Moisture collected by The GLOBE Program. Units: g/g.
+Legend: 1=STAR,2=TRANSECT,3=DEPTH,4=GYPSUM,5=WATERMARK,7=IRROMETER,8=SPECTRUM/WATCHDOG,6=OTHER</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/smtwc.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Soil Temperature</Title>
+      <Layer>
+	<Name>STXXT</Name>
+	<Title>GLOBE Local Noon Soil Temperature</Title>
+	<Abstract>Local Noon Soil Temperature collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="05">05,10,50</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/stxxt.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>STXXX</Name>
+	<Title>GLOBE Maximum Soil Temperature</Title>
+	<Abstract>Maximum Soil Temperature collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="05">05,10,50</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/stxxx.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>STXXN</Name>
+	<Title>GLOBE Minimum Soil Temperature</Title>
+	<Abstract>Minimum Soil Temperature collected by The GLOBE Program. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="05">05,10,50</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/stxxn.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer queryable="1">
+	<Name>RSTTMP</Name>
+	<Title>Soil Temperature</Title>
+	<Abstract>Soil Temperature. Units: deg C.</Abstract>
+        <Extent name="time" default="2005-01-27">1996-05-01/2005-01-27/P1D</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/sttmp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Soil Characterization</Title>
+      <Layer>
+	<Name>SCXXC</Name>
+	<Title>GLOBE Soil Color</Title>
+	<Abstract>Soil Color collected by The GLOBE Program. Units: Hue:Val/Chr.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxc.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXD</Name>
+	<Title>GLOBE Soil Bulk Density</Title>
+	<Abstract>Soil Bulk Density collected by The GLOBE Program. Units: g/mL.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxd.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXE</Name>
+	<Title>GLOBE Soil Particle Density</Title>
+	<Abstract>Soil Particle Density collected by The GLOBE Program. Units: g/mL.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxe.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXS</Name>
+	<Title>GLOBE Soil Porosity</Title>
+	<Abstract>Soil Porosity collected by The GLOBE Program. Units: %.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxs.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXH</Name>
+	<Title>GLOBE Soil pH</Title>
+	<Abstract>Soil pH collected by The GLOBE Program. Units: .</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxh.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXN</Name>
+	<Title>GLOBE Soil Nitrogen</Title>
+	<Abstract>Soil Nitrogen collected by The GLOBE Program. Units: .</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxn.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXP</Name>
+	<Title>GLOBE Soil Phosphorus</Title>
+	<Abstract>Soil Phosphorus collected by The GLOBE Program. Units: .</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXK</Name>
+	<Title>GLOBE Soil Potassium</Title>
+	<Abstract>Soil Potassium collected by The GLOBE Program. Units: .</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxk.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXT</Name>
+	<Title>GLOBE Soil Computed Texture</Title>
+	<Abstract>Soil Computed Texture collected by The GLOBE Program. Units: .
+Legend: Soil Texture Codes: S = Sand, LS = Loamy Sand, SL = Sandy Loam, L = Loam, SIL = Silt Loam, SI = Silt, SCL = Sandy Clay Loam, CL = Clay Loam, SICL = Silty Clay Loam, SC = Sandy Clay, C = Clay, SIC = Silty Clay.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxt.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXR</Name>
+	<Title>GLOBE Soil Rocks</Title>
+	<Abstract>Soil Rocks collected by The GLOBE Program. Units: .
+Legend: 0=Unchecked, 1=None, 2=Few, 3=Many</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxr.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXO</Name>
+	<Title>GLOBE Soil Roots</Title>
+	<Abstract>Soil Roots collected by The GLOBE Program. Units: .
+Legend: 0=Unchecked, 1=None, 2=Few, 3=Many</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxo.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>SCXXA</Name>
+	<Title>GLOBE Soil Carbonates</Title>
+	<Abstract>Soil Carbonates collected by The GLOBE Program. Units: .
+Legend: 0=Unchecked, 1=None, 2=Slight, 3=Strong</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+        <Extent name="depth" default="00">00,10,30,60,90</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/scxxa.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Land Cover/Biology</Title>
+      <Layer>
+	<Name>BTHGT</Name>
+	<Title>GLOBE Dominant Tree Height</Title>
+	<Abstract>Dominant Tree Height collected by The GLOBE Program. Units: m.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/bthgt.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BTDCF</Name>
+	<Title>GLOBE Dominant Tree Circumference</Title>
+	<Abstract>Dominant Tree Circumference collected by The GLOBE Program. Units: cm.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/btdcf.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BTCHT</Name>
+	<Title>GLOBE Co-dominant Tree Height</Title>
+	<Abstract>Co-dominant Tree Height collected by The GLOBE Program. Units: m.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/btcht.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BTCCF</Name>
+	<Title>GLOBE Co-dominant Tree Circumference</Title>
+	<Abstract>Co-dominant Tree Circumference collected by The GLOBE Program. Units: cm.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/btccf.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BTCCV</Name>
+	<Title>GLOBE Canopy Cover (Total)</Title>
+	<Abstract>Canopy Cover (Total) collected by The GLOBE Program. Units: %.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/btccv.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BGGCG</Name>
+	<Title>GLOBE Ground Cover (Green)</Title>
+	<Abstract>Ground Cover (Green) collected by The GLOBE Program. Units: %.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/bggcg.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BGGCB</Name>
+	<Title>GLOBE Ground Cover (Brown)</Title>
+	<Abstract>Ground Cover (Brown) collected by The GLOBE Program. Units: %.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/bggcb.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BGGCT</Name>
+	<Title>GLOBE Ground Cover (Total)</Title>
+	<Abstract>Ground Cover (Total) collected by The GLOBE Program. Units: %.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/bggct.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BGGBM</Name>
+	<Title>GLOBE Biomass (Green)</Title>
+	<Abstract>Biomass (Green) collected by The GLOBE Program. Units: g/m^2.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/bggbm.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>BGBBM</Name>
+	<Title>GLOBE Biomass (Brown)</Title>
+	<Abstract>Biomass (Brown) collected by The GLOBE Program. Units: g/m^2.</Abstract>
+        <Extent name="time" default="2007-02-02">1995-01-01/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/bgbbm.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>LCMUC</Name>
+	<Title>GLOBE MUC (LCS/BIO sites)</Title>
+	<Abstract>MUC (LCS/BIO sites) collected by The GLOBE Program. Units: .
+Legend: %3Cbr%3EModified UNESCO Classification (MUC)
+%3Cbr%3E%3Cb%3E0 - Closed Forest%3C/b%3E - Formed by trees at least 5 meters tall with their crowns (i.e. branches) interlocking.  The tree canopy covers at least 40% of the ground.
+%3Cbr%3E%3Cb%3E1 - Woodland%3C/b%3E - Comprised of open stands of trees at least 5 meters tall with crowns not interlocking.   The tree canopy covers at least 40% of the ground.  Definitions for Mainly Evergreen Woodland, Mainly Deciduous Woodland, and Extremely Xeromorphic Woodland are similar to forest definitions, with sparser stocking of individual trees.
+%3Cbr%3E%3Cb%3E2 - Shrubland or Thicket%3C/b%3E - The shrub canopy covers at least 40% of the ground and is composed of matted, clumped or clustered woody plants 0.5 to 5 meters tall.  Shrubland: most of the individual shrubs are not touching each other, often with grass growing between shrubs.  Shrublands are also further defined (like Forests and Woodlands) as Evergreen Broad-leaved, Evergreen Needle-leaved, Mainly Deciduous, etc.  Thicket: individual shrub branches are interlocked.
+%3Cbr%3E%3Cb%3E3 - Dwarf-Shrubland or Dwarf- Thicket%3C/b%3E - Shrubs rarely exceed 50 cm in height (sometimes called heaths or heathlike formations). The shrub canopy covers at least 40% of the ground. The shrub cover density distinguishes between Dwarf-Shrubland and Dwarf-Thicket classes.  Dwarf-Shrubland: individual dwarf-shrubs are isolated or in clumps.  Dwarf-Thicket: individual shrub branches are interlocked.
+%3Cbr%3E%3Cb%3E4 - Herbaceous Vegetation%3C/b%3E - Dominated by herbaceous growth of two major types: graminoids and forbs.  Graminoids include all herbaceous grasses and grass-like plants such as sedges (Carex), rushes (Juncus), and cattails (Typha).  Forbs are broad-leaved herbaceous plants such as clover (Trifolium), sunflowers (Helianthus), ferns, and milkweeds (Asclepias).  Total ground coverage must be greater than 60% herbaceous vegetation.
+%3Cbr%3E%3Cb%3E5 - Barren Land%3C/b%3E - Land with less than 40% vegetative cover.   Barren land has a limited ability to support life, and is usually made up of thin soil, sand, or rocks.
+%3Cbr%3E%3Cb%3E6 - Wetland%3C/b%3E - Marshes, swamps, bogs and other types of wetlands that are periodically or constantly saturated during the growing season.  This periodic or constant saturation produces soils with special chemical characteristics and vegetation specifically adapted to wet conditions.  The area must have at least 40% vegetative cover to be classified as a wetland.
+%3Cbr%3E%3Cb%3E7 - Open Water%3C/b%3E - Lakes, ponds, rivers and oceans.  The surface of the land is continually submerged by water greater than 2 meters deep and at least one hectare in size, or continually submerged in an actively flowing channel or subtidal zone.  Water should cover greater than 60% of the area.
+%3Cbr%3E%3Cb%3E8 - Cultivated Land%3C/b%3E - The ground is covered by greater than 60% non-native cultivated species (e.g., agricultural crops, cultivated short grasses, and lawns) and usually can be distinguished by the regular geometric patterns created by the lawns and fields.
+%3Cbr%3E%3Cb%3E9 - Urban%3C/b%3E - Areas developed for residential, commercial, industrial, or transportation uses.  Must be greater than 40% urban land cover.
+</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/lcmuc.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Number of GLOBE Measurements (Total)</Title>
+      <Layer>
+	<Name>XXTOT</Name>
+	<Title>GLOBE Total</Title>
+	<Abstract>Total collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxtot.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Number of GLOBE Measurements (Atmosphere)</Title>
+      <Layer>
+	<Name>XXATM</Name>
+	<Title>GLOBE All Atmospheric Data</Title>
+	<Abstract>All Atmospheric Data collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxatm.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XYXXA</Name>
+	<Title>GLOBE Air Temperature</Title>
+	<Abstract>Air Temperature collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xyxxa.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXPCP</Name>
+	<Title>GLOBE Precipitation</Title>
+	<Abstract>Precipitation collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxpcp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XYXXR</Name>
+	<Title>GLOBE Rain</Title>
+	<Abstract>Rain collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xyxxr.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXPS</Name>
+	<Title>GLOBE Snow</Title>
+	<Abstract>Snow collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxps.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXCO</Name>
+	<Title>GLOBE Clouds</Title>
+	<Abstract>Clouds collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxco.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXATC</Name>
+	<Title>GLOBE Atmospheric Chemistry</Title>
+	<Abstract>Atmospheric Chemistry collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxatc.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXPPH</Name>
+	<Title>GLOBE Precipitation pH</Title>
+	<Abstract>Precipitation pH collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxpph.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XYXXH</Name>
+	<Title>GLOBE Humidity</Title>
+	<Abstract>Humidity collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xyxxh.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXOZ</Name>
+	<Title>GLOBE Ozone</Title>
+	<Abstract>Ozone collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxoz.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXAZ</Name>
+	<Title>GLOBE Aerosols</Title>
+	<Abstract>Aerosols collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxaz.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XYXXP</Name>
+	<Title>GLOBE Barometric Pressure</Title>
+	<Abstract>Barometric Pressure collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xyxxp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XYXXW</Name>
+	<Title>GLOBE Wind</Title>
+	<Abstract>Wind collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xyxxw.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXSRF</Name>
+	<Title>GLOBE Surface Temperature</Title>
+	<Abstract>Surface Temperature collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxsrf.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Number of GLOBE Measurements (Hydrology)</Title>
+      <Layer>
+	<Name>XXSW</Name>
+	<Title>GLOBE All Hydrologic Data</Title>
+	<Abstract>All Hydrologic Data collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxsw.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXWT</Name>
+	<Title>GLOBE Water Temperature</Title>
+	<Abstract>Water Temperature collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxwt.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXWPH</Name>
+	<Title>GLOBE Water pH</Title>
+	<Abstract>Water pH collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxwph.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXWCO</Name>
+	<Title>GLOBE Water Conductivity</Title>
+	<Abstract>Water Conductivity collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxwco.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXWAL</Name>
+	<Title>GLOBE Water Alkalinity</Title>
+	<Abstract>Water Alkalinity collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxwal.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXWO2</Name>
+	<Title>GLOBE Water Dissolved O2</Title>
+	<Abstract>Water Dissolved O2 collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxwo2.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXWSA</Name>
+	<Title>GLOBE Water Salinity</Title>
+	<Abstract>Water Salinity collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxwsa.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXNO3</Name>
+	<Title>GLOBE Nitrogen</Title>
+	<Abstract>Nitrogen collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxno3.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXWTR</Name>
+	<Title>GLOBE Water Transparency</Title>
+	<Abstract>Water Transparency collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxwtr.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXFWI</Name>
+	<Title>GLOBE Freshwater Macroinvertebrates</Title>
+	<Abstract>Freshwater Macroinvertebrates collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxfwi.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Number of GLOBE Measurements (Land cover/Biology)</Title>
+      <Layer>
+	<Name>XXBI</Name>
+	<Title>GLOBE All Land Cover/Biology Data</Title>
+	<Abstract>All Land Cover/Biology Data collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxbi.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXBHG</Name>
+	<Title>GLOBE Tree Height</Title>
+	<Abstract>Tree Height collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxbhg.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXBGB</Name>
+	<Title>GLOBE Grass Biomass</Title>
+	<Abstract>Grass Biomass collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxbgb.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXLMC</Name>
+	<Title>GLOBE MUC Validation</Title>
+	<Abstract>MUC Validation collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxlmc.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Number of GLOBE Measurements (Metadata)</Title>
+      <Layer>
+	<Name>XXMET</Name>
+	<Title>GLOBE All Metadata</Title>
+	<Abstract>All Metadata collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxmet.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXGPS</Name>
+	<Title>GLOBE GPS</Title>
+	<Abstract>GPS collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxgps.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Number of GLOBE Measurements (Soil)</Title>
+      <Layer>
+	<Name>XXSOL</Name>
+	<Title>GLOBE All Soil Data</Title>
+	<Abstract>All Soil Data collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxsol.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXSM</Name>
+	<Title>GLOBE Soil Moisture</Title>
+	<Abstract>Soil Moisture collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxsm.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XYXXS</Name>
+	<Title>GLOBE Soil Temperature</Title>
+	<Abstract>Soil Temperature collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xyxxs.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXSF</Name>
+	<Title>GLOBE Soil Infiltration</Title>
+	<Abstract>Soil Infiltration collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxsf.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXSC</Name>
+	<Title>GLOBE Soil Characterization</Title>
+	<Abstract>Soil Characterization collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxsc.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXSHO</Name>
+	<Title>GLOBE Soil Horizon Depths</Title>
+	<Abstract>Soil Horizon Depths collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxsho.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXSPH</Name>
+	<Title>GLOBE Soil pH</Title>
+	<Abstract>Soil pH collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxsph.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>XXNPK</Name>
+	<Title>GLOBE Soil NPK</Title>
+	<Abstract>Soil NPK collected by The GLOBE Program. Units: #.</Abstract>
+        <Extent name="time" default="2007-02-02">2007-02-02/2007-02-02/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/xxnpk.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>World Weather Station Data</Title>
+      <Layer>
+	<Name>NTMAX</Name>
+	<Title>WWS Maximum Temperature</Title>
+	<Abstract>Maximum Temperature from world weather stations. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-01-31">1998-06-01/2007-01-31/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/ntmax.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>NTMIN</Name>
+	<Title>WWS Minimum Temperature</Title>
+	<Abstract>Minimum Temperature from world weather stations. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-01-31">1998-06-01/2007-01-31/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/ntmin.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>NTMEA</Name>
+	<Title>WWS Average Temperature</Title>
+	<Abstract>Average Temperature from world weather stations. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-01-31">1998-06-01/2007-01-31/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/ntmea.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>NHXXD</Name>
+	<Title>WWS Dew Point</Title>
+	<Abstract>Dew Point from world weather stations. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-01-31">1998-06-01/2007-01-31/P1D</Extent>
+        <Extent name="hour" default="12">00,06,12,18</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/nhxxd.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>NHXXR</Name>
+	<Title>WWS Relative Humidity</Title>
+	<Abstract>Relative Humidity from world weather stations. Units: %.</Abstract>
+        <Extent name="time" default="2007-01-31">1998-06-01/2007-01-31/P1D</Extent>
+        <Extent name="hour" default="12">00,06,12,18</Extent>
+
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/nhxxr.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>NTDIF</Name>
+	<Title>WWS Temperature Range</Title>
+	<Abstract>Temperature Range from world weather stations. Units: deg C.</Abstract>
+        <Extent name="time" default="2007-01-31">1998-06-01/2007-01-31/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/ntdif.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Precipitation</Title>
+      <Layer>
+	<Name>NPPCP</Name>
+	<Title>WWS Precipitation</Title>
+	<Abstract>Precipitation from world weather stations. Units: mm.
+Legend: M,Mult = report covered multiple days. T = Trace precipitation</Abstract>
+        <Extent name="time" default="2007-01-31">1998-06-01/2007-01-31/P1D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/nppcp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>El Nino/Southern Oscillation</Title>
+      <Layer>
+	<Name>EMTMP</Name>
+	<Title>Temperature (Monthly)</Title>
+	<Abstract>Temperature (Monthly). Units: deg C.</Abstract>
+        <Extent name="time" default="1999-03-31">1997-10-31,1997-11-30,1997-12-31,1998-01-31,1998-02-28,1998-03-31,1998-04-30,1998-05-31,1998-06-30,1998-07-31,1998-08-31,1998-09-30,1998-10-31,1998-11-30,1998-12-31,1999-01-31,1999-02-28,1999-03-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/emtmp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>EQTMP</Name>
+	<Title>Temperature (Quarterly)</Title>
+	<Abstract>Temperature (Quarterly). Units: deg C.</Abstract>
+        <Extent name="time" default="1999-03-31">1997-12-31,1998-01-31,1998-02-28,1998-03-31,1998-04-30,1998-05-31,1998-06-30,1998-07-31,1998-08-31,1998-09-30,1998-10-31,1998-11-30,1998-12-31,1999-01-31,1999-02-28,1999-03-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/eqtmp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>EMPCP</Name>
+	<Title>Precipitation (Monthly)</Title>
+	<Abstract>Precipitation (Monthly). Units: mm.</Abstract>
+        <Extent name="time" default="1999-03-31">1997-10-31,1997-11-30,1997-12-31,1998-01-31,1998-02-28,1998-03-31,1998-04-30,1998-05-31,1998-06-30,1998-07-31,1998-08-31,1998-09-30,1998-10-31,1998-11-30,1998-12-31,1999-01-31,1999-02-28,1999-03-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/empcp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>EQPCP</Name>
+	<Title>Precipitation (Quarterly)</Title>
+	<Abstract>Precipitation (Quarterly). Units: mm.</Abstract>
+        <Extent name="time" default="1999-03-31">1997-12-31,1998-01-31,1998-02-28,1998-03-31,1998-04-30,1998-05-31,1998-06-30,1998-07-31,1998-08-31,1998-09-30,1998-10-31,1998-11-30,1998-12-31,1999-01-31,1999-02-28,1999-03-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/eqpcp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>EMSST</Name>
+	<Title>Sea Surface Temperature (Monthly)</Title>
+	<Abstract>Sea Surface Temperature (Monthly). Units: deg C.</Abstract>
+        <Extent name="time" default="1999-03-31">1997-10-31,1997-11-30,1997-12-31,1998-01-31,1998-02-28,1998-03-31,1998-04-30,1998-05-31,1998-06-30,1998-07-31,1998-08-31,1998-09-30,1998-10-31,1998-11-30,1998-12-31,1999-01-31,1999-02-28,1999-03-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/emsst.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>EQSST</Name>
+	<Title>Sea Surface Temperature (Quarterly)</Title>
+	<Abstract>Sea Surface Temperature (Quarterly). Units: deg C.</Abstract>
+        <Extent name="time" default="1999-03-31">1997-12-31,1998-01-31,1998-02-28,1998-03-31,1998-04-30,1998-05-31,1998-06-30,1998-07-31,1998-08-31,1998-09-30,1998-10-31,1998-11-30,1998-12-31,1999-01-31,1999-02-28,1999-03-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/eqsst.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>LTMEA</Name>
+	<Title>Temperature, All Years</Title>
+	<Abstract>Temperature, All Years. Units: deg C.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/ltmea.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>ENMEA</Name>
+	<Title>Temperature, El Nino Years</Title>
+	<Abstract>Temperature, El Nino Years. Units: deg C.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/enmea.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>LNMEA</Name>
+	<Title>Temperature, La Nina Years</Title>
+	<Abstract>Temperature, La Nina Years. Units: deg C.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/lnmea.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>NOMEA</Name>
+	<Title>Temperature, Normal Years</Title>
+	<Abstract>Temperature, Normal Years. Units: deg C.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/nomea.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>NLMEA</Name>
+	<Title>Temperature, non-El Nino Years</Title>
+	<Abstract>Temperature, non-El Nino Years. Units: deg C.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/nlmea.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>LTPCP</Name>
+	<Title>Precipitation, All Years</Title>
+	<Abstract>Precipitation, All Years. Units: mm.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/ltpcp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>ENPCP</Name>
+	<Title>Precipitation, El Nino Years</Title>
+	<Abstract>Precipitation, El Nino Years. Units: mm.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/enpcp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>LNPCP</Name>
+	<Title>Precipitation, La Nina Years</Title>
+	<Abstract>Precipitation, La Nina Years. Units: mm.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/lnpcp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>NOPCP</Name>
+	<Title>Precipitation, Normal Years</Title>
+	<Abstract>Precipitation, Normal Years. Units: mm.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/nopcp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>NLPCP</Name>
+	<Title>Precipitation, non-El Nino</Title>
+	<Abstract>Precipitation, non-El Nino. Units: mm.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/nlpcp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>TENNO</Name>
+	<Title>El Nino minus Normal</Title>
+	<Abstract>El Nino minus Normal. Units: deg C.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/tenno.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>TLNNO</Name>
+	<Title>La Nina minus Normal</Title>
+	<Abstract>La Nina minus Normal. Units: deg C.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/tlnno.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>TENLN</Name>
+	<Title>El Nino minus La Nina</Title>
+	<Abstract>El Nino minus La Nina. Units: deg C.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/tenln.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PENNO</Name>
+	<Title>El Nino minus Normal</Title>
+	<Abstract>El Nino minus Normal. Units: mm.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/penno.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PLNNO</Name>
+	<Title>La Nina minus Normal</Title>
+	<Abstract>La Nina minus Normal. Units: mm.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/plnno.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>PENLN</Name>
+	<Title>El Nino minus La Nina</Title>
+	<Abstract>El Nino minus La Nina. Units: mm.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/penln.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Hydrology</Title>
+      <Layer queryable="1">
+	<Name>RHUZZZ</Name>
+	<Title>US Watersheds</Title>
+	<Abstract>US Watersheds. Units: .</Abstract>
+        <Extent name="time" default="1999-04-01">1999-04-01</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/huzzz.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer queryable="1">
+	<Name>RHCA00</Name>
+	<Title>CA Watersheds</Title>
+	<Abstract>CA Watersheds. Units: .</Abstract>
+        <Extent name="time" default="1999-04-01">1999-04-01</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/hca00.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>Radiation Budget</Title>
+      <Layer opaque="1" queryable="1">
+	<Name>RRBTOA</Name>
+	<Title>Top of Atmosphere Total Flux</Title>
+	<Abstract>Top of Atmosphere Total Flux. Units: W/m^2.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rbtoa.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RRBSWC</Name>
+	<Title>SW Clear Sky Downward Flux</Title>
+	<Abstract>SW Clear Sky Downward Flux. Units: W/m^2.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rbswc.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RRBSWD</Name>
+	<Title>SW All Sky Downward Flux</Title>
+	<Abstract>SW All Sky Downward Flux. Units: W/m^2.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rbswd.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RRBSWN</Name>
+	<Title>SW All Sky Net Flux</Title>
+	<Abstract>SW All Sky Net Flux. Units: W/m^2.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rbswn.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RRBLWC</Name>
+	<Title>LW Clear Sky Downward Flux</Title>
+	<Abstract>LW Clear Sky Downward Flux. Units: W/m^2.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rblwc.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RRBLWD</Name>
+	<Title>LW All Sky Downward Flux</Title>
+	<Abstract>LW All Sky Downward Flux. Units: W/m^2.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rblwd.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer opaque="1" queryable="1">
+	<Name>RRBLWN</Name>
+	<Title>LW All Sky Net Flux</Title>
+	<Abstract>LW All Sky Net Flux. Units: W/m^2.</Abstract>
+        <Extent name="time" default="1990-12-31">1990-01-31,1990-02-28,1990-03-31,1990-04-30,1990-05-31,1990-06-30,1990-07-31,1990-08-31,1990-09-30,1990-10-31,1990-11-30,1990-12-31</Extent>
+	<Style>
+	  <Name>REFERENCE</Name>
+	  <Title>Color map</Title>
+	  <Abstract>Color on map indicates data value.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/rblwn.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+    <Layer>
+      <Title>NOPP (YOTO) Ocean Drifters</Title>
+      <Layer>
+	<Name>YOTMP</Name>
+	<Title>Sea Surface Temperature</Title>
+	<Abstract>Sea Surface Temperature from drifters provided by the National Oceanographic Partnership Program (NOPP)</Abstract>
+        <Extent name="time" default="2003-05-16">1998-03-22/2003-05-16/P3D</Extent>
+	<Style>
+	  <Name>POINTS</Name>
+	  <Title>Points</Title>
+	  <Abstract>Points marking each measurement station.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/yotmp.h.gif" />
+          </LegendURL>
+	</Style>
+	<Style>
+	  <Name>TRACKS</Name>
+	  <Title>Drifter Tracks</Title>
+	  <Abstract>Estimated path of a moving object.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/yotmp.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+      <Layer>
+	<Name>YOTRK</Name>
+	<Title>Tracks Colored by Drifter</Title>
+	<Abstract>Tracks Colored by Drifter from drifters provided by the National Oceanographic Partnership Program (NOPP)</Abstract>
+        <Extent name="time" default="2003-05-16">1998-03-22/2003-05-16/P3D</Extent>
+	<Style>
+	  <Name>TRACKS</Name>
+	  <Title>Drifter Tracks</Title>
+	  <Abstract>Estimated path of a moving object.</Abstract>
+          <LegendURL width="180" height="50">
+            <Format>image/gif</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink"
+             xlink:href="http://viz.globe.gov/gsfc/en/icons/colorbars/yotrk.h.gif" />
+          </LegendURL>
+	</Style>
+      </Layer>
+    </Layer>
+  </Layer>
+</Capability>
+</WMT_MS_Capabilities>

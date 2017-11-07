@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LayerSet Name="Dstile Ingested Images" ShowOnlyOneLayer="true" ShowAtStartup="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="LayerSet.xsd">
+  <QuadTileSet ShowAtStartup="true">
+    <Name>Layername</Name>
+    <DistanceAboveSurface>0</DistanceAboveSurface>
+    <BoundingBox>
+      <North>
+        <Value>90.0</Value>
+      </North>
+      <South>
+        <Value>-90.0</Value>
+      </South>
+      <West>
+        <Value>-180.0</Value>
+      </West>
+      <East>
+        <Value>180.0</Value>
+      </East>
+    </BoundingBox>
+    <TerrainMapped>true</TerrainMapped>
+    <RenderStruts>false</RenderStruts>
+    <ImageAccessor>
+      <LevelZeroTileSizeDegrees>1.0</LevelZeroTileSizeDegrees>
+      <NumberLevels>4</NumberLevels>
+      <TextureSizePixels>512</TextureSizePixels>
+      <ImageFileExtension>jpg</ImageFileExtension>
+      <PermanentDirectory>Data\Earth\Layername</PermanentDirectory>
+    </ImageAccessor>
+    <TransparentMinValue>0</TransparentMinValue>
+    <TransparentMaxValue>20</TransparentMaxValue>
+  </QuadTileSet>
+</LayerSet>
