@@ -259,7 +259,6 @@ namespace WorldWind.CMPlugins.OverviewForm
 
 			if(m_ToolbarItem != null)
 			{
-				Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
 				m_ToolbarItem.Dispose();
 				m_ToolbarItem = null;
 			}

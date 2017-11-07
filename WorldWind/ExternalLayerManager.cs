@@ -522,15 +522,6 @@ namespace WorldWind.CMPlugins.ExternalLayerManager
 		{
             Global.worldWindow.MouseUp += new MouseEventHandler(WorldWindow_MouseUp);
             drawArgs = Global.worldWindow.DrawArgs;
-			
-				
-			/*	m_ToolbarItem = new WorldWind.WindowsControlMenuButton(
-					"Naval Research Labs, Monterey -- \"Real-Time\" Weather",
-					Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Data\\Icons\\Interface\\nrl.png",
-					m_Form);
-			
-				Global.worldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
-			*/
 		}
 
         void WorldWindow_MouseUp(object sender, MouseEventArgs e)
@@ -652,7 +643,6 @@ namespace WorldWind.CMPlugins.ExternalLayerManager
 
 			if(m_ToolbarItem != null)
 			{
-				Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
 				m_ToolbarItem.Dispose();
 				m_ToolbarItem = null;
 			}

@@ -2315,7 +2315,6 @@ namespace WorldWind
 					Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Data\\Icons\\Interface\\search.png",
 					m_Form);
 			
-				Global.worldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
 			}
 		}
 
@@ -2332,7 +2331,6 @@ namespace WorldWind
 
 			if(m_ToolbarItem != null)
 			{
-				Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
 				m_ToolbarItem.Dispose();
 				m_ToolbarItem = null;
 			}

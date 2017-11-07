@@ -100,7 +100,6 @@ namespace WorldWind
             this.worldWindow.IsRenderDisabled = false;
             this.worldWindow.Location = new System.Drawing.Point(0, 0);
             this.worldWindow.Name = "worldWindow";
-            this.worldWindow.ShowLayerManager = false;
             this.worldWindow.Size = new System.Drawing.Size(990, 524);
             this.worldWindow.TabIndex = 0;
             // 
@@ -211,7 +210,6 @@ namespace WorldWind
                 Log.Write(Log.Levels.Debug, "CONF", "loading startup world...");
                 OpenStartupWorld();
 
-                this.worldWindow.ShowLayerManager = World.Settings.ShowLayerManager;
                 while (!this.splashScreen.IsDone)
                     System.Threading.Thread.Sleep(50);
                 // Force initial render to avoid showing random contents of frame buffer to user.
@@ -282,17 +280,14 @@ namespace WorldWind
             {
                 this.rapidFireModisManager = new RapidFireModisManager(this.worldWindow);
                 this.rapidFireModisManager.Icon = this.Icon;
-                this.worldWindow.MenuBar.AddToolsMenuButton(new WindowsControlMenuButton("Rapid Fire MODIS", Global.DirectoryPath + "\\Data\\Icons\\Interface\\modis.png", this.rapidFireModisManager));
             }
             this.wmsBrowser = new WMSBrowser(this.worldWindow);
             this.wmsBrowser.Icon = this.Icon;
-            this.worldWindow.MenuBar.AddToolsMenuButton(new WindowsControlMenuButton("WMS Browser", Global.DirectoryPath + "\\Data\\Icons\\Interface\\wms.png", this.wmsBrowser));
 
             if (this.worldWindow.CurrentWorld.IsEarth)
             {
                 this.animatedEarthMananger = new AnimatedEarthManager(this.worldWindow);
                 this.animatedEarthMananger.Icon = this.Icon;
-                this.worldWindow.MenuBar.AddToolsMenuButton(new WindowsControlMenuButton("Scientific Visualization Studio", Global.DirectoryPath + "\\Data\\Icons\\Interface\\svs2.png", this.animatedEarthMananger));
             }
         }
 
@@ -394,7 +389,7 @@ namespace WorldWind
             {
                 try
                 {
-                    this.worldWindow.ResetToolbar();
+                   // this.worldWindow.ResetToolbar();
                 }
                 catch
                 { }
@@ -461,7 +456,6 @@ namespace WorldWind
                 if (File.Exists(imagePath))
                 {
                     LayerShortcutMenuButton button = new LayerShortcutMenuButton(imagePath, ro);
-                    ww.MenuBar.AddLayersMenuButton(button);
                     //HACK: Temporary fix
                     if (ro.Name == "Placenames")
                         button.SetPushed(World.Settings.ShowPlacenames);

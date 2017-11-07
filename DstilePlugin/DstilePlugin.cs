@@ -1,15 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: Dstile Plugin
-// VERSION: 0.1
-// DESCRIPTION: Allows Drag and Drop Import of Imagery
-// DEVELOPER: Tisham Dhar
-// WEBSITE: http:\\www.apogee.com.au
-// REFERENCES: 
-//----------------------------------------------------------------------------
-//
-// Plugin was developed by Apogee Imaging International
-// This file is in the Public Domain, and comes with no warranty. 
-
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -17,8 +5,6 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using WorldWind;
-
-//WorldWind support classes
 using WorldWind.Renderable;
 
 namespace DstileGUI
@@ -26,10 +12,9 @@ namespace DstileGUI
     public class DstilePlugin : WorldWind.PluginEngine.Plugin
     {
         private DstileFrontEnd frontend;
-        private MenuItem tempMenu = new MenuItem();			// Temp menu item for storing file MenuItems
         private RenderableObjectList dstileLayers;
 
-        #region Accesor Methods
+        #region 获取方法
         public RenderableObjectList DstileLayers
         {
             get{return dstileLayers;}
@@ -38,30 +23,18 @@ namespace DstileGUI
 
         public override void Load()
         {
-            // Setup Drag&Drop functionality
+            //拖拽事件
             Global.worldWindow.DragEnter += new DragEventHandler(WorldWindow_DragEnter);
             Global.worldWindow.DragDrop += new DragEventHandler(WorldWindow_DragDrop);
             
-            // Add a menu item to the File menu and the Help menu
-            MenuItem loadMenuItem = new MenuItem();
-            loadMenuItem.Text = "Load Image File...";
-            loadMenuItem.Click += new EventHandler(loadMenu_Click);
             int mergeOrder = 0;
-            //TODO: Add Place Holder Dstile Layer
+            //添加对应的图层
             dstileLayers = new RenderableObjectList("Dstile Layers");
 
-            //Create GUI and keep in the background
+            //创建GUI和背景
             frontend = new DstileFrontEnd(this);
             frontend.Visible = false;
-            
-            //TODO: Add any existing Dstile based layers
             Global.worldWindow.CurrentWorld.RenderableObjects.Add(dstileLayers);
-            //from the Master XML
-        }
-
-        private void loadMenu_Click(object sender, EventArgs e)
-        {
-            showFrontEnd();
         }
         
         private void showFrontEnd()
@@ -75,7 +48,6 @@ namespace DstileGUI
                 frontend.Visible = true;
             }
         }
-        
 
         public override void Unload()
         {
@@ -89,9 +61,6 @@ namespace DstileGUI
             Global.worldWindow.DragEnter -= new DragEventHandler(WorldWindow_DragEnter);
             Global.worldWindow.DragDrop -= new DragEventHandler(WorldWindow_DragDrop);
 
-            
-            tempMenu.MenuItems.Clear();
-
             //TODO: Save if needed any present DSTile layers to
             //master xml
             //TODO: Remove Dstile added layers from Layer Manager
@@ -103,9 +72,9 @@ namespace DstileGUI
             base.Unload();
         }
 
-        #region Drag&Drop handling methods
+        #region 多拽方法
         /// <summary>
-        /// Checks if the object being dropped is a kml or kmz file
+        /// 检查是否是kml或kmz文件
         /// </summary>
         private void WorldWindow_DragEnter(object sender, DragEventArgs e)
         {
@@ -114,7 +83,7 @@ namespace DstileGUI
         }
 
         /// <summary>
-        /// Handles dropping of a kml/kmz file (by loading that file)
+        /// 处理 kml/kmz文件来加载文件
         /// </summary>
         private void WorldWindow_DragDrop(object sender, DragEventArgs e)
         {
@@ -132,7 +101,7 @@ namespace DstileGUI
         }
 
         /// <summary>
-        /// Determines if this plugin can handle the dropped item
+        /// 确定此插件是否可以处理已删除的项
         /// </summary>
         private static bool DragDropIsValid(DragEventArgs e)
         {

@@ -74,7 +74,6 @@ namespace GpsTracker
 			gpsTracker = new GpsTracker(this);
 			// Add the GPSTracker plugin to the World Wind tool bar 
             m_MenuButton = new WindowsControlMenuButton("Gps Tracker " + m_sOverlayVersion, m_sPluginDirectory + "\\gpstracker.png", this.gpsTracker);
-			Global.worldWindow.MenuBar.AddToolsMenuButton( m_MenuButton );
 			
 			base.Load();
 		}
@@ -84,9 +83,6 @@ namespace GpsTracker
 			// Clean up
 			gpsTracker.Close();
 			
-			//remove button...
-			Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_MenuButton);
-
 			pluginRemoveOverlay();
 
 			m_MenuButton=null;

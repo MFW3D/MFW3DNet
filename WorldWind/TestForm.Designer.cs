@@ -40,7 +40,6 @@
             this.worldWindow.IsRenderDisabled = false;
             this.worldWindow.Location = new System.Drawing.Point(0, 0);
             this.worldWindow.Name = "worldWindow";
-            this.worldWindow.ShowLayerManager = false;
             this.worldWindow.Size = new System.Drawing.Size(561, 392);
             this.worldWindow.TabIndex = 0;
             // 

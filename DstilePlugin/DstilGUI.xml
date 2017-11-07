@@ -61,17 +61,17 @@
         </member>
         <member name="M:DstileGUI.DstilePlugin.WorldWindow_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
             <summary>
-            Checks if the object being dropped is a kml or kmz file
+            检查是否是kml或kmz文件
             </summary>
         </member>
         <member name="M:DstileGUI.DstilePlugin.WorldWindow_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
             <summary>
-            Handles dropping of a kml/kmz file (by loading that file)
+            处理 kml/kmz文件来加载文件
             </summary>
         </member>
         <member name="M:DstileGUI.DstilePlugin.DragDropIsValid(System.Windows.Forms.DragEventArgs)">
             <summary>
-            Determines if this plugin can handle the dropped item
+            确定此插件是否可以处理已删除的项
             </summary>
         </member>
         <member name="F:DstileGUI.UserSrsInputForm.components">
@@ -93,7 +93,7 @@
         </member>
         <member name="T:WorldWind.GDALImageStore">
             <summary>
-            Loads Image Tiles from a gdal accessible dataset
+            从GDAL数据库中加载数据
             </summary>
         </member>
         <member name="M:WorldWind.GDALImageStore.#ctor(System.String,System.String,GDAL.Dataset,System.String)">

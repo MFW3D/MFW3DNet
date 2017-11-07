@@ -7266,11 +7266,6 @@
             Borrowed from FlightGear and Tom Miller's blog
             </summary>
         </member>
-        <member name="M:WorldWind.WorldWindow.ResetToolbar">
-            <summary>
-            重置菜单栏
-            </summary>
-        </member>
         <member name="M:WorldWind.WorldWindow.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
             Occurs when the control is redrawn and m_isRenderDisabled=true.

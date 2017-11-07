@@ -1,15 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: GDAL Based Terrain Loading Utility
-// VERSION: 0.1
-// DESCRIPTION: Allows Drag and Drop Import of Terrain
-// DEVELOPER: Tisham Dhar
-// WEBSITE: http:\\www.apogee.com.au
-// REFERENCES: 
-//----------------------------------------------------------------------------
-//
-// Plugin was developed by Apogee Imaging International
-// This file is in the Public Domain, and comes with no warranty. 
-
 using WorldWind.Renderable;
 using System;
 using System.Globalization;

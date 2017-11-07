@@ -40,11 +40,6 @@ namespace WorldWind
                     this.drawArgs.Dispose();
                     this.drawArgs = null;
                 }
-                if (this._menuBar != null)
-                {
-                    this._menuBar.Dispose();
-                    this._menuBar = null;
-                }
 
                 m_Device3d.Dispose();
 

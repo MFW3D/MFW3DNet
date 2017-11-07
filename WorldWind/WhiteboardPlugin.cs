@@ -68,7 +68,6 @@ namespace jhuapl.sample
 
 			// Add our menu button
 			m_menuButton = new WhiteboardMenuButton(this.PluginDirectory + @"\Plugins\Whiteboard\images\icons\APL4C.png", this);
-			Global.worldWindow.MenuBar.AddToolsMenuButton(m_menuButton);
 
 			// Add our navigation menu item
 			m_wbMenuItem = new System.Windows.Forms.MenuItem();
@@ -99,10 +98,6 @@ namespace jhuapl.sample
 		{
 			// Reset the bottom for the Layer Manager
 			m_menuButton.SetPushed(false);
-
-			// Clean up and remove menu item
-			//Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_menuButton);
-
 			base.Unload ();
 		}
 

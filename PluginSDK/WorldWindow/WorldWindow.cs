@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
-using WorldWind.Menu;
 using System.Collections;
 using WorldWind.Net.Wms;
 using Utility;
@@ -42,8 +41,6 @@ namespace WorldWind
         private string saveScreenShotFilePath;
         private ImageFileFormat saveScreenShotImageFileFormat = ImageFileFormat.Bmp;
         private bool m_WorkerThreadRunning;
-        private LayerManagerButton layerManagerButton;
-        private MenuBar _menuBar = new MenuBar(World.Settings.ToolbarAnchor, 90);
         private bool m_isRenderDisabled; // WW不活越的时候节省CPU
         private bool isMouseDragging;
         private Point mouseDownStartPosition = Point.Empty;
@@ -88,14 +85,6 @@ namespace WorldWind
                     this.drawArgs.WorldCamera = camera;
 
                     this.drawArgs.CurrentWorld = value;
-                    this.layerManagerButton = new LayerManagerButton(
-                        Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), @"Data\Icons\Interface\layer-manager2.png"),
-                        m_World);
-
-                    this._menuBar.AddToolsMenuButton(this.layerManagerButton, 0);
-                    this._menuBar.AddToolsMenuButton(new PositionMenuButton(Path.GetDirectoryName(Application.ExecutablePath) + "\\Data\\Icons\\Interface\\coordinates.png"), 1);
-                    this._menuBar.AddToolsMenuButton(new LatLonMenuButton(Path.GetDirectoryName(Application.ExecutablePath) + "\\Data\\Icons\\Interface\\lat-long.png", m_World), 2);
-                    this.layerManagerButton.SetPushed(World.Settings.ShowLayerManager);
 
                     // TODO: Decide how to load grids
                     m_World.RenderableObjects.Add(new Renderable.LatLongGrid(m_World));
@@ -117,28 +106,6 @@ namespace WorldWind
         public DrawArgs DrawArgs
         {
             get { return this.drawArgs; }
-        }
-        public MenuBar MenuBar
-        {
-            get
-            {
-                return this._menuBar;
-            }
-        }
-        public bool ShowLayerManager
-        {
-            get
-            {
-                if (this.layerManagerButton != null)
-                    return this.layerManagerButton.IsPushed();
-                else
-                    return false;
-            }
-            set
-            {
-                if (this.layerManagerButton != null)
-                    this.layerManagerButton.SetPushed(value);
-            }
         }
         public Cache Cache
         {
@@ -547,36 +514,6 @@ namespace WorldWind
             }
         }
 
-        /// <summary>
-        /// 重置菜单栏
-        /// </summary>
-        public void ResetToolbar()
-        {
-            lock (this._menuBar.LayersMenuButtons.SyncRoot)
-            {
-                foreach (IMenu m in this._menuBar.LayersMenuButtons)
-                {
-                    m.Dispose();
-                }
-                this._menuBar.LayersMenuButtons.Clear();
-            }
-
-            lock (this._menuBar.ToolsMenuButtons.SyncRoot)
-            {
-
-                for (int i = 0; i < this._menuBar.ToolsMenuButtons.Count; i++)
-                {
-                    IMenu m = (IMenu)this._menuBar.ToolsMenuButtons[i];
-                    if (m != null)
-                    {
-                        m.Dispose();
-                    }
-                }
-
-                this._menuBar.ToolsMenuButtons.Clear();
-            }
-        }
-
         #endregion
 
         #region 渲染方法
@@ -738,7 +675,6 @@ namespace WorldWind
                     */
                     RenderPositionInfo();
 
-                    _menuBar.Render(drawArgs);
                     m_FpsGraph.Render(drawArgs);
 
                     if (m_World.OnScreenMessages != null)
@@ -909,31 +845,12 @@ namespace WorldWind
 
             captionText = captionText.Trim();
             DrawTextFormat dtf = DrawTextFormat.NoClip | DrawTextFormat.WordBreak | DrawTextFormat.Right;
-            int x = 7;
-            int y = _menuBar != null && World.Settings.ShowToolbar && _menuBar.Anchor == MenuAnchor.Top ? 65 : 7;
-            Rectangle textRect = Rectangle.FromLTRB(x, y, this.Width - 8, this.Height - 8);
-
-            // Hide position info when toolbar is open
-            if (_menuBar.IsActive)
-            {
-                positionAlpha -= positionAlphaStep;
-                if (positionAlpha < positionAlphaMin)
-                {
-                    positionAlpha = positionAlphaMin;
-                }
-            }
-            else
-            {
-                positionAlpha += positionAlphaStep;
-                if (positionAlpha > positionAlphaMax)
-                    positionAlpha = positionAlphaMax;
-            }
+            positionAlpha += positionAlphaStep;
+            if (positionAlpha > positionAlphaMax)
+                positionAlpha = positionAlphaMax;
 
             int positionBackColor = positionAlpha << 24;
             int positionForeColor = (int)((uint)(positionAlpha << 24) + 0xffffffu);
-            this.drawArgs.defaultDrawingFont.DrawText(null, captionText, textRect, dtf, positionBackColor);
-            textRect.Offset(-1, -1);
-            this.drawArgs.defaultDrawingFont.DrawText(null, captionText, textRect, dtf, positionForeColor);
         }
 
         protected void DrawCrossHairs()
@@ -1011,9 +928,6 @@ namespace WorldWind
             }
             try
             {
-                if (this._menuBar.OnMouseWheel(e))
-                    return;
-
                 this.drawArgs.WorldCamera.ZoomStepped(e.Delta / 120.0f);
             }
             finally
@@ -1330,10 +1244,6 @@ namespace WorldWind
 
                 if (!handled)
                 {
-                    if (!this._menuBar.OnMouseDown(e))
-                    {
-
-                    }
                 }
             }
             finally
@@ -1385,8 +1295,6 @@ namespace WorldWind
 
                     if (!this.isMouseDragging)
                     {
-                        if (this._menuBar.OnMouseUp(e))
-                            return;
                     }
 
                     if (m_World == null)
@@ -1513,11 +1421,7 @@ namespace WorldWind
 
                     if (!this.isMouseDragging)
                     {
-                        if (this._menuBar.OnMouseMove(e))
-                        {
                             base.OnMouseMove(e);
-                            return;
-                        }
                     }
 
                     if (mouseDownStartPosition == Point.Empty)
@@ -1643,9 +1547,6 @@ namespace WorldWind
             {
                 return;
             }
-            if (_menuBar != null)
-                // reset menu bar mouse hover state.
-                _menuBar.OnMouseMove(new MouseEventArgs(MouseButtons.None, 0, -1, -1, 0));
             base.OnMouseLeave(e);
         }
 

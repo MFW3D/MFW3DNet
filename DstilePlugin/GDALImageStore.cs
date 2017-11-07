@@ -1,15 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: GDAL Based Image Loading Utility
-// VERSION: 0.1
-// DESCRIPTION: Allows Drag and Drop Import of Imagery
-// DEVELOPER: Tisham Dhar
-// WEBSITE: http:\\www.apogee.com.au
-// REFERENCES: 
-//----------------------------------------------------------------------------
-//
-// Plugin was developed by Apogee Imaging International
-// This file is in the Public Domain, and comes with no warranty. 
-
 using WorldWind.Renderable;
 using System;
 using System.Globalization;
@@ -21,14 +9,14 @@ using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
 using System.Xml;
 
-//GDAL Libraries
+//GDAL 库
 using GDAL;
 using OSR;
 
 namespace WorldWind
 {
     /// <summary>
-    /// Loads Image Tiles from a gdal accessible dataset
+    /// 从GDAL数据库中加载数据
     /// </summary>
     class GDALImageStore : ImageStore
     {

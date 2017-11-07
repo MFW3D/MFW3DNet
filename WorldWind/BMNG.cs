@@ -696,9 +696,6 @@ namespace NASA.Plugins
                     "NASA Blue Marble",
                     Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Data\\Icons\\Interface\\bmng.png",
                     m_BmngForm);
-
-                Global.worldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
-
                 base.Load();
             }
         }

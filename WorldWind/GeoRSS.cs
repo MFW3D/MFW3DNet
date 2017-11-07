@@ -74,7 +74,6 @@ namespace jhuapl.sample
 
             // Add our menu button
             m_menuButton = new GeoRSSMenuButton(this.PluginDirectory + @"\Plugins\GeoRSS\georss-large.png", this);
-            Global.worldWindow.MenuBar.AddToolsMenuButton(m_menuButton);
 
             // Add our navigation menu item
             m_geoRSSMenuItem = new System.Windows.Forms.MenuItem();

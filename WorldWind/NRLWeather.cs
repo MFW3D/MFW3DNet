@@ -782,8 +782,6 @@ namespace NASA.Plugins
 					"Naval Research Labs, Monterey -- \"Real-Time\" Weather",
 					Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath) + "\\Data\\Icons\\Interface\\nrl.png",
 					m_Form);
-			
-				Global.worldWindow.MenuBar.AddToolsMenuButton(m_ToolbarItem);
 			}
 		}
 
@@ -800,7 +798,6 @@ namespace NASA.Plugins
 
 			if(m_ToolbarItem != null)
 			{
-				Global.worldWindow.MenuBar.RemoveToolsMenuButton(m_ToolbarItem);
 				m_ToolbarItem.Dispose();
 				m_ToolbarItem = null;
 			}
