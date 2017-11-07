@@ -1166,14 +1166,6 @@
             Unloads our plugin
             </summary>
         </member>
-        <member name="M:WorldWind.WindowsControlMenuButton.#ctor(System.String,System.String,System.Windows.Forms.Control)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.WindowsControlMenuButton"/> class.
-            </summary>
-            <param name="name"></param>
-            <param name="iconFilePath"></param>
-            <param name="control"></param>
-        </member>
         <member name="T:WorldWind.WMSBrowser">
             <summary>
             WMS Browser dialog.
@@ -2177,6 +2169,144 @@
             <summary>
             Unloads our plugin
             </summary>
+        </member>
+        <member name="M:bNb.Plugins.GoogleMapsForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:bNb.Plugins.GoogleMapsForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:bNb.Plugins.VeReprojectTilesLayer.Initialize(WorldWind.DrawArgs)">
+            <summary>
+            Layer initialization code
+            </summary>
+        </member>
+        <member name="M:bNb.Plugins.VeReprojectTilesLayer.Update(WorldWind.DrawArgs)">
+            <summary>
+            Update layer (called from worker thread)
+            </summary>
+        </member>
+        <member name="M:bNb.Plugins.VeReprojectTilesLayer.Render(WorldWind.DrawArgs)">
+            <summary>
+            Draws the layer
+            </summary>
+        </member>
+        <member name="M:bNb.Plugins.VeReprojectTilesLayer.Dispose">
+            <summary>
+            Cleanup when layer is disabled
+            </summary>
+        </member>
+        <member name="M:bNb.Plugins.VeReprojectTilesLayer.PerformSelectionAction(WorldWind.DrawArgs)">
+            <summary>
+            Handle mouse click
+            </summary>
+            <returns>true if click was handled.</returns>
+        </member>
+        <member name="T:bNb.Plugins.VESettings">
+            <summary>
+            This class stores virtual earth settings
+            </summary>
+        </member>
+        <member name="F:bNb.Plugins.VESettings.zoomlevel">
+            <summary>
+            Layer Zoom Level
+            </summary>
+        </member>
+        <member name="F:bNb.Plugins.VESettings.layeron">
+            <summary>
+            Turn layer on
+            </summary>
+        </member>
+        <member name="F:bNb.Plugins.VESettings.terrain">
+            <summary>
+            Turn terrain on
+            </summary>
+        </member>
+        <member name="F:bNb.Plugins.VESettings.road">
+            <summary>
+            Layer types
+            </summary>
+        </member>
+        <member name="M:bNb.Plugins.VESettings.LoadSettingsFromFile(System.String)">
+            <summary>
+            Loads a serialized instance of the settings from the specified file
+            returns default values if the file doesn't exist or an error occurs
+            </summary>
+            <returns>The persisted settings from the file</returns>
+        </member>
+        <member name="M:bNb.Plugins.VESettings.SaveSettingsToFile(System.String,bNb.Plugins.VESettings)">
+            <summary>
+            Persists the settings to the specified filename
+            </summary>
+            <param name="file">The filename to use for saving</param>
+            <param name="settings">The instance of the Settings class to persist</param>
+        </member>
+        <member name="P:bNb.Plugins.VeTile.UL">
+            <summary>
+            Coordinates at upper left edge of image
+            </summary>
+        </member>
+        <member name="P:bNb.Plugins.VeTile.UR">
+            <summary>
+            Coordinates at upper right edge of image
+            </summary>
+        </member>
+        <member name="P:bNb.Plugins.VeTile.LL">
+            <summary>
+            Coordinates at lower left edge of image
+            </summary>
+        </member>
+        <member name="P:bNb.Plugins.VeTile.LR">
+            <summary>
+            Coordinates at lower right edge of image
+            </summary>
+        </member>
+        <member name="T:bNb.Plugins.UV">
+            <summary>
+            Sorry for lack of description, but this struct is kinda difficult 
+            to describe since it supports so many coordinate systems.
+            </summary>
+        </member>
+        <member name="T:bNb.Plugins.Projection">
+            <summary>
+            C# wrapper for proj.4 projection filter
+            http://proj.maptools.org/
+            </summary>
+        </member>
+        <member name="M:bNb.Plugins.Projection.pj_inv(bNb.Plugins.UV,System.IntPtr)">
+            <summary>
+            XY -> Lat/lon
+            </summary>
+            <param name="uv"></param>
+            <param name="projPJ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:bNb.Plugins.Projection.#ctor(System.String[])">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="initParameters">Proj.4 style list of options.
+            <sample>new string[]{ "proj=utm", "ellps=WGS84", "no.defs", "zone=32" }</sample>
+            </param>
+        </member>
+        <member name="M:bNb.Plugins.Projection.Forward(bNb.Plugins.UV)">
+            <summary>
+            Forward (Go from specified projection to lat/lon)
+            </summary>
+            <param name="uv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:bNb.Plugins.Projection.Inverse(bNb.Plugins.UV)">
+            <summary>
+            Inverse (Go from lat/lon to specified projection)
+            </summary>
+            <param name="uv"></param>
+            <returns></returns>
         </member>
         <member name="T:GpsTracker.CSVReader">
             <summary>
@@ -3618,16 +3748,6 @@
             </summary>
             <param name="xmlPath"></param>
             <param name="oldXmlPath"></param>
-        </member>
-        <member name="T:MapTools.ShapeLib">
-            <summary>
-            .NET Framework wrapper for Shapefile C Library V1.2.10
-            </summary>
-            <remarks>
-            Shapefile C Library is (c) 1998 Frank Warmerdam.  .NET wrapper provided by David Gancarz.  
-            Please send error reports or other suggestions regarding this wrapper class to:
-            dgancarz@cfl.rr.com or david.gancarz@cityoforlando.net
-            </remarks>
         </member>
         <member name="T:MapTools.ShapeLib.ShapeType">
             <summary>

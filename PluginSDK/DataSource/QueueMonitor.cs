@@ -205,12 +205,12 @@ namespace WorldWind.DataSource
 		{
             this.components = new System.ComponentModel.Container();
             this.listView = new System.Windows.Forms.ListView();
-            this.columnHeaderStartTime = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderState = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderProgress = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderDescription = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderBasePriority = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderPriority = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderState = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderProgress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderBasePriority = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderPriority = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenu = new System.Windows.Forms.ContextMenu();
             this.menuItemHeaders = new System.Windows.Forms.MenuItem();
             this.menuItemSpacer1 = new System.Windows.Forms.MenuItem();
@@ -263,9 +263,9 @@ namespace WorldWind.DataSource
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
             this.listView.VirtualMode = true;
-            this.listView.DoubleClick += new System.EventHandler(this.menuItemHeaders_Click);
             this.listView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView_ColumnClick);
             this.listView.RetrieveVirtualItem += new System.Windows.Forms.RetrieveVirtualItemEventHandler(this.listView_RetrieveVirtualItem);
+            this.listView.DoubleClick += new System.EventHandler(this.menuItemHeaders_Click);
             // 
             // columnHeaderStartTime
             // 
@@ -498,7 +498,7 @@ namespace WorldWind.DataSource
             // 
             // QueueMonitor
             // 
-            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.AutoScaleBaseSize = new System.Drawing.Size(6, 14);
             this.ClientSize = new System.Drawing.Size(768, 179);
             this.Controls.Add(this.listView);
             this.KeyPreview = true;

@@ -4,15 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace MapTools
 {
-	/// <summary>
-	/// .NET Framework wrapper for Shapefile C Library V1.2.10
-	/// </summary>
-	/// <remarks>
-	/// Shapefile C Library is (c) 1998 Frank Warmerdam.  .NET wrapper provided by David Gancarz.  
-	/// Please send error reports or other suggestions regarding this wrapper class to:
-	/// dgancarz@cfl.rr.com or david.gancarz@cityoforlando.net
-	/// </remarks>
- 
 	public class ShapeLib
 	{
 

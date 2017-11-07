@@ -142,39 +142,41 @@
       <Name>Tao.OpenGl.Glu</Name>
       <HintPath>..\bin\Debug\Tao.OpenGl.Glu.dll</HintPath>
     </Reference>
+    <ProjectReference Include="..\AltovaXML\AltovaXML.csproj">
+      <Project>{03aaa791-ec2d-4a90-abbf-45337e52dfd6}</Project>
+      <Name>AltovaXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Altova\Altova.csproj">
+      <Project>{d43e6c54-2df5-454e-9566-dffe2f3a6946}</Project>
+      <Name>Altova</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{87aa56b4-95ef-44a6-a3fe-ec77aff3991c}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RSS.NET\RSS.NET.csproj">
       <Project>{C42FC014-7E12-4FAF-9BC9-79BF1529440D}</Project>
       <Name>RSS.NET</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Name>Utilities</Name>
-      <Project>{19E069AA-4993-4CA3-8F80-CCB76E96E3ED}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
-    <ProjectReference Include="..\WebDownload\WebDownload.csproj">
-      <Name>WebDownload</Name>
-      <Project>{3B2110D8-D29C-4057-8192-2BFB39A56D54}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltitudeMode.cs">
+    <Compile Include="Common\AltitudeMode.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Angle.cs">
+    <Compile Include="Geometry\Angle.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AssemblyInfo.cs">
+    <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ConfigurationSaver.cs" />
+    <Compile Include="Common\ConfigurationSaver.cs" />
     <Compile Include="DataSource\DataRequest.cs" />
     <Compile Include="DataSource\DataRequestHTTP.cs" />
     <Compile Include="DataSource\DataStore.cs" />
     <Compile Include="DataSource\QueueMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DirectXProfiler.cs" />
+    <Compile Include="Common\DirectXProfiler.cs" />
     <Compile Include="EnterTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -200,8 +202,8 @@
     <Compile Include="GeoRSS\GeoRssForm.Designer.cs">
       <DependentUpon>GeoRssForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Icons.cs" />
-    <Compile Include="IconTexture.cs" />
+    <Compile Include="Renderable\Icons.cs" />
+    <Compile Include="Renderable\IconTexture.cs" />
     <Compile Include="InternalWebBrowser.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -209,133 +211,133 @@
     <Compile Include="KMLDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KMLIcon.cs" />
+    <Compile Include="Renderable\KMLIcon.cs" />
     <Compile Include="KMLReader\KMLLoader.cs" />
     <Compile Include="KMLReader\KMLNetworkLink.cs" />
     <Compile Include="KMLReader\KMLParser.cs" />
     <Compile Include="Menu\MenuBar.cs" />
     <Compile Include="Menu\MenuButton.cs" />
-    <Compile Include="ModelFeature.cs" />
-    <Compile Include="PointIcons.cs" />
-    <Compile Include="PointSpriteVertex.cs" />
-    <Compile Include="RayCasting.cs" />
-    <Compile Include="TrackIcon.cs" />
-    <Compile Include="WFSNameColors.cs" />
+    <Compile Include="Renderable\ModelFeature.cs" />
+    <Compile Include="Renderable\PointIcons.cs" />
+    <Compile Include="Geometry\PointSpriteVertex.cs" />
+    <Compile Include="Geometry\RayCasting.cs" />
+    <Compile Include="Renderable\TrackIcon.cs" />
+    <Compile Include="Core\WFSNameColors.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Renderable\Bar3D.cs" />
-    <Compile Include="BinaryTriangleTree.cs">
+    <Compile Include="Geometry\BinaryTriangleTree.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BoundaryLayer.cs">
+    <Compile Include="Geometry\BoundaryLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BoundingBox.cs">
+    <Compile Include="Geometry\BoundingBox.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BoundingSphere.cs">
+    <Compile Include="Geometry\BoundingSphere.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Cache.cs">
+    <Compile Include="Core\Cache.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Camera.cs">
+    <Compile Include="Core\Camera.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ConfigurationLoader.cs">
+    <Compile Include="Common\ConfigurationLoader.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DownloadableImageFromIconSet.cs">
+    <Compile Include="Common\DownloadableImageFromIconSet.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DrawArgs.cs">
+    <Compile Include="Common\DrawArgs.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GeographicBoundingBox.cs">
+    <Compile Include="Geometry\GeographicBoundingBox.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GeoSpatialDownloadRequest.cs">
+    <Compile Include="Geometry\GeoSpatialDownloadRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Icon.cs">
+    <Compile Include="Renderable\Icon.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IGlobe.cs">
+    <Compile Include="Core\IGlobe.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ImageHelper.cs">
+    <Compile Include="Common\ImageHelper.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ImageLayer.cs">
+    <Compile Include="Renderable\ImageLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ImageStore.cs">
+    <Compile Include="Common\ImageStore.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ImageTileService.cs">
+    <Compile Include="Common\ImageTileService.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IRenderable.cs">
+    <Compile Include="Renderable\IRenderable.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LatLongGrid.cs">
+    <Compile Include="Renderable\LatLongGrid.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LatLonMenuButton.cs">
+    <Compile Include="Menu\LatLonMenuButton.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="LayerManagerItemInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LinearRing.cs">
+    <Compile Include="Geometry\LinearRing.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LineFeature.cs">
+    <Compile Include="Renderable\LineFeature.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LineGraph.cs">
+    <Compile Include="Geometry\LineGraph.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LineString.cs">
+    <Compile Include="Geometry\LineString.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MathEngine.cs">
+    <Compile Include="Common\MathEngine.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Menu\Menu.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MeshLayer.cs">
+    <Compile Include="Renderable\MeshLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="NltImageStore.cs">
+    <Compile Include="Common\NltImageStore.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PathLine.cs">
+    <Compile Include="Renderable\PathLine.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PathList.cs">
+    <Compile Include="Renderable\PathList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PerformanceTimer.cs">
+    <Compile Include="Common\PerformanceTimer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Point2d.cs">
+    <Compile Include="Geometry\Point2d.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Point3d.cs">
+    <Compile Include="Geometry\Point3d.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Polygon.cs">
+    <Compile Include="Geometry\Polygon.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PolygonFeature.cs">
+    <Compile Include="Renderable\PolygonFeature.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PolygonLayer.cs">
+    <Compile Include="Renderable\PolygonLayer.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PolygonTriangulation\AnalyticGeometryException.cs">
@@ -356,61 +358,61 @@
     <Compile Include="PolygonTriangulation\Definition.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PositionMenuButton.cs">
+    <Compile Include="Menu\PositionMenuButton.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ProgressBar.cs">
+    <Compile Include="Geometry\ProgressBar.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ProjectedVectorRenderer.cs">
+    <Compile Include="Geometry\ProjectedVectorRenderer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ProjectedVectorTile.cs">
+    <Compile Include="Geometry\ProjectedVectorTile.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="QuadTile.cs">
+    <Compile Include="Geometry\QuadTile.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="QuadTileSet.cs">
+    <Compile Include="Geometry\QuadTileSet.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Quaterniond.cs">
+    <Compile Include="Geometry\Quaterniond.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RenderableObject.cs">
+    <Compile Include="Renderable\RenderableObject.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RenderableObjectList.cs">
+    <Compile Include="Renderable\RenderableObjectList.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Renderable\GeoSpatialDownloadRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ScreenOverlay.cs">
+    <Compile Include="Renderable\ScreenOverlay.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SettingsBase.cs">
+    <Compile Include="Common\SettingsBase.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ShapeFileInfoDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShapeFileLayer.cs">
+    <Compile Include="Renderable\ShapeFileLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ShapeLayer.cs">
+    <Compile Include="Renderable\ShapeLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SunCalculator.cs">
+    <Compile Include="Geometry\SunCalculator.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SurfaceImage.cs">
+    <Compile Include="Renderable\SurfaceImage.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SurfaceTile.cs">
+    <Compile Include="Geometry\SurfaceTile.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TerrainPath.cs">
+    <Compile Include="Renderable\TerrainPath.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Terrain\NltTerrainAccessor.cs">
@@ -425,11 +427,11 @@
     <Compile Include="Terrain\TerrainTileService.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TiledPlacenameSet.cs">
+    <Compile Include="Renderable\TiledPlacenameSet.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TiledWFSPlacenameSet.cs" />
-    <Compile Include="TimeKeeper.cs">
+    <Compile Include="Renderable\TiledWFSPlacenameSet.cs" />
+    <Compile Include="Common\TimeKeeper.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TimeSetterDialog.cs">
@@ -438,8 +440,8 @@
     <Compile Include="TimeSetterDialog.Designer.cs">
       <DependentUpon>TimeSetterDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Units.cs" />
-    <Compile Include="ViewFrustum.cs">
+    <Compile Include="Common\Units.cs" />
+    <Compile Include="Geometry\ViewFrustum.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="VisualControl\ColorBar.cs">
@@ -449,14 +451,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Renderable\WavingFlagLayer.cs" />
-    <Compile Include="Water.cs" />
-    <Compile Include="WidgetCollection.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="WidgetMenuButton.cs" />
-    <Compile Include="Widgets.LayerManager.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Renderable\Water.cs" />
+    <Compile Include="WMS\WMS_server.cs" />
+    <Compile Include="WMS\wms_server_listDoc.cs" />
+    <Compile Include="WMS\WMS_SERVER_LISTType.cs" />
+    <Compile Include="WorldWindow\Widgets\WidgetCollection.cs" />
+    <Compile Include="WorldWindow\Widgets\WidgetMenuButton.cs" />
     <Compile Include="Widgets\CompassWidget.cs" />
     <Compile Include="Widgets\ControlWidget.cs" />
     <Compile Include="Widgets\IWidgetCollection.cs" />
@@ -478,37 +478,37 @@
     <Compile Include="Widgets\PictureBox.cs" />
     <Compile Include="Widgets\TextBox.cs" />
     <Compile Include="Widgets\TextLabel.cs" />
-    <Compile Include="WMSLayerAccessor.cs">
+    <Compile Include="Core\WMSLayerAccessor.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="World.cs">
+    <Compile Include="Renderable\World.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldCamera.cs">
+    <Compile Include="Core\WorldCamera.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldSettings.cs">
+    <Compile Include="Core\WorldSettings.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldSurfaceRenderer.cs">
+    <Compile Include="WorldWindow\Widgets\WorldSurfaceRenderer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldWind.Widgets.PictureBox.cs">
+    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.PictureBox.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldWind.Widgets.RootWidget.cs">
+    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.RootWidget.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldWind.Widgets.TextBox.cs">
+    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.TextBox.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldWind.Widgets.TextLabel.cs">
+    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.TextLabel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldWindow.Widgets.Form.cs">
+    <Compile Include="WorldWindow\Widgets\WorldWindow.Widgets.Form.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldWindow.Widgets.Utilities.cs">
+    <Compile Include="WorldWindow\Widgets\WorldWindow.Widgets.Utilities.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="WorldWindow\NativeMethods.cs" />
@@ -518,10 +518,10 @@
     <Compile Include="WorldWindow\WorldWindow.Designer.cs">
       <DependentUpon>WorldWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="WorldWindSettings.cs">
+    <Compile Include="Core\WorldWindSettings.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldWindUri.cs">
+    <Compile Include="Core\WorldWindUri.cs">
       <SubType>Code</SubType>
     </Compile>
     <EmbeddedResource Include="GeoRSS\GeoRSSFeedControl.resx">
@@ -538,7 +538,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Shaders\grayscale.fx" />
-    <None Include="ImageTileRequest.cs">
+    <None Include="Common\ImageTileRequest.cs">
       <SubType>Code</SubType>
     </None>
     <EmbeddedResource Include="Shaders\SkyFromAtmosphere.fx" />
@@ -597,6 +597,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -1,5 +1,5 @@
 //========================= (UNCLASSIFIED) ==============================
-// Copyright © 2005-2006 The Johns Hopkins University /
+// Copyright ?2005-2006 The Johns Hopkins University /
 // Applied Physics Laboratory.  All rights reserved.
 //
 // WorldWind Source Code - Copyright 2005 NASA World Wind 
@@ -12,10 +12,10 @@
 // Copyright (c) 2006 The Johns Hopkins University. 
 //
 // This software was developed at The Johns Hopkins University/Applied 
-// Physics Laboratory (“JHU/APL”) that is the author thereof under the 
-// “work made for hire” provisions of the copyright law.  Permission is 
+// Physics Laboratory (“JHU/APL? that is the author thereof under the 
+// “work made for hire?provisions of the copyright law.  Permission is 
 // hereby granted, free of charge, to any person obtaining a copy of this 
-// software and associated documentation (the “Software”), to use the 
+// software and associated documentation (the “Software?, to use the 
 // Software without restriction, including without limitation the rights 
 // to copy, modify, merge, publish, distribute, sublicense, and/or sell 
 // copies of the Software, and to permit others to do so, subject to the 

@@ -235,8 +235,6 @@ namespace WorldWind.CMPlugins.OverviewForm
 	{
 		MenuItem m_MenuItem;
 		OverviewForm m_Form = null;
-		WorldWind.WindowsControlMenuButton m_ToolbarItem = null;
-
 		/// <summary>
 		/// Plugin entry point 
 		/// </summary>
@@ -255,12 +253,6 @@ namespace WorldWind.CMPlugins.OverviewForm
 			{
 				m_MenuItem.Dispose();
 				m_MenuItem = null;
-			}
-
-			if(m_ToolbarItem != null)
-			{
-				m_ToolbarItem.Dispose();
-				m_ToolbarItem = null;
 			}
 
 			if(m_Form != null)

@@ -1,0 +1,489 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Collab</name>
+    </assembly>
+    <members>
+        <member name="T:Collab.jhuapl.Util.CollabObj">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.CollabObj.InfoDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.CollabObj.PointsDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.CollabObj.CameraDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.CollabObj.InfoRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.CollabObj.PointsRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.CollabObj.CameraRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.CollabObj.InfoRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.CollabObj.PointsRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.CollabObj.CameraRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.ClassificationBanner">
+            <summary>
+            This is the classification banner for CollabSpace.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Dispose">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Initialize(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed) 
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.PerformSelectionAction(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed)
+            Called from UI thread = UI code safe in this function
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Render(WorldWind.DrawArgs)">
+            <summary>
+            This is where we do our rendering 
+            Called from UI thread = UI code safe in this function
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Update(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.Logger">
+            <summary>
+            Debug log functionality.  Writes output to a CSV file.
+            
+            Each entry is of the format:
+            <list>
+            <listheader><term>Column</term><description>Description</description></listheader>
+            <item><term>Timestamp</term><description>When log entry was entered.</description></item>
+            <item><term>Level</term><description>This is the entry level.  Used to filter for speed.  If the level is greater than the current logging level it is dropped</description></item>
+            <item><term>Category</term><description>This is a 4 character category string for filtering.</description></item>
+            <item><term>Latitude</term><description>This is the latitude recorded for this entry.</description></item>
+            <item><term>Longitude</term><description>This is the longitude recorded for this entry.</description></item>
+            <item><term>Altitude</term><description>This is the altitude recorded for this entry.</description></item>
+            <item><term>Message></term><description>This is the test message of the entry.  Try not to use commas in here.</description></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Util.Logger.Severity">
+            <summary>
+            Severity - not currently used
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.Logger.#ctor">
+            <summary>
+            Static class (Only static members)
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.Logger.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.Logger.Close">
+            <summary>
+            If there was an open log file it closes it. 
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Util.Logger.Open">
+            <summary>
+            Opens a new log file.  Closes any old ones.
+            </summary>
+            <returns>if the open was successful.</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Util.Logger.Open(System.String)">
+            <summary>
+            Opens a new log file.  Closes any old ones.
+            </summary>
+            <param name="name">The name of the file to open.  A timestamp and .csv suffix is always appended</param>
+            <returns>if the open was successful.</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Util.Logger.Write(System.Int32,System.String,System.Double,System.Double,System.Double,System.String,System.String[])">
+            <summary>
+            Logs a message to the CollabSpace log
+            </summary>
+            <param name="level">The log level for this message.  If greater than the 
+            current logging level it gets dropped on the floor.</param>
+            <param name="category">1 to 4 character long tag for categorizing the log entries.
+            If the category is longer than 4 characters it will be clipped.</param>
+            <param name="lat">The latitude for this log item</param>
+            <param name="lon">The longitude for this log item</param>
+            <param name="alt">The altitude for this log item</param>
+            <param name="name">The name of the object most relevant to his log message</param>
+            <param name="list">Comma separated list of strings to write to output</param>
+        </member>
+        <member name="M:Collab.jhuapl.Util.Logger.Write(System.Int32,System.String,System.Double,System.Double,System.Double,System.String,System.String)">
+            <summary>
+            Logs a message to the CollabSpace log
+            </summary>
+            <param name="level">The log level for this message.  If greater than the 
+            current logging level it gets dropped on the floor.</param>
+            <param name="category">1 to 4 character long tag for categorizing the log entries.
+            If the category is longer than 4 characters it will be clipped.</param>
+            <param name="lat">The latitude for this log item</param>
+            <param name="lon">The longitude for this log item</param>
+            <param name="alt">The altitude for this log item</param>
+            <param name="name">The name of the object most relevant to his log message</param>
+            <param name="message">The actual log messages to be written.</param>
+        </member>
+        <member name="M:Collab.jhuapl.Util.Logger.Write(System.String)">
+            <summary>
+            Logs a message to theCollabSpace log as an UNK category and 0 level and no LLA.
+            </summary>
+            <param name="message">The actual log messages to be written.</param>
+        </member>
+        <member name="M:Collab.jhuapl.Util.Logger.Write(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Logs a message to the CollabSpace log with specified category and level but zero'd LLA
+            </summary>
+            <param name="level">The log level for this message.  If greater than the 
+            current logging level it gets dropped on the floor.</param>
+            <param name="category">1 to 4 character long tag for categorizing the log entries.
+            If the category is longer than 4 characters it will be clipped.</param>
+            <param name="message">The actual log messages to be written.</param>
+        </member>
+        <member name="T:Collab.jhuapl.Whiteboard.DrawLayer">
+            <summary>
+            CS DrawLayer implements whiteboarding capability.  Users can draw basic shapes and
+            overlay them as terrain mapped paths.
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Whiteboard.DrawLayer.DrawMode">
+            <summary>
+            The current drawmode.
+            None = Draw nothing.
+            Hotspot = Adds an icon where you left mouse click.
+            PostIt = Adds a text block to where you left mouse click.
+            Polyline = Add a point per left mouse click. Right mouse to stop.		
+            Polygon = Add a point per left mouse click. Right mouse to stop.  Last segment to close polygon automatically added.
+            Freehand = Add points starting on mouse down until mouse up.'
+            Disabled = This draw layer is read-only.
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.DrawLayer.m_currPathLine">
+            <summary>
+            The path being built
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.DrawLayer.m_hotspot">
+            <summary>
+            The hotspot built;
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.DrawLayer.m_guideLine">
+            <summary>
+            A guideline to show where the line segment would be drawn if you left click
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.DrawLayer.m_currDrawMode">
+            <summary>
+            The current drawing mode.  Set to the desired shape when starting and reset 
+            to none when complete.
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.DrawLayer.m_firstLat">
+            <summary>
+            Latitude of first position
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.DrawLayer.m_firstLon">
+            <summary>
+            Longitude of first position
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.DrawLayer.m_firstAlt">
+            <summary>
+            Altitude of first position
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.DrawLayer.m_lastLat">
+            <summary>
+            Latitude of last position
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.DrawLayer.m_lastLon">
+            <summary>
+            Longitude of last position
+            </summary>
+        </member>
+        <member name="P:Collab.jhuapl.Whiteboard.DrawLayer.Writeable">
+            <summary>
+            Determines if the draw layer is writeable.  True = writeable, False = Read only.
+            </summary>
+        </member>
+        <member name="P:Collab.jhuapl.Whiteboard.DrawLayer.DrawLock">
+            <summary>
+            Determines if the draw layer stays in a draw mode when the current shape is complete.
+            True = keep drawing, False = go back to the none state when current drawing complete.
+            </summary>
+        </member>
+        <member name="P:Collab.jhuapl.Whiteboard.DrawLayer.DrawingMode">
+            <summary>
+            The specified drawing mode.  Used when locks is enabled to reset the current
+            draw mode for the next shape.
+            </summary>
+        </member>
+        <member name="P:Collab.jhuapl.Whiteboard.DrawLayer.MouseDragMode">
+            <summary>
+            Whther or not the mouse is currently in drag mode for drawlayers
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="name">The name of this drawing layer</param>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.BuildGuideLine(WorldWind.Angle,WorldWind.Angle)">
+            <summary>
+            Draw a line from the last point to current position
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.StopDrawing">
+            <summary>
+            Stops any drawing in progress and reset the drawmode to none.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.PauseDrawing">
+            <summary>
+            Stops any current drawing in progress and sets the current draw mode to none.  This
+            allows the next mouse down event to start a new drawing using the desired draw mode.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.DrawHotspot">
+            <summary>
+            Sets up drawing of a hotspot (icon) on the layer.  Pops up a dialog asking for 
+            hotspot bitmap, name, description and URL.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.DrawIncident">
+            <summary>
+            Sets up drawing of a incident (icon) on the layer.  Pops up a dialog asking for 
+            incident bitmap, name, description and URL.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.DrawPostIt">
+            <summary>
+            Sets up drawing of a text box on the layer.  Pops up a dialog asking for text to 
+            insert.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.DrawPolyline">
+            <summary>
+            Sets up drawing of a polyline.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.DrawPolygon">
+            <summary>
+            Sets up drawing of a polygon
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.DrawFreehand">
+            <summary>
+            Sets up drawing of a freehand shape.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.stopPoly">
+            <summary>
+            Stops the drawing of a polyline or polygon by completing the WW path object.
+            </summary>
+            <returns>Success or failure of building the final path object.</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.stopFreehand">
+            <summary>
+            Stops the drawing of a freehand shape.
+            </summary>
+            <returns>Success or failure of building the final path object.</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.stopHotspot">
+            <summary>
+            Stops the drawing of Hotspots.
+            </summary>
+            <returns>True</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.stopIncident">
+            <summary>
+            Stops the drawing of Incidents.
+            </summary>
+            <returns>True</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.getAvailablePathId">
+            <summary>
+            Gets the next available "unique" path id.
+            </summary>
+            <returns>Next path id</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Called when a key is pressed down.
+            </summary>
+            <param name="keyEvent"></param>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Called when a key is released.
+            </summary>
+            <param name="keyEvent"></param>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Called when a mouse button is pressed.  Depending on the draw mode this will either
+            start the drawing of a shape, add a point to the shape or draw the new object.
+            </summary>
+            <param name="e">Mouse event.</param>
+            <returns>Whether we've handled this event completely.  False allows another event
+            handler the opportunity to handle this mouse event.</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Called when the mose moves.
+            </summary>
+            <param name="e">Mouse event.</param>
+            <returns>Whether we've handled this event completely.  False allows another event
+            handler the opportunity to handle this mouse event.</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Called when a mouse button is released.
+            </summary>
+            <param name="e">Mouse event.</param>
+            <returns>Whether we've handled this event completely.  False allows another event
+            handler the opportunity to handle this mouse event.</returns>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Called when the mouse wheel is used.  Not implemented.
+            </summary>
+            <param name="e">Mouse Event.</param>
+            <returns>Whether we've handled this event completely.  False allows another event
+            handler the opportunity to handle this mouse event.</returns>
+        </member>
+        <member name="T:Collab.jhuapl.Whiteboard.Hotspot">
+            <summary>
+            A hotspot is a point of interest placed on the whiteboard
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.Hotspot.RenderLabel(WorldWind.DrawArgs,Microsoft.DirectX.Direct3D.Sprite,Microsoft.DirectX.Vector3,System.Int32,System.Collections.Generic.List{System.Drawing.Rectangle},System.Boolean)">
+            <summary>
+            Helper function to render icon label.  Broken out so that child classes can override this behavior.
+            </summary>
+            <param name="drawArgs"></param>
+            <param name="sprite"></param>
+            <param name="projectedPoint"></param>
+            <param name="color"></param>
+            <param name="isMouseOver">Whether we should render as a mouseover icon</param>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.Hotspot.CreateBitmap(System.Drawing.Color)">
+            <summary>
+            Creates a small 32x32 bitmap with circle of the specified color
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Collab.jhuapl.Whiteboard.HotspotForm">
+            <summary>
+            Summary description for HotspotForm.
+            </summary>
+        </member>
+        <member name="F:Collab.jhuapl.Whiteboard.HotspotForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.HotspotForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.HotspotForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Collab.jhuapl.Whiteboard.WhiteboardWidget">
+            <summary>
+            This form widget contains all the tools needed for whiteboard 
+            operations.
+            </summary>
+        </member>
+        <member name="P:Collab.jhuapl.Whiteboard.WhiteboardWidget.BasePath">
+            <summary>
+            The basepath for all icons/images
+            </summary>
+        </member>
+        <member name="P:Collab.jhuapl.Whiteboard.WhiteboardWidget.WhiteboardLayer">
+            <summary>
+            The whiteboard drawing layer
+            </summary>
+        </member>
+        <member name="P:Collab.jhuapl.Whiteboard.WhiteboardWidget.RootWidget">
+            <summary>
+            Top level treenode for the whiteboard widget
+            </summary>
+        </member>
+        <member name="P:Collab.jhuapl.Whiteboard.WhiteboardWidget.DrawWidget">
+            <summary>
+            The treenode that holds all the drawing tools
+            </summary>
+        </member>
+        <member name="P:Collab.jhuapl.Whiteboard.WhiteboardWidget.LockWidget">
+            <summary>
+            This widget enables draw lock.  Once draw lock is enabled every
+            mouse event triggers whatever drawing mode was last used.
+            </summary>
+        </member>
+        <member name="M:Collab.jhuapl.Whiteboard.WhiteboardWidget.BuildForm">
+            <summary>
+            Adds all out subwidgets
+            </summary>
+        </member>
+    </members>
+</doc>

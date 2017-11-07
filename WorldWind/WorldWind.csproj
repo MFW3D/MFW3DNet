@@ -7,7 +7,7 @@
     <ProjectGuid>{394E6BC1-62F8-4776-9FC5-25633A239433}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ApplicationIcon>images\logo.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>WorldWind</AssemblyName>
@@ -168,8 +168,12 @@
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\Collab\Collab.csproj">
-      <Project>{B86848BD-12A5-44F9-8464-DB387C64D9A6}</Project>
+      <Project>{b86848bd-12a5-44f9-8464-db387c64d9a6}</Project>
       <Name>Collab</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{87aa56b4-95ef-44a6-a3fe-ec77aff3991c}</Project>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ConfigurationWizard\ConfigurationWizard.csproj">
       <Name>ConfigurationWizard</Name>
@@ -193,24 +197,9 @@
       <Project>{467BCD43-F3D9-46A5-B7A8-3A8B11708E0E}</Project>
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
-    <ProjectReference Include="..\Utilities\Utilities.csproj">
-      <Name>Utilities</Name>
-      <Project>{19E069AA-4993-4CA3-8F80-CCB76E96E3ED}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
-    <ProjectReference Include="..\WebDownload\WebDownload.csproj">
-      <Name>WebDownload</Name>
-      <Project>{3B2110D8-D29C-4057-8192-2BFB39A56D54}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
     <ProjectReference Include="..\WiimoteLib\WiimoteLib.csproj">
       <Project>{37A555DF-7012-4B99-8A47-1C922A361E52}</Project>
       <Name>WiimoteLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\wms_server_list\wms_server_list.csproj">
-      <Name>wms_server_list</Name>
-      <Project>{8506197D-82DD-4848-A915-E451BAB97615}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
     <ProjectReference Include="..\WorldXmlDescriptor\WorldXmlDescriptor.csproj">
       <Name>WorldXmlDescriptor</Name>
@@ -219,45 +208,48 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Anaglyph.cs" />
-    <Compile Include="AnimatedEarthManager.cs">
+    <Compile Include="Plugins\Anaglyph.cs" />
+    <Compile Include="Forms\AnimatedEarthManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AssemblyInfo.cs">
+    <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Atmosphere.cs">
+    <Compile Include="Plugins\Atmosphere.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BMNG.cs">
+    <Compile Include="Forms\BMNG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BmngAboutDialog.cs">
+    <Compile Include="Forms\BmngAboutDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compass3D.cs" />
-    <Compile Include="CompassRose.cs">
+    <Compile Include="Plugins\Compass3D.cs" />
+    <Compile Include="Plugins\CompassRose.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DynamicCloudLayer.cs">
+    <Compile Include="Renderable\DynamicCloudLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DynamicClouds.cs">
+    <Compile Include="Plugins\DynamicClouds.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ExternalLayerManager.cs">
+    <Compile Include="Forms\ExternalLayerManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FileLoader.cs">
+    <Compile Include="Forms\FileLoader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FlickrPlugin.cs">
+    <Compile Include="Forms\FlickrPlugin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FloodLevel.cs" />
-    <Compile Include="GeoRSS.cs" />
+    <Compile Include="Plugins\FloodLevel.cs" />
+    <Compile Include="Plugins\GeoRSS.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="GlobeCursor.cs" />
+    <Compile Include="Plugins\GlobeCursor.cs" />
+    <Compile Include="Forms\GoogleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GpsPlugin\CSVParser.cs" />
     <Compile Include="GpsPlugin\GPSTracker.cs">
       <SubType>Form</SubType>
@@ -288,32 +280,32 @@
     <Compile Include="GpsPlugin\POIName.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MeasureToolNG.cs">
+    <Compile Include="Forms\MeasureToolNG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GotoDialog.cs">
+    <Compile Include="Forms\GotoDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="gpx.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Joystick.cs" />
-    <Compile Include="KMLImporter.cs" />
-    <Compile Include="LayerManager.cs" />
-    <Compile Include="LightController.cs">
+    <Compile Include="Plugins\Joystick.cs" />
+    <Compile Include="Plugins\KMLImporter.cs" />
+    <Compile Include="Plugins\LayerManager.cs" />
+    <Compile Include="Plugins\LightController.cs">
     </Compile>
-    <Compile Include="MeasureTool.cs">
+    <Compile Include="Plugins\MeasureTool.cs">
     </Compile>
-    <Compile Include="MovieRecorder.cs">
+    <Compile Include="Forms\MovieRecorder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NativeMethods.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="NrlMryAboutDialog.cs">
+    <Compile Include="Forms\NrlMryAboutDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NRLWeather.cs">
+    <Compile Include="Forms\NRLWeather.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OverviewForm\ImageTileCache.cs">
@@ -331,13 +323,13 @@
     <Compile Include="OverviewForm\ResourceCache.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PathMaker.cs">
+    <Compile Include="Forms\PathMaker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlaceBuilder.cs">
+    <Compile Include="Forms\PlaceBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlaceFinder.cs">
+    <Compile Include="Forms\PlaceFinder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PlaceListSettings.cs">
@@ -373,45 +365,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="PropertyBrowserForm.cs">
+    <Compile Include="Forms\PropertyBrowserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RapidFireModis.cs">
+    <Compile Include="Forms\RapidFireModis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScaleBarLegend.cs" />
-    <Compile Include="ShapeFileInfoTool.cs">
+    <Compile Include="Plugins\ScaleBarLegend.cs" />
+    <Compile Include="Plugins\ShapeFileInfoTool.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ShapeFileLoader.cs">
+    <Compile Include="Forms\ShapeFileLoader.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="shapelib.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Splash.cs">
+    <Compile Include="Forms\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stars3D.cs">
+    <Compile Include="Plugins\Stars3D.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TerrainManager.cs">
+    <Compile Include="Forms\TerrainManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TerrainManager.Designer.cs">
+    <Compile Include="Forms\TerrainManager.Designer.cs">
       <DependentUpon>TerrainManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimeController.cs" />
-    <Compile Include="WavingFlags.cs" />
-    <Compile Include="WhiteboardPlugin.cs" />
-    <Compile Include="WiimoteHeadTracker.cs" />
-    <Compile Include="WindowsControlMenuButton.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="WMSBrowser.cs">
+    <Compile Include="Plugins\TimeController.cs" />
+    <Compile Include="Plugins\WavingFlags.cs" />
+    <Compile Include="Plugins\WhiteboardPlugin.cs" />
+    <Compile Include="Plugins\WiimoteHeadTracker.cs" />
+    <Compile Include="Forms\WMSBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WMSBrowserNG.cs">
+    <Compile Include="Forms\WMSBrowserNG.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainApplication.cs">
@@ -423,31 +412,31 @@
     <Compile Include="WWListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="AnimatedEarthManager.resx">
+    <EmbeddedResource Include="Forms\AnimatedEarthManager.resx">
       <DependentUpon>AnimatedEarthManager.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="BMNG.resx">
+    <EmbeddedResource Include="Forms\BMNG.resx">
       <DependentUpon>BMNG.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="BmngAboutDialog.resx">
+    <EmbeddedResource Include="Forms\BmngAboutDialog.resx">
       <DependentUpon>BmngAboutDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExternalLayerManager.resx">
+    <EmbeddedResource Include="Forms\ExternalLayerManager.resx">
       <DependentUpon>ExternalLayerManager.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FlickrPlugin.resx">
+    <EmbeddedResource Include="Forms\FlickrPlugin.resx">
       <DependentUpon>FlickrPlugin.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FloodLevel.resx">
+    <EmbeddedResource Include="Plugins\FloodLevel.resx">
       <DependentUpon>FloodLevel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="GotoDialog.resx">
+    <EmbeddedResource Include="Forms\GotoDialog.resx">
       <DependentUpon>GotoDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -463,15 +452,15 @@
       <DependentUpon>POIName.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MeasureToolNG.resx">
+    <EmbeddedResource Include="Forms\MeasureToolNG.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MeasureToolNG.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NrlMryAboutDialog.resx">
+    <EmbeddedResource Include="Forms\NrlMryAboutDialog.resx">
       <DependentUpon>NrlMryAboutDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="NRLWeather.resx">
+    <EmbeddedResource Include="Forms\NRLWeather.resx">
       <DependentUpon>NRLWeather.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -484,15 +473,15 @@
     <EmbeddedResource Include="OverviewForm\OverviewToolbar.resx">
       <DependentUpon>OverviewToolbar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PathMaker.resx">
+    <EmbeddedResource Include="Forms\PathMaker.resx">
       <DependentUpon>PathMaker.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PlaceBuilder.resx">
+    <EmbeddedResource Include="Forms\PlaceBuilder.resx">
       <DependentUpon>PlaceBuilder.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PlaceFinder.resx">
+    <EmbeddedResource Include="Forms\PlaceFinder.resx">
       <DependentUpon>PlaceFinder.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -510,27 +499,27 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="PropertyBrowserForm.resx">
+    <EmbeddedResource Include="Forms\PropertyBrowserForm.resx">
       <DependentUpon>PropertyBrowserForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="RapidFireModis.resx">
+    <EmbeddedResource Include="Forms\RapidFireModis.resx">
       <DependentUpon>RapidFireModis.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShapeFileLoader.resx">
+    <EmbeddedResource Include="Forms\ShapeFileLoader.resx">
       <DependentUpon>ShapeFileLoader.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Splash.resx">
+    <EmbeddedResource Include="Forms\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="WMSBrowser.resx">
+    <EmbeddedResource Include="Forms\WMSBrowser.resx">
       <DependentUpon>WMSBrowser.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="WMSBrowserNG.resx">
+    <EmbeddedResource Include="Forms\WMSBrowserNG.resx">
       <SubType>Designer</SubType>
       <DependentUpon>WMSBrowserNG.cs</DependentUpon>
     </EmbeddedResource>
@@ -548,7 +537,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="buttons\stop.gif" />
-    <EmbeddedResource Include="FileLoader.resx">
+    <EmbeddedResource Include="Forms\FileLoader.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FileLoader.cs</DependentUpon>
     </EmbeddedResource>
@@ -560,12 +549,12 @@
       <DependentUpon>GpsTrackerPlugin.SourceSetup.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MovieRecorder.resx">
+    <EmbeddedResource Include="Forms\MovieRecorder.resx">
       <DependentUpon>MovieRecorder.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Shaders\clouds.fx" />
-    <EmbeddedResource Include="TerrainManager.resx">
+    <EmbeddedResource Include="Forms\TerrainManager.resx">
       <DependentUpon>TerrainManager.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -578,8 +567,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo.ico" />
+    <Content Include="images\logo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
