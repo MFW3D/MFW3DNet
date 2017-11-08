@@ -107,6 +107,10 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.VisualC" />
+    <Reference Include="ogr_csharp, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\ogr_csharp.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -244,6 +248,20 @@
     <Compile Include="LayerSet\ValueType2.cs" />
     <Compile Include="LayerSet\ValueType3.cs" />
     <Compile Include="LayerSet\ValueType4.cs" />
+    <Compile Include="OgrVector\NoDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrVector\NoDataForm.Designer.cs" />
+    <Compile Include="OgrVector\OgrVectorBase.cs" />
+    <Compile Include="OgrVector\OgrVectorImporterGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrVector\TextFilterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrVector\TextFilterDialog.Designer.cs" />
+    <Compile Include="OgrVector\VectorStyleParameters.cs" />
+    <Compile Include="OgrVector\WaitMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -611,6 +629,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>GeoRssForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OgrVector\NoDataForm.resx" />
+    <EmbeddedResource Include="OgrVector\OgrVectorImporterGUI.resx" />
+    <EmbeddedResource Include="OgrVector\TextFilterDialog.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

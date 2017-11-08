@@ -7436,6 +7436,83 @@
             Propagate proxy-related settings to statics in WebDownload class
             </summary>
         </member>
+        <member name="F:OgrVectorImporter.NoDataForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.NoDataForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OgrVectorImporter.NoDataForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OgrVectorImporter.VectorInfoSelector">
+            <summary>
+            Form to display a list of key fields from the dbf
+            </summary>
+        </member>
+        <member name="F:OgrVectorImporter.VectorInfoSelector.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.VectorInfoSelector.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OgrVectorImporter.VectorInfoSelector.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:OgrVectorImporter.TextFilterDialog.FilterString">
+            <summary>
+            Gets string for filter
+            </summary>
+        </member>
+        <member name="P:OgrVectorImporter.TextFilterDialog.FilterType">
+            <summary>
+            Gets type of filtering to perform
+            </summary>
+        </member>
+        <member name="F:OgrVectorImporter.TextFilterDialog.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.TextFilterDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OgrVectorImporter.TextFilterDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OgrVectorImporter.WaitMessage">
+            <summary>
+            渲染消息
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.WaitMessage.Update(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
         <member name="T:GeometryUtility.NonValidReturnException">
             <summary>
             Summary description for NoValidReturnException.

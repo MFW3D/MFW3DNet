@@ -1518,6 +1518,51 @@
               Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="M:OgrVectorImporter.OgrImporter.OgrVectorImporter_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Checks if the object being dropped is a kml or kmz file
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.OgrVectorImporter_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Handles dropping of a kml/kmz file (by loading that file)
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.DragDropIsValid(System.Windows.Forms.DragEventArgs)">
+            <summary>
+            Determines if this plugin can handle the dropped item
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.menuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Gets filename and loads it
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.GetFieldNames(OGR.Layer)">
+            <summary>
+            Fetch the field names from a layer
+            </summary>
+            <param name="ogrLayer">the layer</param>
+            <returns>Arraylist of strings</returns>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.LoadVectors">
+            <summary>
+            Loads the shp and adds it to the LM
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.getFWLoc">
+            <summary>
+            Gets fwtools dir location from user
+            </summary>
+        </member>
+        <member name="M:OgrVectorImporter.OgrImporter.LoadSaveXmlConfig(System.Boolean)">
+            <summary>
+            Restore/Save XML Configuration
+            </summary>
+            <param name="load">Specifies whether the settings are being loaded (true) or saved (false)</param>
+        </member>
         <member name="T:Atmosphere.Plugin.Atmosphere">
             <summary>
             The plugin (main class)

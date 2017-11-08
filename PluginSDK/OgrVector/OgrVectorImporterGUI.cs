@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 using System.IO;
 using System.Drawing;
 using WorldWind;
-using WorldWind.PluginEngine;
 using WorldWind.Renderable;
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
