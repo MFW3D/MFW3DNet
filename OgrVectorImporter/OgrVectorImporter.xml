@@ -48,21 +48,6 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:OgrVectorImporter.OgrImporter">
-            <summary>
-            Plugin to load data from an OGR source as vectors
-            </summary>
-        </member>
-        <member name="M:OgrVectorImporter.OgrImporter.Load">
-            <summary>
-            Plugin entry point - All plugins must implement this function
-            </summary>
-        </member>
-        <member name="M:OgrVectorImporter.OgrImporter.Unload">
-            <summary>
-            Unloads our plugin
-            </summary>
-        </member>
         <member name="M:OgrVectorImporter.OgrImporter.OgrVectorImporter_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
             <summary>
             Checks if the object being dropped is a kml or kmz file
@@ -148,47 +133,13 @@
         </member>
         <member name="T:OgrVectorImporter.WaitMessage">
             <summary>
-            Renders a message to the lower right corner (stolen from kmlimporter)
-            </summary>
-        </member>
-        <member name="M:OgrVectorImporter.WaitMessage.#ctor">
-            <summary>
-            Creates a new WaitMessage
-            </summary>
-        </member>
-        <member name="P:OgrVectorImporter.WaitMessage.Text">
-            <summary>
-            Gets/sets the message to be displayed
-            </summary>
-        </member>
-        <member name="M:OgrVectorImporter.WaitMessage.Render(WorldWind.DrawArgs)">
-            <summary>
-            This is where we do our rendering 
-            Called from UI thread = UI code safe in this function
-            </summary>
-        </member>
-        <member name="M:OgrVectorImporter.WaitMessage.Initialize(WorldWind.DrawArgs)">
-            <summary>
-            RenderableObject abstract member (needed) 
-            OBS: Worker thread (don't update UI directly from this thread)
+            渲染消息
             </summary>
         </member>
         <member name="M:OgrVectorImporter.WaitMessage.Update(WorldWind.DrawArgs)">
             <summary>
             RenderableObject abstract member (needed)
             OBS: Worker thread (don't update UI directly from this thread)
-            </summary>
-        </member>
-        <member name="M:OgrVectorImporter.WaitMessage.Dispose">
-            <summary>
-            RenderableObject abstract member (needed)
-            OBS: Worker thread (don't update UI directly from this thread)
-            </summary>
-        </member>
-        <member name="M:OgrVectorImporter.WaitMessage.PerformSelectionAction(WorldWind.DrawArgs)">
-            <summary>
-            RenderableObject abstract member (needed)
-            Called from UI thread = UI code safe in this function
             </summary>
         </member>
     </members>

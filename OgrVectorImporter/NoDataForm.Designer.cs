@@ -57,17 +57,17 @@ namespace OgrVectorImporter
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 13);
+            this.label1.Location = new System.Drawing.Point(50, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 13);
+            this.label1.Size = new System.Drawing.Size(179, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "Value representing \"no data\":";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(93, 34);
+            this.numericUpDown1.Location = new System.Drawing.Point(93, 31);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(60, 21);
             this.numericUpDown1.TabIndex = 1;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
@@ -78,30 +78,30 @@ namespace OgrVectorImporter
             this.pnlPolygon.Controls.Add(this.chbNoDataOutlinePolygon);
             this.pnlPolygon.Controls.Add(this.label4);
             this.pnlPolygon.Controls.Add(this.btnNoDataPolyColor);
-            this.pnlPolygon.Location = new System.Drawing.Point(9, 73);
+            this.pnlPolygon.Location = new System.Drawing.Point(9, 67);
             this.pnlPolygon.Name = "pnlPolygon";
-            this.pnlPolygon.Size = new System.Drawing.Size(228, 65);
+            this.pnlPolygon.Size = new System.Drawing.Size(228, 60);
             this.pnlPolygon.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(122, 12);
+            this.label5.Location = new System.Drawing.Point(122, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(47, 12);
             this.label5.TabIndex = 10;
             this.label5.Text = "Opacity";
             // 
             // numNoDataPolyAlpha
             // 
-            this.numNoDataPolyAlpha.Location = new System.Drawing.Point(171, 10);
+            this.numNoDataPolyAlpha.Location = new System.Drawing.Point(171, 9);
             this.numNoDataPolyAlpha.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.numNoDataPolyAlpha.Name = "numNoDataPolyAlpha";
-            this.numNoDataPolyAlpha.Size = new System.Drawing.Size(46, 20);
+            this.numNoDataPolyAlpha.Size = new System.Drawing.Size(46, 21);
             this.numNoDataPolyAlpha.TabIndex = 9;
             this.numNoDataPolyAlpha.Value = new decimal(new int[] {
             255,
@@ -115,9 +115,9 @@ namespace OgrVectorImporter
             this.chbNoDataOutlinePolygon.AutoSize = true;
             this.chbNoDataOutlinePolygon.Checked = true;
             this.chbNoDataOutlinePolygon.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chbNoDataOutlinePolygon.Location = new System.Drawing.Point(71, 40);
+            this.chbNoDataOutlinePolygon.Location = new System.Drawing.Point(71, 37);
             this.chbNoDataOutlinePolygon.Name = "chbNoDataOutlinePolygon";
-            this.chbNoDataOutlinePolygon.Size = new System.Drawing.Size(105, 17);
+            this.chbNoDataOutlinePolygon.Size = new System.Drawing.Size(120, 16);
             this.chbNoDataOutlinePolygon.TabIndex = 8;
             this.chbNoDataOutlinePolygon.Text = "Outline Polygons";
             this.chbNoDataOutlinePolygon.UseVisualStyleBackColor = true;
@@ -126,9 +126,9 @@ namespace OgrVectorImporter
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 12);
+            this.label4.Location = new System.Drawing.Point(6, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.Size = new System.Drawing.Size(71, 12);
             this.label4.TabIndex = 6;
             this.label4.Text = "Fill color:";
             // 
@@ -136,9 +136,9 @@ namespace OgrVectorImporter
             // 
             this.btnNoDataPolyColor.BackColor = System.Drawing.Color.Blue;
             this.btnNoDataPolyColor.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnNoDataPolyColor.Location = new System.Drawing.Point(68, 7);
+            this.btnNoDataPolyColor.Location = new System.Drawing.Point(78, 7);
             this.btnNoDataPolyColor.Name = "btnNoDataPolyColor";
-            this.btnNoDataPolyColor.Size = new System.Drawing.Size(32, 23);
+            this.btnNoDataPolyColor.Size = new System.Drawing.Size(32, 21);
             this.btnNoDataPolyColor.TabIndex = 7;
             this.btnNoDataPolyColor.UseVisualStyleBackColor = false;
             this.btnNoDataPolyColor.Click += new System.EventHandler(this.btnNoDataPolyColor_Click);
@@ -151,30 +151,30 @@ namespace OgrVectorImporter
             this.pnlLine.Controls.Add(this.numNoDataLineWidth);
             this.pnlLine.Controls.Add(this.btnNoDataLineColor);
             this.pnlLine.Controls.Add(this.label3);
-            this.pnlLine.Location = new System.Drawing.Point(9, 149);
+            this.pnlLine.Location = new System.Drawing.Point(9, 138);
             this.pnlLine.Name = "pnlLine";
-            this.pnlLine.Size = new System.Drawing.Size(228, 76);
+            this.pnlLine.Size = new System.Drawing.Size(228, 70);
             this.pnlLine.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(124, 11);
+            this.label6.Location = new System.Drawing.Point(124, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.Size = new System.Drawing.Size(47, 12);
             this.label6.TabIndex = 12;
             this.label6.Text = "Opacity";
             // 
             // numNoDataLineAlpha
             // 
-            this.numNoDataLineAlpha.Location = new System.Drawing.Point(173, 9);
+            this.numNoDataLineAlpha.Location = new System.Drawing.Point(173, 8);
             this.numNoDataLineAlpha.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.numNoDataLineAlpha.Name = "numNoDataLineAlpha";
-            this.numNoDataLineAlpha.Size = new System.Drawing.Size(46, 20);
+            this.numNoDataLineAlpha.Size = new System.Drawing.Size(46, 21);
             this.numNoDataLineAlpha.TabIndex = 11;
             this.numNoDataLineAlpha.Value = new decimal(new int[] {
             255,
@@ -186,9 +186,9 @@ namespace OgrVectorImporter
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 11);
+            this.label2.Location = new System.Drawing.Point(6, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(71, 12);
             this.label2.TabIndex = 4;
             this.label2.Text = "Line color:";
             // 
@@ -200,14 +200,14 @@ namespace OgrVectorImporter
             0,
             0,
             65536});
-            this.numNoDataLineWidth.Location = new System.Drawing.Point(114, 40);
+            this.numNoDataLineWidth.Location = new System.Drawing.Point(114, 37);
             this.numNoDataLineWidth.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             65536});
             this.numNoDataLineWidth.Name = "numNoDataLineWidth";
-            this.numNoDataLineWidth.Size = new System.Drawing.Size(54, 20);
+            this.numNoDataLineWidth.Size = new System.Drawing.Size(54, 21);
             this.numNoDataLineWidth.TabIndex = 7;
             this.numNoDataLineWidth.Value = new decimal(new int[] {
             1,
@@ -219,9 +219,9 @@ namespace OgrVectorImporter
             // btnNoDataLineColor
             // 
             this.btnNoDataLineColor.BackColor = System.Drawing.Color.Red;
-            this.btnNoDataLineColor.Location = new System.Drawing.Point(68, 6);
+            this.btnNoDataLineColor.Location = new System.Drawing.Point(78, 6);
             this.btnNoDataLineColor.Name = "btnNoDataLineColor";
-            this.btnNoDataLineColor.Size = new System.Drawing.Size(32, 23);
+            this.btnNoDataLineColor.Size = new System.Drawing.Size(32, 21);
             this.btnNoDataLineColor.TabIndex = 5;
             this.btnNoDataLineColor.UseVisualStyleBackColor = false;
             this.btnNoDataLineColor.Click += new System.EventHandler(this.btnNoDataLineColor_Click);
@@ -229,17 +229,17 @@ namespace OgrVectorImporter
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 42);
+            this.label3.Location = new System.Drawing.Point(22, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 6;
             this.label3.Text = "Line width";
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(44, 256);
+            this.btnOk.Location = new System.Drawing.Point(44, 236);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.Size = new System.Drawing.Size(75, 21);
             this.btnOk.TabIndex = 12;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -248,9 +248,9 @@ namespace OgrVectorImporter
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(127, 256);
+            this.btnCancel.Location = new System.Drawing.Point(127, 236);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(75, 21);
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -258,10 +258,10 @@ namespace OgrVectorImporter
             // NoDataForm
             // 
             this.AcceptButton = this.btnOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(246, 298);
+            this.ClientSize = new System.Drawing.Size(246, 275);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.pnlPolygon);

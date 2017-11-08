@@ -202,6 +202,8 @@
     <Compile Include="Forms\AnimatedEarthManager.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Plugins\NavigationPanel.cs" />
+    <Compile Include="Plugins\NavigationRing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

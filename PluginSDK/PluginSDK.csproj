@@ -166,6 +166,12 @@
     <Compile Include="Geometry\Angle.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GeoPortal3D\OldWidgets\Form.cs" />
+    <Compile Include="GeoPortal3D\OldWidgets\TextLabel.cs" />
+    <Compile Include="GeoPortal3D\OldWidgets\VisibleChangedHandler.cs" />
+    <Compile Include="GeoPortal3D\Widgets\Compass.cs" />
+    <Compile Include="GeoPortal3D\Widgets\Slider.cs" />
+    <Compile Include="GeoPortal3D\Widgets\SliderType.cs" />
     <Compile Include="LayerSet\BlueType.cs" />
     <Compile Include="LayerSet\BlueType2.cs" />
     <Compile Include="LayerSet\BoundingBoxOverlapType.cs" />

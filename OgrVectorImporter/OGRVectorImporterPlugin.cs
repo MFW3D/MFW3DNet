@@ -1,16 +1,3 @@
-//----------------------------------------------------------------------------
-// NAME: OGR Vector Importer
-// VERSION: 0.2
-// DESCRIPTION: Loads ogr format files into WW as vectors
-// DEVELOPER: Erik Newman
-// WEBSITE: 
-//----------------------------------------------------------------------------
-// 0.3  4  Apr 2007    Import icons, use filter, add drag & drop for shp
-// 0.2  1  Apr 2007    Use OGR instead of shapelib
-// 0.1  23 Jan 2007    First version
-//
-//----------------------------------------------------------------------------
-
 using System;
 using System.Collections;
 using System.Text;
@@ -31,9 +18,7 @@ using OGR;
 
 namespace OgrVectorImporter
 {
-    /// <summary>
-    /// Plugin to load data from an OGR source as vectors
-    /// </summary>
+    //OGR 数据插件
     public class OgrImporter : WorldWind.PluginEngine.Plugin
     {
         static string Name = "Imported vector files";
@@ -71,29 +56,19 @@ namespace OgrVectorImporter
         double noDataValue;
         double minDataValue, maxDataValue;
 
-
-        /// <summary>
-        /// Plugin entry point - All plugins must implement this function
-        /// </summary>
         public override void Load()
         {
             // Setup Drag&Drop functionality
             Global.worldWindow.DragEnter += new DragEventHandler(OgrVectorImporter_DragEnter);
             Global.worldWindow.DragDrop += new DragEventHandler(OgrVectorImporter_DragDrop);
-
-
             world = Global.worldWindow.CurrentWorld;
             layer = new RenderableObjectList(Name);
             world.RenderableObjects.Add(layer);
             waitMessage = new WaitMessage();
             layer.Add(waitMessage);
             LoadSaveXmlConfig(true);
-
         }
 
-        /// <summary>
-        /// Unloads our plugin
-        /// </summary>
         public override void Unload()
         {
             world.RenderableObjects.Remove(layer);
@@ -101,8 +76,7 @@ namespace OgrVectorImporter
             menuItem = null;
         }
 
-
-        #region Drag&Drop handling methods
+        #region 拖拽方法
         /// <summary>
         /// Checks if the object being dropped is a kml or kmz file
         /// </summary>
@@ -142,8 +116,6 @@ namespace OgrVectorImporter
             return false;
         }
         #endregion
-
-
         /// <summary>
         /// Gets filename and loads it
         /// </summary>
@@ -825,8 +797,6 @@ namespace OgrVectorImporter
                 MessageBox.Show(e.Message);
             }
         }
-
-
     }
 
     public enum TextFilterType

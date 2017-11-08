@@ -5,6 +5,7 @@ using System.Drawing;
 
 namespace OgrVectorImporter
 {
+    //矢量对象参数
     public class VectorStyleParameters
     {
         public Color PolygonColor = Color.Blue;
