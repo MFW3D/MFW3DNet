@@ -37,10 +37,11 @@ namespace WorldWind
 		{
 			InitializeComponent();
 			this.NavigateTo(startUrl);
-		}
+            this.webBrowser.Height = this.Height - this.webBrowserToolStrip.Height;
+        }
 
-		#region Public Methods
-		public void NavigateTo(string targetUrl)
+        #region Public Methods
+        public void NavigateTo(string targetUrl)
 		{
 			webBrowser.Navigate(targetUrl);
 			OnNavigate(targetUrl);
@@ -99,7 +100,6 @@ namespace WorldWind
 			this.webBrowser.Location = new System.Drawing.Point(0, 26);
 			this.webBrowser.Margin = new System.Windows.Forms.Padding(5);
 			this.webBrowser.Name = "webBrowser";
-			this.webBrowser.Height = this.Height - this.webBrowserToolStrip.Height;
 			this.webBrowser.Width = this.Width;
 			this.webBrowser.ScriptErrorsSuppressed = true;
 			this.webBrowser.TabIndex = 3;
@@ -250,9 +250,6 @@ namespace WorldWind
 		public class BrowserEventArgs : EventArgs
 		{
 		}
-
-
-
 	}
 }
 

@@ -25,7 +25,6 @@ namespace WorldWind.Menu
         void Dispose();
     }
 
-
     public class MenuCollection : IMenu
     {
         System.Collections.ArrayList _menus = new System.Collections.ArrayList();

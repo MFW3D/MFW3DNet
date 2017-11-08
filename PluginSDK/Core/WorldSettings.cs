@@ -155,7 +155,7 @@ namespace WorldWind
 		internal int scrollbarColor = System.Drawing.Color.FromArgb(170, 100, 100, 100).ToArgb();
 		internal int scrollbarHotColor = System.Drawing.Color.FromArgb(170, 255, 255, 255).ToArgb();
 		public int toolBarBackColor = System.Drawing.Color.FromArgb(100, 255, 255, 255).ToArgb();
-		internal bool showDownloadIndicator = true;
+		internal bool showDownloadIndicator = false;
 		internal bool outlineText = false;
 		internal bool showCompass = false;
         internal WFSNameColors nameColors = WFSNameColors.Default;

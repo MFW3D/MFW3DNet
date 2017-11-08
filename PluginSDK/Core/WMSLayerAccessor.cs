@@ -5,7 +5,7 @@ using System.Xml;
 namespace WorldWind.Net.Wms
 {
 	/// <summary>
-	/// Calculates URLs for WMS layers.
+	/// ¼ÆËãWMSÍ¼²ãµÄurl
 	/// </summary>
 	public class WmsImageStore : ImageStore
 	{
@@ -23,7 +23,6 @@ namespace WorldWind.Net.Wms
 		#endregion	
 
 		#region Properties
-		
 		public override bool IsDownloadableLayer
 		{
 			get
@@ -31,7 +30,6 @@ namespace WorldWind.Net.Wms
 				return true;
 			}
 		}
-
 		public virtual string ServerGetMapUrl
 		{
 			get
@@ -43,8 +41,6 @@ namespace WorldWind.Net.Wms
 				m_serverGetMapUrl = value;
 			}
 		}
-
-
         public virtual string Username
         {
             get
@@ -56,8 +52,6 @@ namespace WorldWind.Net.Wms
                 m_username = value;
             }
         }
-
-
         public virtual string Password
         {
             get
@@ -69,7 +63,6 @@ namespace WorldWind.Net.Wms
                 m_password = value;
             }
         }
-
 		public virtual string WMSLayerName
 		{
 			get
@@ -81,7 +74,6 @@ namespace WorldWind.Net.Wms
 				m_wmsLayerName = value;
 			}
 		}
-
 		public virtual string WMSLayerStyle
 		{
 			get
@@ -93,7 +85,6 @@ namespace WorldWind.Net.Wms
 				m_wmsLayerStyle = value;
 			}
 		}
-
 		public virtual string ImageFormat
 		{
 			get
@@ -105,7 +96,6 @@ namespace WorldWind.Net.Wms
 				m_imageFormat = value;
 			}
 		}
-
 		public virtual string Version
 		{
 			get
@@ -117,7 +107,6 @@ namespace WorldWind.Net.Wms
 				m_version = value;
 			}
 		}
-
 		/// <summary>
 		/// Bitmap width/height
 		/// </summary>
@@ -132,11 +121,9 @@ namespace WorldWind.Net.Wms
 				m_textureSizePixels = value;
 			}
 		}
-
 		#endregion
 
 		#region Public Methods
-
 		protected override string GetDownloadUrl(WorldWind.Renderable.QuadTile qt)
 		{
 			if(m_serverGetMapUrl.IndexOf('?')>=0)
@@ -169,7 +156,6 @@ namespace WorldWind.Net.Wms
 				return url;
 			}
 		}
-
         public override XmlNode ToXml(XmlDocument worldDoc)
         {
             XmlNode iaNode = base.ToXml(worldDoc);

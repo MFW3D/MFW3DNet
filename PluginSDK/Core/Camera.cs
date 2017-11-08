@@ -8,13 +8,10 @@ using WorldWind.Terrain;
 
 namespace WorldWind.Camera
 {
-	/// <summary>
-	/// Camera base class (simple camera)
-	/// </summary>
 	public class CameraBase
 	{
-        protected short _terrainElevation;              // at the camera target position (not under the camera)
-        protected short _terrainElevationUnderCamera;   // right under the camera
+        protected short _terrainElevation;              // camera目标位置
+        protected short _terrainElevationUnderCamera;   // 相机正下方
         protected double _worldRadius;
 
 		protected Angle _latitude;
@@ -23,8 +20,8 @@ namespace WorldWind.Camera
 		protected Angle _tilt;
         protected Angle _swivel = Angle.FromDegrees(0.0);
 		protected Angle _bank;
-		protected double _distance; // Distance from eye to target
-		protected double _altitude; // Altitude above sea level
+		protected double _distance; // 相机到目标的距离
+		protected double _altitude; // 海平面高度
 		//protected Quaternion _orientation;
 		protected Quaternion4d m_Orientation;
 
@@ -42,8 +39,8 @@ namespace WorldWind.Camera
         protected static readonly double minimumAltitude = 100;
 		protected static double maximumAltitude = double.MaxValue;
 
-		protected Matrix m_ProjectionMatrix; // Projection matrix used in last render.
-		protected Matrix m_ViewMatrix; // View matrix used in last render.
+		protected Matrix m_ProjectionMatrix; // 投影矩阵
+		protected Matrix m_ViewMatrix; // 视图矩阵.
 		protected Matrix m_WorldMatrix = Matrix.Identity;
 
 		protected Angle viewRange;

@@ -6,17 +6,11 @@ using WorldWind.Renderable;
 namespace WorldWind.Net
 {
 	/// <summary>
-	/// Image tile download request
+	/// 分块图片请求
 	/// </summary>
 	public class ImageTileRequest : GeoSpatialDownloadRequest
 	{
 		QuadTile m_quadTile;
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.Net.ImageTileRequest"/> class.
-		/// </summary>
-		/// <param name="owner"></param>
-		/// <param name="quadTile"></param>
 		public ImageTileRequest(object owner, QuadTile quadTile) : 
 			base( owner, quadTile.ImageTileInfo.Uri )
 		{
@@ -26,7 +20,7 @@ namespace WorldWind.Net
 		}
 
 		/// <summary>
-		/// Western bound of current request (decimal degrees)
+		/// 当前请求的西边界
 		/// </summary>
 		public override float West
 		{
@@ -37,7 +31,7 @@ namespace WorldWind.Net
 		}
 
 		/// <summary>
-		/// Eastern bound of current request (decimal degrees)
+		/// 当前请求的东边界
 		/// </summary>
 		public override float East
 		{
@@ -48,7 +42,7 @@ namespace WorldWind.Net
 		}
 
 		/// <summary>
-		/// Northern bound of current request (decimal degrees)
+		/// 请求的北边界
 		/// </summary>
 		public override float North
 		{
@@ -59,7 +53,7 @@ namespace WorldWind.Net
 		}
 
 		/// <summary>
-		/// Southern bound of current request (decimal degrees)
+		/// 请求的北边界
 		/// </summary>
 		public override float South
 		{
@@ -70,7 +64,7 @@ namespace WorldWind.Net
 		}
 
 		/// <summary>
-		/// Image request color
+		/// 请求的颜色
 		/// </summary>
 		public override int Color
 		{
@@ -79,7 +73,6 @@ namespace WorldWind.Net
 				return World.Settings.downloadProgressColor;
 			}
 		}
-
 		public QuadTile QuadTile
 		{
 			get
@@ -87,7 +80,6 @@ namespace WorldWind.Net
 				return m_quadTile;
 			}
 		}
-
 		public double TileWidth 
 		{
 			get
@@ -97,7 +89,7 @@ namespace WorldWind.Net
 		}
 
 		/// <summary>
-		/// Tile download completed callback
+		/// 图块下载完成的回调
 		/// </summary>
 		protected override void DownloadComplete()
 		{
@@ -125,14 +117,13 @@ namespace WorldWind.Net
 			}	
 		}
 
-		/// <summary>
-		/// Creates an empty file signalling the current request is for some reason permanently unavailable.
-		/// </summary>
-		void FlagBadFile()
+        /// <summary>
+        /// 创建一个空文件，表示当前请求由于某些原因永久不可用。
+        /// </summary>
+        void FlagBadFile()
 		{
-			// Flag the file as missing
+			// 创建一个标识丢失文件的文本
 			File.Create(SaveFilePath + ".txt");
-			
 			try
 			{
 				if(File.Exists(SaveFilePath))
@@ -143,11 +134,10 @@ namespace WorldWind.Net
 			}
 		}
 
-		/// <summary>
-		/// Calculates the relative importance of this download by how 
-		/// big a chunk of screen space (pixels) it occupies
-		/// </summary>
-		public override float CalculateScore()
+        /// <summary>
+        /// 通过占用一大块屏幕空间（像素）来计算此下载的相对重要性。
+        /// </summary>
+        public override float CalculateScore()
 		{
 			float screenArea = QuadTile.BoundingBox.CalcRelativeScreenArea(QuadTile.QuadTileArgs.Camera);
 			return screenArea;

@@ -383,9 +383,6 @@
     <Compile Include="Renderable\LatLongGrid.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Menu\LatLonMenuButton.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="LayerManagerItemInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,25 +434,22 @@
     <Compile Include="Renderable\PolygonLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PolygonTriangulation\AnalyticGeometryException.cs">
+    <Compile Include="Common\AnalyticGeometryException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PolygonTriangulation\CLine.cs">
+    <Compile Include="Geometry\CLine.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PolygonTriangulation\CPoint2D.cs">
+    <Compile Include="Geometry\CPoint2D.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PolygonTriangulation\CPolygon.cs">
+    <Compile Include="Geometry\CPolygon.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PolygonTriangulation\CPolygonShape.cs">
+    <Compile Include="Geometry\CPolygonShape.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PolygonTriangulation\Definition.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Menu\PositionMenuButton.cs">
+    <Compile Include="Common\Definition.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Geometry\ProgressBar.cs">
@@ -675,9 +669,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="buttons\close.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="GeoRSS\GeoRssDataSet.xsc">
       <DependentUpon>GeoRssDataSet.xsd</DependentUpon>
     </None>
@@ -698,7 +689,14 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\back.gif" />
+    <Content Include="Resources\close.png" />
+    <Content Include="Resources\forward.gif" />
+    <Content Include="Resources\go.gif" />
+    <Content Include="Resources\outline.gif" />
+    <Content Include="Resources\stop.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

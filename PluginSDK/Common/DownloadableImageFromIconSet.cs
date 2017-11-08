@@ -11,7 +11,7 @@ using Utility;
 namespace WorldWind.Renderable
 {
 	/// <summary>
-	/// Displays images on the globe (used by Rapid Fire MODIS)
+	/// 在球上显示图片
 	/// </summary>
 	public class DownloadableImageFromIconSet : RenderableObject
 	{
@@ -236,7 +236,7 @@ namespace WorldWind.Renderable
 		
 	}
 	/// <summary>
-	/// Used by MODIS Icons
+	/// 使用modis icon
 	/// </summary>
 	public class DownloadableIcon : RenderableObject
 	{

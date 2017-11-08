@@ -2,9 +2,6 @@ using System;
 
 namespace WorldWind
 {
-	/// <summary>
-	/// Summary description for TimeKeeper.
-	/// </summary>
 	public class TimeKeeper
 	{
 		static System.DateTime m_currentTimeUtc = System.DateTime.Now.ToUniversalTime();

@@ -8,9 +8,6 @@ using WorldWind.Camera;
 
 namespace WorldWind.Net
 {
-	/// <summary>
-	/// worldwind:// URI class
-	/// </summary>
 	public class WorldWindUri 
 	{		
 		private string _world = "Earth";
@@ -27,16 +24,10 @@ namespace WorldWind.Net
 		
 		public const string Scheme = "worldwind";
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.Net.WorldWindUri"/> class.
-		/// </summary>
 		public WorldWindUri()
 		{
 		}
 
-		/// <summary>
-		/// Construct a new worldwind uri from camera position.
-		/// </summary>
 		public WorldWindUri(string worldName, CameraBase camera )
 		{
 			_world = worldName;
@@ -52,7 +43,7 @@ namespace WorldWind.Net
 		}
 
 		/// <summary>
-		/// Parses a worldwind uri string
+		/// 构建url字符串
 		/// Updated by CM = worldwind://goto/lat=51.41&amp;lon=5.479
         ///		   or	worldwind://goto/lat=51.41&amp;lon5.479&amp;view=0.25
 		///			or	
@@ -257,9 +248,6 @@ namespace WorldWind.Net
 			}
 		}
 
-		/// <summary>
-		/// Bank angle (rotation around camera eye->target axis)
-		/// </summary>
 		public Angle Bank
 		{
 			get
@@ -286,22 +274,14 @@ namespace WorldWind.Net
 				_layer = value;
 			}
 		}		
-
-		/// <summary>
-		/// Generates a WW URI with filtering to keep the resulting string short and clean
-		/// </summary>
-		/// <returns>A filtered WW URI</returns>
+        //转为url字符串
 		public override string ToString()
 		{
 			return ToString(true);
 		}
- 
-		/// <summary>
-		/// Generates a WW URI and optionally filters it
-		/// </summary>
-		/// <param name="bEnableFiltering">Forces a reduced string to be generated, enables filtering</param>
-		/// <returns>A WW URI, filtered if bEnableFiltering is true</returns>
-		public string ToString(bool bEnableFiltering) 
+
+        //转为url字符串，允许过滤
+        public string ToString(bool bEnableFiltering) 
 		{
 			StringBuilder sb = new StringBuilder( Scheme + "://goto/" );
  

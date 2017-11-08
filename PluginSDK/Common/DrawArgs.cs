@@ -13,7 +13,7 @@ using Utility;
 namespace WorldWind
 {
 	/// <summary>
-	/// 
+	/// 渲染参数类
 	/// </summary>
 	public class DrawArgs : IDisposable
 	{
@@ -47,7 +47,7 @@ namespace WorldWind
 		public bool RenderWireFrame = false;
 
         /// <summary>
-        /// Table of all icon textures
+        /// 所有的icon 贴图表
         /// </summary>
         protected static Hashtable m_textures= new Hashtable();
         public static Hashtable Textures
@@ -94,7 +94,6 @@ namespace WorldWind
             }
         }
  
-		/*
 		public Device ReferenceDevice
 		{
 			get
@@ -102,16 +101,16 @@ namespace WorldWind
 				return m_Device3dReference;
 			}
 		}
-		*/
-		/// <summary>
-		/// Absolute time of current frame render start (ticks)
-		/// </summary>
-		public static long CurrentFrameStartTicks;
 		
 		/// <summary>
-		/// Seconds elapsed between start of previous frame and start of current frame.
+		/// 一帧的绝对时间
 		/// </summary>
-		public static float LastFrameSecondsElapsed;
+		public static long CurrentFrameStartTicks;
+
+        /// <summary>
+        /// 上一帧开始和当前帧开始之间的秒数
+        /// </summary>
+        public static float LastFrameSecondsElapsed;
 
 		static CursorType mouseCursor;
 		static CursorType lastCursor;
@@ -122,11 +121,6 @@ namespace WorldWind
 		public static Device Device = null;
 		System.Windows.Forms.Cursor measureCursor;
 		
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.DrawArgs"/> class.
-		/// </summary>
-		/// <param name="device"></param>
-		/// <param name="parentForm"></param>
 		public DrawArgs( Device device, System.Windows.Forms.Control parentForm )
 		{
 			this.parentControl = parentForm;
@@ -258,7 +252,7 @@ namespace WorldWind
 		}
 
 		/// <summary>
-		/// Displays the rendered image (call after EndRender)
+		/// 渲染完后显示渲染图片
 		/// </summary>
 		public void Present()
 		{
@@ -273,16 +267,12 @@ namespace WorldWind
 		}
 
 		/// <summary>
-		/// Creates a font.
+		/// 创建字体
 		/// </summary>
 		public Font CreateFont( string familyName, float emSize )
 		{
 			return CreateFont( familyName, emSize, System.Drawing.FontStyle.Regular );
 		}
-
-		/// <summary>
-		/// Creates a font.
-		/// </summary>
 		public Font CreateFont( string familyName, float emSize, System.Drawing.FontStyle style )
 		{
 			try
@@ -307,10 +297,6 @@ namespace WorldWind
 				return defaultDrawingFont;
 			}
 		}
-
-		/// <summary>
-		/// Creates a font.
-		/// </summary>
 		public Font CreateFont( FontDescription description )
 		{
 			try
@@ -340,7 +326,7 @@ namespace WorldWind
 		}
 
 		/// <summary>
-		/// Active mouse cursor
+		/// 激活的鼠标cusor
 		/// </summary>
 		public static CursorType MouseCursor
 		{
@@ -391,10 +377,10 @@ namespace WorldWind
 			lastCursor = mouseCursor;
 		}
 
-		/// <summary>
-		/// Returns the time elapsed since last frame render operation started.
-		/// </summary>
-		public static float SecondsSinceLastFrame
+        /// <summary>
+        /// 返回上次帧呈现操作启动后所经过的时间
+        /// </summary>
+        public static float SecondsSinceLastFrame
 		{
 			get
 			{
@@ -404,7 +390,6 @@ namespace WorldWind
 				return elapsedSeconds;
 			}
 		}
-
 		public bool IsPainting
 		{
 			get
@@ -412,7 +397,6 @@ namespace WorldWind
 				return this.isPainting;
 			}
 		}
-
 		public bool Repaint
 		{
 			get
@@ -425,8 +409,7 @@ namespace WorldWind
 			}
 		}
 
-		#region IDisposable Members
-
+		#region IDisposable 成员
 		public void Dispose()
 		{
 			foreach(IDisposable font in fontList.Values)
@@ -452,22 +435,21 @@ namespace WorldWind
 
 			GC.SuppressFinalize(this);
 		}
-
 		#endregion
 	}
 
 	/// <summary>
-	/// Mouse cursor
+	/// 鼠标状态
 	/// </summary>
 	public enum CursorType
 	{
 		Arrow = 0,
-		Hand,
-		Cross,
-		Measure,
-		SizeWE,
-		SizeNS,
-		SizeNESW,
-		SizeNWSE
+		Hand=1,
+		Cross=2,
+		Measure=3,
+		SizeWE=4,
+		SizeNS=5,
+		SizeNESW=6,
+		SizeNWSE=7
 	}
 }

@@ -17,6 +17,7 @@ using WorldWind.Camera;
 using WorldWind.Interop;
 using System.Security.Permissions;
 using WorldWind.DataSource;
+using WorldWind.Menu;
 
 namespace WorldWind
 {
@@ -25,9 +26,6 @@ namespace WorldWind
     /// </summary>
     public partial class WorldWindow : UserControl, IGlobe
     {
-        /// <summary>
-        /// Direct3D 渲染引擎
-        /// </summary>
         private Device m_Device3d;
         private PresentParameters m_presentParams;
         private DrawArgs drawArgs;
@@ -58,8 +56,10 @@ namespace WorldWind
         private int positionAlpha = 255;
         private int positionAlphaMin = 40;
         private int positionAlphaMax = 205;
-
         Line crossHairs;
+
+        private MenuBar _menuBar = new MenuBar(World.Settings.ToolbarAnchor, 90);
+        private LayerManagerButton layerManagerButton;
 
         #region 公共属性
         public World CurrentWorld
@@ -86,11 +86,23 @@ namespace WorldWind
 
                     this.drawArgs.CurrentWorld = value;
 
+
+
+                    this.layerManagerButton = new LayerManagerButton(
+                        Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), @"Data\Icons\Interface\layer-manager2.png"),
+                        m_World);
+
+                    this._menuBar.AddToolsMenuButton(this.layerManagerButton, 0);
+                    this.layerManagerButton.SetPushed(World.Settings.ShowLayerManager);
+
+
+
                     // TODO: Decide how to load grids
                     m_World.RenderableObjects.Add(new Renderable.LatLongGrid(m_World));
                 }
             }
         }
+
         private World m_World;
         public string Caption
         {
@@ -160,6 +172,9 @@ namespace WorldWind
                     TimeKeeper.Start();
                     //	WorldWind.Widgets.LayerManager layerManager = new WorldWind.Widgets.LayerManager();
                     //	m_RootWidget.ChildWidgets.Add(layerManager);
+
+                    //显示菜单栏
+                    //_menuBar.IsActive = true;
                 }
 
             }
@@ -176,7 +191,6 @@ namespace WorldWind
         }
 
         #region 私有方法
-
         private void InitializeGraphics()
         {
             // Set up our presentation parameters
@@ -241,7 +255,6 @@ namespace WorldWind
             m_Device3d.DeviceResizing += new CancelEventHandler(m_Device3d_DeviceResizing);
             OnDeviceReset(m_Device3d, null);
         }
-
         private void OnDeviceReset(object sender, EventArgs e)
         {
             // Can we use anisotropic texture minify filter?
@@ -277,7 +290,6 @@ namespace WorldWind
             m_Device3d.RenderState.SourceBlend = Blend.SourceAlpha;
             m_Device3d.RenderState.DestinationBlend = Blend.InvSourceAlpha;
         }
-
         private void m_Device3d_DeviceResizing(object sender, CancelEventArgs e)
         {
             if (this.Size.Width == 0 || this.Size.Height == 0)
@@ -289,7 +301,6 @@ namespace WorldWind
             this.drawArgs.screenHeight = this.Height;
             this.drawArgs.screenWidth = this.Width;
         }
-
         private void m_FpsTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             if (m_FpsUpdate)
@@ -330,10 +341,6 @@ namespace WorldWind
 
             m_FpsUpdate = false;
         }
-
-        /// <summary>
-        /// Determine whether any window messages is queued.
-        /// </summary>
         private static bool IsAppStillIdle
         {
             get
@@ -342,7 +349,7 @@ namespace WorldWind
                 return !NativeMethods.PeekMessage(out msg, IntPtr.Zero, 0, 0, 0);
             }
         }
-
+        //保存屏幕截图
         protected void SaveScreenShot()
         {
             try
@@ -356,7 +363,6 @@ namespace WorldWind
                 MessageBox.Show(caught.Message, "Screenshot save failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         #endregion
 
         #region 公共方法
@@ -517,12 +523,7 @@ namespace WorldWind
         #endregion
 
         #region 渲染方法
-
-        /// <summary>
-        /// Occurs when the control is redrawn and m_isRenderDisabled=true.
-        /// All other painting is handled in WndProc.
-        /// </summary>
-        /// <param name="e"></param>
+        //重载渲染
         protected override void OnPaint(PaintEventArgs e)
         {
             // Paint the last active scene if rendering is disabled to keep the ui responsive
@@ -533,7 +534,6 @@ namespace WorldWind
                     e.Graphics.Clear(SystemColors.Control);
                     return;
                 }
-
                 // to prevent screen garbage when resizing
                 Render();
                 m_Device3d.Present();
@@ -543,52 +543,43 @@ namespace WorldWind
                 try
                 {
                     AttemptRecovery();
-
-                    // Our surface was lost, force re-render
                     Render();
-
                     m_Device3d.Present();
                 }
                 catch (DirectXException)
                 {
-                    // Ignore a 2nd failure
                 }
             }
         }
-
-        /// <summary>
-        /// Render the scene.
-        /// </summary>
+        //渲染方法
         public void Render()
         {
             using (new DirectXProfilerEvent("WorldWindow::Render"))
             {
                 long startTicks = 0;
                 PerformanceTimer.QueryPerformanceCounter(ref startTicks);
-
                 try
                 {
                     this.drawArgs.BeginRender();
-
-                    // Render the sky according to view - example, close to earth, render sky blue, render space as black
+                    // 渲染背景颜色
                     System.Drawing.Color backgroundColor = System.Drawing.Color.Black;
-
-                    /*if(drawArgs.WorldCamera != null && 
+                    //相机设置
+                    if (drawArgs.WorldCamera != null &&
                         drawArgs.WorldCamera.Altitude < 1000000f &&
                         m_World != null &&
                         m_World.Name.IndexOf("Earth") >= 0)
                     {
                         float percent = 1 - (float)(drawArgs.WorldCamera.Altitude / 1000000);
-                        if(percent > 1.0f)
+                        if (percent > 1.0f)
                             percent = 1.0f;
-                        else if(percent < 0.0f)
+                        else if (percent < 0.0f)
                             percent = 0.0f;
 
                         backgroundColor = System.Drawing.Color.FromArgb(
-                            (int)(World.Settings.SkyColor.R*percent),
-                            (int)(World.Settings.SkyColor.G*percent),
-                            (int)(World.Settings.SkyColor.B*percent));
-                    }*/
+                            (int)(World.Settings.SkyColor.R * percent),
+                            (int)(World.Settings.SkyColor.G * percent),
+                            (int)(World.Settings.SkyColor.B * percent));
+                    }
 
                     m_Device3d.Clear(ClearFlags.Target | ClearFlags.ZBuffer, backgroundColor, 1.0f, 0);
 
@@ -601,6 +592,7 @@ namespace WorldWind
                         return;
                     }
 
+                    //启动工作线程防止渲染线程阻塞
                     if (m_WorkerThread == null)
                     {
                         m_WorkerThreadRunning = true;
@@ -615,31 +607,26 @@ namespace WorldWind
                         {
                             m_WorkerThread.Priority = ThreadPriority.Normal;
                         }
-                        // BelowNormal makes rendering smooth, but on slower machines updates become slow or stops
-                        // TODO: Implement dynamic FPS limiter (or different solution)
                         m_WorkerThread.Start();
                     }
 
-                    // Update camera view
+                    // 更新相机对象视图
                     this.drawArgs.WorldCamera.UpdateTerrainElevation(m_World.TerrainAccessor);
                     this.drawArgs.WorldCamera.Update(m_Device3d);
-
                     m_Device3d.BeginScene();
-
-                    // Set fill mode
+                    //设置填充模型
                     if (renderWireFrame)
                         m_Device3d.RenderState.FillMode = FillMode.WireFrame;
                     else
                         m_Device3d.RenderState.FillMode = FillMode.Solid;
-
                     drawArgs.RenderWireFrame = renderWireFrame;
 
-                    // Render the current planet
+                    // 渲染当前的星球
                     m_World.Render(this.drawArgs);
-
+                    //显示十字架
                     if (World.Settings.ShowCrosshairs)
                         this.DrawCrossHairs();
-
+                    //fps数显示
                     frameCounter++;
                     if (frameCounter == 30)
                     {
@@ -647,36 +634,26 @@ namespace WorldWind
                         frameCounter = 0;
                         lastFpsUpdateTime = DrawArgs.CurrentFrameStartTicks;
                     }
-
+                    //渲染控件
                     m_RootWidget.Render(drawArgs);
                     m_NewRootWidget.Render(drawArgs);
-
+                    //保存快照
                     if (saveScreenShotFilePath != null)
                         SaveScreenShot();
-
                     drawArgs.device.RenderState.ZBufferEnable = false;
-
-                    // 3D rendering complete, switch to 2D for UI rendering
-
-                    // Restore normal fill mode
+                    // 渲染填充模型
                     if (renderWireFrame)
                         m_Device3d.RenderState.FillMode = FillMode.Solid;
 
-                    // Disable fog for UI
+                    // 禁止雾
                     m_Device3d.RenderState.FogEnable = false;
-
-                    /*
-                                    if(World.Settings.ShowDownloadIndicator)
-                                    {
-                                        if(m_downloadIndicator == null)
-                                            m_downloadIndicator = new DownloadIndicator();
-                                        m_downloadIndicator.Render(drawArgs);
-                                    }
-                    */
                     RenderPositionInfo();
 
-                    m_FpsGraph.Render(drawArgs);
+                    _menuBar.Render(drawArgs);
 
+
+                    m_FpsGraph.Render(drawArgs);
+                    //显示屏幕显示消息
                     if (m_World.OnScreenMessages != null)
                     {
                         try
@@ -720,14 +697,12 @@ namespace WorldWind
                 drawArgs.UpdateMouseCursor(this);
             }
         }
-
+        //渲染位置信息
         protected void RenderPositionInfo()
         {
             // Render some Development information to screen
             string captionText = _caption;
-
             captionText += "\n" + this.drawArgs.UpperLeftCornerText;
-
             if (World.Settings.ShowPosition)
             {
                 double feetPerMeter = 3.2808399;
@@ -738,7 +713,6 @@ namespace WorldWind
                 float agl = (float)this.drawArgs.WorldCamera.Altitude;
                 string dist = null;
                 float dgl = (float)this.drawArgs.WorldCamera.Distance;
-
                 if (World.Settings.DisplayUnits == Units.Metric)
                 {
                     if (agl >= 1000)
@@ -852,7 +826,7 @@ namespace WorldWind
             int positionBackColor = positionAlpha << 24;
             int positionForeColor = (int)((uint)(positionAlpha << 24) + 0xffffffu);
         }
-
+        //渲染十字线
         protected void DrawCrossHairs()
         {
             int crossHairColor = World.Settings.CrosshairColor.ToArgb();
@@ -881,10 +855,7 @@ namespace WorldWind
             crossHairs.Draw(vertical, crossHairColor);
             crossHairs.End();
         }
-
-        /// <summary>
-        /// Attempt to restore the 3D m_Device3d
-        /// </summary>
+        //重载配置D3D
         protected void AttemptRecovery()
         {
             try
@@ -907,19 +878,13 @@ namespace WorldWind
                 }
             }
         }
-
         #endregion
 
         #region 事件处理
-
         public void HandleMouseWheel(MouseEventArgs e)
         {
             OnMouseWheel(e);
         }
-
-        /// <summary>
-        /// Occurs when the mouse wheel moves while the control has focus.
-        /// </summary>
         protected override void OnMouseWheel(MouseEventArgs e)
         {
             if (!IsWorldReady())
@@ -928,6 +893,8 @@ namespace WorldWind
             }
             try
             {
+                if (this._menuBar.OnMouseWheel(e))
+                    return;
                 this.drawArgs.WorldCamera.ZoomStepped(e.Delta / 120.0f);
             }
             finally
@@ -947,10 +914,6 @@ namespace WorldWind
                 base.OnMouseWheel(e);
             }
         }
-
-        /// <summary>
-        /// Occurs when a key is pressed while the control has focus.
-        /// </summary>
         protected override void OnKeyDown(KeyEventArgs e)
         {
             if (!IsWorldReady())
@@ -967,10 +930,6 @@ namespace WorldWind
                 MessageBox.Show(caught.Message, "Operation failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        /// <summary>
-        /// Occurs when a key is released while the control has focus.
-        /// </summary>
         protected override void OnKeyUp(KeyEventArgs e)
         {
             if (!IsWorldReady())
@@ -987,7 +946,6 @@ namespace WorldWind
                 MessageBox.Show(caught.Message, "Operation failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
             if (!IsWorldReady())
@@ -1006,13 +964,6 @@ namespace WorldWind
             }
             base.OnKeyPress(e);
         }
-
-
-        /// <summary>
-        /// Preprocess keyboard or input messages within the message loop before they are dispatched.
-        /// </summary>
-        /// <param name="msg">A Message, passed by reference, that represents the message to process. 
-        /// The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.</param>
         [SecurityPermission(SecurityAction.LinkDemand, UnmanagedCode = true), SecurityPermission(SecurityAction.InheritanceDemand, UnmanagedCode = true)]
         public override bool PreProcessMessage(ref Message msg)
         {
@@ -1038,13 +989,6 @@ namespace WorldWind
 
             return base.PreProcessMessage(ref msg);
         }
-
-
-        /// <summary>
-        /// Handles key down events.
-        /// </summary>
-        /// <param name="e"></param>
-        /// <returns>Returns true if the key is handled.</returns>
         public bool HandleKeyDown(KeyEventArgs e)
         {
 
@@ -1161,12 +1105,6 @@ namespace WorldWind
             }
             return false;
         }
-
-        /// <summary>
-        /// Handles key up events.
-        /// </summary>
-        /// <param name="e"></param>
-        /// <returns>Returns true if the key is handled.</returns>
         public bool HandleKeyUp(KeyEventArgs e)
         {
 
@@ -1215,7 +1153,6 @@ namespace WorldWind
             }
             return false;
         }
-
         protected override void OnMouseDown(MouseEventArgs e)
         {
             this.Focus();  //fixes mousewheel not working problem
@@ -1244,6 +1181,10 @@ namespace WorldWind
 
                 if (!handled)
                 {
+                    if (!this._menuBar.OnMouseDown(e))
+                    {
+
+                    }
                 }
             }
             finally
@@ -1257,14 +1198,12 @@ namespace WorldWind
                 base.OnMouseDown(e);
             }
         }
-
         bool isDoubleClick = false;
         protected override void OnMouseDoubleClick(MouseEventArgs e)
         {
             isDoubleClick = true;
             base.OnMouseDoubleClick(e);
         }
-
         protected override void OnMouseUp(MouseEventArgs e)
         {
             if (!IsWorldReady())
@@ -1295,6 +1234,8 @@ namespace WorldWind
 
                     if (!this.isMouseDragging)
                     {
+                        if (this._menuBar.OnMouseUp(e))
+                            return;
                     }
 
                     if (m_World == null)
@@ -1381,7 +1322,6 @@ namespace WorldWind
                 base.OnMouseUp(e);
             }
         }
-
         private bool IsWorldReady()
         {
             if (this.m_World == null || this.drawArgs == null || this.drawArgs.WorldCamera == null)
@@ -1389,7 +1329,6 @@ namespace WorldWind
             else
                 return true;
         }
-
         protected override void OnMouseMove(MouseEventArgs e)
         {
             if (!IsWorldReady())
@@ -1421,7 +1360,11 @@ namespace WorldWind
 
                     if (!this.isMouseDragging)
                     {
+                        if (this._menuBar.OnMouseMove(e))
+                        {
                             base.OnMouseMove(e);
+                            return;
+                        }
                     }
 
                     if (mouseDownStartPosition == Point.Empty)
@@ -1538,9 +1481,7 @@ namespace WorldWind
                 base.OnMouseMove(e);
             }
         }
-
         Angle cLat, cLon;
-
         protected override void OnMouseLeave(EventArgs e)
         {
             if (!IsWorldReady())
@@ -1549,14 +1490,9 @@ namespace WorldWind
             }
             base.OnMouseLeave(e);
         }
-
         #endregion
 
         #region 多线程方法
-
-        /// <summary>
-        /// Background worker thread loop (updates UI)
-        /// </summary>
         private void WorkerThreadFunc()
         {
             const int refreshIntervalMs = 150; // Max 6 updates per seconds
@@ -1593,21 +1529,17 @@ namespace WorldWind
                 }
             }
         }
-
         #endregion
 
         #region IGlobe 成员
-
         public void SetDisplayMessages(IList messages)
         {
             m_World.OnScreenMessages = messages;
         }
-
         public void SetLatLonGridShow(bool show)
         {
             World.Settings.ShowLatLonLines = show;
         }
-
         public void SetLayers(IList layers)
         {
             if (layers != null)
@@ -1618,25 +1550,21 @@ namespace WorldWind
                 }
             }
         }
-
         public void SetVerticalExaggeration(double exageration)
         {
             World.Settings.VerticalExaggeration = (float)exageration;
         }
-
         public void SetViewDirection(String type, double horiz, double vert, double elev)
         {
             this.drawArgs.WorldCamera.SetPosition(this.drawArgs.WorldCamera.Latitude.Degrees, this.drawArgs.WorldCamera.Longitude.Degrees, horiz,
                 this.drawArgs.WorldCamera.Altitude, vert);
         }
-
         public void SetViewPosition(double degreesLatitude, double degreesLongitude,
             double metersElevation)
         {
             this.drawArgs.WorldCamera.SetPosition(degreesLatitude, degreesLongitude, this.drawArgs.WorldCamera.Heading.Degrees,
                 metersElevation, this.drawArgs.WorldCamera.Tilt.Degrees);
         }
-
         public void SetWmsImage(WmsDescriptor imageA, WmsDescriptor imageB, double alpha)
         {
             // TODO:  Add WorldWindow.SetWmsImage implementation
@@ -1655,7 +1583,6 @@ namespace WorldWind
                 System.Console.WriteLine(alpha);
             }
         }
-
         #endregion
     }
 }

@@ -60,33 +60,20 @@
             </summary>
             <returns>String on format dd癿m'ss.sss"</returns>
         </member>
-        <member name="T:WorldWind.ConfigurationSaver">
-            <summary>
-            This class serializes the in-memory Renderable objects
-            to their source XML parsed by the ConfigurationLoader
-            for persistence
-            </summary>
-        </member>
-        <member name="M:WorldWind.ConfigurationSaver.Save(WorldWind.World)">
-            <summary>
-            Save settings for a particular world
-            </summary>
-            <param name="world">World to be serialized</param>
-        </member>
         <member name="M:WorldWind.ConfigurationSaver.SaveAs(WorldWind.Renderable.RenderableObject,System.String)">
             <summary>
-            Save a subset of the LM to a file.
+            存储一些列的对象
             </summary>
-            <param name="ro">RenderableObjectList to save</param>
-            <param name="file">Location for output</param>
+            <param name="ro">存储的对象</param>
+            <param name="file">存储位置</param>
         </member>
         <member name="M:WorldWind.ConfigurationSaver.saveLayerSet(WorldWind.Renderable.RenderableObjectList,System.Xml.XmlDocument)">
             <summary>
-            Serializes Renderable Object Lists to LayersSets at the top level
+            存储图层序列
             </summary>
-            <param name="layerSet">Layerset Renderable Object to be serialized</param>
-            <param name="worldDoc">World Document to which node is added</param>
-            <returns>Node for Root Layerset</returns>
+            <param name="layerSet">图层集合</param>
+            <param name="worldDoc">xml节点</param>
+            <returns>根节点</returns>
         </member>
         <member name="M:WorldWind.ConfigurationSaver.saveLayer(WorldWind.Renderable.RenderableObjectList,System.Xml.XmlDocument)">
             <summary>
@@ -397,15 +384,12 @@
         </member>
         <member name="T:WorldWind.DirectXProfilerEvent">
             <summary>
-            A little utility class that allows you to implement profiler event
-            blocks as Using( new ProfilerEvent() ) {} blocks, so you don't have
-            to worry about ending an event.
+            一个提高性能的事件探测工具集合
             </summary>
         </member>
         <member name="T:WorldWind.DirectXProfiler">
             <summary>
-            Helper class with satic functions to signal the beginnings and endings
-            of userdefined event blocks to the profiler, most likely PIX. 
+            静态方法类
             </summary>
         </member>
         <member name="P:WorldWind.DirectXProfiler.Enabled">
@@ -1328,7 +1312,7 @@
         </member>
         <member name="T:WorldWind.Renderable.DownloadableImageFromIconSet">
             <summary>
-            Displays images on the globe (used by Rapid Fire MODIS)
+            在球上显示图片
             </summary>
         </member>
         <member name="M:WorldWind.Renderable.DownloadableImageFromIconSet.#ctor(System.String,WorldWind.World,System.Single,WorldWind.DrawArgs,WorldWind.Terrain.TerrainAccessor)">
@@ -1343,7 +1327,7 @@
         </member>
         <member name="T:WorldWind.Renderable.DownloadableIcon">
             <summary>
-            Used by MODIS Icons
+            使用modis icon
             </summary>
         </member>
         <member name="T:WorldWind.Renderable.Icon">
@@ -3141,27 +3125,10 @@
             <param name="lon">Longitude</param>
             <param name="alt">Altitude</param>
         </member>
-        <member name="T:WorldWind.Menu.MenuBar">
-            <summary>
-            WorldWind Toolbar
-            </summary>
-        </member>
-        <member name="P:WorldWind.Menu.MenuBar.Anchor">
-            <summary>
-            Where the menubar is anchored.
-            </summary>
-        </member>
         <member name="P:WorldWind.Menu.MenuBar.IsActive">
             <summary>
-            Indicates whether the menu is "open". (user activity)
+            是否激活
             </summary>
-        </member>
-        <member name="M:WorldWind.Menu.MenuBar.#ctor(WorldWind.Menu.MenuAnchor,System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.Menu.MenuBar"/> class.
-            </summary>
-            <param name="anchor"></param>
-            <param name="iconSize"></param>
         </member>
         <member name="M:WorldWind.Menu.MenuBar.AddToolsMenuButton(WorldWind.Menu.MenuButton)">
             <summary>
@@ -3197,13 +3164,6 @@
             <summary>
             Initializes a new instance of the <see cref= "T:WorldWind.Menu.MenuButton"/> class.
             </summary>
-        </member>
-        <member name="M:WorldWind.Menu.LatLonMenuButton.#ctor(System.String,WorldWind.World)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.Menu.LatLonMenuButton"/> class.
-            </summary>
-            <param name="buttonIconPath"></param>
-            <param name="parentWorld"></param>
         </member>
         <member name="T:WorldWind.Menu.LayerManagerItemInfo">
             <summary>
@@ -3312,17 +3272,6 @@
             </summary>
             <param name="imageFilePath"></param>
             <param name="ro"></param>
-        </member>
-        <member name="T:WorldWind.Menu.PositionMenuButton">
-            <summary>
-            Summary description for PositionMenuButton.
-            </summary>
-        </member>
-        <member name="M:WorldWind.Menu.PositionMenuButton.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.Menu.PositionMenuButton"/> class.
-            </summary>
-            <param name="buttonIconPath"></param>
         </member>
         <member name="T:WorldWind.PointSpriteVertex">
             <summary>
@@ -3458,7 +3407,7 @@
         </member>
         <member name="T:WorldWind.Cache">
             <summary>
-            Maintains the cached data on disk (staying within limits)
+            管理硬盘中的缓存
             </summary>
         </member>
         <member name="M:WorldWind.Cache.#ctor(System.String,System.TimeSpan,System.TimeSpan)">
@@ -3480,11 +3429,6 @@
         <member name="M:WorldWind.Cache.OnTimer(System.Object)">
             <summary>
             Monitors the cache, makes sure it stays within limits.
-            </summary>
-        </member>
-        <member name="T:WorldWind.Camera.CameraBase">
-            <summary>
-            Camera base class (simple camera)
             </summary>
         </member>
         <member name="F:WorldWind.Camera.CameraBase._headTracking">
@@ -3662,21 +3606,9 @@
             </summary>
             <returns>An array of Angles in minx.miny,maxx, maxy order</returns>
         </member>
-        <member name="T:WorldWind.Camera.WorldCamera">
-            <summary>
-            The "normal" camera
-            </summary>
-        </member>
-        <member name="M:WorldWind.Camera.WorldCamera.#ctor(Microsoft.DirectX.Vector3,System.Double)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.Camera.WorldCamera"/> class.
-            </summary>
-            <param name="targetPosition"></param>
-            <param name="radius"></param>
-        </member>
         <member name="M:WorldWind.Camera.WorldCamera.Zoom(System.Single)">
             <summary>
-            Zoom camera in/out (distance) 
+            放大缩小
             </summary>
             <param name="percent">Positive value = zoom in, negative=out</param>
         </member>
@@ -3713,64 +3645,47 @@
         </member>
         <member name="T:WorldWind.DrawArgs">
             <summary>
-            
+            渲染参数类
             </summary>
         </member>
         <member name="F:WorldWind.DrawArgs.m_textures">
             <summary>
-            Table of all icon textures
+            所有的icon 贴图表
             </summary>
         </member>
         <member name="F:WorldWind.DrawArgs.CurrentFrameStartTicks">
             <summary>
-            Absolute time of current frame render start (ticks)
+            一帧的绝对时间
             </summary>
         </member>
         <member name="F:WorldWind.DrawArgs.LastFrameSecondsElapsed">
             <summary>
-            Seconds elapsed between start of previous frame and start of current frame.
+            上一帧开始和当前帧开始之间的秒数
             </summary>
-        </member>
-        <member name="M:WorldWind.DrawArgs.#ctor(Microsoft.DirectX.Direct3D.Device,System.Windows.Forms.Control)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.DrawArgs"/> class.
-            </summary>
-            <param name="device"></param>
-            <param name="parentForm"></param>
         </member>
         <member name="M:WorldWind.DrawArgs.Present">
             <summary>
-            Displays the rendered image (call after EndRender)
+            渲染完后显示渲染图片
             </summary>
         </member>
         <member name="M:WorldWind.DrawArgs.CreateFont(System.String,System.Single)">
             <summary>
-            Creates a font.
-            </summary>
-        </member>
-        <member name="M:WorldWind.DrawArgs.CreateFont(System.String,System.Single,System.Drawing.FontStyle)">
-            <summary>
-            Creates a font.
-            </summary>
-        </member>
-        <member name="M:WorldWind.DrawArgs.CreateFont(Microsoft.DirectX.Direct3D.FontDescription)">
-            <summary>
-            Creates a font.
+            创建字体
             </summary>
         </member>
         <member name="P:WorldWind.DrawArgs.MouseCursor">
             <summary>
-            Active mouse cursor
+            激活的鼠标cusor
             </summary>
         </member>
         <member name="P:WorldWind.DrawArgs.SecondsSinceLastFrame">
             <summary>
-            Returns the time elapsed since last frame render operation started.
+            返回上次帧呈现操作启动后所经过的时间
             </summary>
         </member>
         <member name="T:WorldWind.CursorType">
             <summary>
-            Mouse cursor
+            鼠标状态
             </summary>
         </member>
         <member name="T:WorldWind.GeographicBoundingBox">
@@ -3823,7 +3738,7 @@
         </member>
         <member name="T:WorldWind.Net.Wms.WmsImageStore">
             <summary>
-            Calculates URLs for WMS layers.
+            计算WMS图层的url
             </summary>
         </member>
         <member name="P:WorldWind.Net.Wms.WmsImageStore.TextureSizePixels">
@@ -3831,24 +3746,9 @@
             Bitmap width/height
             </summary>
         </member>
-        <member name="T:WorldWind.Net.WorldWindUri">
-            <summary>
-            worldwind:// URI class
-            </summary>
-        </member>
-        <member name="M:WorldWind.Net.WorldWindUri.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.Net.WorldWindUri"/> class.
-            </summary>
-        </member>
-        <member name="M:WorldWind.Net.WorldWindUri.#ctor(System.String,WorldWind.Camera.CameraBase)">
-            <summary>
-            Construct a new worldwind uri from camera position.
-            </summary>
-        </member>
         <member name="M:WorldWind.Net.WorldWindUri.Parse(System.String)">
             <summary>
-            Parses a worldwind uri string
+            构建url字符串
             Updated by CM = worldwind://goto/lat=51.41&amp;lon=5.479
             	   or	worldwind://goto/lat=51.41&amp;lon5.479&amp;view=0.25
             		or	
@@ -3857,28 +3757,10 @@
             <param name="worldWindUri"></param>
             <returns></returns>
         </member>
-        <member name="P:WorldWind.Net.WorldWindUri.Bank">
-            <summary>
-            Bank angle (rotation around camera eye->target axis)
-            </summary>
-        </member>
         <member name="P:WorldWind.Net.WorldWindUri.Layer">
             <summary>
             Layer name to enable for this uri
             </summary>
-        </member>
-        <member name="M:WorldWind.Net.WorldWindUri.ToString">
-            <summary>
-            Generates a WW URI with filtering to keep the resulting string short and clean
-            </summary>
-            <returns>A filtered WW URI</returns>
-        </member>
-        <member name="M:WorldWind.Net.WorldWindUri.ToString(System.Boolean)">
-            <summary>
-            Generates a WW URI and optionally filters it
-            </summary>
-            <param name="bEnableFiltering">Forces a reduced string to be generated, enables filtering</param>
-            <returns>A WW URI, filtered if bEnableFiltering is true</returns>
         </member>
         <member name="M:WorldWind.OnScreenMessage.#ctor">
             <summary>
@@ -3895,40 +3777,35 @@
         </member>
         <member name="T:WorldWind.ImageHelper">
             <summary>
-            Various image manipulation functions.
-            </summary>
-        </member>
-        <member name="M:WorldWind.ImageHelper.#ctor">
-            <summary>
-            Static class
+            各种图像处理.
             </summary>
         </member>
         <member name="M:WorldWind.ImageHelper.IsGdiSupportedImageFormat(System.String)">
             <summary>
-            Tests based on file extension whether the image format is supported by GDI+ image loader.
+            基于文件扩展名的测试是否是由GDI+图像加载器支持的图像格式
             </summary>
-            <param name="imageFileName">Full path or just filename incl. extension.</param>
+            <param name="imageFileName">完整路径或只是文件名包括扩展名.</param>
         </member>
         <member name="M:WorldWind.ImageHelper.LoadTexture(System.String)">
             <summary>
-            Loads an image file from disk into a texture.
+            从硬盘中加载图片到Texture
             </summary>
-            <param name="textureFileName">Path/filename to the image file</param>
+            <param name="textureFileName">路径</param>
         </member>
         <member name="M:WorldWind.ImageHelper.LoadTexture(System.String,System.Int32,Microsoft.DirectX.Direct3D.Format)">
             <summary>
-            Loads an image file from disk into a texture.
+            从硬盘中加载图片到Texture
             </summary>
-            <param name="textureFileName">Path/filename to the image file</param>
-            <param name="colorKey">Transparent color. Any pixels in the image with this color will be made transparent.</param>
-            <param name="textureFormat">Desired pixel format of the returned texture.</param>
+            <param name="textureFileName">路径</param>
+            <param name="colorKey">透明</param>
+            <param name="textureFormat">返回纹理的所需像素格式</param>
         </member>
         <member name="M:WorldWind.ImageHelper.LoadTexture(System.String,System.Int32)">
             <summary>
-            Loads an image file from disk into a texture.
+            从硬盘中加载图片到Texture
             </summary>
-            <param name="textureFilename">Path/filename to the image file</param>
-            <param name="colorKey">Transparent color. Any pixels in the image with this color will be made transparent.</param>
+            <param name="textureFilename">路径</param>
+            <param name="colorKey">透明值</param>
         </member>
         <member name="M:WorldWind.ImageHelper.LoadTexture(System.String,System.Int32,System.Int32)">
             <summary>
@@ -4022,12 +3899,12 @@
         </member>
         <member name="M:WorldWind.ImageHelper.CreateDefaultImage">
             <summary>
-            Makes a default image to use when the requested bitmap wasn't available.
+            当请求的位图不可用时，使用默认映像。.
             </summary>
         </member>
         <member name="T:WorldWind.ImageStore">
             <summary>
-            Base class for calculating local image paths and remote download urls
+            用于计算本地映像路径和远程下载URL的基类
             </summary>
         </member>
         <member name="P:WorldWind.ImageStore.LevelZeroTileSizeDegrees">
@@ -4100,28 +3977,6 @@
             <summary>
             Converts image file to DDS
             </summary>
-        </member>
-        <member name="T:WorldWind.ImageTileService">
-            <summary>
-            Summary description for ImageTileService.
-            </summary>
-        </member>
-        <member name="M:WorldWind.ImageTileService.#ctor(System.String,System.String,System.String,System.TimeSpan)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.ImageTileService"/> class.
-            </summary>
-            <param name="datasetName"></param>
-            <param name="serverUri"></param>
-            <param name="serverLogoPath"></param>
-            <param name="cacheExpirationTime"></param>
-        </member>
-        <member name="M:WorldWind.ImageTileService.#ctor(System.String,System.String,System.String)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.ImageTileService"/> class.
-            </summary>
-            <param name="datasetName"></param>
-            <param name="serverUri"></param>
-            <param name="serverLogoPath"></param>
         </member>
         <member name="T:WorldWind.LinearRing">
             <summary>
@@ -4203,12 +4058,7 @@
         </member>
         <member name="T:WorldWind.MathEngine">
             <summary>
-            Commonly used mathematical functions.
-            </summary>
-        </member>
-        <member name="M:WorldWind.MathEngine.#ctor">
-            <summary>
-            This class has only static methods.
+            数学方法
             </summary>
         </member>
         <member name="M:WorldWind.MathEngine.SphericalToCartesian(System.Double,System.Double,System.Double)">
@@ -4348,24 +4198,7 @@
         </member>
         <member name="T:WorldWind.NltImageStore">
             <summary>
-            Formats urls for images stored in NLT-style
-            </summary>
-        </member>
-        <member name="M:WorldWind.NltImageStore.#ctor(System.String,System.String)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.ImageTileService"/> class.
-            </summary>
-            <param name="dataSetName"></param>
-            <param name="serverUri"></param>
-        </member>
-        <member name="M:WorldWind.PerformanceTimer.#ctor">
-            <summary>
-            Static class
-            </summary>
-        </member>
-        <member name="M:WorldWind.PerformanceTimer.#cctor">
-            <summary>
-            Static constructor
+            以 NLT-style存储的urls格式
             </summary>
         </member>
         <member name="T:WorldWind.Point2d">
@@ -4930,11 +4763,6 @@
             <summary>
             This method initializes the terrain tile add switches to
             Initialize floating point/int 16 tiles
-            </summary>
-        </member>
-        <member name="T:WorldWind.TimeKeeper">
-            <summary>
-            Summary description for TimeKeeper.
             </summary>
         </member>
         <member name="F:WorldWind.TimeSetterDialog.components">
@@ -7275,36 +7103,9 @@
             </summary>
             <value></value>
         </member>
-        <member name="T:WorldWind.Interop.NativeMethods">
-            <summary>
-            Interop methods for WorldWindow namespace
-            </summary>
-        </member>
-        <member name="T:WorldWind.Interop.NativeMethods.Message">
-            <summary>
-            Contains message information from a thread's message queue.
-            </summary>
-        </member>
-        <member name="M:WorldWind.Interop.NativeMethods.PeekMessage(WorldWind.Interop.NativeMethods.Message@,System.IntPtr,System.UInt32,System.UInt32,System.UInt32)">
-            <summary>
-            The PeekMessage function dispatches incoming sent messages, 
-            checks the thread message queue for a posted message, 
-            and retrieves the message (if any exist).
-            </summary>
-        </member>
         <member name="T:WorldWind.WorldWindow">
             <summary>
             D3D 渲染的地球
-            </summary>
-        </member>
-        <member name="F:WorldWind.WorldWindow.m_Device3d">
-            <summary>
-            Direct3D 渲染引擎
-            </summary>
-        </member>
-        <member name="P:WorldWind.WorldWindow.IsAppStillIdle">
-            <summary>
-            Determine whether any window messages is queued.
             </summary>
         </member>
         <member name="M:WorldWind.WorldWindow.Goto(WorldWind.Net.WorldWindUri)">
@@ -7336,64 +7137,6 @@
             Borrowed from FlightGear and Tom Miller's blog
             </summary>
         </member>
-        <member name="M:WorldWind.WorldWindow.OnPaint(System.Windows.Forms.PaintEventArgs)">
-            <summary>
-            Occurs when the control is redrawn and m_isRenderDisabled=true.
-            All other painting is handled in WndProc.
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:WorldWind.WorldWindow.Render">
-            <summary>
-            Render the scene.
-            </summary>
-        </member>
-        <member name="M:WorldWind.WorldWindow.AttemptRecovery">
-            <summary>
-            Attempt to restore the 3D m_Device3d
-            </summary>
-        </member>
-        <member name="M:WorldWind.WorldWindow.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Occurs when the mouse wheel moves while the control has focus.
-            </summary>
-        </member>
-        <member name="M:WorldWind.WorldWindow.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
-            <summary>
-            Occurs when a key is pressed while the control has focus.
-            </summary>
-        </member>
-        <member name="M:WorldWind.WorldWindow.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
-            <summary>
-            Occurs when a key is released while the control has focus.
-            </summary>
-        </member>
-        <member name="M:WorldWind.WorldWindow.PreProcessMessage(System.Windows.Forms.Message@)">
-            <summary>
-            Preprocess keyboard or input messages within the message loop before they are dispatched.
-            </summary>
-            <param name="msg">A Message, passed by reference, that represents the message to process. 
-            The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.</param>
-        </member>
-        <member name="M:WorldWind.WorldWindow.HandleKeyDown(System.Windows.Forms.KeyEventArgs)">
-            <summary>
-            Handles key down events.
-            </summary>
-            <param name="e"></param>
-            <returns>Returns true if the key is handled.</returns>
-        </member>
-        <member name="M:WorldWind.WorldWindow.HandleKeyUp(System.Windows.Forms.KeyEventArgs)">
-            <summary>
-            Handles key up events.
-            </summary>
-            <param name="e"></param>
-            <returns>Returns true if the key is handled.</returns>
-        </member>
-        <member name="M:WorldWind.WorldWindow.WorkerThreadFunc">
-            <summary>
-            Background worker thread loop (updates UI)
-            </summary>
-        </member>
         <member name="F:WorldWind.WorldWindow.components">
             <summary> 
             Required designer variable.
@@ -7413,7 +7156,7 @@
         </member>
         <member name="T:WorldWind.WorldWindSettings">
             <summary>
-            World Wind persisted settings.
+            配置
             </summary>
         </member>
         <member name="P:WorldWind.WorldWindSettings.CacheCleanupIntervalXml">
@@ -7429,11 +7172,6 @@
         <member name="F:WorldWind.WorldWindSettings.WorldWindDirectory">
             <summary>
             World Wind application base directory ("C:\Program Files\NASA\Worldwind v1.2\") 
-            </summary>
-        </member>
-        <member name="M:WorldWind.WorldWindSettings.UpdateProxySettings">
-            <summary>
-            Propagate proxy-related settings to statics in WebDownload class
             </summary>
         </member>
         <member name="F:OgrVectorImporter.NoDataForm.components">
@@ -7515,7 +7253,7 @@
         </member>
         <member name="T:GeometryUtility.NonValidReturnException">
             <summary>
-            Summary description for NoValidReturnException.
+            异常总结
             </summary>
         </member>
         <member name="T:GeometryUtility.CLine">

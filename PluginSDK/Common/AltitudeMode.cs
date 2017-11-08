@@ -4,8 +4,8 @@ namespace WorldWind
 {
 	public enum AltitudeMode
 	{
-		ClampedToGround,
-		RelativeToGround,
-		Absolute
+		ClampedToGround=0,
+		RelativeToGround=1,
+		Absolute=2
 	}
 }

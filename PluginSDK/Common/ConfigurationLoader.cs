@@ -1409,25 +1409,16 @@ namespace WorldWind
 			}
 		}
 
-		/* parseColorNode (overload) */
 		private static System.Drawing.Color parseColorNode(XPathNavigator parentNode)
 		{
 			return parseColorNode(parentNode, null);
 		}
 
-		/* parseColorNode (overload) */
 		private static System.Drawing.Color parseColorNode(XPathNavigator parentNode, string RGBNodeName)
 		{
 			return parseColorNode(parentNode, RGBNodeName, System.Drawing.Color.White);
 		}
 
-		/* parseColorNode
-		 * Grabs the appropriate System.Drawing.Color from a parent node that contains a node from the following list:
-		 * WinColorName (Windows-type color name e.g. Cyan)
-		 * HexColor		(Hexadecimal format, RGB(A) e.g. #0000FF or FFFFFF)
-		 * RGBColor		(Contains Red, Green, Blue, and possibly Alpha color subnodes with a value from 0-255)
-		 * An optional node name, specified by RGBNodeName, that functions identically to RGBColor
-		*/
 		private static System.Drawing.Color parseColorNode(XPathNavigator parentNode, string RGBNodeName, System.Drawing.Color defaultColor)
 		{
 			string hexColorCode = getInnerTextFromFirstChild(parentNode.Select("HexColor"));
@@ -2393,8 +2384,7 @@ namespace WorldWind
                 }
             }
         }
-
-        /*
+        
         private static void addWater(XPathNodeIterator iter, World parentWorld, RenderableObjectList parentRenderable)
         {
             if (iter.Count > 0)
@@ -2407,21 +2397,17 @@ namespace WorldWind
                     float lon = Convert.ToSingle(getInnerTextFromFirstChild(iter.Current.Select("Longitude")));
                     float alt = Convert.ToSingle(getInnerTextFromFirstChild(iter.Current.Select("DistanceAboveSurface")));
                     float scaleFactor = Convert.ToSingle(getInnerTextFromFirstChild(iter.Current.Select("ScaleFactor")));
-                    /*
                     float rotX = Convert.ToSingle(getInnerTextFromFirstChild(iter.Current.SelectSingleNode("Orientation")
                         .Select("RotationX")));
                     float rotY = Convert.ToSingle(getInnerTextFromFirstChild(iter.Current.SelectSingleNode("Orientation")
                         .Select("RotationY")));
                     float rotZ = Convert.ToSingle(getInnerTextFromFirstChild(iter.Current.SelectSingleNode("Orientation")
                         .Select("RotationZ")));
-                    */
-	    /*
                     Water waterbody = new Water(name, parentWorld,isBumpMapped,lat,lon,alt,scaleFactor);
                     parentRenderable.Add(waterbody);
                 }
             }
         }
-        */ 
 
 		private static TerrainAccessor[] getTerrainAccessorsFromXPathNodeIterator(XPathNodeIterator iter, string cacheDirectory)
 		{

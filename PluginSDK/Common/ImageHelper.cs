@@ -12,22 +12,19 @@ using Utility;
 namespace WorldWind
 {
 	/// <summary>
-	/// Various image manipulation functions.
+	/// 各种图像处理.
 	/// </summary>
 	public sealed class ImageHelper
 	{
-		/// <summary>
-		/// Static class
-		/// </summary>
 		private ImageHelper()
 		{
 		}
 
-		/// <summary>
-		/// Tests based on file extension whether the image format is supported by GDI+ image loader.
-		/// </summary>
-		/// <param name="imageFileName">Full path or just filename incl. extension.</param>
-		public static bool IsGdiSupportedImageFormat(string imageFileName)
+        /// <summary>
+        /// 基于文件扩展名的测试是否是由GDI+图像加载器支持的图像格式
+        /// </summary>
+        /// <param name="imageFileName">完整路径或只是文件名包括扩展名.</param>
+        public static bool IsGdiSupportedImageFormat(string imageFileName)
 		{
 			string extension = Path.GetExtension(imageFileName).ToLower();
 			const string GdiSupportedExtensions = ".bmp.gif.jpg.jpeg.png.gif.tif";
@@ -35,22 +32,22 @@ namespace WorldWind
 		}
 
 		/// <summary>
-		/// Loads an image file from disk into a texture.
+		/// 从硬盘中加载图片到Texture
 		/// </summary>
-		/// <param name="textureFileName">Path/filename to the image file</param>
+		/// <param name="textureFileName">路径</param>
 		public static Texture LoadTexture(string textureFileName)
 		{
 			Texture texture = LoadTexture(textureFileName, 0);
 			return texture;
 		}
 
-		/// <summary>
-		/// Loads an image file from disk into a texture.
-		/// </summary>
-		/// <param name="textureFileName">Path/filename to the image file</param>
-		/// <param name="colorKey">Transparent color. Any pixels in the image with this color will be made transparent.</param>
-		/// <param name="textureFormat">Desired pixel format of the returned texture.</param>
-		public static Texture LoadTexture(string textureFileName, int colorKey, Format textureFormat)
+        /// <summary>
+        /// 从硬盘中加载图片到Texture
+        /// </summary>
+        /// <param name="textureFileName">路径</param>
+        /// <param name="colorKey">透明</param>
+        /// <param name="textureFormat">返回纹理的所需像素格式</param>
+        public static Texture LoadTexture(string textureFileName, int colorKey, Format textureFormat)
 		{
 			try
 			{
@@ -63,12 +60,12 @@ namespace WorldWind
 			}
 		}
 
-		/// <summary>
-		/// Loads an image file from disk into a texture.
-		/// </summary>
-		/// <param name="textureFilename">Path/filename to the image file</param>
-		/// <param name="colorKey">Transparent color. Any pixels in the image with this color will be made transparent.</param>
-		public static Texture LoadTexture(string textureFilename, int colorKey)
+        /// <summary>
+        /// 从硬盘中加载图片到Texture
+        /// </summary>
+        /// <param name="textureFilename">路径</param>
+        /// <param name="colorKey">透明值</param>
+        public static Texture LoadTexture(string textureFilename, int colorKey)
 		{
 			return LoadTexture(textureFilename, colorKey, World.Settings.TextureFormat);
 		}
@@ -421,10 +418,10 @@ namespace WorldWind
 			}
 		}
 
-		/// <summary>
-		/// Makes a default image to use when the requested bitmap wasn't available.
-		/// </summary>
-		private static Bitmap CreateDefaultImage()
+        /// <summary>
+        /// 当请求的位图不可用时，使用默认映像。.
+        /// </summary>
+        private static Bitmap CreateDefaultImage()
 		{
 			Bitmap b = new Bitmap(32, 32);
 			using (Graphics g = Graphics.FromImage(b))

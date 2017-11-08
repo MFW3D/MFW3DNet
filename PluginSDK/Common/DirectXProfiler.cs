@@ -3,15 +3,10 @@ using System.Diagnostics;
 using Microsoft.DirectX;
 using System.Runtime.InteropServices;
 
-// original code from http://www.mdxinfo.com/tutorials/profiling.php
-// by Rim van Wersch; adapted to World Wind by stephan mantler
-
 namespace WorldWind
 {
     /// <summary>
-    /// A little utility class that allows you to implement profiler event
-    /// blocks as Using( new ProfilerEvent() ) {} blocks, so you don't have
-    /// to worry about ending an event.
+    /// 一个提高性能的事件探测工具集合
     /// </summary>
     public class DirectXProfilerEvent : IDisposable
     {
@@ -19,17 +14,14 @@ namespace WorldWind
         {
             DirectXProfiler.BeginEvent(color, name);
         }
-
         public DirectXProfilerEvent(string name)
         {
             DirectXProfiler.BeginEvent(name);
         }
-
         public DirectXProfilerEvent()
         {
             DirectXProfiler.BeginEvent();
         }
-
         public void Dispose()
         {
             DirectXProfiler.EndEvent();
@@ -37,12 +29,11 @@ namespace WorldWind
     }
 
     /// <summary>
-    /// Helper class with satic functions to signal the beginnings and endings
-    /// of userdefined event blocks to the profiler, most likely PIX. 
+    /// 静态方法类
     /// </summary>
     public class DirectXProfiler
     {
-        #region Profiler settings
+        #region 事件探测
 
 #if DEBUG
         private static bool enabled = true;
@@ -74,7 +65,6 @@ namespace WorldWind
         }
 
         #endregion
-
 
         #region Profiler event and marker methods
 
@@ -142,7 +132,6 @@ namespace WorldWind
         }
 
         #endregion
-
 
         #region Line tracing and DLL imports
 

@@ -9,9 +9,7 @@ using WorldWind.Renderable;
 
 namespace WorldWind.VisualControl
 {
-	/// <summary>
-	/// Renders download progress and rectangle
-	/// </summary>
+	/// 显示下载进度条和矩形框
 	public class DownloadIndicator : IDisposable
 	{
 		protected ProgressBar m_progressBar;
@@ -22,27 +20,21 @@ namespace WorldWind.VisualControl
 
 		public void Render(DrawArgs drawArgs)
 		{
-			// Render from bottom and up
 			const int screenMargin = 10;
 			m_renderPosition = new Vector2(drawArgs.screenWidth - HalfWidth - screenMargin, drawArgs.screenHeight - screenMargin);
-
 			ImageAccessor logoAccessor = null;
-
-			// Render download progress and rectangles
+			// 显示下载进度条
 			for(int i=0; i < DrawArgs.DownloadQueue.ActiveDownloads.Count; i++)
 			{
 				DownloadRequest request = (DownloadRequest)DrawArgs.DownloadQueue.ActiveDownloads[i];
 				GeoSpatialDownloadRequest geoRequest = request as GeoSpatialDownloadRequest;
 				if(geoRequest == null)
 					continue;
-
 				RenderProgress(drawArgs, geoRequest);
 				RenderRectangle(drawArgs, geoRequest);
-
 				ImageTileRequest imageRequest = geoRequest as ImageTileRequest;
 				if(imageRequest == null)
 					continue;
-
 				QuadTile qt = imageRequest.QuadTile;
 				if(qt.QuadTileArgs.ImageAccessor.ServerLogoPath != null)
 					logoAccessor = qt.QuadTileArgs.ImageAccessor;
@@ -52,66 +44,49 @@ namespace WorldWind.VisualControl
 				RenderLogo( drawArgs, logoAccessor );
 		}
 
-		/// <summary>
-		/// Renders the server logo
-		/// </summary>
-		/// <param name="logoAccessor"></param>
+		//渲染logo
 		protected void RenderLogo( DrawArgs drawArgs, ImageAccessor logoAccessor )
 		{
 			if(logoAccessor.ServerLogoPath == null)
 				return;
-
 			if(logoAccessor.ServerLogo == null)
 			{
 				if(!File.Exists(logoAccessor.ServerLogoPath))
 					return;
-
 				logoAccessor.ServerLogo = ImageHelper.LoadTexture(drawArgs.device, logoAccessor.ServerLogoPath);
-
 				using(Surface s = logoAccessor.ServerLogo.GetSurfaceLevel(0))
 				{
 					SurfaceDescription desc = s.Description;
 					logoAccessor.ServerLogoSize = new Rectangle(0, 0, desc.Width, desc.Height);
 				}
 			}
-
 			if(m_sprite == null)
 				m_sprite = new Sprite(drawArgs.device);
-
 			float xScale = 2f * HalfWidth / logoAccessor.ServerLogoSize.Width;
 			float yScale = 2f * HalfWidth / logoAccessor.ServerLogoSize.Height;
-
 			m_renderPosition.Y -= HalfWidth;
 			m_sprite.Begin(SpriteFlags.AlphaBlend);
-
 			m_sprite.Transform = Matrix.Scaling(xScale,yScale,0);
 			m_sprite.Transform *= Matrix.Translation(m_renderPosition.X, m_renderPosition.Y, 0);
 			m_sprite.Draw( logoAccessor.ServerLogo,
 				new Vector3(logoAccessor.ServerLogoSize.Width>>1, logoAccessor.ServerLogoSize.Height>>1, 0),
 				Vector3.Empty,
 				World.Settings.downloadLogoColor );
-
 			m_sprite.End();
 		}
 
-		/// <summary>
-		/// Render download indicator rectangles
-		/// </summary>
+		//显示下载进度条
 		protected virtual void RenderProgress(DrawArgs drawArgs, GeoSpatialDownloadRequest request)
 		{
 			const int height = 4;
 			const int spacing = 2;
-
-			// Render progress bar
 			if(m_progressBar==null)
 				m_progressBar = new ProgressBar(HalfWidth*2 * 4/5, height); // 4/5 of icon width
 			m_progressBar.Draw(drawArgs, m_renderPosition.X, m_renderPosition.Y-height, request.Progress, request.Color);
 			m_renderPosition.Y -= height+spacing;
 		}
 
-		/// <summary>
-		/// Render a rectangle around an image tile in the specified color
-		/// </summary>
+		//渲染矩形框
 		public void RenderRectangle(DrawArgs drawArgs, GeoSpatialDownloadRequest request)
 		{
 			int color = request.Color;

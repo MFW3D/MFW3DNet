@@ -7,40 +7,30 @@ using System.Globalization;
 
 namespace WorldWind
 {
-    /// <summary>
-    /// This class serializes the in-memory Renderable objects
-    /// to their source XML parsed by the ConfigurationLoader
-    /// for persistence
-    /// </summary>
+    // 序列化设置存储
     class ConfigurationSaver
     {
-        /// <summary>
-        /// Save settings for a particular world
-        /// </summary>
-        /// <param name="world">World to be serialized</param>
+        //存储对应的world
         public static void Save(World world)
         {
             foreach(RenderableObject ro in world.RenderableObjects.ChildObjects)
             {
                 XmlDocument worldDoc = new XmlDocument();
                 worldDoc.AppendChild((worldDoc.CreateXmlDeclaration("1.0", "utf-8", null)));
-
-                //Call appropriate serialization function
+                //调用对应的序列化方法
                 if(ro is RenderableObjectList)
                     worldDoc.AppendChild(saveLayerSet((RenderableObjectList)ro, worldDoc));
             }
         }
-
         /// <summary>
-        /// Save a subset of the LM to a file.
+        /// 存储一些列的对象
         /// </summary>
-        /// <param name="ro">RenderableObjectList to save</param>
-        /// <param name="file">Location for output</param>
+        /// <param name="ro">存储的对象</param>
+        /// <param name="file">存储位置</param>
         public static void SaveAs(RenderableObject ro, string file)
         {
             XmlDocument worldDoc = new XmlDocument();
             worldDoc.AppendChild((worldDoc.CreateXmlDeclaration("1.0", "utf-8", null)));
-
             if (ro is RenderableObjectList)
             {
                 //worldDoc.AppendChild(saveLayer((RenderableObjectList)ro, worldDoc));
@@ -55,23 +45,12 @@ namespace WorldWind
 
             worldDoc.Save(file);
         }
-
-
-        //TODO: Quadtiles Sets and indeed any layer may be sourced
-        //from multiple XML files and merged at runtime. No track 
-        //of the source XML's is kept. Merged XML's can be written
-        //back to the original config load point(causing duplicates)
-        //or to Application Data folder. Important design issues here
-        //need to be decided on.]
-
-        //TODO: Serialize "ExtendedInformation" nodes?  What is that for anyway?
-
         /// <summary>
-        /// Serializes Renderable Object Lists to LayersSets at the top level
+        /// 存储图层序列
         /// </summary>
-        /// <param name="layerSet">Layerset Renderable Object to be serialized</param>
-        /// <param name="worldDoc">World Document to which node is added</param>
-        /// <returns>Node for Root Layerset</returns>
+        /// <param name="layerSet">图层集合</param>
+        /// <param name="worldDoc">xml节点</param>
+        /// <returns>根节点</returns>
         private static XmlNode saveLayerSet(RenderableObjectList layerSet,XmlDocument worldDoc)
         {
             XmlNode layerSetNode = worldDoc.CreateElement("LayerSet");
@@ -145,10 +124,6 @@ namespace WorldWind
         public static void getRenderableObjectProperties(RenderableObject ro, XmlNode roNode)
         {
             XmlDocument worldDoc = roNode.OwnerDocument;
-
-            // TODO: what about Thumbnail, ThumbnailImage, IconImagePath, etc.?
-            // do those even get used for anything?
-
             XmlNode nameNode = worldDoc.CreateElement("Name");
             nameNode.AppendChild(worldDoc.CreateTextNode(ro.Name));
             roNode.AppendChild(nameNode);
@@ -175,7 +150,6 @@ namespace WorldWind
             roNode.Attributes.Append(infoUriAttribute);
 
         }
-
         public static string createPointList(Point3d[] point3d)
         {
             string posList = "";
@@ -188,7 +162,6 @@ namespace WorldWind
 
             return posList;
         }
-
         public static void createColorNode(XmlNode colorNode, System.Drawing.Color color)
         {
             XmlDocument worldDoc = colorNode.OwnerDocument;

@@ -13,18 +13,16 @@ using WorldWind;
 namespace WorldWind
 {
 	/// <summary>
-	/// World Wind persisted settings.
+	/// 配置
 	/// </summary>
 	public class WorldWindSettings : WorldWind.Configuration.SettingsBase
 	{
-
 		public WorldWindSettings() : base()
 		{
 			
 		}
-		#region Proxy
-
-		// Proxy settings
+		
+        #region 代理设置
 		private bool useWindowsDefaultProxy = true;
 		private string proxyUrl = "";
 		private bool useDynamicProxy = false;
@@ -108,9 +106,7 @@ namespace WorldWind
 
 		#endregion
 
-		#region Cache
-
-		// Cache settings
+		#region 缓存设置
 		private string cachePath = "Cache";
 		private int cacheSizeMegaBytes = 10000;
 		private TimeSpan cacheCleanupInterval = TimeSpan.FromMinutes(60);
@@ -228,7 +224,7 @@ namespace WorldWind
 
 		#endregion
 
-		#region Plugin
+		#region 插件设置
 
 		private System.Collections.ArrayList pluginsLoadedOnStartup = new System.Collections.ArrayList();
 
@@ -242,13 +238,10 @@ namespace WorldWind
 			}
 		}
 
-		#endregion
+        #endregion
 
-		#region Miscellaneous settings
-
-		// Misc
-		private string defaultWorld = "Earth";
-		// default is to show the Configuration Wizard at startup
+        #region 杂项设置
+        private string defaultWorld = "Earth";
 		private bool configurationWizardAtStartup = true;
 
 		[Browsable(true),Category("Miscellaneous")]
@@ -281,9 +274,7 @@ namespace WorldWind
 
 		#endregion
 
-		#region File System Settings
-
-		// File system settings
+		#region 文件系统设置
 		private string configPath = "Config";
 		private string dataPath = "Data";
         private bool validateXML = false;
@@ -341,9 +332,6 @@ namespace WorldWind
 
 		#endregion
 
-		/// <summary>
-		/// Propagate proxy-related settings to statics in WebDownload class
-		/// </summary>
 		void UpdateProxySettings()
 		{
 			WorldWind.Net.WebDownload.useWindowsDefaultProxy = this.useWindowsDefaultProxy;
@@ -353,7 +341,6 @@ namespace WorldWind
 			WorldWind.Net.WebDownload.proxyPassword          = this.proxyPassword;
 		}
 
-		// comment out ToString() to have namespace+class name being used as filename
 		public override string ToString()
 		{
 			return "WorldWind";

@@ -8,10 +8,6 @@ using System.Drawing;
 
 namespace WorldWind.Menu
 {
-
-    /// <summary>
-    /// WorldWind Toolbar
-    /// </summary>
     public class MenuBar : IMenu
     {
         #region Private Members
@@ -33,29 +29,22 @@ namespace WorldWind.Menu
 
         #endregion
 
-        #region Properties
-
-        /// <summary>
-        /// Where the menubar is anchored.
-        /// </summary>
+        #region  Ù–‘
         public MenuAnchor Anchor
         {
             get { return m_anchor; }
             set { m_anchor = value; }
         }
         private MenuAnchor m_anchor = MenuAnchor.Top;
-
+        private bool m_isActive = false;
         /// <summary>
-        /// Indicates whether the menu is "open". (user activity)
+        ///  «∑Òº§ªÓ
         /// </summary>
         public bool IsActive
         {
-            get
-            {
-                return (this._curSelection >= 0);
-            }
+            get{return m_isActive;}
+            set { m_isActive = value; }
         }
-
         public System.Collections.ArrayList LayersMenuButtons
         {
             get
@@ -67,7 +56,6 @@ namespace WorldWind.Menu
                 m_layersMenuButtons = value;
             }
         }
-
         public System.Collections.ArrayList ToolsMenuButtons
         {
             get
@@ -82,11 +70,6 @@ namespace WorldWind.Menu
 
         #endregion
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref= "T:WorldWind.Menu.MenuBar"/> class.
-        /// </summary>
-        /// <param name="anchor"></param>
-        /// <param name="iconSize"></param>
         public MenuBar(MenuAnchor anchor, int iconSize)
         {
             m_anchor = anchor;
@@ -316,6 +299,8 @@ namespace WorldWind.Menu
 
         public void Render(DrawArgs drawArgs)
         {
+            if (!IsActive)
+                return;
             if (m_sprite == null)
                 m_sprite = new Sprite(drawArgs.device);
 

@@ -15,8 +15,6 @@ namespace GeometryUtility
 	///and related calculations
 	///Line Equation:ax+by+c=0
 	///</summary>
-	
-	//a Line in 2D coordinate system: ax+by+c=0
 	public class CLine
 	{
 		//line: ax+by+c=0;
@@ -234,7 +232,6 @@ namespace GeometryUtility
 			return point;
   		}
 	}
-
 	public class CLineSegment : CLine
 	{
 		//line: ax+by+c=0, with start point and end point

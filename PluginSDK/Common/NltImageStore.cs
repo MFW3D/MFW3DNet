@@ -6,7 +6,7 @@ using System.Xml;
 namespace WorldWind
 {
 	/// <summary>
-	/// Formats urls for images stored in NLT-style
+	/// 以 NLT-style存储的urls格式
 	/// </summary>
     public class NltImageStore : ImageStore
     {
@@ -26,11 +26,6 @@ namespace WorldWind
             }
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref= "T:WorldWind.ImageTileService"/> class.
-        /// </summary>
-        /// <param name="dataSetName"></param>
-        /// <param name="serverUri"></param>
         public NltImageStore(
             string dataSetName,
             string serverUri)
@@ -49,7 +44,6 @@ namespace WorldWind
             m_dataSetName = dataSetName;
             m_formatString = formatString;
         }
-
 
         protected override string GetDownloadUrl(QuadTile qt)
         {

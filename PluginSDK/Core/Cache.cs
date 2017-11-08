@@ -7,13 +7,12 @@ using Utility;
 namespace WorldWind
 {
 	/// <summary>
-	/// Maintains the cached data on disk (staying within limits)
+	/// 管理硬盘中的缓存
 	/// </summary>
 	public class Cache : IDisposable
 	{
-		// default value for maximum Cache size is 2 Gigabytes
+		// 定义缓存大小
 		public long CacheUpperLimit = 2L * 1024L * 1024L * 1024L;		  
-		// default value for size where Cache cleanup stops is 1.5 Gigabytes(75% of max size)
 		public long CacheLowerLimit = 1536L * 1024L * 1024L;
 		public string CacheDirectory;
 		public TimeSpan CleanupFrequency;
@@ -59,7 +58,6 @@ namespace WorldWind
 			this.CacheLowerLimit = cacheLowerLimit;
 			this.CacheUpperLimit = cacheUpperLimit;
 		}
-
 		/// <summary>
 		/// Monitors the cache, makes sure it stays within limits.
 		/// </summary>
@@ -69,7 +67,6 @@ namespace WorldWind
 			{
 				// We are are not in a hurry
 				Thread.CurrentThread.Priority = ThreadPriority.BelowNormal;
-
 				// dirSize is reported as the total of the file sizes, in bytes
 				// TODO: use the on-disk filesize, not FileInfo.Length, to calculate dirSize
 				long dirSize = GetDirectorySize(new DirectoryInfo(this.CacheDirectory));
@@ -122,7 +119,6 @@ namespace WorldWind
 				Log.Write(Log.Levels.Error, "CACH", caught.Message);
 			}
 		}
-
 		public static ArrayList GetDirectoryFileInfoList(DirectoryInfo inDir)
 		{
 			ArrayList returnList = new ArrayList();
@@ -136,7 +132,6 @@ namespace WorldWind
 			}
 			return returnList;
 		}
-
 		public static long GetDirectorySize(DirectoryInfo inDir)
 		{
 			long returnBytes = 0;
@@ -157,12 +152,10 @@ namespace WorldWind
 			}
 			return returnBytes;
 		}
-
 		public override string ToString()
 		{
 			return CacheDirectory;
 		}
-
 		#region IDisposable Members
 
 		public void Dispose()

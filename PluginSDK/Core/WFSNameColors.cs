@@ -5,9 +5,9 @@ namespace WorldWind
 {
     public enum WFSNameColors
     {
-        Default,
-        White,
-        Gray,
-        Black
+        Default=0,
+        White=1,
+        Gray=2,
+        Black=3
     }
 }

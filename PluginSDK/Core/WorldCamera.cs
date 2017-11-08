@@ -6,9 +6,6 @@ using Microsoft.DirectX.Direct3D;
 
 namespace WorldWind.Camera
 {
-	/// <summary>
-	/// The "normal" camera
-	/// </summary>
 	public class WorldCamera : CameraBase
 	{
 		protected Angle _targetLatitude;
@@ -20,12 +17,6 @@ namespace WorldWind.Camera
 		protected Angle _targetTilt;
 		protected Angle _targetFov;
 		protected Quaternion4d _targetOrientation;
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.Camera.WorldCamera"/> class.
-		/// </summary>
-		/// <param name="targetPosition"></param>
-		/// <param name="radius"></param>
 		public WorldCamera( Vector3 targetPosition,double radius ) : base( targetPosition, radius ) 
 		{
 			this._targetOrientation = m_Orientation;
@@ -34,7 +25,6 @@ namespace WorldWind.Camera
 			this._targetTilt = this._tilt;
 			this._targetFov = this._fov;
 		}
-
 		public override void SetPosition(double lat, double lon, double heading, double _altitude, double tilt, double bank)
 		{
 			if(double.IsNaN(lat)) lat = this._latitude.Degrees;
@@ -60,7 +50,6 @@ namespace WorldWind.Camera
 				Altitude = _altitude;
 			this.Bank = Angle.FromDegrees(bank);
 		}
-
 		public override Angle Heading
 		{
 			get { return _heading; }
@@ -70,7 +59,6 @@ namespace WorldWind.Camera
 				_targetHeading = value;
 			}
 		}
-
 		Angle angle = new Angle();
 		protected void SlerpToTargetOrientation(double percent)
 		{
@@ -91,9 +79,8 @@ namespace WorldWind.Camera
             ComputeAltitude(_distance + _headZoom, _tilt + _headTilt, _swivel + _headSwivel);
             _fov += (_targetFov - _fov) * percent;
 		}
-
-		#region Public properties
-
+		
+        #region 公共属性
 		public override double TargetAltitude
 		{
 			get
@@ -110,7 +97,6 @@ namespace WorldWind.Camera
 				ComputeTargetDistance(this._targetAltitude, this._targetTilt);
 			}
 		}
-
 		public Angle TargetHeading
 		{
 			get { return this._targetHeading; }
@@ -119,25 +105,21 @@ namespace WorldWind.Camera
 				this._targetHeading = value; 
 			}
 		}
-		
 		public Angle TargetLatitude
 		{
 			get { return this._targetLatitude; }
 			set { this._targetLatitude = value; }
 		}
-		
 		public Angle TargetLongitude
 		{
 			get { return this._targetLongitude; }
 			set { this._targetLongitude = value; }
 		}
-		
 		public Quaternion4d TargetOrientation
 		{
 			get { return this._targetOrientation; }
 			set { this._targetOrientation = value; }
 		}
-		
 		public override Angle Fov
 		{
 			get { return this._targetFov; }
@@ -149,17 +131,15 @@ namespace WorldWind.Camera
 				this._targetFov = value; 
 			}
 		}
-
 		#endregion
 
-
-		#region ICamera interface
+		#region ICamera 接口
 
 		public override void Update(Device device)
 		{
-            // Move camera
+            // 移动相机
             SlerpToTargetOrientation(World.Settings.cameraSlerpPercentage);
-            // Check for terrain collision
+            // 检查地形碰撞
             if (_altitude < _terrainElevationUnderCamera * World.Settings.VerticalExaggeration + minimumAltitude)
 			{
                 _targetAltitude = _terrainElevationUnderCamera * World.Settings.VerticalExaggeration + minimumAltitude;
@@ -174,7 +154,7 @@ namespace WorldWind.Camera
                 }
                 _tilt = _targetTilt;
 			}
-            // Update camera base
+            // 更新父类
 			base.Update(device);
 		}
 
@@ -264,7 +244,7 @@ namespace WorldWind.Camera
 		}
 	
 		/// <summary>
-		/// Zoom camera in/out (distance) 
+		/// 放大缩小
 		/// </summary>
 		/// <param name="percent">Positive value = zoom in, negative=out</param>
 		public override void Zoom(float percent)

@@ -3,9 +3,6 @@ using System.Globalization;
 
 namespace WorldWind
 {
-	/// <summary>
-	/// Summary description for ImageTileService.
-	/// </summary>
 	public class ImageTileService
 	{
 		#region Private Members
@@ -16,7 +13,6 @@ namespace WorldWind
 		#endregion
 
 		#region Properties
-
 		public TimeSpan CacheExpirationTime
 		{
 			get
@@ -24,7 +20,6 @@ namespace WorldWind
 				return this._cacheExpirationTime;
 			}								   
 		}
-
 		public string ServerLogoPath
 		{
 			get
@@ -38,13 +33,6 @@ namespace WorldWind
 		}
 		#endregion
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.ImageTileService"/> class.
-		/// </summary>
-		/// <param name="datasetName"></param>
-		/// <param name="serverUri"></param>
-		/// <param name="serverLogoPath"></param>
-		/// <param name="cacheExpirationTime"></param>
 		public ImageTileService(
 			string datasetName,
 			string serverUri,
@@ -57,12 +45,6 @@ namespace WorldWind
 			this._cacheExpirationTime = cacheExpirationTime;
 		}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.ImageTileService"/> class.
-		/// </summary>
-		/// <param name="datasetName"></param>
-		/// <param name="serverUri"></param>
-		/// <param name="serverLogoPath"></param>
 		public ImageTileService(
 			string datasetName,
 			string serverUri,

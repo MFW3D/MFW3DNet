@@ -3,13 +3,12 @@ using System;
 namespace GeometryUtility
 {
 	/// <summary>
-	/// Summary description for NoValidReturnException.
+	/// Òì³£×Ü½á
 	/// </summary>
 	public class NonValidReturnException: ApplicationException
 	{
 		public NonValidReturnException():base()
 		{
-		
 		}
 		public NonValidReturnException(string msg)
 			:base(msg)
@@ -20,25 +19,20 @@ namespace GeometryUtility
 		public NonValidReturnException(string msg,
 			Exception inner): base(msg, inner)
 		{
-		
 		}
 	}
-
 	public class InvalidInputGeometryDataException: ApplicationException
 	{
 		public InvalidInputGeometryDataException():base()
 		{
-		
 		}
 		public InvalidInputGeometryDataException(string msg)
 			:base(msg)
 		{
-
 		}
 		public InvalidInputGeometryDataException(string msg,
 			Exception inner): base(msg, inner)
 		{
-		
 		}
 	}
 }

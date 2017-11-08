@@ -42,13 +42,6 @@ namespace WorldWind
                 }
 
                 m_Device3d.Dispose();
-
-                //if (m_downloadIndicator != null)
-                //{
-                //    m_downloadIndicator.Dispose();
-                //    m_downloadIndicator = null;
-                //}
-
             }
 
             base.Dispose(disposing);

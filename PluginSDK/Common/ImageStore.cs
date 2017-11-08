@@ -8,10 +8,10 @@ using System.Xml;
 
 namespace WorldWind
 {
-	/// <summary>
-	/// Base class for calculating local image paths and remote download urls
-	/// </summary>
-	public class ImageStore
+    /// <summary>
+    /// 用于计算本地映像路径和远程下载URL的基类
+    /// </summary>
+    public class ImageStore
 	{
 		#region Private Members
 
@@ -313,7 +313,6 @@ namespace WorldWind
 			if(File.Exists(filename))
 				File.Delete(filename);
 		}
-
 
 		/// <summary>
 		/// Converts image file to DDS

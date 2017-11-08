@@ -5,26 +5,17 @@ namespace WorldWind
 {
 	public sealed class PerformanceTimer
 	{
-		#region Instance Data
-
+		#region 数据实例
 		public static long TicksPerSecond;
 		#endregion
 
-		#region Creation
-
-		/// <summary>
-		/// Static class
-		/// </summary>
+		#region 创建
  		private PerformanceTimer() 
 		{
 		}
-
-		/// <summary>
-		/// Static constructor
-		/// </summary>
 		static PerformanceTimer()
 		{
-			// Read timer frequency
+			// 读取始终频率
 			long tickFrequency = 0;
 			if (!QueryPerformanceFrequency(ref tickFrequency))
 				throw new NotSupportedException("The machine doesn't appear to support high resolution timer.");
@@ -34,7 +25,7 @@ namespace WorldWind
 		}
 		#endregion
 
-		#region High Resolution Timer functions
+		#region 高性能时钟
 
 		[System.Security.SuppressUnmanagedCodeSecurity] 
 		[DllImport("kernel32")]

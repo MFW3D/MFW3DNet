@@ -4,13 +4,10 @@ using Microsoft.DirectX;
 namespace WorldWind
 {
 	/// <summary>
-	/// Commonly used mathematical functions.
+	/// 数学方法
 	/// </summary>
 	public sealed class MathEngine
 	{
-		/// <summary>
-		/// This class has only static methods.
-		/// </summary>
 		private MathEngine()
 		{
 		}
