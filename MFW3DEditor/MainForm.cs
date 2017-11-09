@@ -606,5 +606,23 @@ namespace MFW3DEditor
         }
         #endregion
 
+        bool m_IsLL = false;
+        bool m_IsCompass = false;
+
+        private void m_showLL_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            worldWindow.SetLatLonGridShow(m_IsLL=!m_IsLL);
+        }
+
+        private void m_zhibeizhen_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+
+        }
+
+        private void m_showlayers_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

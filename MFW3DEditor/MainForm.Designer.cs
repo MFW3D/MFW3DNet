@@ -38,7 +38,12 @@
             this.siStatus = new DevExpress.XtraBars.BarStaticItem();
             this.siInfo = new DevExpress.XtraBars.BarStaticItem();
             this.rgbiSkins = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.m_showLL = new DevExpress.XtraBars.BarButtonItem();
+            this.m_zhibeizhen = new DevExpress.XtraBars.BarButtonItem();
+            this.m_showlayers = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageSkins = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.skinsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -76,13 +81,17 @@
             this.iAbout,
             this.siStatus,
             this.siInfo,
-            this.rgbiSkins});
+            this.rgbiSkins,
+            this.m_showLL,
+            this.m_zhibeizhen,
+            this.m_showlayers});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 306;
+            this.ribbonControl.MaxItemId = 309;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage1,
             this.ribbonPageSkins});
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemFloatingObjectOutlineWeight1,
@@ -160,6 +169,27 @@
             this.rgbiSkins.Id = 60;
             this.rgbiSkins.Name = "rgbiSkins";
             // 
+            // m_showLL
+            // 
+            this.m_showLL.Caption = "显示经纬网";
+            this.m_showLL.Id = 306;
+            this.m_showLL.Name = "m_showLL";
+            this.m_showLL.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_showLL_ItemClick);
+            // 
+            // m_zhibeizhen
+            // 
+            this.m_zhibeizhen.Caption = "显示指北针";
+            this.m_zhibeizhen.Id = 307;
+            this.m_zhibeizhen.Name = "m_zhibeizhen";
+            this.m_zhibeizhen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_zhibeizhen_ItemClick);
+            // 
+            // m_showlayers
+            // 
+            this.m_showlayers.Caption = "显示图层";
+            this.m_showlayers.Id = 308;
+            this.m_showlayers.Name = "m_showlayers";
+            this.m_showlayers.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_showlayers_ItemClick);
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -167,6 +197,22 @@
             this.ribbonImageCollectionLarge.Images.SetKeyName(0, "Ribbon_Exit_32x32.png");
             this.ribbonImageCollectionLarge.Images.SetKeyName(1, "Ribbon_Content_32x32.png");
             this.ribbonImageCollectionLarge.Images.SetKeyName(2, "Ribbon_Info_32x32.png");
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "场景操作";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.m_showLL);
+            this.ribbonPageGroup1.ItemLinks.Add(this.m_zhibeizhen);
+            this.ribbonPageGroup1.ItemLinks.Add(this.m_showlayers);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.ShowCaptionButton = false;
+            this.ribbonPageGroup1.Text = "显示操作";
             // 
             // ribbonPageSkins
             // 
@@ -308,5 +354,10 @@
         private DevExpress.XtraRichEdit.Design.RepositoryItemRichEditFontSizeEdit repositoryItemRichEditFontSizeEdit1;
         private DevExpress.XtraRichEdit.UI.RichEditBarController richEditBarController1;
         private MFW3D.WorldWindow worldWindow;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem m_showLL;
+        private DevExpress.XtraBars.BarButtonItem m_zhibeizhen;
+        private DevExpress.XtraBars.BarButtonItem m_showlayers;
     }
 }
