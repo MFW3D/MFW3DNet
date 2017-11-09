@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldWind", "WorldWind\WorldWind.csproj", "{394E6BC1-62F8-4776-9FC5-25633A239433}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins", "WorldWind\Plugins.csproj", "{394E6BC1-62F8-4776-9FC5-25633A239433}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginSDK", "PluginSDK\PluginSDK.csproj", "{30178337-6BBE-45A0-B7DF-73B2A46F06EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldWind", "PluginSDK\WorldWind.csproj", "{30178337-6BBE-45A0-B7DF-73B2A46F06EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timeline", "Timeline\Timeline.csproj", "{467BCD43-F3D9-46A5-B7A8-3A8B11708E0E}"
 EndProject

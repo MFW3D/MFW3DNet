@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>WorldWind</name>
+        <name>Plugins</name>
     </assembly>
     <members>
         <member name="M:YahooFlickr.Plugins.FlickrGUI.searchButton_Click(System.Object,System.EventArgs)">
@@ -1128,47 +1128,6 @@
             </summary>
             <param name="wmsDate">Input WMS date string.</param>
             <returns>Time converted to DateTime or DateTime.MinValue if date string is incorrect format.</returns>
-        </member>
-        <member name="T:WorldWind.Properties.Resources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:WorldWind.Properties.Resources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:WorldWind.Properties.Resources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:WorldWind.Properties.Resources.back">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:WorldWind.Properties.Resources.forward">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:WorldWind.Properties.Resources.go">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:WorldWind.Properties.Resources.outline">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
-        </member>
-        <member name="P:WorldWind.Properties.Resources.stop">
-            <summary>
-              Looks up a localized resource of type System.Drawing.Bitmap.
-            </summary>
         </member>
         <member name="T:Mashi.Stereo.AnaglyphStereo">
             <summary>
@@ -2743,6 +2702,47 @@
             Number of faces	:slices*stacks*2
             Number of Indexes	: Number of faces * 3;
             </remarks>
+        </member>
+        <member name="T:Plugins.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Plugins.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Plugins.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Plugins.Properties.Resources.back">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Plugins.Properties.Resources.forward">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Plugins.Properties.Resources.go">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Plugins.Properties.Resources.outline">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Plugins.Properties.Resources.stop">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
         </member>
     </members>
 </doc>

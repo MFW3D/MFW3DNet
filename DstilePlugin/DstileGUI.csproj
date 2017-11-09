@@ -139,13 +139,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PluginSDK\PluginSDK.csproj">
+    <ProjectReference Include="..\PluginSDK\WorldWind.csproj">
       <Project>{30178337-6BBE-45A0-B7DF-73B2A46F06EE}</Project>
-      <Name>PluginSDK</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WorldWind\WorldWind.csproj">
-      <Project>{394E6BC1-62F8-4776-9FC5-25633A239433}</Project>
       <Name>WorldWind</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorldWind\Plugins.csproj">
+      <Project>{394E6BC1-62F8-4776-9FC5-25633A239433}</Project>
+      <Name>Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

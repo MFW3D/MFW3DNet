@@ -221,9 +221,9 @@
       <Project>{46b962cc-097b-4e5e-8835-6d89e548ed12}</Project>
       <Name>HtmlEditor</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PluginSDK\PluginSDK.csproj">
+    <ProjectReference Include="..\PluginSDK\WorldWind.csproj">
       <Project>{30178337-6bbe-45a0-b7df-73b2a46f06ee}</Project>
-      <Name>PluginSDK</Name>
+      <Name>WorldWind</Name>
     </ProjectReference>
     <ProjectReference Include="..\RSS.NET\RSS.NET.csproj">
       <Project>{c42fc014-7e12-4faf-9bc9-79bf1529440d}</Project>
@@ -233,9 +233,9 @@
       <Project>{467bcd43-f3d9-46a5-b7a8-3a8b11708e0e}</Project>
       <Name>Timeline</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WorldWind\WorldWind.csproj">
+    <ProjectReference Include="..\WorldWind\Plugins.csproj">
       <Project>{394e6bc1-62f8-4776-9fc5-25633a239433}</Project>
-      <Name>WorldWind</Name>
+      <Name>Plugins</Name>
     </ProjectReference>
     <ProjectReference Include="..\WorldXmlDescriptor\WorldXmlDescriptor.csproj">
       <Project>{9ea1e65d-4558-e940-b594-e71bf740fa04}</Project>

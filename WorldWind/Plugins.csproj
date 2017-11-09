@@ -10,7 +10,7 @@
     <ApplicationIcon>images\logo.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>WorldWind</AssemblyName>
+    <AssemblyName>Plugins</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -18,7 +18,7 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <RootNamespace>WorldWind</RootNamespace>
+    <RootNamespace>Plugins</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
@@ -212,8 +212,8 @@
       <Project>{87aa56b4-95ef-44a6-a3fe-ec77aff3991c}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PluginSDK\PluginSDK.csproj">
-      <Name>PluginSDK</Name>
+    <ProjectReference Include="..\PluginSDK\WorldWind.csproj">
+      <Name>WorldWind</Name>
       <Project>{30178337-6BBE-45A0-B7DF-73B2A46F06EE}</Project>
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
       <Private>True</Private>

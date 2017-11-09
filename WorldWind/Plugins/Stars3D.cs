@@ -135,7 +135,7 @@ namespace Stars3D.Plugin
                 return;
             if (!IsOn)
                 return;
-
+            return;
 			// Camera & Device shortcuts ;)
 			CameraBase camera = drawArgs.WorldCamera;
 			Device device = drawArgs.device;
