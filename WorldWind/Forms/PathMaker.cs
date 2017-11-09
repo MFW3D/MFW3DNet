@@ -8,6 +8,7 @@ using System;
 using WorldWind;
 using WorldWind.Renderable;
 using Utility;
+using WorldWind.PluginEngine;
 
 namespace WorldWind
 {
@@ -29,7 +30,7 @@ namespace WorldWind
 		private System.Windows.Forms.Button buttonStop;
 		private System.Windows.Forms.Button buttonSave;
 		private WorldWindow worldWindow;
-		string saveDirPath = Path.Combine(Global.DirectoryPath, Path.Combine("Data","User"));
+		string saveDirPath = Path.Combine(WorldWind.Global.Settings.DirectoryPath, Path.Combine("Data","User"));
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox textBoxName;

@@ -1,6 +1,7 @@
 ﻿using ICSharpCode.SharpZipLib.Zip;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -9,6 +10,7 @@ using System.Windows.Forms;
 using Utility;
 using WorldWind.Configuration;
 using WorldWind.Net;
+using WorldWind.PluginEngine;
 using WorldWind.Renderable;
 
 namespace WorldWind
@@ -19,7 +21,6 @@ namespace WorldWind
         public static string CurrentSettingsDirectory;
         public static bool issetCurrentSettingsDirectory;
         public static WorldWindSettings Settings = new WorldWindSettings();
-        public static readonly string DirectoryPath = Path.GetDirectoryName(Application.ExecutablePath);
 
         public static WorldWindUri worldWindUri;
         public static string[] cmdArgs;
@@ -42,30 +43,30 @@ namespace WorldWind
 
                 if (!File.Exists(Global.Settings.FileName))
                 {
-                    Global.Settings.PluginsLoadedOnStartup.Add("ShapeFileInfoTool");
-                    Global.Settings.PluginsLoadedOnStartup.Add("OverviewFormLoader");
-                    Global.Settings.PluginsLoadedOnStartup.Add("Atmosphere");
-                    Global.Settings.PluginsLoadedOnStartup.Add("SkyGradient");
-                    Global.Settings.PluginsLoadedOnStartup.Add("BmngLoader");
-                    Global.Settings.PluginsLoadedOnStartup.Add("Compass");
-                    Global.Settings.PluginsLoadedOnStartup.Add("ExternalLayerManagerLoader");
-                    Global.Settings.PluginsLoadedOnStartup.Add("MeasureTool");
-                    Global.Settings.PluginsLoadedOnStartup.Add("MovieRecorder");
-                    Global.Settings.PluginsLoadedOnStartup.Add("NRLWeatherLoader");
-                    Global.Settings.PluginsLoadedOnStartup.Add("ShapeFileLoader");
-                    Global.Settings.PluginsLoadedOnStartup.Add("Stars3D");
-                    Global.Settings.PluginsLoadedOnStartup.Add("GlobalClouds");
-                    Global.Settings.PluginsLoadedOnStartup.Add("PlaceFinderLoader");
-                    Global.Settings.PluginsLoadedOnStartup.Add("LightController");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("ShapeFileInfoTool");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("OverviewFormLoader");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("Atmosphere");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("SkyGradient");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("BmngLoader");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("Compass");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("ExternalLayerManagerLoader");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("MeasureTool");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("MovieRecorder");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("NRLWeatherLoader");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("ShapeFileLoader");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("Stars3D");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("GlobalClouds");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("PlaceFinderLoader");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("LightController");
 
-                    Global.Settings.PluginsLoadedOnStartup.Add("KMLImporter");
-                    Global.Settings.PluginsLoadedOnStartup.Add("doublezoom");
-                    Global.Settings.PluginsLoadedOnStartup.Add("PlanetaryRings");
-                    Global.Settings.PluginsLoadedOnStartup.Add("TimeController");
-                    Global.Settings.PluginsLoadedOnStartup.Add("WavingFlags");
-                    Global.Settings.PluginsLoadedOnStartup.Add("ScaleBarLegend");
-                    Global.Settings.PluginsLoadedOnStartup.Add("Compass3D");
-                    Global.Settings.PluginsLoadedOnStartup.Add("AnaglyphStereo");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("KMLImporter");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("doublezoom");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("PlanetaryRings");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("TimeController");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("WavingFlags");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("ScaleBarLegend");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("Compass3D");
+                    WorldWind.Global.Settings.PluginsLoadedOnStartup.Add("AnaglyphStereo");
                 }
                 DataProtector dp = new DataProtector(DataProtector.Store.USE_USER_STORE);
                 if (Global.Settings.ProxyUsername.Length > 0) Global.Settings.ProxyUsername = dp.TransparentDecrypt(Global.Settings.ProxyUsername);
@@ -94,7 +95,6 @@ namespace WorldWind
         {
             try
             {
-                NLT.Plugins.ShapeFileLoaderGUI.m_ShapeLoad.ParseUri(args);
             }
             catch
             {
@@ -181,6 +181,8 @@ namespace WorldWind
             return fd;
         }
 
+       
+
         #region Uri 句柄
         public static void QuickInstall(string path)
         {
@@ -253,7 +255,7 @@ namespace WorldWind
                         if (zipFilePath.EndsWith("xml"))
                         {
                             FileInfo source = new FileInfo(zipFilePath);
-                            string targetLocation = Global.DirectoryPath + Path.DirectorySeparatorChar + "Config" + Path.DirectorySeparatorChar + worldWindow.CurrentWorld.Name + Path.DirectorySeparatorChar + source.Name;
+                            string targetLocation = WorldWind.Global.Settings.DirectoryPath + Path.DirectorySeparatorChar + "Config" + Path.DirectorySeparatorChar + worldWindow.CurrentWorld.Name + Path.DirectorySeparatorChar + source.Name;
                             FileInfo target = new FileInfo(targetLocation);
                             if (target.Exists)
                                 target.Delete();
@@ -272,7 +274,7 @@ namespace WorldWind
                         try
                         {
                             FastZip fz = new FastZip();
-                            fz.ExtractZip(zipFilePath, Global.DirectoryPath, "");
+                            fz.ExtractZip(zipFilePath, WorldWind.Global.Settings.DirectoryPath, "");
 
                         }
                         catch (Exception ex)
@@ -283,7 +285,7 @@ namespace WorldWind
 
                         try
                         {
-                            string ManifestFile = Path.Combine(Global.DirectoryPath, "manifest.txt");
+                            string ManifestFile = Path.Combine(WorldWind.Global.Settings.DirectoryPath, "manifest.txt");
                             if (File.Exists(ManifestFile))
                             {
                                 StreamReader fs = new StreamReader(ManifestFile);
@@ -297,7 +299,7 @@ namespace WorldWind
                                         if (line.StartsWith("#") || line.StartsWith("//") || line.StartsWith("\t"))
                                             continue;
 
-                                        FileInfo fi = new FileInfo(Global.DirectoryPath + Path.DirectorySeparatorChar + line);
+                                        FileInfo fi = new FileInfo(WorldWind.Global.Settings.DirectoryPath + Path.DirectorySeparatorChar + line);
                                         if (fi.Exists && fi.Extension == ".xml")
                                         {
                                             LoadAddon(fi.FullName);
@@ -313,7 +315,7 @@ namespace WorldWind
                                     }
                                 }
                                 fs.Close();
-                                File.Delete(Path.Combine(Global.DirectoryPath, "manifest.txt"));
+                                File.Delete(Path.Combine(WorldWind.Global.Settings.DirectoryPath, "manifest.txt"));
                             }
                             else
                             {
@@ -422,7 +424,7 @@ namespace WorldWind
                             @"{0}\{1}\___DownloadedWMSImages.xml", Global.Settings.ConfigPath, "");//this.currentWorld.LayerDirectory.Value);
 
                         string texturePath = string.Format(CultureInfo.InvariantCulture,
-                            @"{0}\Data\DownloadedWMSImages\{1}", Global.DirectoryPath, System.DateTime.Now.ToFileTimeUtc());
+                            @"{0}\Data\DownloadedWMSImages\{1}", WorldWind.Global.Settings.DirectoryPath, System.DateTime.Now.ToFileTimeUtc());
 
                         if (!File.Exists(path))
                         {

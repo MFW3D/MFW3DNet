@@ -1455,7 +1455,7 @@ namespace MeasureTool.Plugins
 				chooser.DefaultExt = "*.csv";
 				chooser.Filter = "kml files (*.kml)|*.kml|Shape files (*.shp)|*.shp";
 				chooser.Title = "Save Multiline";
-				chooser.ShowDialog(MainApplication.ActiveForm);
+				chooser.ShowDialog();
 				String filename = chooser.FileName;
 				Console.WriteLine(filename);
 				try

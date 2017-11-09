@@ -16,7 +16,6 @@ namespace WorldWind
     /// </summary>
 	public class FileLoader : Form
 	{
-		private MainApplication mainapp;
 		private System.Windows.Forms.Label lblFileTextBox;
 		private System.Windows.Forms.TextBox tbFileName;
 		private System.Windows.Forms.Button btnChooseFile;
@@ -162,10 +161,8 @@ namespace WorldWind
 		/// Constructor for the file loader GUI
 		/// </summary>
 		/// <param name="app"></param>
-		public FileLoader(MainApplication app)
+		public FileLoader()
 		{
-			this.mainapp = app;
-
 			InitializeComponent();
 		}
 
@@ -173,10 +170,8 @@ namespace WorldWind
         /// Constructor for the file loader GUI
         /// </summary>
         /// <param name="app"></param>
-        public FileLoader(string fileName, MainApplication app)
+        public FileLoader(string fileName)
         {
-            this.mainapp = app;
-
             InitializeComponent();
 
             tbFileName.Text = fileName;
@@ -219,10 +214,10 @@ namespace WorldWind
                 if (tbFileName.Text.EndsWith(".xml") && !chbLoadPermanently.Checked)
                 {
                     RenderableObjectList layer = ConfigurationLoader.getRenderableFromLayerFile(tbFileName.Text,
-                        mainapp.WorldWindow.CurrentWorld,
-                        mainapp.WorldWindow.Cache);
+                        Global.worldWindow.CurrentWorld,
+                        Global.worldWindow.Cache);
 
-                    mainapp.WorldWindow.CurrentWorld.RenderableObjects.Add(layer);
+                    Global.worldWindow.CurrentWorld.RenderableObjects.Add(layer);
                     MessageBox.Show("File loaded.");
                 }
                 else

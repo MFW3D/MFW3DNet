@@ -14,6 +14,7 @@ using WorldWind;
 using WorldWind.Renderable;
 using WorldWind.VisualControl;
 using Utility;
+using WorldWind.PluginEngine;
 
 namespace WorldWind
 {
@@ -28,7 +29,7 @@ namespace WorldWind
 		string wms_config_filepath = Path.Combine( 
 			Path.Combine(Global.Settings.ConfigPath, "Earth"),
 			Path.Combine("Tools", "wms_server_list.xml"));
-		string saved_dirpath = Path.Combine(Global.DirectoryPath, 
+		string saved_dirpath = Path.Combine(WorldWind.Global.Settings.DirectoryPath, 
 			Path.Combine(Global.Settings.CachePath, "WMS Browser"));
 		
 		private WorldWindow worldWindow;

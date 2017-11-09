@@ -112,6 +112,7 @@
     <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2911.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Microsoft.JScript" />
     <Reference Include="Microsoft.VisualC" />
     <Reference Include="ogr_csharp">
       <HintPath>..\packages\GDAL.1.11.1\lib\net40\ogr_csharp.dll</HintPath>
@@ -175,6 +176,15 @@
   <ItemGroup>
     <Compile Include="Common\AltitudeMode.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Global.cs" />
+    <Compile Include="Common\gpx.cs" />
+    <Compile Include="Common\NativeMethods.cs" />
+    <Compile Include="Common\PlaceListSettings.cs" />
+    <Compile Include="Common\shapelib.cs" />
+    <Compile Include="Common\WplIndex.cs" />
+    <Compile Include="Common\WWListView.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Geometry\Angle.cs">
       <SubType>Code</SubType>
@@ -271,6 +281,19 @@
     <Compile Include="OgrVector\TextFilterDialog.Designer.cs" />
     <Compile Include="OgrVector\VectorStyleParameters.cs" />
     <Compile Include="OgrVector\WaitMessage.cs" />
+    <Compile Include="PluginEngine\Plugin.cs" />
+    <Compile Include="PluginEngine\PluginCompiler.cs" />
+    <Compile Include="PluginEngine\PluginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PluginEngine\PluginInfo.cs" />
+    <Compile Include="PluginEngine\PluginInstallDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PluginEngine\PluginListItem.cs" />
+    <Compile Include="PluginEngine\PluginListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -611,7 +634,6 @@
     <Compile Include="WorldWindow\Widgets\WorldWindow.Widgets.Utilities.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldWindow\NativeMethods.cs" />
     <Compile Include="WorldWindow\WorldWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -624,6 +646,7 @@
     <Compile Include="Core\WorldWindUri.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="Common\WWListView.resx" />
     <EmbeddedResource Include="GeoRSS\GeoRSSFeedControl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>GeoRSSFeedControl.cs</DependentUpon>
@@ -635,6 +658,9 @@
     <EmbeddedResource Include="OgrVector\NoDataForm.resx" />
     <EmbeddedResource Include="OgrVector\OgrVectorImporterGUI.resx" />
     <EmbeddedResource Include="OgrVector\TextFilterDialog.resx" />
+    <EmbeddedResource Include="PluginEngine\PluginDialog.resx" />
+    <EmbeddedResource Include="PluginEngine\PluginInstallDialog.resx" />
+    <EmbeddedResource Include="PluginEngine\PluginListView.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

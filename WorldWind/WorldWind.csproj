@@ -212,11 +212,6 @@
       <Project>{87aa56b4-95ef-44a6-a3fe-ec77aff3991c}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ConfigurationWizard\ConfigurationWizard.csproj">
-      <Name>ConfigurationWizard</Name>
-      <Project>{F94A08EC-194C-4C1C-9D84-5C98809CF5C1}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
     <ProjectReference Include="..\PluginSDK\PluginSDK.csproj">
       <Name>PluginSDK</Name>
       <Project>{30178337-6BBE-45A0-B7DF-73B2A46F06EE}</Project>
@@ -284,7 +279,6 @@
     </Compile>
     <Compile Include="Plugins\FloodLevel.cs" />
     <Compile Include="Plugins\GeoRSS.cs" />
-    <Compile Include="Common\Global.cs" />
     <Compile Include="Plugins\GlobeCursor.cs" />
     <Compile Include="Forms\GoogleForm.cs">
       <SubType>Form</SubType>
@@ -322,18 +316,12 @@
     <Compile Include="Forms\GotoDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Common\gpx.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Plugins\Joystick.cs" />
     <Compile Include="Plugins\KMLImporter.cs" />
     <Compile Include="Plugins\LayerManager.cs" />
     <Compile Include="Plugins\LightController.cs">
     </Compile>
     <Compile Include="Plugins\MeasureTool.cs">
-    </Compile>
-    <Compile Include="Common\NativeMethods.cs">
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Forms\NrlMryAboutDialog.cs">
       <SubType>Form</SubType>
@@ -365,34 +353,6 @@
     <Compile Include="Forms\PlaceFinder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Common\PlaceListSettings.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PluginEngine\NativeMethods.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PluginEngine\Plugin.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PluginEngine\PluginCompiler.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PluginEngine\PluginDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PluginEngine\PluginInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PluginEngine\PluginInstallDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PluginEngine\PluginListItem.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PluginEngine\PluginListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Forms\PropertyBrowserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,9 +365,6 @@
     </Compile>
     <Compile Include="Forms\ShapeFileLoader.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Common\shapelib.cs">
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Forms\Splash.cs">
       <SubType>Form</SubType>
@@ -428,22 +385,10 @@
     <Compile Include="Forms\WMSBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Common\WplIndex.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\WWListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="MainApplication.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainApplication.Designer.cs">
-      <DependentUpon>MainApplication.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AnimatedEarthManager.resx">
       <DependentUpon>AnimatedEarthManager.cs</DependentUpon>
@@ -523,15 +468,6 @@
       <DependentUpon>PlaceFinder.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PluginEngine\PluginDialog.resx">
-      <DependentUpon>PluginDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PluginEngine\PluginInstallDialog.resx">
-      <DependentUpon>PluginInstallDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PluginEngine\PluginListView.resx">
-      <DependentUpon>PluginListView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -556,13 +492,6 @@
     <EmbeddedResource Include="Forms\WMSBrowser.resx">
       <DependentUpon>WMSBrowser.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Common\WWListView.resx">
-      <DependentUpon>WWListView.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainApplication.resx">
-      <DependentUpon>MainApplication.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -160,7 +160,7 @@ namespace WorldWind
         {
             Log.Write(Log.Levels.Debug, "CONF", "initializing plugin compiler...");
             this.splashScreen.SetText("Initializing plugins...");
-            string pluginRoot = Path.Combine(Global.DirectoryPath, "Plugins");
+            string pluginRoot = Path.Combine(PluginEngineGlobal.DirectoryPath, "Plugins");
             compiler = new PluginCompiler(pluginRoot);
 
             //#if DEBUG
@@ -363,7 +363,7 @@ namespace WorldWind
         {
             if (ro.MetaData.Contains("ToolBarImagePath"))
             {
-                string imagePath = Path.Combine(Global.DirectoryPath, (string)ro.MetaData["ToolBarImagePath"]);
+                string imagePath = Path.Combine(PluginEngineGlobal.DirectoryPath, (string)ro.MetaData["ToolBarImagePath"]);
                 if (File.Exists(imagePath))
                 {
                     LayerShortcutMenuButton button = new LayerShortcutMenuButton(imagePath, ro);
@@ -441,7 +441,7 @@ namespace WorldWind
                     {
                         imagePath = curImageLayerType.TexturePath.Value;
                         if (!Path.IsPathRooted(imagePath))
-                            imagePath = Path.Combine(Global.DirectoryPath, imagePath);
+                            imagePath = Path.Combine(PluginEngineGlobal.DirectoryPath, imagePath);
                     }
 
                     int transparentColor = 0;
@@ -474,7 +474,7 @@ namespace WorldWind
                         newImageLayer.LegendImagePath = curImageLayerType.LegendImagePath.Value;
 
                     if (curImageLayerType.HasExtendedInformation() && curImageLayerType.ExtendedInformation.HasToolBarImage())
-                        newImageLayer.MetaData.Add("ToolBarImagePath", Path.Combine(Global.DirectoryPath, curImageLayerType.ExtendedInformation.ToolBarImage.Value));
+                        newImageLayer.MetaData.Add("ToolBarImagePath", Path.Combine(PluginEngineGlobal.DirectoryPath, curImageLayerType.ExtendedInformation.ToolBarImage.Value));
 
                     rol.Add(newImageLayer);
                 }
@@ -499,7 +499,7 @@ namespace WorldWind
                         curWorld,
                         newPathList.MinDisplayAltitude.DoubleValue(),
                         newPathList.MaxDisplayAltitude.DoubleValue(),
-                        Global.DirectoryPath + "//" + newPathList.PathsDirectory.Value,
+                        PluginEngineGlobal.DirectoryPath + "//" + newPathList.PathsDirectory.Value,
                         newPathList.DistanceAboveSurface.DoubleValue(),
                         (newPathList.HasWinColorName() ? System.Drawing.Color.FromName(newPathList.WinColorName.Value) : System.Drawing.Color.FromArgb(newPathList.RGBColor.Red.Value, newPathList.RGBColor.Green.Value, newPathList.RGBColor.Blue.Value)),
                         curWorld.TerrainAccessor);
@@ -507,7 +507,7 @@ namespace WorldWind
                     pl.IsOn = newPathList.ShowAtStartup.Value;
 
                     if (newPathList.HasExtendedInformation() && newPathList.ExtendedInformation.HasToolBarImage())
-                        pl.MetaData.Add("ToolBarImagePath", Path.Combine(Global.DirectoryPath, newPathList.ExtendedInformation.ToolBarImage.Value));
+                        pl.MetaData.Add("ToolBarImagePath", Path.Combine(PluginEngineGlobal.DirectoryPath, newPathList.ExtendedInformation.ToolBarImage.Value));
 
                     rol.Add(pl);
                 }
@@ -536,7 +536,7 @@ namespace WorldWind
                     sp.IsOn = newShapefileLayer.ShowAtStartup.BoolValue();
 
                     if (newShapefileLayer.HasExtendedInformation() && newShapefileLayer.ExtendedInformation.HasToolBarImage())
-                        sp.MetaData.Add("ToolBarImagePath", Path.Combine(Global.DirectoryPath, newShapefileLayer.ExtendedInformation.ToolBarImage.Value));
+                        sp.MetaData.Add("ToolBarImagePath", Path.Combine(PluginEngineGlobal.DirectoryPath, newShapefileLayer.ExtendedInformation.ToolBarImage.Value));
 
                     rol.Add(sp);
                 }
@@ -553,7 +553,7 @@ namespace WorldWind
                     string textureFullPath = newIcon.TextureFilePath.Value;
                     if (textureFullPath.Length > 0 && !Path.IsPathRooted(textureFullPath))
                         // Use absolute path to icon image
-                        textureFullPath = Path.Combine(Global.DirectoryPath, newIcon.TextureFilePath.Value);
+                        textureFullPath = Path.Combine(PluginEngineGlobal.DirectoryPath, newIcon.TextureFilePath.Value);
 
                     WorldWind.Renderable.Icon ic = new WorldWind.Renderable.Icon(
                         newIcon.Name.Value,
@@ -586,7 +586,7 @@ namespace WorldWind
 
                     string filePath = newPlacenames.PlacenameListFilePath.Value;
                     if (!Path.IsPathRooted(filePath))
-                        filePath = Path.Combine(Global.DirectoryPath, filePath);
+                        filePath = Path.Combine(PluginEngineGlobal.DirectoryPath, filePath);
 
                     Microsoft.DirectX.Direct3D.FontDescription fd = Global.GetLayerFontDescription(newPlacenames.DisplayFont);
                     TiledPlacenameSet tps = new TiledPlacenameSet(
@@ -601,7 +601,7 @@ namespace WorldWind
                         (newPlacenames.HasIconFilePath() ? newPlacenames.IconFilePath.Value : null));
 
                     if (newPlacenames.HasExtendedInformation() && newPlacenames.ExtendedInformation.HasToolBarImage())
-                        tps.MetaData.Add("ToolBarImagePath", Path.Combine(Global.DirectoryPath, newPlacenames.ExtendedInformation.ToolBarImage.Value));
+                        tps.MetaData.Add("ToolBarImagePath", Path.Combine(PluginEngineGlobal.DirectoryPath, newPlacenames.ExtendedInformation.ToolBarImage.Value));
 
                     tps.IsOn = newPlacenames.ShowAtStartup.Value;
                     rol.Add(tps);

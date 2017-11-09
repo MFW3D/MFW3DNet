@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
@@ -75,5 +76,58 @@ namespace WorldWind
 				}
 			}
 		}
-	}
+
+        [DllImport("User32.dll", CharSet = CharSet.Auto)]
+        public static extern long SetWindowLong(IntPtr hwnd, int nIndex, long dwNewLong);
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct RECT
+        {
+            public int left;
+            public int top;
+            public int right;
+            public int bottom;
+        }
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        public struct DRAWITEMSTRUCT
+        {
+            public int ctrlType;
+            public int ctrlID;
+            public int itemID;
+            public int itemAction;
+            public int itemState;
+            public IntPtr hwnd;
+            public IntPtr hdc;
+            public RECT rcItem;
+            public IntPtr itemData;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct LVHITTESTINFO
+        {
+            public Point pt;
+            public int flags;
+            public int iItem;
+            public int iSubItem;
+        }
+
+        //多线程消息
+        [StructLayout(LayoutKind.Sequential)]
+        public struct Message
+        {
+            public IntPtr hWnd;
+            public uint msg;
+            public IntPtr wParam;
+            public IntPtr lParam;
+            public uint time;
+            public System.Drawing.Point p;
+        }
+
+        //多线程消息
+        [System.Security.SuppressUnmanagedCodeSecurity] // We won't use this maliciously
+        [DllImport("User32.dll", CharSet = CharSet.Auto)]
+        public static extern bool PeekMessage(out Message msg, IntPtr hWnd, uint messageFilterMin, uint messageFilterMax, uint flags);
+
+    }
 }

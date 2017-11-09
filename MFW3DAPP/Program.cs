@@ -73,9 +73,9 @@ namespace WorldWind
 
                 World.Settings.Save();
                 DataProtector dp = new DataProtector(DataProtector.Store.USE_USER_STORE);
-                Global.Settings.ProxyUsername = dp.TransparentEncrypt(Global.Settings.ProxyUsername);
-                Global.Settings.ProxyPassword = dp.TransparentEncrypt(Global.Settings.ProxyPassword);
-                Global.Settings.Save();
+                //Global.Settings.ProxyUsername = dp.TransparentEncrypt(Global.Settings.ProxyUsername);
+                //Global.Settings.ProxyPassword = dp.TransparentEncrypt(Global.Settings.ProxyPassword);
+                //Global.Settings.Save();
             }
             catch (NullReferenceException)
             {

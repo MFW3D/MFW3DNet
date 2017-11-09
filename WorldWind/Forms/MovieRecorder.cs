@@ -754,7 +754,7 @@ namespace Apogee.MovieCreator
         {
             FolderBrowserDialog chooser = new FolderBrowserDialog();
             chooser.Description = "Save Files in Directory";
-            if (chooser.ShowDialog(MainApplication.ActiveForm) == DialogResult.OK)
+            if (chooser.ShowDialog() == DialogResult.OK)
             {
                 buttonPlay.Enabled = true;
                 buttonRecord.Enabled = true;
@@ -773,7 +773,7 @@ namespace Apogee.MovieCreator
             chooser.FilterIndex = 1;
             chooser.RestoreDirectory = true;
             chooser.Title = "Save Movie";
-            if (chooser.ShowDialog(MainApplication.ActiveForm) == DialogResult.OK)
+            if (chooser.ShowDialog() == DialogResult.OK)
             {
                 convertButton.Enabled = true;
                 outputMovieTextBox.Text = chooser.FileName;

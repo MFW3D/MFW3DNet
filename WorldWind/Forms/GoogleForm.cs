@@ -1143,7 +1143,6 @@ namespace bNb.Plugins
     public class VeReprojectTilesLayer : RenderableObject
     {
         private Projection proj;
-        private MainApplication parentApplication;
         private GoogleMapsForm veForm;
         private static double earthRadius; //6378137;
         private static double earthCircum; //40075016.685578488
@@ -1243,7 +1242,7 @@ namespace bNb.Plugins
                  Utility.Log.Write(ex);
                 }
                 */
-                earthRadius = parentApplication.WorldWindow.CurrentWorld.EquatorialRadius;
+                earthRadius = Global.worldWindow.CurrentWorld.EquatorialRadius;
                 earthCircum = earthRadius * 2.0 * Math.PI; //40075016.685578488
                 earthHalfCirc = earthCircum / 2; //20037508.
                                                  //NOTE tiles did not line up properly with ellps=WGS84
@@ -1252,7 +1251,7 @@ namespace bNb.Plugins
                 string[] projectionParameters = new string[] { "proj=merc", "ellps=sphere", "a=" + earthRadius.ToString(), "es=0.0", "no.defs" };
                 proj = new Projection(projectionParameters);
                 //static
-                VeTile.Init(this.proj, parentApplication.WorldWindow.CurrentWorld.TerrainAccessor, parentApplication.WorldWindow.CurrentWorld.EquatorialRadius, veForm);
+                VeTile.Init(this.proj, Global.worldWindow.CurrentWorld.TerrainAccessor, Global.worldWindow.CurrentWorld.EquatorialRadius, veForm);
                 prevVe = World.Settings.VerticalExaggeration;
                 this.isInitialized = true;
             }
@@ -1265,8 +1264,8 @@ namespace bNb.Plugins
         public string GetLocalLiveLink()
         {
             //http://local.live.com/default.aspx?v=2&cp=43.057723~-88.404224&style=r&lvl=12
-            string lat = parentApplication.WorldWindow.DrawArgs.WorldCamera.Latitude.Degrees.ToString("###.#####");
-            string lon = parentApplication.WorldWindow.DrawArgs.WorldCamera.Longitude.Degrees.ToString("###.#####");
+            string lat = Global.worldWindow.DrawArgs.WorldCamera.Latitude.Degrees.ToString("###.#####");
+            string lon = Global.worldWindow.DrawArgs.WorldCamera.Longitude.Degrees.ToString("###.#####");
             string link = "http://local.live.com/default.aspx?v=2&cp=" + lat + "~" + lon + "&styles=" + veForm.GetDataSetName() + "&lvl=" + prevLvl.ToString();
             return link;
         }

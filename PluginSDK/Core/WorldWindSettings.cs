@@ -220,24 +220,24 @@ namespace WorldWind
 
 				totalRunTime = XmlConvert.ToTimeSpan(value);
 			} 
-		} 
-
-		#endregion
-
-		#region 插件设置
-
-		private System.Collections.ArrayList pluginsLoadedOnStartup = new System.Collections.ArrayList();
-
-		[Browsable(true),Category("Plugin")]
-		[Description("List of plugins loaded at startup.")]
-		public System.Collections.ArrayList PluginsLoadedOnStartup
-		{
-			get
-			{
-				return pluginsLoadedOnStartup;
-			}
 		}
 
+        #endregion
+
+        #region 插件设置
+        public readonly string DirectoryPath = Path.GetDirectoryName(Application.ExecutablePath);
+
+        private System.Collections.ArrayList pluginsLoadedOnStartup = new System.Collections.ArrayList();
+
+        [Browsable(true), Category("Plugin")]
+        [Description("List of plugins loaded at startup.")]
+        public System.Collections.ArrayList PluginsLoadedOnStartup
+        {
+            get
+            {
+                return pluginsLoadedOnStartup;
+            }
+        }
         #endregion
 
         #region 杂项设置

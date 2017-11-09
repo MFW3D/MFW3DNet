@@ -8,6 +8,7 @@ using System;
 using WorldWind.Configuration;
 using WorldWind.Renderable;
 using WorldWind;
+using WorldWind.PluginEngine;
 
 namespace WorldWind
 {
@@ -446,7 +447,7 @@ namespace WorldWind
                LayerSet.Type_TiledPlacenameSet2 tpns = curLayerSet.GetTiledPlacenameSetAt(i);
 
                // compute full path to wpl file - WplIndex constructor needs this
-               string wplFullPath = Path.Combine(Global.DirectoryPath, tpns.PlacenameListFilePath.Value);
+               string wplFullPath = Path.Combine(WorldWind.Global.Settings.DirectoryPath, tpns.PlacenameListFilePath.Value);
 
                // build an index descriptor (does not create or load the index yet)
                WplIndex idx = new WplIndex(tpns, wplFullPath);

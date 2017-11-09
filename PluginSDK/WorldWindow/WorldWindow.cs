@@ -14,11 +14,9 @@ using System.Collections;
 using WorldWind.Net.Wms;
 using Utility;
 using WorldWind.Camera;
-using WorldWind.Interop;
 using System.Security.Permissions;
 using WorldWind.DataSource;
 using WorldWind.Menu;
-
 namespace WorldWind
 {
     /// <summary>

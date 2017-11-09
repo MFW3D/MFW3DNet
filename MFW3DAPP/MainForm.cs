@@ -32,18 +32,6 @@ namespace WorldWind
         public MainForm()
         {
             //配置
-            if (Global.Settings.ConfigurationWizardAtStartup)
-            {
-                if (!File.Exists(Global.Settings.FileName))
-                {
-                    Global.Settings.ConfigurationWizardAtStartup = false;
-                }
-                ConfigurationWizard.Wizard wizard = new ConfigurationWizard.Wizard(Global.Settings);
-                wizard.TopMost = true;
-                wizard.ShowInTaskbar = true;
-                wizard.ShowDialog();
-            }
-
             using (this.splashScreen = new Splash())
             {
                 this.splashScreen.Owner = this;
@@ -122,10 +110,12 @@ namespace WorldWind
         {
             SkinHelper.InitSkinGallery(rgbiSkins, true);
         }
+
         #region 变量
         private System.Collections.Hashtable availableWorldList = new Hashtable();
         private PluginCompiler compiler;
         #endregion
+
         #region 窗体的对话框和管理器
         private Splash splashScreen;
         private RapidFireModisManager rapidFireModisManager;
@@ -134,7 +124,6 @@ namespace WorldWind
         private WMSBrowser wmsBrowser;
         private ProgressMonitor queueMonitor;
         #endregion
-
 
         #region 公共参数
         public WorldWindow WorldWindow
@@ -163,25 +152,22 @@ namespace WorldWind
         private void InitializePluginCompiler()
         {
             Log.Write(Log.Levels.Debug, "CONF", "initializing plugin compiler...");
-            this.splashScreen.SetText("Initializing plugins...");
-            string pluginRoot = Path.Combine(Global.DirectoryPath, "Plugins");
+            string pluginRoot = Path.Combine(WorldWind.Global.Settings.DirectoryPath, "Plugins");
             compiler = new PluginCompiler(pluginRoot);
-
-            //#if DEBUG
-            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "WorldWind.dll"))
+            //加载所有插件的内容
+            DirectoryInfo TheFolder = new DirectoryInfo(pluginRoot);
+            foreach (FileInfo NextFile in TheFolder.GetFiles())
             {
-                Assembly assembly = Assembly.LoadFrom(AppDomain.CurrentDomain.BaseDirectory + "WorldWind.dll");
+                if (NextFile.Name.Length < 3)
+                    continue;
+                if (NextFile.Name.Substring(NextFile.Name.Length - 4, 4) != ".dll")
+                    continue;
+                Assembly assembly = Assembly.LoadFrom(
+                    AppDomain.CurrentDomain.BaseDirectory + NextFile.Name);
                 compiler.FindPlugins(assembly);
+                compiler.FindPlugins();
+                compiler.LoadStartupPlugins();
             }
-            else if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "WorldWind.exe"))
-            {
-                Assembly assembly = Assembly.LoadFrom(AppDomain.CurrentDomain.BaseDirectory + "WorldWind.exe");
-                compiler.FindPlugins(assembly);
-            }
-            //#endif
-
-            compiler.FindPlugins();
-            compiler.LoadStartupPlugins();
         }
         private void OnWorldChange(object sender, System.EventArgs e)
         {
@@ -195,23 +181,6 @@ namespace WorldWind
                 OpenWorld(curWorld);
             }
         }
-        private void AddInternalPluginMenuButtons()
-        {
-            if (this.worldWindow.CurrentWorld.IsEarth)
-            {
-                this.rapidFireModisManager = new RapidFireModisManager(this.worldWindow);
-                this.rapidFireModisManager.Icon = this.Icon;
-            }
-            this.wmsBrowser = new WMSBrowser(this.worldWindow);
-            this.wmsBrowser.Icon = this.Icon;
-
-            if (this.worldWindow.CurrentWorld.IsEarth)
-            {
-                this.animatedEarthMananger = new AnimatedEarthManager(this.worldWindow);
-                this.animatedEarthMananger.Icon = this.Icon;
-            }
-        }
-
         #endregion
 
         #region IGlobe 成员
@@ -241,14 +210,6 @@ namespace WorldWind
         {
             this.worldWindow.SetViewPosition(degreesLatitude, degreesLongitude,
                 metersElevation);
-        }
-        public void SetLatLonGridShow(bool show)
-        {
-            World.Settings.ShowLatLonLines = show;
-            if (this.worldWindow != null)
-            {
-                this.worldWindow.Invalidate();
-            }
         }
         #endregion
 
@@ -308,28 +269,16 @@ namespace WorldWind
         {
             if (this.worldWindow.CurrentWorld != null)
             {
-                try
+                foreach (PluginInfo p in this.compiler.Plugins)
                 {
-                    // this.worldWindow.ResetToolbar();
-                }
-                catch
-                { }
-                try
-                {
-                    foreach (PluginInfo p in this.compiler.Plugins)
+                    try
                     {
-                        try
-                        {
-                            if (p.Plugin.IsLoaded)
-                                p.Plugin.Unload();
-                        }
-                        catch
-                        { }
+                        if (p.Plugin.IsLoaded)
+                            p.Plugin.Unload();
                     }
+                    catch
+                    { }
                 }
-                catch
-                { }
-
                 try
                 {
                     this.worldWindow.CurrentWorld.Dispose();
@@ -364,7 +313,6 @@ namespace WorldWind
             {
                 this.AddLayerMenuButtons(this.worldWindow, worldRootObject);
             }
-            this.AddInternalPluginMenuButtons();
         }
         #endregion
 
@@ -373,7 +321,7 @@ namespace WorldWind
         {
             if (ro.MetaData.Contains("ToolBarImagePath"))
             {
-                string imagePath = Path.Combine(Global.DirectoryPath, (string)ro.MetaData["ToolBarImagePath"]);
+                string imagePath = Path.Combine(WorldWind.Global.Settings.DirectoryPath, (string)ro.MetaData["ToolBarImagePath"]);
                 if (File.Exists(imagePath))
                 {
                     LayerShortcutMenuButton button = new LayerShortcutMenuButton(imagePath, ro);
@@ -451,7 +399,7 @@ namespace WorldWind
                     {
                         imagePath = curImageLayerType.TexturePath.Value;
                         if (!Path.IsPathRooted(imagePath))
-                            imagePath = Path.Combine(Global.DirectoryPath, imagePath);
+                            imagePath = Path.Combine(WorldWind.Global.Settings.DirectoryPath, imagePath);
                     }
 
                     int transparentColor = 0;
@@ -484,7 +432,7 @@ namespace WorldWind
                         newImageLayer.LegendImagePath = curImageLayerType.LegendImagePath.Value;
 
                     if (curImageLayerType.HasExtendedInformation() && curImageLayerType.ExtendedInformation.HasToolBarImage())
-                        newImageLayer.MetaData.Add("ToolBarImagePath", Path.Combine(Global.DirectoryPath, curImageLayerType.ExtendedInformation.ToolBarImage.Value));
+                        newImageLayer.MetaData.Add("ToolBarImagePath", Path.Combine(WorldWind.Global.Settings.DirectoryPath, curImageLayerType.ExtendedInformation.ToolBarImage.Value));
 
                     rol.Add(newImageLayer);
                 }
@@ -509,7 +457,7 @@ namespace WorldWind
                         curWorld,
                         newPathList.MinDisplayAltitude.DoubleValue(),
                         newPathList.MaxDisplayAltitude.DoubleValue(),
-                        Global.DirectoryPath + "//" + newPathList.PathsDirectory.Value,
+                        WorldWind.Global.Settings.DirectoryPath + "//" + newPathList.PathsDirectory.Value,
                         newPathList.DistanceAboveSurface.DoubleValue(),
                         (newPathList.HasWinColorName() ? System.Drawing.Color.FromName(newPathList.WinColorName.Value) : System.Drawing.Color.FromArgb(newPathList.RGBColor.Red.Value, newPathList.RGBColor.Green.Value, newPathList.RGBColor.Blue.Value)),
                         curWorld.TerrainAccessor);
@@ -517,7 +465,7 @@ namespace WorldWind
                     pl.IsOn = newPathList.ShowAtStartup.Value;
 
                     if (newPathList.HasExtendedInformation() && newPathList.ExtendedInformation.HasToolBarImage())
-                        pl.MetaData.Add("ToolBarImagePath", Path.Combine(Global.DirectoryPath, newPathList.ExtendedInformation.ToolBarImage.Value));
+                        pl.MetaData.Add("ToolBarImagePath", Path.Combine(WorldWind.Global.Settings.DirectoryPath, newPathList.ExtendedInformation.ToolBarImage.Value));
 
                     rol.Add(pl);
                 }
@@ -546,7 +494,7 @@ namespace WorldWind
                     sp.IsOn = newShapefileLayer.ShowAtStartup.BoolValue();
 
                     if (newShapefileLayer.HasExtendedInformation() && newShapefileLayer.ExtendedInformation.HasToolBarImage())
-                        sp.MetaData.Add("ToolBarImagePath", Path.Combine(Global.DirectoryPath, newShapefileLayer.ExtendedInformation.ToolBarImage.Value));
+                        sp.MetaData.Add("ToolBarImagePath", Path.Combine(WorldWind.Global.Settings.DirectoryPath, newShapefileLayer.ExtendedInformation.ToolBarImage.Value));
 
                     rol.Add(sp);
                 }
@@ -563,7 +511,7 @@ namespace WorldWind
                     string textureFullPath = newIcon.TextureFilePath.Value;
                     if (textureFullPath.Length > 0 && !Path.IsPathRooted(textureFullPath))
                         // Use absolute path to icon image
-                        textureFullPath = Path.Combine(Global.DirectoryPath, newIcon.TextureFilePath.Value);
+                        textureFullPath = Path.Combine(WorldWind.Global.Settings.DirectoryPath, newIcon.TextureFilePath.Value);
 
                     WorldWind.Renderable.Icon ic = new WorldWind.Renderable.Icon(
                         newIcon.Name.Value,
@@ -596,7 +544,7 @@ namespace WorldWind
 
                     string filePath = newPlacenames.PlacenameListFilePath.Value;
                     if (!Path.IsPathRooted(filePath))
-                        filePath = Path.Combine(Global.DirectoryPath, filePath);
+                        filePath = Path.Combine(WorldWind.Global.Settings.DirectoryPath, filePath);
 
                     Microsoft.DirectX.Direct3D.FontDescription fd = Global.GetLayerFontDescription(newPlacenames.DisplayFont);
                     TiledPlacenameSet tps = new TiledPlacenameSet(
@@ -611,7 +559,7 @@ namespace WorldWind
                         (newPlacenames.HasIconFilePath() ? newPlacenames.IconFilePath.Value : null));
 
                     if (newPlacenames.HasExtendedInformation() && newPlacenames.ExtendedInformation.HasToolBarImage())
-                        tps.MetaData.Add("ToolBarImagePath", Path.Combine(Global.DirectoryPath, newPlacenames.ExtendedInformation.ToolBarImage.Value));
+                        tps.MetaData.Add("ToolBarImagePath", Path.Combine(WorldWind.Global.Settings.DirectoryPath, newPlacenames.ExtendedInformation.ToolBarImage.Value));
 
                     tps.IsOn = newPlacenames.ShowAtStartup.Value;
                     rol.Add(tps);

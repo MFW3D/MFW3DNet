@@ -239,7 +239,6 @@ namespace GpsTracker
 	// Add the GPSTracker overlay (GPS icons will be added under this overlay)
 	public class GPSTrackerOverlay : RenderableObjectList
 	{
-		public static MainApplication ParentApplication;
 		public GpsTrackerPlugin Plugin;
 		public DrawArgs drawArgs;
 		GPSTrackerFixInfo gpsTrackerInfo;
