@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace WorldWind.Net
+namespace MFW3D.Net
 {
 	/// <summary>
 	/// Download queue with priorities

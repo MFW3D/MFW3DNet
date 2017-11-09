@@ -1,5 +1,5 @@
 //========================= (UNCLASSIFIED) ==============================
-// Copyright © 2007 The Johns Hopkins University /
+// Copyright ?2007 The Johns Hopkins University /
 // Applied Physics Laboratory.  All rights reserved.
 //
 // WorldWind Source Code - Copyright 2005 NASA World Wind 
@@ -12,10 +12,10 @@
 // Copyright (c) 2007 The Johns Hopkins University. 
 //
 // This software was developed at The Johns Hopkins University/Applied 
-// Physics Laboratory (“JHU/APL”) that is the author thereof under the 
-// “work made for hire” provisions of the copyright law.  Permission is 
+// Physics Laboratory (“JHU/APL? that is the author thereof under the 
+// “work made for hire?provisions of the copyright law.  Permission is 
 // hereby granted, free of charge, to any person obtaining a copy of this 
-// software and associated documentation (the “Software”), to use the 
+// software and associated documentation (the “Software?, to use the 
 // Software without restriction, including without limitation the rights 
 // to copy, modify, merge, publish, distribute, sublicense, and/or sell 
 // copies of the Software, and to permit others to do so, subject to the 
@@ -55,9 +55,9 @@ using System.Text;
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
 
-using WorldWind;
-using WorldWind.Menu;
-using WorldWind.Renderable;
+using MFW3D;
+using MFW3D.Menu;
+using MFW3D.Renderable;
 
 using Collab.jhuapl.Util;
 
@@ -67,7 +67,7 @@ namespace Collab.jhuapl.Whiteboard
 	/// CS DrawLayer implements whiteboarding capability.  Users can draw basic shapes and
 	/// overlay them as terrain mapped paths.
 	/// </summary>
-	public class DrawLayer : WorldWind.Renderable.RenderableObjectList, IMenu
+	public class DrawLayer : MFW3D.Renderable.RenderableObjectList, IMenu
 	{
 		/// <summary>
 		/// The current drawmode.
@@ -471,7 +471,7 @@ namespace Collab.jhuapl.Whiteboard
 						float t = (float)i / 9;
 						Angle iLat, iLon;
 
-						WorldWind.World.IntermediateGCPoint(t, m_lastLat, m_lastLon, m_firstLat, m_firstLon,
+						MFW3D.World.IntermediateGCPoint(t, m_lastLat, m_lastLon, m_firstLat, m_firstLon,
 							dist, out iLat, out iLon );
 
 						m_currPathLine.Add((float)iLat.Degrees, (float) iLon.Degrees, m_drawAlt);
@@ -1140,7 +1140,7 @@ namespace Collab.jhuapl.Whiteboard
 								float t = (float)i / 9;
 								Angle iLat, iLon;
 
-								WorldWind.World.IntermediateGCPoint(t, m_lastLat, m_lastLon, lat, lon,
+								MFW3D.World.IntermediateGCPoint(t, m_lastLat, m_lastLon, lat, lon,
 									dist, out iLat, out iLon );
 
 								m_currPathLine.Add((float) iLat.Degrees, (float) iLon.Degrees, m_drawAlt);
@@ -1191,7 +1191,7 @@ namespace Collab.jhuapl.Whiteboard
 
 		#region UI Thread Methods
 
-		public override void Render(WorldWind.DrawArgs drawArgs)
+		public override void Render(MFW3D.DrawArgs drawArgs)
 		{
 			if(!isOn)
 				return;
@@ -1375,7 +1375,7 @@ namespace Collab.jhuapl.Whiteboard
 			return result;
 		}
 
-		public string SaveTrackAsXML(WorldWind.Renderable.Icon track)
+		public string SaveTrackAsXML(MFW3D.Renderable.Icon track)
 		{
 			string result; 
 			try

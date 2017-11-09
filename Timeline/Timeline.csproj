@@ -76,6 +76,10 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MFW3D\MFW3D.csproj">
+      <Project>{30178337-6bbe-45a0-b7df-73b2a46f06ee}</Project>
+      <Name>MFW3D</Name>
+    </ProjectReference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -91,11 +95,6 @@
     <ProjectReference Include="..\Altova\Altova.csproj">
       <Name>Altova</Name>
       <Project>{D43E6C54-2DF5-454E-9566-DFFE2F3A6946}</Project>
-      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
-    </ProjectReference>
-    <ProjectReference Include="..\PluginSDK\WorldWind.csproj">
-      <Name>WorldWind</Name>
-      <Project>{30178337-6BBE-45A0-B7DF-73B2A46F06EE}</Project>
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
   </ItemGroup>

@@ -1,5 +1,5 @@
 //========================= (UNCLASSIFIED) ==============================
-// Copyright © 2005-2007 The Johns Hopkins University /
+// Copyright ?2005-2007 The Johns Hopkins University /
 // Applied Physics Laboratory.  All rights reserved.
 //
 // WorldWind Source Code - Copyright 2005 NASA World Wind 
@@ -12,10 +12,10 @@
 // Copyright (c) 2007 The Johns Hopkins University. 
 //
 // This software was developed at The Johns Hopkins University/Applied 
-// Physics Laboratory (“JHU/APL”) that is the author thereof under the 
-// “work made for hire” provisions of the copyright law.  Permission is 
+// Physics Laboratory (“JHU/APL? that is the author thereof under the 
+// “work made for hire?provisions of the copyright law.  Permission is 
 // hereby granted, free of charge, to any person obtaining a copy of this 
-// software and associated documentation (the “Software”), to use the 
+// software and associated documentation (the “Software?, to use the 
 // Software without restriction, including without limitation the rights 
 // to copy, modify, merge, publish, distribute, sublicense, and/or sell 
 // copies of the Software, and to permit others to do so, subject to the 
@@ -43,10 +43,10 @@
 //
 using System;
 
-using WorldWind;
-using WorldWind.Renderable;
+using MFW3D;
+using MFW3D.Renderable;
 
-using WorldWind.NewWidgets;
+using MFW3D.NewWidgets;
 using Collab.jhuapl.Util;
 
 namespace Collab.jhuapl.Whiteboard
@@ -236,7 +236,7 @@ namespace Collab.jhuapl.Whiteboard
 			m_lockButton.WidgetSize = new System.Drawing.Size(16,16);
 			m_lockButton.CountHeight = true;
 			m_lockButton.CountWidth = true;
-			m_lockButton.LeftClickAction = new WorldWind.NewWidgets.MouseClickAction(this.PerformLock);
+			m_lockButton.LeftClickAction = new MFW3D.NewWidgets.MouseClickAction(this.PerformLock);
 
 			m_shapePalette.Add(m_lockButton);
 
@@ -256,7 +256,7 @@ namespace Collab.jhuapl.Whiteboard
 			m_hotspotButton.WidgetSize = new System.Drawing.Size(16,16);
 			m_hotspotButton.CountHeight = true;
 			m_hotspotButton.CountWidth = true;
-			m_hotspotButton.LeftClickAction = new WorldWind.NewWidgets.MouseClickAction(this.PerformHotspot);
+			m_hotspotButton.LeftClickAction = new MFW3D.NewWidgets.MouseClickAction(this.PerformHotspot);
 
 			m_shapePalette.Add(m_hotspotButton);
 
@@ -276,7 +276,7 @@ namespace Collab.jhuapl.Whiteboard
 			m_polygonButton.WidgetSize = new System.Drawing.Size(16,16);
 			m_polygonButton.CountHeight = true;
 			m_polygonButton.CountWidth = true;
-			m_polygonButton.LeftClickAction = new WorldWind.NewWidgets.MouseClickAction(this.PerformPolygon);
+			m_polygonButton.LeftClickAction = new MFW3D.NewWidgets.MouseClickAction(this.PerformPolygon);
 
 			m_shapePalette.Add(m_polygonButton);
 
@@ -286,7 +286,7 @@ namespace Collab.jhuapl.Whiteboard
 			m_polylineButton.WidgetSize = new System.Drawing.Size(16,16);
 			m_polylineButton.CountHeight = true;
 			m_polylineButton.CountWidth = true;
-			m_polylineButton.LeftClickAction = new WorldWind.NewWidgets.MouseClickAction(this.PerformPolyline);
+			m_polylineButton.LeftClickAction = new MFW3D.NewWidgets.MouseClickAction(this.PerformPolyline);
 
 			m_shapePalette.Add(m_polylineButton);
 
@@ -296,7 +296,7 @@ namespace Collab.jhuapl.Whiteboard
 			m_freehandButton.WidgetSize = new System.Drawing.Size(16,16);
 			m_freehandButton.CountHeight = true;
 			m_freehandButton.CountWidth = true;
-			m_freehandButton.LeftClickAction = new WorldWind.NewWidgets.MouseClickAction(this.PerformFreehand);
+			m_freehandButton.LeftClickAction = new MFW3D.NewWidgets.MouseClickAction(this.PerformFreehand);
 
 			m_shapePalette.Add(m_freehandButton);
 

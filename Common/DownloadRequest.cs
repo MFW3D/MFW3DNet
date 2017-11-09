@@ -1,6 +1,6 @@
 using System;
 
-namespace WorldWind.Net
+namespace MFW3D.Net
 {
 	/// <summary>
 	/// Base class for various types of download requests (protocol independent)

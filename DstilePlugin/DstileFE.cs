@@ -21,9 +21,9 @@ using System.Diagnostics;
 using System.Xml;
 using System.Threading;
 using System.Text.RegularExpressions;
-using WorldWind;
-using WorldWind.Renderable;
-using WorldWind.Terrain;
+using MFW3D;
+using MFW3D.Renderable;
+using MFW3D.Terrain;
 using OSGeo.GDAL;
 using OSGeo.OSR;
 

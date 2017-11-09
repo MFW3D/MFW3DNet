@@ -4,12 +4,12 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using WorldWind;
-using WorldWind.Renderable;
+using MFW3D;
+using MFW3D.Renderable;
 
 namespace DstileGUI
 {
-    public class DstilePlugin : WorldWind.PluginEngine.Plugin
+    public class DstilePlugin : MFW3D.PluginEngine.Plugin
     {
         private DstileFrontEnd frontend;
         private RenderableObjectList dstileLayers;

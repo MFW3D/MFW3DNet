@@ -7,11 +7,11 @@ using System.IO.Compression;
 using System.Threading;
 using System.Xml;
 using Utility;
-using WorldWind;
+using MFW3D;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 
-namespace WorldWind.Net
+namespace MFW3D.Net
 {
 	public delegate void DownloadProgressHandler(int bytesRead, int totalBytes);
 	public delegate void DownloadCompleteHandler(WebDownload wd);

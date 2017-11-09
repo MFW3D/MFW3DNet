@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Net;
 using Utility;
 
-namespace WorldWind.Net
+namespace MFW3D.Net
 {
 	/// <summary>
 	/// Utility class - determines required proxy (if any) for download.

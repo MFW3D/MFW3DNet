@@ -91,23 +91,23 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:WorldWind.GDALImageStore">
+        <member name="T:MFW3D.GDALImageStore">
             <summary>
             从GDAL数据库中加载数据
             </summary>
         </member>
-        <member name="M:WorldWind.GDALImageStore.#ctor(System.String,System.String,OSGeo.GDAL.Dataset,System.String)">
+        <member name="M:MFW3D.GDALImageStore.#ctor(System.String,System.String,OSGeo.GDAL.Dataset,System.String)">
             <summary>
             Initialise ImageStore with a GDAL dataset
             </summary>
             <param name="dataset">Dataset in EPSG:4326</param>
         </member>
-        <member name="M:WorldWind.GDALImageStore.#ctor">
+        <member name="M:MFW3D.GDALImageStore.#ctor">
             <summary>
             Blank constructor
             </summary>
         </member>
-        <member name="M:WorldWind.GDALImageStore.GetLocalPath(WorldWind.Renderable.QuadTile)">
+        <member name="M:MFW3D.GDALImageStore.GetLocalPath(MFW3D.Renderable.QuadTile)">
             <summary>
             Overriden ImageAccessor method to extract and put tiles in place
             using GDAL
@@ -115,27 +115,27 @@
             <param name="qt"></param>
             <returns></returns>
         </member>
-        <member name="M:WorldWind.GDALImageStore.ToXml(System.Xml.XmlDocument)">
+        <member name="M:MFW3D.GDALImageStore.ToXml(System.Xml.XmlDocument)">
             <summary>
             Save Dynamic GDALImageStores on Exit
             </summary>
             <param name="worldDoc">Create Relevant ImageAccessor Node</param>
             <returns></returns>
         </member>
-        <member name="M:WorldWind.GDALImageStore.FromXml(System.Xml.XmlNode)">
+        <member name="M:MFW3D.GDALImageStore.FromXml(System.Xml.XmlNode)">
             <summary>
             Restore object parameters from XML
             </summary>
             <param name="istoreNode"></param>
             <returns></returns>
         </member>
-        <member name="T:WorldWind.Terrain.GDALTerrainAccessor">
+        <member name="T:MFW3D.Terrain.GDALTerrainAccessor">
             <summary>
             Reads GDAL based terrain data and writes out
             .bil cache files
             </summary>
         </member>
-        <member name="M:WorldWind.Terrain.GDALTerrainAccessor.GetElevationAt(System.Double,System.Double,System.Double)">
+        <member name="M:MFW3D.Terrain.GDALTerrainAccessor.GetElevationAt(System.Double,System.Double,System.Double)">
             <summary>
             Get terrain elevation at specified location.  
             </summary>
@@ -144,7 +144,7 @@
             <param name="targetSamplesPerDegree"></param>
             <returns>Returns 0 if the tile is not available on disk.</returns>
         </member>
-        <member name="T:WorldWind.Terrain.GDALTerrainTileService">
+        <member name="T:MFW3D.Terrain.GDALTerrainTileService">
             <summary>
             This class backs up the GDALTerrain accessor to
             tile DEM files into .bil tiles

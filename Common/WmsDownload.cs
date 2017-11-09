@@ -1,6 +1,6 @@
 using System;
 
-namespace WorldWind.Net
+namespace MFW3D.Net
 {
 	public class WMSDownload
 	{

@@ -1,14 +1,14 @@
-using WorldWind.Renderable;
+using MFW3D.Renderable;
 using System;
 using System.Globalization;
-using WorldWind.DataSource;
+using MFW3D.DataSource;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
 using System.Xml;
-namespace WorldWind
+namespace MFW3D
 {
     /// <summary>
     /// 从GDAL数据库中加载数据

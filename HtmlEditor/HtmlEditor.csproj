@@ -209,9 +209,9 @@
     <None Include="Resources\close.gif" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PluginSDK\WorldWind.csproj">
-      <Project>{30178337-6BBE-45A0-B7DF-73B2A46F06EE}</Project>
-      <Name>WorldWind</Name>
+    <ProjectReference Include="..\MFW3D\MFW3D.csproj">
+      <Project>{30178337-6bbe-45a0-b7df-73b2a46f06ee}</Project>
+      <Name>MFW3D</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

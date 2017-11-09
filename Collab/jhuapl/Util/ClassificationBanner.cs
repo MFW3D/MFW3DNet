@@ -4,8 +4,8 @@ using System.Drawing;
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
 
-using WorldWind;
-using WorldWind.Renderable;
+using MFW3D;
+using MFW3D.Renderable;
 
 namespace Collab.jhuapl.Util
 {

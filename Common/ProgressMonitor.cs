@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using Utility;
 
-namespace WorldWind.Net.Monitor
+namespace MFW3D.Net.Monitor
 {
 	/// <summary>
 	/// Simple window showing all http downloads and progress.

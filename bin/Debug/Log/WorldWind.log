@@ -6224,3 +6224,848 @@
 2017-11-09 16:44:00Z 5 QTS  ServiceDownloadQueue: 1 requests waiting
 2017-11-09 16:44:00Z 5      Cancelling async download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=2&Y=4
 2017-11-09 16:44:00Z 5 NET  AsyncResponseCallback(): NullReferenceException: Object reference not set to an instance of an object.
+2017-11-09 16:48:15Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Earth.xml ...
+2017-11-09 16:48:15Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Earth.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet NLT Landsat7 (Visible Color)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, pseudocolor
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, visual
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet NLT Landsat7 (Pseudo Color)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Geocover 2000
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Geocover 1990
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet USGS Digital Ortho
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet USGS Topo Maps
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet USGS Urban Area Ortho
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet West Australia Geology Map (250k)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet West Australia Gravity Map (2004)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet West Australia Magnetic Field Map (2005)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet West Australia Topographic Map
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Robben Island (0.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Sep 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (1m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Apr 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (1m, NAIP)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2001 Natural Color (0.5, MassGIS)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Oct 2002 - Jan 2003 Natural Color (0.6m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Jul 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Sep 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2004 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2001 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (0.15m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Jun 2003 Natural Color (0.6m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Feb - Apr 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (0.6m)
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Country Political Boundaries
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet US State Political Boundaries
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp without validation
+2017-11-09 16:48:15Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Jupiter.xml ...
+2017-11-09 16:48:15Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Jupiter.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Jupiter.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Jupiter\@Images.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Jupiter\@Images.xml without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Jupiter\Jupiter_Moons.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Jupiter\Jupiter_Moons.xml without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:48:15Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Mars.xml ...
+2017-11-09 16:48:15Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Mars.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\@Images.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\@Images.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\@Images.tmp
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\@Images.tmp without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet MOC 256 (ASU) Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet MOC 256 Colorized Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet MOLA Color (ASU) Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mola Colored (ToMars-JPL) Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet MDIM (ToMars-JPL-USGS) Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mars THEMIS (ASU) Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mars THEMIS Color Tiled
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\OnMars.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\OnMars.xml without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet MOC Narrow Angle
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\^Placenames.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\^Placenames.xml without validation
+2017-11-09 16:48:15Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Moon.xml ...
+2017-11-09 16:48:15Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Moon.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Moon.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Moon\@Images.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Moon\@Images.xml without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Clementine 40xx
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Clementine 30xx
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Shaded Elevation Map
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Moon\Placenames.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Moon\Placenames.xml without validation
+2017-11-09 16:48:15Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\SDSS.xml ...
+2017-11-09 16:48:15Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\SDSS.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\SDSS.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\sdss\@Images.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\sdss\@Images.xml without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet  Sloan Digital Sky Server
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet  WMAP Image Server
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet SDSS Footprint
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet  FIRST Footprint
+2017-11-09 16:48:15Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Venus.xml ...
+2017-11-09 16:48:15Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Venus.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Venus\@Images.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus\@Images.xml without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Color Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Grey Tiled
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Shaded Relief Tiled
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Venus\Spacecraft.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus\Spacecraft.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Venus\^Placenames.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus\^Placenames.xml without validation
+2017-11-09 16:48:15Z 5 CONF loading startup world...
+2017-11-09 16:48:15Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Earth.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet NLT Landsat7 (Visible Color)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, pseudocolor
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, visual
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet NLT Landsat7 (Pseudo Color)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Geocover 2000
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Geocover 1990
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet USGS Digital Ortho
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet USGS Topo Maps
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet USGS Urban Area Ortho
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet West Australia Geology Map (250k)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet West Australia Gravity Map (2004)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet West Australia Magnetic Field Map (2005)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet West Australia Topographic Map
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Robben Island (0.5m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Sep 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (1m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Apr 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (1m, NAIP)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2001 Natural Color (0.5, MassGIS)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Oct 2002 - Jan 2003 Natural Color (0.6m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Jul 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Sep 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Mar 2004 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2001 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2004 Natural Color (0.15m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Jun 2003 Natural Color (0.6m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Feb - Apr 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet 2003 Natural Color (0.6m)
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp without validation
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet Country Political Boundaries
+2017-11-09 16:48:15Z 6 CONF adding QuadTileSet US State Political Boundaries
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml without validation
+2017-11-09 16:48:15Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp
+2017-11-09 16:48:15Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp without validation
+2017-11-09 16:48:15Z 5 CONF initializing plugin compiler...
+2017-11-09 16:48:15Z 5 PLUG loading Stars3D ...
+2017-11-09 16:48:15Z 5 PLUG loading ShapeFileInfoTool ...
+2017-11-09 16:48:15Z 5 PLUG loading ShapeFileLoader ...
+2017-11-09 16:48:15Z 5 PLUG loading MeasureTool ...
+2017-11-09 16:48:15Z 5 PLUG loading KMLImporter ...
+2017-11-09 16:48:15Z 5 PLUG loading Compass ...
+2017-11-09 16:48:15Z 5 PLUG loading LightController ...
+2017-11-09 16:48:15Z 5 PLUG loading BmngLoader ...
+2017-11-09 16:48:15Z 5 PLUG loading Compass3D ...
+2017-11-09 16:48:15Z 5 PLUG loading NRLWeatherLoader ...
+2017-11-09 16:48:15Z 5 PLUG loading ScaleBarLegend ...
+2017-11-09 16:48:15Z 5 PLUG loading TimeController ...
+2017-11-09 16:48:15Z 5 PLUG loading Atmosphere ...
+2017-11-09 16:48:15Z 5 PLUG loading AnaglyphStereo ...
+2017-11-09 16:48:15Z 5 PLUG loading PlaceFinderLoader ...
+2017-11-09 16:48:15Z 5 PLUG loading WavingFlags ...
+2017-11-09 16:48:15Z 5 PLUG loading OverviewFormLoader ...
+2017-11-09 16:48:15Z 5 PLUG loading ExternalLayerManagerLoader ...
+2017-11-09 16:48:15Z 5 PLUG loading MovieRecorder ...
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 1 requests waiting
+2017-11-09 16:48:17Z 5 GSDR Activated download for E:\WorldWind\bin\Debug\Cache\BMNG\BMNG (Shaded + Bathymetry) Tiled - 11.2004\0\1\1_2.jpg in slot 0
+2017-11-09 16:48:17Z 5 GSDR Starting download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=2&Y=1
+2017-11-09 16:48:17Z 5      Starting async download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=2&Y=1
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 2 requests waiting
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 4 requests waiting
+2017-11-09 16:48:17Z 5 QTS  ServiceDownloadQueue: 5 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 5 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 7 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 8 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 9 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 9 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 10 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 11 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 11 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 11 requests waiting
+2017-11-09 16:48:18Z 5 QTS  ServiceDownloadQueue: 11 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 11 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 11 requests waiting
+2017-11-09 16:48:19Z 5 NET  AsyncResponseCallback(): WebException: ProtocolError
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 10 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: removing finishedQuadTile:Set=Tiled - 11.2004 Level=0 X=2 Y=1
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 1 requests waiting
+2017-11-09 16:48:19Z 5 GSDR Activated download for E:\WorldWind\bin\Debug\Cache\BMNG\BMNG (Shaded + Bathymetry) Tiled - 11.2004\0\1\1_8.jpg in slot 0
+2017-11-09 16:48:19Z 5 GSDR Starting download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=8&Y=1
+2017-11-09 16:48:19Z 5      Starting async download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=8&Y=1
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 2 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 4 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 5 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 7 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 8 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 8 requests waiting
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: 8 requests waiting
+2017-11-09 16:48:19Z 5      Cancelling async download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=8&Y=1
+2017-11-09 16:48:19Z 5 NET  AsyncResponseCallback(): WebException: RequestCanceled
+2017-11-09 16:48:19Z 5 QTS  ServiceDownloadQueue: removing finishedQuadTile:Set=Tiled - 11.2004 Level=0 X=8 Y=1
+2017-11-09 16:49:44Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Earth.xml ...
+2017-11-09 16:49:44Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Earth.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet NLT Landsat7 (Visible Color)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, pseudocolor
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, visual
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet NLT Landsat7 (Pseudo Color)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Geocover 2000
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Geocover 1990
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet USGS Digital Ortho
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet USGS Topo Maps
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet USGS Urban Area Ortho
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet West Australia Geology Map (250k)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet West Australia Gravity Map (2004)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet West Australia Magnetic Field Map (2005)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet West Australia Topographic Map
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Robben Island (0.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Sep 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (1m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Apr 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (1m, NAIP)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2001 Natural Color (0.5, MassGIS)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Oct 2002 - Jan 2003 Natural Color (0.6m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Jul 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Sep 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2004 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2001 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (0.15m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Jun 2003 Natural Color (0.6m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Feb - Apr 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (0.6m)
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Country Political Boundaries
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet US State Political Boundaries
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp without validation
+2017-11-09 16:49:44Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Jupiter.xml ...
+2017-11-09 16:49:44Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Jupiter.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Jupiter.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Jupiter\@Images.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Jupiter\@Images.xml without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Jupiter\Jupiter_Moons.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Jupiter\Jupiter_Moons.xml without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 16:49:44Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Mars.xml ...
+2017-11-09 16:49:44Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Mars.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\@Images.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\@Images.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\@Images.tmp
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\@Images.tmp without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet MOC 256 (ASU) Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet MOC 256 Colorized Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet MOLA Color (ASU) Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mola Colored (ToMars-JPL) Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet MDIM (ToMars-JPL-USGS) Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mars THEMIS (ASU) Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mars THEMIS Color Tiled
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\OnMars.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\OnMars.xml without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet MOC Narrow Angle
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\^Placenames.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\^Placenames.xml without validation
+2017-11-09 16:49:44Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Moon.xml ...
+2017-11-09 16:49:44Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Moon.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Moon.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Moon\@Images.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Moon\@Images.xml without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Clementine 40xx
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Clementine 30xx
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Shaded Elevation Map
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Moon\Placenames.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Moon\Placenames.xml without validation
+2017-11-09 16:49:44Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\SDSS.xml ...
+2017-11-09 16:49:44Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\SDSS.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\SDSS.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\sdss\@Images.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\sdss\@Images.xml without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet  Sloan Digital Sky Server
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet  WMAP Image Server
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet SDSS Footprint
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet  FIRST Footprint
+2017-11-09 16:49:44Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Venus.xml ...
+2017-11-09 16:49:44Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Venus.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Venus\@Images.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus\@Images.xml without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Color Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Grey Tiled
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Shaded Relief Tiled
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Venus\Spacecraft.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus\Spacecraft.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Venus\^Placenames.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus\^Placenames.xml without validation
+2017-11-09 16:49:44Z 5 CONF loading startup world...
+2017-11-09 16:49:44Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Earth.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet NLT Landsat7 (Visible Color)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, pseudocolor
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, visual
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet NLT Landsat7 (Pseudo Color)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Geocover 2000
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Geocover 1990
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet USGS Digital Ortho
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet USGS Topo Maps
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet USGS Urban Area Ortho
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet West Australia Geology Map (250k)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet West Australia Gravity Map (2004)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet West Australia Magnetic Field Map (2005)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet West Australia Topographic Map
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Robben Island (0.5m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Sep 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (1m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Apr 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (1m, NAIP)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2001 Natural Color (0.5, MassGIS)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Oct 2002 - Jan 2003 Natural Color (0.6m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Jul 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Sep 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Mar 2004 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2001 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2004 Natural Color (0.15m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Jun 2003 Natural Color (0.6m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Feb - Apr 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet 2003 Natural Color (0.6m)
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp without validation
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet Country Political Boundaries
+2017-11-09 16:49:44Z 6 CONF adding QuadTileSet US State Political Boundaries
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml without validation
+2017-11-09 16:49:44Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp
+2017-11-09 16:49:44Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp without validation
+2017-11-09 16:49:44Z 5 CONF initializing plugin compiler...
+2017-11-09 16:49:44Z 5 PLUG loading Stars3D ...
+2017-11-09 16:49:44Z 5 PLUG loading ShapeFileInfoTool ...
+2017-11-09 16:49:44Z 5 PLUG loading ShapeFileLoader ...
+2017-11-09 16:49:44Z 5 PLUG loading MeasureTool ...
+2017-11-09 16:49:44Z 5 PLUG loading KMLImporter ...
+2017-11-09 16:49:44Z 5 PLUG loading Compass ...
+2017-11-09 16:49:44Z 5 PLUG loading LightController ...
+2017-11-09 16:49:44Z 5 PLUG loading BmngLoader ...
+2017-11-09 16:49:44Z 5 PLUG loading Compass3D ...
+2017-11-09 16:49:44Z 5 PLUG loading NRLWeatherLoader ...
+2017-11-09 16:49:44Z 5 PLUG loading ScaleBarLegend ...
+2017-11-09 16:49:44Z 5 PLUG loading TimeController ...
+2017-11-09 16:49:44Z 5 PLUG loading Atmosphere ...
+2017-11-09 16:49:44Z 5 PLUG loading AnaglyphStereo ...
+2017-11-09 16:49:44Z 5 PLUG loading PlaceFinderLoader ...
+2017-11-09 16:49:44Z 5 PLUG loading WavingFlags ...
+2017-11-09 16:49:44Z 5 PLUG loading OverviewFormLoader ...
+2017-11-09 16:49:44Z 5 PLUG loading ExternalLayerManagerLoader ...
+2017-11-09 16:49:44Z 5 PLUG loading MovieRecorder ...
+2017-11-09 16:49:46Z 5 QTS  ServiceDownloadQueue: 1 requests waiting
+2017-11-09 16:49:46Z 5 GSDR Activated download for E:\WorldWind\bin\Debug\Cache\BMNG\BMNG (Shaded + Bathymetry) Tiled - 11.2004\0\1\1_2.jpg in slot 0
+2017-11-09 16:49:46Z 5 GSDR Starting download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=2&Y=1
+2017-11-09 16:49:46Z 5      Starting async download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=2&Y=1
+2017-11-09 16:49:46Z 5 QTS  ServiceDownloadQueue: 2 requests waiting
+2017-11-09 16:49:46Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:46Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:46Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:46Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:46Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:46Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:46Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:47Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:47Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:47Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:47Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:47Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 16:49:47Z 5      Cancelling async download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=2&Y=1
+2017-11-09 16:49:47Z 5 NET  AsyncResponseCallback(): WebException: RequestCanceled
+2017-11-09 16:49:47Z 5 QTS  ServiceDownloadQueue: removing finishedQuadTile:Set=Tiled - 11.2004 Level=0 X=2 Y=1
+2017-11-09 17:00:01Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Earth.xml ...
+2017-11-09 17:00:01Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Earth.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet NLT Landsat7 (Visible Color)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, pseudocolor
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, visual
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet NLT Landsat7 (Pseudo Color)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Geocover 2000
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Geocover 1990
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet USGS Digital Ortho
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet USGS Topo Maps
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet USGS Urban Area Ortho
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet West Australia Geology Map (250k)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet West Australia Gravity Map (2004)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet West Australia Magnetic Field Map (2005)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet West Australia Topographic Map
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Robben Island (0.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Sep 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (1m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Apr 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (1m, NAIP)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2001 Natural Color (0.5, MassGIS)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Oct 2002 - Jan 2003 Natural Color (0.6m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Jul 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Sep 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2004 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2001 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (0.15m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Jun 2003 Natural Color (0.6m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Feb - Apr 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (0.6m)
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Country Political Boundaries
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet US State Political Boundaries
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp without validation
+2017-11-09 17:00:01Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Jupiter.xml ...
+2017-11-09 17:00:01Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Jupiter.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Jupiter.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Jupiter\@Images.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Jupiter\@Images.xml without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Jupiter\Jupiter_Moons.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Jupiter\Jupiter_Moons.xml without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Tiled
+2017-11-09 17:00:01Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Mars.xml ...
+2017-11-09 17:00:01Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Mars.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\@Images.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\@Images.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\@Images.tmp
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\@Images.tmp without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet MOC 256 (ASU) Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet MOC 256 Colorized Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet MOLA Color (ASU) Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mola Colored (ToMars-JPL) Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet MDIM (ToMars-JPL-USGS) Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mars THEMIS (ASU) Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mars THEMIS Color Tiled
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\OnMars.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\OnMars.xml without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet MOC Narrow Angle
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Mars\^Placenames.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Mars\^Placenames.xml without validation
+2017-11-09 17:00:01Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Moon.xml ...
+2017-11-09 17:00:01Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Moon.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Moon.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Moon\@Images.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Moon\@Images.xml without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Clementine 40xx
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Clementine 30xx
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Shaded Elevation Map
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Moon\Placenames.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Moon\Placenames.xml without validation
+2017-11-09 17:00:01Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\SDSS.xml ...
+2017-11-09 17:00:01Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\SDSS.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\SDSS.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\sdss\@Images.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\sdss\@Images.xml without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet  Sloan Digital Sky Server
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet  WMAP Image Server
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet SDSS Footprint
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet  FIRST Footprint
+2017-11-09 17:00:01Z 6 CONF checking world E:\WorldWind\bin\Debug\Config\Venus.xml ...
+2017-11-09 17:00:01Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Venus.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Venus\@Images.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus\@Images.xml without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Color Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Grey Tiled
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Shaded Relief Tiled
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Venus\Spacecraft.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus\Spacecraft.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Venus\^Placenames.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Venus\^Placenames.xml without validation
+2017-11-09 17:00:01Z 5 CONF loading startup world...
+2017-11-09 17:00:01Z 5 CONF Loading E:\WorldWind\bin\Debug\Config\Earth.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\@Images.tmp without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet NLT Landsat7 (Visible Color)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, pseudocolor
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet OnEarth 15m Global Mosaic, visual
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet NLT Landsat7 (Pseudo Color)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Geocover 2000
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Geocover 1990
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet USGS Digital Ortho
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet USGS Topo Maps
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet USGS Urban Area Ortho
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\zoomit.tmp without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet West Australia Geology Map (250k)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet West Australia Gravity Map (2004)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet West Australia Magnetic Field Map (2005)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet West Australia Topographic Map
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1994 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1995 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1996 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1997 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1998 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 1999 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2000 Panchromatic (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2001 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2002 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (2.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Robben Island (0.5m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Sep 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (1m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Apr 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (1m, NAIP)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2001 Natural Color (0.5, MassGIS)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Oct 2002 - Jan 2003 Natural Color (0.6m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Jul 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Sep 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Mar 2004 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2001 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2004 Natural Color (0.15m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Jun 2003 Natural Color (0.6m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Feb - Apr 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Apr 2002 Natural Color (0.3m)
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet 2003 Natural Color (0.6m)
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Boundaries.tmp without validation
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet Country Political Boundaries
+2017-11-09 17:00:01Z 6 CONF adding QuadTileSet US State Political Boundaries
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.xml without validation
+2017-11-09 17:00:01Z 6 CONF Loading renderable from E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp
+2017-11-09 17:00:01Z 5 CONF loading E:\WorldWind\bin\Debug\Config\Earth\^Placenames.tmp without validation
+2017-11-09 17:00:01Z 5 CONF initializing plugin compiler...
+2017-11-09 17:00:01Z 5 PLUG loading Stars3D ...
+2017-11-09 17:00:01Z 5 PLUG loading ShapeFileInfoTool ...
+2017-11-09 17:00:01Z 5 PLUG loading ShapeFileLoader ...
+2017-11-09 17:00:01Z 5 PLUG loading MeasureTool ...
+2017-11-09 17:00:01Z 5 PLUG loading KMLImporter ...
+2017-11-09 17:00:01Z 5 PLUG loading Compass ...
+2017-11-09 17:00:01Z 5 PLUG loading LightController ...
+2017-11-09 17:00:01Z 5 PLUG loading BmngLoader ...
+2017-11-09 17:00:01Z 5 PLUG loading Compass3D ...
+2017-11-09 17:00:01Z 5 PLUG loading NRLWeatherLoader ...
+2017-11-09 17:00:01Z 5 PLUG loading ScaleBarLegend ...
+2017-11-09 17:00:01Z 5 PLUG loading TimeController ...
+2017-11-09 17:00:01Z 5 PLUG loading Atmosphere ...
+2017-11-09 17:00:01Z 5 PLUG loading AnaglyphStereo ...
+2017-11-09 17:00:01Z 5 PLUG loading PlaceFinderLoader ...
+2017-11-09 17:00:01Z 5 PLUG loading WavingFlags ...
+2017-11-09 17:00:01Z 5 PLUG loading OverviewFormLoader ...
+2017-11-09 17:00:01Z 5 PLUG loading ExternalLayerManagerLoader ...
+2017-11-09 17:00:01Z 5 PLUG loading MovieRecorder ...
+2017-11-09 17:00:03Z 5 QTS  ServiceDownloadQueue: 1 requests waiting
+2017-11-09 17:00:03Z 5 GSDR Activated download for E:\WorldWind\bin\Debug\Cache\BMNG\BMNG (Shaded + Bathymetry) Tiled - 11.2004\0\1\1_2.jpg in slot 0
+2017-11-09 17:00:03Z 5 GSDR Starting download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=2&Y=1
+2017-11-09 17:00:03Z 5      Starting async download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=2&Y=1
+2017-11-09 17:00:03Z 5 QTS  ServiceDownloadQueue: 2 requests waiting
+2017-11-09 17:00:03Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:03Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:03Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:03Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:03Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:03Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:03Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 4 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 5 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 17:00:04Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 17:00:05Z 5 QTS  ServiceDownloadQueue: 6 requests waiting
+2017-11-09 17:00:05Z 5 NET  AsyncResponseCallback(): WebException: ProtocolError
+2017-11-09 17:00:05Z 5 QTS  ServiceDownloadQueue: 5 requests waiting
+2017-11-09 17:00:05Z 5 QTS  ServiceDownloadQueue: removing finishedQuadTile:Set=Tiled - 11.2004 Level=0 X=2 Y=1
+2017-11-09 17:00:05Z 5 QTS  ServiceDownloadQueue: 1 requests waiting
+2017-11-09 17:00:05Z 5 GSDR Activated download for E:\WorldWind\bin\Debug\Cache\BMNG\BMNG (Shaded + Bathymetry) Tiled - 11.2004\0\1\1_8.jpg in slot 0
+2017-11-09 17:00:05Z 5 GSDR Starting download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=8&Y=1
+2017-11-09 17:00:05Z 5      Starting async download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=8&Y=1
+2017-11-09 17:00:05Z 5 QTS  ServiceDownloadQueue: 2 requests waiting
+2017-11-09 17:00:05Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:05Z 5 QTS  ServiceDownloadQueue: 3 requests waiting
+2017-11-09 17:00:05Z 5      Cancelling async download for http://worldwind25.arc.nasa.gov/tile/tile.aspx?T=bmng.topo.bathy.200411&L=0&X=8&Y=1
+2017-11-09 17:00:05Z 5 NET  AsyncResponseCallback(): WebException: RequestCanceled
+2017-11-09 17:00:05Z 5 QTS  ServiceDownloadQueue: removing finishedQuadTile:Set=Tiled - 11.2004 Level=0 X=8 Y=1

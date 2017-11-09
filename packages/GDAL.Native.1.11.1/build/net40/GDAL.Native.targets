@@ -1,0 +1,80 @@
+<!--
+ *
+ * Gdal.Native.targets
+ * 
+ * This file was adopted from
+ * System.Data.SQLite.Core.targets -
+ *
+ * WARNING: This MSBuild file requires MSBuild 4.0 features.
+ *
+ * Written by Joe Mistachkin and David Archer.
+ * Released to the public domain, use at your own risk!
+ *
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+  ******************************************************************************
+  **                      Gdal.Native Library Build Items                     **
+  ******************************************************************************
+  -->
+
+  <ItemGroup>
+    <GdalNativeFiles Condition="'$(MSBuildThisFileDirectory)' != '' And
+                                   HasTrailingSlash('$(MSBuildThisFileDirectory)')"
+                        Include="$(MSBuildThisFileDirectory)..\..\gdal\**\*.*" />
+  </ItemGroup>
+
+  <!--
+  ******************************************************************************
+  **                     Gdal.Native Library Build Targets                    **
+  ******************************************************************************
+  -->
+
+  <Target Name="CopyGdalNativeFiles"
+          Condition="'$(CopyGdalNativeFiles)' != 'false' And
+                     '$(OutputPath)' != '' And
+                     HasTrailingSlash('$(OutputPath)') And
+                     Exists('$(OutputPath)')"
+          Inputs="@(GdalNativeFiles)"
+          Outputs="@(GdalNativeFiles -> '$(OutputPath)gdal\%(RecursiveDir)%(Filename)%(Extension)')">
+    <!--
+        NOTE: Copy "SQLite.Interop.dll" and all related files, for every
+              architecture that we support, to the build output directory.
+    -->
+    <Copy SourceFiles="@(GdalNativeFiles)"
+          DestinationFiles="@(GdalNativeFiles -> '$(OutputPath)gdal\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+  <!--
+  ******************************************************************************
+  -->
+
+  <Target Name="CleanGdalNativeFiles"
+          Condition="'$(CleanSQLiteInteropFiles)' != 'false' And
+                     '$(OutputPath)' != '' And
+                     HasTrailingSlash('$(OutputPath)') And
+                     Exists('$(OutputPath)')">
+    <!--
+        NOTE: Delete "SQLite.Interop.dll" and all related files, for every
+              architecture that we support, from the build output directory.
+    -->
+    <Delete Files="@(GdalNativeFiles -> '$(OutputPath)gdal\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+  <!--
+  ******************************************************************************
+  **                   Gdal.Native Library Build Properties                   **
+  ******************************************************************************
+  -->
+
+  <PropertyGroup>
+    <BuildDependsOn>
+      $(BuildDependsOn);
+      CopyGdalNativeFiles;
+    </BuildDependsOn>
+    <CleanDependsOn>
+      $(CleanDependsOn);
+      CleanGdalNativeFiles;
+    </CleanDependsOn>
+  </PropertyGroup>
+</Project>

@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 using System.Xml;
-using WorldWind.Net.Wms;
+using MFW3D.Net.Wms;
 
 namespace Timeline
 {

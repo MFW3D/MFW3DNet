@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <PlatformTarget>x86</PlatformTarget>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30178337-6BBE-45A0-B7DF-73B2A46F06EE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>MFW3D</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MFW3D</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>PluginSDK.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>3</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>PluginSDK.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="gdalconst_csharp">
+      <HintPath>..\packages\GDAL.1.11.1\lib\net40\gdalconst_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdal_csharp">
+      <HintPath>..\packages\GDAL.1.11.1\lib\net40\gdal_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\..\..\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.Direct3D.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2911.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="ogr_csharp">
+      <HintPath>..\packages\GDAL.1.11.1\lib\net40\ogr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="osr_csharp">
+      <HintPath>..\packages\GDAL.1.11.1\lib\net40\osr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Name>System.Drawing.Design</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="Tao.OpenGl">
+      <Name>Tao.OpenGl</Name>
+      <HintPath>..\bin\Debug\Tao.OpenGl.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl.ExtensionLoader">
+      <Name>Tao.OpenGl.ExtensionLoader</Name>
+      <HintPath>..\bin\Debug\Tao.OpenGl.ExtensionLoader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Tao.OpenGl.Glu">
+      <Name>Tao.OpenGl.Glu</Name>
+      <HintPath>..\bin\Debug\Tao.OpenGl.Glu.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="..\AltovaXML\AltovaXML.csproj">
+      <Project>{03aaa791-ec2d-4a90-abbf-45337e52dfd6}</Project>
+      <Name>AltovaXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Altova\Altova.csproj">
+      <Project>{d43e6c54-2df5-454e-9566-dffe2f3a6946}</Project>
+      <Name>Altova</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{87aa56b4-95ef-44a6-a3fe-ec77aff3991c}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSS.NET\RSS.NET.csproj">
+      <Project>{C42FC014-7E12-4FAF-9BC9-79BF1529440D}</Project>
+      <Name>RSS.NET</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AltitudeMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Global.cs" />
+    <Compile Include="Common\gpx.cs" />
+    <Compile Include="Common\NativeMethods.cs" />
+    <Compile Include="Common\PlaceListSettings.cs" />
+    <Compile Include="Common\shapelib.cs" />
+    <Compile Include="Common\WplIndex.cs" />
+    <Compile Include="Common\WWListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Geometry\Angle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GeoPortal3D\OldWidgets\Form.cs" />
+    <Compile Include="GeoPortal3D\OldWidgets\TextLabel.cs" />
+    <Compile Include="GeoPortal3D\OldWidgets\VisibleChangedHandler.cs" />
+    <Compile Include="GeoPortal3D\Widgets\Compass.cs" />
+    <Compile Include="GeoPortal3D\Widgets\Slider.cs" />
+    <Compile Include="GeoPortal3D\Widgets\SliderType.cs" />
+    <Compile Include="LayerSet\BlueType.cs" />
+    <Compile Include="LayerSet\BlueType2.cs" />
+    <Compile Include="LayerSet\BoundingBoxOverlapType.cs" />
+    <Compile Include="LayerSet\BoundingBoxOverlapType2.cs" />
+    <Compile Include="LayerSet\DistanceAboveSurfaceType.cs" />
+    <Compile Include="LayerSet\DistanceAboveSurfaceType2.cs" />
+    <Compile Include="LayerSet\GreenType.cs" />
+    <Compile Include="LayerSet\GreenType2.cs" />
+    <Compile Include="LayerSet\LayerSetDoc.cs" />
+    <Compile Include="LayerSet\LevelZeroTileSizeDegreesType.cs" />
+    <Compile Include="LayerSet\MaxDisplayAltitudeType.cs" />
+    <Compile Include="LayerSet\MaxDisplayAltitudeType2.cs" />
+    <Compile Include="LayerSet\MaximumDisplayAltitudeType.cs" />
+    <Compile Include="LayerSet\MaximumDisplayAltitudeType2.cs" />
+    <Compile Include="LayerSet\MaxViewRangeType.cs" />
+    <Compile Include="LayerSet\MaxViewRangeType2.cs" />
+    <Compile Include="LayerSet\MeshFilePathType.cs" />
+    <Compile Include="LayerSet\MeshFilePathType2.cs" />
+    <Compile Include="LayerSet\MinDisplayAltitudeType.cs" />
+    <Compile Include="LayerSet\MinDisplayAltitudeType2.cs" />
+    <Compile Include="LayerSet\MinimumDisplayAltitudeType.cs" />
+    <Compile Include="LayerSet\MinimumDisplayAltitudeType2.cs" />
+    <Compile Include="LayerSet\MinViewRangeType.cs" />
+    <Compile Include="LayerSet\MinViewRangeType2.cs" />
+    <Compile Include="LayerSet\NameType.cs" />
+    <Compile Include="LayerSet\NameType2.cs" />
+    <Compile Include="LayerSet\OpacityType.cs" />
+    <Compile Include="LayerSet\RedType.cs" />
+    <Compile Include="LayerSet\RedType2.cs" />
+    <Compile Include="LayerSet\ScaleFactorType.cs" />
+    <Compile Include="LayerSet\ScaleFactorType2.cs" />
+    <Compile Include="LayerSet\StyleType.cs" />
+    <Compile Include="LayerSet\StyleType2.cs" />
+    <Compile Include="LayerSet\Type_Caption.cs" />
+    <Compile Include="LayerSet\Type_DisplayFont.cs" />
+    <Compile Include="LayerSet\Type_DisplayFont2.cs" />
+    <Compile Include="LayerSet\Type_ExtendedInformation.cs" />
+    <Compile Include="LayerSet\Type_Icon.cs" />
+    <Compile Include="LayerSet\Type_ImageAccessor.cs" />
+    <Compile Include="LayerSet\Type_ImageLayer.cs" />
+    <Compile Include="LayerSet\Type_ImageTileService.cs" />
+    <Compile Include="LayerSet\Type_ImageTileService2.cs" />
+    <Compile Include="LayerSet\Type_LatitudeCoordinate.cs" />
+    <Compile Include="LayerSet\Type_LatitudeCoordinate2.cs" />
+    <Compile Include="LayerSet\Type_LatLonBoundingBox.cs" />
+    <Compile Include="LayerSet\Type_LatLonBoundingBox2.cs" />
+    <Compile Include="LayerSet\Type_LayerSet.cs" />
+    <Compile Include="LayerSet\Type_LongitudeCoordinate.cs" />
+    <Compile Include="LayerSet\Type_LongitudeCoordinate2.cs" />
+    <Compile Include="LayerSet\Type_MeshLayer.cs" />
+    <Compile Include="LayerSet\Type_MeshLayer2.cs" />
+    <Compile Include="LayerSet\Type_Orientation.cs" />
+    <Compile Include="LayerSet\Type_Orientation2.cs" />
+    <Compile Include="LayerSet\Type_PathList.cs" />
+    <Compile Include="LayerSet\Type_PathList2.cs" />
+    <Compile Include="LayerSet\Type_QuadTileSet.cs" />
+    <Compile Include="LayerSet\Type_QuadTileSet2.cs" />
+    <Compile Include="LayerSet\Type_RGBColor.cs" />
+    <Compile Include="LayerSet\Type_RGBColor2.cs" />
+    <Compile Include="LayerSet\Type_ShapeFileLayer.cs" />
+    <Compile Include="LayerSet\Type_ShapeFileLayer2.cs" />
+    <Compile Include="LayerSet\Type_SimpleTimeSpan.cs" />
+    <Compile Include="LayerSet\Type_SimpleTimeSpan2.cs" />
+    <Compile Include="LayerSet\Type_TiledPlacenameSet.cs" />
+    <Compile Include="LayerSet\Type_TiledPlacenameSet2.cs" />
+    <Compile Include="LayerSet\Type_Vector3.cs" />
+    <Compile Include="LayerSet\Type_WMSAccessor.cs" />
+    <Compile Include="LayerSet\Type_WMSAccessor2.cs" />
+    <Compile Include="LayerSet\ValueType.cs" />
+    <Compile Include="LayerSet\ValueType2.cs" />
+    <Compile Include="LayerSet\ValueType3.cs" />
+    <Compile Include="LayerSet\ValueType4.cs" />
+    <Compile Include="OgrVector\NoDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrVector\NoDataForm.Designer.cs" />
+    <Compile Include="OgrVector\OgrVectorBase.cs" />
+    <Compile Include="OgrVector\OgrVectorImporterGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrVector\TextFilterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrVector\TextFilterDialog.Designer.cs" />
+    <Compile Include="OgrVector\VectorStyleParameters.cs" />
+    <Compile Include="OgrVector\WaitMessage.cs" />
+    <Compile Include="PluginEngine\Plugin.cs" />
+    <Compile Include="PluginEngine\PluginCompiler.cs" />
+    <Compile Include="PluginEngine\PluginDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PluginEngine\PluginInfo.cs" />
+    <Compile Include="PluginEngine\PluginInstallDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PluginEngine\PluginListItem.cs" />
+    <Compile Include="PluginEngine\PluginListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ConfigurationSaver.cs" />
+    <Compile Include="DataSource\DataRequest.cs" />
+    <Compile Include="DataSource\DataRequestHTTP.cs" />
+    <Compile Include="DataSource\DataStore.cs" />
+    <Compile Include="DataSource\QueueMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\DirectXProfiler.cs" />
+    <Compile Include="EnterTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GeoRSS\GeoRssDataSet.cs">
+      <DependentUpon>GeoRssDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GeoRSS\GeoRssDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeoRssDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GeoRSS\GeoRssFeed.cs" />
+    <Compile Include="GeoRSS\GeoRSSFeedControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GeoRSS\GeoRSSFeedControl.Designer.cs">
+      <DependentUpon>GeoRSSFeedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeoRSS\GeoRssFeeds.cs" />
+    <Compile Include="GeoRSS\GeoRssForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeoRSS\GeoRssForm.Designer.cs">
+      <DependentUpon>GeoRssForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderable\DynamicCloudLayer.cs" />
+    <Compile Include="Renderable\Icons.cs" />
+    <Compile Include="Renderable\IconTexture.cs" />
+    <Compile Include="InternalWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSource\TextureSource.cs" />
+    <Compile Include="KMLDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renderable\KMLIcon.cs" />
+    <Compile Include="KMLReader\KMLLoader.cs" />
+    <Compile Include="KMLReader\KMLNetworkLink.cs" />
+    <Compile Include="KMLReader\KMLParser.cs" />
+    <Compile Include="Menu\MenuBar.cs" />
+    <Compile Include="Menu\MenuButton.cs" />
+    <Compile Include="Renderable\ModelFeature.cs" />
+    <Compile Include="Renderable\PointIcons.cs" />
+    <Compile Include="Geometry\PointSpriteVertex.cs" />
+    <Compile Include="Geometry\RayCasting.cs" />
+    <Compile Include="Renderable\TrackIcon.cs" />
+    <Compile Include="Core\WFSNameColors.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Renderable\Bar3D.cs" />
+    <Compile Include="Geometry\BinaryTriangleTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\BoundaryLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\BoundingBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\BoundingSphere.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Cache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Camera.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ConfigurationLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DownloadableImageFromIconSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DrawArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\GeographicBoundingBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\GeoSpatialDownloadRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\Icon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\IGlobe.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ImageHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\ImageLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ImageStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ImageTileService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\IRenderable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\LatLongGrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LayerManagerItemInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Geometry\LinearRing.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\LineFeature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\LineGraph.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\LineString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\MathEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Menu\Menu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\MeshLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\NltImageStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\PathLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\PathList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\PerformanceTimer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\Point2d.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\Point3d.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\Polygon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\PolygonFeature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\PolygonLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\AnalyticGeometryException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\CLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\CPoint2D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\CPolygon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\CPolygonShape.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Definition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\ProgressBar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\ProjectedVectorRenderer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\ProjectedVectorTile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\QuadTile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\QuadTileSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\Quaterniond.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\RenderableObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\RenderableObjectList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\GeoSpatialDownloadRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\ScreenOverlay.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\SettingsBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShapeFileInfoDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renderable\ShapeFileLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\ShapeLayer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\SunCalculator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\SurfaceImage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geometry\SurfaceTile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\TerrainPath.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Terrain\NltTerrainAccessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Terrain\TerrainAccessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Terrain\TerrainDownloadRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Terrain\TerrainTileService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\TiledPlacenameSet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\TiledWFSPlacenameSet.cs" />
+    <Compile Include="Common\TimeKeeper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TimeSetterDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeSetterDialog.Designer.cs">
+      <DependentUpon>TimeSetterDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Units.cs" />
+    <Compile Include="Geometry\ViewFrustum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VisualControl\ColorBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualControl\PropertyBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renderable\WavingFlagLayer.cs" />
+    <Compile Include="Renderable\Water.cs" />
+    <Compile Include="WMS\WMS_server.cs" />
+    <Compile Include="WMS\wms_server_listDoc.cs" />
+    <Compile Include="WMS\WMS_SERVER_LISTType.cs" />
+    <Compile Include="WorldWindow\Widgets\WidgetCollection.cs" />
+    <Compile Include="WorldWindow\Widgets\WidgetMenuButton.cs" />
+    <Compile Include="Widgets\CompassWidget.cs" />
+    <Compile Include="Widgets\ControlWidget.cs" />
+    <Compile Include="Widgets\IWidgetCollection.cs" />
+    <Compile Include="Widgets\IWidget.cs" />
+    <Compile Include="Widgets\IInteractive.cs" />
+    <Compile Include="Widgets\FormWidget.cs" />
+    <Compile Include="Widgets\ButtonWidget.cs" />
+    <Compile Include="Widgets\LabelWidget.cs" />
+    <Compile Include="Widgets\PanelWidget.cs" />
+    <Compile Include="Widgets\Scrollbar.cs" />
+    <Compile Include="Widgets\SimpleTreeNodeWidget.cs" />
+    <Compile Include="Widgets\TreeNodeWidget.cs" />
+    <Compile Include="Widgets\UpdateWidget.cs" />
+    <Compile Include="Widgets\WidgetMenuButton.cs" />
+    <Compile Include="Widgets\WidgetUtilities.cs" />
+    <Compile Include="Widgets\WidgetCollection.cs" />
+    <Compile Include="Widgets\RootWidget.cs" />
+    <Compile Include="Widgets\WidgetEnums.cs" />
+    <Compile Include="Widgets\PictureBox.cs" />
+    <Compile Include="Widgets\TextBox.cs" />
+    <Compile Include="Widgets\TextLabel.cs" />
+    <Compile Include="Core\WMSLayerAccessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderable\World.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WorldCamera.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WorldSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldWindow\Widgets\WorldSurfaceRenderer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.PictureBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.RootWidget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.TextBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.TextLabel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldWindow\Widgets\WorldWindow.Widgets.Form.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldWindow\Widgets\WorldWindow.Widgets.Utilities.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldWindow\WorldWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WorldWindow\WorldWindow.Designer.cs">
+      <DependentUpon>WorldWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\WorldWindSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WorldWindUri.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Common\WWListView.resx" />
+    <EmbeddedResource Include="GeoRSS\GeoRSSFeedControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GeoRSSFeedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeoRSS\GeoRssForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GeoRssForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrVector\NoDataForm.resx" />
+    <EmbeddedResource Include="OgrVector\OgrVectorImporterGUI.resx" />
+    <EmbeddedResource Include="OgrVector\TextFilterDialog.resx" />
+    <EmbeddedResource Include="PluginEngine\PluginDialog.resx" />
+    <EmbeddedResource Include="PluginEngine\PluginInstallDialog.resx" />
+    <EmbeddedResource Include="PluginEngine\PluginListView.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shaders\grayscale.fx" />
+    <None Include="Common\ImageTileRequest.cs">
+      <SubType>Code</SubType>
+    </None>
+    <EmbeddedResource Include="Shaders\SkyFromAtmosphere.fx" />
+    <EmbeddedResource Include="Shaders\SkyFromSpace.fx" />
+    <EmbeddedResource Include="Shaders\flag.fx" />
+    <None Include="VisualControl\DownloadIndicator.cs">
+      <SubType>Code</SubType>
+    </None>
+    <EmbeddedResource Include="DataSource\QueueMonitor.resx">
+      <DependentUpon>QueueMonitor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayerManagerItemInfo.resx">
+      <DependentUpon>LayerManagerItemInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShapeFileInfoDlg.resx">
+      <DependentUpon>ShapeFileInfoDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeSetterDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TimeSetterDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualControl\ColorBar.resx">
+      <DependentUpon>ColorBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualControl\PropertyBrowser.resx">
+      <DependentUpon>PropertyBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldWindow\WorldWindow.resx">
+      <DependentUpon>WorldWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GeoRSS\GeoRssDataSet.xsc">
+      <DependentUpon>GeoRssDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GeoRSS\GeoRssDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GeoRssDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GeoRSS\GeoRssDataSet.xss">
+      <DependentUpon>GeoRssDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\georss-small.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\back.gif" />
+    <Content Include="Resources\close.png" />
+    <Content Include="Resources\forward.gif" />
+    <Content Include="Resources\go.gif" />
+    <Content Include="Resources\outline.gif" />
+    <Content Include="Resources\stop.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

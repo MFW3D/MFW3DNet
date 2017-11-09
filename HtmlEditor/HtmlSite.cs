@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Drawing;
-using WorldWind;
+using MFW3D;
 
 namespace onlyconnect
 {
@@ -1240,7 +1240,7 @@ namespace onlyconnect
         // IHTMLEditDesigner
         /*
              * This custom interface provides methods that enable clients using the editor 
-             * to intercept Microsoft® Internet Explorer events 
+             * to intercept Microsoft?Internet Explorer events 
              * so that they can change the editor's default behavior
              * */
         public int PreHandleEvent(int inEvtDispID, IHTMLEventObj pIEventObj)

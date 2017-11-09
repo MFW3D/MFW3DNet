@@ -70,25 +70,25 @@
             OBS: Worker thread (don't update UI directly from this thread)
             </summary>
         </member>
-        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Initialize(WorldWind.DrawArgs)">
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Initialize(MFW3D.DrawArgs)">
             <summary>
             RenderableObject abstract member (needed) 
             OBS: Worker thread (don't update UI directly from this thread)
             </summary>
         </member>
-        <member name="M:Collab.jhuapl.Util.ClassificationBanner.PerformSelectionAction(WorldWind.DrawArgs)">
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.PerformSelectionAction(MFW3D.DrawArgs)">
             <summary>
             RenderableObject abstract member (needed)
             Called from UI thread = UI code safe in this function
             </summary>
         </member>
-        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Render(WorldWind.DrawArgs)">
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Render(MFW3D.DrawArgs)">
             <summary>
             This is where we do our rendering 
             Called from UI thread = UI code safe in this function
             </summary>
         </member>
-        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Update(WorldWind.DrawArgs)">
+        <member name="M:Collab.jhuapl.Util.ClassificationBanner.Update(MFW3D.DrawArgs)">
             <summary>
             RenderableObject abstract member (needed)
             OBS: Worker thread (don't update UI directly from this thread)
@@ -280,7 +280,7 @@
             </summary>
             <param name="name">The name of this drawing layer</param>
         </member>
-        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.BuildGuideLine(WorldWind.Angle,WorldWind.Angle)">
+        <member name="M:Collab.jhuapl.Whiteboard.DrawLayer.BuildGuideLine(MFW3D.Angle,MFW3D.Angle)">
             <summary>
             Draw a line from the last point to current position
             </summary>
@@ -409,7 +409,7 @@
             A hotspot is a point of interest placed on the whiteboard
             </summary>
         </member>
-        <member name="M:Collab.jhuapl.Whiteboard.Hotspot.RenderLabel(WorldWind.DrawArgs,Microsoft.DirectX.Direct3D.Sprite,Microsoft.DirectX.Vector3,System.Int32,System.Collections.Generic.List{System.Drawing.Rectangle},System.Boolean)">
+        <member name="M:Collab.jhuapl.Whiteboard.Hotspot.RenderLabel(MFW3D.DrawArgs,Microsoft.DirectX.Direct3D.Sprite,Microsoft.DirectX.Vector3,System.Int32,System.Collections.Generic.List{System.Drawing.Rectangle},System.Boolean)">
             <summary>
             Helper function to render icon label.  Broken out so that child classes can override this behavior.
             </summary>

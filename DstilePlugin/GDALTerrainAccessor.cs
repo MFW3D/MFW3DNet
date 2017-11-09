@@ -1,12 +1,12 @@
-using WorldWind.Renderable;
+using MFW3D.Renderable;
 using System;
 using System.Globalization;
-using WorldWind.DataSource;
+using MFW3D.DataSource;
 using System.IO;
-using WorldWind.Terrain;
+using MFW3D.Terrain;
 using OSGeo.GDAL;
 
-namespace WorldWind.Terrain
+namespace MFW3D.Terrain
 {
     /// <summary>
     /// Reads GDAL based terrain data and writes out

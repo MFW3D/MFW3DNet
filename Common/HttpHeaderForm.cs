@@ -4,7 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace WorldWind.Net.Monitor
+namespace MFW3D.Net.Monitor
 {
 	/// <summary>
 	/// Displays details for one download.

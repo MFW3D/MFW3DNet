@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{394E6BC1-62F8-4776-9FC5-25633A239433}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>images\logo.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Plugins</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Plugins</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>WorldWind.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>WorldWind.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AviFile, Version=1.0.2461.30093, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\AviFile.dll</HintPath>
+    </Reference>
+    <Reference Include="CarbonTools.Controls, Version=2.1.100.0, Culture=neutral, PublicKeyToken=e17062bfb214b90c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\CarbonTools.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CarbonTools.Core, Version=2.1.100.0, Culture=neutral, PublicKeyToken=e17062bfb214b90c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\CarbonTools.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FlickrNet, Version=3.24.0.0, Culture=neutral, PublicKeyToken=2491df59efa5d132, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\FlickrNet.dll</HintPath>
+    </Reference>
+    <Reference Include="gdalconst_csharp">
+      <HintPath>..\packages\GDAL.1.11.1\lib\net40\gdalconst_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdal_csharp">
+      <HintPath>..\packages\GDAL.1.11.1\lib\net40\gdal_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Diagnostics, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.Direct3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2909.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\Microsoft.DirectX.Direct3DX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectDraw, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.DirectDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectPlay, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.DirectPlay.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\Microsoft.DirectX.DirectSound.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript">
+      <Name>Microsoft.JScript</Name>
+    </Reference>
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="ogr_csharp">
+      <HintPath>..\packages\GDAL.1.11.1\lib\net40\ogr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Org.Mentalis.Security, Version=1.0.13.715, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Org.Mentalis.Security.1.0.0\lib\net40\Org.Mentalis.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="osr_csharp">
+      <HintPath>..\packages\GDAL.1.11.1\lib\net40\osr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\AltovaXML\AltovaXML.csproj">
+      <Name>AltovaXML</Name>
+      <Project>{03AAA791-EC2D-4A90-ABBF-45337E52DFD6}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Altova\Altova.csproj">
+      <Name>Altova</Name>
+      <Project>{D43E6C54-2DF5-454E-9566-DFFE2F3A6946}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\capabilities_1_1_1\capabilities_1_1_1.csproj">
+      <Name>capabilities_1_1_1</Name>
+      <Project>{FD7F0CEC-49A5-3C4F-B757-65355BDFFD8C}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\capabilities_1_3_0\capabilities_1_3_0.csproj">
+      <Name>capabilities_1_3_0</Name>
+      <Project>{000E9279-6463-144A-B6B7-297C2DB56FDA}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\Collab\Collab.csproj">
+      <Project>{b86848bd-12a5-44f9-8464-db387c64d9a6}</Project>
+      <Name>Collab</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{87aa56b4-95ef-44a6-a3fe-ec77aff3991c}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MFW3D\MFW3D.csproj">
+      <Name>MFW3D</Name>
+      <Project>{30178337-6BBE-45A0-B7DF-73B2A46F06EE}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Timeline\Timeline.csproj">
+      <Name>Timeline</Name>
+      <Project>{467BCD43-F3D9-46A5-B7A8-3A8B11708E0E}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\WorldXmlDescriptor\WorldXmlDescriptor.csproj">
+      <Name>WorldXmlDescriptor</Name>
+      <Project>{9EA1E65D-4558-E940-B594-E71BF740FA04}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+    <Reference Include="ZedGraph, Version=5.1.5.25890, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\FlickrPlugin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MeasureToolNG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MovieRecorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WMSBrowserNG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\Anaglyph.cs" />
+    <Compile Include="Forms\AnimatedEarthManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\NavigationPanel.cs" />
+    <Compile Include="Plugins\NavigationRing.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Plugins\Atmosphere.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\BMNG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BmngAboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\Compass3D.cs" />
+    <Compile Include="Plugins\CompassRose.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Plugins\DynamicClouds.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\ExternalLayerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FileLoader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\FloodLevel.cs" />
+    <Compile Include="Plugins\GeoRSS.cs" />
+    <Compile Include="Plugins\GlobeCursor.cs" />
+    <Compile Include="Forms\GoogleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GpsPlugin\CSVParser.cs" />
+    <Compile Include="GpsPlugin\GPSTracker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.COM.cs" />
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.File.cs" />
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.GPSPosition.cs" />
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.GPSSource.cs" />
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.NMEA.cs" />
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.PlaybackControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.PlaybackControl.Designer.cs">
+      <DependentUpon>GPSTrackerPlugin.PlaybackControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.RenderInformation.cs" />
+    <Compile Include="GpsPlugin\GpsTrackerPlugin.SourceSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GpsPlugin\GpsTrackerPlugin.SourceSetup.Designer.cs">
+      <DependentUpon>GpsTrackerPlugin.SourceSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.UDPTCP.cs" />
+    <Compile Include="GpsPlugin\GPSTrackerPlugin.WorldWind.cs" />
+    <Compile Include="GpsPlugin\MessageMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GpsPlugin\POIName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GotoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\Joystick.cs" />
+    <Compile Include="Plugins\KMLImporter.cs" />
+    <Compile Include="Plugins\LayerManager.cs" />
+    <Compile Include="Plugins\LightController.cs">
+    </Compile>
+    <Compile Include="Plugins\MeasureTool.cs">
+    </Compile>
+    <Compile Include="Forms\NrlMryAboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NRLWeather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverviewForm\ImageTileCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OverviewForm\OverviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverviewForm\OverviewFormComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OverviewForm\OverviewToolbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OverviewForm\ResourceCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\PathMaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlaceBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlaceFinder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PropertyBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RapidFireModis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\ScaleBarLegend.cs" />
+    <Compile Include="Plugins\ShapeFileInfoTool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\ShapeFileLoader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plugins\Stars3D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\TerrainManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TerrainManager.Designer.cs">
+      <DependentUpon>TerrainManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugins\TimeController.cs" />
+    <Compile Include="Plugins\WavingFlags.cs" />
+    <Compile Include="Plugins\WhiteboardPlugin.cs" />
+    <Compile Include="Plugins\WiimoteHeadTracker.cs" />
+    <Compile Include="Forms\WMSBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\AnimatedEarthManager.resx">
+      <DependentUpon>AnimatedEarthManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BMNG.resx">
+      <DependentUpon>BMNG.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BmngAboutDialog.resx">
+      <DependentUpon>BmngAboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExternalLayerManager.resx">
+      <DependentUpon>ExternalLayerManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FlickrPlugin.resx">
+      <DependentUpon>FlickrPlugin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeasureToolNG.resx">
+      <DependentUpon>MeasureToolNG.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MovieRecorder.resx">
+      <DependentUpon>MovieRecorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WMSBrowserNG.resx">
+      <DependentUpon>WMSBrowserNG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plugins\FloodLevel.resx">
+      <DependentUpon>FloodLevel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GotoDialog.resx">
+      <DependentUpon>GotoDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GpsPlugin\GPSTracker.resx">
+      <DependentUpon>GPSTracker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GpsPlugin\MessageMonitor.resx">
+      <DependentUpon>MessageMonitor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GpsPlugin\POIName.resx">
+      <DependentUpon>POIName.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NrlMryAboutDialog.resx">
+      <DependentUpon>NrlMryAboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NRLWeather.resx">
+      <DependentUpon>NRLWeather.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverviewForm\OverviewForm.resx">
+      <DependentUpon>OverviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverviewForm\OverviewFormComponent.resx">
+      <DependentUpon>OverviewFormComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverviewForm\OverviewToolbar.resx">
+      <DependentUpon>OverviewToolbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PathMaker.resx">
+      <DependentUpon>PathMaker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlaceBuilder.resx">
+      <DependentUpon>PlaceBuilder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlaceFinder.resx">
+      <DependentUpon>PlaceFinder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PropertyBrowserForm.resx">
+      <DependentUpon>PropertyBrowserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RapidFireModis.resx">
+      <DependentUpon>RapidFireModis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShapeFileLoader.resx">
+      <DependentUpon>ShapeFileLoader.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WMSBrowser.resx">
+      <DependentUpon>WMSBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="images\back.psd" />
+    <None Include="images\forward.psd" />
+    <None Include="images\go.psd" />
+    <None Include="images\outline.gif" />
+    <None Include="images\stop.psd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\outline.psd" />
+    <None Include="images\stop.gif" />
+    <EmbeddedResource Include="Forms\FileLoader.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FileLoader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GpsPlugin\GPSTrackerPlugin.PlaybackControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GPSTrackerPlugin.PlaybackControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GpsPlugin\GpsTrackerPlugin.SourceSetup.resx">
+      <DependentUpon>GpsTrackerPlugin.SourceSetup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shaders\clouds.fx" />
+    <EmbeddedResource Include="Forms\TerrainManager.resx">
+      <DependentUpon>TerrainManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\back.gif" />
+    <Content Include="images\forward.gif" />
+    <Content Include="images\go.gif" />
+    <Content Include="images\logo.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
