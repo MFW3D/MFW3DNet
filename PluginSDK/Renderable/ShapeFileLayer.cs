@@ -540,9 +540,9 @@ namespace WorldWind
 				foreach (ZipEntry ze in zFile) 
 				{
 					if(ze.Name.ToLower().EndsWith(".shp"))
-						shpIndex=ze.ZipFileIndex;					
+						shpIndex=(int)ze.ZipFileIndex;					
 					else if(ze.Name.ToLower().EndsWith(".dbf"))
-						dbfIndex=ze.ZipFileIndex;					
+						dbfIndex= (int)ze.ZipFileIndex;					
 				}							
 			}
 			catch { /* Ignore */ }			

@@ -8,11 +8,6 @@ using System.Drawing.Imaging;
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
 using System.Xml;
-
-//GDAL ¿â
-using GDAL;
-using OSR;
-
 namespace WorldWind
 {
     /// <summary>
@@ -22,7 +17,7 @@ namespace WorldWind
     {
         #region Private Members
         string m_dataSetName;
-        GDAL.Dataset m_dataset;
+        OSGeo.GDAL.Dataset m_dataset;
         double[] m_transform = new double[6];
         int m_lines;
         int m_pixels;
@@ -46,7 +41,7 @@ namespace WorldWind
         public GDALImageStore(
             string dataSetName,
             string sourcefilename,
-            GDAL.Dataset dataset,
+            OSGeo.GDAL.Dataset dataset,
             string format)
         {
             //TODO: Allow serialization and deserialization of this class for persistency

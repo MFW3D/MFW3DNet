@@ -80,7 +80,7 @@ namespace WorldWind
 						//Extracts the file in temp
 						FastZip fz = new FastZip();
 						fz.ExtractZip(dbfPath, Path.GetTempPath(),
-							ICSharpCode.SharpZipLib.Zip.FastZip.Overwrite.Always,null,"","");
+							ICSharpCode.SharpZipLib.Zip.FastZip.Overwrite.Always,null,"","",true);
 						setDbfInfo(Path.Combine(Path.GetTempPath(),ze.Name));						
 					}
 				}						

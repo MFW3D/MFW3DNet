@@ -131,10 +131,9 @@ namespace Stars3D.Plugin
 		/// </summary>
 		public override void Render(DrawArgs drawArgs)
 		{
-			if(!isInitialized)
-				return;
-
-            if (!this.IsOn)
+            if (!isInitialized)
+                return;
+            if (!IsOn)
                 return;
 
 			// Camera & Device shortcuts ;)

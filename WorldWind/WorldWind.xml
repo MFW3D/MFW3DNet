@@ -4,91 +4,502 @@
         <name>WorldWind</name>
     </assembly>
     <members>
-        <member name="T:Mashi.Stereo.AnaglyphStereo">
+        <member name="M:YahooFlickr.Plugins.FlickrGUI.searchButton_Click(System.Object,System.EventArgs)">
             <summary>
-            The plugin (main class)
+            Button Press callback set the flickr plugin layer keyword
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:YahooFlickr.Plugins.FlickrPlugin">
+            <summary>
+            Main Plugin class - maintains a GUI and FlickrLayer
+            </summary> 
+        </member>
+        <member name="T:YahooFlickr.Plugins.FlickrIconsLayer">
+            <summary>
+            Flickr Icons Display Layer. Shows Georeferenced Images
             </summary>
         </member>
-        <member name="F:Mashi.Stereo.AnaglyphStereo.LayerName">
+        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.#ctor">
             <summary>
-            Name displayed in layer manager
+            Construct supporting Flickr objects
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.AnaglyphStereo.Load">
+        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.Initialize(WorldWind.DrawArgs)">
+            <summary>
+            Initialize graphics objects
+            </summary>
+            <param name="drawArgs"></param>
+        </member>
+        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.Dispose">
+            <summary>
+            Dispose Graphics objects
+            </summary>
+        </member>
+        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.Update(WorldWind.DrawArgs)">
+            <summary>
+            This method updates the Icons to reflect only those in view
+            </summary>
+            <param name="drawArgs"></param>
+        </member>
+        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.GetPhotoCollection(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            This method takes a bounding box and returns
+            Photocollection covering the bounding box from
+            cache or from downloaded data
+            </summary>
+            <param name="west"></param>
+            <param name="south"></param>
+            <param name="east"></param>
+            <param name="north"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MeasureToolNewgen.Plugins.MeasureWinResult">
+            <summary>
+            Winforms class to show measurement results till
+            the Worldwind Widgets mature
+            </summary>
+        </member>
+        <member name="T:MeasureToolNewgen.Plugins.MeasureToolNG">
+            <summary>
+            Planimetric Measure Tool plug-in
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.Load">
+            <summary>
+            Plugin entry point 
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.Unload">
+            <summary>
+            Unload our plugin
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.ClearLines">
+            <summary>
+            Remove all the line segments
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.menuItemClicked(System.Object,System.EventArgs)">
+            <summary>
+            Measuretool is enabled via the menu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Measure tool is activated via the M key
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.PlotTerrain">
+            <summary>
+            Plot Terrrain Cross Section graph
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.ChangePluginStatus">
+            <summary>
+            Turn plugin on and off
+            </summary>
+        </member>
+        <member name="T:MeasureToolNewgen.Plugins.LineAddHandler">
+            <summary>
+            Updates GUI with new length in line mode
+            </summary>
+            <param name="LengthText"></param>
+        </member>
+        <member name="T:MeasureToolNewgen.Plugins.PolyAddHandler">
+            <summary>
+            Update GUI with new area in polygon mode 
+            </summary>
+            <param name="AreaText"></param>
+        </member>
+        <member name="T:MeasureToolNewgen.Plugins.MeasureToolLayer">
+            <summary>
+            This class is a Mouse gesture sensitive
+            Line Drawing class.
+            The mouse gestures should function as follows
+            in 
+            1: Single Line mode
+                * Left Click begins a single measurement line
+                * Mouse move dynamically updates line
+                * Second left click confirms the position of the line
+                * Right Click clears points and restarts measurements
+            2: Multiline Mode
+                * Left Click begins Multilne
+                * Mouse move as above
+                * Each subsequent left click adds a segment to the line
+                * Right Click completes the measurement
+                * Second right click clears points and restarts measurements
+            </summary>
+        </member>
+        <member name="P:MeasureToolNewgen.Plugins.MeasureToolLayer.GCLength">
+            <summary>
+            Get and sets length based on great circle calculation
+            </summary>
+        </member>
+        <member name="P:MeasureToolNewgen.Plugins.MeasureToolLayer.TerrainLength">
+            <summary>
+            Gets and sets length based on following terrain
+            </summary>
+        </member>
+        <member name="P:MeasureToolNewgen.Plugins.MeasureToolLayer.Nodes">
+            <summary>
+            Gets the Point3d array of nodes for the linefeature
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Respond to mouse movements with dynamic line
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Store position of mouse click
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Add point or deactivate tool
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseDragged">
+            <summary>
+            Detect drag to allow globe movements
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseRightClick">
+            <summary>
+            Deactivate tool on right click
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.CalcLength">
+            <summary>
+            This Method calculates total length of the linefeature
+            </summary>
+            <returns>Length of the line</returns>
+        </member>
+        <member name="T:MeasureToolNewgen.Plugins.MeasureAreaLayer">
+            <summary>
+            This class is used for area measurements
+            extends polygon feature to be sensitive to
+            mousemovements
+            </summary>
+        </member>
+        <member name="P:MeasureToolNewgen.Plugins.MeasureAreaLayer.Nodes">
+            <summary>
+            Access measurement polygon nodes
+            </summary>
+        </member>
+        <member name="P:MeasureToolNewgen.Plugins.MeasureAreaLayer.IsOn">
+            <summary>
+            Overridden ison method to disable point to go
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.#ctor(WorldWind.World,WorldWind.DrawArgs,WorldWind.LinearRing)">
+            <summary>
+            Constructor presets polygonfeature properties
+            </summary>
+            <param name="world"></param>
+            <param name="drawArgs"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.Render(WorldWind.DrawArgs)">
+            <summary>
+            Allow changing of mouse cursor during rendering
+            </summary>
+            <param name="drawArgs"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Respond to Mousemovements with dynamic polygon
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Store last mousedown point to detect dragging
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Complete click response, add point or deactivate tool
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseDragged">
+            <summary>
+            Allow movement of globe while measuring
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseRightClick">
+            <summary>
+            Deactivate tool on right click
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.CalcArea">
+            <summary>
+            Perform area calculations using planet model
+            1.Basic calculation using sphere model
+            2.Refinements using ellipsoid and terrain
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:MeasureToolNewgen.Plugins.MeasureAreaLayer.QA">
+            <summary>
+            Calculate the polygon area using a spherical earth model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:MeasureToolNewgen.Plugins.MeasureAreaLayer.QB">
+            <summary>
+            Calculate the polygon area using a spherical earth model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:MeasureToolNewgen.Plugins.MeasureAreaLayer.QC">
+            <summary>
+            Calculate the polygon area using a spherical earth model
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.Q(System.Double)">
+            <summary>
+            Ellipsoid helper method
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.Qbar(System.Double)">
+            <summary>
+            Ellipsoid helper method
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.G_begin_ellipsoid_polygon_area(System.Double,System.Double)">
+            <summary>
+            Initialize ellipsoid with axis length and eccentricity
+            </summary>
+            <param name="a">Semi-Major axis in Meters</param>
+            <param name="e2">Ellipsoid eccentricity squared </param>
+            <returns></returns>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.G_ellipsoid_polygon_area(WorldWind.Point3d[])">
+            <summary>
+            Calculate area from a set of lat-lon points
+            </summary>
+            <param name="points">List of points</param>
+            <returns></returns>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.CalcEllipsoidArea">
+            <summary>
+            Calculate area of polygon based on ellipsoid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MeasureToolNewgen.Plugins.MeasureResult">
+            <summary>
+            This class displays measurement results in a Worldwind Style widget
+            </summary>
+        </member>
+        <member name="T:MeasureToolNewgen.Plugins.TerrainGraphForm">
+            <summary>
+            Form to display the terrain profile plot
+            </summary>
+        </member>
+        <member name="F:MeasureToolNewgen.Plugins.TerrainGraphForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.TerrainGraphForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MeasureToolNewgen.Plugins.TerrainGraphForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Apogee.MovieCreator.MovieRecorderDialog">
+            <summary>
+            Movie Recorder dialog
+            </summary>
+        </member>
+        <member name="F:Apogee.MovieCreator.MovieRecorderDialog.frameHeight">
+            <summary>
+            Height of rendered images (pixels).
+            </summary>
+        </member>
+        <member name="F:Apogee.MovieCreator.MovieRecorderDialog.frameWidth">
+            <summary>
+            Width of rendered images (pixels).
+            </summary>
+        </member>
+        <member name="M:Apogee.MovieCreator.MovieRecorderDialog.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Apogee.MovieCreator.MovieRecorderDialog.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Apogee.MovieCreator.MovieRecorderDialog.buttonEdit_Click(System.Object,System.EventArgs)">
+            <summary>
+            Launch notepad with script for edit
+            </summary>
+        </member>
+        <member name="T:Apogee.MovieCreator.MovieRecorder">
+            <summary>
+            Movie recording script.  Plays back a script file with camera positions 
+            and records each frame to sequentially numbered Portable Network Graphics
+            files on disk. Adds itself to the World Wind main menu's 
+            Plugins menu -> Movie Recorder
+            </summary>
+        </member>
+        <member name="M:Apogee.MovieCreator.MovieRecorder.Load">
             <summary>
             Plugin entry point - All plugins must implement this function
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.AnaglyphStereo.Unload">
+        <member name="M:Apogee.MovieCreator.MovieRecorder.Unload">
             <summary>
-            Unloads our plugin
+            Close down
             </summary>
         </member>
-        <member name="T:Mashi.Stereo.StereoLayer">
+        <member name="M:Apogee.MovieCreator.MovieRecorder.menuItemRecorder_Click(System.Object,System.EventArgs)">
             <summary>
-            Anaglyph Stereo layer
+            User selected the recorder from the main menu.
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.StereoLayer.#ctor(System.String,WorldWind.WorldWindow)">
+        <member name="T:Apogee.MovieCreator.PathCamera">
             <summary>
-            Constructor
+            Camera that follows a path between a list of 
+            key frames and triggers a save of each frame.
             </summary>
         </member>
-        <member name="P:Mashi.Stereo.StereoLayer.Opacity">
+        <member name="F:Apogee.MovieCreator.PathCamera.IsRecording">
             <summary>
-            Opacity not available
+            Set to true to enable recording of frames to disk.
             </summary>
         </member>
-        <member name="P:Mashi.Stereo.StereoLayer.InterocularDistance">
+        <member name="F:Apogee.MovieCreator.PathCamera.PreRollTime">
             <summary>
-            The distance separating the two eyes - percent of distance to target.
+            How long to wait after moving camera to allow imagery to load
             </summary>
         </member>
-        <member name="P:Mashi.Stereo.StereoLayer.FocusAngle">
+        <member name="F:Apogee.MovieCreator.PathCamera.StartFrame">
             <summary>
-            The convergence angle between left and right view in degree.
+            Frame to start recording from.
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.StereoLayer.Render(WorldWind.DrawArgs)">
+        <member name="F:Apogee.MovieCreator.PathCamera.EndFrame">
             <summary>
-            This is where we do our rendering
-            Called from UI thread = UI code safe in this function
+            Frame to end recording on.
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.StereoLayer.RenderRightEye(WorldWind.DrawArgs,Microsoft.DirectX.Direct3D.Texture,WorldWind.Camera.CameraBase)">
+        <member name="F:Apogee.MovieCreator.PathCamera.OutputFilePattern">
             <summary>
-            Render view from right eye
+            Saved filename pattern. "{0}" will 
+            be replaced with the frame number
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.StereoLayer.Initialize(WorldWind.DrawArgs)">
+        <member name="M:Apogee.MovieCreator.PathCamera.#ctor(WorldWind.WorldWindow,Apogee.MovieCreator.MovieRecorderDialog)">
             <summary>
-            RenderableObject abstract member (needed)
-            OBS: Worker thread (don't update UI directly from this thread)
+            Our camera constructor
+            </summary>
+            <param name="worldWindow"></param>
+        </member>
+        <member name="M:Apogee.MovieCreator.PathCamera.Update(Microsoft.DirectX.Direct3D.Device)">
+            <summary>
+            Override the camera update position code with our own.
+            </summary>
+            <param name="device">The Direct3D device.</param>
+        </member>
+        <member name="M:Apogee.MovieCreator.PathCamera.LoadScript(System.String)">
+            <summary>
+            Loads the script file.
+            </summary>
+            <param name="scriptFile">Path and filename of the script 
+            file containing the list of key frames.
+            Format: FrameNumber;World Wind uri 
+            The file must be sorted (frame number ascending)
+            </param>
+        </member>
+        <member name="M:Apogee.MovieCreator.PathCamera.InterpolateLog(System.Single,System.Double,System.Double)">
+            <summary>
+            Find the interpolated value between start and end.
+            </summary>
+            <param name="t">0..1 (0=start, 1=end, anything between = interpolate)</param>
+            <param name="start">Starting value</param>
+            <param name="end">Ending value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Apogee.MovieCreator.PathCamera.InstallDefaultCamera">
+            <summary>
+            Restores the original camera for normal operation.
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.StereoLayer.Update(WorldWind.DrawArgs)">
+        <member name="T:Apogee.MovieCreator.KeyFrame">
             <summary>
-            RenderableObject abstract member (needed)
-            OBS: Worker thread (don't update UI directly from this thread)
+            Contains one key frame (line from script file)
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.StereoLayer.Dispose">
+        <member name="M:Apogee.MovieCreator.KeyFrame.FromString(System.String)">
             <summary>
-            RenderableObject abstract member (needed)
-            OBS: Worker thread (don't update UI directly from this thread)
+            Constructs a key frame from a script line.
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.StereoLayer.PerformSelectionAction(WorldWind.DrawArgs)">
+        <member name="P:Apogee.MovieCreator.KeyFrame.Orientation">
             <summary>
-            Gets called when user left clicks.
-            RenderableObject abstract member (needed)
-            Called from UI thread = UI code safe in this function
+            The key frame rotation quaternion
             </summary>
         </member>
-        <member name="M:Mashi.Stereo.StereoLayer.OnDeviceLost(System.Object,System.EventArgs)">
+        <member name="P:Apogee.MovieCreator.KeyFrame.CameraOrientation">
             <summary>
-            Direct3D device was lost or is resizing
+            The key frame rotation quaternion
             </summary>
+        </member>
+        <member name="T:WorldWind.WMSBrowserNG">
+            <summary>
+            WMS Browser dialog.
+            </summary>
+        </member>
+        <member name="M:WorldWind.WMSBrowserNG.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WorldWind.WMSBrowserNG.treeOgcCaps_OperationDone(System.Object,System.EventArgs)">
+            <summary>
+            Call back after available layers returned from WMS url. 
+            Populates the first node as the default selection in the 'specify layer title' text box. Enables 'Create Layer' group box (Save as XML) in the UI.
+            If no layers are returned by URL, display message box error to the user.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="T:WorldWind.AnimatedEarthManager">
             <summary>
@@ -1098,26 +1509,6 @@
             <param name="wmsDate">Input WMS date string.</param>
             <returns>Time converted to DateTime or DateTime.MinValue if date string is incorrect format.</returns>
         </member>
-        <member name="T:WorldWind.WMSBrowserNG">
-            <summary>
-            WMS Browser dialog.
-            </summary>
-        </member>
-        <member name="M:WorldWind.WMSBrowserNG.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:WorldWind.WMSBrowserNG.treeOgcCaps_OperationDone(System.Object,System.EventArgs)">
-            <summary>
-            Call back after available layers returned from WMS url. 
-            Populates the first node as the default selection in the 'specify layer title' text box. Enables 'Create Layer' group box (Save as XML) in the UI.
-            If no layers are returned by URL, display message box error to the user.
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
         <member name="T:WorldWind.WplIndexEntry">
             <summary>
             Utility structure representing an index entry
@@ -1518,50 +1909,108 @@
               Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
-        <member name="M:OgrVectorImporter.OgrImporter.OgrVectorImporter_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+        <member name="F:WorldWind.MainApplication.components">
             <summary>
-            Checks if the object being dropped is a kml or kmz file
+            Required designer variable.
             </summary>
         </member>
-        <member name="M:OgrVectorImporter.OgrImporter.OgrVectorImporter_DragDrop(System.Object,System.Windows.Forms.DragEventArgs)">
+        <member name="M:WorldWind.MainApplication.Dispose(System.Boolean)">
             <summary>
-            Handles dropping of a kml/kmz file (by loading that file)
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WorldWind.MainApplication.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:OgrVectorImporter.OgrImporter.DragDropIsValid(System.Windows.Forms.DragEventArgs)">
+        <member name="T:Mashi.Stereo.AnaglyphStereo">
             <summary>
-            Determines if this plugin can handle the dropped item
+            The plugin (main class)
             </summary>
         </member>
-        <member name="M:OgrVectorImporter.OgrImporter.menuItem_Click(System.Object,System.EventArgs)">
+        <member name="F:Mashi.Stereo.AnaglyphStereo.LayerName">
             <summary>
-            Gets filename and loads it
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:OgrVectorImporter.OgrImporter.GetFieldNames(OGR.Layer)">
-            <summary>
-            Fetch the field names from a layer
-            </summary>
-            <param name="ogrLayer">the layer</param>
-            <returns>Arraylist of strings</returns>
-        </member>
-        <member name="M:OgrVectorImporter.OgrImporter.LoadVectors">
-            <summary>
-            Loads the shp and adds it to the LM
+            Name displayed in layer manager
             </summary>
         </member>
-        <member name="M:OgrVectorImporter.OgrImporter.getFWLoc">
+        <member name="M:Mashi.Stereo.AnaglyphStereo.Load">
             <summary>
-            Gets fwtools dir location from user
+            Plugin entry point - All plugins must implement this function
             </summary>
         </member>
-        <member name="M:OgrVectorImporter.OgrImporter.LoadSaveXmlConfig(System.Boolean)">
+        <member name="M:Mashi.Stereo.AnaglyphStereo.Unload">
             <summary>
-            Restore/Save XML Configuration
+            Unloads our plugin
             </summary>
-            <param name="load">Specifies whether the settings are being loaded (true) or saved (false)</param>
+        </member>
+        <member name="T:Mashi.Stereo.StereoLayer">
+            <summary>
+            Anaglyph Stereo layer
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.#ctor(System.String,WorldWind.WorldWindow)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Mashi.Stereo.StereoLayer.Opacity">
+            <summary>
+            Opacity not available
+            </summary>
+        </member>
+        <member name="P:Mashi.Stereo.StereoLayer.InterocularDistance">
+            <summary>
+            The distance separating the two eyes - percent of distance to target.
+            </summary>
+        </member>
+        <member name="P:Mashi.Stereo.StereoLayer.FocusAngle">
+            <summary>
+            The convergence angle between left and right view in degree.
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.Render(WorldWind.DrawArgs)">
+            <summary>
+            This is where we do our rendering
+            Called from UI thread = UI code safe in this function
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.RenderRightEye(WorldWind.DrawArgs,Microsoft.DirectX.Direct3D.Texture,WorldWind.Camera.CameraBase)">
+            <summary>
+            Render view from right eye
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.Initialize(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.Update(WorldWind.DrawArgs)">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.Dispose">
+            <summary>
+            RenderableObject abstract member (needed)
+            OBS: Worker thread (don't update UI directly from this thread)
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.PerformSelectionAction(WorldWind.DrawArgs)">
+            <summary>
+            Gets called when user left clicks.
+            RenderableObject abstract member (needed)
+            Called from UI thread = UI code safe in this function
+            </summary>
+        </member>
+        <member name="M:Mashi.Stereo.StereoLayer.OnDeviceLost(System.Object,System.EventArgs)">
+            <summary>
+            Direct3D device was lost or is resizing
+            </summary>
         </member>
         <member name="T:Atmosphere.Plugin.Atmosphere">
             <summary>
@@ -1925,57 +2374,6 @@
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
-        </member>
-        <member name="M:YahooFlickr.Plugins.FlickrGUI.searchButton_Click(System.Object,System.EventArgs)">
-            <summary>
-            Button Press callback set the flickr plugin layer keyword
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="T:YahooFlickr.Plugins.FlickrPlugin">
-            <summary>
-            Main Plugin class - maintains a GUI and FlickrLayer
-            </summary> 
-        </member>
-        <member name="T:YahooFlickr.Plugins.FlickrIconsLayer">
-            <summary>
-            Flickr Icons Display Layer. Shows Georeferenced Images
-            </summary>
-        </member>
-        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.#ctor">
-            <summary>
-            Construct supporting Flickr objects
-            </summary>
-        </member>
-        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.Initialize(WorldWind.DrawArgs)">
-            <summary>
-            Initialize graphics objects
-            </summary>
-            <param name="drawArgs"></param>
-        </member>
-        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.Dispose">
-            <summary>
-            Dispose Graphics objects
-            </summary>
-        </member>
-        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.Update(WorldWind.DrawArgs)">
-            <summary>
-            This method updates the Icons to reflect only those in view
-            </summary>
-            <param name="drawArgs"></param>
-        </member>
-        <member name="M:YahooFlickr.Plugins.FlickrIconsLayer.GetPhotoCollection(System.Double,System.Double,System.Double,System.Double)">
-            <summary>
-            This method takes a bounding box and returns
-            Photocollection covering the bounding box from
-            cache or from downloaded data
-            </summary>
-            <param name="west"></param>
-            <param name="south"></param>
-            <param name="east"></param>
-            <param name="north"></param>
-            <returns></returns>
         </member>
         <member name="T:Withak.Plugin.FloodLevelPlugin">
             <summary>
@@ -2477,290 +2875,6 @@
             </summary>
         </member>
         <member name="M:GpsTracker.POIName.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:MeasureToolNewgen.Plugins.MeasureWinResult">
-            <summary>
-            Winforms class to show measurement results till
-            the Worldwind Widgets mature
-            </summary>
-        </member>
-        <member name="T:MeasureToolNewgen.Plugins.MeasureToolNG">
-            <summary>
-            Planimetric Measure Tool plug-in
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.Load">
-            <summary>
-            Plugin entry point 
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.Unload">
-            <summary>
-            Unload our plugin
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.ClearLines">
-            <summary>
-            Remove all the line segments
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.menuItemClicked(System.Object,System.EventArgs)">
-            <summary>
-            Measuretool is enabled via the menu
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
-            <summary>
-            Measure tool is activated via the M key
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.PlotTerrain">
-            <summary>
-            Plot Terrrain Cross Section graph
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolNG.ChangePluginStatus">
-            <summary>
-            Turn plugin on and off
-            </summary>
-        </member>
-        <member name="T:MeasureToolNewgen.Plugins.LineAddHandler">
-            <summary>
-            Updates GUI with new length in line mode
-            </summary>
-            <param name="LengthText"></param>
-        </member>
-        <member name="T:MeasureToolNewgen.Plugins.PolyAddHandler">
-            <summary>
-            Update GUI with new area in polygon mode 
-            </summary>
-            <param name="AreaText"></param>
-        </member>
-        <member name="T:MeasureToolNewgen.Plugins.MeasureToolLayer">
-            <summary>
-            This class is a Mouse gesture sensitive
-            Line Drawing class.
-            The mouse gestures should function as follows
-            in 
-            1: Single Line mode
-                * Left Click begins a single measurement line
-                * Mouse move dynamically updates line
-                * Second left click confirms the position of the line
-                * Right Click clears points and restarts measurements
-            2: Multiline Mode
-                * Left Click begins Multilne
-                * Mouse move as above
-                * Each subsequent left click adds a segment to the line
-                * Right Click completes the measurement
-                * Second right click clears points and restarts measurements
-            </summary>
-        </member>
-        <member name="P:MeasureToolNewgen.Plugins.MeasureToolLayer.GCLength">
-            <summary>
-            Get and sets length based on great circle calculation
-            </summary>
-        </member>
-        <member name="P:MeasureToolNewgen.Plugins.MeasureToolLayer.TerrainLength">
-            <summary>
-            Gets and sets length based on following terrain
-            </summary>
-        </member>
-        <member name="P:MeasureToolNewgen.Plugins.MeasureToolLayer.Nodes">
-            <summary>
-            Gets the Point3d array of nodes for the linefeature
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Respond to mouse movements with dynamic line
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Store position of mouse click
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Add point or deactivate tool
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseDragged">
-            <summary>
-            Detect drag to allow globe movements
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.MouseRightClick">
-            <summary>
-            Deactivate tool on right click
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureToolLayer.CalcLength">
-            <summary>
-            This Method calculates total length of the linefeature
-            </summary>
-            <returns>Length of the line</returns>
-        </member>
-        <member name="T:MeasureToolNewgen.Plugins.MeasureAreaLayer">
-            <summary>
-            This class is used for area measurements
-            extends polygon feature to be sensitive to
-            mousemovements
-            </summary>
-        </member>
-        <member name="P:MeasureToolNewgen.Plugins.MeasureAreaLayer.Nodes">
-            <summary>
-            Access measurement polygon nodes
-            </summary>
-        </member>
-        <member name="P:MeasureToolNewgen.Plugins.MeasureAreaLayer.IsOn">
-            <summary>
-            Overridden ison method to disable point to go
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.#ctor(WorldWind.World,WorldWind.DrawArgs,WorldWind.LinearRing)">
-            <summary>
-            Constructor presets polygonfeature properties
-            </summary>
-            <param name="world"></param>
-            <param name="drawArgs"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.Render(WorldWind.DrawArgs)">
-            <summary>
-            Allow changing of mouse cursor during rendering
-            </summary>
-            <param name="drawArgs"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Respond to Mousemovements with dynamic polygon
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Store last mousedown point to detect dragging
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Complete click response, add point or deactivate tool
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseDragged">
-            <summary>
-            Allow movement of globe while measuring
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.MouseRightClick">
-            <summary>
-            Deactivate tool on right click
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.CalcArea">
-            <summary>
-            Perform area calculations using planet model
-            1.Basic calculation using sphere model
-            2.Refinements using ellipsoid and terrain
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="F:MeasureToolNewgen.Plugins.MeasureAreaLayer.QA">
-            <summary>
-            Calculate the polygon area using a spherical earth model
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="F:MeasureToolNewgen.Plugins.MeasureAreaLayer.QB">
-            <summary>
-            Calculate the polygon area using a spherical earth model
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="F:MeasureToolNewgen.Plugins.MeasureAreaLayer.QC">
-            <summary>
-            Calculate the polygon area using a spherical earth model
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.Q(System.Double)">
-            <summary>
-            Ellipsoid helper method
-            </summary>
-            <param name="x"></param>
-            <returns></returns>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.Qbar(System.Double)">
-            <summary>
-            Ellipsoid helper method
-            </summary>
-            <param name="x"></param>
-            <returns></returns>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.G_begin_ellipsoid_polygon_area(System.Double,System.Double)">
-            <summary>
-            Initialize ellipsoid with axis length and eccentricity
-            </summary>
-            <param name="a">Semi-Major axis in Meters</param>
-            <param name="e2">Ellipsoid eccentricity squared </param>
-            <returns></returns>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.G_ellipsoid_polygon_area(WorldWind.Point3d[])">
-            <summary>
-            Calculate area from a set of lat-lon points
-            </summary>
-            <param name="points">List of points</param>
-            <returns></returns>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.MeasureAreaLayer.CalcEllipsoidArea">
-            <summary>
-            Calculate area of polygon based on ellipsoid
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:MeasureToolNewgen.Plugins.MeasureResult">
-            <summary>
-            This class displays measurement results in a Worldwind Style widget
-            </summary>
-        </member>
-        <member name="T:MeasureToolNewgen.Plugins.TerrainGraphForm">
-            <summary>
-            Form to display the terrain profile plot
-            </summary>
-        </member>
-        <member name="F:MeasureToolNewgen.Plugins.TerrainGraphForm.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.TerrainGraphForm.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:MeasureToolNewgen.Plugins.TerrainGraphForm.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
@@ -3501,148 +3615,6 @@
             Utility function to write KML strings for PolyLines/Polygons
             </summary>
             <returns></returns>
-        </member>
-        <member name="T:Apogee.MovieCreator.MovieRecorderDialog">
-            <summary>
-            Movie Recorder dialog
-            </summary>
-        </member>
-        <member name="F:Apogee.MovieCreator.MovieRecorderDialog.frameHeight">
-            <summary>
-            Height of rendered images (pixels).
-            </summary>
-        </member>
-        <member name="F:Apogee.MovieCreator.MovieRecorderDialog.frameWidth">
-            <summary>
-            Width of rendered images (pixels).
-            </summary>
-        </member>
-        <member name="M:Apogee.MovieCreator.MovieRecorderDialog.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Apogee.MovieCreator.MovieRecorderDialog.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:Apogee.MovieCreator.MovieRecorderDialog.buttonEdit_Click(System.Object,System.EventArgs)">
-            <summary>
-            Launch notepad with script for edit
-            </summary>
-        </member>
-        <member name="T:Apogee.MovieCreator.MovieRecorder">
-            <summary>
-            Movie recording script.  Plays back a script file with camera positions 
-            and records each frame to sequentially numbered Portable Network Graphics
-            files on disk. Adds itself to the World Wind main menu's 
-            Plugins menu -> Movie Recorder
-            </summary>
-        </member>
-        <member name="M:Apogee.MovieCreator.MovieRecorder.Load">
-            <summary>
-            Plugin entry point - All plugins must implement this function
-            </summary>
-        </member>
-        <member name="M:Apogee.MovieCreator.MovieRecorder.Unload">
-            <summary>
-            Close down
-            </summary>
-        </member>
-        <member name="M:Apogee.MovieCreator.MovieRecorder.menuItemRecorder_Click(System.Object,System.EventArgs)">
-            <summary>
-            User selected the recorder from the main menu.
-            </summary>
-        </member>
-        <member name="T:Apogee.MovieCreator.PathCamera">
-            <summary>
-            Camera that follows a path between a list of 
-            key frames and triggers a save of each frame.
-            </summary>
-        </member>
-        <member name="F:Apogee.MovieCreator.PathCamera.IsRecording">
-            <summary>
-            Set to true to enable recording of frames to disk.
-            </summary>
-        </member>
-        <member name="F:Apogee.MovieCreator.PathCamera.PreRollTime">
-            <summary>
-            How long to wait after moving camera to allow imagery to load
-            </summary>
-        </member>
-        <member name="F:Apogee.MovieCreator.PathCamera.StartFrame">
-            <summary>
-            Frame to start recording from.
-            </summary>
-        </member>
-        <member name="F:Apogee.MovieCreator.PathCamera.EndFrame">
-            <summary>
-            Frame to end recording on.
-            </summary>
-        </member>
-        <member name="F:Apogee.MovieCreator.PathCamera.OutputFilePattern">
-            <summary>
-            Saved filename pattern. "{0}" will 
-            be replaced with the frame number
-            </summary>
-        </member>
-        <member name="M:Apogee.MovieCreator.PathCamera.#ctor(WorldWind.WorldWindow,Apogee.MovieCreator.MovieRecorderDialog)">
-            <summary>
-            Our camera constructor
-            </summary>
-            <param name="worldWindow"></param>
-        </member>
-        <member name="M:Apogee.MovieCreator.PathCamera.Update(Microsoft.DirectX.Direct3D.Device)">
-            <summary>
-            Override the camera update position code with our own.
-            </summary>
-            <param name="device">The Direct3D device.</param>
-        </member>
-        <member name="M:Apogee.MovieCreator.PathCamera.LoadScript(System.String)">
-            <summary>
-            Loads the script file.
-            </summary>
-            <param name="scriptFile">Path and filename of the script 
-            file containing the list of key frames.
-            Format: FrameNumber;World Wind uri 
-            The file must be sorted (frame number ascending)
-            </param>
-        </member>
-        <member name="M:Apogee.MovieCreator.PathCamera.InterpolateLog(System.Single,System.Double,System.Double)">
-            <summary>
-            Find the interpolated value between start and end.
-            </summary>
-            <param name="t">0..1 (0=start, 1=end, anything between = interpolate)</param>
-            <param name="start">Starting value</param>
-            <param name="end">Ending value</param>
-            <returns></returns>
-        </member>
-        <member name="M:Apogee.MovieCreator.PathCamera.InstallDefaultCamera">
-            <summary>
-            Restores the original camera for normal operation.
-            </summary>
-        </member>
-        <member name="T:Apogee.MovieCreator.KeyFrame">
-            <summary>
-            Contains one key frame (line from script file)
-            </summary>
-        </member>
-        <member name="M:Apogee.MovieCreator.KeyFrame.FromString(System.String)">
-            <summary>
-            Constructs a key frame from a script line.
-            </summary>
-        </member>
-        <member name="P:Apogee.MovieCreator.KeyFrame.Orientation">
-            <summary>
-            The key frame rotation quaternion
-            </summary>
-        </member>
-        <member name="P:Apogee.MovieCreator.KeyFrame.CameraOrientation">
-            <summary>
-            The key frame rotation quaternion
-            </summary>
         </member>
         <member name="T:NLT.Plugins.ShapeFileInfoTool">
             <summary>

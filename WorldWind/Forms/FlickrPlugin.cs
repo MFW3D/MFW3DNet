@@ -401,13 +401,14 @@ namespace YahooFlickr.Plugins
                     {
                         searchOptions.BoundaryBox = new BoundaryBox(currentWest, currentSouth,
                             currentEast, currentNorth);
-                        Photos photos = flickr.PhotosSearch(searchOptions);
-                        currentPhotoCollection = photos.PhotoCollection;
+                        PhotoCollection photos = flickr.PhotosSearch(searchOptions);
+                        currentPhotoCollection = photos;
                         serializer.Serialize(new FileStream(
                             collectionFilename, FileMode.Create),currentPhotoCollection);
                     }
 
-                    collection.AddRange(currentPhotoCollection);
+                    for(int i=0;i< currentPhotoCollection.Count;i++)
+                    collection.Add(currentPhotoCollection[i]);
 
                     currentWest += tileSize;
                 }

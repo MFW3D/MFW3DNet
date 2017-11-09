@@ -4,10 +4,7 @@ using System.Globalization;
 using WorldWind.DataSource;
 using System.IO;
 using WorldWind.Terrain;
-
-//GDAL Libraries
-using GDAL;
-using OSR;
+using OSGeo.GDAL;
 
 namespace WorldWind.Terrain
 {
@@ -26,7 +23,7 @@ namespace WorldWind.Terrain
             double south,
             double east,
             double west,
-            GDAL.Dataset dataset,
+            OSGeo.GDAL.Dataset dataset,
             string datasetName,
             double lztsd,
             int nlevels,
@@ -78,14 +75,14 @@ namespace WorldWind.Terrain
     {
         #region private variables
 
-        private GDAL.Dataset m_dataset;
+        private OSGeo.GDAL.Dataset m_dataset;
         private int m_lines;
         private int m_pixels;
         private double[] m_transform = new double[6];
 
         #endregion
 
-        public GDALTerrainTileService(GDAL.Dataset dataset, string datasetName, double lztsd, int nlevels, string tiledir)
+        public GDALTerrainTileService(OSGeo.GDAL.Dataset dataset, string datasetName, double lztsd, int nlevels, string tiledir)
             :
            base(null, datasetName, lztsd, 256,
             ".bil", nlevels, tiledir, new TimeSpan(), "")
@@ -94,9 +91,9 @@ namespace WorldWind.Terrain
             m_lines = dataset.RasterYSize;
             m_pixels = dataset.RasterXSize;
             dataset.GetGeoTransform(m_transform);
-            if (dataset.GetRasterBand(1).DataType == gdalconst.GDT_Int16)
+            if (dataset.GetRasterBand(1).DataType == (DataType)OSGeo.GDAL.GdalConst.GDT_Int16)
                 this.m_dataType = "Int16";
-            else if (dataset.GetRasterBand(1).DataType == gdalconst.GDT_Float32)
+            else if (dataset.GetRasterBand(1).DataType == (DataType)OSGeo.GDAL.GdalConst.GDT_Float32)
                 this.m_dataType = "Float32";
         }
 
@@ -149,11 +146,11 @@ namespace WorldWind.Terrain
             }
 
             //write out cache file
-            Driver memdriver = gdal.GetDriverByName("ENVI");
+            Driver memdriver = Gdal.GetDriverByName("ENVI");
             string[] options = new string[0];
             //TODO: Add compression
-            
-            GDAL.Dataset tile_ds = memdriver.Create(cachefile, 256, 256, 1, gdalconst.GDT_Int16, options);
+
+            OSGeo.GDAL.Dataset tile_ds = memdriver.Create(cachefile, 256, 256, 1, (DataType)OSGeo.GDAL.GdalConst.GDT_Int16, options);
             tile_ds.GetRasterBand(1).WriteRaster(xoff, yoff, bufxsize, bufysize, dembuffer, bufxsize, bufysize, 0, 0);
             tile_ds.Dispose();
 

@@ -347,7 +347,7 @@ namespace Collab.jhuapl.Util {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class InfoDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class InfoDataTable : global::System.Data.TypedTableBase<InfoRow> {
             
             private global::System.Data.DataColumn columnName;
             
@@ -561,12 +561,6 @@ namespace Collab.jhuapl.Util {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 InfoDataTable cln = ((InfoDataTable)(base.Clone()));
                 cln.InitVars();
@@ -756,7 +750,7 @@ namespace Collab.jhuapl.Util {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PointsDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class PointsDataTable : global::System.Data.TypedTableBase<PointsRow> {
             
             private global::System.Data.DataColumn columnLat;
             
@@ -867,12 +861,6 @@ namespace Collab.jhuapl.Util {
                 rowPointsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPointsRow);
                 return rowPointsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1037,7 +1025,7 @@ namespace Collab.jhuapl.Util {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CameraDataTable : global::System.Data.DataTable, global::System.Collections.IEnumerable {
+        public partial class CameraDataTable : global::System.Data.TypedTableBase<CameraRow> {
             
             private global::System.Data.DataColumn columnAltitude;
             
@@ -1148,12 +1136,6 @@ namespace Collab.jhuapl.Util {
                 rowCameraRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCameraRow);
                 return rowCameraRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public virtual global::System.Collections.IEnumerator GetEnumerator() {
-                return this.Rows.GetEnumerator();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

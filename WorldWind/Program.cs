@@ -41,12 +41,13 @@ namespace WorldWind
                 System.Threading.Thread.CurrentThread.Name = "Main Thread";
                 Global.ParseArgs(args);
                 //设置目录
-                if (!Directory.Exists(Application.StartupPath + "/Setting"))
+                if (!Directory.Exists(Application.StartupPath + "/log"))
                 {
-                    Directory.CreateDirectory(Application.StartupPath + "/Setting");
+                    Directory.CreateDirectory(Application.StartupPath + "/log");
                 }
-                Global.CurrentSettingsDirectory = Application.StartupPath + "/Setting";
-                if (Global.CurrentSettingsDirectory == null)
+                Global.CurrentSettingsDirectory = Application.StartupPath + "/log";
+
+                if (!File.Exists(Global.CurrentSettingsDirectory+ "/WorldWind.xml"))
                 {
                     Global.LoadSettings();
                     World.LoadSettings();

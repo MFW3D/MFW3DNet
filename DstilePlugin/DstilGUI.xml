@@ -96,7 +96,7 @@
             从GDAL数据库中加载数据
             </summary>
         </member>
-        <member name="M:WorldWind.GDALImageStore.#ctor(System.String,System.String,GDAL.Dataset,System.String)">
+        <member name="M:WorldWind.GDALImageStore.#ctor(System.String,System.String,OSGeo.GDAL.Dataset,System.String)">
             <summary>
             Initialise ImageStore with a GDAL dataset
             </summary>

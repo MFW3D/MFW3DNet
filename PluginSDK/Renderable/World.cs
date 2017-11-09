@@ -114,10 +114,10 @@ namespace WorldWind
 			this.equatorialRadius = equatorialRadius;
 
 			this._terrainAccessor = terrainAccessor;
-			this._renderableObjects = new RenderableObjectList(this.Name);
+			//this._renderableObjects = new RenderableObjectList(this.Name);
 			this.MetaData.Add("CacheDirectory", cacheDirectory);
 
-		//	this.m_WorldSurfaceRenderer = new WorldSurfaceRenderer(32, 0, this);
+			this.m_WorldSurfaceRenderer = new WorldSurfaceRenderer(32, 0, this);
 			this.m_projectedVectorRenderer = new ProjectedVectorRenderer(this);
 			
 			m_outerSphere = new AtmosphericScatteringSphere();

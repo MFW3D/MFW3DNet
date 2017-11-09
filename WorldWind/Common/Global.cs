@@ -58,8 +58,6 @@ namespace WorldWind
                     Global.Settings.PluginsLoadedOnStartup.Add("PlaceFinderLoader");
                     Global.Settings.PluginsLoadedOnStartup.Add("LightController");
 
-                    Global.Settings.PluginsLoadedOnStartup.Add("Earthquake_2.0.2.1");
-                    Global.Settings.PluginsLoadedOnStartup.Add("Historical_Earthquake_2.0.2.2");
                     Global.Settings.PluginsLoadedOnStartup.Add("KMLImporter");
                     Global.Settings.PluginsLoadedOnStartup.Add("doublezoom");
                     Global.Settings.PluginsLoadedOnStartup.Add("PlanetaryRings");

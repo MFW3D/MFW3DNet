@@ -24,10 +24,8 @@ using System.Text.RegularExpressions;
 using WorldWind;
 using WorldWind.Renderable;
 using WorldWind.Terrain;
-
-//Import GDAL Utilities
-using GDAL;
-using OSR;
+using OSGeo.GDAL;
+using OSGeo.OSR;
 
 namespace DstileGUI
 {
@@ -611,10 +609,10 @@ namespace DstileGUI
             */
             if (System.Environment.GetEnvironmentVariable("GDAL_DATA") == null)
                 System.Environment.SetEnvironmentVariable("GDAL_DATA", Path.Combine(fwlocText.Text, "data\\"));
-            gdal.AllRegister();
+            Gdal.AllRegister();
 
-            Console.WriteLine("GDAL Drivers:"+gdal.GetDriverCount());
-            GDAL.Dataset dataset = gdal.Open(strfileName, 0);
+            Console.WriteLine("GDAL Drivers:"+ Gdal.GetDriverCount());
+            OSGeo.GDAL.Dataset dataset = Gdal.Open(strfileName, 0);
 
             // WW's srs
             //SpatialReference llsrs = new SpatialReference("");
@@ -714,14 +712,14 @@ namespace DstileGUI
             }
 
             //Detect data type and decide whether to tile as Image or DEM
-            int dtype = dataset.GetRasterBand(1).DataType;
-            if( dtype == gdalconst.GDT_Byte)
+            int dtype = (int)dataset.GetRasterBand(1).DataType;
+            if( dtype == GdalConst.GDT_Byte)
             {
                 Console.WriteLine("Imagery Tiling Enabled");
                 imageRadioButton.Checked = true;
                 formatListBox.SelectedIndex = 0;
             }
-            else if( dtype == gdalconst.GDT_Float32 || dtype == gdalconst.GDT_Int16)
+            else if( dtype == GdalConst.GDT_Float32 || dtype == GdalConst.GDT_Int16)
             {
                 Console.WriteLine("DEM Tiling Enabled");
                 demRadioButton.Checked = true;
@@ -1070,8 +1068,8 @@ namespace DstileGUI
         private void loadGDALVrt()
         {
             //TODO: Use autocreate warped VRT to tile on the fly
-            gdal.AllRegister();
-            GDAL.Dataset src_ds = gdal.Open(inputFileTextBox.Text,gdalconst.GA_ReadOnly);
+            Gdal.AllRegister();
+            OSGeo.GDAL.Dataset src_ds = Gdal.Open(inputFileTextBox.Text, (Access)GdalConst.GA_ReadOnly);
 
             if (System.Environment.GetEnvironmentVariable("GDAL_DATA")==null)
                 System.Environment.SetEnvironmentVariable("GDAL_DATA", Path.Combine(fwlocText.Text, "data\\"));
@@ -1085,8 +1083,8 @@ namespace DstileGUI
 
             string epsgwkt = "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.2572235629972,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433],AUTHORITY[\"EPSG\",\"4326\"]]";
             SpatialReference dst_srs = new SpatialReference(epsgwkt);
-            GDAL.Dataset dst_ds = gdal.AutoCreateWarpedVRT(src_ds, src_ds.GetProjection(),
-                epsgwkt, gdalconst.GRA_Cubic,0.0);
+            OSGeo.GDAL.Dataset dst_ds = Gdal.AutoCreateWarpedVRT(src_ds, src_ds.GetProjection(),
+                epsgwkt, (ResampleAlg)GdalConst.GRA_Cubic,0.0);
 
             double[] dst_transform = new double[6];
             //TODO: There is bug in the AutoCreateWarpedVRT function which does not update
@@ -1163,8 +1161,8 @@ namespace DstileGUI
         private void loadGDALVrtDem()
         {
             //TODO: Use autocreate warped VRT to tile on the fly
-            gdal.AllRegister();
-            GDAL.Dataset src_ds = gdal.Open(inputFileTextBox.Text, gdalconst.GA_ReadOnly);
+            Gdal.AllRegister();
+            OSGeo.GDAL.Dataset src_ds = Gdal.Open(inputFileTextBox.Text, (Access)GdalConst.GA_ReadOnly);
 
             if (System.Environment.GetEnvironmentVariable("GDAL_DATA") == null)
                 System.Environment.SetEnvironmentVariable("GDAL_DATA", Path.Combine(fwlocText.Text, "data\\"));
@@ -1178,8 +1176,8 @@ namespace DstileGUI
 
             string epsgwkt = "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.2572235629972,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433],AUTHORITY[\"EPSG\",\"4326\"]]";
             SpatialReference dst_srs = new SpatialReference(epsgwkt);
-            GDAL.Dataset dst_ds = gdal.AutoCreateWarpedVRT(src_ds, src_ds.GetProjection(),
-                epsgwkt, gdalconst.GRA_Cubic, 0.0);
+            OSGeo.GDAL.Dataset dst_ds =Gdal.AutoCreateWarpedVRT(src_ds, src_ds.GetProjection(),
+                epsgwkt, (ResampleAlg)GdalConst.GRA_Cubic, 0.0);
 
             double[] dst_transform = new double[6];
             //TODO: There is bug in the AutoCreateWarpedVRT function which does not update

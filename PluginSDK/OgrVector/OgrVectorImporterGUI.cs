@@ -10,13 +10,13 @@ using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
 using System.Windows.Forms;
 using System.Threading;
-using OGR;
+using OSGeo.OGR;
 
 namespace OgrVectorImporter
 {
-	/// <summary>
-	/// Form to display a list of key fields from the dbf
-	/// </summary>
+    /// <summary>
+    /// Form to display a list of key fields from the dbf
+    /// </summary>
     public class VectorInfoSelector : Form
     {
         /// <summary>
@@ -1065,11 +1065,11 @@ namespace OgrVectorImporter
             UpdateParameters();
 
             string proj4Srs;
-            SpatialReference inSrs = ogrLayer.GetSpatialRef();
-            if (inSrs != null)
-                inSrs.ExportToProj4(out proj4Srs);
-            else
-                proj4Srs = "(unknown)";
+            //SpatialReference inSrs = ogrLayer.GetSpatialRef();
+            // if (inSrs != null)
+            //    inSrs.ExportToProj4(out proj4Srs);
+            //else
+            proj4Srs = "(unknown)";
 
             this.tbProjection.Text = proj4Srs;
 
@@ -1081,11 +1081,11 @@ namespace OgrVectorImporter
             for (int i = 0; i < featDef.GetFieldCount(); i++)
             {
                 FieldDefn fieldDef = featDef.GetFieldDefn(i);
-                int fieldType = fieldDef.GetFieldType();
+                FieldType fieldType = fieldDef.GetFieldType();
                 string fieldName = fieldDef.GetName();
 
                 // add to numeric list if necessary
-                if (fieldType == ogr.OFTReal || fieldType == ogr.OFTInteger)
+                if (fieldType == FieldType.OFTReal || fieldType == FieldType.OFTInteger)
                     this.cbNumKeyField.Items.Add(fieldName);
 
                 this.cbTextKeyField.Items.Add(fieldName);
@@ -1094,7 +1094,7 @@ namespace OgrVectorImporter
 
             this.cbTextKeyField.Text = cbTextKeyField.Items[1].ToString();
             keyFieldName = cbTextKeyField.Text;
-            
+
             this.cbNumKeyField.Text = cbNumKeyField.Items[0].ToString();
             this.cbLabelField.Text = cbLabelField.Items[0].ToString();
 
