@@ -136,8 +136,8 @@ namespace Stars3D.Plugin
             if (!IsOn)
                 return;
             return;
-			// Camera & Device shortcuts ;)
-			CameraBase camera = drawArgs.WorldCamera;
+            // Camera & Device shortcuts ;)
+            CameraBase camera = drawArgs.WorldCamera;
 			Device device = drawArgs.device;
 
 			// Read star catalog and build vertex list if not done yet

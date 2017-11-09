@@ -8,8 +8,8 @@
     <ProjectGuid>{788D9C18-6D0A-421F-ACF6-5CD34E944D1E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MFW3D</RootNamespace>
-    <AssemblyName>MFW3DAPP</AssemblyName>
+    <RootNamespace>MFW3DEditor</RootNamespace>
+    <AssemblyName>MFW3DEditor</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>

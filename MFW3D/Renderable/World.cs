@@ -1560,7 +1560,7 @@ namespace MFW3D
 				string outerrors = "";
 
 				System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-				Stream skyFromSpaceStream = assembly.GetManifestResourceStream("WorldWind.Shaders.SkyFromSpace.fx");
+				Stream skyFromSpaceStream = assembly.GetManifestResourceStream("MFW3D.Shaders.SkyFromSpace.fx");
 
 				skyFromSpaceEffect =
 					Effect.FromStream(
@@ -1575,7 +1575,7 @@ namespace MFW3D
 				if (outerrors != null && outerrors.Length > 0)
 					Log.Write(Log.Levels.Error, outerrors);
 
-				Stream skyFromAtmosphereStream = assembly.GetManifestResourceStream("WorldWind.Shaders.SkyFromAtmosphere.fx");
+				Stream skyFromAtmosphereStream = assembly.GetManifestResourceStream("MFW3D.Shaders.SkyFromAtmosphere.fx");
 
 				skyFromAtmosphere =
 					Effect.FromStream(

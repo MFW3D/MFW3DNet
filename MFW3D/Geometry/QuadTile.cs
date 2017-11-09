@@ -1408,7 +1408,7 @@ namespace MFW3D.Renderable
             try
             {
                 Assembly assembly = Assembly.GetExecutingAssembly();
-                Stream stream = assembly.GetManifestResourceStream("WorldWind.Shaders.grayscale.fx");
+                Stream stream = assembly.GetManifestResourceStream("MFW3D.Shaders.grayscale.fx");
 
                 grayscaleEffect =
                     Effect.FromStream(

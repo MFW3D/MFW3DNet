@@ -588,7 +588,7 @@ namespace MFW3D
 			string outerrors = "";
 
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            Stream effectStream = assembly.GetManifestResourceStream("WorldWind.Shaders.clouds.fx");
+            Stream effectStream = assembly.GetManifestResourceStream("MFW3D.Shaders.clouds.fx");
 
 			m_effect = Effect.FromStream(
 				device,

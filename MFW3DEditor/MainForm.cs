@@ -154,6 +154,15 @@ namespace MFW3DEditor
             Log.Write(Log.Levels.Debug, "CONF", "initializing plugin compiler...");
             string pluginRoot = Path.Combine(MFW3D.Global.Settings.DirectoryPath, "Plugins");
             compiler = new PluginCompiler(pluginRoot);
+            //加载默认插件
+            if(File.Exists(Application.StartupPath+"/Plugins.dll"))
+            {
+                Assembly assembly = Assembly.LoadFrom(Application.StartupPath + "/Plugins.dll");
+                compiler.FindPlugins(assembly);
+                compiler.FindPlugins();
+                compiler.LoadStartupPlugins();
+            }
+
             //加载所有插件的内容
             DirectoryInfo TheFolder = new DirectoryInfo(pluginRoot);
             foreach (FileInfo NextFile in TheFolder.GetFiles())

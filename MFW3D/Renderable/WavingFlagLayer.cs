@@ -381,7 +381,7 @@ namespace MFW3D.Renderable
                 string outerrors = "";
 
                 System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                Stream effectStream = assembly.GetManifestResourceStream("WorldWind.Shaders.flag.fx");
+                Stream effectStream = assembly.GetManifestResourceStream("MFW3D.Shaders.flag.fx");
 
                 m_effect =
                     Effect.FromStream(
