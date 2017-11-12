@@ -386,19 +386,10 @@ namespace MeasureTool.Plugins
 				return false;
 		}
 
-		/// <summary>
-		/// Fills the context menu with menu items specific to the layer.
-		/// </summary>
-		public override void BuildContextMenu(ContextMenu menu)
-		{
-			menu.MenuItems.Add("Properties", new System.EventHandler(OnPropertiesClick));
-			menu.MenuItems.Add("Save Multi-Point Line", new System.EventHandler(saveLine));
-		}
-
-		/// <summary>
-		/// Properties context menu clicked.
-		/// </summary>
-		protected override void OnPropertiesClick(object sender, EventArgs e)
+        /// <summary>
+        /// Properties context menu clicked.
+        /// </summary>
+        public void GetProperties()
 		{
 			if(propertiesDialog != null && ! propertiesDialog.IsDisposed)
 				// Already open

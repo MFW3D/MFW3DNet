@@ -1286,11 +1286,6 @@
             Called from UI thread = UI code safe in this function
             </summary>
         </member>
-        <member name="M:Atmosphere.Plugin.AtmosphereLayer.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Fills the context menu with menu items specific to the layer.
-            </summary>
-        </member>
         <member name="M:Atmosphere.Plugin.AtmosphereLayer.OnPropertiesClick(System.Object,System.EventArgs)">
             <summary>
             Properties context menu clicked.
@@ -1531,11 +1526,6 @@
             Called from UI thread = UI code safe in this function
             </summary>
         </member>
-        <member name="M:Murris.Plugins.CompassLayer.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Fills the context menu with menu items specific to the layer.
-            </summary>
-        </member>
         <member name="M:Murris.Plugins.CompassLayer.OnPropertiesClick(System.Object,System.EventArgs)">
             <summary>
             Properties context menu clicked.
@@ -1637,11 +1627,6 @@
             Gets called when user left clicks.
             RenderableObject abstract member (needed)
             Called from UI thread = UI code safe in this function
-            </summary>
-        </member>
-        <member name="M:Withak.Plugin.FloodLevel.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Fills the context menu with menu items specific to the layer.
             </summary>
         </member>
         <member name="M:Withak.Plugin.FloodLevel.OnPropertiesClick(System.Object,System.EventArgs)">
@@ -2354,12 +2339,7 @@
             <param name="srcPlugin"></param>
             <param name="drawArgs"></param>
         </member>
-        <member name="M:MeasureTool.Plugins.MeasureToolLayer.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Fills the context menu with menu items specific to the layer.
-            </summary>
-        </member>
-        <member name="M:MeasureTool.Plugins.MeasureToolLayer.OnPropertiesClick(System.Object,System.EventArgs)">
+        <member name="M:MeasureTool.Plugins.MeasureToolLayer.GetProperties">
             <summary>
             Properties context menu clicked.
             </summary>
@@ -2665,11 +2645,6 @@
             Gets called when user left clicks.
             RenderableObject abstract member (needed)
             Called from UI thread = UI code safe in this function
-            </summary>
-        </member>
-        <member name="M:Stars3D.Plugin.Stars3DLayer.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Fills the context menu with menu items specific to the layer.
             </summary>
         </member>
         <member name="M:Stars3D.Plugin.Stars3DLayer.OnPropertiesClick(System.Object,System.EventArgs)">

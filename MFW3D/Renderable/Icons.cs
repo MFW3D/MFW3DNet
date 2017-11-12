@@ -1,9 +1,3 @@
-//
-// Copyright ?2005 NASA. Available under the NOSA License
-//
-// Portions copied from JHU_Icons - Copyright ?2005-2006 The Johns Hopkins University 
-// Applied Physics Laboratory.  Available under the JHU/APL Open Source Agreement.
-//
 using System;
 using System.Collections;
 using System.Diagnostics;
@@ -21,7 +15,7 @@ using System.Threading;
 namespace MFW3D.Renderable
 {
     /// <summary>
-    /// Holds a collection of icons
+    /// iconsÍ¼²ã
     /// </summary>
     public class Icons : RenderableObjectList
     {

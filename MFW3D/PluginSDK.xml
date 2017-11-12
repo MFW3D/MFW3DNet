@@ -1370,12 +1370,6 @@
             <param name="remoteUrl"></param>
             <param name="imageDirectoryPath"></param>
         </member>
-        <member name="M:MFW3D.DynamicCloudLayer.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Builds context menu for renderable
-            </summary>
-            <param name="menu"></param>
-        </member>
         <member name="M:MFW3D.DynamicCloudLayer.Initialize(MFW3D.DrawArgs)">
             <summary>
             Initializes renderable
@@ -1408,7 +1402,7 @@
         </member>
         <member name="T:MFW3D.Renderable.Icons">
             <summary>
-            Holds a collection of icons
+            icons图层
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.Icons.m_pointTexture">
@@ -1961,12 +1955,6 @@
             </summary>
             <param name="drawArgs"></param>
         </member>
-        <member name="M:MFW3D.Renderable.TrackIcon.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Builds the context menu for this icon
-            </summary>
-            <param name="menu"></param>
-        </member>
         <member name="M:MFW3D.Renderable.TrackIcon.PreRender(MFW3D.DrawArgs,System.Boolean)">
             <summary>
             Called before icon render.  If the user has clicked on one of the GoTos head there now.
@@ -2426,24 +2414,7 @@
             <param name="drawArgs"></param>
             <returns></returns>
         </member>
-        <member name="M:MFW3D.Renderable.Icon.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Adds to the default context menu any screen overlays and user defined context menus
-            </summary>
-            <param name="menu"></param>
-        </member>
-        <member name="M:MFW3D.Renderable.Icon.AddContextMenuItem(System.Windows.Forms.MenuItem)">
-            <summary>
-            Adds a new context menu item to this icon.
-            </summary>
-            <param name="newItem">The menu item to add</param>
-        </member>
-        <member name="M:MFW3D.Renderable.Icon.Update(MFW3D.DrawArgs)">
-            <summary>
-            Updates where we are if the camera has changed position (and thereby might be using higher resolution terrain
-            </summary>
-            <param name="drawArgs"></param>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:MFW3D.Renderable.Icon.Update(MFW3D.DrawArgs)" -->
         <member name="M:MFW3D.Renderable.Icon.BuildIconTexture(MFW3D.DrawArgs)">
             <summary>
             Builds the icon texture based on the saved texturefile name
@@ -2689,7 +2660,7 @@
         </member>
         <member name="T:MFW3D.Renderable.LatLongGrid">
             <summary>
-            Draws a latitude/longitude grid
+            经纬网
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.WorldRadius">
@@ -2699,57 +2670,57 @@
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.radius">
             <summary>
-            Grid line radius (varies, >= world radius
+            经纬网半径
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.IsEarth">
             <summary>
-            Current planet == Earth?
+            是否是地球
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.MinVisibleLongitude">
             <summary>
-            Lowest visible longitude
+            最低可视经度
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.MaxVisibleLongitude">
             <summary>
-            Highest visible longitude
+            最高可是经度
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.MinVisibleLatitude">
             <summary>
-            Lowest visible Latitude
+            最低可视维度
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.MaxVisibleLatitude">
             <summary>
-            Highest visible Latitude
+            最高可视维度
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.LongitudeInterval">
             <summary>
-            Interval in degrees between visible latitudes
+            可见经度的间隔
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.LatitudeInterval">
             <summary>
-            Interval in degrees between visible longitudes
+            可见纬度的间隔
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.LongitudePointCount">
             <summary>
-            The number of visible longitude lines
+            经度点数量
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.LatitudePointCount">
             <summary>
-            The number of visible latitude lines
+            纬度点数量
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.lineVertices">
             <summary>
-            Temporary buffer used for rendering  lines
+            显示线用的零食缓存
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.useZBuffer">
@@ -3119,17 +3090,17 @@
         </member>
         <member name="T:MFW3D.Renderable.RenderableObject">
             <summary>
-            The base class for objects to be rendered as part of the scene.
+            可渲染对象.
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.RenderableObject.isInitialized">
             <summary>
-            True when object is ready to be rendered.
+            对象是否可以渲染
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.RenderableObject.isSelectable">
             <summary>
-            True for objects the user can interact with.
+            对象是否可以被选择
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.RenderableObject.#ctor(System.String)">
@@ -3143,8 +3114,8 @@
             Constructor
             </summary>
             <param name="name">Object description</param>
-            <param name="position">Object position (XYZ world coordinates)</param>
-            <param name="orientation">Object rotation (Quaternion)</param>
+            <param name="position">位置信息，世界坐标</param>
+            <param name="orientation">朝向</param>
         </member>
         <member name="P:MFW3D.Renderable.RenderableObject.World">
             <summary>
@@ -3187,12 +3158,6 @@
             Permanently delete the layer
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Fills the context menu with menu items specific to the layer.
-            </summary>
-            <param name="menu">Pre-initialized context menu.</param>
-        </member>
         <member name="M:MFW3D.Renderable.RenderableObject.ToString">
             <summary>
             Returns a String that represents the current SelectedObject.
@@ -3229,45 +3194,45 @@
             Object rotation (Quaternion)
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnDbfInfo(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetDbfInfo">
             <summary>
               Goes to the Shapefiles's DBF Information Window
              </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnGotoClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetGoto">
             <summary>
               Goes to the extent specified by the bounding box for the QTS layer
               or to the lat/lon for icons
              </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnInfoClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetInfo">
             <summary>
             Layer info context menu item
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnPropertiesClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetProperties">
             <summary>
             Layer properties context menu item
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnReloadShaderClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetReloadShader">
             <summary>
             Layer properties context menu item
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnDeleteClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetDelete">
             <summary>
             Delete layer context menu item
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnSaveAsClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetSaveAs">
             <summary>
             Save item from LM to a file
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnViewXmlClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetViewXml">
             <summary>
             Show serialized item in browser
             </summary>
@@ -3276,18 +3241,12 @@
         </member>
         <member name="T:MFW3D.Renderable.RenderPriority">
             <summary>
-            The render priority determines in what order objects are rendered.
-            Objects with higher priority number are rendered over lower priority objects.
+            渲染顺序
             </summary>
         </member>
         <member name="T:MFW3D.Renderable.RenderableObjectList">
             <summary>
-            Represents a parent node in the layer manager tree.  Contains a list of sub-nodes.
-            </summary>
-        </member>
-        <member name="P:MFW3D.Renderable.RenderableObjectList.RefreshTimer">
-            <summary>
-            This ROL needs to be sorted because either something was added or render priority was changed.
+            图层管理树，管理节点
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.RenderableObjectList.#ctor(System.String)">
@@ -3308,7 +3267,7 @@
         </member>
         <member name="M:MFW3D.Renderable.RenderableObjectList.GetObject(System.String)">
             <summary>
-            Return the first direct child with a given name.
+            返回第一个显示的对象名字
             </summary>
             <example>Get the placenames LayerSet.
             <code>
@@ -3319,7 +3278,7 @@
         </member>
         <member name="M:MFW3D.Renderable.RenderableObjectList.GetObjects(System.String,System.Type)">
             <summary>
-            Return a list of all direct and indirect children that match the given name and/or object type.
+            返回直接或间接的对象，根据名字查询
             </summary>
             <example> Get all QuadTileSets defined in this world:
             <code>
@@ -3335,14 +3294,14 @@
             </summary>
             <returns>False if layer not found.</returns>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObjectList.OnCheckAllChildrenClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObjectList.GetCheckAllChildren">
             <summary>
             Menu action to check all children of a ROL
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObjectList.OnUncheckAllChildrenClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObjectList.GetUncheckAllChildren">
             <summary>
             Menu action to uncheck all children of a ROL
             </summary>
@@ -3392,7 +3351,7 @@
         </member>
         <member name="M:MFW3D.Renderable.RenderableObjectList.Add(MFW3D.Renderable.RenderableObject)">
             <summary>
-            Add a child object to this layer.  If the new object has the same name as an existing object in this 
+            添加对象到图层.  If the new object has the same name as an existing object in this 
             ROL it gets a number appended.  If the new object is a ROL and there was already a ROL with the same 
             name then the children of the new ROL gets added to the old ROL.
             

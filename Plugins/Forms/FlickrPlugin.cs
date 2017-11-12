@@ -417,13 +417,7 @@ namespace YahooFlickr.Plugins
             return collection;
         }
 
-        public override void BuildContextMenu(ContextMenu menu)
-        {
-            menu.MenuItems.Add("Properties", OnPropertiesClick);
-        }
-
-        
-        protected override void OnPropertiesClick(object sender, EventArgs e)
+        public void GetProperties()
         {
             if (m_propertyBrowser != null)
                 m_propertyBrowser.Dispose();

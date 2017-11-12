@@ -1077,19 +1077,6 @@ namespace MFW3D.Renderable
 			this.isInitialized = true;
 		}
 
-		public override void BuildContextMenu(System.Windows.Forms.ContextMenu menu)
-		{
-			base.BuildContextMenu(menu);
-
-			if(m_legendImagePath == null || m_legendImagePath.Length <= 0)
-				return;
-
-			// Add legend menu item
-			System.Windows.Forms.MenuItem mi = new System.Windows.Forms.MenuItem("&Show Legend", 
-				new EventHandler(OnLegendClick) );
-			menu.MenuItems.Add(0, mi);
-		}
-
 		/// <summary>
 		/// Called when user chooses to display legendControl
 		/// </summary>

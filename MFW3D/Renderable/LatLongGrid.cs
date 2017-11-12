@@ -5,7 +5,7 @@ using Microsoft.DirectX.Direct3D;
 namespace MFW3D.Renderable
 {
     /// <summary>
-    /// Draws a latitude/longitude grid
+    /// 经纬网
     /// </summary>
     public class LatLongGrid : RenderableObject
     {
@@ -15,57 +15,57 @@ namespace MFW3D.Renderable
         public double WorldRadius;
 
         /// <summary>
-        /// Grid line radius (varies, >= world radius
+        /// 经纬网半径
         /// </summary>
         protected double radius;
 
         /// <summary>
-        /// Current planet == Earth?
+        /// 是否是地球
         /// </summary>
         public bool IsEarth;
 
         /// <summary>
-        /// Lowest visible longitude
+        /// 最低可视经度
         /// </summary>
         public int MinVisibleLongitude;
 
         /// <summary>
-        /// Highest visible longitude
+        /// 最高可是经度
         /// </summary>
         public int MaxVisibleLongitude;
 
         /// <summary>
-        /// Lowest visible Latitude
+        /// 最低可视维度
         /// </summary>
         public int MinVisibleLatitude;
 
         /// <summary>
-        /// Highest visible Latitude
+        /// 最高可视维度
         /// </summary>
         public int MaxVisibleLatitude;
 
         /// <summary>
-        /// Interval in degrees between visible latitudes
+        /// 可见经度的间隔
         /// </summary>
         public int LongitudeInterval;
 
         /// <summary>
-        /// Interval in degrees between visible longitudes
+        /// 可见纬度的间隔
         /// </summary>
         public int LatitudeInterval;
 
         /// <summary>
-        /// The number of visible longitude lines
+        /// 经度点数量
         /// </summary>
         public int LongitudePointCount;
 
         /// <summary>
-        /// The number of visible latitude lines
+        /// 纬度点数量
         /// </summary>
         public int LatitudePointCount;
 
         /// <summary>
-        /// Temporary buffer used for rendering  lines
+        /// 显示线用的临时缓存
         /// </summary>
         protected CustomVertex.PositionColored[] lineVertices;
 
@@ -88,10 +88,10 @@ namespace MFW3D.Renderable
             RenderPriority = RenderPriority.LinePaths;
         }
 
-        #region RenderableObject
+        #region 渲染对象重载
 
         /// <summary>
-        /// Render the grid lines
+        /// 渲染经纬网
         /// </summary>
         public override void Render(DrawArgs drawArgs)
         {
@@ -249,7 +249,7 @@ namespace MFW3D.Renderable
         #endregion
 
         /// <summary>
-        /// Draw Tropic of Cancer, Tropic of Capricorn, Arctic and Antarctic lines
+        /// 渲染回归带
         /// </summary>
         void RenderTropicLines(DrawArgs drawArgs)
         {
@@ -260,7 +260,7 @@ namespace MFW3D.Renderable
         }
 
         /// <summary>
-        /// Draws a tropic line at specified latitude with specified label
+        /// 渲染标签
         /// </summary>
         /// <param name="latitude">Latitude in degrees</param>
         void RenderTropicLine(DrawArgs drawArgs, float latitude, string label)
@@ -293,7 +293,7 @@ namespace MFW3D.Renderable
         }
 
         /// <summary>
-        /// Recalculates the grid bounds + interval values
+        /// 计算经纬网的值
         /// </summary>
         public void ComputeGridValues(DrawArgs drawArgs)
         {
