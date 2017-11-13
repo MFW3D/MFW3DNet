@@ -22,7 +22,7 @@ namespace MFW3D
 
 		public byte Opacity = 255;
 
-		#region Properties
+		#region  Ù–‘
 		/// <summary>
 		/// Gets or sets a value indicating whether this <see cref="SurfaceImage"/> is enabled. Useful if you don't want the surface renderer 
 		/// to render an image without removing the image from the renderer

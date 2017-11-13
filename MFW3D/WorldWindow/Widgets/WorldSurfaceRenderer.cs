@@ -25,7 +25,7 @@ namespace MFW3D
 		System.Collections.Queue m_TextureLoadQueue = new System.Collections.Queue();
 		#endregion
 
-		#region Properties
+		#region  Ù–‘
 		/// <summary>
 		/// Gets the surface images.
 		/// </summary>

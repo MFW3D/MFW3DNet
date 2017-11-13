@@ -71,7 +71,7 @@ namespace MFW3D.Renderable
 
         #endregion
 
-        #region Properties
+        #region  Ù–‘
 
         /// <summary>
 		/// Whether the name of this icon should always be rendered

@@ -62,7 +62,7 @@ namespace MFW3D.Renderable
 
 		TimeSpan cacheExpiration = TimeSpan.MaxValue;
 		System.Timers.Timer refreshTimer = null;
-		#region Properties
+		#region  Ù–‘
 		
 		/// <summary>
 		/// Gets or sets the color used for transparent areas.

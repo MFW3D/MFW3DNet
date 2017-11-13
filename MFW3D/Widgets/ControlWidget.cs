@@ -136,7 +136,7 @@ namespace MFW3D.NewWidgets
 		/// </summary>
 		protected float YScale;
 
-		#region Properties
+		#region 属性
 
 		/// <summary>
 		/// Filename of button graphic
@@ -225,7 +225,7 @@ namespace MFW3D.NewWidgets
 
 		#region IWidget Members
 
-		#region Properties
+		#region 属性
 
 		/// <summary>
 		/// Name of this widget
@@ -368,7 +368,7 @@ namespace MFW3D.NewWidgets
 
 		#endregion		
 
-		#region Methods
+		#region 方法
 
 		/// <summary>
 		/// Initializes the button by loading the texture, creating the sprite and figure out the scaling.
@@ -463,7 +463,7 @@ namespace MFW3D.NewWidgets
 
 		#region IInteractive Members
 	
-		#region Properties
+		#region 属性
 
 		/// <summary>
 		/// Action to perform when the left mouse button is clicked
@@ -487,7 +487,7 @@ namespace MFW3D.NewWidgets
 
 		#endregion
 
-		#region Methods
+		#region 方法
 
 		/// <summary>
 		/// Mouse down event handler.

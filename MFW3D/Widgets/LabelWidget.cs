@@ -58,7 +58,7 @@ namespace MFW3D.NewWidgets
             m_size = new System.Drawing.Size(xSize, ySize);
         }
 
-		#region Properties
+		#region  Ù–‘
 		public string Name
 		{
 			get

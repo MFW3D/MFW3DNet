@@ -11,7 +11,7 @@ namespace MFW3D.NewWidgets
 	/// </summary>
 	public interface IWidgetCollection
 	{
-		#region Methods
+		#region 方法
 		void BringToFront(int index);
 		void BringToFront(IWidget widget);
 		void Add(IWidget widget);
@@ -21,11 +21,11 @@ namespace MFW3D.NewWidgets
 		void Remove (IWidget widget);
 		#endregion
 
-		#region Properties
+		#region 属性
 		int Count{get;}
 		#endregion
 
-		#region Indexers
+		#region 索引器
 		IWidget this[int index] {get;set;}
 		#endregion
 	}

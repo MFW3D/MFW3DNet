@@ -33,7 +33,7 @@ namespace MFW3D
 
 		#endregion
 
-		#region Properties
+		#region  Ù–‘
 
 		public Format TextureFormat
 		{

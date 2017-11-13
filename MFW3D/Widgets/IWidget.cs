@@ -7,49 +7,49 @@ using MFW3D;
 namespace MFW3D.NewWidgets
 {	
 	/// <summary>
-	/// Base Interface for DirectX GUI Widgets
+	/// DirectX GUI控件基础类
 	/// </summary>
 	public interface IWidget
 	{
-		#region Properties
+		#region 属性
 
 		/// <summary>
-		/// Name of this widget
+		/// 控件名
 		/// </summary>
 		string Name{get;set;}
 
 		/// <summary>
-		/// Location of this widget relative to the client area of the parent
+		/// 相对位置
 		/// </summary>
 		System.Drawing.Point Location {get;set;}
 
 		/// <summary>
-		/// Where this widget is on the window
+		/// 绝对位置
 		/// </summary>
 		System.Drawing.Point AbsoluteLocation{get;}
 
 		/// <summary>
-		/// The top left corner of this widget's client area
+		/// 左上点坐标
 		/// </summary>
 		System.Drawing.Point ClientLocation{get;}
 
 		/// <summary>
-		/// Size of widget in pixels
+		/// 像素大小
 		/// </summary>
 		System.Drawing.Size WidgetSize{get;set;}
 
 		/// <summary>
-		/// Size of the client area in pixels
+		/// 用户操作对象大小
 		/// </summary>
         System.Drawing.Size ClientSize { get;set;}
 
 		/// <summary>
-		/// Whether this widget is enabled
+		/// 控件是否可用
 		/// </summary>
 		bool Enabled{get;set;}
 
 		/// <summary>
-		/// Whether this widget is visible
+		/// 是否可见
 		/// </summary>
 		bool Visible{get;set;}
 
@@ -64,36 +64,33 @@ namespace MFW3D.NewWidgets
 		bool CountWidth{get; set;}
 
 		/// <summary>
-		/// The parent widget of this widget
+		/// 父控件
 		/// </summary>
 		IWidget ParentWidget{get;set;}
 
 		/// <summary>
-		/// List of children widgets
+		/// 子控件
 		/// </summary>
 		IWidgetCollection ChildWidgets{get;set;}
 
 		/// <summary>
-		/// A link to an object.
+		/// 附加对象
 		/// </summary>
 		object Tag{get;set;}
 		#endregion
 
-		#region Methods
+		#region 方法
 
 		/// <summary>
-		/// The render method to draw this widget on the screen.
-		/// 
-		/// Called on the GUI thread.
+		/// 渲染控件
+		/// 渲染线程.
 		/// </summary>
 		/// <param name="drawArgs">The drawing arguments passed from the WW GUI thread.</param>
 		void Render(DrawArgs drawArgs);
 
 
 		/// <summary>
-		/// Initializes the button by loading the texture, creating the sprite and figure out the scaling.
-		/// 
-		/// Called on the GUI thread.
+		/// 初始化按钮加载图片, 创建对象并指定缩放大小
 		/// </summary>
 		/// <param name="drawArgs">The drawing arguments passed from the WW GUI thread.</param>
 		void Initialize(DrawArgs drawArgs);

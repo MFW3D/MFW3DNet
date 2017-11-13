@@ -35,7 +35,7 @@ namespace MFW3D.NewWidgets
 			
 		}
 		
-		#region Properties
+		#region  Ù–‘
 		public string Name
 		{
 			get

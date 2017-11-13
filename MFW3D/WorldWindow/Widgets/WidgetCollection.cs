@@ -14,7 +14,7 @@ namespace MFW3D.Widgets
 
 		}
 
-		#region Methods
+		#region 方法
 		public void BringToFront(int index)
 		{
 			IWidget currentWidget = m_ChildWidgets[index] as IWidget;
@@ -82,7 +82,7 @@ namespace MFW3D.Widgets
 		}
 		#endregion
 
-		#region Properties
+		#region 属性
 		public int Count
 		{
 			get
@@ -92,7 +92,7 @@ namespace MFW3D.Widgets
 		}
 		#endregion
 
-		#region Indexers
+		#region 索引器
 		public IWidget this[int index]
 		{
 			get

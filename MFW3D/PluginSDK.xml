@@ -1535,10 +1535,9 @@
             </summary>
         </member>
         <member name="T:MFW3D.Renderable.ModelFeature">
-            <summary>
-            This class Loads and Renders at a specific lat,lon,alt a given
-            Model(ie Textured Mesh) in Direct X or Other supported Format
-            </summary>
+             <summary>
+            加载渲染模型，设置经纬度，direct支持的模型或其他模型
+             </summary>
         </member>
         <member name="P:MFW3D.Renderable.ModelFeature.Latitude">
             <summary>
@@ -2655,7 +2654,7 @@
         </member>
         <member name="T:MFW3D.Renderable.IRenderable">
             <summary>
-            
+            可渲染对象
             </summary>
         </member>
         <member name="T:MFW3D.Renderable.LatLongGrid">
@@ -2720,7 +2719,7 @@
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.lineVertices">
             <summary>
-            显示线用的零食缓存
+            显示线用的临时缓存
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.useZBuffer">
@@ -2735,28 +2734,28 @@
         </member>
         <member name="M:MFW3D.Renderable.LatLongGrid.Render(MFW3D.DrawArgs)">
             <summary>
-            Render the grid lines
+            渲染经纬网
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.LatLongGrid.RenderTropicLines(MFW3D.DrawArgs)">
             <summary>
-            Draw Tropic of Cancer, Tropic of Capricorn, Arctic and Antarctic lines
+            渲染回归带
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.LatLongGrid.RenderTropicLine(MFW3D.DrawArgs,System.Single,System.String)">
             <summary>
-            Draws a tropic line at specified latitude with specified label
+            渲染标签
             </summary>
             <param name="latitude">Latitude in degrees</param>
         </member>
         <member name="M:MFW3D.Renderable.LatLongGrid.ComputeGridValues(MFW3D.DrawArgs)">
             <summary>
-            Recalculates the grid bounds + interval values
+            计算经纬网的值
             </summary>
         </member>
         <member name="T:MFW3D.Renderable.MeshLayer">
             <summary>
-            Summary description for MeshLayer.
+            模型图层
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.MeshLayer.#ctor(System.String,System.Single,System.Single,System.Single,System.Single,System.String,Microsoft.DirectX.Quaternion)">
@@ -2773,7 +2772,7 @@
         </member>
         <member name="T:MFW3D.Renderable.PathLine">
             <summary>
-            Summary description for PathLine.
+            路径线
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.PathLine.#ctor(System.String,MFW3D.World,System.String,System.Single,System.Drawing.Color)">
@@ -6023,47 +6022,47 @@
         </member>
         <member name="T:MFW3D.NewWidgets.IWidget">
             <summary>
-            Base Interface for DirectX GUI Widgets
+            DirectX GUI控件基础类
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Name">
             <summary>
-            Name of this widget
+            控件名
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Location">
             <summary>
-            Location of this widget relative to the client area of the parent
+            相对位置
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.AbsoluteLocation">
             <summary>
-            Where this widget is on the window
+            绝对位置
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.ClientLocation">
             <summary>
-            The top left corner of this widget's client area
+            左上点坐标
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.WidgetSize">
             <summary>
-            Size of widget in pixels
+            像素大小
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.ClientSize">
             <summary>
-            Size of the client area in pixels
+            用户操作对象大小
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Enabled">
             <summary>
-            Whether this widget is enabled
+            控件是否可用
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Visible">
             <summary>
-            Whether this widget is visible
+            是否可见
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.CountHeight">
@@ -6078,32 +6077,29 @@
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.ParentWidget">
             <summary>
-            The parent widget of this widget
+            父控件
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.ChildWidgets">
             <summary>
-            List of children widgets
+            子控件
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Tag">
             <summary>
-            A link to an object.
+            附加对象
             </summary>
         </member>
         <member name="M:MFW3D.NewWidgets.IWidget.Render(MFW3D.DrawArgs)">
             <summary>
-            The render method to draw this widget on the screen.
-            
-            Called on the GUI thread.
+            渲染控件
+            渲染线程.
             </summary>
             <param name="drawArgs">The drawing arguments passed from the WW GUI thread.</param>
         </member>
         <member name="M:MFW3D.NewWidgets.IWidget.Initialize(MFW3D.DrawArgs)">
             <summary>
-            Initializes the button by loading the texture, creating the sprite and figure out the scaling.
-            
-            Called on the GUI thread.
+            初始化按钮加载图片, 创建对象并指定缩放大小
             </summary>
             <param name="drawArgs">The drawing arguments passed from the WW GUI thread.</param>
         </member>

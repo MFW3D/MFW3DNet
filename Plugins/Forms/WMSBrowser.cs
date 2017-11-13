@@ -2516,7 +2516,7 @@ namespace MFW3D
 
 		#endregion
 				
-		#region Properties
+		#region  Ù–‘
 		public MyWMSLayer[] Layers
 		{
 			get
@@ -2750,7 +2750,7 @@ namespace MFW3D
 		}
 		#endregion
 		
-		#region Properties
+		#region  Ù–‘
 
 		public WMSList ParentWMSList
 		{
@@ -3037,7 +3037,7 @@ namespace MFW3D
 		}
 		#endregion
 
-		#region Properties
+		#region  Ù–‘
 		public float North
 		{
 			get

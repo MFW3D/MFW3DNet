@@ -81,7 +81,7 @@ namespace NASA.Plugins
 			}
 			#endregion
 
-			#region Properties
+			#region  Ù–‘
 			public string Name
 			{
 				get

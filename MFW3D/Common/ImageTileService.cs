@@ -12,7 +12,7 @@ namespace MFW3D
 		string _serverLogoPath;
 		#endregion
 
-		#region Properties
+		#region  Ù–‘
 		public TimeSpan CacheExpirationTime
 		{
 			get

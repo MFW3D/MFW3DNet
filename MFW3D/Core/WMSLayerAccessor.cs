@@ -22,7 +22,7 @@ namespace MFW3D.Net.Wms
 
 		#endregion	
 
-		#region Properties
+		#region  Ù–‘
 		public override bool IsDownloadableLayer
 		{
 			get

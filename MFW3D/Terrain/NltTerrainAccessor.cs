@@ -18,7 +18,7 @@ namespace MFW3D.Terrain
 		protected WmsImageStore m_wmsElevationSet;
 		protected Hashtable m_tileCache = new Hashtable();
 
-		#region Properties
+		#region  Ù–‘
 
 		public WmsImageStore WmsElevationStore
 		{

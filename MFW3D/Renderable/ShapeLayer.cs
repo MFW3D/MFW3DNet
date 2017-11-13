@@ -381,7 +381,7 @@ namespace MFW3D.Renderable
 		System.Collections.Hashtable _scalarData = new System.Collections.Hashtable();
 		#endregion
 
-		#region Properties
+		#region  Ù–‘
 
 		public string ID
 		{
@@ -515,7 +515,7 @@ namespace MFW3D.Renderable
 		ShapeRecord[] _shapeRecords;
 		#endregion
 
-		#region Properties
+		#region  Ù–‘
 		public ShapeRecord[] ShapeRecords
 		{
 			get

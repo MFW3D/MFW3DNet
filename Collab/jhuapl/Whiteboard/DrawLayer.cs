@@ -161,7 +161,7 @@ namespace Collab.jhuapl.Whiteboard
 
 		bool m_drawModeChange = false;
 
-		#region Properties
+		#region  Ù–‘
 
 		/// <summary>
 		/// Determines if the draw layer is writeable.  True = writeable, False = Read only.
