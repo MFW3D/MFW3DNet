@@ -161,7 +161,7 @@ namespace MFW3D.PluginEngine
 		}
 
 		/// <summary>
-		/// Reads strings from the source file header tags
+		/// 从头原文件读取string
 		/// </summary>
 		private void ReadMetaData()
 		{

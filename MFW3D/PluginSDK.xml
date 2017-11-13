@@ -600,198 +600,14 @@
             Looks for class derived from Plugin and returns an instance of this class.
             </summary>
         </member>
-        <member name="T:MFW3D.PluginEngine.PluginDialog">
-            <summary>
-            Plugin manager dialog.
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginDialog.ImageList">
-            <summary>
-            On/Off images for items.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.#ctor(MFW3D.PluginEngine.PluginCompiler)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginDialog"/> class.
-            </summary>
-            <param name="compiler"></param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.AddPluginList">
-            <summary>
-            Fill the list view with currently installed plugins.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.buttonUnload_Click(System.Object,System.EventArgs)">
-            <summary>
-            Unload selected plugins.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.buttonLoad_Click(System.Object,System.EventArgs)">
-            <summary>
-            Load selected plugins.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.PluginLoad(MFW3D.PluginEngine.PluginListItem)">
-            <summary>
-            Load plugin and display message on failure.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.PluginUnload(MFW3D.PluginEngine.PluginListItem)">
-            <summary>
-            Unload plugin and display message on failure.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.UpdateUIStates">
-            <summary>
-            Updates enabled states of controls to reflect selection.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.buttonUninstall_Click(System.Object,System.EventArgs)">
-            <summary>
-            Uninstall/remove plugins
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.listView_DoubleClick(System.Object,System.EventArgs)">
-            <summary>
-            Invert state of double clicked item (load/unload)
-            </summary>
-        </member>
         <member name="M:MFW3D.PluginEngine.PluginInfo.ReadMetaData">
             <summary>
-            Reads strings from the source file header tags
+            从头原文件读取string
             </summary>
         </member>
         <member name="M:MFW3D.PluginEngine.PluginInfo.FindTagInLine(System.String,System.String,System.String@)">
             <summary>
             Extract tag value from input source line.
-            </summary>
-        </member>
-        <member name="T:MFW3D.PluginEngine.PluginInstallDialog">
-            <summary>
-            Ask user for plugin file path/url, then download and install.
-            </summary>
-        </member>
-        <member name="F:MFW3D.PluginEngine.PluginInstallDialog.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.#ctor(MFW3D.PluginEngine.PluginCompiler)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginInstallDialog"/> class.
-            </summary>
-            <param name="compiler"></param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.buttonInstall_Click(System.Object,System.EventArgs)">
-            <summary>
-            Install plugin
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginInstallDialog.IsFile">
-            <summary>
-            Determine if user points to a file.
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginInstallDialog.IsWeb">
-            <summary>
-            Determine if user points to a web URL.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.InstallFromFile(System.String)">
-            <summary>
-            Install plugin from local file.
-            </summary>
-            <param name="pluginPath">Plugin path/filename.</param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.InstallFromUrl(System.Uri)">
-            <summary>
-            Install plugin from web (url).
-            </summary>
-            <param name="uri">http:// URL</param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.GetDestinationPath(System.String)">
-            <summary>
-            Calculates plugin destination directory based on name, and prepares it.
-            </summary>
-            <param name="fileName">Plugin filename only (no path).</param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.ShowSuccessMessage(System.String)">
-            <summary>
-            Display a message box with successful installation message.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.buttonBrowse_Click(System.Object,System.EventArgs)">
-            <summary>
-            Browse for local file
-            </summary>
-        </member>
-        <member name="T:MFW3D.PluginEngine.PluginListItem">
-            <summary>
-            Listview item in the plugin dialog.
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginListItem.PluginInfo">
-            <summary>
-            Plugin information container.
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginListItem.Name">
-            <summary>
-            Plugin name.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListItem.#ctor(MFW3D.PluginEngine.PluginInfo)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginListItem"/> class.
-            </summary>
-        </member>
-        <member name="T:MFW3D.PluginEngine.PluginListView">
-            <summary>
-            The list view in the plugin dialog.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListView.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginListView"/> class.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListView.WndProc(System.Windows.Forms.Message@)">
-            <summary>
-            Shows list of available plugins
-            </summary>
-            <param name="m"></param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListView.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Interact with plugin loadind
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListView.OnDrawItem(System.Windows.Forms.DrawItemEventArgs,MFW3D.PluginEngine.PluginListItem)">
-            <summary>
-            Owner drawing listview item.
             </summary>
         </member>
         <member name="M:MFW3D.ConfigurationSaver.SaveAs(MFW3D.Renderable.RenderableObject,System.String)">
@@ -6105,83 +5921,83 @@
         </member>
         <member name="T:MFW3D.NewWidgets.MouseClickAction">
             <summary>
-            Delegate for mouse click events
+            鼠标点击委托
             </summary>
         </member>
         <member name="T:MFW3D.NewWidgets.IInteractive">
             <summary>
-            Interface must be implemented in order to recieve user input.
+            用于接受用户输入的实现
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IInteractive.LeftClickAction">
             <summary>
-            Action to perform when the left mouse button is clicked
+            左键点击操作
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IInteractive.RightClickAction">
             <summary>
-            Action to perform when the right mouse button is clicked
+            右键点击操作
             </summary>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
             <summary>
-            Mouse down event handler.
+            鼠标按下句柄
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
             <summary>
-            Mouse up event handler.
+            鼠标抬起事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
             <summary>
-            Mouse move event handler.
+            鼠标移动事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
             <summary>
-            Mouse wheel event handler.
+            鼠标滚轮事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>				
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseEnter(System.EventArgs)">
             <summary>
-            Mouse entered this widget event handler.
+            鼠标进入事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseLeave(System.EventArgs)">
             <summary>
-            Mouse left this widget event handler.
+            鼠标离开事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
             <summary>
-            Key down event handler.
+            按键按下事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
             <summary>
-            Key up event handler.
+            按键抬起事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
             <summary>
-            Key press event handler.
+            事件按下事件
             </summary>
             <param name="e">Event Args</param>
             <returns></returns>

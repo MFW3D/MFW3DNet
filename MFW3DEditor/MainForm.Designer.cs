@@ -56,6 +56,8 @@
             this.spellChecker = new DevExpress.XtraSpellChecker.SpellChecker(this.components);
             this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController();
             this.worldWindow = new MFW3D.WorldWindow();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.m_scollerbar = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
@@ -84,10 +86,11 @@
             this.rgbiSkins,
             this.m_showLL,
             this.m_zhibeizhen,
-            this.m_showlayers});
+            this.m_showlayers,
+            this.m_scollerbar});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 309;
+            this.ribbonControl.MaxItemId = 310;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -201,7 +204,8 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "场景操作";
             // 
@@ -302,6 +306,19 @@
             this.worldWindow.Size = new System.Drawing.Size(1100, 522);
             this.worldWindow.TabIndex = 2;
             // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.m_scollerbar);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            // 
+            // m_scollerbar
+            // 
+            this.m_scollerbar.Caption = "添加scollerbar";
+            this.m_scollerbar.Id = 309;
+            this.m_scollerbar.Name = "m_scollerbar";
+            this.m_scollerbar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.m_scollerbar_ItemClick);
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -359,5 +376,7 @@
         private DevExpress.XtraBars.BarButtonItem m_showLL;
         private DevExpress.XtraBars.BarButtonItem m_zhibeizhen;
         private DevExpress.XtraBars.BarButtonItem m_showlayers;
+        private DevExpress.XtraBars.BarButtonItem m_scollerbar;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
