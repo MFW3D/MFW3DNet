@@ -7,7 +7,7 @@ using Utility;
 namespace MFW3D.Renderable
 {
 	/// <summary>
-	/// Summary description for MeshLayer.
+	/// Ä£ÐÍÍ¼²ã
 	/// </summary>
 	public class MeshLayer : RenderableObject
 	{

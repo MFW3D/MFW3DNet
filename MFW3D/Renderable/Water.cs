@@ -33,7 +33,7 @@ namespace MFW3D.Renderable
         private bool isBumpmapped = false;
 		#endregion
 
-		#region Methods
+		#region ·½·¨
 		public Water(string name,World parentWorld,bool isBumpmapped,float lat,float lon,float alt,float scaleFactor) : 
             base(name,parentWorld,meshFilename,lat,lon,alt,scaleFactor,90.0f,0.0f,0.0f)
 		{

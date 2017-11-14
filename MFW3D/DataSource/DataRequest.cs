@@ -113,7 +113,7 @@ namespace MFW3D.DataSource
         protected DateTime m_nextTry;
         #endregion
 
-        #region Properties
+        #region  Ù–‘
         public DataRequestDescriptor RequestDescriptor { get { return m_request; } }
         public NameValueCollection Headers
         {

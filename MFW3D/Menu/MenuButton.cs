@@ -36,7 +36,7 @@ namespace MFW3D.Menu
         {
         }
 
-        #region Properties
+        #region  Ù–‘
         public string Description
         {
             get

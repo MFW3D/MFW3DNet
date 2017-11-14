@@ -20,7 +20,7 @@ namespace MFW3D.NewWidgets
 			m_ParentControl = parentControl;
 		}
 
-		#region Methods
+		#region ∑Ω∑®
 
 		public void Initialize(DrawArgs drawArgs)
 		{
@@ -46,7 +46,7 @@ namespace MFW3D.NewWidgets
 		}
 		#endregion
 
-		#region Properties
+		#region  Ù–‘
 
 		System.Drawing.Point m_location = new System.Drawing.Point(0,0);
 		System.Drawing.Point m_ClientLocation = new System.Drawing.Point(0,0);

@@ -108,7 +108,7 @@ namespace NASA.Plugins
 			
 		}
 		
-		#region Properties
+		#region  Ù–‘
         public System.Drawing.Font Font
         {
             get { return m_localFont; }

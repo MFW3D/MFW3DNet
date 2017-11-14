@@ -600,198 +600,14 @@
             Looks for class derived from Plugin and returns an instance of this class.
             </summary>
         </member>
-        <member name="T:MFW3D.PluginEngine.PluginDialog">
-            <summary>
-            Plugin manager dialog.
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginDialog.ImageList">
-            <summary>
-            On/Off images for items.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.#ctor(MFW3D.PluginEngine.PluginCompiler)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginDialog"/> class.
-            </summary>
-            <param name="compiler"></param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.AddPluginList">
-            <summary>
-            Fill the list view with currently installed plugins.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.buttonUnload_Click(System.Object,System.EventArgs)">
-            <summary>
-            Unload selected plugins.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.buttonLoad_Click(System.Object,System.EventArgs)">
-            <summary>
-            Load selected plugins.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.PluginLoad(MFW3D.PluginEngine.PluginListItem)">
-            <summary>
-            Load plugin and display message on failure.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.PluginUnload(MFW3D.PluginEngine.PluginListItem)">
-            <summary>
-            Unload plugin and display message on failure.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.UpdateUIStates">
-            <summary>
-            Updates enabled states of controls to reflect selection.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.buttonUninstall_Click(System.Object,System.EventArgs)">
-            <summary>
-            Uninstall/remove plugins
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginDialog.listView_DoubleClick(System.Object,System.EventArgs)">
-            <summary>
-            Invert state of double clicked item (load/unload)
-            </summary>
-        </member>
         <member name="M:MFW3D.PluginEngine.PluginInfo.ReadMetaData">
             <summary>
-            Reads strings from the source file header tags
+            从头原文件读取string
             </summary>
         </member>
         <member name="M:MFW3D.PluginEngine.PluginInfo.FindTagInLine(System.String,System.String,System.String@)">
             <summary>
             Extract tag value from input source line.
-            </summary>
-        </member>
-        <member name="T:MFW3D.PluginEngine.PluginInstallDialog">
-            <summary>
-            Ask user for plugin file path/url, then download and install.
-            </summary>
-        </member>
-        <member name="F:MFW3D.PluginEngine.PluginInstallDialog.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.#ctor(MFW3D.PluginEngine.PluginCompiler)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginInstallDialog"/> class.
-            </summary>
-            <param name="compiler"></param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.buttonInstall_Click(System.Object,System.EventArgs)">
-            <summary>
-            Install plugin
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginInstallDialog.IsFile">
-            <summary>
-            Determine if user points to a file.
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginInstallDialog.IsWeb">
-            <summary>
-            Determine if user points to a web URL.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.InstallFromFile(System.String)">
-            <summary>
-            Install plugin from local file.
-            </summary>
-            <param name="pluginPath">Plugin path/filename.</param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.InstallFromUrl(System.Uri)">
-            <summary>
-            Install plugin from web (url).
-            </summary>
-            <param name="uri">http:// URL</param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.GetDestinationPath(System.String)">
-            <summary>
-            Calculates plugin destination directory based on name, and prepares it.
-            </summary>
-            <param name="fileName">Plugin filename only (no path).</param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.ShowSuccessMessage(System.String)">
-            <summary>
-            Display a message box with successful installation message.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginInstallDialog.buttonBrowse_Click(System.Object,System.EventArgs)">
-            <summary>
-            Browse for local file
-            </summary>
-        </member>
-        <member name="T:MFW3D.PluginEngine.PluginListItem">
-            <summary>
-            Listview item in the plugin dialog.
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginListItem.PluginInfo">
-            <summary>
-            Plugin information container.
-            </summary>
-        </member>
-        <member name="P:MFW3D.PluginEngine.PluginListItem.Name">
-            <summary>
-            Plugin name.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListItem.#ctor(MFW3D.PluginEngine.PluginInfo)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginListItem"/> class.
-            </summary>
-        </member>
-        <member name="T:MFW3D.PluginEngine.PluginListView">
-            <summary>
-            The list view in the plugin dialog.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListView.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.PluginEngine.PluginListView"/> class.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListView.WndProc(System.Windows.Forms.Message@)">
-            <summary>
-            Shows list of available plugins
-            </summary>
-            <param name="m"></param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListView.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Interact with plugin loadind
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:MFW3D.PluginEngine.PluginListView.OnDrawItem(System.Windows.Forms.DrawItemEventArgs,MFW3D.PluginEngine.PluginListItem)">
-            <summary>
-            Owner drawing listview item.
             </summary>
         </member>
         <member name="M:MFW3D.ConfigurationSaver.SaveAs(MFW3D.Renderable.RenderableObject,System.String)">
@@ -1370,12 +1186,6 @@
             <param name="remoteUrl"></param>
             <param name="imageDirectoryPath"></param>
         </member>
-        <member name="M:MFW3D.DynamicCloudLayer.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Builds context menu for renderable
-            </summary>
-            <param name="menu"></param>
-        </member>
         <member name="M:MFW3D.DynamicCloudLayer.Initialize(MFW3D.DrawArgs)">
             <summary>
             Initializes renderable
@@ -1408,7 +1218,7 @@
         </member>
         <member name="T:MFW3D.Renderable.Icons">
             <summary>
-            Holds a collection of icons
+            icons图层
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.Icons.m_pointTexture">
@@ -1541,10 +1351,9 @@
             </summary>
         </member>
         <member name="T:MFW3D.Renderable.ModelFeature">
-            <summary>
-            This class Loads and Renders at a specific lat,lon,alt a given
-            Model(ie Textured Mesh) in Direct X or Other supported Format
-            </summary>
+             <summary>
+            加载渲染模型，设置经纬度，direct支持的模型或其他模型
+             </summary>
         </member>
         <member name="P:MFW3D.Renderable.ModelFeature.Latitude">
             <summary>
@@ -1960,12 +1769,6 @@
             Helper function to render icon description.  Broken out so that child classes can override this behavior.
             </summary>
             <param name="drawArgs"></param>
-        </member>
-        <member name="M:MFW3D.Renderable.TrackIcon.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Builds the context menu for this icon
-            </summary>
-            <param name="menu"></param>
         </member>
         <member name="M:MFW3D.Renderable.TrackIcon.PreRender(MFW3D.DrawArgs,System.Boolean)">
             <summary>
@@ -2426,24 +2229,7 @@
             <param name="drawArgs"></param>
             <returns></returns>
         </member>
-        <member name="M:MFW3D.Renderable.Icon.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Adds to the default context menu any screen overlays and user defined context menus
-            </summary>
-            <param name="menu"></param>
-        </member>
-        <member name="M:MFW3D.Renderable.Icon.AddContextMenuItem(System.Windows.Forms.MenuItem)">
-            <summary>
-            Adds a new context menu item to this icon.
-            </summary>
-            <param name="newItem">The menu item to add</param>
-        </member>
-        <member name="M:MFW3D.Renderable.Icon.Update(MFW3D.DrawArgs)">
-            <summary>
-            Updates where we are if the camera has changed position (and thereby might be using higher resolution terrain
-            </summary>
-            <param name="drawArgs"></param>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:MFW3D.Renderable.Icon.Update(MFW3D.DrawArgs)" -->
         <member name="M:MFW3D.Renderable.Icon.BuildIconTexture(MFW3D.DrawArgs)">
             <summary>
             Builds the icon texture based on the saved texturefile name
@@ -2684,12 +2470,12 @@
         </member>
         <member name="T:MFW3D.Renderable.IRenderable">
             <summary>
-            
+            可渲染对象
             </summary>
         </member>
         <member name="T:MFW3D.Renderable.LatLongGrid">
             <summary>
-            Draws a latitude/longitude grid
+            经纬网
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.WorldRadius">
@@ -2699,57 +2485,57 @@
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.radius">
             <summary>
-            Grid line radius (varies, >= world radius
+            经纬网半径
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.IsEarth">
             <summary>
-            Current planet == Earth?
+            是否是地球
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.MinVisibleLongitude">
             <summary>
-            Lowest visible longitude
+            最低可视经度
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.MaxVisibleLongitude">
             <summary>
-            Highest visible longitude
+            最高可是经度
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.MinVisibleLatitude">
             <summary>
-            Lowest visible Latitude
+            最低可视维度
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.MaxVisibleLatitude">
             <summary>
-            Highest visible Latitude
+            最高可视维度
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.LongitudeInterval">
             <summary>
-            Interval in degrees between visible latitudes
+            可见经度的间隔
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.LatitudeInterval">
             <summary>
-            Interval in degrees between visible longitudes
+            可见纬度的间隔
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.LongitudePointCount">
             <summary>
-            The number of visible longitude lines
+            经度点数量
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.LatitudePointCount">
             <summary>
-            The number of visible latitude lines
+            纬度点数量
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.lineVertices">
             <summary>
-            Temporary buffer used for rendering  lines
+            显示线用的临时缓存
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.LatLongGrid.useZBuffer">
@@ -2764,28 +2550,28 @@
         </member>
         <member name="M:MFW3D.Renderable.LatLongGrid.Render(MFW3D.DrawArgs)">
             <summary>
-            Render the grid lines
+            渲染经纬网
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.LatLongGrid.RenderTropicLines(MFW3D.DrawArgs)">
             <summary>
-            Draw Tropic of Cancer, Tropic of Capricorn, Arctic and Antarctic lines
+            渲染回归带
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.LatLongGrid.RenderTropicLine(MFW3D.DrawArgs,System.Single,System.String)">
             <summary>
-            Draws a tropic line at specified latitude with specified label
+            渲染标签
             </summary>
             <param name="latitude">Latitude in degrees</param>
         </member>
         <member name="M:MFW3D.Renderable.LatLongGrid.ComputeGridValues(MFW3D.DrawArgs)">
             <summary>
-            Recalculates the grid bounds + interval values
+            计算经纬网的值
             </summary>
         </member>
         <member name="T:MFW3D.Renderable.MeshLayer">
             <summary>
-            Summary description for MeshLayer.
+            模型图层
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.MeshLayer.#ctor(System.String,System.Single,System.Single,System.Single,System.Single,System.String,Microsoft.DirectX.Quaternion)">
@@ -2802,7 +2588,7 @@
         </member>
         <member name="T:MFW3D.Renderable.PathLine">
             <summary>
-            Summary description for PathLine.
+            路径线
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.PathLine.#ctor(System.String,MFW3D.World,System.String,System.Single,System.Drawing.Color)">
@@ -3119,17 +2905,17 @@
         </member>
         <member name="T:MFW3D.Renderable.RenderableObject">
             <summary>
-            The base class for objects to be rendered as part of the scene.
+            可渲染对象.
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.RenderableObject.isInitialized">
             <summary>
-            True when object is ready to be rendered.
+            对象是否可以渲染
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.RenderableObject.isSelectable">
             <summary>
-            True for objects the user can interact with.
+            对象是否可以被选择
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.RenderableObject.#ctor(System.String)">
@@ -3143,8 +2929,8 @@
             Constructor
             </summary>
             <param name="name">Object description</param>
-            <param name="position">Object position (XYZ world coordinates)</param>
-            <param name="orientation">Object rotation (Quaternion)</param>
+            <param name="position">位置信息，世界坐标</param>
+            <param name="orientation">朝向</param>
         </member>
         <member name="P:MFW3D.Renderable.RenderableObject.World">
             <summary>
@@ -3187,12 +2973,6 @@
             Permanently delete the layer
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.BuildContextMenu(System.Windows.Forms.ContextMenu)">
-            <summary>
-            Fills the context menu with menu items specific to the layer.
-            </summary>
-            <param name="menu">Pre-initialized context menu.</param>
-        </member>
         <member name="M:MFW3D.Renderable.RenderableObject.ToString">
             <summary>
             Returns a String that represents the current SelectedObject.
@@ -3229,45 +3009,45 @@
             Object rotation (Quaternion)
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnDbfInfo(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetDbfInfo">
             <summary>
               Goes to the Shapefiles's DBF Information Window
              </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnGotoClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetGoto">
             <summary>
               Goes to the extent specified by the bounding box for the QTS layer
               or to the lat/lon for icons
              </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnInfoClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetInfo">
             <summary>
             Layer info context menu item
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnPropertiesClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetProperties">
             <summary>
             Layer properties context menu item
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnReloadShaderClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetReloadShader">
             <summary>
             Layer properties context menu item
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnDeleteClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetDelete">
             <summary>
             Delete layer context menu item
             </summary>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnSaveAsClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetSaveAs">
             <summary>
             Save item from LM to a file
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObject.OnViewXmlClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObject.GetViewXml">
             <summary>
             Show serialized item in browser
             </summary>
@@ -3276,18 +3056,12 @@
         </member>
         <member name="T:MFW3D.Renderable.RenderPriority">
             <summary>
-            The render priority determines in what order objects are rendered.
-            Objects with higher priority number are rendered over lower priority objects.
+            渲染顺序
             </summary>
         </member>
         <member name="T:MFW3D.Renderable.RenderableObjectList">
             <summary>
-            Represents a parent node in the layer manager tree.  Contains a list of sub-nodes.
-            </summary>
-        </member>
-        <member name="P:MFW3D.Renderable.RenderableObjectList.RefreshTimer">
-            <summary>
-            This ROL needs to be sorted because either something was added or render priority was changed.
+            图层管理树，管理节点
             </summary>
         </member>
         <member name="M:MFW3D.Renderable.RenderableObjectList.#ctor(System.String)">
@@ -3308,7 +3082,7 @@
         </member>
         <member name="M:MFW3D.Renderable.RenderableObjectList.GetObject(System.String)">
             <summary>
-            Return the first direct child with a given name.
+            返回第一个显示的对象名字
             </summary>
             <example>Get the placenames LayerSet.
             <code>
@@ -3319,7 +3093,7 @@
         </member>
         <member name="M:MFW3D.Renderable.RenderableObjectList.GetObjects(System.String,System.Type)">
             <summary>
-            Return a list of all direct and indirect children that match the given name and/or object type.
+            返回直接或间接的对象，根据名字查询
             </summary>
             <example> Get all QuadTileSets defined in this world:
             <code>
@@ -3335,14 +3109,14 @@
             </summary>
             <returns>False if layer not found.</returns>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObjectList.OnCheckAllChildrenClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObjectList.GetCheckAllChildren">
             <summary>
             Menu action to check all children of a ROL
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-        <member name="M:MFW3D.Renderable.RenderableObjectList.OnUncheckAllChildrenClick(System.Object,System.EventArgs)">
+        <member name="M:MFW3D.Renderable.RenderableObjectList.GetUncheckAllChildren">
             <summary>
             Menu action to uncheck all children of a ROL
             </summary>
@@ -3392,7 +3166,7 @@
         </member>
         <member name="M:MFW3D.Renderable.RenderableObjectList.Add(MFW3D.Renderable.RenderableObject)">
             <summary>
-            Add a child object to this layer.  If the new object has the same name as an existing object in this 
+            添加对象到图层.  If the new object has the same name as an existing object in this 
             ROL it gets a number appended.  If the new object is a ROL and there was already a ROL with the same 
             name then the children of the new ROL gets added to the old ROL.
             
@@ -6064,47 +5838,47 @@
         </member>
         <member name="T:MFW3D.NewWidgets.IWidget">
             <summary>
-            Base Interface for DirectX GUI Widgets
+            DirectX GUI控件基础类
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Name">
             <summary>
-            Name of this widget
+            控件名
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Location">
             <summary>
-            Location of this widget relative to the client area of the parent
+            相对位置
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.AbsoluteLocation">
             <summary>
-            Where this widget is on the window
+            绝对位置
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.ClientLocation">
             <summary>
-            The top left corner of this widget's client area
+            左上点坐标
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.WidgetSize">
             <summary>
-            Size of widget in pixels
+            像素大小
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.ClientSize">
             <summary>
-            Size of the client area in pixels
+            用户操作对象大小
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Enabled">
             <summary>
-            Whether this widget is enabled
+            控件是否可用
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Visible">
             <summary>
-            Whether this widget is visible
+            是否可见
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.CountHeight">
@@ -6119,114 +5893,111 @@
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.ParentWidget">
             <summary>
-            The parent widget of this widget
+            父控件
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.ChildWidgets">
             <summary>
-            List of children widgets
+            子控件
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IWidget.Tag">
             <summary>
-            A link to an object.
+            附加对象
             </summary>
         </member>
         <member name="M:MFW3D.NewWidgets.IWidget.Render(MFW3D.DrawArgs)">
             <summary>
-            The render method to draw this widget on the screen.
-            
-            Called on the GUI thread.
+            渲染控件
+            渲染线程.
             </summary>
             <param name="drawArgs">The drawing arguments passed from the WW GUI thread.</param>
         </member>
         <member name="M:MFW3D.NewWidgets.IWidget.Initialize(MFW3D.DrawArgs)">
             <summary>
-            Initializes the button by loading the texture, creating the sprite and figure out the scaling.
-            
-            Called on the GUI thread.
+            初始化按钮加载图片, 创建对象并指定缩放大小
             </summary>
             <param name="drawArgs">The drawing arguments passed from the WW GUI thread.</param>
         </member>
         <member name="T:MFW3D.NewWidgets.MouseClickAction">
             <summary>
-            Delegate for mouse click events
+            鼠标点击委托
             </summary>
         </member>
         <member name="T:MFW3D.NewWidgets.IInteractive">
             <summary>
-            Interface must be implemented in order to recieve user input.
+            用于接受用户输入的实现
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IInteractive.LeftClickAction">
             <summary>
-            Action to perform when the left mouse button is clicked
+            左键点击操作
             </summary>
         </member>
         <member name="P:MFW3D.NewWidgets.IInteractive.RightClickAction">
             <summary>
-            Action to perform when the right mouse button is clicked
+            右键点击操作
             </summary>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseDown(System.Windows.Forms.MouseEventArgs)">
             <summary>
-            Mouse down event handler.
+            鼠标按下句柄
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseUp(System.Windows.Forms.MouseEventArgs)">
             <summary>
-            Mouse up event handler.
+            鼠标抬起事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
             <summary>
-            Mouse move event handler.
+            鼠标移动事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
             <summary>
-            Mouse wheel event handler.
+            鼠标滚轮事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>				
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseEnter(System.EventArgs)">
             <summary>
-            Mouse entered this widget event handler.
+            鼠标进入事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnMouseLeave(System.EventArgs)">
             <summary>
-            Mouse left this widget event handler.
+            鼠标离开事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
             <summary>
-            Key down event handler.
+            按键按下事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnKeyUp(System.Windows.Forms.KeyEventArgs)">
             <summary>
-            Key up event handler.
+            按键抬起事件
             </summary>
             <param name="e">Event args</param>
             <returns>If this widget handled this event</returns>
         </member>
         <member name="M:MFW3D.NewWidgets.IInteractive.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
             <summary>
-            Key press event handler.
+            事件按下事件
             </summary>
             <param name="e">Event Args</param>
             <returns></returns>

@@ -71,7 +71,7 @@ namespace MFW3D.Renderable
 
         #endregion
 
-        #region Properties
+        #region  Ù–‘
 
         /// <summary>
 		/// Whether the name of this icon should always be rendered
@@ -947,7 +947,6 @@ namespace MFW3D.Renderable
                 if (m_contextMenu == null)
                 {
                     m_contextMenu = new ContextMenu();
-                    BuildContextMenu(m_contextMenu);
                 }
 
                 m_contextMenu.Show(DrawArgs.ParentControl, DrawArgs.LastMousePosition);
@@ -961,41 +960,6 @@ namespace MFW3D.Renderable
             return false;
         }
 
-        /// <summary>
-        /// Adds to the default context menu any screen overlays and user defined context menus
-        /// </summary>
-        /// <param name="menu"></param>
-        public override void BuildContextMenu(ContextMenu menu)
-        {
-            base.BuildContextMenu(menu);
-
-            // Add screen overlay items
-            ScreenOverlay[] overlays = Overlays;
-            if (overlays != null && overlays.Length > 0)
-            {
-                foreach (ScreenOverlay curOverlay in overlays)
-                {
-                    menu.MenuItems.Add(curOverlay.Name, new System.EventHandler(OverlayOnOpen));
-                }
-            }
-        }
-
-        /// <summary>
-        /// Adds a new context menu item to this icon.
-        /// </summary>
-        /// <param name="newItem">The menu item to add</param>
-        public void AddContextMenuItem(MenuItem newItem)
-        {
-            if (m_contextMenu == null)
-            {
-                m_contextMenu = new ContextMenu();
-                this.BuildContextMenu(m_contextMenu);
-            }
-
-            m_contextMenu.MenuItems.Add(newItem);
-        }
-
-        /// <summary>
         /// Updates where we are if the camera has changed position (and thereby might be using higher resolution terrain
         /// </summary>
         /// <param name="drawArgs"></param>

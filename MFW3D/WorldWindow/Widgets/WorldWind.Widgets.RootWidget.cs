@@ -17,7 +17,7 @@ namespace MFW3D.Widgets
 			m_ParentControl = parentControl;
 		}
 
-		#region Methods
+		#region ∑Ω∑®
 		public void Render(DrawArgs drawArgs)
 		{
 			for(int index = m_ChildWidgets.Count - 1; index >= 0; index--)
@@ -34,7 +34,7 @@ namespace MFW3D.Widgets
 		}
 		#endregion
 
-		#region Properties
+		#region  Ù–‘
 		public System.Drawing.Point AbsoluteLocation
 		{
 			get

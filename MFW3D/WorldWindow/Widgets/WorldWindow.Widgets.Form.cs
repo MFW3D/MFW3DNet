@@ -48,7 +48,7 @@ namespace MFW3D.Widgets
 		{
 		}
 
-		#region Properties
+		#region  Ù–‘
         public Alignment Alignment
         {
             get { return m_alignment; }

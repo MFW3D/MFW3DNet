@@ -24,6 +24,7 @@ using MFW3D.Terrain;
 using MFW3D.Renderable;
 using Utility;
 using MFW3D;
+using MFW3D.NewWidgets;
 
 namespace MFW3DEditor
 {
@@ -155,7 +156,7 @@ namespace MFW3DEditor
             string pluginRoot = Path.Combine(MFW3D.Global.Settings.DirectoryPath, "Plugins");
             compiler = new PluginCompiler(pluginRoot);
             //加载默认插件
-            if(File.Exists(Application.StartupPath+"/Plugins.dll"))
+            if (File.Exists(Application.StartupPath + "/Plugins.dll"))
             {
                 Assembly assembly = Assembly.LoadFrom(Application.StartupPath + "/Plugins.dll");
                 compiler.FindPlugins(assembly);
@@ -611,16 +612,20 @@ namespace MFW3DEditor
 
         private void m_showLL_ItemClick(object sender, ItemClickEventArgs e)
         {
-            worldWindow.SetLatLonGridShow(m_IsLL=!m_IsLL);
+            worldWindow.SetLatLonGridShow(m_IsLL = !m_IsLL);
         }
 
         private void m_zhibeizhen_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+
 
         }
 
         private void m_showlayers_ItemClick(object sender, ItemClickEventArgs e)
+        {
+        }
+
+        private void m_scollerbar_ItemClick(object sender, ItemClickEventArgs e)
         {
         }
     }

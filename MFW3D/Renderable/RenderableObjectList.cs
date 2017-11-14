@@ -12,22 +12,10 @@ using System.Threading;
 namespace MFW3D.Renderable
 {
 	/// <summary>
-	/// Represents a parent node in the layer manager tree.  Contains a list of sub-nodes.
+	/// 图层管理树，管理节点
 	/// </summary>
 	public class RenderableObjectList : RenderableObject
 	{
-        // we use a ReaderWriterLock even though it's 5 times slower than Monitor (lock) because
-        // performance is sufficient for low RO counts but large RO counts apperared to lock up
-        // Render when Update was doing something time consuming with sequential locking (monitor).  
-        // The only time we get a write lock is when we add or remove from m_children.  Mostly reads
-        // are done.
-        //
-        // RWL has some issues and will be replaced in .NET 3.5 with ReaderWriterLockSlim.  We could
-        // also implement our own.
-        //
-        // RWL was added because adding ROs to a ROL would cause exceptions and flickers since
-        // any enumerators would go bad when the ArrayList changed.
-        //
         protected ReaderWriterLock m_childrenRWLock = new ReaderWriterLock();
 		protected ArrayList m_children = new ArrayList();
 
@@ -49,16 +37,6 @@ namespace MFW3D.Renderable
 			set{ m_disableExpansion = value; }
 		}
         private bool m_disableExpansion = false;
-
-        /// <summary>
-        /// This ROL needs to be sorted because either something was added or render priority was changed.
-        /// </summary>
-        //public bool NeedsSort
-        //{
-        //    get { return m_needsSort; }
-        //    set { m_needsSort = value; }
-        //}
-        //private bool m_needsSort = false;
 
 		public System.Timers.Timer RefreshTimer
 		{
@@ -116,7 +94,7 @@ namespace MFW3D.Renderable
 		}
 
         /// <summary>
-        /// Return the first direct child with a given name.
+        /// 返回第一个显示的对象名字
         /// </summary>
         /// <example>Get the placenames LayerSet.
         /// <code>
@@ -147,7 +125,7 @@ namespace MFW3D.Renderable
         }
 
         /// <summary>
-        /// Return a list of all direct and indirect children that match the given name and/or object type.
+        /// 返回直接或间接的对象，根据名字查询
         /// </summary>
         /// <example> Get all QuadTileSets defined in this world:
         /// <code>
@@ -234,15 +212,6 @@ namespace MFW3D.Renderable
             return result;
         }
 
-        public override void BuildContextMenu(ContextMenu menu)
-        {
-            menu.MenuItems.Add("Check all children", new EventHandler(OnCheckAllChildrenClick));
-            menu.MenuItems.Add("Uncheck all children", new EventHandler(OnUncheckAllChildrenClick));
-            menu.MenuItems.Add("-");
-
-            base.BuildContextMenu(menu);
-        }
-
 		public virtual void TurnOffAllChildren()
 		{
             m_childrenRWLock.AcquireReaderLock(Timeout.Infinite);
@@ -291,7 +260,7 @@ namespace MFW3D.Renderable
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected virtual void OnCheckAllChildrenClick(object sender, EventArgs e)
+        public void GetCheckAllChildren()
         {
             this.TurnOnAllChildren();
         }
@@ -301,7 +270,7 @@ namespace MFW3D.Renderable
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected virtual void OnUncheckAllChildrenClick(object sender, EventArgs e)
+        public void GetUncheckAllChildren()
         {
             this.TurnOffAllChildren();
         }
@@ -604,7 +573,7 @@ namespace MFW3D.Renderable
 
 
         /// <summary>
-        /// Add a child object to this layer.  If the new object has the same name as an existing object in this 
+        /// 添加对象到图层.  If the new object has the same name as an existing object in this 
         /// ROL it gets a number appended.  If the new object is a ROL and there was already a ROL with the same 
         /// name then the children of the new ROL gets added to the old ROL.
         /// 

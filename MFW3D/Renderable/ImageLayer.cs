@@ -62,7 +62,7 @@ namespace MFW3D.Renderable
 
 		TimeSpan cacheExpiration = TimeSpan.MaxValue;
 		System.Timers.Timer refreshTimer = null;
-		#region Properties
+		#region  Ù–‘
 		
 		/// <summary>
 		/// Gets or sets the color used for transparent areas.
@@ -1075,19 +1075,6 @@ namespace MFW3D.Renderable
 			this.isInitialized = false;
 			CreateMesh();
 			this.isInitialized = true;
-		}
-
-		public override void BuildContextMenu(System.Windows.Forms.ContextMenu menu)
-		{
-			base.BuildContextMenu(menu);
-
-			if(m_legendImagePath == null || m_legendImagePath.Length <= 0)
-				return;
-
-			// Add legend menu item
-			System.Windows.Forms.MenuItem mi = new System.Windows.Forms.MenuItem("&Show Legend", 
-				new EventHandler(OnLegendClick) );
-			menu.MenuItems.Add(0, mi);
 		}
 
 		/// <summary>

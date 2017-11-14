@@ -3,7 +3,7 @@ using System;
 namespace MFW3D.Renderable
 {
 	/// <summary>
-	/// 
+	/// ø…‰÷»æ∂‘œÛ
 	/// </summary>
 	interface IRenderable : IDisposable
 	{

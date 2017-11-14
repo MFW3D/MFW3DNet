@@ -87,23 +87,6 @@ namespace MFW3D
 
 		System.Threading.Thread m_updateThread = null;
 
-        /// <summary>
-        /// Builds context menu for renderable
-        /// </summary>
-        /// <param name="menu"></param>
-        public override void BuildContextMenu(ContextMenu menu)
-        {
-            MenuItem pause = new MenuItem("Pause");
-            pause.Click += new EventHandler(pause_Click);
-            pause.Checked = !m_playing;
-            menu.MenuItems.Add(pause);
-
-            MenuItem seperator = new MenuItem("-");
-            menu.MenuItems.Add(seperator);
-
-            base.BuildContextMenu(menu);
-        }
-
         void pause_Click(object sender, EventArgs e)
         {
             m_playing = !m_playing;

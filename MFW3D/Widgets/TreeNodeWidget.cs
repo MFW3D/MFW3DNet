@@ -123,7 +123,7 @@ namespace MFW3D.NewWidgets
 
 		protected int m_xOffset = 0;
 
-		#region Properties
+		#region  Ù–‘
 
 		public string ImageName
 		{

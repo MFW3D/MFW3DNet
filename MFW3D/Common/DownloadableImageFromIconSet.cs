@@ -26,7 +26,7 @@ namespace MFW3D.Renderable
 		DownloadableIcon[] returnList = new DownloadableIcon[0];
 		#endregion
 
-		#region Properties
+		#region  Ù–‘
 		public DownloadableIcon[] DownloadableIcons
 		{
 			get{ return returnList; }

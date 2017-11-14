@@ -558,29 +558,6 @@ namespace MFW3D.Renderable
         }
 
         /// <summary>
-        /// Builds the context menu for this icon
-        /// </summary>
-        /// <param name="menu"></param>
-        public override void BuildContextMenu(ContextMenu menu)
-        {
-            // initialize context menu
-            MenuItem gotoMenuItem = new MenuItem("Goto Location", new EventHandler(IconGotoMenuItem_Click));
-
-            MenuItem hookMenuItem = new MenuItem("Hook " + name, new EventHandler(IconHookMenuItem_Click));
-
-            MenuItem urlMenuItem = new MenuItem("Open URL", new EventHandler(IconURLMenuItem_Click));
-
-            if ((ClickableActionURL == null) || (ClickableActionURL.Length <= 0))
-            {
-                urlMenuItem.Enabled = false;
-            }
-
-            menu.MenuItems.Add(gotoMenuItem);
-            menu.MenuItems.Add(hookMenuItem);
-            menu.MenuItems.Add(urlMenuItem);
-        }
-
-        /// <summary>
         /// Called before icon render.  If the user has clicked on one of the GoTos head there now.
         /// Renders 3-D model and history trails.  If you want to only show models or trails on
         /// mouseover set the TrailShowDistance or ModelShowDistance to 0.

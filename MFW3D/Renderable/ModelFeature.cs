@@ -15,8 +15,7 @@ using System.Threading;
 namespace MFW3D.Renderable
 {
     /// <summary>
-    /// This class Loads and Renders at a specific lat,lon,alt a given
-    /// Model(ie Textured Mesh) in Direct X or Other supported Format
+    ///加载渲染模型，设置经纬度，direct支持的模型或其他模型
     /// </summary>
     public class ModelFeature : MFW3D.Renderable.RenderableObject
     {
@@ -78,7 +77,7 @@ namespace MFW3D.Renderable
         }
         #endregion
 
-        #region Properties
+        #region 属性
         /// <summary>
         /// Gets/sets model latitude
         /// </summary>

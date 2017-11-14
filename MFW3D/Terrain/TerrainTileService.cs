@@ -28,7 +28,7 @@ namespace MFW3D.Terrain
         protected string m_dataType;
         #endregion
 
-        #region Properties
+        #region  Ù–‘
         public string ServerUrl
 		{
 			get

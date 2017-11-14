@@ -537,7 +537,6 @@ namespace MFW3D.Menu
                 ContextMenu = null;
             }
             ContextMenu = new ContextMenu();
-            item.RenderableObject.BuildContextMenu(ContextMenu);
             ContextMenu.Show(item.ParentControl, new System.Drawing.Point(x, y));
         }
 
