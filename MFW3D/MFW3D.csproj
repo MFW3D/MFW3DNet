@@ -188,6 +188,7 @@
     <Compile Include="GeoPortal3D\Widgets\Compass.cs" />
     <Compile Include="GeoPortal3D\Widgets\Slider.cs" />
     <Compile Include="GeoPortal3D\Widgets\SliderType.cs" />
+    <Compile Include="Layers\Layer3D.cs" />
     <Compile Include="OgrVector\NoDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -569,7 +570,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Shaders\grayscale.fx" />
-    <None Include="ClassMap.cd" />
     <None Include="Common\ImageTileRequest.cs">
       <SubType>Code</SubType>
     </None>
