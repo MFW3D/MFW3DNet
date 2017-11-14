@@ -16,14 +16,7 @@ namespace Stars3D.Plugin
 	/// </summary>
 	public class Stars3D : MFW3D.PluginEngine.Plugin 
 	{
-		/// <summary>
-		/// Name displayed in layer manager
-		/// </summary>
 		public static string LayerName = "Starfield";
-
-		/// <summary>
-		/// Plugin entry point - All plugins must implement this function
-		/// </summary>
 		public override void Load() 
 		{
 			if(Global.worldWindow.CurrentWorld != null && Global.worldWindow.CurrentWorld.Name.IndexOf("SDSS") == -1)
@@ -32,18 +25,12 @@ namespace Stars3D.Plugin
 				Global.worldWindow.CurrentWorld.RenderableObjects.ChildObjects.Insert(0,layer);
 			}
 		}
-		/// <summary>
-		/// Unloads our plugin
-		/// </summary>
 		public override void Unload() 
 		{
 			Global.worldWindow.CurrentWorld.RenderableObjects.Remove(LayerName);
 		}
 	}
 
-	/// <summary>
-	/// Sky dome
-	/// </summary>
 	public class Stars3DLayer : RenderableObject
 	{
 		static string version = "1.1";
@@ -54,18 +41,16 @@ namespace Stars3D.Plugin
 		Form pDialog;
 		private VertexBuffer StarListVB = null;
 		private int StarCount = 0;
-		private float FlareMag = 4;		// Bright stars flare threshold magnitude
+		private float FlareMag = 4;		
 		private Mesh FlareMesh;
 		private int FlareCount = 0;
-		private bool showFlares = true;		// Default show bright stars flare
+		private bool showFlares = true;
 		private int refWidth;		
 		private double sphereRadius;
 		private Texture texture;
 		public string textureFileName = "Flare.png";
         private bool m_initialIsOnFlag = true;
         
-
-		// default star catalog
 		public string catalogFileName = "Hipparcos_Stars_Mag6x5044.tsv";
 
 		/// <summary>

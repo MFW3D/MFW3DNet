@@ -37,11 +37,11 @@ namespace MFW3D
         private string saveScreenShotFilePath;
         private ImageFileFormat saveScreenShotImageFileFormat = ImageFileFormat.Bmp;
         private bool m_WorkerThreadRunning;
-        private bool m_isRenderDisabled; // WW不活越的时候节省CPU
+        private bool m_isRenderDisabled; 
         private bool isMouseDragging;
         private Point mouseDownStartPosition = Point.Empty;
         private bool renderWireFrame;
-
+        //fps时钟
         private System.Timers.Timer m_FpsTimer = new System.Timers.Timer(250);
         bool m_FpsUpdate = false;
         private LineGraph m_FpsGraph = new LineGraph();
@@ -168,8 +168,6 @@ namespace MFW3D
                     m_FpsTimer.Start();
 
                     TimeKeeper.Start();
-                    //	WorldWind.Widgets.LayerManager layerManager = new WorldWind.Widgets.LayerManager();
-                    //	m_RootWidget.ChildWidgets.Add(layerManager);
 
                     //显示菜单栏
                     //_menuBar.IsActive = true;
@@ -189,6 +187,9 @@ namespace MFW3D
         }
 
         #region 私有方法
+        /// <summary>
+        /// d3d初始化
+        /// </summary>
         private void InitializeGraphics()
         {
             // Set up our presentation parameters
@@ -198,7 +199,6 @@ namespace MFW3D
             m_presentParams.SwapEffect = SwapEffect.Discard;
             m_presentParams.AutoDepthStencilFormat = DepthFormat.D16;
             m_presentParams.EnableAutoDepthStencil = true;
-
             if (!World.Settings.VSync)
                 // Disable wait for vertical retrace (higher frame rate at the expense of tearing)
                 m_presentParams.PresentationInterval = PresentInterval.Immediate;
@@ -299,13 +299,12 @@ namespace MFW3D
             this.drawArgs.screenHeight = this.Height;
             this.drawArgs.screenWidth = this.Width;
         }
+
         private void m_FpsTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             if (m_FpsUpdate)
                 return;
-
             m_FpsUpdate = true;
-
             try
             {
                 if (World.Settings.ShowFpsGraph)
@@ -365,9 +364,7 @@ namespace MFW3D
 
         #region 公共方法
 
-        /// <summary>
-        /// Go to worldwind URI
-        /// </summary>
+        //用于定位的方法
         public void Goto(MFW3D.Net.WorldWindUri uri)
         {
             GotoLatLon(
@@ -377,16 +374,6 @@ namespace MFW3D
             drawArgs.UpperLeftCornerText = uri.ToString();
             CurrentWorld.RenderableObjects.Enable(uri.Layer);
         }
-
-        /// <summary>
-        /// 定位
-        /// </summary>
-        /// <param name="latitude">Latitude in degrees of target position. (-90 - 90).</param>
-        /// <param name="longitude">Longitude in degrees of target position. (-180 - 180).</param>
-        /// <param name="heading">Camera heading in degrees (0-360) or double.NaN for no change.</param>
-        /// <param name="altitude">Camera altitude in meters or double.NaN for no change.</param>
-        /// <param name="perpendicularViewRange"></param>
-        /// <param name="tilt">Camera tilt in degrees (-90 - 90) or double.NaN for no change.</param>
         public void GotoLatLon(double latitude, double longitude, double heading, double altitude, double perpendicularViewRange, double tilt)
         {
             if (!double.IsNaN(perpendicularViewRange))
@@ -465,13 +452,8 @@ namespace MFW3D
         /// </summary>
         public void OnApplicationIdle(object sender, EventArgs e)
         {
-            // Sleep will always overshoot by a bit so under-sleep by
-            // 2ms in the hopes of never oversleeping.
             const float SleepOverHeadSeconds = 2e-3f;
-
-            // Overhead associated with displaying the frame
             const float PresentOverheadSeconds = 0;//3e-4f;
-
             try
             {
                 if (Parent.Focused && !Focused)
@@ -481,9 +463,7 @@ namespace MFW3D
                 {
                     if (!World.Settings.AlwaysRenderWindow && m_isRenderDisabled && !World.Settings.CameraHasMomentum)
                         return;
-
                     Render();
-
                     if (World.Settings.ThrottleFpsHz > 0)
                     {
                         // optionally throttle the frame rate (to get consistent frame
@@ -818,6 +798,10 @@ namespace MFW3D
             captionText = captionText.Trim();
             DrawTextFormat dtf = DrawTextFormat.NoClip | DrawTextFormat.WordBreak | DrawTextFormat.Right;
             positionAlpha += positionAlphaStep;
+
+            if (positionAlpha < positionAlphaMin)
+                positionAlpha = positionAlphaMin;
+
             if (positionAlpha > positionAlphaMax)
                 positionAlpha = positionAlphaMax;
 

@@ -2601,26 +2601,6 @@
             The plugin (main class)
             </summary>
         </member>
-        <member name="F:Stars3D.Plugin.Stars3D.LayerName">
-            <summary>
-            Name displayed in layer manager
-            </summary>
-        </member>
-        <member name="M:Stars3D.Plugin.Stars3D.Load">
-            <summary>
-            Plugin entry point - All plugins must implement this function
-            </summary>
-        </member>
-        <member name="M:Stars3D.Plugin.Stars3D.Unload">
-            <summary>
-            Unloads our plugin
-            </summary>
-        </member>
-        <member name="T:Stars3D.Plugin.Stars3DLayer">
-            <summary>
-            Sky dome
-            </summary>
-        </member>
         <member name="M:Stars3D.Plugin.Stars3DLayer.#ctor(System.String,System.String,MFW3D.WorldWindow)">
             <summary>
             Constructor

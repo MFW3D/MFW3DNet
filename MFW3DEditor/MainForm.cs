@@ -622,7 +622,6 @@ namespace MFW3DEditor
 
         private void m_showlayers_ItemClick(object sender, ItemClickEventArgs e)
         {
-
         }
     }
 }
