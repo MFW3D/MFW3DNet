@@ -777,71 +777,6 @@
             Summary description for ResourceCache.
             </summary>
         </member>
-        <member name="T:MFW3D.FileLoader">
-            <summary>
-            GUI to select a file or url to load
-            </summary>
-        </member>
-        <member name="F:MFW3D.FileLoader.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:MFW3D.FileLoader.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:MFW3D.FileLoader.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:MFW3D.FileLoader.#ctor">
-            <summary>
-            Constructor for the file loader GUI
-            </summary>
-            <param name="app"></param>
-        </member>
-        <member name="M:MFW3D.FileLoader.#ctor(System.String)">
-            <summary>
-            Constructor for the file loader GUI
-            </summary>
-            <param name="app"></param>
-        </member>
-        <member name="T:MFW3D.GotoDialog">
-            <summary>
-            Place Finder (placename search) dialog
-            </summary>
-        </member>
-        <member name="M:MFW3D.GotoDialog.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:MFW3D.GotoDialog.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:MFW3D.GotoDialog.#ctor(MFW3D.WorldWindow,WorldXmlDescriptor.WorldType,System.String)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.GotoDialog"/> class.
-            </summary>
-            <param name="ww"></param>
-            <param name="currentWorld"></param>
-            <param name="worldsXMLFilePath"></param>
-        </member>
-        <member name="M:MFW3D.GotoDialog.PositionUpDowns_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
-            <summary>
-            Enter key in Longitude/latitude/altitude = "Go"
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
         <member name="T:MFW3D.PathMaker">
             <summary>
             Summary description for PathMaker.
@@ -899,50 +834,6 @@
         <member name="M:MFW3D.PlaceBuilder.updateStatusBar(System.String)">
             <summary>
             Updates status bar message (thread safe)
-            </summary>
-        </member>
-        <member name="T:MFW3D.PlaceFinder">
-            <summary>
-            Summary description for PlaceFinder.
-            </summary>
-        </member>
-        <member name="F:MFW3D.PlaceFinder.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PlaceFinder.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PlaceFinder.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:MFW3D.PlaceFinder.SearchOnline">
-            <summary>
-            Search WWC's placename db
-            </summary>
-        </member>
-        <member name="M:MFW3D.PlaceFinder.gmSearch_Click(System.Object,System.EventArgs)">
-            <summary>
-            The Google API Key registered against http://worldwind.arc.nasa.gov/
-            is ABQIAAAACa4WGp5Uv52H7G0K5NI5sBTvg4F4NXNiK5VsCB5rxeWSfz3KRBROXKeNOov5-8cqJUzDuisDCCxI2Q
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:MFW3D.PlaceFinderLoader.Load">
-            <summary>
-            Plugin entry point 
-            </summary>
-        </member>
-        <member name="M:MFW3D.PlaceFinderLoader.Unload">
-            <summary>
-            Unload our plugin
             </summary>
         </member>
         <member name="T:MFW3D.PropertyBrowserForm">

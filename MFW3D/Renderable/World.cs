@@ -79,10 +79,7 @@ namespace MFW3D
 		
 		static World()
 		{
-			// Don't load settings here - use LoadSettings explicitly
-			//LoadSettings();
 		}
-
 
 		public World(string name, Vector3 position, Quaternion orientation, double equatorialRadius,
 			string cacheDirectory,
@@ -178,7 +175,10 @@ namespace MFW3D
 				Log.Write(caught);
 			}
 		}
-
+    
+        /// <summary>
+        /// 地形生成器
+        /// </summary>
 		public TerrainAccessor TerrainAccessor
 		{
 			get

@@ -274,9 +274,6 @@
     <Compile Include="Forms\ExternalLayerManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FileLoader.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Plugins\FloodLevel.cs" />
     <Compile Include="Plugins\GeoRSS.cs" />
     <Compile Include="Plugins\GlobeCursor.cs" />
@@ -313,9 +310,6 @@
     <Compile Include="GpsPlugin\POIName.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\GotoDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Plugins\Joystick.cs" />
     <Compile Include="Plugins\KMLImporter.cs" />
     <Compile Include="Plugins\LayerManager.cs" />
@@ -348,9 +342,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\PlaceBuilder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PlaceFinder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\PropertyBrowserForm.cs">
@@ -423,10 +414,6 @@
       <DependentUpon>FloodLevel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GotoDialog.resx">
-      <DependentUpon>GotoDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="GpsPlugin\GPSTracker.resx">
       <DependentUpon>GPSTracker.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -462,10 +449,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlaceBuilder.resx">
       <DependentUpon>PlaceBuilder.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PlaceFinder.resx">
-      <DependentUpon>PlaceFinder.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -506,10 +489,6 @@
   <ItemGroup>
     <None Include="images\outline.psd" />
     <None Include="images\stop.gif" />
-    <EmbeddedResource Include="Forms\FileLoader.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FileLoader.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GpsPlugin\GPSTrackerPlugin.PlaybackControl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>GPSTrackerPlugin.PlaybackControl.cs</DependentUpon>

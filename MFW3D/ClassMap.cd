@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MFW3D.ImageStore" Collapsed="true">
+    <Position X="1.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EooAAAQIQAABVQIESCAWACQIIAIAAAAEAADAAIAAJAA=</HashCode>
+      <FileName>Common\ImageStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.NltImageStore" Collapsed="true">
+    <Position X="0.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAEAAgAgAAAAAAEAAAAAgAAAAA=</HashCode>
+      <FileName>Common\NltImageStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.PlaceListSettings" Collapsed="true">
+    <Position X="11.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\PlaceListSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.FavoritesSettings" Collapsed="true">
+    <Position X="10.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\PlaceListSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.HistorySettings" Collapsed="true">
+    <Position X="13" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\PlaceListSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.PlaceItem" Collapsed="true">
+    <Position X="6.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAgAAAAAAAQAAAAAAAABAAAIA=</HashCode>
+      <FileName>Common\WplIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.IndexedPlace" Collapsed="true">
+    <Position X="6.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Common\WplIndex.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.WWListView" Collapsed="true">
+    <Position X="3.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAQgAAAAAAAAAAAAAAAAAAAIAAAAAAAAAgA=</HashCode>
+      <FileName>Common\WWListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.WWPlaceListView" Collapsed="true">
+    <Position X="3.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAogAAAKgABEAABAAAAAAAAKAAAEAABAoCAEIAAgEA=</HashCode>
+      <FileName>Common\WWListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.WorldSettings" Collapsed="true">
+    <Position X="15.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>v9rVrzFS3GH402vHXhXhcpMfwXtfL8Dn52yafbZ/ib8=</HashCode>
+      <FileName>Core\WorldSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.WorldWindSettings" Collapsed="true">
+    <Position X="17.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABoAQQATAkDAAUAUYQABAiEAoAISCIASACgBAgAAAAE=</HashCode>
+      <FileName>Core\WorldWindSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.DynamicCloudLayer" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAQAiAAACCgAAUAAAgAQHIgIwOAACFAAUBIEQCEBAIw=</HashCode>
+      <FileName>Layers\DynamicCloudLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.ShapeFileLayer" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASCECCAAKAAQQEQkEIAABA0UAAABAIBIBAQwgABHBQ=</HashCode>
+      <FileName>Layers\ShapeFileLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.LineFeature" Collapsed="true">
+    <Position X="50.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwQwmwIkBCATgQAJEYIAAACgQQEEAAoGEBALAEFgYgA=</HashCode>
+      <FileName>Renderable\LineFeature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.PolygonFeature" Collapsed="true">
+    <Position X="57.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCYYERIhBCEDQUAJWQIAACSCQSQECgISERQJCAAiQIA=</HashCode>
+      <FileName>Renderable\PolygonFeature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.World" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQABQgEASIAAYABTQAAEYgg0BgAAFBCgBAAGACAoIA=</HashCode>
+      <FileName>Renderable\World.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.WidgetMenuButton" Collapsed="true">
+    <Position X="0.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACCEAACAAAAAAAAEABIAAAAAIBAAgAACAAA=</HashCode>
+      <FileName>WorldWindow\Widgets\WidgetMenuButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeometryUtility.CLine" Collapsed="true">
+    <Position X="0.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAEABAQAAAAAAAAAAAAAAAACkYQIAACAAAAA=</HashCode>
+      <FileName>Core\CLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeometryUtility.CLineSegment" Collapsed="true">
+    <Position X="0.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgAAAAAEBAQBAAAQAAACAAAEAAAAEAAAAAABBAQAg=</HashCode>
+      <FileName>Core\CLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.DownloadableImageFromIconSet" Collapsed="true">
+    <Position X="28.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAABAADAABQSAAgCCAAAAUAACAAAAABAAAAAEEAA=</HashCode>
+      <FileName>Common\DownloadableImageFromIconSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.DownloadableIcon" Collapsed="true">
+    <Position X="35" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAWCEBBQBGAAQUAABAIYAEIIcBESAAQAIRMGBAhNgVQ=</HashCode>
+      <FileName>Common\DownloadableImageFromIconSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.BoundaryLayer" Collapsed="true">
+    <Position X="39.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAICAIAQAQIAAAAAAAQAAQAAAAABAAgAAAAAA=</HashCode>
+      <FileName>Layers\BoundaryLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.ImageLayer" Collapsed="true">
+    <Position X="44" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAQieABSMCBiAUBAICQQCJAtcAgQY4ACMhEwAANIACA=</HashCode>
+      <FileName>Layers\ImageLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.MeshLayer" Collapsed="true">
+    <Position X="48.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAICAAACAAAQAAAAAACAAAQAABAAAAABAEAABAAAA=</HashCode>
+      <FileName>Layers\MeshLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.PolygonLayer" Collapsed="true">
+    <Position X="53" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAACAIAQAQICAAAAAAQAAAAIAAABgAgAAAAAA=</HashCode>
+      <FileName>Layers\PolygonLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.ScreenOverlay" Collapsed="true">
+    <Position X="62" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AA0AEAAAJCBEAQABBCAAAFhiQgBCKAjgADjDAAAAAAA=</HashCode>
+      <FileName>Layers\ScreenOverlay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.ShapeLayer" Collapsed="true">
+    <Position X="64.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCCCAQACIIAQACIAAAEEAAQAAAMAAAgBEAgAAAEAA=</HashCode>
+      <FileName>Layers\ShapeLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.WavingFlagLayer" Collapsed="true">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADQQAQAQJCAEEQABABIQgAggVAEAKACQEhAWAACAEAA=</HashCode>
+      <FileName>Layers\WavingFlagLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.Bar3D" Collapsed="true">
+    <Position X="21.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAABGIGQQBBABMYCigAQAQAAKCAABQAwgggACA=</HashCode>
+      <FileName>Renderable\Bar3D.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.Icon" Collapsed="true">
+    <Position X="24.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gM0jsqQgz2DxFbAzEaC5wUgi0IDTAtXzCDAqj2GCBOg=</HashCode>
+      <FileName>Renderable\Icon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.Icons" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYIFAACMCQQCQAAAiQQAwAgQIYAABAAABIAAAAAAIA=</HashCode>
+      <FileName>Renderable\Icons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.KMLIcon" Collapsed="true">
+    <Position X="23.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACCCAggAAAAAAAAAAAAAAACAACCAAAAAAAAAI=</HashCode>
+      <FileName>Renderable\KMLIcon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.LatLongGrid" Collapsed="true">
+    <Position X="37.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAACACCAAAQAAAACAAAAARQICIAACABBAAACBIEI=</HashCode>
+      <FileName>Renderable\LatLongGrid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.ModelFeature" Collapsed="true">
+    <Position X="41.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUMEACkNOADESABAGYMgAgAaAACBACQQBAFAEACARA=</HashCode>
+      <FileName>Renderable\ModelFeature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.PathLine" Collapsed="true">
+    <Position X="46.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUBgAAoACAAAQBAIgAQCBAIQAgAAAAiABAABAEAgAA=</HashCode>
+      <FileName>Renderable\PathLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.PathList" Collapsed="true">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAABgAACAAAQAAAAAAAAAAAYAAAACAAIAAAAABAQA=</HashCode>
+      <FileName>Renderable\PathList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.PointIcons" Collapsed="true">
+    <Position X="55.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQAJgAAACAQAQAAAIAAAgAAQAAAABgAARAABAAAAAA=</HashCode>
+      <FileName>Renderable\PointIcons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.QuadTileSet" Collapsed="true">
+    <Position X="59.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BcSOYAoQYnnh2cIRCARkItUHWV1gjMCOAF6Y+kElABQ=</HashCode>
+      <FileName>Renderable\QuadTileSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.RenderableObject" Collapsed="true">
+    <Position X="33.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQUBGBCCATAgCQQkAAGxqJQQQwEUAEQEABAQAABAIAA=</HashCode>
+      <FileName>Renderable\RenderableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.Renderable.RenderableObjectList" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARYAAARAADUQYQFAAQIQjgwARAAAIIIkKBIAQAAAgCA=</HashCode>
+      <FileName>Renderable\RenderableObjectList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.TerrainPath" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQcDgAAwACgAAQBAIggQCAAIUAgAgAAiABBAhAEAgAA=</HashCode>
+      <FileName>Renderable\TerrainPath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.TiledPlacenameSet" Collapsed="true">
+    <Position X="19.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJQAQBBAACAQAQEBSAAAAAAgQ4EAAAAQBBAAwggUgAA=</HashCode>
+      <FileName>Renderable\TiledPlacenameSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.TiledWFSPlacenameSet" Collapsed="true">
+    <Position X="30.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIQAQBBAACAQgQkBSAgAAAAgY4EAABAWBBIAwgAUgAA=</HashCode>
+      <FileName>Renderable\TiledWFSPlacenameSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.TrackIcon" Collapsed="true">
+    <Position X="26" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IqQBAgloiGCECQAEE8IQARCDQBiqCkRmhPxDAigrAIA=</HashCode>
+      <FileName>Renderable\TrackIcon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Renderable.Water" Collapsed="true">
+    <Position X="41.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAMCAAAACAAESAAIBAAAAAAQAAAAgAAABAAAAAAAgA=</HashCode>
+      <FileName>Renderable\Water.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Net.GeoSpatialDownloadRequest" Collapsed="true">
+    <Position X="5.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAgAABAAQ=</HashCode>
+      <FileName>Common\GeoSpatialDownloadRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Configuration.SettingsBase" Collapsed="true">
+    <Position X="14" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAgIAAAAAAAAAAAAACAAAAAAAAAAAAAIAQAABAAiI=</HashCode>
+      <FileName>Common\SettingsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Camera.CameraBase" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gwVAIiKDkUYkJwamsYBMjiaAKQ6Bl6lI7oCghCoAMAE=</HashCode>
+      <FileName>Core\Camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Camera.WorldCamera" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>VQRABAQAgQQCAACEEgggAAgIKAAAAgAAQAAQACZQAAA=</HashCode>
+      <FileName>Core\WorldCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Camera.MomentumCamera" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAABAAAAgAEAAAABAAAAAAAAgABAAAAAAAAEAA=</HashCode>
+      <FileName>Core\WorldCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Net.Wms.WmsImageStore" Collapsed="true">
+    <Position X="2.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEAAQAAACAAAAASUERYAAAAQAAABGAAEAAAAAAAA=</HashCode>
+      <FileName>Core\WMSLayerAccessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.DataSource.DataRequest" Collapsed="true">
+    <Position X="12.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAwyABAAwEAAAAIAIKCAQJABAAFAQEBACQCAA=</HashCode>
+      <FileName>DataSource\DataRequest.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.DataSource.DataRequestHTTP" Collapsed="true">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACBQAACAAAAAAAAAAgAAAAAAAAAgAAAACAACAABQ=</HashCode>
+      <FileName>DataSource\DataRequestHTTP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OgrVectorImporter.WaitMessage" Collapsed="true">
+    <Position X="32.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQADAAAACAAAQAAAAAAAAAAQAAAAACAABBACAAAAAA=</HashCode>
+      <FileName>OgrVector\WaitMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Menu.SideBarMenu" Collapsed="true">
+    <Position X="11.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABCCAAACQAAAQAEABABIIACAAKBCAAAACAAA=</HashCode>
+      <FileName>Renderable\Menu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.Menu.LayerManagerButton" Collapsed="true">
+    <Position X="3" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACCEgACAIAAAAAAAABIAAAAAIBAAgAACAAA=</HashCode>
+      <FileName>Renderable\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Menu.LayerManagerMenu" Collapsed="true">
+    <Position X="11.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBgKgAgCCEAACYI4CICAABBBMgAqIAJGAYAAACAUg=</HashCode>
+      <FileName>Renderable\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Menu.LayerShortcutMenuButton" Collapsed="true">
+    <Position X="5.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACCEAACAAAAAAAAABBIAAAAAIDAAgAACAAA=</HashCode>
+      <FileName>Renderable\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Menu.MenuButton" Collapsed="true">
+    <Position X="4" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RGQABAAAACCkAACGAAAEAAgCAZMCAgBAIBAQggAGBAA=</HashCode>
+      <FileName>Renderable\MenuButton.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.Terrain.NltTerrainAccessor" Collapsed="true">
+    <Position X="8.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACAgAAAAGAAAAAAAAAAAEBECAAAkAAAAAAA=</HashCode>
+      <FileName>Terrain\NltTerrainAccessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.Terrain.TerrainAccessor" Collapsed="true">
+    <Position X="8.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EECAAAAAACAgAIAAAABBAEQEEQAAABACAAAAgGABIAQ=</HashCode>
+      <FileName>Terrain\TerrainAccessor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.Terrain.TerrainDownloadRequest" Collapsed="true">
+    <Position X="5.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCABCAAAAAAgAAAAQAAAAAAEAAEAABAAAAEwAABAAQ=</HashCode>
+      <FileName>Terrain\TerrainDownloadRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.NewWidgets.FormWidget" Collapsed="true">
+    <Position X="9.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FyKiFoE8IjCjY4ryEOJehAWiGptJYAioPFKiTKIaSiA=</HashCode>
+      <FileName>Widgets\FormWidget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.NewWidgets.PanelWidget" Collapsed="true">
+    <Position X="0.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EiICEAAoAjChA4qyEMJYhASiGBtJQAiIPFKCTKISQCA=</HashCode>
+      <FileName>Widgets\PanelWidget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.NewWidgets.RootWidget" Collapsed="true">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiIgAAAMAAChAYCSEAJIBAQAEBtJQACIJBAABCACACA=</HashCode>
+      <FileName>Widgets\RootWidget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.NewWidgets.SimpleTreeNodeWidget" Collapsed="true">
+    <Position X="5.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Widgets\SimpleTreeNodeWidget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.NewWidgets.TreeNodeWidget" Collapsed="true">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GiMRmYAMCCCiiYyDGMJIBASiURtJRBmIJBSQDiKCEGg=</HashCode>
+      <FileName>Widgets\TreeNodeWidget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.NewWidgets.UpdateWidget" Collapsed="true">
+    <Position X="7.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAIgAAAAAAAAAAAAABAAAAABAAAAACAAA=</HashCode>
+      <FileName>Widgets\UpdateWidget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MFW3D.NewWidgets.WidgetCollection" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAAAAAQCAAABAQAAAAAAAAACAAAgABAAAA=</HashCode>
+      <FileName>Widgets\WidgetCollection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MFW3D.NewWidgets.WidgetMenuButton" Collapsed="true">
+    <Position X="7.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACCEAACAAAAAAAAEABIAAAAAIBAAgAACAAA=</HashCode>
+      <FileName>Widgets\WidgetMenuButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>
