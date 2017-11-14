@@ -317,7 +317,7 @@
     <Compile Include="GeoRSS\GeoRssForm.Designer.cs">
       <DependentUpon>GeoRssForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Renderable\DynamicCloudLayer.cs" />
+    <Compile Include="Layers\DynamicCloudLayer.cs" />
     <Compile Include="Renderable\Icons.cs" />
     <Compile Include="Renderable\IconTexture.cs" />
     <Compile Include="InternalWebBrowser.cs">
@@ -348,7 +348,7 @@
     <Compile Include="Core\BinaryTriangleTree.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Renderable\BoundaryLayer.cs">
+    <Compile Include="Layers\BoundaryLayer.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\BoundingBox.cs">
@@ -387,7 +387,7 @@
     <Compile Include="Common\ImageHelper.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Renderable\ImageLayer.cs">
+    <Compile Include="Layers\ImageLayer.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\ImageStore.cs">
@@ -423,7 +423,7 @@
     <Compile Include="Renderable\Menu.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Renderable\MeshLayer.cs">
+    <Compile Include="Layers\MeshLayer.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\NltImageStore.cs">
@@ -450,7 +450,7 @@
     <Compile Include="Renderable\PolygonFeature.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Renderable\PolygonLayer.cs">
+    <Compile Include="Layers\PolygonLayer.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\AnalyticGeometryException.cs">
@@ -495,10 +495,10 @@
     <Compile Include="Renderable\RenderableObjectList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Renderable\GeoSpatialDownloadRequest.cs">
+    <Compile Include="DataSource\GeoSpatialDownloadRequest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Renderable\ScreenOverlay.cs">
+    <Compile Include="Layers\ScreenOverlay.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\SettingsBase.cs">
@@ -507,10 +507,10 @@
     <Compile Include="ShapeFileInfoDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Renderable\ShapeFileLayer.cs">
+    <Compile Include="Layers\ShapeFileLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Renderable\ShapeLayer.cs">
+    <Compile Include="Layers\ShapeLayer.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\SunCalculator.cs">
@@ -560,7 +560,7 @@
     <Compile Include="VisualControl\PropertyBrowser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Renderable\WavingFlagLayer.cs" />
+    <Compile Include="Layers\WavingFlagLayer.cs" />
     <Compile Include="Renderable\Water.cs" />
     <Compile Include="WMS\WMS_server.cs" />
     <Compile Include="WMS\wms_server_listDoc.cs" />
@@ -609,12 +609,6 @@
     <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.RootWidget.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.TextBox.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="WorldWindow\Widgets\WorldWind.Widgets.TextLabel.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="WorldWindow\Widgets\WorldWindow.Widgets.Form.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -652,6 +646,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Shaders\grayscale.fx" />
+    <None Include="ClassMap.cd" />
     <None Include="Common\ImageTileRequest.cs">
       <SubType>Code</SubType>
     </None>

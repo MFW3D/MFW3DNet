@@ -170,7 +170,7 @@ namespace MFW3D
                     TimeKeeper.Start();
 
                     //显示菜单栏
-                    //_menuBar.IsActive = true;
+                    _menuBar.IsActive = true;
                 }
 
             }
@@ -1474,7 +1474,7 @@ namespace MFW3D
         }
         #endregion
 
-        #region 多线程方法
+        #region 地球渲染在工作线程
         private void WorkerThreadFunc()
         {
             const int refreshIntervalMs = 150; // Max 6 updates per seconds
@@ -1502,8 +1502,9 @@ namespace MFW3D
                     PerformanceTimer.QueryPerformanceCounter(ref endTicks);
                     float elapsedMilliSeconds = 1000 * (float)(endTicks - startTicks) / PerformanceTimer.TicksPerSecond;
                     float remaining = refreshIntervalMs - elapsedMilliSeconds;
-                    if (remaining > 0)
-                        Thread.Sleep((int)remaining);
+                    //maomao 不睡眠
+                    //if (remaining > 0)
+                    //   Thread.Sleep((int)remaining);
                 }
                 catch (Exception caught)
                 {

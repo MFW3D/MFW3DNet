@@ -1569,38 +1569,32 @@
         </member>
         <member name="T:MFW3D.Renderable.TrackIcon">
             <summary>
-            One icon in an icon layer
+            icon图层的icon
             </summary>
         </member>
         <member name="P:MFW3D.Renderable.TrackIcon.Heading">
             <summary>
-            The heading for this object (0-360) in degrees
+            朝向
             </summary>
         </member>
         <member name="P:MFW3D.Renderable.TrackIcon.Speed">
             <summary>
-            The speed of this object (knots)
-            </summary>
-        </member>
-        <member name="F:MFW3D.Renderable.TrackIcon.m_speed">
-            <summary>
-            The speed of this object (knots)
+            对象的速度
             </summary>
         </member>
         <member name="P:MFW3D.Renderable.TrackIcon.UpdateTime">
             <summary>
-            The date time of the last update
+            最近一次刷新时间
             </summary>
         </member>
         <member name="P:MFW3D.Renderable.TrackIcon.SourceTime">
             <summary>
-            The date time of the source for this update
+            源更新时间
             </summary>
         </member>
         <member name="P:MFW3D.Renderable.TrackIcon.IsSurfaceTrack">
             <summary>
-            Whether this object is a surface track that should hug the ground.
-            Default is false.
+            是否贴在地面上
             </summary>
         </member>
         <member name="F:MFW3D.Renderable.TrackIcon.m_iconTexture2Show">
@@ -3369,6 +3363,11 @@
             <summary>
             Loads visible place names from one file.
             If cache files are appropriately named only files in view are hit
+            </summary>
+        </member>
+        <member name="T:MFW3D.Renderable.Water">
+            <summary>
+            水系
             </summary>
         </member>
         <member name="T:MFW3D.InternalWebBrowserPanel">
@@ -5337,16 +5336,6 @@
         <member name="T:MFW3D.Widgets.RootWidget">
             <summary>
             Summary description for Widget.
-            </summary>
-        </member>
-        <member name="T:MFW3D.Widgets.TextBox">
-            <summary>
-            Summary description for TextLabel.
-            </summary>
-        </member>
-        <member name="T:MFW3D.Widgets.TextLabel">
-            <summary>
-            Summary description for TextLabel.
             </summary>
         </member>
         <member name="T:MFW3D.Widgets.IInteractive">
@@ -7324,75 +7313,68 @@
             </summary>
         </member>
         <member name="T:MFW3D.World">
-             <summary>
-            
-             </summary>
+            <summary>
+            世界渲染
+            </summary>
         </member>
         <member name="F:MFW3D.World.Settings">
             <summary>
-            Persisted user adjustable settings.
+            用户设置.
             </summary>
         </member>
         <member name="P:MFW3D.World.IsEarth">
             <summary>
-            Whether this world is planet Earth.
+            是否是地球
             </summary>
-        </member>
-        <member name="M:MFW3D.World.#ctor(System.String,Microsoft.DirectX.Vector3,Microsoft.DirectX.Quaternion,System.Double,System.String,MFW3D.Terrain.TerrainAccessor)">
-            <summary>
-            Initializes a new instance of the <see cref= "T:WorldWind.World"/> class.
-            </summary>
-            <param name="name"></param>
-            <param name="position"></param>
-            <param name="orientation"></param>
-            <param name="equatorialRadius"></param>
-            <param name="cacheDirectory"></param>
-            <param name="terrainAccessor"></param>
         </member>
         <member name="M:MFW3D.World.LoadSettings">
             <summary>
-            Deserializes settings from default location
+            从默认路径加载配置
             </summary>
         </member>
         <member name="M:MFW3D.World.LoadSettings(System.String)">
             <summary>
-            Deserializes settings from specified location
+            从指定路径加载配置
             </summary>
         </member>
         <member name="M:MFW3D.World.ApproxAngularDistance(MFW3D.Angle,MFW3D.Angle,MFW3D.Angle,MFW3D.Angle)">
             <summary>
-            Computes the great circle distance between two pairs of lat/longs.
-            TODO: Compute distance using ellipsoid.
+            计算亮点的大圈距离
             </summary>
         </member>
         <member name="M:MFW3D.World.ApproxDistance(MFW3D.Angle,MFW3D.Angle,MFW3D.Angle,MFW3D.Angle)">
             <summary>
-            Computes the distance between two pairs of lat/longs in meters.
+            计算亮点的距离
             </summary>
         </member>
         <member name="M:MFW3D.World.IntermediateGCPoint(System.Single,MFW3D.Angle,MFW3D.Angle,MFW3D.Angle,MFW3D.Angle,MFW3D.Angle,MFW3D.Angle@,MFW3D.Angle@)">
             <summary>
-            Intermediate points on a great circle
-            In previous sections we have found intermediate points on a great circle given either
-            the crossing latitude or longitude. Here we find points (lat,lon) a given fraction of the
-            distance (d) between them. Suppose the starting point is (lat1,lon1) and the final point
-            (lat2,lon2) and we want the point a fraction f along the great circle route. f=0 is
-            point 1. f=1 is point 2. The two points cannot be antipodal ( i.e. lat1+lat2=0 and
-            abs(lon1-lon2)=pi) because then the route is undefined.
+            大圆上的中间点
+            在前面的章节中，我们找到了一个大圆的中间点。
+            交叉纬度或经度。在这里，我们找到一个给定分数的分数
+            他们之间的距离（d）。假设的出发点是（LAT1、LON1）和最后一点
+            （LAT2，我们要沿着Lon2）大圆航线的一部分F点。f＝0是
+            点1。f＝1是第2点。这两点不能反足（即LAT1 + LAT2 = 0
+            ABS（lon1-lon2）=π）因为这样的路线是不确定的。
             </summary>
-            <param name="f">Fraction of the distance for intermediate point (0..1)</param>
+            <param name="f">中间点距离的分数（0…1）</param>
         </member>
         <member name="M:MFW3D.World.IntermediateGCPoint(System.Single,MFW3D.Angle,MFW3D.Angle,MFW3D.Angle,MFW3D.Angle,MFW3D.Angle)">
             <summary>
-            Intermediate points on a great circle
-            In previous sections we have found intermediate points on a great circle given either
-            the crossing latitude or longitude. Here we find points (lat,lon) a given fraction of the
-            distance (d) between them. Suppose the starting point is (lat1,lon1) and the final point
-            (lat2,lon2) and we want the point a fraction f along the great circle route. f=0 is
-            point 1. f=1 is point 2. The two points cannot be antipodal ( i.e. lat1+lat2=0 and
-            abs(lon1-lon2)=pi) because then the route is undefined.
+            大圆上的中间点
+            在前面的部分中，我们找到了一个大圆的中间点。
+            或过境纬度或经度。在这里，我们找到一个给定分数的分数
+            他们之间的距离（d）。假设的出发点是（LAT1、LON1）和最后一点
+            （LAT2、Lon2）我们要沿大圆航线的一部分F点。f＝0是
+            1点。f＝1是第2点。这两点不能反足（即LAT1 + LAT2 = 0
+            ABS（lon1-lon2）=π）因为这样的路线是不确定的
             </summary>
             <param name="f">Fraction of the distance for intermediate point (0..1)</param>
+        </member>
+        <member name="T:MFW3D.AtmosphericScatteringSphere">
+            <summary>
+            大气层
+            </summary>
         </member>
         <member name="M:MFW3D.AtmosphericScatteringSphere.ColoredSpherePartial(MFW3D.DrawArgs,System.Single,System.Double,System.Double,System.Int32,System.Int32,System.Double,System.Double)">
             <summary>

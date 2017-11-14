@@ -16,14 +16,14 @@ using System.Collections.Generic;
 namespace MFW3D.Renderable
 {
 	/// <summary>
-	/// One icon in an icon layer
+	/// icon图层的icon
 	/// </summary>
 	public class TrackIcon : MFW3D.Renderable.Icon
     {
         protected bool m_gotoMe = false;
 
         /// <summary>
-        /// The heading for this object (0-360) in degrees
+        /// 朝向
         /// </summary>
         public double Heading
         {
@@ -35,7 +35,7 @@ namespace MFW3D.Renderable
         }
 
         /// <summary>
-        /// The speed of this object (knots)
+        /// 对象的速度
         /// </summary>
         public double Speed
         {
@@ -43,13 +43,10 @@ namespace MFW3D.Renderable
             set { m_speed = value; }
         }
 
-        /// <summary>
-        /// The speed of this object (knots)
-        /// </summary>
         protected double m_speed;
 
         /// <summary>
-        /// The date time of the last update
+        /// 最近一次刷新时间
         /// </summary>
         public DateTime UpdateTime
         {
@@ -59,7 +56,7 @@ namespace MFW3D.Renderable
         private DateTime m_updateTime;
 
         /// <summary>
-        /// The date time of the source for this update
+        /// 源更新时间
         /// </summary>
         public DateTime SourceTime
         {
@@ -69,8 +66,7 @@ namespace MFW3D.Renderable
         private DateTime m_sourceTime;
 
         /// <summary>
-        /// Whether this object is a surface track that should hug the ground.
-        /// Default is false.
+        /// 是否贴在地面上
         /// </summary>
         public bool IsSurfaceTrack
         {

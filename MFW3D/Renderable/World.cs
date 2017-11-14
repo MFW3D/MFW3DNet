@@ -12,19 +12,18 @@ using System.Collections.Generic;
 namespace MFW3D
 {
 	/// <summary>
-	///
+	/// 世界渲染
 	/// </summary>
 	public class World : RenderableObject
 	{
 		/// <summary>
-		/// Persisted user adjustable settings.
+		/// 用户设置.
 		/// </summary>
 		public static WorldSettings Settings = new WorldSettings();
 
 		#region 私有成员
 
 		double equatorialRadius;
-		// TODO: Add ellipsoid parameters to world.
 		const double flattening = 6378.135;
 		const double SemiMajorAxis = 6378137.0;
 		const double SemiMinorAxis = 6356752.31425;
@@ -46,7 +45,6 @@ namespace MFW3D
 			}
 		}
 
-        // this is a stub for fixing looping through every RO multiple times.
         private LinkedList<RenderableObject> iconList = new LinkedList<RenderableObject>();
 
 		#endregion
@@ -59,20 +57,9 @@ namespace MFW3D
 				return m_WorldSurfaceRenderer;
 			}
 		}
-/*		public string DataDirectory
-		{
-			get
-			{
-				return this._dataDirectory;
-			}
-			set
-			{
-				this._dataDirectory = value;
-			}
-		} */
 
 		/// <summary>
-		/// Whether this world is planet Earth.
+		/// 是否是地球
 		/// </summary>
 		public bool IsEarth
 		{
@@ -97,15 +84,6 @@ namespace MFW3D
 		}
 
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.World"/> class.
-		/// </summary>
-		/// <param name="name"></param>
-		/// <param name="position"></param>
-		/// <param name="orientation"></param>
-		/// <param name="equatorialRadius"></param>
-		/// <param name="cacheDirectory"></param>
-		/// <param name="terrainAccessor"></param>
 		public World(string name, Vector3 position, Quaternion orientation, double equatorialRadius,
 			string cacheDirectory,
 			TerrainAccessor terrainAccessor)
@@ -172,7 +150,7 @@ namespace MFW3D
 		}
 
 		/// <summary>
-		/// Deserializes settings from default location
+		/// 从默认路径加载配置
 		/// </summary>
 		public static void LoadSettings()
 		{
@@ -187,7 +165,7 @@ namespace MFW3D
 		}
 
 		/// <summary>
-		/// Deserializes settings from specified location
+		/// 从指定路径加载配置
 		/// </summary>
 		public static void LoadSettings(string directory)
 		{
@@ -590,8 +568,7 @@ namespace MFW3D
 		}
 
 		/// <summary>
-		/// Computes the great circle distance between two pairs of lat/longs.
-		/// TODO: Compute distance using ellipsoid.
+		/// 计算亮点的大圈距离
 		/// </summary>
 		public static Angle ApproxAngularDistance(Angle latA, Angle lonA, Angle latB, Angle lonB)
 		{
@@ -605,25 +582,25 @@ namespace MFW3D
 		}
 
 		/// <summary>
-		/// Computes the distance between two pairs of lat/longs in meters.
+		/// 计算亮点的距离
 		/// </summary>
 		public double ApproxDistance(Angle latA, Angle lonA, Angle latB, Angle lonB)
 		{
 			double distance = equatorialRadius * ApproxAngularDistance(latA, lonA, latB, lonB).Radians;
 			return distance;
-		}
+        }
 
-		/// <summary>
-		/// Intermediate points on a great circle
-		/// In previous sections we have found intermediate points on a great circle given either
-		/// the crossing latitude or longitude. Here we find points (lat,lon) a given fraction of the
-		/// distance (d) between them. Suppose the starting point is (lat1,lon1) and the final point
-		/// (lat2,lon2) and we want the point a fraction f along the great circle route. f=0 is
-		/// point 1. f=1 is point 2. The two points cannot be antipodal ( i.e. lat1+lat2=0 and
-		/// abs(lon1-lon2)=pi) because then the route is undefined.
-		/// </summary>
-		/// <param name="f">Fraction of the distance for intermediate point (0..1)</param>
-		public static void IntermediateGCPoint(float f, Angle lat1, Angle lon1, Angle lat2, Angle lon2, Angle d,
+        /// <summary>
+        /// 大圆上的中间点
+        /// 在前面的章节中，我们找到了一个大圆的中间点。
+        /// 交叉纬度或经度。在这里，我们找到一个给定分数的分数
+        /// 他们之间的距离（d）。假设的出发点是（LAT1、LON1）和最后一点
+        /// （LAT2，我们要沿着Lon2）大圆航线的一部分F点。f＝0是
+        /// 点1。f＝1是第2点。这两点不能反足（即LAT1 + LAT2 = 0
+        /// ABS（lon1-lon2）=π）因为这样的路线是不确定的。
+        /// </summary>
+        /// <param name="f">中间点距离的分数（0…1）</param>
+        public static void IntermediateGCPoint(float f, Angle lat1, Angle lon1, Angle lat2, Angle lon2, Angle d,
 			out Angle lat, out Angle lon)
 		{
 			double sind = Math.Sin(d.Radians);
@@ -636,19 +613,19 @@ namespace MFW3D
 			double z = A * Math.Sin(lat1.Radians) + B * Math.Sin(lat2.Radians);
 			lat = Angle.FromRadians(Math.Atan2(z, Math.Sqrt(x * x + y * y)));
 			lon = Angle.FromRadians(Math.Atan2(y, x));
-		}
+        }
 
-		/// <summary>
-		/// Intermediate points on a great circle
-		/// In previous sections we have found intermediate points on a great circle given either
-		/// the crossing latitude or longitude. Here we find points (lat,lon) a given fraction of the
-		/// distance (d) between them. Suppose the starting point is (lat1,lon1) and the final point
-		/// (lat2,lon2) and we want the point a fraction f along the great circle route. f=0 is
-		/// point 1. f=1 is point 2. The two points cannot be antipodal ( i.e. lat1+lat2=0 and
-		/// abs(lon1-lon2)=pi) because then the route is undefined.
-		/// </summary>
-		/// <param name="f">Fraction of the distance for intermediate point (0..1)</param>
-		public Vector3 IntermediateGCPoint(float f, Angle lat1, Angle lon1, Angle lat2, Angle lon2, Angle d)
+        /// <summary>
+        /// 大圆上的中间点
+        /// 在前面的部分中，我们找到了一个大圆的中间点。
+        /// 或过境纬度或经度。在这里，我们找到一个给定分数的分数
+        /// 他们之间的距离（d）。假设的出发点是（LAT1、LON1）和最后一点
+        /// （LAT2、Lon2）我们要沿大圆航线的一部分F点。f＝0是
+        /// 1点。f＝1是第2点。这两点不能反足（即LAT1 + LAT2 = 0
+        /// ABS（lon1-lon2）=π）因为这样的路线是不确定的
+        /// </summary>
+        /// <param name="f">Fraction of the distance for intermediate point (0..1)</param>
+        public Vector3 IntermediateGCPoint(float f, Angle lat1, Angle lon1, Angle lat2, Angle lon2, Angle d)
 		{
 			double sind = Math.Sin(d.Radians);
 			double cosLat1 = Math.Cos(lat1.Radians);
@@ -665,7 +642,9 @@ namespace MFW3D
 			return v;
 		}
 	}
-
+    /// <summary>
+    /// 大气层
+    /// </summary>
 	public class AtmosphericScatteringSphere
 	{
 		public float m_radius;

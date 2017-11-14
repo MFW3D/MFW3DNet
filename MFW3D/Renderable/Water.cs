@@ -1,14 +1,3 @@
-/********************************************************************
- * Ocean/Water Rendering code obtained from MDXInfo Site
- * Code added by Tisham Dhar(aka what_nick) in hope of later inspiration
- * As this code matures specific water bodies can be added with given 
- * water level or global water data set constructed using SRTM water
- * boundaries data.
- * 
- * 
- * ******************************************************************/
-
-
 using System;
 using Microsoft.DirectX;
 using Microsoft.DirectX.Direct3D;
@@ -17,6 +6,9 @@ using System.Drawing;
 
 namespace MFW3D.Renderable
 {
+    /// <summary>
+    /// 水系
+    /// </summary>
 	class Water : ModelFeature
 	{
 		#region 成员
@@ -76,23 +68,6 @@ namespace MFW3D.Renderable
             texture = TextureLoader.FromFile(device, textureFilename);
             isInitialized = true;
         }
-        /*
-        public override void Update(DrawArgs drawArgs)
-        {
-            if (!isInitialized)
-                this.Initialize(drawArgs);
-        }
-         */ 
-        /*
-		public void Update(Matrix matView, Matrix matProj)
-		{
-            /*
-			matWorld.Translate(0.0f, -80.0f, 0.0f);
-			this.matView = matView;
-			this.matProj = matProj;
-            
-		}
-        */
 
         new protected bool IsVisible(MFW3D.Camera.CameraBase camera)
         {
@@ -107,7 +82,6 @@ namespace MFW3D.Renderable
 		{
             if (errorMsg != null)
             {
-                //System.Windows.Forms.MessageBox.Show( errorMsg, "Model failed to load.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 errorMsg = null;
                 IsOn = false;
                 isInitialized = false;
@@ -248,41 +222,6 @@ namespace MFW3D.Renderable
             effect.SetValue("World", drawArgs.device.Transform.World);
             effect.SetValue("ViewI", viewI);
         }
-        /*
-		public void Render(Device device, Texture waterTexture)
-		{
-			float time = (float)(Environment.TickCount * 0.001);
-			waterTime += 0.002f;
-			//Calculate the matrices
-			Matrix modelViewProj = matWorld * matView * matProj;
-			Matrix modelViewIT = matWorld * matView * matProj;
-			modelViewIT.Invert();
-			modelViewIT = Matrix.TransposeMatrix(modelViewIT);
-			//set the technique
-			effect.Technique = "water";
-			//set the texturs
-			effect.SetValue("texture0", waterTexture);
-			effect.SetValue("texture1", texCube);
-			//set the matrices
-			effect.SetValue("ModelViewProj", modelViewProj);
-			effect.SetValue("ModelWorld", matWorld);
-			//set eye position
-			effect.SetValue("eyePos", new Vector4(450.0f, 250.0f, 750.0f, 1.0f));
-			//set the light position
-			effect.SetValue("lightPos", new Vector4((float)(300 * Math.Sin(time)), 40.0f, (float)(300 * Math.Cos(time)), 1.0f));
-			//set the time
-			effect.SetValue("time", waterTime);
-
-			//render the effect
-			//device.RenderState.AlphaBlendEnable = true;
-			effect.Begin(0);
-			effect.BeginPass(0);
-			mesh.DrawSubset(0);
-			effect.EndPass();
-			effect.End();
-			//device.RenderState.AlphaBlendEnable = false;
-		}
-        */
         public override void Dispose()
         {
             //set initialization state to false
