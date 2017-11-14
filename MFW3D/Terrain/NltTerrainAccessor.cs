@@ -42,7 +42,7 @@ namespace MFW3D.Terrain
 
 		#endregion
 
-		#region Public Methods
+		#region 公共方法
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref= "T:WorldWind.Terrain.NltTerrainAccessor"/> class.

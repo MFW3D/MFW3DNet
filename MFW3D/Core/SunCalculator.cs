@@ -5,7 +5,7 @@ using MFW3D;
 namespace MFW3D
 {
 	/// <summary>
-	/// Summary description for SunCalculator.
+	/// Ì«Ñô¼ÆËã
 	/// </summary>
 	public class SunCalculator
 	{
@@ -72,8 +72,6 @@ namespace MFW3D
 			return (int)Math.Floor((double)(1461 * (j + 4716)) / 4) + (int)Math.Floor((double)(153 * (m + 1) / 5)) + d + c - 1524.5;
 		}
 
-        // Compute Sun geocentric cartesian position given actual position on the globe, 
-        // heading, elevation and sun distance
         public static Point3d GetGeocentricPosition(Vector3 position, Angle heading, Angle elevation, double sunDistance)
         {
             // Untransformed sun pos from globe center

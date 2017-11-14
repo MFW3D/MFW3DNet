@@ -15,7 +15,7 @@ namespace MFW3D
     /// </summary>
     class GDALImageStore : ImageStore
     {
-        #region Private Members
+        #region к╫спЁит╠
         string m_dataSetName;
         OSGeo.GDAL.Dataset m_dataset;
         double[] m_transform = new double[6];

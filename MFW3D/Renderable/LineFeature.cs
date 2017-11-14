@@ -14,10 +14,10 @@ namespace MFW3D
     /// </summary>
     public class LineFeature : MFW3D.Renderable.RenderableObject
     {
-        #region Static Members
+        #region 静态成员
         #endregion
 
-        #region Private Members
+        #region 私有成员
         double m_distanceAboveSurface = 0;
         protected LinkedList<Point3d> m_points = new LinkedList<Point3d>();
         CustomVertex.PositionNormalTextured[] m_wallVertices = null;

@@ -102,7 +102,7 @@ namespace MFW3D.DataSource
     /// </summary>
     public abstract class DataRequest : IComparable
     {
-        #region Members
+        #region 成员
         protected Object m_lock;
         protected DataRequestDescriptor m_request;
         protected Stream m_contentStream;
@@ -180,14 +180,14 @@ namespace MFW3D.DataSource
 
         #endregion
 
-        #region Static Members
+        #region 静态成员
         static protected int m_cacheHits = 0;
         static protected int m_totalRequests = 0;
         static protected int m_totalBytes = 0;
         #endregion
 
 
-        #region Static Properties
+        #region 静态属性
         static public int CacheHits { get { return m_cacheHits; } }
         static public int TotalRequests { get { return m_totalRequests; } }
         static public int TotalBytes { get { return m_totalBytes; } }

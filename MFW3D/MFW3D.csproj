@@ -186,12 +186,9 @@
     <Compile Include="Common\WWListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Geometry\Angle.cs">
+    <Compile Include="Core\Angle.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GeoPortal3D\OldWidgets\Form.cs" />
-    <Compile Include="GeoPortal3D\OldWidgets\TextLabel.cs" />
-    <Compile Include="GeoPortal3D\OldWidgets\VisibleChangedHandler.cs" />
     <Compile Include="GeoPortal3D\Widgets\Compass.cs" />
     <Compile Include="GeoPortal3D\Widgets\Slider.cs" />
     <Compile Include="GeoPortal3D\Widgets\SliderType.cs" />
@@ -334,12 +331,12 @@
     <Compile Include="KMLReader\KMLLoader.cs" />
     <Compile Include="KMLReader\KMLNetworkLink.cs" />
     <Compile Include="KMLReader\KMLParser.cs" />
-    <Compile Include="Menu\MenuBar.cs" />
-    <Compile Include="Menu\MenuButton.cs" />
+    <Compile Include="Renderable\MenuBar.cs" />
+    <Compile Include="Renderable\MenuButton.cs" />
     <Compile Include="Renderable\ModelFeature.cs" />
     <Compile Include="Renderable\PointIcons.cs" />
-    <Compile Include="Geometry\PointSpriteVertex.cs" />
-    <Compile Include="Geometry\RayCasting.cs" />
+    <Compile Include="Core\PointSpriteVertex.cs" />
+    <Compile Include="Core\RayCasting.cs" />
     <Compile Include="Renderable\TrackIcon.cs" />
     <Compile Include="Core\WFSNameColors.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -348,16 +345,16 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Renderable\Bar3D.cs" />
-    <Compile Include="Geometry\BinaryTriangleTree.cs">
+    <Compile Include="Core\BinaryTriangleTree.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\BoundaryLayer.cs">
+    <Compile Include="Renderable\BoundaryLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\BoundingBox.cs">
+    <Compile Include="Core\BoundingBox.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\BoundingSphere.cs">
+    <Compile Include="Core\BoundingSphere.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\Cache.cs">
@@ -375,10 +372,10 @@
     <Compile Include="Common\DrawArgs.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\GeographicBoundingBox.cs">
+    <Compile Include="Core\GeographicBoundingBox.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\GeoSpatialDownloadRequest.cs">
+    <Compile Include="Common\GeoSpatialDownloadRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Renderable\Icon.cs">
@@ -408,22 +405,22 @@
     <Compile Include="LayerManagerItemInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geometry\LinearRing.cs">
+    <Compile Include="Core\LinearRing.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Renderable\LineFeature.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\LineGraph.cs">
+    <Compile Include="Core\LineGraph.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\LineString.cs">
+    <Compile Include="Core\LineString.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\MathEngine.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Menu\Menu.cs">
+    <Compile Include="Renderable\Menu.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Renderable\MeshLayer.cs">
@@ -441,13 +438,13 @@
     <Compile Include="Common\PerformanceTimer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\Point2d.cs">
+    <Compile Include="Core\Point2d.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\Point3d.cs">
+    <Compile Include="Core\Point3d.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\Polygon.cs">
+    <Compile Include="Core\Polygon.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Renderable\PolygonFeature.cs">
@@ -459,37 +456,37 @@
     <Compile Include="Common\AnalyticGeometryException.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\CLine.cs">
+    <Compile Include="Core\CLine.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\CPoint2D.cs">
+    <Compile Include="Core\CPoint2D.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\CPolygon.cs">
+    <Compile Include="Core\CPolygon.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\CPolygonShape.cs">
+    <Compile Include="Core\CPolygonShape.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\Definition.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\ProgressBar.cs">
+    <Compile Include="Renderable\ProgressBar.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\ProjectedVectorRenderer.cs">
+    <Compile Include="Renderable\ProjectedVectorRenderer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\ProjectedVectorTile.cs">
+    <Compile Include="Renderable\ProjectedVectorTile.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\QuadTile.cs">
+    <Compile Include="Renderable\QuadTile.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\QuadTileSet.cs">
+    <Compile Include="Renderable\QuadTileSet.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\Quaterniond.cs">
+    <Compile Include="Core\Quaterniond.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Renderable\RenderableObject.cs">
@@ -516,13 +513,13 @@
     <Compile Include="Renderable\ShapeLayer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\SunCalculator.cs">
+    <Compile Include="Core\SunCalculator.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Renderable\SurfaceImage.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Geometry\SurfaceTile.cs">
+    <Compile Include="Renderable\SurfaceTile.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Renderable\TerrainPath.cs">
@@ -554,7 +551,7 @@
       <DependentUpon>TimeSetterDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\Units.cs" />
-    <Compile Include="Geometry\ViewFrustum.cs">
+    <Compile Include="Core\ViewFrustum.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="VisualControl\ColorBar.cs">
@@ -720,6 +717,7 @@
     <Content Include="Resources\outline.gif" />
     <Content Include="Resources\stop.gif" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

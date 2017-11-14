@@ -12,7 +12,7 @@ namespace MFW3D.Renderable
 	/// </summary>
 	public class ShapeLayer : RenderableObject
 	{
-		#region Private Members
+		#region 私有成员
 		string _masterFilePath;
 		World _parentWorld;
 		double _minDisplayAltitude;
@@ -32,7 +32,7 @@ namespace MFW3D.Renderable
 		double _scalarMax;
 		#endregion
 
-		#region Public Methods
+		#region 公共方法
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref= "T:WorldWind.Renderable.ShapeLayer"/> class.
@@ -368,7 +368,7 @@ namespace MFW3D.Renderable
 
 	class ShapeRecord
 	{
-		#region Private Members
+		#region 私有成员
 		string _id;
 		string _polygonFile;
 		string _boundaryFile;
@@ -504,14 +504,14 @@ namespace MFW3D.Renderable
 		}
 		#endregion
 
-		#region Public Methods
+		#region 公共方法
 
 		#endregion
 	}
 
 	class ShapeIndex
 	{
-		#region Private Members
+		#region 私有成员
 		ShapeRecord[] _shapeRecords;
 		#endregion
 
@@ -529,7 +529,7 @@ namespace MFW3D.Renderable
 		}
 		#endregion
 
-		#region Public Methods
+		#region 公共方法
 		public static ShapeIndex FromFile(string indexFilePath)
 		{
 			try

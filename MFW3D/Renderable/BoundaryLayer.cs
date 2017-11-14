@@ -8,7 +8,7 @@ namespace MFW3D.Renderable
 {
 	public class BoundaryLayer : RenderableObject
 	{
-		#region Private Members
+		#region 私有成员
 		World _parentWorld;
 		double _distanceAboveSurface;
 		double _minDisplayAltitude;
@@ -18,7 +18,7 @@ namespace MFW3D.Renderable
 		CustomVertex.PositionColored[] vertices;
 		#endregion
 
-		#region Public Methods
+		#region 公共方法
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref= "T:WorldWind.Renderable.BoundaryLayer"/> class.

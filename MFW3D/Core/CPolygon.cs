@@ -3,11 +3,10 @@ using System;
 namespace GeometryUtility
 {
 	/// <summary>
-	/// Summary description for CPolygon.
+	/// 坐标系中的多边形
 	/// </summary>
 	public class CPolygon
 	{
-		
 		private CPoint2D[] m_aVertices;
 
 		public CPoint2D   this[int index] 
@@ -55,9 +54,7 @@ namespace GeometryUtility
 		}
 
 		/***********************************
-		 From a given point, get its vertex index.
-		 If the given point is not a polygon vertex, 
-		 it will return -1 
+		 根据给定点构建一个多边形，如果不是多边型返回-1
 		 ***********************************/
 		public int VertexIndex(CPoint2D vertex)
 		{
@@ -72,14 +69,14 @@ namespace GeometryUtility
 			return nIndex;
 		}
 
-		/***********************************
-		 From a given vertex, get its previous vertex point.
-		 If the given point is the first one, 
-		 it will return  the last vertex;
-		 If the given point is not a polygon vertex, 
-		 it will return null; 
+        /***********************************
+        从给定的顶点获取其先前的顶点。
+        如果给定的点是第一个点，
+        它将返回最后一个顶点；
+        如果给定的点不是多边形顶点，
+        它将返回null；
 		 ***********************************/
-		public CPoint2D PreviousPoint(CPoint2D vertex)
+        public CPoint2D PreviousPoint(CPoint2D vertex)
 		{
 			int nIndex;
 			
@@ -98,14 +95,14 @@ namespace GeometryUtility
 			}			
 		}
 
-		/***************************************
-			 From a given vertex, get its next vertex point.
-			 If the given point is the last one, 
-			 it will return  the first vertex;
-			 If the given point is not a polygon vertex, 
-			 it will return null; 
+        /***************************************
+        从给定的顶点，得到它的下一个顶点。
+        如果给定的点是最后一个，
+        它将返回第一个顶点；
+        如果给定的点不是多边形顶点，
+        它将返回null；
 		***************************************/
-		public CPoint2D NextPoint(CPoint2D vertex)
+        public CPoint2D NextPoint(CPoint2D vertex)
 		{
 			CPoint2D nextPt=new CPoint2D();
 

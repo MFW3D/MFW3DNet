@@ -38,7 +38,7 @@ namespace Collab.jhuapl.Util
 			Color.Orange.ToArgb()
 		};
 
-		#region private members
+		#region к╫спЁит╠
 		
 		private const int distanceFromRight = 65;
 		private const int distanceFromBottom = 5;

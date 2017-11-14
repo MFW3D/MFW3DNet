@@ -130,7 +130,7 @@ namespace jhuapl.sample
 	/// </summary>
 	public class GeoRSSMenuButton : MenuButton
 	{
-		#region Private Members
+		#region к╫спЁит╠
 
 		// The plugin associated with this button object
         internal static GeoRSSLoader m_plugin;

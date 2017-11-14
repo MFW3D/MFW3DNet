@@ -14,7 +14,7 @@ namespace MFW3D.DataSource
 {
     public class TextureSource : IDisposable
     {
-        #region Members
+        #region ≥…‘±
         private Texture m_texture = null;
         private DataRequest m_request = null;
         private DataRequestDescriptor m_drd;

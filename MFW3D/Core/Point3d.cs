@@ -5,7 +5,7 @@ using Microsoft.DirectX.Direct3D;
 namespace MFW3D
 {
 	/// <summary>
-	/// Summary description for Point3d.
+	/// ÈýÎ¬µã
 	/// </summary>
 	public class Point3d
 	{
@@ -58,13 +58,6 @@ namespace MFW3D
 			X = P.Z;
 		}
 
-		// assignment operators
-		/*Point3d operator = (Point3d P) // copy operator
-		{
-			x = P.x; y = P.y; z = P.z;
-			return *this;
-		}*/
-
 		// other operators
 		public double norm()	// L2 norm
 		{
@@ -81,31 +74,6 @@ namespace MFW3D
 			double n = norm();
 			return new Point3d(X / n, Y / n, Z / n);
 		}
-
-		/*Point3d operator *= (double k) // multiply by real
-		{
-			X *= k; Y *= k; Z *= k;
-			return this;
-		}*/
-
-		/*Point3d operator /= (const double k) // divide by real
-		{
-			assert (k != 0.);
-			x /= k; y /= k; z /= k;
-			return *this;
-		}*/
-
-		/*Point3d operator += (const Point3d & P)	// addition
-		{
-			x += P.x; y += P.y; z += P.z;
-			return *this;
-		}*/
-
-		/*inline Point3d & Point3d::operator -= (const Point3d & P) // subtraction
-		{
-			x -= P.x; y -= P.y; z -= P.z;
-			return *this;
-		}*/
 
 		public double Length
 		{
@@ -187,11 +155,6 @@ namespace MFW3D
 			return new Point3d (P1.Y * P2.Z - P1.Z * P2.Y,
 				P1.Z * P2.X - P1.X * P2.Z, P1.X * P2.Y - P1.Y * P2.X);
 		}
-
-		/*public Point3d operator *= (const Point3d & P) // cross product
-		{
-			return (*this = (*this) * P);
-		}*/
 
 		public static Point3d operator - ( Point3d P)	// negation
 		{

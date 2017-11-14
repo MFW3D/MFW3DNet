@@ -5,7 +5,7 @@ namespace MFW3D
 {
 	public class ImageTileService
 	{
-		#region Private Members
+		#region к╫спЁит╠
 		TimeSpan _cacheExpirationTime = TimeSpan.MaxValue;
 		string _datasetName;
 		string _serverUri;

@@ -1134,7 +1134,7 @@ namespace MFW3D.Menu
 
     public class LayerShortcutMenuButton : MenuButton
     {
-        #region Private Members
+        #region к╫спЁит╠
         bool _isPushed = false;
         MFW3D.Renderable.RenderableObject _ro;
         #endregion

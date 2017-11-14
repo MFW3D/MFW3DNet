@@ -4,7 +4,7 @@ using GeometryUtility;
 namespace PolygonCuttingEar
 {
 	/// <summary>
-	/// Summary description for Class1.
+	/// ∂‡±ﬂ–Œ√Ê
 	/// </summary>
 	public class CPolygonShape
 	{

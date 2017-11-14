@@ -4,7 +4,7 @@ using Utility;
 namespace MFW3D
 {
 	/// <summary>
-	/// Summary description for ProjectedVectorRenderer.
+	///  ∏¡ø‰÷»æ
 	/// </summary>
 	public class ProjectedVectorRenderer
 	{

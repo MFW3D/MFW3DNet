@@ -3,7 +3,7 @@ using System;
 namespace MFW3D
 {
 	/// <summary>
-	/// Summary description for GeographicBoundingBox.
+	/// Í¼ÐÎ°üº¬¿ò
 	/// </summary>
 	public class GeographicBoundingBox
 	{

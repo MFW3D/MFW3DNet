@@ -9,7 +9,7 @@ namespace MFW3D.Net.Wms
 	/// </summary>
 	public class WmsImageStore : ImageStore
 	{
-		#region Private Members
+		#region 私有成员
 		
 		string m_serverGetMapUrl;
 		string m_wmsLayerName;
@@ -123,7 +123,7 @@ namespace MFW3D.Net.Wms
 		}
 		#endregion
 
-		#region Public Methods
+		#region 公共方法
 		protected override string GetDownloadUrl(MFW3D.Renderable.QuadTile qt)
 		{
 			if(m_serverGetMapUrl.IndexOf('?')>=0)

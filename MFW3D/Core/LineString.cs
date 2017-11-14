@@ -4,7 +4,7 @@ using System.Drawing;
 namespace MFW3D
 {
 	/// <summary>
-	/// Summary description for LineString.
+	/// ÏßÎÄ±¾
 	/// </summary>
 	public class LineString
 	{

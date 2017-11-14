@@ -7,7 +7,7 @@ namespace MFW3D
 {
 	public class SurfaceImage : IComparable
 	{
-		#region Private Members
+		#region к╫спЁит╠
 		string m_ImageFilePath;
 		double m_North;
 		double m_South;

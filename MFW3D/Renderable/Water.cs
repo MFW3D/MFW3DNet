@@ -19,7 +19,7 @@ namespace MFW3D.Renderable
 {
 	class Water : ModelFeature
 	{
-		#region Members
+		#region ≥…‘±
 		private const string meshFilename = "Data/water.x";
 		private const string textureFilename = "Data/water.dds";
         //The cloud file is missing

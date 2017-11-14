@@ -4,7 +4,7 @@ using System.Drawing;
 namespace MFW3D
 {
 	/// <summary>
-	/// Polygon geometry used to rasterize vectors
+	/// ¶à±ßÐÎ
 	/// </summary>
 	public class Polygon
 	{

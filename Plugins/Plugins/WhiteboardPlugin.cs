@@ -130,7 +130,7 @@ namespace jhuapl.sample
 	/// </summary>
 	public class WhiteboardMenuButton : MenuButton
 	{
-		#region Private Members
+		#region к╫спЁит╠
 
 		// The plugin associated with this button object
 		internal static WhiteboardPlugin m_plugin;

@@ -10,7 +10,7 @@ namespace MFW3D.Menu
 {
     public abstract class MenuButton : IMenu
     {
-        #region Private Members
+        #region к╫спЁит╠
 
         private string _iconTexturePath;
         private Texture m_iconTexture;

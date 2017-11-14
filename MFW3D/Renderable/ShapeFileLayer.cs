@@ -2788,7 +2788,7 @@ namespace MFW3D
 
 	class ShapeRecord
 	{
-		#region Private Members
+		#region к╫спЁит╠
 		string m_Id;
 		Shapefile_Null m_Null = null;
 		Shapefile_Point m_Point = null;

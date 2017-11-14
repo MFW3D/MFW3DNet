@@ -2022,7 +2022,7 @@ namespace MFW3D
 
 	class WMSList
 	{
-		#region Private Members
+		#region 私有成员
 		MyWMSLayer[] _layers;
 		string _serverGetCapabilitiesUrl;
 		string _serverGetMapUrl;
@@ -2030,7 +2030,7 @@ namespace MFW3D
 		string _name;
 		#endregion
 
-		#region Public Methods
+		#region 公共方法
 		public WMSList(string name, string serverGetCapabilitiesUrl, string capabilitiesFilePath, string version)
 		{
 			this._name = name;
@@ -2577,7 +2577,7 @@ namespace MFW3D
 
 	class MyWMSLayer
 	{
-		#region Private Members
+		#region 私有成员
 		WMSList _parentWMSList;
 		private string[] _imageFormats;
 		private decimal _north;
@@ -2596,7 +2596,7 @@ namespace MFW3D
 		private WMSLayerStyle[] _styles;
 		#endregion
 		
-		#region Public Methods
+		#region 公共方法
 		public MyWMSLayer()
 		{
 		}
@@ -2975,7 +2975,7 @@ namespace MFW3D
 
 	class ImageLayerInfo
 	{
-		#region Private Members
+		#region 私有成员
 		private float _north;
 		private float _south;
 		private float _west;
@@ -2985,7 +2985,7 @@ namespace MFW3D
 		private string _description;
 		#endregion
 
-		#region Public Methods
+		#region 公共方法
 		public ImageLayerInfo()
 		{
 		}

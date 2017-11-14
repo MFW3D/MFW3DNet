@@ -6,7 +6,7 @@ using MFW3D.Menu;
 namespace MFW3D
 {
 	/// <summary>
-	/// Summary description for LineGraph.
+	/// ÏßÍ¼ÐÎ
 	/// </summary>
 	public class LineGraph
 	{

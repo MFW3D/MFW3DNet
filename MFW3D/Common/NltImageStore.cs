@@ -10,7 +10,7 @@ namespace MFW3D
 	/// </summary>
     public class NltImageStore : ImageStore
     {
-        #region Private Members
+        #region к╫спЁит╠
 
         string m_dataSetName;
         string m_serverUri;

@@ -3,7 +3,7 @@ using System;
 namespace MFW3D
 {
 	/// <summary>
-	/// Summary description for LinearRing.
+	/// µã¼¯ºÏ
 	/// </summary>
 	public class LinearRing
 	{

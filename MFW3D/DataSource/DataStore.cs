@@ -15,7 +15,7 @@ namespace MFW3D.DataSource
     /// </summary>
     public class DataStore
     {
-        #region Members
+        #region ≥…‘±
         /// <summary>
         /// The currently pending request descriptors. Requests are kept sorted according to priority.
         /// </summary>

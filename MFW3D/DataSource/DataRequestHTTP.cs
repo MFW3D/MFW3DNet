@@ -15,7 +15,7 @@ namespace MFW3D.DataSource
     /// </summary>
     public class DataRequestHTTP : DataRequest
     {
-        #region HTTP Request Data
+        #region http数据请求
         private WebRequest m_webRequest;
         // async result handle
         private IAsyncResult m_requestResult;
@@ -28,7 +28,7 @@ namespace MFW3D.DataSource
         private int m_bytesRead;
         #endregion
 
-        #region DataRequest Property Overrides
+        #region 数据请求属性
         public override float Progress
         {
             get

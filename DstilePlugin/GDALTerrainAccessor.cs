@@ -14,7 +14,7 @@ namespace MFW3D.Terrain
     /// </summary>
     public class GDALTerrainAccessor : TerrainAccessor
     {
-        #region private members
+        #region к╫спЁит╠
         private GDALTerrainTileService m_terrainTileService;
         #endregion
 

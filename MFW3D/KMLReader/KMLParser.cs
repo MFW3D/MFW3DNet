@@ -1701,7 +1701,7 @@ namespace MFW3D.KMLReader
 
             #endregion
 
-            #region Private members
+            #region к╫спЁит╠
             private string normalIcon;
             private double normalScale = Double.NaN;
             #endregion

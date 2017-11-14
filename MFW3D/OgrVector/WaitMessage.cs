@@ -14,7 +14,7 @@ namespace OgrVectorImporter
     /// </summary>
     public class WaitMessage : RenderableObject
     {
-        #region Private members
+        #region к╫спЁит╠
         private string _Text = "";
         private string leadString = "Vector Importer:\n";
         private int color = Color.White.ToArgb();

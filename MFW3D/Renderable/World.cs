@@ -21,7 +21,7 @@ namespace MFW3D
 		/// </summary>
 		public static WorldSettings Settings = new WorldSettings();
 
-		#region Private Members
+		#region к╫спЁит╠
 
 		double equatorialRadius;
 		// TODO: Add ellipsoid parameters to world.

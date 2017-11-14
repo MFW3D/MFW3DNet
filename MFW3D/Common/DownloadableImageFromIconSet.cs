@@ -15,7 +15,7 @@ namespace MFW3D.Renderable
 	/// </summary>
 	public class DownloadableImageFromIconSet : RenderableObject
 	{
-		#region Private Members
+		#region к╫спЁит╠
 		World m_ParentWorld;
 		float layerRadius;
 		DrawArgs drawArgs;

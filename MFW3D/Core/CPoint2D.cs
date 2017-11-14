@@ -2,12 +2,10 @@ using System;
 
 namespace GeometryUtility
 {
-	/// <summary>
-	/// Summary description for CPoint2D.
-	/// </summary>
-	
-	//A point in Coordinate System
-	public class CPoint2D
+    /// <summary>
+    /// 坐标系中的2维点
+    /// </summary>
+    public class CPoint2D
 	{
 		private double m_dCoordinate_X;
 		private double m_dCoordinate_Y;
@@ -79,7 +77,7 @@ namespace GeometryUtility
 
 		}
 
-		/***To check whether the point is in a line segment***/
+		/***检查点事都是一个线段***/
 		public bool InLine(CLineSegment lineSegment)
 		{
 			bool bInline=false;
@@ -109,7 +107,7 @@ namespace GeometryUtility
 			return bInline;
 		}
 
-		/*** Distance between two points***/
+		/*** 计算亮点之间的距离***/
 		public double DistanceTo(CPoint2D point)
 		{
 			return Math.Sqrt((point.X-this.X)*(point.X-this.X) 
@@ -159,7 +157,7 @@ namespace GeometryUtility
 				return true;
 		}
 
-		/*********** Sort points from Xmin->Xmax ******/
+		/*********** 根据点的x坐标从小达到排序 ******/
 		public static void SortPointsByX(CPoint2D[] points)
 		{
 			if (points.Length>1)
@@ -180,8 +178,8 @@ namespace GeometryUtility
 			}
 		}
 
-		/*********** Sort points from Ymin->Ymax ******/
-		public static void SortPointsByY(CPoint2D[] points)
+        /*********** 根据点的y坐标从小达到排序 ******/
+        public static void SortPointsByY(CPoint2D[] points)
 		{
 			if (points.Length>1)
 			{

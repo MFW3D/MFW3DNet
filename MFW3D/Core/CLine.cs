@@ -1,19 +1,8 @@
-/**************************************************
-This unit is used to collect Analytic Geometry formulars
-It includes Line, Line segment and CPolygon				
-																				
-Development by: Frank Shen                                    
-Date: 08, 2004                                                         
-Modification History:													
-* *** **********************************************/
-
 using System;
 namespace GeometryUtility
 {
 	/// <summary>
-	///To define a line in the given coordinate system
-	///and related calculations
-	///Line Equation:ax+by+c=0
+	///按设定的坐标系定义线
 	///</summary>
 	public class CLine
 	{
@@ -110,7 +99,7 @@ namespace GeometryUtility
 			this.c=copiedLine.c;
 		}
 
-		/*** calculate the distance from a given point to the line ***/ 
+		/*** 计算点到这条线的距离 ***/ 
 		public double GetDistance(CPoint2D point)
 		{
 			double x0=point.X;
@@ -122,7 +111,7 @@ namespace GeometryUtility
 			return d;			
 		}
 
-		/*** point(x, y) in the line, based on y, calculate x ***/ 
+		/*** 通过y计算线上的一个点的x***/ 
 		public double GetX(double y)
 		{
 			//if the line is a horizontal line (a=0), it will return a NaN:
@@ -145,9 +134,9 @@ namespace GeometryUtility
 				
 			return x;
 		}
-		
-		/*** point(x, y) in the line, based on x, calculate y ***/ 
-		public double GetY(double x)
+
+        /*** 通过x计算线上的一个点的y ***/
+        public double GetY(double x)
 		{
 			//if the line is a vertical line, it will return a NaN:
 			double y;
@@ -168,7 +157,7 @@ namespace GeometryUtility
 			return y;
 		}
 		
-		/*** is it a vertical line:***/
+		/*** 是否是水平线:***/
 		public bool VerticalLine()
 		{
 			if (Math.Abs(b-0)<ConstantValue.SmallValue)
@@ -177,7 +166,7 @@ namespace GeometryUtility
 				return false;
 		}
 		
-		/*** is it a horizontal line:***/
+		/*** 是否是竖直线:***/
 		public bool HorizontalLine()
 		{
 			if (Math.Abs(a-0)<ConstantValue.SmallValue)
@@ -186,7 +175,7 @@ namespace GeometryUtility
 				return false;
 		}
 
-		/*** calculate line angle in radian: ***/
+		/*** 计算线的角度: ***/
 		public double GetLineAngle()
 		{
 			if (b==0)
@@ -210,8 +199,7 @@ namespace GeometryUtility
 		}
 
 		/**************************************
-		 Calculate intersection point of two lines
-		 if two lines are parallel, return null
+		 计算两条线的交点，如果平行返回null
 		 * ************************************/
 		public CPoint2D IntersecctionWith(CLine line)
 		{
@@ -262,7 +250,7 @@ namespace GeometryUtility
 			this.m_endPoint= endPoint;
 		}
 
-		/*** chagne the line's direction ***/
+		/*** 改变线的方向 ***/
 		public void ChangeLineDirection()
 		{
 			CPoint2D tempPt;
@@ -271,7 +259,7 @@ namespace GeometryUtility
 			this.m_endPoint=tempPt;
 		}
 
-		/*** To calculate the line segment length:   ***/
+		/*** 计算线段长度:   ***/
 		public double GetLineSegmentLength()
 		{
 			double d=(m_endPoint.X-m_startPoint.X)	*(m_endPoint.X-m_startPoint.X);
@@ -281,15 +269,15 @@ namespace GeometryUtility
 			return d;
 		}
 
-		/********************************************************** 
-			Get point location, using windows coordinate system: 
-			y-axes points down.
-			Return Value:
-			-1:point at the left of the line (or above the line if the line is horizontal)
-			 0: point in the line segment or in the line segment 's extension
-			 1: point at right of the line (or below the line if the line is horizontal)    
+        /********************************************************** 
+			使用windows坐标系统定位点：
+            Y轴点下来。
+            返回值：
+            - 1：在直线的左边点（如果线是水平线以上）
+            0：线段中的点或线段的扩展点。
+            1：点在直线的右边（或者如果线是水平线以下）  
 		 ***********************************************************/
-		public int GetPointLocation(CPoint2D point)
+        public int GetPointLocation(CPoint2D point)
 		{
 			double Ax, Ay, Bx, By, Cx, Cy;
 			Bx=m_endPoint.X;
@@ -329,32 +317,32 @@ namespace GeometryUtility
 			}
 		}
 
-		/***Get the minimum x value of the points in the line***/
-		public double GetXmin()
+        /***在线路的最小值的点***/
+        public double GetXmin()
 		{
 			return Math.Min(m_startPoint.X, m_endPoint.X);
 		}
 
-		/***Get the maximum  x value of the points in the line***/
-		public double GetXmax()
+        /***获取线中点的最大x值。***/
+        public double GetXmax()
 		{
 			return Math.Max(m_startPoint.X, m_endPoint.X);
 		}
 
-		/***Get the minimum y value of the points in the line***/
-		public double GetYmin()
+        /***获取直线上的点的最小y值。***/
+        public double GetYmin()
 		{
 			return Math.Min(m_startPoint.Y, m_endPoint.Y);
 		}
 
-		/***Get the maximum y value of the points in the line***/
-		public double GetYmax()
+        /***获取直线上的点的最大y值。***/
+        public double GetYmax()
 		{
 			return Math.Max(m_startPoint.Y, m_endPoint.Y);
 		}
 
-		/***Check whether this line is in a longer line***/
-		public bool InLine(CLineSegment longerLineSegment)
+        /***检查是否这条线是在一个较长的线***/
+        public bool InLine(CLineSegment longerLineSegment)
 		{
 			bool bInLine=false;
 			if ((m_startPoint.InLine(longerLineSegment)) &&
@@ -363,12 +351,12 @@ namespace GeometryUtility
 			return bInLine;
 		}
 
-		/************************************************
-		 * Offset the line segment to generate a new line segment
-		 * If the offset direction is along the x-axis or y-axis, 
-		 * Parameter is true, other wise it is false
+        /************************************************
+		 *偏移线段以生成新线段。
+        *如果偏移方向沿x轴或y轴，
+        *参数为真，其他为false。
 		 * ***********************************************/
-		public CLineSegment OffsetLine(double distance, bool rightOrDown)
+        public CLineSegment OffsetLine(double distance, bool rightOrDown)
 		{
 			//offset a line with a given distance, generate a new line
 			//rightOrDown=true means offset to x incress direction,
@@ -455,7 +443,7 @@ namespace GeometryUtility
 		}
 
 		/********************************************************
-		To check whether 2 lines segments have an intersection
+		检查两条线是否有交集
 		*********************************************************/
 		public  bool IntersectedWith(CLineSegment line)
 		{
@@ -483,6 +471,5 @@ namespace GeometryUtility
 			else	//lines are parallel
 				return false;
 		}
-		
 	}
 }

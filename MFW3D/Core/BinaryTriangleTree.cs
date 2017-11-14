@@ -5,9 +5,8 @@ using Microsoft.DirectX.Direct3D;
 namespace MFW3D
 {
 	/// <summary>
-	/// Summary description for BinaryTriangleTree.
+	/// ¶þÔªÈý½ÇÊ÷
 	/// </summary>
-	// BinaryTriangleTree class - handle mesh optimization (PM)
 	public class BinaryTriangleTree
 	{
 		CustomVertex.PositionTextured[] _elevatedVertices;

@@ -6,7 +6,9 @@ using Microsoft.DirectX.Direct3D;
 
 namespace MFW3D
 {
-    // Ray casting class - Patrick Murris - march 2007
+    /// <summary>
+    /// …‰œﬂ
+    /// </summary>
     public sealed class RayCasting
     {
 		/// <summary>

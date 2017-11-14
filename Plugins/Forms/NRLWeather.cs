@@ -48,7 +48,7 @@ namespace NASA.Plugins
 
 		public class NRLDataSet
 		{
-			#region Private Members
+			#region 私有成员
 			string _name;
 			string _urlDirectory;
 			string _description;
@@ -59,7 +59,7 @@ namespace NASA.Plugins
 			string _keywordFilter;
 			#endregion
 
-			#region Public Methods
+			#region 公共方法
 			public NRLDataSet(
 				string name,
 				string urlDirectory,

@@ -24,7 +24,7 @@ namespace MFW3D.Renderable
 	/// </summary>
 	public class QuadTileSet : RenderableObject
 	{
-		#region Private Members
+		#region к╫спЁит╠
 
 		bool m_RenderStruts = true;
 		protected string m_ServerLogoFilePath;

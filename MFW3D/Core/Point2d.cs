@@ -3,7 +3,7 @@ using System;
 namespace MFW3D
 {
 	/// <summary>
-	/// Summary description for Point3d.
+	/// ¶þÎ¬µã
 	/// </summary>
 	public class Point2d
 	{
@@ -110,29 +110,11 @@ namespace MFW3D
 		{
 			return (P1.X * P2.X + P1.Y * P2.Y);
 		}
-//	TODO: implement this...
-	//	public static Point2d operator *(Point2d P1, Point2d P2)
-	//	{
-	//		return new Point2d (P1.Y * P2.Z - P1.Z * P2.Y,
-	//			P1.Z * P2.X - P1.X * P2.Z, P1.X * P2.Y - P1.Y * P2.X);
-	//	}
 
 		public static Point2d operator - ( Point2d P)	// negation
 		{
 			return new Point2d (-P.X, -P.Y);
 		}
 
-	//	public static Point3d cross(Point2d P1, Point2d P2) // cross product
-	//	{
-	//		return P1 * P2;
-	//	}
-
-		// Normal direction corresponds to a right handed traverse of ordered points.
-	//	public Point2d unit_normal (Point2d P0, Point2d P1, Point2d P2)
-	//	{
-	//		Point2d p = (P1 - P0) * (P2 - P0);
-	//		double l = p.norm ();
-	//		return new Point2d (p.X / l, p.Y / l);
-	//	}
 	}
 }

@@ -13,7 +13,7 @@ namespace MFW3D
 	{
 		public const int RenderSurfaceSize = 256;
 		
-		#region Private Members
+		#region к╫спЁит╠
 		RenderToSurface m_Rts = null;
 		const int m_NumberRootTilesHigh = 5;
 		uint m_SamplesPerTile;

@@ -321,49 +321,6 @@ namespace MFW3D
 			
 		}
 
-		/*public byte Opacity
-		{
-			get
-			{
-				return m_parentProjectedLayer.Opacity;
-			}
-			set
-			{
-				if(m_NwImageLayer != null)
-				{
-					m_NwImageLayer.Opacity = value;
-				}
-				if(m_NeImageLayer != null)
-				{
-					m_NeImageLayer.Opacity = value;
-				}
-				if(m_SwImageLayer != null)
-				{
-					m_SwImageLayer.Opacity = value;
-				}
-				if(m_SeImageLayer != null)
-				{
-					m_SeImageLayer.Opacity = value;
-				}
-
-				if(m_NorthWestChild != null)
-				{
-					m_NorthWestChild.Opacity = value;
-				}
-				if(m_NorthEastChild != null)
-				{
-					m_NorthEastChild.Opacity = value;
-				}
-				if(m_SouthWestChild != null)
-				{
-					m_SouthWestChild.Opacity = value;
-				}
-				if(m_SouthEastChild != null)
-				{
-					m_SouthEastChild.Opacity = value;
-				}
-			}
-		}*/
 
 		private Renderable.ImageLayer CreateImageLayer(double north, double south, double west, double east, DrawArgs drawArgs, string imagePath)
 		{

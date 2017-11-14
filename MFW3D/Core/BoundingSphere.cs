@@ -5,8 +5,7 @@ using Microsoft.DirectX.Direct3D;
 namespace MFW3D
 {
 	/// <summary>
-	/// Bounding sphere.  The tightest sphere that will fit the bounded object, 
-	/// that is, the smallest radius sphere that all points lie within. 
+	/// °üº¬Çò 
 	/// </summary>
 	public class BoundingSphere
 	{

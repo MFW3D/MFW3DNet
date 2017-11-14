@@ -5,9 +5,7 @@ using Microsoft.DirectX.Direct3D;
 namespace MFW3D
 {
 	/// <summary>
-	/// The region of space in the modeled world that may appear on the screen; it is the field of view of the notional camera.
-	/// Used to perform culling of invisible object (prior to rendering) to increase speed.
-	/// See: http://en.wikipedia.org/wiki/Viewing_frustum
+	/// ×¶ÐÍ
 	/// </summary>
 	public class Frustum
 	{

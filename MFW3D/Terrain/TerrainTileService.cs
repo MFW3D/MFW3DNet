@@ -13,7 +13,7 @@ namespace MFW3D.Terrain
 	/// </summary>
 	public class TerrainTileService : IDisposable
 	{
-		#region Private Members
+		#region к╫спЁит╠
 		string m_serverUrl;
 		string m_dataSet;
 		double m_levelZeroTileSizeDegrees;

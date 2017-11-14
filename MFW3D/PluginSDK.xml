@@ -455,7 +455,7 @@
         </member>
         <member name="T:MFW3D.Angle">
             <summary>
-            A geometric angle
+            三角
             </summary>
         </member>
         <member name="M:MFW3D.Angle.FromRadians(System.Double)">
@@ -3783,7 +3783,12 @@
         </member>
         <member name="T:MFW3D.PointSpriteVertex">
             <summary>
-            Custom vertex for point sprites.
+            自定义点图形
+            </summary>
+        </member>
+        <member name="T:MFW3D.RayCasting">
+            <summary>
+            射线
             </summary>
         </member>
         <member name="M:MFW3D.RayCasting.#ctor">
@@ -3857,12 +3862,12 @@
         </member>
         <member name="T:MFW3D.BinaryTriangleTree">
             <summary>
-            Summary description for BinaryTriangleTree.
+            二元三角树
             </summary>
         </member>
         <member name="T:MFW3D.BoundingBox">
             <summary>
-            The closed volume that completely contains a set of objects.
+            外轮廓.
             </summary>
         </member>
         <member name="M:MFW3D.BoundingBox.#ctor(Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3,Microsoft.DirectX.Vector3)">
@@ -3897,8 +3902,7 @@
         </member>
         <member name="T:MFW3D.BoundingSphere">
             <summary>
-            Bounding sphere.  The tightest sphere that will fit the bounded object, 
-            that is, the smallest radius sphere that all points lie within. 
+            包含球 
             </summary>
         </member>
         <member name="M:MFW3D.BoundingSphere.#ctor(Microsoft.DirectX.Vector3,System.Single)">
@@ -4198,7 +4202,7 @@
         </member>
         <member name="T:MFW3D.GeographicBoundingBox">
             <summary>
-            Summary description for GeographicBoundingBox.
+            图形包含框
             </summary>
         </member>
         <member name="T:MFW3D.Net.GeoSpatialDownloadRequest">
@@ -4488,7 +4492,7 @@
         </member>
         <member name="T:MFW3D.LinearRing">
             <summary>
-            Summary description for LinearRing.
+            点集合
             </summary>
         </member>
         <member name="T:MFW3D.LineFeature">
@@ -4556,12 +4560,12 @@
         </member>
         <member name="T:MFW3D.LineGraph">
             <summary>
-            Summary description for LineGraph.
+            线图形
             </summary>
         </member>
         <member name="T:MFW3D.LineString">
             <summary>
-            Summary description for LineString.
+            线文本
             </summary>
         </member>
         <member name="T:MFW3D.MathEngine">
@@ -4711,17 +4715,17 @@
         </member>
         <member name="T:MFW3D.Point2d">
             <summary>
-            Summary description for Point3d.
+            二维点
             </summary>
         </member>
         <member name="T:MFW3D.Point3d">
             <summary>
-            Summary description for Point3d.
+            三维点
             </summary>
         </member>
         <member name="T:MFW3D.Polygon">
             <summary>
-            Polygon geometry used to rasterize vectors
+            多边形
             </summary>
         </member>
         <member name="T:MFW3D.PolygonFeature">
@@ -4816,7 +4820,7 @@
         </member>
         <member name="T:MFW3D.VisualControl.ProgressBar">
             <summary>
-            Render a progress bar.
+            进度条
             </summary>
         </member>
         <member name="M:MFW3D.VisualControl.ProgressBar.#ctor(System.Single,System.Single)">
@@ -4828,14 +4832,14 @@
         </member>
         <member name="M:MFW3D.VisualControl.ProgressBar.Initalize(System.Single,System.Single)">
             <summary>
-            Sets up the data for rendering
+            设置渲染数据
             </summary>
-            <param name="x">Center X position of progress.</param>
-            <param name="y">Center Y position of progress.</param>
+            <param name="x">进度条X坐标</param>
+            <param name="y">进度条Y坐标</param>
         </member>
         <member name="M:MFW3D.VisualControl.ProgressBar.Draw(MFW3D.DrawArgs,System.Single,System.Single,System.Single,System.Int32)">
             <summary>
-            Draws the progress bar
+            绘制进度条
             </summary>
             <param name="x">Center X position of progress.</param>
             <param name="y">Center Y position of progress.</param>
@@ -4907,7 +4911,7 @@
         </member>
         <member name="T:MFW3D.ProjectedVectorRenderer">
             <summary>
-            Summary description for ProjectedVectorRenderer.
+            矢量渲染
             </summary>
         </member>
         <member name="M:MFW3D.Quaternion4d.QuaternionToEuler(MFW3D.Quaternion4d)">
@@ -4962,7 +4966,7 @@
         </member>
         <member name="T:MFW3D.SunCalculator">
             <summary>
-            Summary description for SunCalculator.
+            太阳计算
             </summary>
         </member>
         <member name="P:MFW3D.SurfaceImage.Enabled">
@@ -5292,9 +5296,7 @@
         </member>
         <member name="T:MFW3D.Frustum">
             <summary>
-            The region of space in the modeled world that may appear on the screen; it is the field of view of the notional camera.
-            Used to perform culling of invisible object (prior to rendering) to increase speed.
-            See: http://en.wikipedia.org/wiki/Viewing_frustum
+            锥型
             </summary>
         </member>
         <member name="M:MFW3D.Frustum.Intersects(MFW3D.BoundingSphere)">
@@ -8733,19 +8735,17 @@
         </member>
         <member name="T:GeometryUtility.CLine">
              <summary>
-            To define a line in the given coordinate system
-            and related calculations
-            Line Equation:ax+by+c=0
+            按设定的坐标系定义线
             </summary>
         </member>
         <member name="T:GeometryUtility.CPoint2D">
             <summary>
-            Summary description for CPoint2D.
+            坐标系中的2维点
             </summary>
         </member>
         <member name="T:GeometryUtility.CPolygon">
             <summary>
-            Summary description for CPolygon.
+            坐标系中的多边形
             </summary>
         </member>
         <member name="T:GeometryUtility.ConstantValue">
@@ -8756,7 +8756,7 @@
         </member>
         <member name="T:PolygonCuttingEar.CPolygonShape">
             <summary>
-            Summary description for Class1.
+            多边形面
             </summary>
         </member>
     </members>

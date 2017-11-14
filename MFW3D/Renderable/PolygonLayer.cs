@@ -10,7 +10,7 @@ namespace MFW3D.Renderable
 	/// </summary>
 	public class PolygonLayer : RenderableObject
 	{
-		#region Private Members
+		#region 私有成员
 		World _parentWorld;
 		double _minDisplayAltitude;
 		double _maxDisplayAltitude;
@@ -21,7 +21,7 @@ namespace MFW3D.Renderable
 		double _distanceAboveSurface;
 		#endregion
 
-		#region Public Methods
+		#region 公共方法
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref= "T:WorldWind.Renderable.PolygonLayer"/> class.

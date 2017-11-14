@@ -20,7 +20,7 @@ namespace MFW3D.Renderable
 	/// </summary>
 	public class ImageLayer : RenderableObject
 	{
-		#region Private Members
+		#region к╫спЁит╠
 
 		protected double layerRadius;
 		protected double minLat;

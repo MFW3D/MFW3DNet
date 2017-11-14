@@ -9,7 +9,7 @@ namespace MFW3D
 {
 	public class SurfaceTile : IDisposable
 	{
-		#region Private Members
+		#region к╫спЁит╠
 		int m_Level;
 		double m_North;
 		double m_South;

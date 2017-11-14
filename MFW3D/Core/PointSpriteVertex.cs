@@ -5,7 +5,7 @@ using System.Text;
 namespace MFW3D
 {
     /// <summary>
-    /// Custom vertex for point sprites.
+    /// 自定义点图形
     /// </summary>
     public struct PointSpriteVertex
     {

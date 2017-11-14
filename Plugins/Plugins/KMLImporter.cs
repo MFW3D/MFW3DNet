@@ -631,7 +631,7 @@ namespace KMLPlugin
     /// </summary>
     class WaitMessage : RenderableObject
     {
-        #region Private members
+        #region к╫спЁит╠
         private string _Text = "Please wait, loading KML file.";
         private int color = Color.White.ToArgb();
         private int distanceFromCorner = 25;

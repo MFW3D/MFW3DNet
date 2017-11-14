@@ -6,7 +6,7 @@ using MFW3D.Camera;
 namespace MFW3D
 {
 	/// <summary>
-	/// The closed volume that completely contains a set of objects.
+	/// ÍâÂÖÀª.
 	/// </summary>
 	public class BoundingBox
 	{

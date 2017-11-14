@@ -13,7 +13,7 @@ namespace MFW3D
     /// </summary>
     public class ImageStore
 	{
-		#region Private Members
+		#region к╫спЁит╠
 
 		protected string m_dataDirectory;
 		protected double m_levelZeroTileSizeDegrees = 36;

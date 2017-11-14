@@ -40,7 +40,7 @@ namespace MFW3D
             this.webBrowser.Height = this.Height - this.webBrowserToolStrip.Height;
         }
 
-        #region Public Methods
+        #region 公共方法
         public void NavigateTo(string targetUrl)
 		{
 			webBrowser.Navigate(targetUrl);

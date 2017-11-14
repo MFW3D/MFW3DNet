@@ -7,7 +7,7 @@ using MFW3D;
 namespace MFW3D.VisualControl
 {
 	/// <summary>
-	/// Render a progress bar.
+	/// 进度条
 	/// </summary>
 	public class ProgressBar
 	{
@@ -39,12 +39,12 @@ namespace MFW3D.VisualControl
 			this.halfHeight = height/2;
 		}
 
-		/// <summary>
-		/// Sets up the data for rendering
-		/// </summary>
-		/// <param name="x">Center X position of progress.</param>
-		/// <param name="y">Center Y position of progress.</param>
-		public void Initalize( float x, float y)
+        /// <summary>
+        /// 设置渲染数据
+        /// </summary>
+        /// <param name="x">进度条X坐标</param>
+        /// <param name="y">进度条Y坐标</param>
+        public void Initalize( float x, float y)
 		{
 			this.x = x;
 			this.y = y;
@@ -138,7 +138,7 @@ namespace MFW3D.VisualControl
 		}
 
 		/// <summary>
-		/// Draws the progress bar
+		/// 绘制进度条
 		/// </summary>
 		/// <param name="x">Center X position of progress.</param>
 		/// <param name="y">Center Y position of progress.</param>

@@ -4,7 +4,7 @@ using System.Globalization;
 namespace MFW3D
 {
 	/// <summary>
-	/// A geometric angle
+	/// Èý½Ç
 	/// </summary>
 	public struct Angle
 	{
