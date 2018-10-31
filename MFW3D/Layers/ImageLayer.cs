@@ -12,12 +12,6 @@ using Utility;
 
 namespace MFW3D.Renderable
 {
-	/// <summary>
-	/// Use this class to map a single image to the planet at a desired altitude.
-	/// Source image must be in Plate Carree (geographic) map projection:
-	/// http://en.wikipedia.org/wiki/Plate_Carr%E9e_Projection
-	/// TODO: Update this code to take advantage of the Texture Manager
-	/// </summary>
 	public class ImageLayer : RenderableObject
 	{
 		#region к╫спЁит╠

@@ -21,16 +21,6 @@ namespace MFW3D.Renderable
 		float layerRadius;
 		float scaleFactor;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.Renderable.MeshLayer"/> class.
-		/// </summary>
-		/// <param name="name"></param>
-		/// <param name="latitude"></param>
-		/// <param name="longitude"></param>
-		/// <param name="layerRadius"></param>
-		/// <param name="scaleFactor"></param>
-		/// <param name="meshFilePath"></param>
-		/// <param name="orientation"></param>
 		public MeshLayer(string name, float latitude, float longitude, float layerRadius, float scaleFactor, string meshFilePath, Quaternion orientation) : base(name, MathEngine.SphericalToCartesian(latitude, longitude, layerRadius), orientation) 
 		{
 			this.meshFilePath = meshFilePath;

@@ -17,19 +17,7 @@ namespace MFW3D.Renderable
 		int _color;
 		CustomVertex.PositionColored[] vertices;
 		#endregion
-
 		#region 公共方法
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.Renderable.BoundaryLayer"/> class.
-		/// </summary>
-		/// <param name="name"></param>
-		/// <param name="parentWorld"></param>
-		/// <param name="distanceAboveSurface"></param>
-		/// <param name="minDisplayAltitude"></param>
-		/// <param name="maxDisplayAltitude"></param>
-		/// <param name="boundaryFilePath"></param>
-		/// <param name="color"></param>
 		public BoundaryLayer(
 			string name,
 			World parentWorld,
@@ -46,7 +34,6 @@ namespace MFW3D.Renderable
 			this._boundaryFilePath = boundaryFilePath;
 			this._color = color;
 		}
-
 		public override void Initialize(DrawArgs drawArgs)
 		{
 			FileInfo boundaryFileInfo = new FileInfo(this._boundaryFilePath);
@@ -75,22 +62,18 @@ namespace MFW3D.Renderable
 			}
 			this.isInitialized = true;
 		}
-
 		public override void Dispose()
 		{
 		}
-
 		public override bool PerformSelectionAction(DrawArgs drawArgs)
 		{
 			return false;
 		}
-
 		public override void Update(DrawArgs drawArgs)
 		{
 			if(!this.isInitialized)
 				this.Initialize(drawArgs);
 		}
-
 		public override void Render(DrawArgs drawArgs)
 		{
 			if(this.isInitialized)

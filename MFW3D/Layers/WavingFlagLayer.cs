@@ -170,7 +170,6 @@ namespace MFW3D.Renderable
             UpdateVertices();
             isInitialized = true;
         }
-
         public override void Dispose()
         {
             if (m_texture != null && !m_texture.Disposed)
@@ -179,7 +178,6 @@ namespace MFW3D.Renderable
                 m_texture = null;
             }
         }
-
         private void UpdateVertices()
         {
             if (m_vertices != null)
@@ -224,7 +222,6 @@ namespace MFW3D.Renderable
                 }
             }
         }
-
         public override void Update(DrawArgs drawArgs)
         {
             try
@@ -240,7 +237,6 @@ namespace MFW3D.Renderable
                 Log.Write(ex);
             }
         }
-
         private void renderHighlight(DrawArgs drawArgs)
         {
             bool lighting = drawArgs.device.RenderState.Lighting;
@@ -305,9 +301,7 @@ namespace MFW3D.Renderable
             drawArgs.device.RenderState.ZBufferEnable = true;
             drawArgs.device.RenderState.Lighting = lighting;
         }
-
         bool m_isMouseInside = false;
-
         public override void Render(DrawArgs drawArgs)
         {
             if (!isInitialized)
@@ -373,7 +367,6 @@ namespace MFW3D.Renderable
                 Log.Write(ex);
             }
         }
-
         private void RenderFlag(DrawArgs drawArgs, double offset)
         {
             if (m_effect == null)
@@ -491,7 +484,6 @@ namespace MFW3D.Renderable
             drawArgs.device.Transform.World = drawArgs.WorldCamera.WorldMatrix;
             drawArgs.device.Transform.View = drawArgs.WorldCamera.ViewMatrix;
         }
-
         private void CreateFlagPole(Device device)
         {
             m_flagPoleVertices = new CustomVertex.PositionColored[8];
@@ -547,7 +539,6 @@ namespace MFW3D.Renderable
                 4,5, 5,7, 7,6, 6,4,
                 0,4, 2,6, 3,7, 1,5 };
         }
-
         public override bool PerformSelectionAction(DrawArgs drawArgs)
         {
             Vector3 surfacePos = MathEngine.SphericalToCartesian(m_latitude, m_longitude, World.EquatorialRadius);
@@ -573,7 +564,6 @@ namespace MFW3D.Renderable
             }
             return false;
         }
-
         private void device_DeviceReset(object sender, EventArgs e)
         {
             Device device = (Device)sender;

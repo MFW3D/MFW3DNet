@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace MFW3D.Menu
 {
-    public class MenuBar : IMenu
+    public class MenuBar : IEvent
     {
         #region к╫спЁит╠
         protected ArrayList m_toolsMenuButtons = new ArrayList();

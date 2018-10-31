@@ -13,7 +13,7 @@ using Utility;
 
 namespace MFW3D.Menu
 {
-    public interface IMenu
+    public interface IEvent
     {
         void OnKeyUp(KeyEventArgs keyEvent);
         void OnKeyDown(KeyEventArgs keyEvent);
@@ -25,7 +25,7 @@ namespace MFW3D.Menu
         void Dispose();
     }
 
-    public class MenuCollection : IMenu
+    public class MenuCollection : IEvent
     {
         System.Collections.ArrayList _menus = new System.Collections.ArrayList();
 
@@ -33,19 +33,19 @@ namespace MFW3D.Menu
 
         public void OnKeyUp(KeyEventArgs keyEvent)
         {
-            foreach (IMenu m in this._menus)
+            foreach (IEvent m in this._menus)
                 m.OnKeyUp(keyEvent);
         }
 
         public void OnKeyDown(KeyEventArgs keyEvent)
         {
-            foreach (IMenu m in this._menus)
+            foreach (IEvent m in this._menus)
                 m.OnKeyDown(keyEvent);
         }
 
         public bool OnMouseUp(MouseEventArgs e)
         {
-            foreach (IMenu m in this._menus)
+            foreach (IEvent m in this._menus)
             {
                 if (m.OnMouseUp(e))
                     return true;
@@ -55,7 +55,7 @@ namespace MFW3D.Menu
 
         public bool OnMouseDown(MouseEventArgs e)
         {
-            foreach (IMenu m in this._menus)
+            foreach (IEvent m in this._menus)
             {
                 if (m.OnMouseDown(e))
                     return true;
@@ -65,7 +65,7 @@ namespace MFW3D.Menu
 
         public bool OnMouseMove(MouseEventArgs e)
         {
-            foreach (IMenu m in this._menus)
+            foreach (IEvent m in this._menus)
             {
                 if (m.OnMouseMove(e))
                     return true;
@@ -75,7 +75,7 @@ namespace MFW3D.Menu
 
         public bool OnMouseWheel(MouseEventArgs e)
         {
-            foreach (IMenu m in this._menus)
+            foreach (IEvent m in this._menus)
             {
                 if (m.OnMouseWheel(e))
                     return true;
@@ -85,19 +85,19 @@ namespace MFW3D.Menu
 
         public void Render(DrawArgs drawArgs)
         {
-            foreach (IMenu m in this._menus)
+            foreach (IEvent m in this._menus)
                 m.Render(drawArgs);
         }
 
         public void Dispose()
         {
-            foreach (IMenu m in this._menus)
+            foreach (IEvent m in this._menus)
                 m.Dispose();
         }
 
         #endregion
 
-        public void AddMenu(IMenu menu)
+        public void AddMenu(IEvent menu)
         {
             lock (this._menus.SyncRoot)
             {
@@ -105,7 +105,7 @@ namespace MFW3D.Menu
             }
         }
 
-        public void RemoveMenu(IMenu menu)
+        public void RemoveMenu(IEvent menu)
         {
             lock (this._menus.SyncRoot)
             {
@@ -114,7 +114,7 @@ namespace MFW3D.Menu
         }
     }
 
-    public abstract class SideBarMenu : IMenu
+    public abstract class SideBarMenu : IEvent
     {
         public long Id;
 

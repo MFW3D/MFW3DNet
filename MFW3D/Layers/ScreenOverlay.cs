@@ -14,9 +14,6 @@ namespace MFW3D.Renderable
         Fraction
     }
 
-	/// <summary>
-	/// Summary description for ScreenOverlay.
-	/// </summary>
 	public class ScreenOverlay : MFW3D.Renderable.RenderableObject
 	{
 		MFW3D.Widgets.Form overlay = null;
@@ -53,19 +50,16 @@ namespace MFW3D.Renderable
 					overlay.BorderColor = value;
 			}
 		}
-
         public float OffsetX
         {
             get { return m_offsetX; }
             set { m_offsetX = value; }
         }
-
         public float OffsetY
         {
             get { return m_offsetY; }
             set { m_offsetY = value; }
         }
-		
 		public bool HideBorder
 		{
 			get{ return (overlay == null ? m_HideBorder : overlay.HideBorder); }
@@ -76,7 +70,6 @@ namespace MFW3D.Renderable
 					overlay.HideBorder = value;
 			}
 		}
-
 		public string ClickableUrl
 		{
 			get
@@ -90,13 +83,11 @@ namespace MFW3D.Renderable
 					pBox.ClickableUrl = value;
 			}
 		}
-		
 		public ScreenAlignment Alignment
 		{
 			get{ return alignment; }
 			set{ alignment = value; }
 		}
-
 		public double RefreshTimeSec
 		{
 			get
@@ -108,13 +99,11 @@ namespace MFW3D.Renderable
 				m_RefreshTimeSec = value;
 			}
 		}
-
 		public bool ShowHeader
 		{
 			get{ return m_ShowHeader; }
 			set{ m_ShowHeader = value; }
 		}
-
 		public string SaveFilePath
 		{
 			get
@@ -126,7 +115,6 @@ namespace MFW3D.Renderable
 				m_SaveFilePath = value;
 			}
 		}
-
         public float Width
 		{
 			get
@@ -138,7 +126,6 @@ namespace MFW3D.Renderable
 				m_Width = value;
 			}
 		}
-
         public float Height
 		{
 			get
@@ -150,7 +137,6 @@ namespace MFW3D.Renderable
 				m_Height = value;
 			}
 		}
-
         public ScreenOverlay(string name, float startX, float startY, string imageUri)
             : base(name)
 		{
@@ -161,7 +147,6 @@ namespace MFW3D.Renderable
             if(DrawArgs.ParentControl != null)
                 DrawArgs.ParentControl.Resize += new EventHandler(ParentControl_Resize);
 		}
-
         void ParentControl_Resize(object sender, EventArgs e)
         {
             if (overlay != null)
@@ -208,7 +193,6 @@ namespace MFW3D.Renderable
                 overlay.ClientSize = new System.Drawing.Size(width, height);
             }	
         }
-
 		public override void Dispose()
 		{
 			if(overlay != null)
@@ -218,9 +202,7 @@ namespace MFW3D.Renderable
 
 			isInitialized = false;
 		}
-
 		Widgets.PictureBox pBox;
-
 		public override void Initialize(DrawArgs drawArgs)
 		{
 			if(overlay == null)
@@ -258,12 +240,10 @@ namespace MFW3D.Renderable
 
 			isInitialized = true;
 		}
-
 		public override bool PerformSelectionAction(DrawArgs drawArgs)
 		{
 			return false;
 		}
-
 		public override void Render(DrawArgs drawArgs)
 		{
 			if(overlay != null && overlay.Visible && pBox != null && pBox.Visible && pBox.IsLoaded)
@@ -279,7 +259,6 @@ namespace MFW3D.Renderable
 				}
 			}
 		}
-
 		public override void Update(DrawArgs drawArgs)
 		{
 			if(IsOn && !isInitialized)
@@ -291,7 +270,6 @@ namespace MFW3D.Renderable
 				Dispose();
 			}
 		}
-
 		public override byte Opacity
 		{
 			get
@@ -307,8 +285,6 @@ namespace MFW3D.Renderable
 				}
 			}
 		}
-
-
 		private void overlay_OnVisibleChanged(object o, bool state)
 		{
 			if(!state)

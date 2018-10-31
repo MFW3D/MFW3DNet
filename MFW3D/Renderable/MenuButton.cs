@@ -8,7 +8,7 @@ using Microsoft.DirectX;
 
 namespace MFW3D.Menu
 {
-    public abstract class MenuButton : IMenu
+    public abstract class MenuButton : IEvent
     {
         #region к╫спЁит╠
 

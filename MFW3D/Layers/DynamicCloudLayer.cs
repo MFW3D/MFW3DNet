@@ -12,16 +12,10 @@ using Utility;
 
 namespace MFW3D
 {
-	/// <summary>
-	/// Summary description for DynamicCloudLayer.
-	/// </summary>
 	public class DynamicCloudLayer : MFW3D.Renderable.RenderableObject
 	{
 		string m_remoteUrl;
 		string m_imageDirectoryPath;
-        /// <summary>
-        /// These two values determine cloud altitude and how '3D' they look
-        /// </summary>
 		double m_cloudBaseAltitude = 35000;
 		double m_displacementMultiplier = 150;
 		int m_samples = 200;
@@ -34,27 +28,16 @@ namespace MFW3D
 		float m_exposureLevel = 1.0f;
         bool m_playing = true;
 
-        /// <summary>
-        /// Toggles play/pause for the layer
-        /// </summary>
         public bool Playing
         {
             get { return m_playing; }
             set { m_playing = value; }
         }
-
-        /// <summary>
-        /// Gets/sets exposure level
-        /// </summary>
 		public float ExposureLevel
 		{
 			get{ return m_exposureLevel; }
 			set{ m_exposureLevel = value; }
 		}
-
-        /// <summary>
-        /// Turns Hdr Lighting on/off
-        /// </summary>
 		public bool EnableHdrLighting
 		{
 			get{ return m_enableHdrLighting; }
@@ -67,14 +50,6 @@ namespace MFW3D
 				}
 			}
 		}
-
-        /// <summary>
-        /// Creates Dynamic Cloud layer
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="parentWorld"></param>
-        /// <param name="remoteUrl"></param>
-        /// <param name="imageDirectoryPath"></param>
 		public DynamicCloudLayer(
 			string name,
 			World parentWorld,
@@ -84,20 +59,12 @@ namespace MFW3D
 			m_remoteUrl = remoteUrl;
 			m_imageDirectoryPath = imageDirectoryPath;
 		}
-
 		System.Threading.Thread m_updateThread = null;
-
         void pause_Click(object sender, EventArgs e)
         {
             m_playing = !m_playing;
             (sender as MenuItem).Checked = !m_playing;
         }
-
-
-        /// <summary>
-        /// Initializes renderable
-        /// </summary>
-        /// <param name="drawArgs"></param>
 		public override void Initialize(DrawArgs drawArgs)
 		{
 			if(m_animationTimer == null)
@@ -144,7 +111,6 @@ namespace MFW3D
 	
 			isInitialized = true;
 		}
-
 		private void UpdateImages()
 		{
 			try
@@ -261,7 +227,6 @@ namespace MFW3D
 				Log.Write(ex);
 			}
 		}
-
 		private void CreateMesh(
 			double north,
 			double south,
@@ -343,21 +308,11 @@ namespace MFW3D
 			if(heightMap != null)
 				heightMap.Dispose();
 		}
-
-        /// <summary>
-        /// Updates renderable
-        /// </summary>
-        /// <param name="drawArgs"></param>
 		public override void Update(DrawArgs drawArgs)
 		{
 			if(!isInitialized)
 				Initialize(drawArgs);
 		}
-
-        /// <summary>
-        /// Renders object
-        /// </summary>
-        /// <param name="drawArgs"></param>
 		public override void Render(DrawArgs drawArgs)
 		{
 			try
@@ -394,7 +349,6 @@ namespace MFW3D
 				Log.Write(ex);
 			}
 		}
-
 		private void RenderFixedPipeline(DrawArgs drawArgs, DynamicCloudFrame frame)
 		{
 			drawArgs.device.SetTexture(0, frame.Texture);
@@ -417,7 +371,6 @@ namespace MFW3D
 
 			drawArgs.device.Transform.World = drawArgs.WorldCamera.WorldMatrix;
 		}
-
 		private void RenderShaders(DrawArgs drawArgs, DynamicCloudFrame frame)
 		{
 			if(m_effect == null)
@@ -556,14 +509,8 @@ namespace MFW3D
 			}
 			m_effect.End();
 		}
-
 		Effect m_effect = null;
-
 		CustomVertex.TransformedTextured[] m_transformedVertices = new Microsoft.DirectX.Direct3D.CustomVertex.TransformedTextured[4];
-	
-	//	static VertexBuffer m_vertexBuffer = null;
-	//	static IndexBuffer m_indexBuffer = null;
-
 		private void device_DeviceReset(object sender, EventArgs e)
 		{
 			Device device = (Device)sender;
@@ -624,12 +571,6 @@ namespace MFW3D
 		Surface s1;
 		Surface s2;
 		Surface s3;
-
-		//-----------------------------------------------------------------------------
-		// Name: CreateTexCoordNTexelWeights
-		// Desc: Get the texture coordinate offsets to be used inside the Bloom
-		//       pixel shader.
-		//-----------------------------------------------------------------------------
 		private void CreateTexCoordNTexelWeights(int dwRenderTargetSize,
 			ref float[] fTexCoordOffset,
 			ref Vector4[] vTexelWeight,
@@ -665,14 +606,6 @@ namespace MFW3D
 				fTexCoordOffset[i] = -fTexCoordOffset[i-7];
 			}
 		}
-
-		//-----------------------------------------------------------------------------
-		// Name: GaussianDistribution
-		// Desc: Helper function for CreateTexCoordNTexelWeights function to compute the 
-		//       2 parameter Gaussian distribution using the given standard deviation
-		//       rho
-		//		 This might be optimized by using a look-up table
-		//-----------------------------------------------------------------------------
 		float GaussianDistribution( float x, float y, float rho )
 		{
 			float g = 1.0f / (float)Math.Sqrt( 2.0f * Math.PI * rho * rho );
@@ -680,10 +613,6 @@ namespace MFW3D
 
 			return g;
 		}
-
-        /// <summary>
-        /// Disposes renderable
-        /// </summary>
 		public override void Dispose()
 		{
 			isInitialized = false;
@@ -744,7 +673,6 @@ namespace MFW3D
 				s3 = null;
 			}
 		}
-
 		private void DisposeHdrResources()
 		{
 			if(s1 != null)
@@ -791,17 +719,10 @@ namespace MFW3D
 
 			
 		}
-
-        /// <summary>
-        /// Executes upon selection
-        /// </summary>
-        /// <param name="drawArgs"></param>
-        /// <returns></returns>
 		public override bool PerformSelectionAction(DrawArgs drawArgs)
 		{
 			return false;
 		}
-
 		private class DynamicCloudFrame
 		{
 			public string ImageFile;
@@ -810,10 +731,8 @@ namespace MFW3D
 			public CustomVertex.PositionTextured[] Vertices = null;
 			public short[] Indices = null;
 		}
-
 		int m_currentFrame = 0;
 		bool m_isUpdating = false;
-		
 		private void m_animationTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
 		{
 			if(m_isUpdating)

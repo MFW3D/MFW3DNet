@@ -9,12 +9,6 @@ using Utility;
 
 namespace MFW3D
 {
-	/// <summary>
-	/// Summary description for ShapeFileLayer.
-	/// </summary>
-	/// 
-
-	//TODO: Upper and lower random color limits, line "caps" styles
 	public class ShapeFileLayer : Renderable.RenderableObject
 	{
 		int m_NumberRootTilesHigh = 5;
@@ -37,7 +31,6 @@ namespace MFW3D
 		double m_MaximumViewingAltitude = double.MaxValue;
 		double m_lztsd = 36.0;
 
-
 		int m_IconWidth = 0;
 		int m_IconHeight = 0;
 		string m_IconFilePath = null;
@@ -53,7 +46,6 @@ namespace MFW3D
                 return m_BoundingBoxYMax;
             }
         }
-
         public double South
         {
             get
@@ -61,7 +53,6 @@ namespace MFW3D
                 return m_BoundingBoxYMin;
             }
         }
-
         public double East
         {
             get
@@ -1322,8 +1313,6 @@ namespace MFW3D
 			}
 		}
 	}
-
-
 	public class ExtendedZipInputStream 
 	{
 		private ZipInputStream zis;
@@ -1397,8 +1386,6 @@ namespace MFW3D
 			zis.Close();
 		}
 	}
-
-
 	public class ShapeTileArgs
 	{
 		public static float TileDrawDistance = 2.5f;
@@ -1630,11 +1617,6 @@ namespace MFW3D
 			m_ShowLabels = showLabels;
 		}
 	}
-
-	/// <summary>
-	/// Polygon shape types can be filled with any of these styles, which are the same as the HatchStyles in the GDI .NET framework.
-	/// The exception is the "Solid" style, signifies a "solid" fill style (no hatching).
-	/// </summary>
 	public enum ShapeFillStyle
 	{
 		Solid,
@@ -1693,7 +1675,6 @@ namespace MFW3D
 		WideUpwardDiagonal,
 		ZigZag
 	}
-
 	public class ShapeTile
 	{
 		bool m_Initialized = false;
@@ -2741,7 +2722,6 @@ namespace MFW3D
 			}
 		}
 	}
-
 	public class Shapefile_Polygon
 	{
 		public GeographicBoundingBox BoundingBox = new GeographicBoundingBox();
@@ -2750,7 +2730,6 @@ namespace MFW3D
 		public int[] Parts;
 		public Shapefile_Point[] Points;
 	}
-
 	public class Shapefile_PolyLine
 	{
 		public GeographicBoundingBox BoundingBox = new GeographicBoundingBox();
@@ -2759,33 +2738,28 @@ namespace MFW3D
 		public int[] Parts;
 		public Shapefile_Point[] Points;
 	}
-
 	public class Shapefile_Null
 	{
 		
 	}
-
 	public class Shapefile_Point
 	{
 		public double X;
 		public double Y;
 		public object Tag = null;
 	}
-
 	public class Shapefile_MultiPoint
 	{
 		public GeographicBoundingBox BoundingBox = new GeographicBoundingBox();
 		public int NumPoints;
 		public Shapefile_Point[] Points;
 	}
-
 	struct DBF_Field_Header
 	{
 		public string FieldName;
 		public char FieldType;
 		public byte FieldLength;
 	}
-
 	class ShapeRecord
 	{
 		#region 私有成员
@@ -2797,7 +2771,6 @@ namespace MFW3D
 		Shapefile_Polygon m_Polygon = null;
 		object m_Value = null;
 		#endregion
-
 		#region 属性
 		public string ID
 		{
@@ -2854,7 +2827,6 @@ namespace MFW3D
 				m_PolyLine = value;
 			}
 		}
-
 		public Shapefile_Polygon Polygon
 		{
 			get
@@ -2866,7 +2838,6 @@ namespace MFW3D
 				m_Polygon = value;
 			}
 		}
-
 		public object Value
 		{
 			get
@@ -2878,8 +2849,6 @@ namespace MFW3D
 				m_Value = value;
 			}
 		}
-		
 		#endregion
-
 	}
 }

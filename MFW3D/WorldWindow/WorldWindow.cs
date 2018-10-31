@@ -17,6 +17,8 @@ using MFW3D.Camera;
 using System.Security.Permissions;
 using MFW3D.DataSource;
 using MFW3D.Menu;
+using MFW3D.Layers;
+
 namespace MFW3D
 {
     /// <summary>
@@ -58,6 +60,11 @@ namespace MFW3D
 
         private MenuBar _menuBar = new MenuBar(World.Settings.ToolbarAnchor, 90);
         private LayerManagerButton layerManagerButton;
+
+        #region Õº≤„
+        GUILayer m_GUILayer = new GUILayer();
+        #endregion
+
 
         #region π´π≤ Ù–‘
         public World CurrentWorld
@@ -139,6 +146,11 @@ namespace MFW3D
                 m_isRenderDisabled = value;
             }
         }
+        /// <summary>
+        /// øÿº˛œ‘ æÕº≤„
+        /// </summary>
+        public GUILayer GUILayer { get { return m_GUILayer; }set { m_GUILayer = value; } }
+
         #endregion
 
         public WorldWindow()
@@ -170,7 +182,7 @@ namespace MFW3D
                     TimeKeeper.Start();
 
                     //œ‘ æ≤Àµ•¿∏
-                    _menuBar.IsActive = true;
+                    //_menuBar.IsActive = true;
                 }
 
             }
@@ -299,7 +311,6 @@ namespace MFW3D
             this.drawArgs.screenHeight = this.Height;
             this.drawArgs.screenWidth = this.Width;
         }
-
         private void m_FpsTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             if (m_FpsUpdate)
@@ -628,6 +639,10 @@ namespace MFW3D
                     RenderPositionInfo();
 
                     _menuBar.Render(drawArgs);
+
+                    //‰÷»æÕº≤„
+                    m_GUILayer.Render(drawArgs);
+
 
 
                     m_FpsGraph.Render(drawArgs);

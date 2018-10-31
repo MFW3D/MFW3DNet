@@ -7,9 +7,6 @@ using Utility;
 
 namespace MFW3D.Renderable
 {
-	/// <summary>
-	/// Summary description for ShapeLayer.
-	/// </summary>
 	public class ShapeLayer : RenderableObject
 	{
 		#region 私有成员
@@ -33,21 +30,6 @@ namespace MFW3D.Renderable
 		#endregion
 
 		#region 公共方法
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref= "T:WorldWind.Renderable.ShapeLayer"/> class.
-		/// </summary>
-		/// <param name="name"></param>
-		/// <param name="parentWorld"></param>
-		/// <param name="Altitude"></param>
-		/// <param name="masterFilePath"></param>
-		/// <param name="minDisplayAltitude"></param>
-		/// <param name="maxDisplayAltitude"></param>
-		/// <param name="font"></param>
-		/// <param name="color"></param>
-		/// <param name="scalarKey"></param>
-		/// <param name="showBoundaries"></param>
-		/// <param name="showFilledPolygons"></param>
 		public ShapeLayer(
 			string name,
 			World parentWorld,
@@ -72,7 +54,6 @@ namespace MFW3D.Renderable
 			this._showBoundaries = showBoundaries;
 			this._showFilledPolygons = showFilledPolygons;
 		}
-
 		public override void Initialize(DrawArgs drawArgs)
 		{
 			try
@@ -165,7 +146,6 @@ namespace MFW3D.Renderable
 			}
 			this.isInitialized = true;
 		}
-
 		public override void Update(DrawArgs drawArgs)
 		{
 			try
@@ -322,16 +302,13 @@ namespace MFW3D.Renderable
 				Log.Write( caught );
 			}
 		}
-
 		public override bool PerformSelectionAction(DrawArgs drawArgs)
 		{
 			return false;
 		}
-
 		public override void Dispose()
 		{
 		}
-
 		public override void Render(DrawArgs drawArgs)
 		{
 			try
@@ -362,7 +339,6 @@ namespace MFW3D.Renderable
 				Log.Write( caught );
 			}
 		}
-
 		#endregion
 	}
 

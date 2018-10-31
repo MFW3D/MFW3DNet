@@ -67,7 +67,7 @@ namespace Collab.jhuapl.Whiteboard
 	/// CS DrawLayer implements whiteboarding capability.  Users can draw basic shapes and
 	/// overlay them as terrain mapped paths.
 	/// </summary>
-	public class DrawLayer : MFW3D.Renderable.RenderableObjectList, IMenu
+	public class DrawLayer : MFW3D.Renderable.RenderableObjectList, IEvent
 	{
 		/// <summary>
 		/// The current drawmode.
